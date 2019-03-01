@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+
+    <head>
+        <title>Registro de sucursales</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="shortcut icon" type="image/png" href="img/crux_logo_peque.png">
+        <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/registro_sucursales.css">
+    </head>
+
+    <body>
+         <header id="header_principal">
+            <nav>
+                <div class="logo"></div>
+                <a href="libros.html">Libros</a>
+                <a href="editoriales.html">Editoriales</a>
+                <a href="sucursales.html">Sucursales</a>
+                <a href="reservas.html">Reservas</a>
+                <a href="comprobante.html">Comprobante</a>
+                <a>Cerrar sesión</a>
+            </nav>
+
+        </header>
+
+        <main>
+
+            <article>
+                <section>
+                    <h1>Registro de sucursales</h1>
+
+                </section>
+                <section id="columna_izquierda">
+
+                    <form id="frm_registro_sucursales">
+                        <section class="parte_formulario">
+                            <label for="txt_codigo">Código</label>
+                            <input type="text" id="txt_codigo" placeholder="Ingrese un código único">
+                        </section>
+
+                         <section class="parte_formulario">
+                            <label for="txt_nombre">Nombre</label>
+                            <input type="text" id="txt_nombre" placeholder="Ingrese el nombre">
+                         </section>
+
+                         <section class="parte_formulario">
+                             <label for="txt_telefono">Telefono</label>
+                             <input type="text" id="txt_telefono" placeholder="Ingrese el teléfono">
+                         </section>
+
+                        <section class="parte_formulario">
+                            <label for="txt_direccion" id="lbl_direccion">Dirección exacta</label>
+                            <textarea id="txt_direccion" placeholder="Ingrese la dirección exacta"></textarea>
+                         </section>
+
+                    </form>
+
+                </section>
+
+                <section id="columna_derecha">
+                    <div id="div_subir_ubicacion">
+
+                    </div>
+
+                    <button type="button" id="btn_subir_ubicacion" value="Subir ubicacion">Ubicación</button>
+                </section>
+
+            </article>
+            <section>
+                <button type="button" id="btn_registrar" value="Registrar">Registrar</button>
+            </section>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/servicio_sucursales.js"></script>
+        <script src="js/controller_registro_sucursales.js"></script>
+    </body>
+</html>
+
+

@@ -1,0 +1,101 @@
+.grid-container {
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    /*background-color: #2196F3;*/
+    background: inherit;
+    padding-top: 20px;
+
+}
+.grid-item {
+    background-color: #6F1E51;
+    border: 1px solid #000000;
+    padding: 2px;
+    font-size: 18px;
+    text-align: center;
+    color: #1B1464;
+}
+
+
+.grid-item p{
+    position:relative;
+    /*-webkit-transform: translateY(-50%);*/
+    /*-ms-transform: translateY(-50%);*/
+    transform: translateY(-50%);
+    top:50%;
+    color: #bdc3c7;
+}
+
+.grid-item:hover{
+    background-color: #B53471;
+    color: white;
+}
+
+i
+{
+    margin-right: 5px;
+    color: black;
+}
+
+i:hover{
+    color: white;
+}
+
+div#buscar_sucursal{
+    display: inline-block;
+    float: left;
+    margin-left: 50px;
+}
+
+input#txt_buscar_sucursal{
+    font-size: 20px;
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    border-radius: 5%;
+
+}
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+    color: #d2dae2;
+    font-style: normal;
+}
+
+label{
+    font-size: 18px;
+}
+
+button{
+    /*background: #3498db;*/
+    background:#1B1464;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    /*margin: 0 auto;*/
+    font-size: 16px;
+    color: white;
+    border-radius: 5%;
+    margin-top: 0px;
+    margin-right: 50px;
+    float: right;
+}
+
+button:hover{
+    border-width: 4px;
+    background-color: #0652DD;
+}
+
+.awesome_images{
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+}
+img{
+    width: 100px;
+    height: 100px;
+}

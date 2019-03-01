@@ -1,0 +1,114 @@
+#columna_izquierda {
+    width: 45%;
+    display: inline-block;
+    margin-left: 200px;
+    /*float: left;*/
+}
+
+#columna_derecha {
+    width: auto;
+    margin-left: 100px;
+    display: inline-block;
+    /*border: 1px solid red;*/
+    /*float: right;*/
+}
+
+
+section#columna_izquierda form#frm_registro_sucursales section label{
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-right: 5px;
+    display: inline-block;
+    width: 100px;
+    height: 24px;
+    margin-top: 15px;
+}
+
+#lbl_direccion{
+    float: left;
+}
+
+.parte_formulario{
+    margin-top: 10px;
+}
+
+section#columna_izquierda form#frm_registro_sucursales section input, section#columna_izquierda form#frm_registro_libros section select{
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 200px;
+    height: 24px;
+    border-radius: 0%;
+    /*outline: 5px dotted green;*/
+    border:1px solid white;
+    outline-color:#6F1E51;
+    outline-style: solid;
+}
+
+#txt_direccion{
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 200px;
+    height: 72px;
+    border-radius: 0%;
+    /*outline: 5px dotted green;*/
+    border:1px solid white;
+    outline-color:#6F1E51;
+    outline-style: solid;
+
+}
+
+section#columna_izquierda form#frm_registro_sucursales section select{
+    width: 205px;
+}
+
+main section button{
+    display: block;
+    background:#1B1464;
+    padding: 10px;
+    width: 225px;
+    height: 70px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: white;
+    border-radius: 5%;
+    margin-top: 10px;
+}
+
+#btn_registrar:hover, #div_subir_ubicacion:hover{
+    /*color: #7ed6df;*/
+    border-width: 4px;
+    background-color: #0652DD;
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+div#div_subir_ubicacion{
+    background-image: url("../img/imagen_ubicacion2.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+}
+img{
+    position: relative;
+    top: 50px;
+}
+article section#columna_derecha div#div_subir_ubicacion{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    /*position: relative;*/
+    /*top: 50px;*/
+    border: 2px solid #6F1E51;
+}
+
+/*article section#columna_derecha div#div_subir_ubicacion, button{*/
+    /*position: relative;*/
+    /*top: 35px;*/
+/*}*/

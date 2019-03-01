@@ -1,0 +1,71 @@
+#columna_izquierda {
+    width: 45%;
+    display: inline-block;
+    margin-left: 200px;
+    /*float: left;*/
+}
+
+#columna_derecha {
+    width: auto;
+    margin-left: 100px;
+    display: inline-block;
+    /*border: 1px solid red;*/
+    /*float: right;*/
+}
+
+
+section#columna_izquierda form#frm_registro_editoriales section label{
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-right: 5px;
+    display: inline-block;
+    width: 100px;
+    height: 24px;
+    margin-top: 15px;
+}
+
+#lbl_direccion{
+    float: left;
+}
+
+.parte_formulario{
+    margin-top: 10px;
+}
+
+#slt_pais, #txt_codigo, #txt_nombre{
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 200px;
+    height: 24px;
+    border-radius: 0%;
+    /*outline: 5px dotted green;*/
+    border:1px solid white;
+    outline-color:#6F1E51;
+    outline-style: solid;
+}
+
+section#columna_izquierda form#frm_registro_editoriales section select{
+    width: 205px;
+    height: 28px;
+}
+
+main section button{
+    display: block;
+    background:#1B1464;
+    padding: 10px;
+    width: 225px;
+    height: 70px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: white;
+    border-radius: 5%;
+    margin-top: 10px;
+}
+
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

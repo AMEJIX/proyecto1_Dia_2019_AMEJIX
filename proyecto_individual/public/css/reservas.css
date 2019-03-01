@@ -1,0 +1,98 @@
+h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: inherit;
+    padding: 10px;
+}
+.grid-item {
+    background-color: white;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    color: #1e272e;
+}
+
+img{
+    width: 120px;
+    height: 160px;
+}
+
+.reservar, .imagen{
+    margin-left: 50px;
+    margin-right: 50px;
+    position: relative;
+    left: 15%;
+}
+
+.reservar{
+    margin-bottom: 25px;
+    width: 330px;
+}
+
+.imagen{
+    width: 330px;
+    margin-bottom: 5px;
+    border: 6px solid #B53471;
+    padding: 14px;
+}
+
+.imagen:hover{
+    background-color: #6F1E51;
+}
+
+.p_autor, .p_precio, h2{
+    text-align: center;
+}
+
+.p_autor{
+    font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    color: #0652DD;
+}
+
+.p_precio{
+    font-size: 18px;
+}
+
+span{
+    font-size: 22px;
+    color: #009432;
+}
+
+h2{
+    color: #006266;
+}
+/*input[type=checkbox], label{*/
+    /*text-align-all: right;*/
+/*}*/
+
+.p_checkbox{
+    display: inline-block;
+    float: right;
+    font-size: 18px;
+}
+
+#btn_reservar{
+    display: block;
+    background:#1B1464;
+    padding: 10px;
+    width: 225px;
+    height: 70px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: white;
+    border-radius: 5%;
+    margin-top: 10px;
+}
+
+#btn_reservar:hover{
+    border-width: 4px;
+    background-color: #0652DD;
+}
