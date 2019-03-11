@@ -1,0 +1,29 @@
+{
+  "name": "proyecto1_dia_2019_amejix",
+  "version": "1.0.0",
+  "description": "Proyecto grupal de AMEJIX para el cuatrimestre 1-2019, perteneciente al grupo BISOFT-4 dia",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AMEJIX/proyecto1_Dia_2019_AMEJIX.git"
+  },
+  "author": "Isaac Miranda Madrigal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AMEJIX/proyecto1_Dia_2019_AMEJIX/issues"
+  },
+  "homepage": "https://github.com/AMEJIX/proyecto1_Dia_2019_AMEJIX#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.13",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7"
+  }
+}

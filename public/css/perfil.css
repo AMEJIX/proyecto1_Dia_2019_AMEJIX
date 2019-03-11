@@ -1,0 +1,99 @@
+html {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    overflow:hidden;
+}
+
+header nav {
+    width: 100%;
+    height: 70px;
+    background-color: #344955;
+    position: fixed;
+}
+
+header nav #userPhoto{
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    float: right;
+    margin-right: 10px;
+    margin-top: 9px;
+}
+
+header nav #arrow{
+    background: none;
+    border: none;
+    outline: none;
+    float: right;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: #f9aa33;
+}
+main .contenedor{
+    padding-top: 70px;
+    
+}
+
+.allContent {
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 10%;
+    height: 100vh;
+    background-color: #4a6572;
+    float: left;
+    position: fixed;
+}
+
+.sicenLogo {
+    display: inline-block;
+    background-image: url(../imgs/SICENblanco.png);
+    width: 117px;
+    height: 32px;
+    margin-top: 18px;
+    margin-left: 12px;
+    margin-bottom: 15px;
+    background-size: cover;
+}
+
+.line {
+    border-bottom: 1px solid #232f34;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.sidebar a {
+    display: inline-block;
+    width: 100%;
+    padding: 35px 0px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #f9aa33;
+}
+
+.contenedor {
+    width: 90%;
+    height: 92vh;
+    background-color: white;
+    margin: 0 auto;
+    float: right;
+}
+
+.contenido {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+}
