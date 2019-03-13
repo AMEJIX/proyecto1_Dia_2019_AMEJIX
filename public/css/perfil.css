@@ -100,11 +100,13 @@ main .contenedor{
 }
 
 h1{
-    font-size: 34px;
+    font-size: 42px;
     display: block;
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
+    color: #f9aa33;
+    /*text-shadow: -3px -2px 10px #344955;*/
 }
 
 .errorInput{
@@ -146,6 +148,15 @@ textarea{
     border: 2px #344955 solid;
 }
 
+#txtFiltrar::placeholder{
+    text-align: center;
+}
+
+#cajaFiltrar{
+    margin-top: 50px;
+    display: inline-block;
+}
+
 #txtPregunta, #txtRespuesta, #txtFiltrar{
     font-size: 16px;
 }
@@ -174,12 +185,13 @@ table#tblPreguntasFrecuentes tr{
 }
 
 .pregunta{
-    
+    text-align: center;
     font-size: 24px;
     font-weight: bold;
 }
 
 .respuesta{
+    text-align: center;
     font-size: 18px;
     font-weight: normal;
 }

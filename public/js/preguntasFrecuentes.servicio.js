@@ -43,7 +43,9 @@ let registrarPreguntaFrecuente = (ppregunta, prespuesta) =>{
             {
                 type: 'success',
                 title: 'Se registró correctamente la pregunta frecuente',
-                text: `La pregunta con su respuesta se ha añadido a su perfil.`
+                text: `La pregunta con su respuesta se ha añadido a su perfil.`,
+                showConfirmButton: false,
+                timer: 1500
             }
         );
     });

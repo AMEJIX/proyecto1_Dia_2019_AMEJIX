@@ -39,9 +39,12 @@ let agregarEditorial = () =>{
 
         registrarPreguntaFrecuente(codigo, nombre);
 
-        // setTimeout("location.href='editoriales.html'", 3500);
+        setTimeout("location.href='perfil.html'", 1500);
 
-        mostrarPreguntasFrecuentes();
+        // mostrarPreguntasFrecuentes();
+
+        txtRespuesta.innerHTML = '';
+        txtPregunta.innerHTML = '';
 
     } else {
         swal.fire(
