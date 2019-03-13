@@ -16,7 +16,7 @@ const express = require('express'),
 let db = mongoose.connection,
     dburl = 'mongodb://isaac:amejix@proyecto-shard-00-00-bm9ze.mongodb.net:27017,' +
         'proyecto-shard-00-01-bm9ze.mongodb.net:27017,' +
-        'proyecto-shard-00-02-bm9ze.mongodb.net:27017/test?ssl=true&replicaSet=' +
+        'proyecto-shard-00-02-bm9ze.mongodb.net:27017/sicen?ssl=true&replicaSet=' +
         'proyecto-shard-0&authSource=admin&retryWrites=true',
     port = 4000;
 
@@ -62,10 +62,10 @@ app.use( function(req, res, next) {
     next();
 });
 
-const actividades = require('./components/actividades/actividades.route');
+const preguntasFrecuentes = require('./components/preguntasFrecuentes/preguntasFrecuentes.route');
 
 
-app.use('/api', actividades);
+app.use('/api', preguntasFrecuentes);
 
 
 
