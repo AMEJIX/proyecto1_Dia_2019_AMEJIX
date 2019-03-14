@@ -55,7 +55,7 @@ main .contenedor{
 
 .sicenLogo {
     display: inline-block;
-    background-image: url(../img/SICENblanco.png);
+    background-image: url(../imgs/SICENblanco.png);
     width: 117px;
     height: 32px;
     margin-top: 18px;
