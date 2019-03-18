@@ -1,3 +1,5 @@
+'use strict';
+
 const modeloPreguntasFrecuentes = require('./preguntasFrecuentes.model');
 
 module.exports.registrarPreguntaFrecuente = (req, res) =>{

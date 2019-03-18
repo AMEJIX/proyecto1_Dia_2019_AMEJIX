@@ -64,10 +64,11 @@ app.use( function(req, res, next) {
 
 const preguntasFrecuentes = require('./components/preguntasFrecuentes/preguntasFrecuentes.route');
 
+const criteriosBusqueda = require('./components/criteriosBusqueda/criteriosBusqueda.route');
 
 app.use('/api', preguntasFrecuentes);
 
-
+app.use('/api', criteriosBusqueda);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;

@@ -32,14 +32,14 @@ let validar = () =>{
 
 let codigo, nombre;
 
-let agregarEditorial = () =>{
+let agregar = () =>{
     if (!validar()){
         codigo = txtPregunta.value;
         nombre = txtRespuesta.value;
 
         registrarPreguntaFrecuente(codigo, nombre);
 
-        setTimeout("location.href='perfil.html'", 1500);
+        setTimeout("location.reload()", 1500);
 
         // mostrarPreguntasFrecuentes();
 
@@ -57,4 +57,4 @@ let agregarEditorial = () =>{
     }
 };
 
-btnEnviar.addEventListener('click', agregarEditorial);
+btnEnviar.addEventListener('click', agregar);

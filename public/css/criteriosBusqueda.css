@@ -17,9 +17,8 @@ h1{
     border: 2px #344955 solid;
 }
 
-table#tblPreguntasFrecuentes{
-   margin: 0 auto;
-    width: 800px;
+table#tblCriteriosBusqueda{
+    margin: 0 auto;
 }
 
 form, #nueva{
@@ -30,23 +29,14 @@ form, #nueva{
     margin-top: 50px;
 }
 
-textarea{
-    padding: 4px 2px;
-    border: 2px #344955 solid;
-    background: #fff;
-    width: 30%;
-    resize: none;
-    vertical-align:top;
-}
-
 #lblFiltrar{
     width: 120px;
+    margin-right: 50px;
 }
 
 #txtFiltrar{
     margin-left: 12px;
-    width: 500px;
-    border: 2px #344955 solid;
+    width: 600px;
     margin-bottom: 50px;
 }
 
@@ -59,51 +49,39 @@ textarea{
     display: inline-block;
 }
 
-#txtPregunta, #txtRespuesta, #txtFiltrar{
+#txtFiltrar, #txtNombreEtiqueta{
     font-size: 16px;
     outline: none;
+    border: 2px #344955 solid;
 }
 
-#txtPregunta, #txtRespuesta{
+#txtNombreEtiqueta{
     width: 400px;
-    height: 150px;
-    text-indent: 18px;
+    height: 16px;
 }
 
-#cajaRegistrarPregunta{
-    float: left;
-}
 
-#cajaRegistrarRespuesta{
-    float: right;
-}
-
-#cajaRegistrarPregunta, #cajaRegistrarRespuesta{
+#cajaRegistrarEtiqueta{
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-table#tblPreguntasFrecuentes tr{
+table#tblCriteriosBusqueda tr{
     height: 100px;
+    width: 600px;
 }
 
+table#tblCriteriosBusqueda td{
+    height: 60px;
+    width: 200px;
+}
 
-.pregunta{
+.etiqueta{
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    color: #344955;
 }
 
-.pregunta:hover, .respuesta:hover{
-    color: #f9aa33;
-}
-
-.respuesta{
-    text-align: center;
-    font-size: 18px;
-    font-weight: normal;
-}
 
 button{
     padding: 20px;
@@ -129,4 +107,10 @@ button:hover{
     margin: 40px;
     position:relative;
     top:4px;
+}
+
+td{
+    border: 2px #f9aa33 dotted;
+    vertical-align: middle;
+    text-align: center;
 }
