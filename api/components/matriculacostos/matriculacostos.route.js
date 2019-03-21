@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const apiRegistrarMatricula = require('./registrarMatriculaCostos.api');
+const apiRegistrarMatricula = require('./matriculacostos.api');
 
 router.route('/registrar_matricula')
     .post(

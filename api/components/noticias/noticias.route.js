@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const apiRegistrarNoticia = require('./registrarNoticia.api');
+const apiRegistrarNoticia = require('./noticias.api');
 
 router.route('/registrar_noticia')
     .post(

@@ -68,11 +68,11 @@ const criteriosBusqueda = require('./components/criteriosbusqueda/criteriosBusqu
 
 const citas = require('./components/citas/citas.route');
 
-const registrarBeca = require('./components/registrarBeca/registrarBeca.route')
+const becas = require('./components/becas/becas.route');
 
-const registrarMatricula = require('./components/registrarMatriculaCostos/registrarMatriculaCostos.route')
+const matriculacostos = require('./components/matriculacostos/matriculacostos.route');
 
-const registrarNoticia = require('./components/registrarNoticia/registrarNoticia.route')
+const noticias = require('./components/noticias/noticias.route');
 
 app.use('/api', preguntasFrecuentes);
 
@@ -80,11 +80,11 @@ app.use('/api', criteriosBusqueda);
 
 app.use('/api', citas);
 
-app.use('/api', registrarBeca);
+app.use('/api', becas);
 
-app.use('/api', registrarMatricula);
+app.use('/api', matriculacostos);
 
-app.use('/api', registrarNoticia);
+app.use('/api', noticias);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;

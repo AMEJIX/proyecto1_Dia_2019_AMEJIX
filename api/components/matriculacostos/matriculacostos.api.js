@@ -1,6 +1,6 @@
 'use strict';
 
-const modeloRegistrarMatriculaCostos = require('./registrarMatriculaCostos.model');
+const modeloRegistrarMatriculaCostos = require('./matriculacostos.model');
 
 module.exports.registrar = (req, res) => {
     let nuevaMatricula = new modeloRegistrarMatriculaCostos(
