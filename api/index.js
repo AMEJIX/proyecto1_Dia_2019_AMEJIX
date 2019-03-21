@@ -72,7 +72,7 @@ const registrarBeca = require('./components/registrarBeca/registrarBeca.route')
 
 const registrarMatricula = require('./components/registrarMatriculaCostos/registrarMatriculaCostos.route')
 
-const registrarMatricula = require('./components/registrarNoticia/registrarNoticia.route')
+const registrarNoticia = require('./components/registrarNoticia/registrarNoticia.route')
 
 app.use('/api', preguntasFrecuentes);
 
