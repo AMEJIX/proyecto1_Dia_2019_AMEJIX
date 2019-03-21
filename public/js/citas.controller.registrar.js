@@ -55,7 +55,6 @@ let validar = () =>{
     }
 
     if (inputHora.value === ''
-        || fechaHoraIngresada < new Date()
         || fechaHoraIngresada.getHours() < 8 || fechaHoraIngresada.getHours() > 16){
         error = true;
         lblERRHora.classList.add('mensajeError');
@@ -69,7 +68,7 @@ let validar = () =>{
 let agendar = () =>{
 
     if (!validar()){
-        let nombrePF = 'Juan Núñez';
+        let nombrePF = 'Juana Martínez';
         let correoPF = 'amejixteam@gmail.com';
         let nombreCE = 'Joaquín García Monge';
 

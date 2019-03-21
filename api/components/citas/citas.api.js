@@ -100,7 +100,7 @@ module.exports.registrarCita = (req, res) =>{
                       <p>Se ha agendado su cita con el centro educativo ${nuevaCita.nombreCentroEducativo}</p>
                       <p>La cita es en la fecha ${nuevaCita.fechaHora.toLocaleDateString()} a las ${nuevaCita.fechaHora.toLocaleTimeString()}</p>
                        <p>Para ver su lista de citas agendadas visite:<p>
-                        <a href="http://localhost:3000/public/misCitas" class="boton"><span>Mis citas agendadas</span></a>
+                        <a href="http://localhost:3000/public/misCitasPF.html" class="boton"><span>Mis citas agendadas</span></a>
                       </div>
                       
                     </body>

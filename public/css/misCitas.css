@@ -50,7 +50,8 @@ table#tblCitas thead th, table#tblCitas tbody tr td{
 th{
     color: #f9aa33;
 }
-.institucion, .fechaHora{
+
+.institucion, .fechaHora, .padre{
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
 }
