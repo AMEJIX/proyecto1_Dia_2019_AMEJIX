@@ -1,6 +1,6 @@
 'use strict';
 
-const modeloBeca = require('./registrarBeca.model');
+const modeloBeca = require('./becas.model');
 
 module.exports.registrar = (req, res) => {
 
