@@ -62,13 +62,17 @@ app.use( function(req, res, next) {
     next();
 });
 
-const preguntasFrecuentes = require('./components/preguntasFrecuentes/preguntasFrecuentes.route');
+const preguntasFrecuentes = require('./components/preguntasfrecuentes/preguntasFrecuentes.route');
 
-const criteriosBusqueda = require('./components/criteriosBusqueda/criteriosBusqueda.route');
+const criteriosBusqueda = require('./components/criteriosbusqueda/criteriosBusqueda.route');
+
+const citas = require('./components/citas/citas.route');
 
 app.use('/api', preguntasFrecuentes);
 
 app.use('/api', criteriosBusqueda);
+
+app.use('/api', citas);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;

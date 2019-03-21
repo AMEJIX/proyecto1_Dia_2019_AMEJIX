@@ -1,0 +1,56 @@
+h1{
+    font-size: 42px;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #f9aa33;
+    /*text-shadow: -3px -2px 10px #344955;*/
+}
+
+table#tblCitas{
+    margin: 0 auto;
+}
+
+#lblFiltrar{
+    width: 120px;
+    margin-right: 50px;
+    font-size: 18px;
+}
+
+#txtFiltrar{
+    margin-left: 20px;
+    width: 800px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    outline: none;
+    border: 2px #344955 solid;
+}
+
+#txtFiltrar::placeholder{
+    text-align: center;
+}
+
+#cajaFiltrar{
+    margin-top: 50px;
+    display: inline-block;
+}
+
+thead{
+    background-color: #344955;
+}
+
+table#tblCitas thead th, table#tblCitas tbody tr td{
+    width: 400px;
+    height: 80px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+th{
+    color: #f9aa33;
+}
+.institucion, .fechaHora{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
