@@ -1,0 +1,318 @@
+html {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    overflow:hidden;
+}
+
+header nav {
+    width: 100%;
+    height: 70px;
+    background-color: #344955;
+    position: fixed;
+}
+
+.logoNav {
+    display: inline-block;
+    background-color: #4a6572;
+    width: 10%;
+    height: 70px;
+    background-size: cover;
+}
+
+.sicenLogo {
+    background-image: url(../img/SICENblanco.png);
+    background-size: contain;
+    width: 70%;
+    height: 28px;
+    max-width: 130px;
+    min-width: 95px;
+    max-height: 35px;
+    min-width: 25px;
+    margin: 0 auto;
+    margin-top: 21px;
+}
+
+.ddMenu {
+    width: 100px;
+    height: 70px;
+    float: right;
+    margin-right: 20px;
+}
+
+.ddMenu:hover {
+    background: #4F6571;
+    border-radius: 7px;
+    width: 150px;
+    height: 250px; 
+    transition: all 300ms ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.ddMenu a {
+    display: none;
+    margin-top: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.ddMenu a:hover {
+    color: #f9aa33;
+}
+
+.ddMenu #userPhoto {
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    float: left;
+    margin-right: 15px;
+    margin-left: 10px;
+    margin-top: 9px;
+}
+
+.ddMenu #arrow {
+    float: right;
+    border-color: #f9aa33 transparent transparent;
+    border-width: 6px;
+    border-style: solid;
+    width: 0px;
+    margin-top: 33px;
+    margin-right: 13px;
+}   
+
+.subMenu {
+    margin-top: 90px;
+}
+
+.ddMenu:hover .subMenu a {
+    display: block;
+    transition: all 300ms ease;
+}
+
+.allContent {
+    width: 100%;
+    height: 100vh;
+}
+
+.contenedor {
+    width: 90%;
+    height: 92vh;
+    background-color: white;
+    margin: 0 auto;
+    float: right;
+}
+
+main .contenedor{
+    padding-top: 70px;
+}
+
+.contenido {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 10%;
+    height: 100vh;
+    background-color: #4a6572;
+    float: left;
+    margin-top: 70px;
+}
+
+.sidebar a {
+    display: inline-block;
+    width: 100%;
+    padding: 16px 0px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #f9aa33;  
+    transition: all 300ms ease;
+}
+
+.sidebar li ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none; 
+}
+
+.contenedorSidebar{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.line {
+    border-bottom: 1px solid #232f34;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.opcion:hover li a{
+    text-align: center;
+    margin-left: -20%; 
+}
+
+.opcion li{
+    list-style: none;
+}
+
+.opcion li ul div li a {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+.opcion  li i {
+    transform: rotate(-90deg);
+    padding: 10px;
+}
+
+.opcion  li:hover i {
+    color: #f9aa33;
+    text-align: center;
+    transform: rotate(0deg);
+    transition: all 300ms ease;
+}
+
+.opcion  li ul {
+    display: none;
+    text-align: left;
+}
+
+.opcion  li:hover ul {
+    display: block;
+    text-align: center;
+    transition: display 300ms ease;
+}
+
+.subOpcion {
+    display: inline;
+    transition: display 300ms ease;
+}
+
+.subOpcion li{
+    margin-left: 20%;
+}
+
+#tblMatriculas{
+    margin-top: 2.50%;
+    margin-left: 25%; 
+    margin-right: 10%; 
+}
+
+#thTituloNombreMatricula{
+    background-color: #344955;
+    padding: 2%;
+    text-align: center;
+    color: white;
+    font-size: 110%;
+}
+
+#thPrecioMatricula{
+    background: #344955;
+    padding: 1%;
+    text-align: center;
+    color: white;   
+    font-size: 110%;
+}
+
+#thfieldsetPrecio{
+    background: #344955;
+    padding: 1%;
+    text-align: center;
+    color: white;   
+    font-size: 110%;
+}
+
+tr, td{
+    padding: 1%;
+    text-align: center;
+}
+
+tbody{
+    font-size: 105%;
+    line-height: 180%;
+    text-align: center;
+}
+
+#divNombreMatricula{
+    margin: 0% auto;
+    margin-left: 20%;    
+    margin-top: 10%;
+}
+
+#divPrecioMatricula{
+    margin: 0% auto;
+    margin-left: 20%; 
+    margin-top: 3%;   
+}
+
+#labelNombreMatricula{
+    margin: 0% auto;
+    margin-right: 10px;
+    font-size: 25px;
+    color: #344955;
+}
+
+#inputNombreMatricula{
+    margin: 0% auto;
+    width: 230px;
+    height: 30px;
+    margin-left: 15px;
+}
+
+#labelPrecioMatricula{
+    margin: 0% auto;
+    margin-right: 10px;
+    font-size: 25px;
+    color: #344955;
+}
+
+#inputPrecioMatricula{
+    margin: 0% auto;
+    width: 232px;
+    height: 30px;
+    margin-left: 38px;
+}
+
+#btnRegistrarMatricula{
+    margin: 0% auto;
+    margin-left: 46%;
+    background: #344955;
+    width: 290px;
+    height: 60px;
+    border: none;
+    color: white;
+    margin-top: 25px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.error_input{
+    border: 2px solid #ED4C67;
+}
+
+fieldset{
+    width: 290px;
+    height: 40px;
+    margin-top: 2%;
+    margin-left: 45%;
+}
