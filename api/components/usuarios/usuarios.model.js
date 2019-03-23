@@ -7,7 +7,7 @@ let usuarioSchema = new mongoose.Schema(
 
     {
 
-
+//PF
 
         userType: { type: String, required: false },
         nombre: { type: String, required: false },
@@ -22,7 +22,10 @@ let usuarioSchema = new mongoose.Schema(
         canton: { type: String, required: false },
         distrito: { type: String, required: false },
         contrasenna : { type : String, required : false},
-
+        edades : {type: String, required: false},
+        imagenPF: {type: String, required: false},
+       
+//CE
 
         centroEducativo: { type: String, required: false },
         cedulaJuridica: { type: String, required: false },
@@ -32,9 +35,19 @@ let usuarioSchema = new mongoose.Schema(
         religion: { type: String, required: false },
         telCE: { type: String, required: false },
         web: { type: String, required: false },
+
+        facebook:{ type: String, required: false },
+        twitter:{ type: String, required: false },
+        instagram:{ type: String, required: false },
+
         fax: { type: String, required: false },
         histroia: { type: String, required: false },
         nombreCEP: { type: String, required: false },
+
+        segundoNombreCEP:{ type: String, required: false },
+        apellidoCEP:{ type: String, required: false },
+        segundoApellidoCEP:{ type: String, required: false },
+
         departamento: { type: String, required: false },
         telCEP: { type: String, required: false },
         extension: { type: String, required: false },
@@ -42,7 +55,18 @@ let usuarioSchema = new mongoose.Schema(
         emailCEP: { type: String, required: false },
         lat : { type: String, required: false },
         lng : { type: String, required: false },
-        edades : {type: String, required: false}
+        privacidad: {type : String, required : false},
+        clasificacion : {type : String, required : false},
+        tipo : {type : String, required : false},
+        grados : {type : String, required : false},
+        imagen : {type : String, required : false},
+        imagenCEP: {type : String, required : false},
+        direccionExacta : {type : String, required : false},
+        idiomas : {type : String, required : false},
+        servicios : {type : String, required : false},
+        descipcionesServicio : {type : String, required : false},
+
+        
 
 
     }

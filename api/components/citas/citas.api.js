@@ -124,14 +124,58 @@ module.exports.registrarCita = (req, res) =>{
     });
 };
 
-module.exports.listarCitas = (req, res) =>{
+module.exports.listarCitasPF = (req, res) =>{
+
     modeloCitas.find().sort({fecha: 'asc'}).then(
-        function (citas) {
-            if (citas.length > 0){
+        citas =>{
+
+            let citasPF = [];
+
+            for (let cita of citas){
+
+                if (cita.correoPadreFamilia === req.body.correo){
+                    citasPF.push(cita);
+                }
+            }
+
+            if (citasPF.length > 0 && req.body.correo !== undefined){
+
                 res.json(
                     {
                         success: true,
-                        citas: citas
+                        citas: citasPF
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        citas: 'No se encontró ninguna cita'
+                    }
+                );
+            }
+        }
+    );
+};
+
+module.exports.listarCitasCE = (req, res) =>{
+    modeloCitas.find().sort({fecha: 'asc'}).then(
+        citas =>{
+
+            let citasCE = [];
+
+            for (let cita of citas){
+                if (cita.nombreCentroEducativo === req.body.nombreCE){
+                    citasCE.push(cita);
+                }
+            }
+
+            if (citasCE.length > 0 && req.body.nombreCE !== undefined){
+
+                res.json(
+                    {
+                        success: true,
+                        citas: citasCE
                     }
                 );
             } else {

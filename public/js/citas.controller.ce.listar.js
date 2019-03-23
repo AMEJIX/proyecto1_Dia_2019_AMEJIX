@@ -2,7 +2,11 @@
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
-let listaPreguntasFrecuentes = getCitas();
+let nombreDelCentroEducativo = 'Joaquín García Monge';
+
+let listaPreguntasFrecuentes = getCitasCE(nombreDelCentroEducativo);
+
+insertarMensaje(`No se encontró ninguna cita agendada con el centro educativo ${nombreDelCentroEducativo}`);
 
 mostrarCitas();
 
@@ -16,22 +20,44 @@ function mostrarCitas() {
 
     tabla.innerHTML = '';
 
-    for (let i = 0; i < listaPreguntasFrecuentes.length; i++) {
-        if (listaPreguntasFrecuentes[i]['nombrePadreFamilia'].toLowerCase().includes(busqueda.toLowerCase())){
+    if (listaPreguntasFrecuentes !== 'No se encontró ninguna cita') {
 
-            let fila = tabla.insertRow();
+        if (document.getElementById('error')) eliminarMensaje();
 
-            let fechaHora = fila.insertCell();
+        for (let i = 0; i < listaPreguntasFrecuentes.length; i++) {
+            if (listaPreguntasFrecuentes[i]['nombrePadreFamilia'].toLowerCase().includes(busqueda.toLowerCase())) {
 
-            fechaHora.classList.add('fechaHora');
+                if (document.getElementById('error')) eliminarMensaje();
 
-            fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm');
+                let fila = tabla.insertRow();
 
-            let institucion = fila.insertCell();
+                let fechaHora = fila.insertCell();
 
-            institucion.classList.add('padre');
+                fechaHora.classList.add('fechaHora');
 
-            institucion.innerHTML = listaPreguntasFrecuentes[i]['nombrePadreFamilia'];
+                fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm');
+
+                let institucion = fila.insertCell();
+
+                institucion.classList.add('padre');
+
+                institucion.innerHTML = listaPreguntasFrecuentes[i]['nombrePadreFamilia'];
+            } else {
+                if (document.getElementById('error')) eliminarMensaje();
+                insertarMensaje(`No se encontró ninguna cita agendada con ${busqueda}`);
+            }
         }
+    } else {
+        if (document.getElementById('error')) eliminarMensaje();
+        insertarMensaje(` No se encontró ninguna cita agendada con el centro educativo ${nombreDelCentroEducativo}`);
     }
+}
+
+
+function eliminarMensaje() {
+    document.querySelector('.contenido').removeChild(document.getElementById('error'));
+}
+
+function insertarMensaje(mensaje) {
+    document.getElementById('tblCitas').insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> ${mensaje}</p>`);
 }

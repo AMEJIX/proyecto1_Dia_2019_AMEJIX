@@ -1,10 +1,34 @@
 'use strict';
 
-let getCitas = () =>{
+let getCitasPF = (correo) =>{
     let lista = [];
     let request = $.ajax(
         {
-            url: "http://localhost:4000/api/listarCitas",
+            url: "http://localhost:4000/api/padreFamilia/listarCitas/" + correo ,
+            type: "GET",
+            data: {},
+            contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            async: false
+        }
+    );
+
+    request.done(function (res) {
+        lista = res.citas;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+
+    return lista;
+};
+
+let getCitasCE = (nombreCE) =>{
+    let lista = [];
+    let request = $.ajax(
+        {
+            url: "http://localhost:4000/api/centroEducativo/listarCitas/" + nombreCE ,
             method: "GET",
             data: {},
             contentType:  'application/x-www-form-urlencoded; charset=UTF-8',

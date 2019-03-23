@@ -2,7 +2,11 @@
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
-let listaPreguntasFrecuentes = getCitas();
+let correoDelPadreDeFamilia = 'amejixteam@gmail.com';
+
+let listaPreguntasFrecuentes = getCitasPF(correoDelPadreDeFamilia);
+
+document.getElementById('tblCitas').insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> No se encontró ninguna cita agendada relacionada con el usuario con el correo ${correoDelPadreDeFamilia}</p>`);
 
 mostrarCitas();
 
@@ -16,22 +20,42 @@ function mostrarCitas() {
 
     tabla.innerHTML = '';
 
-    for (let i = 0; i < listaPreguntasFrecuentes.length; i++) {
-        if (listaPreguntasFrecuentes[i]['nombreCentroEducativo'].toLowerCase().includes(busqueda.toLowerCase())){
+    if (listaPreguntasFrecuentes.length > 0){
 
-            let fila = tabla.insertRow();
+        if (document.getElementById('error')) eliminarMensaje();
 
-            let fechaHora = fila.insertCell();
+        for (let i = 0; i < listaPreguntasFrecuentes.length; i++) {
+            if (listaPreguntasFrecuentes[i]['nombreCentroEducativo'].toLowerCase().includes(busqueda.toLowerCase())){
+                if (document.getElementById('error')) eliminarMensaje();
 
-            fechaHora.classList.add('fechaHora');
+                let fila = tabla.insertRow();
 
-            fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm');
+                let fechaHora = fila.insertCell();
 
-            let institucion = fila.insertCell();
+                fechaHora.classList.add('fechaHora');
 
-            institucion.classList.add('institucion');
+                fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm');
 
-            institucion.innerHTML = listaPreguntasFrecuentes[i]['nombreCentroEducativo'];
+                let institucion = fila.insertCell();
+
+                institucion.classList.add('institucion');
+
+                institucion.innerHTML = listaPreguntasFrecuentes[i]['nombreCentroEducativo'];
+            } else {
+                if (document.getElementById('error')) eliminarMensaje();
+                insertarMensaje(`No se encontró ninguna cita agendada con ${busqueda}`);
+            }
         }
+    } else {
+        if (document.getElementById('error')) eliminarMensaje();
+        insertarMensaje(`No se encontró ninguna cita agendada relacionada con el usuario con el correo ${correoDelPadreDeFamilia}`);
     }
+}
+
+function eliminarMensaje() {
+    document.querySelector('.contenido').removeChild(document.getElementById('error'));
+}
+
+function insertarMensaje(mensaje) {
+    document.getElementById('tblCitas').insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> ${mensaje}</p>`);
 }

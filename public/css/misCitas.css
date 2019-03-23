@@ -51,7 +51,22 @@ th{
     color: #f9aa33;
 }
 
+td:hover{
+    background-color: #344955;
+    color: #f9aa33;
+}
+
 .institucion, .fechaHora, .padre{
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
+}
+
+#error{
+    display: inline-block;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 20px;
+    color: #f9aa33;
+    width: 400px;
+    margin-left: 400px;
 }

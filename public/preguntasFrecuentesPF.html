@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/misCitas.css">
+    <link rel="stylesheet" href="css/preguntasFrecuentes.css">
 </head>
 
 <body>
@@ -42,51 +42,46 @@
         <div class="allContent">
             <div class="contenedor">
                 <div class="contenido" style="overflow-y: scroll;">
-                                    <!-- TODO EL CONTENIDO DEL CASO DE USO -->
-                    <h1>Mis citas agendadas</h1>
+                    <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+                    <h1>Preguntas frecuentes</h1>
+
+
 
                     <div id="cajaFiltrar">
-                        <label for="txtFiltrar" id="lblFiltrar">Busque una cita</label>
-                        <input type="text" id="txtFiltrar" placeholder="Nombre de la institución">
+                        <label for="txtFiltrar" id="lblFiltrar">Busca tu pregunta</label>
+                        <input type="text" id="txtFiltrar" placeholder="Escriba su pregunta sobre el centro educativo">
                     </div>
 
-                    <table id="tblCitas" align="center">
-                        <thead>
-                            <th>Fecha y hora</th>
-                            <th>Centro educativo</th>
-                        </thead>
+                    <table id="tblPreguntasFrecuentes" align="center">
                         <tbody></tbody>
                     </table>
-
                 </div>
             </div>
-            <div class="sidebar">
-                <div class="line"></div>
-                <div class="contenedorSidebar">
-                    <div class="opcion"><a href="preguntasFrecuentesCE&Admin.html">Preguntas frecuentes</a></div>
-                    <div class="opcion"><a href="criteriosBusqueda.html">Criterios de búsqueda</a></div>
-                    <div class="opcion">
-                        <li id="li"><a href="">Citas<i class="fas fa-sort-down"></i></a>
-                           <ul>
-                                <div class="subOpcion">
-                                    <li><a href="citas.html">Agendar</a></li>
-                                </div>
-                            </ul>
-                        </li>
-                    </div>
-                     <div class="opcion"><a href="misCitasPF.html">Mis citas</a></div>
-                     <div class="opcion"><a href="misCitasCE.html">Mis citas</a></div>
-                </div>
-            </div>
+           <div class="sidebar">
+               <div class="line"></div>
+               <div class="contenedorSidebar">
+                   <div class="opcion"><a href="preguntasFrecuentesCE&Admin.html">Preguntas frecuentes</a></div>
+                   <div class="opcion"><a href="criteriosBusqueda.html">Criterios de búsqueda</a></div>
+                   <div class="opcion">
+                       <li id="li"><a href="">Citas<i class="fas fa-sort-down"></i></a>
+                          <ul>
+                               <div class="subOpcion">
+                                   <li><a href="citas.html">Agendar</a></li>
+                               </div>
+                           </ul>
+                       </li>
+                   </div>
+                    <div class="opcion"><a href="misCitasPF.html">Mis citas</a></div>
+                    <div class="opcion"><a href="misCitasCE.html">Mis citas</a></div>
+               </div>
+           </div>
         </div>
     </main>
 
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/citas.servicio.js"></script>
-    <script src="js/moment.js"></script>
-    <script src="js/citas.controller.pf.listar.js"></script>
+    <script src="js/preguntasFrecuentes.servicio.js"></script>
+    <script src="js/preguntasFrecuentes.controller.listar.js"></script>
 </body>
 
 </html>

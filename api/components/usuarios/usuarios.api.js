@@ -10,6 +10,7 @@ module.exports.registrar = (req, res) => {
 
         {
 
+            //PF
             userType: req.body.userType,
             nombre: req.body.nombre,
             segundoNombre: req.body.segundoNombre,
@@ -23,7 +24,10 @@ module.exports.registrar = (req, res) => {
             canton: req.body.canton,
             distrito: req.body.distrito,
             contrasenna: req.body.contrasenna,
+            edades: req.body.edades,
+            imagenPF: req.body.imagenPF,
 
+            //CE
             centroEducativo: req.body.centroEducativo,
             cedulaJuridica: req.body.cedulaJuridica,
             nombreComercial: req.body.nombreComercial,
@@ -32,17 +36,36 @@ module.exports.registrar = (req, res) => {
             religion: req.body.religion,
             telCE: req.body.telCE,
             web: req.body.web,
+            facebook: req.body.facebook,
+            twitter: req.body.twitter,
+            instagram: req.body.instagram,
             fax: req.body.fax,
             histroia: req.body.histroia,
+
+            nombreCEP: req.body.nombreCEP,
+            segundoNombreCEP: req.body.segundoNombreCEP,
+            apellidoCEP: req.body.apellidoCEP,
+            segundoApellidoCEP: req.body.segundoApellidoCEP,
+
             departamento: req.body.departamento,
             telCEP: req.body.telCEP,
             extension: req.body.extension,
             numIDCEP: req.body.numIDCEP,
             emailCEP: req.body.emailCEP,
-            lat : req.body.lat,
-            lng : req.body.lng,
-            edades : req.body.edades
-            
+            lat: req.body.lat,
+            lng: req.body.lng,
+            privacidad: req.body.privacidad,
+            clasificacion: req.body.clasificacion,
+            tipo: req.body.tipo,
+            grados: req.body.grados,
+            imagen: req.body.imagen,
+            imagenCEP: req.body.imagenCEP,
+            direccionExacta: req.body.direccionExacta,
+            idiomas: req.body.idiomas,
+            servicios : req.body.servicios,
+            descipcionesServicio : req.body.descipcionesServicio,
+    
+
 
 
 

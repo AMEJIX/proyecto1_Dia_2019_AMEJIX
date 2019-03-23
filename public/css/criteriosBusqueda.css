@@ -114,3 +114,8 @@ td{
     vertical-align: middle;
     text-align: center;
 }
+
+td:hover{
+    background-color: #344955;
+    color: #f9aa33;
+}

@@ -2,7 +2,13 @@
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
-let listaPreguntasFrecuentes = getPreguntasFrecuentes();
+
+
+let idCentroEducativo = '5c9506cdb643431b5cb7d185';
+
+let listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
+
+document.getElementById('tblPreguntasFrecuentes').insertAdjacentHTML('afterend', `<p id="error" id="mensajito">No se encontró ninguna pregunta frecuente relacionada con este centro educativo</p>`);
 
 mostrarPreguntasFrecuentes();
 
@@ -16,20 +22,43 @@ function mostrarPreguntasFrecuentes() {
 
     tabla.innerHTML = '';
 
-    for (let i = 0; i < listaPreguntasFrecuentes.length; i++) {
-        if (listaPreguntasFrecuentes[i]['pregunta'].toLowerCase().includes(busqueda.toLowerCase())){
+    if (listaPreguntasFrecuentes.length > 0){
 
-            let pregunta = tabla.insertRow();
+        if (document.getElementById('error')) eliminarMensaje();
 
-            pregunta.classList.add('pregunta');
+        for (let i = 0; i < listaPreguntasFrecuentes.length; i++) {
 
-            pregunta.innerHTML = listaPreguntasFrecuentes[i]['pregunta'];
+            if (listaPreguntasFrecuentes[i]['pregunta'].toLowerCase().includes(busqueda.toLowerCase())){
 
-            let respuesta = tabla.insertRow();
+                if (document.getElementById('error')) eliminarMensaje();
 
-            respuesta.classList.add('respuesta');
+                let pregunta = tabla.insertRow();
 
-            respuesta.innerHTML = listaPreguntasFrecuentes[i]['respuesta'];
+                pregunta.classList.add('pregunta');
+
+                pregunta.innerHTML = listaPreguntasFrecuentes[i]['pregunta'];
+
+                let respuesta = tabla.insertRow();
+
+                respuesta.classList.add('respuesta');
+
+                respuesta.innerHTML = listaPreguntasFrecuentes[i]['respuesta'];
+            } else{
+                if (document.getElementById('error')) eliminarMensaje();
+                insertarMensaje(`No se encontró la pregunta ${busqueda}`);
+            }
         }
+    } else {
+        if (document.getElementById('error')) eliminarMensaje();
+        insertarMensaje(`No se encontró ninguna pregunta frecuente relacionada con este centro educativo`);
     }
+
+}
+
+function eliminarMensaje() {
+    document.querySelector('.contenido').removeChild(document.getElementById('error'));
+}
+
+function insertarMensaje(mensaje) {
+    document.getElementById('tblPreguntasFrecuentes').insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> ${mensaje}</p>`);
 }

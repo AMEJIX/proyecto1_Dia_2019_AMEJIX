@@ -4,6 +4,18 @@ const express = require('express');
 const router = express.Router();
 const apiCitas = require('./citas.api');
 
+router.param('correo',function(req, res, next,correo){
+    req.body.correo = correo;
+
+    next();
+});
+
+router.param('nombreCE',function(req, res, next,nombreCE){
+    req.body.nombreCE = nombreCE;
+
+    next();
+});
+
 router.route('/registrarCita')
     .post(
         function (req, res) {
@@ -11,11 +23,21 @@ router.route('/registrarCita')
         }
     );
 
-router.route('/listarCitas')
+router.route('/padreFamilia/listarCitas/:correo')
     .get(
         function (req, res) {
-            apiCitas.listarCitas(req, res);
+
+            apiCitas.listarCitasPF(req, res);
         }
     );
+
+router.route('/centroEducativo/listarCitas/:nombreCE')
+    .get(
+        function (req, res) {
+            apiCitas.listarCitasCE(req, res);
+        }
+    );
+
+
 
 module.exports = router;

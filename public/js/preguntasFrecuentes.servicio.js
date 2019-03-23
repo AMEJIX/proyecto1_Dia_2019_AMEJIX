@@ -1,10 +1,34 @@
 'use strict';
 
-let getPreguntasFrecuentes = () =>{
+let validarPregunta = (pregunta) =>{
     let lista = [];
     let request = $.ajax(
         {
-            url: "http://localhost:4000/api/listarPreguntasFrecuentes",
+            url: "http://localhost:4000/api/validarNuevaPregunta",
+            method: "GET",
+            data: {pregunta: pregunta},
+            contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            async: false
+        }
+    );
+
+    request.done(function (res) {
+        lista = res.success;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+
+    return lista;
+};
+
+let getPreguntasFrecuentes = (idCE) =>{
+    let lista = [];
+    let request = $.ajax(
+        {
+            url: "http://localhost:4000/api/centroEducativo/listarPreguntasFrecuentes/" + idCE,
             method: "GET",
             data: {},
             contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
@@ -24,12 +48,13 @@ let getPreguntasFrecuentes = () =>{
     return lista;
 };
 
-let registrarPreguntaFrecuente = (ppregunta, prespuesta) =>{
+let registrarPreguntaFrecuente = (idCE, ppregunta, prespuesta) =>{
     let request = $.ajax(
         {
             url: "http://localhost:4000/api/registrarPreguntaFrecuente",
             method: "POST",
             data: {
+                idCE: idCE,
                 pregunta: ppregunta,
                 respuesta: prespuesta
             },

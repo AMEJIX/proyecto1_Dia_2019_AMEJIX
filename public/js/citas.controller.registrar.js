@@ -68,9 +68,9 @@ let validar = () =>{
 let agendar = () =>{
 
     if (!validar()){
-        let nombrePF = 'Juana Martínez';
+        let nombrePF = 'Lili Altamirano Miranda';
         let correoPF = 'amejixteam@gmail.com';
-        let nombreCE = 'Joaquín García Monge';
+        let nombreCE = 'Monseñor Rubén Odio';
 
         let fechaHora = new Date(inputFecha.value + ' ' + inputHora.value);
 

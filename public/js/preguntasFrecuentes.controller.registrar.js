@@ -1,6 +1,8 @@
 'use strict';
 
+
 const txtPregunta = document.querySelector('#txtPregunta');
+
 const txtRespuesta = document.querySelector('#txtRespuesta');
 
 const btnEnviar = document.querySelector('#btnEnviar');
@@ -9,7 +11,7 @@ let validar = () =>{
 
     let error = false;
 
-    if (txtPregunta.value === '') {
+    if (txtPregunta.value === '' || validarPregunta(txtPregunta.value)) {
         error = true;
         txtPregunta.classList.add('errorInput');
         txtPregunta.classList.remove('successInput');
@@ -26,7 +28,7 @@ let validar = () =>{
         txtRespuesta.classList.remove('errorInput');
         txtRespuesta.classList.add('successInput');
     }
-    
+
     return error;
 };
 
@@ -37,7 +39,7 @@ let agregar = () =>{
         codigo = txtPregunta.value;
         nombre = txtRespuesta.value;
 
-        registrarPreguntaFrecuente(codigo, nombre);
+        registrarPreguntaFrecuente('5c9506cdb643431b5cb7d185', codigo, nombre);
 
         setTimeout("location.reload()", 1500);
 
@@ -51,7 +53,7 @@ let agregar = () =>{
             {
                 type: 'warning',
                 titile: 'Registro fallido de la pregunta frecuente',
-                text: 'Asegúrese de haber llenado bien los campos'
+                text: 'Asegúrese de haber llenado bien los campos y de que la pregunta no esté registrada ya en su perfil'
             }
         );
     }
