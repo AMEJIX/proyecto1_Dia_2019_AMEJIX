@@ -119,3 +119,14 @@ td:hover{
     background-color: #344955;
     color: #f9aa33;
 }
+
+#error{
+    display: inline-block;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 20px;
+    color: #f9aa33;
+    width: 400px;
+    margin-left: 400px;
+}

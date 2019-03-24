@@ -1,0 +1,50 @@
+.login{
+    width: 30%;
+    margin-top: 90px;
+    margin-left:auto; 
+    margin-right:auto;
+    border: solid 1px rgb(223, 223, 223);
+    border-radius: 5px;
+    }
+    
+    .espacio{
+        height: 50px;
+    }
+    
+    .titulo{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding: 25px 0;
+        color: rgb(109, 109, 109);
+    }
+    
+    
+    label {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    input {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    
+    
+     
+    
+    #btnIniciar{
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px;    
+    }
+    
+    
+
+.errorInput{
+    border: 2px solid #ED4C67;
+}

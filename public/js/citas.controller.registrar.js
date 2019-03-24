@@ -6,6 +6,12 @@ const btnAgendar = document.querySelector('#btnAgendar');
 const lblERRFecha = document.querySelector('#lblERRFecha');
 const lblERRHora = document.querySelector('#lblERRHora');
 
+let user = JSON.parse(sessionStorage.getItem('usuario'));
+
+if(user.userType === 'centroEducativo'){
+    if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
+}
+
 /*IMPORTANTE
 
     * Falta obtener el nombre y el correo del padre de familia que ha iniciado sesión
@@ -68,9 +74,14 @@ let validar = () =>{
 let agendar = () =>{
 
     if (!validar()){
-        let nombrePF = 'Lili Altamirano Miranda';
-        let correoPF = 'amejixteam@gmail.com';
-        let nombreCE = 'Monseñor Rubén Odio';
+        let nombrePF = user.nombre;
+        let correoPF = user.email;
+
+        //////////////// QUEMADO
+
+        let nombreCE = 'Joaquín García Monge';
+
+        //////////////// QUEMADO
 
         let fechaHora = new Date(inputFecha.value + ' ' + inputHora.value);
 

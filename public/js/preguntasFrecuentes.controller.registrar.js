@@ -32,14 +32,14 @@ let validar = () =>{
     return error;
 };
 
-let codigo, nombre;
+let pregunta, respuesta;
 
 let agregar = () =>{
     if (!validar()){
-        codigo = txtPregunta.value;
-        nombre = txtRespuesta.value;
+        pregunta = txtPregunta.value;
+        respuesta = txtRespuesta.value;
 
-        registrarPreguntaFrecuente('5c9506cdb643431b5cb7d185', codigo, nombre);
+        registrarPreguntaFrecuente(user._id, pregunta, respuesta);
 
         setTimeout("location.reload()", 1500);
 

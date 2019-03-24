@@ -2,7 +2,13 @@
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
-let nombreDelCentroEducativo = 'Joaquín García Monge';
+let user = JSON.parse(sessionStorage.getItem('usuario'));
+
+if(user.userType === 'padreFamilia'){
+    if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
+}
+
+let nombreDelCentroEducativo = user.nombreComercial;
 
 let listaPreguntasFrecuentes = getCitasCE(nombreDelCentroEducativo);
 

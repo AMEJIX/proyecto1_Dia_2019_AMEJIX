@@ -2,7 +2,13 @@
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
-let correoDelPadreDeFamilia = 'amejixteam@gmail.com';
+let user = JSON.parse(sessionStorage.getItem('usuario'));
+
+if(user.userType === 'centroEducativo'){
+    if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
+}
+
+let correoDelPadreDeFamilia = user.email;
 
 let listaPreguntasFrecuentes = getCitasPF(correoDelPadreDeFamilia);
 

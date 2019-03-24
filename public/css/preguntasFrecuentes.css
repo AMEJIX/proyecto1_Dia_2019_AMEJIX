@@ -60,6 +60,7 @@ textarea{
 }
 
 #txtPregunta, #txtRespuesta, #txtFiltrar{
+    font-family: 'Raleway', sans-serif;
     font-size: 16px;
     outline: none;
 }
@@ -97,6 +98,14 @@ table#tblPreguntasFrecuentes tr{
 
 .pregunta:hover, .respuesta:hover{
     color: #f9aa33;
+}
+
+.pregunta:hover{
+    font-size: 26px;
+}
+
+.respuesta:hover{
+    font-size: 20px;
 }
 
 .respuesta{
