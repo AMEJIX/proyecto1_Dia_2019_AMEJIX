@@ -8,7 +8,7 @@ if(user.userType === 'padreFamilia'){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
 }
 
-let nombreDelCentroEducativo = user.nombreComercial;
+let nombreDelCentroEducativo = user.centroEducativo;
 
 let listaPreguntasFrecuentes = getCitasCE(nombreDelCentroEducativo);
 
@@ -41,7 +41,7 @@ function mostrarCitas() {
 
                 fechaHora.classList.add('fechaHora');
 
-                fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm');
+                fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm a');
 
                 let institucion = fila.insertCell();
 

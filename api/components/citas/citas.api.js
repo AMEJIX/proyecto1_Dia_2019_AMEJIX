@@ -165,7 +165,8 @@ module.exports.listarCitasCE = (req, res) =>{
             let citasCE = [];
 
             for (let cita of citas){
-                if (cita.nombreCentroEducativo === req.body.nombreCE){
+                if (cita.nombreCentroEducativo === req.body.nombreCE || cita.centroEducativo === req.body.nombreCE ){
+
                     citasCE.push(cita);
                 }
             }

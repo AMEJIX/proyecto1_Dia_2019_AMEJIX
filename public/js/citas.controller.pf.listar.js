@@ -40,7 +40,7 @@ function mostrarCitas() {
 
                 fechaHora.classList.add('fechaHora');
 
-                fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm');
+                fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm a');
 
                 let institucion = fila.insertCell();
 
