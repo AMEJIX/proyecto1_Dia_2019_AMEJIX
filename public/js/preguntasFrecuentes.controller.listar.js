@@ -1,12 +1,19 @@
 'use strict';
 
+
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
 let user = JSON.parse(sessionStorage.getItem('usuario'));//ya está declarado
 
 let idCentroEducativo = user._id;
 
+if (localStorage.getItem('idCentro')){
+    idCentroEducativo = localStorage.getItem('idCentro');
+}
+
 let listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
+
+localStorage.removeItem('idCentro');
 
 console.log(listaPreguntasFrecuentes.length);
 
