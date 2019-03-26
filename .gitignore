@@ -217,5 +217,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-public/js/mostrarNombre.controller.js

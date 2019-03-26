@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf22022-7a7d-4a24-95d7-c6b6f83fc35d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="175">
+              <caret line="218" column="5" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -303,7 +303,7 @@
       <workItem from="1553527370881" duration="346000" />
       <workItem from="1553528179490" duration="747000" />
       <workItem from="1553529438611" duration="1280000" />
-      <workItem from="1553530880180" duration="25655000" />
+      <workItem from="1553530880180" duration="25922000" />
     </task>
     <task id="LOCAL-00001" summary="Registrar preguntas frecuentes 1.0 listo.">
       <created>1552448241416</created>
@@ -330,7 +330,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142460000" />
+    <option name="totallyTimeSpent" value="142727000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -741,8 +741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="175">
+          <caret line="218" column="5" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="5" />
         </state>
       </provider>
     </entry>
