@@ -41,6 +41,7 @@ textarea{
 
 #lblFiltrar{
     width: 120px;
+    margin-left: 200px;
 }
 
 #txtFiltrar{
@@ -58,6 +59,7 @@ textarea{
     margin-top: 50px;
     display: inline-block;
 }
+
 
 #txtPregunta, #txtRespuesta, #txtFiltrar{
     font-family: 'Raleway', sans-serif;

@@ -190,7 +190,6 @@ DerivedData/
 !default.perspectivev3
 ### NetBeans template
 nbproject/private/
-build/
 nbbuild/
 dist/
 nbdist/
@@ -220,3 +219,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+public/js/mostrarNombre.controller.js

@@ -4,9 +4,9 @@ let validarPregunta = (pregunta) =>{
     let lista = [];
     let request = $.ajax(
         {
-            url: "http://localhost:4000/api/validarNuevaPregunta",
+            url: "http://localhost:4000/api/validarNuevaPregunta/" + pregunta,
             method: "GET",
-            data: {pregunta: pregunta},
+            data: {},
             contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
             dataType: "json",
             async: false
@@ -47,6 +47,8 @@ let getPreguntasFrecuentes = (idCE) =>{
 
     return lista;
 };
+
+
 
 let registrarPreguntaFrecuente = (idCE, ppregunta, prespuesta) =>{
     let request = $.ajax(

@@ -5,9 +5,27 @@
     display: none;
 }
 
+#btnRegistrarCentroEducativo, #btnRegistrarPadreFamilia {
+    display: none;
+}
+
+#divCaptchaCE, #divCaptchaPF{
+    margin-top: 50px;
+    margin-bottom: 20px;
+  
+}
+
+span {
+    border: 1px solid black;
+}
+
+
 #divCantidadHijos{
     margin-bottom: 20px;
 }
+
+
+
 
 main{
     color : #344955;

@@ -65,6 +65,7 @@ let usuarioSchema = new mongoose.Schema(
         idiomas : {type : String, required : false},
         servicios : {type : String, required : false},
         descipcionesServicio : {type : String, required : false},
+        documentCE : {type : String, required : false},
 
         
 

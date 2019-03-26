@@ -1,6 +1,5 @@
 
 if (!sessionStorage.getItem('usuario')) {
-
     window.location.href = 'inicioSesion.html';
 } else {
 

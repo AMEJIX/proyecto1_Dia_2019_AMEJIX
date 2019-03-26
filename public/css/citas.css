@@ -48,6 +48,7 @@ input[type=date]{
     width: 400px;
     height: 150px;
     font-size: 45px;
+    color: #344955;
 }
 
 input[type=time]{
@@ -56,6 +57,7 @@ input[type=time]{
     letter-spacing: 3px;
     width: 400px;
     height: 100px;
+    color: #344955;
 }
 
 input[type=time],input[type=date] {

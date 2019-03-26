@@ -117,6 +117,8 @@ function setServicios() {
 
     var newDiv = document.querySelector('.serviciosAdicionales');
 
+
+
     var newSecondDiv = document.createElement('div');
     newSecondDiv.style.display = 'block';
 
@@ -144,6 +146,8 @@ function setServicios() {
     newDiv.appendChild(newSecondDiv);
     newDiv.appendChild(newThirdDiv);
 
+    newDiv.style.height = '200px';
+    newDiv.style.overflow = 'auto';
 
 }
 
@@ -242,7 +246,7 @@ function passwordGen() {
         let h = alpha[Math.floor(Math.random() * alpha.length)];
 
         if (i == 5) {
-            code = a + b + c + d + e + f; 
+            code = a + b + c + d + e + f;
         }
 
     }
@@ -266,6 +270,31 @@ const btnRegistroFam = document.querySelector('#btnRegistrarPadreFamilia')
 
 const contrasennaGenerada = passwordGen()
 const fotoRegistroPF = document.querySelector('#imagePreviewPF');
+
+
+
+/******************** Captcha PF ********************/
+let divCaptchaPF = document.querySelector('#divCaptchaPF');
+let spanCaptchaPF = document.querySelector('#spanCaptchaPF');
+spanCaptchaPF.innerHTML = passwordGen();
+let textCaptchaPF = document.querySelector('#textCaptchaPF');
+let buttonCheckCaptchaPF = document.querySelector('#buttonCheckCaptchaPF')
+
+
+buttonCheckCaptchaPF.addEventListener('click', checkCaptchaPF);
+
+function checkCaptchaPF() {
+
+    if (textCaptchaPF.value == spanCaptchaPF.innerHTML) {
+        btnRegistrarPadreFamilia.style.display = 'block';
+        divCaptchaPF.style.display = 'none';
+    } else {
+        spanCaptcha.innerHTML = passwordGen();
+    }
+}
+
+/**************************************************/
+
 
 
 //DATOS CENTRO EDUCATIVO
@@ -302,7 +331,7 @@ const inputTelefonoCEP = document.querySelector('#txtTelefonoCEP')
 const inputExtension = document.querySelector('#txtExtension')
 const inputNumIDCEP = document.querySelector('#txtNumIDCEP')
 const inputEmailCEP = document.querySelector('#txtEmailCEP')
-const btnRegistrarCent = document.querySelector('#btnRegistrarCentroEducativo')
+const btnRegistrarCentroEducativo = document.querySelector('#btnRegistrarCentroEducativo')
 
 const fieldsetGenero = document.querySelector('#fieldsetGenero');
 const fieldsetPrivacidad = document.querySelector('#fieldsetPrivacidad');
@@ -313,6 +342,32 @@ const fieldsetIdiomas = document.querySelector('#fieldsetIdiomas');
 const fotoRegistroCE = document.querySelector('#imagePreview');
 const fotoRegistroCEP = document.querySelector('#imagePreviewCEP');
 const inputDireccionExacta = document.querySelector('#textDireccionExacta')
+
+
+/******************** Captcha CE ********************/
+let divCaptchaCE = document.querySelector('#divCaptchaCE');
+let spanCaptchaCF = document.querySelector('#spanCaptchaCF');
+spanCaptchaCF.innerHTML = passwordGen();
+let textCaptchaCE = document.querySelector('#textCaptchaCE');
+let buttonCheckCaptchaCE = document.querySelector('#buttonCheckCaptchaCE')
+
+
+buttonCheckCaptchaCE.addEventListener('click', checkCaptchaCE);
+
+function checkCaptchaCE() {
+
+    if (textCaptchaCE.value == spanCaptchaCF.innerHTML) {
+        btnRegistrarCentroEducativo.style.display = 'block';
+        divCaptchaCE.style.display = 'none';
+    } else {
+        spanCaptcha.innerHTML = passwordGen();
+    }
+}
+
+/**************************************************/
+
+const documentoCE = document.querySelector('#documentPreview');
+
 
 let validarPadreFamilia = () => {
     let error = false;
@@ -399,6 +454,7 @@ function obtenerDatosPadreFamilia() {
         }
 
         let imagenPF = fotoRegistroPF.src;
+      
 
         console.log(contrasenna)
         registrarPadreFamilia(userType,
@@ -464,12 +520,7 @@ let validarCentroEducativo = () => {
 
 
 
-    if (inputNombreComercial.value == '') {
-        error = true;
-        inputNombreComercial.classList.add('errorInput');
-    } else {
-        inputNombreComercial.classList.remove('errorInput');
-    }
+
 
 
     if (inputAnno.value == '') {
@@ -580,6 +631,15 @@ function obtenerDatosCentroEducativo() {
         let clasificacion = document.querySelector('#fieldsetClasificacion input[type=radio]:checked').value;
 
 
+
+
+
+
+
+
+
+
+
         //Lo siguiente permite obtener los datos selccionads del checkList tipo de institucion
         let arregloTipo = document.getElementsByClassName('checkboxTipo');
         let tipo = "";
@@ -613,7 +673,7 @@ function obtenerDatosCentroEducativo() {
         }
 
         let imagen = fotoRegistroCE.src;
-          let imagenCEP = fotoRegistroCEP.src;
+        let imagenCEP = fotoRegistroCEP.src;
 
 
 
@@ -637,7 +697,8 @@ function obtenerDatosCentroEducativo() {
             descipcionesServicio += inputsDescripcionServicios[i].value + ', ';
         }
 
-
+        
+        let documentCE = documentoCE.src;
 
         registrarCentroEducativo(userType,
             centroEducativo,
@@ -678,7 +739,8 @@ function obtenerDatosCentroEducativo() {
             direccionExacta,
             idiomas,
             servicios,
-            descipcionesServicio
+            descipcionesServicio,
+            documentCE
 
 
         )
@@ -700,6 +762,6 @@ function obtenerDatosCentroEducativo() {
 
 }
 
-btnRegistrarCent.addEventListener('click', obtenerDatosCentroEducativo);
+btnRegistrarCentroEducativo.addEventListener('click', obtenerDatosCentroEducativo);
 
 

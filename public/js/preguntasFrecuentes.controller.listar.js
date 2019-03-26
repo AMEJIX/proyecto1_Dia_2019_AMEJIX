@@ -10,7 +10,6 @@ let listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
 
 console.log(listaPreguntasFrecuentes.length);
 
-
 // let idCentroEducativo = '5c9506cdb643431b5cb7d185';
 console.log(user.userType);
 if(user.userType == 'centroEducativo' || user.userType == 'administrador'){

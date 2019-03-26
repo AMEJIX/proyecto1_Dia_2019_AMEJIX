@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="css/registroUsuarios.css">
+
 </head>
 
 <body>
@@ -156,9 +157,16 @@
                                 <figure class='imageHolder'>
                                     <img id="imagePreviewPF">
                                 </figure>
-                                <div >
-                                    <button class="button" type="button"
-                                        id="fotoPF">Subir Foto</button>
+                                <div>
+                                    <button class="button" type="button" id="fotoPF">Subir Foto</button>
+                                </div>
+
+                                <div id="divCaptchaPF">
+                                    <h1> Ingreso de Captcha</h1>
+                                    <label for="spanCaptchaPF">Captcha:</label>
+                                    <span id="spanCaptchaPF"></span>
+                                    <input type="tel" maxlength="20" id="textCaptchaPF" title="opcional">
+                                    <button class="button" type="button" id="buttonCheckCaptchaPF">Revisar</button>
                                 </div>
 
                                 <div class="boton registroPadreFamilia">
@@ -168,7 +176,7 @@
 
 
 
-                                
+
                             </div>
                         </form>
                     </section>
@@ -178,11 +186,7 @@
 
 
                     <!-- Seleccion de tipo Centro Educativo-->
-                    <!-- Falta foto-->
-                    <!-- Ubicacion-->
-                    <!-- Niveles-->
-                    <!-- Canton-->
-                    <!-- Distrito-->
+
                     <!-- Captcha-->
 
 
@@ -290,9 +294,8 @@
                                     <figure class='imageHolder'>
                                         <img id="imagePreviewCEP">
                                     </figure>
-                                    <div >
-                                        <button class="button" type="button"
-                                            id="fotoCEP">Subir Foto</button>
+                                    <div>
+                                        <button class="button" type="button" id="fotoCEP">Subir Foto</button>
                                     </div>
 
                                     <h1>Reseña Histórica</h1>
@@ -308,7 +311,7 @@
                                     </div>
 
 
-    
+
 
 
 
@@ -362,11 +365,11 @@
 
                                     <div class="divNivelesEscuela">
 
-                                        </div>
-    
-                                        <div class="divNivelesColegio">
-    
-                                        </div>
+                                    </div>
+
+                                    <div class="divNivelesColegio">
+
+                                    </div>
 
                                     <fieldset id="fieldsetIdiomas">
                                         <h1>Idiomas ofrecidos</h1>
@@ -397,7 +400,7 @@
                                     </fieldset>
 
 
-                             
+
 
 
 
@@ -472,13 +475,19 @@
                                     <h1>Servicios Adicionales</h1>
                                     <div class="serviciosAdicionales">
 
-                                        </div>
+                                    </div>
                                     <button id="agregarServicios" type="button">Agregar servicio</button>
 
-                                
+                                    <div>
+                                        <figure class='imageHolder'>
+                                            <img id="documentPreview">
+                                        </figure>
+                                        <button id="buttonAgregarDocumento" type="button">Agregar PDF</button>
+                                    </div>
 
 
-                                   
+
+
 
 
 
@@ -497,9 +506,22 @@
                             <h1>Ubicación en mapa</h1>
                             <div id="map"></div>
 
+
+                            <div id="divCaptchaCE">
+                                <h1> Ingreso de Captcha</h1>
+                                <label for="spanCaptchaCF">Captcha:</label>
+                                <span id="spanCaptchaCF"></span>
+                                <input type="tel" maxlength="20" id="textCaptchaCE" title="opcional">
+                                <button class="button" type="button" id="buttonCheckCaptchaCE">Revisar</button>
+                            </div>
+
+
                             <div class="boton RegistroCentroEducativo">
                                 <button class="button" type="button" id="btnRegistrarCentroEducativo">Registrar</button>
                             </div>
+
+
+
 
 
                         </form>

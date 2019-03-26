@@ -4,24 +4,13 @@ const modeloPreguntasFrecuentes = require('./preguntasFrecuentes.model');
 
 module.exports.validarNuevaPregunta = (req, res) =>{
 
-    // if (req.body.pregunta !== undefined && req.body.respuesta !== undefined) {
-    //
-    // }
-    //
-    let pfTemporal = new modeloPreguntasFrecuentes(
-        {
-            pregunta: req.body.pregunta,
-            // respuesta: req.body.respuesta
-        }
-    );
-
     modeloPreguntasFrecuentes.find().sort({pregunta: 'asc'}).then(
         function (preguntasFrecuentes) {
             if (preguntasFrecuentes.length > 0){
                 let existe = false;
 
                 for (let preguntaFrecuente of preguntasFrecuentes){
-                    if (pfTemporal.pregunta == preguntaFrecuente.pregunta){
+                    if (preguntaFrecuente.pregunta.toLowerCase() === req.body.pregunta.toLowerCase()){
                         existe = true;
                     }
                 }
@@ -116,6 +105,41 @@ module.exports.listarPreguntasFrecuentes = (req, res) =>{
     );
 };
 
+/*
+module.exports.listarPreguntasFrecuentesPorPerfil = (req, res) =>{
+    modeloPreguntasFrecuentes.find().sort({pregunta: 'asc'}).then(
+        preguntasFrecuentes =>{
+
+            let preguntasFrecuentesCE = [];
+
+            for (let pregFrec of preguntasFrecuentes){
+                if (pregFrec.idCE === req.body.idCE){
+                    preguntasFrecuentesCE.push(pregFrec);
+                }
+            }
+
+            console.log("Id del centro recibido: " + req.body.idCE);
+            // console.log(preguntasFrecuentesCE);
+
+            if (preguntasFrecuentes.length > 0 && req.body.idCE !== undefined){
+
+                res.json(
+                    {
+                        success: true,
+                        preguntasFrecuentes: preguntasFrecuentesCE
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        preguntasFrecuentes: 'No se encontraron preguntas frecuentes'
+                    }
+                );
+            }
+        }
+    );
+};*/
 // module.exports.listarPreguntasFrecuentesPF = (req, res) =>{
 //     modeloPreguntasFrecuentes.find().sort({pregunta: 'asc'}).then(
 //          preguntasFrecuentes =>{

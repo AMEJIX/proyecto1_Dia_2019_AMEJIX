@@ -54,7 +54,7 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
 
 };
 
-let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP,direccionExacta, idiomas, servicios, descipcionesServicio) => {
+let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP,direccionExacta, idiomas, servicios, descipcionesServicio, documentCE) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_usuario",
@@ -100,7 +100,8 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
             direccionExacta : direccionExacta,
             idiomas : idiomas,
             servicios : servicios,
-            descipcionesServicio : descipcionesServicio
+            descipcionesServicio : descipcionesServicio,
+            documentCE : documentCE
 
             
 

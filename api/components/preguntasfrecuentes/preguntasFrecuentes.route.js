@@ -12,7 +12,13 @@ router.param('idCE', (req, res, next, idCE) =>{
     next();
 });
 
-router.route('/validarNuevaPregunta')
+router.param('pregunta', (req, res, next, pregunta) =>{
+    req.body.pregunta = pregunta;
+
+    next();
+});
+
+router.route('/validarNuevaPregunta/:pregunta')
     .get(
         function (req, res) {
             apiPreguntasFrecuentes.validarNuevaPregunta(req, res);
