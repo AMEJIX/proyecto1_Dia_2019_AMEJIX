@@ -48,7 +48,12 @@ router.route('/listarPFPorSA')
             api_usuarios.listarPFPorSA(req, res);
         }
 );
+
+router.route('/listarInfoMEP')
+    .get(
+        function (req, res){
+            api_usuarios.listarMEP(req, res);
+        }
+);
     
-
-
 module.exports = router;

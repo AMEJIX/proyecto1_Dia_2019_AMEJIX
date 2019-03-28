@@ -11,8 +11,8 @@ function ocultar() {
         document.querySelector('#aRegistrarCE').style.display = 'none';
         document.querySelector('#verPadres').style.display = 'none';
         document.querySelector('#aPreguntasCE').style.display = 'none';
-
-
+        
+       
     } else if (user.userType == "centroEducativo") {
         document.querySelector('#menuAdministrativo').style.display = 'none';
         document.querySelector('#menuInfoCE').style.display = 'none';
@@ -27,6 +27,7 @@ function ocultar() {
         document.querySelector('#menuCitas').style.display = 'none';
         document.querySelector('#aFavoritos').style.display = 'none';
         document.querySelector('#aCEcercanos').style.display = 'none';
+        document.querySelector('#verInfoMep').style.display = 'none';
     }
 
 }

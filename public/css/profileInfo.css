@@ -17,6 +17,7 @@
 img{
     width: 200px;
     height: 200px;
+    
 }
 
 #map 
@@ -67,6 +68,9 @@ h1{
   
 }
 
+section{
+    margin-top: 75px;
+}
 
 section.userType{
     display: block;

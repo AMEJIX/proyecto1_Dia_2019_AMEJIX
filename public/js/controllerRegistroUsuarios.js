@@ -22,7 +22,6 @@ function ocultar() {
         document.querySelector('#registroPadreFamilia').style.display = 'none';
 
     }
-
 }
 
 //Esto activa la funcion al haber un campio en el select

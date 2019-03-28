@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contacto MEP</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/profileInfo.css">
+
+</head>
+
+<body>
+
+
+    <main>
+        <div class="sidebar">
+            <div class="sicenLogo"></div>
+            <div class="line"></div>
+            <div class="wrapper">
+                <!----------------------Inicio opción---------------------->
+            
+                <!----------------------Fin opción---------------------->
+            </div>
+            <!----------------------Inicio información del perfil---------------------->
+            <div class="userInfo">
+                <div class="userPhoto"></div>
+                <h4></h4>
+                <div class="subMenu">
+                    <a href="userProfileInfo.html">Perfil</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="#" id="logOut">Cerrar sesión</a>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <!----------------------Fin información del perfil---------------------->
+
+        </div>
+
+        <div class="contenido" style="overflow-y: scroll;">
+            
+
+ <section>
+
+                <div class="leftColumn">
+                    <div>
+                        <label for="spanNombreSA">Primer nombre:</label>
+                        <span id="spanNombreSA"></span>
+                    </div>
+                    <div>
+                        <label for="spanSegundoNombreSA">Segundo nombre:</label>
+                        <span id="spanSegundoNombreSA"></span>
+                    </div>
+                    <div>
+                        <label for="spanApellidoSA">Primer apellido:</label>
+                        <span id="spanApellidoSA"></span>
+                    </div>
+                    <div>
+                        <label for="spanSegundoApellidoSA">Segundo apellido:</label>
+                        <span id="spanSegundoApellidoSA"></span>
+                    </div>
+                   
+                    <div>
+                        <label for="spanEmailSA">Correo electrónico:</label>
+                        <span id="spanEmailSA"></span>
+                    </div>
+                    <div>
+                        <label for="spanTelefonoSA">Teléfono:</label>
+                        <span id="spanTelefonoSA"></span>
+                    </div>
+                    <div>
+                        <label for="spanPuestoMEPSA">Puesto</label>
+                        <span id="spanPuestoMEPSA"></span>
+                    </div>
+                </div> <!-- Fin columna izquierda -->
+
+                <div class="rightColumn">
+
+
+                    <div>
+                        <h1></h1>
+                        <img id="imagenSA">
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="js/authentication.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio.listarInfoMep.js"></script>
+    <script src="js/controlador.listarInfoMep.js"></script>
+    <script src="js/mostrarNombre.controller.js"></script>
+
+</body>
+
+</html>

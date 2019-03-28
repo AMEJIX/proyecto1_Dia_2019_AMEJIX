@@ -372,4 +372,24 @@ module.exports.listarPFPorSA = (req, res) => {
     );
 }
 
+module.exports.listarMEP = (req, res) => {
+    modelo_usuario.find({userType: 'superAdministrador'}).then(
+        function(infoSA) {
+            if (infoSA.length >0) {
+                res.json({
+                    success: true,
+                    infoSA: infoSA
+                })
+            } else {
+                res.json({
+                    success: false,
+                    infoSA: 'No se encontraron centros educativos.'
+                })
+            }
+        }
+    );
+}
+
+
+
 
