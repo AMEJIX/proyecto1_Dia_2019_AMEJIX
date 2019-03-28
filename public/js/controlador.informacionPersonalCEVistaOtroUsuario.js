@@ -127,3 +127,9 @@ function mostrarCentroEducativo (){
 }
 mostrarCentroEducativo();
 
+let infoCE = listarCEPorOtroUsuario(IdGeneralCE);
+
+const latCE = infoCE [0] ['lat'];
+const lngCE= infoCE [0] ['lng'];
+
+
