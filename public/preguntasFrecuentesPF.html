@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <title>Preguntas frecuentes</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
@@ -25,36 +25,19 @@
             <div class="sicenLogo"></div>
             <div class="line"></div>
             <div class="wrapper">
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion">
-                    <h3>Citas</h3>
-                    <div class="subOpcion">
-                        <a href="citas.html">Agendar</a>
-                        <a href="misCitasCE.html">Mis citas</a>
-                        <a href="misCitasPF.html">Mis citas</a>
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
 
                 <!----------------------Inicio opción---------------------->
                 <div class="opcion">
                     <h3>Preguntas frecuentes</h3>
                     <div class="subOpcion">
-                        <a href="preguntasFrecuentesCE&Admin.html">CE y admin</a>
-                        <a href="preguntasFrecuentesPF.html">PF</a>
+                        <!--<a href="preguntasFrecuentesCE&Admin.html">Mis preguntas frecuentes</a>-->
+                        <a href="preguntasFrecuentesPF.html">Ver</a>
+
+                        <!-- LOS DOS HTML REDIRECCIONAN A LA PÁGINA CONTRARIA EN CASO DE INTENTAR ACCEDER A LA QUE NO TIENE PERMISO-->
                     </div>
                 </div>
                 <!----------------------Fin opción---------------------->
 
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion">
-                    <h3>Criterios busqueda</h3>
-
-                    <div class="subOpcion">
-                        <a href="criteriosBusqueda.html">Lista</a>
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
             </div>
 
             <!----------------------Inicio información del perfil---------------------->
@@ -63,7 +46,7 @@
                 <h4>Nombre del perfil</h4>
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
-                    <a href="#">Configuración</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
                     <a href="#" id="logOut">Cerrar sesión</a>
                 </div>
             </div>
@@ -91,6 +74,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/authentication.js"></script>
+    <script src="js/controlador.general.js"></script>
     <script src="js/preguntasFrecuentes.servicio.js"></script>
     <script src="js/preguntasFrecuentes.controller.listar.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>

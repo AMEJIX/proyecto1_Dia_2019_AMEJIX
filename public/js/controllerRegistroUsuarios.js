@@ -522,7 +522,6 @@ let validarCentroEducativo = () => {
 
 
 
-
     if (inputAnno.value == '') {
         error = true;
         inputAnno.classList.add('errorInput');

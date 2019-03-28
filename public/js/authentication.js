@@ -16,7 +16,7 @@ function logOut() {
 
     sessionStorage.setItem('tipoDeUsuario', "");
     sessionStorage.setItem('usuario', "");
-    window.location.href = 'index.html';
+    window.location.href = 'inicioSesion.html';
 
 }
 logOutLink.addEventListener('click', logOut)

@@ -1,0 +1,66 @@
+h1{
+    margin: 30px;
+    font-size: 20px;
+}
+
+.filtro{
+    
+    margin-right: 90px;
+    margin-bottom: 20px;
+}
+.filtro label{
+    display: inline-block;
+    width: 60px;
+    margin-left: 32px;
+}
+
+#txtFiltro{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+}
+
+
+#tblActividades {
+    border-collapse: collapse;
+    margin-left: 32px;
+    width: 80%;
+    margin-bottom: 120px;
+}
+.celdaImagen{
+    height: 120px;
+    width: 110px;
+    object-fit: contain;
+}
+
+th{
+    color: white;
+    background-color: #344955;
+    border: 1px solid #344955;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 65px;
+    padding-left: 65px;
+   
+}
+
+
+#tblActividades tbody tr td{
+    color: #344955;
+    border: 1px solid #344955;
+    text-align: center;
+    padding: 8px;
+    size: 20px;
+    vertical-align: middle !important;
+    
+}
+
+#tblActividades tbody tr td:hover{
+    background-color: #f9bf33;
+    color: white;
+}
+
+
+

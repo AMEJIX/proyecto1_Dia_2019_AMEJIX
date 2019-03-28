@@ -6,19 +6,15 @@ const inputFiltrar = document.querySelector('#txtFiltrar');
 let user = JSON.parse(sessionStorage.getItem('usuario'));//ya está declarado
 
 let idCentroEducativo = user._id;
-
-if (localStorage.getItem('idCentro')){
-    idCentroEducativo = localStorage.getItem('idCentro');
+console.log(idCentroEducativo);
+if (user.userType != 'centroEducativo'){
+    idCentroEducativo = IdGeneralCE;
 }
 
 let listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
 
-localStorage.removeItem('idCentro');
-
-console.log(listaPreguntasFrecuentes.length);
-
-// let idCentroEducativo = '5c9506cdb643431b5cb7d185';
-console.log(user.userType);
+//
+// console.log(user.userType);
 if(user.userType == 'centroEducativo' || user.userType == 'administrador'){
 
     if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html', 0);
@@ -31,15 +27,6 @@ if(user.userType == 'centroEducativo' || user.userType == 'administrador'){
 
 } else {
     if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html')  setTimeout(location.href='preguntasFrecuentesPF.html', 0);
-
-    //////////////////// QUEMADO
-
-    idCentroEducativo = '5c969e24ca48996d8b483434';
-
-    listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
-
-    //////////////////// QUEMADO
-    idCentroEducativo =
 
     insertarMensaje(`No se encontró ninguna pregunta frecuente relacionada con este centro educativo`);
 

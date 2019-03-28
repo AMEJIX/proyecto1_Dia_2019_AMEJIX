@@ -1,0 +1,284 @@
+html {
+    font-family: 'Raleway', sans-serif;
+}
+
+#home {
+    background-image: url(../img/background.png);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+
+#home .nav {
+    width: 100%;
+    height: 72px;
+}
+
+.sicenLogo {
+    background-image: url(../img/SICENblanco.png);
+    width: 135px;
+    height: 37px;
+    float: left;
+    margin-top: 16px;
+    margin-left: 18px;
+    background-size: contain;
+    background-repeat-y: no-repeat;
+    position: absolute;
+}
+
+#home .nav a {
+    float: right;
+    padding: 28px 35px;
+    text-decoration: none;
+    color: white;
+}
+
+#home .nav a:hover {
+    color: #f9aa33;
+}
+
+#home .text {
+    width: 35rem;
+    height: 30rem;
+    float: right;
+    margin-top: 7%;
+    margin-right: 20%;
+    border-left: white solid 1px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#home .text h1 {
+    font-family: 'Raleway:400', sans-serif;
+    font-size: 3rem;
+    color: white;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+#home .text p {
+    font-size: 35px;
+    color: white;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+#home .text h2 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#home .text .btnDiv {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+#home .text a {
+    background-color: #f9aa33;
+    color: white;
+    text-decoration: none;
+    width: 80px;
+    height: 15px;
+    padding: 20px 40px;
+    border-radius: 7px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.down {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 45px;
+    transition: all 300ms ease;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+#tops {
+    background: white;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+.line {
+    width: 75%;
+    border-bottom: 1px solid #232f34;
+    margin: 0 auto;
+
+}
+
+.centroEducativo {
+    width: 720px;
+    height: 9%;
+    margin-bottom: 20px;
+
+}
+
+#tops h1 {
+    font-size: 40px;
+    color: #344955;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#tops h2 {
+    font-size: 40px;
+    color: #f9aa33;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.padre {
+    margin: 0 auto;
+}
+
+.left {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.right {
+    display: block;
+    float: right;
+    width: 50%;
+}
+
+.centroEducativo {
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+#spanPosition {
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    color: #232f34;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    margin-left: 50px;
+}
+
+#spanFoto {
+    width: 70px;
+    height: 70px;
+    background: #232f34;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanNombre {
+    float: left;
+    color: #232f34;
+    padding: 26px 0px;
+    text-align: center;
+    margin-left: 13px;
+}
+
+#spanTelefono {
+    float: left;
+    color: #232f34;
+    padding: 26px 0px;
+    text-align: center;
+    margin-left: 13px;
+}
+
+#spanTipoInst {
+    float: left;
+    color: #232f34;
+    padding: 26px 0px;
+    text-align: center;
+    margin-left: 13px;
+}
+
+#spanProvincia {
+    float: left;
+    color: #232f34;
+    padding: 26px 0px;
+    text-align: center;
+    margin-left: 13px;
+}
+
+#list {
+    background: white;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: relative; 
+}
+
+#list h1 {
+    font-size: 40px;
+    color: #344955;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#list h2 {
+    font-size: 40px;
+    color: #f9aa33;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+form div select{
+    display: inline-block;
+    width: 254px;
+    height: 35px;
+}
+form div{
+    margin-right: 90px;
+    margin-bottom: 50px;
+
+}
+form div label{
+    display: inline-block;
+    width: 190px;
+    margin-left: 32px;
+}
+
+#tblUtiles{
+    border-collapse: collapse;
+    margin-left: 32px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+th{
+    color: white;
+    background-color: #344955;
+    border: 1px solid #344955;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+
+#tblUtiles tbody tr td{
+    color: #344955;
+    border: 1px solid #344955;
+    text-align: center;
+    padding: 8px;
+}
+#tblUtiles tbody tr td:hover{
+    background-color: #f9bf33;
+    color: white;
+}

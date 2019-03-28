@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Standard</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/profileInfo.css">
+
+</head>
+
+<body>
+
+    <main>
+        <div class="sidebar">
+            <div class="sicenLogo"></div>
+            <div class="line"></div>
+            <div class="wrapper">
+                <!----------------------Inicio opción---------------------->
+               
+                <!----------------------Fin opción---------------------->
+            </div>
+            <!----------------------Inicio información del perfil---------------------->
+            <div class="userInfo">
+                <div class="userPhoto"></div>
+                <h4></h4>
+                <div class="subMenu">
+                    <a href="userProfileInfo.html">Perfil</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="#" id="logOut">Cerrar sesión</a>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <!----------------------Fin información del perfil---------------------->
+
+        </div>
+
+        <div class="contenido" style="overflow-y: scroll;">
+            <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+
+            
+            <section id="padreFamilia">
+
+                    <div class="leftColumn">
+                        <div>
+                            <label for="spanNombre">Primer nombre:</label>
+                            <span id="spanNombre"></span>
+                        </div>
+    
+    
+                        <div>
+                            <label for="spanSegundoNombre">Segundo nombre:</label>
+                            <span id="spanSegundoNombre"></span>
+                        </div>
+                        <div>
+                            <label for="spanApellido">Primer apellido:</label>
+                            <span id="spanApellido"></span>
+                        </div>
+                        <div>
+                            <label for="spanSegundoApellido">Segundo apellido:</label>
+                            <span id="spanSegundoApellido"></span>
+                        </div>
+                        <div>
+                            <label for="spanNumID">Identificación:</label>
+                            <span id="spanNumID"></span>
+                        </div>
+                        <div>
+                            <label for="spanNacionalidad">Nacionalidad:</label>
+                            <span id="spanNacionalidad"></span>
+                        </div>
+                        <div>
+                            <label for="spanEmail">Correo electrónico:</label>
+                            <span id="spanEmail"></span>
+                        </div>
+                        <div>
+                            <label for="spanTelefono">Teléfono:</label>
+                            <span id="spanTelefono"></span>
+                        </div>
+                        <div>
+                            <label for="spanProvincia">Provincia</label>
+                            <span id="spanProvincia"></span>
+                        </div>
+                        <div>
+                            <label for="spanCanton">Cantón</label>
+                            <span id="spanCanton"></span>
+                        </div>
+                        <div>
+                            <label for="spanDistrito">Distrito</label>
+                            <span id="spanDistrito"></span>
+                        </div>
+                        <div>
+                            <label for="spanHijos">Cantidad de hijos: </label>
+                            <span id="spanHijos"></span>
+                        </div>
+    
+    
+                        <div id="divEdadHijos">
+    
+                        </div>
+    
+                    </div> <!-- Fin columna izquierda -->
+    
+                    <div class="rightColumn">
+    
+    
+                        <div>
+                            <h1></h1>
+                            <img id="imagenPF">
+                        </div>
+    
+                    </div>
+                </section>
+            <!-- FIN Data CE -->
+
+            <!-- FIN TODO EL CONTENIDO DEL CASO DE USO -->
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="js/authentication.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicioInicio.js"></script>
+    <script src="js/controlador.general.js"></script>
+    <script src="js/servicio.infoPersonalPFVistaPorSA.js"></script>
+    <script src="js/controlador.infoPersonalPFVistaPporSA.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap" async defer></script>
+    <script src="js/mapUser.js"></script>
+    <script src="js/mostrarNombre.controller.js"></script>
+
+
+</body>
+
+</html>

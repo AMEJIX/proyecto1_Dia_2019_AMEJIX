@@ -1,8 +1,11 @@
 'use strict';
 
+let user = JSON.parse(sessionStorage.getItem('usuario'));
+
 const inputNombreBeca = document.querySelector('#inputNombreBeca');
 const inputDescripcionBeca = document.querySelector('#inputDescripcionBeca');
 const botonRegistrarBeca = document.querySelector('#btnRegistrarBeca');
+const idCE = user._id;
 
 let validar = () => {
     let error = false;
@@ -29,9 +32,10 @@ let obtener_datos = () => {
 
         let stringNombreBeca = inputNombreBeca.value;
         let stringDescripcionBeca = inputDescripcionBeca.value;
+        let idCentroEducativo = idCE;
 
 
-        registrarBeca(stringNombreBeca, stringDescripcionBeca);
+        registrarBeca(stringNombreBeca, stringDescripcionBeca, idCentroEducativo);
 
     } else {
         swal.fire({

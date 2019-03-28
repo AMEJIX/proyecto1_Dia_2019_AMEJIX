@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarMatricula = (pstringNombreMatricula, pnumberPrecioMatricula, pfieldsetNumberPrecioMatricula) => {
+let registrarMatricula = (pstringNombreMatricula, pnumberPrecioMatricula, pfieldsetNumberPrecioMatricula, pidCentroEducativo) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_matricula",
@@ -10,6 +10,7 @@ let registrarMatricula = (pstringNombreMatricula, pnumberPrecioMatricula, pfield
             nombre: pstringNombreMatricula,
             precio: pnumberPrecioMatricula,
             fieldsetPrecio: pfieldsetNumberPrecioMatricula,
+            idCE: pidCentroEducativo,
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',

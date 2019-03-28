@@ -1,124 +1,107 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <title>Standard</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/registrarBeca.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/registrarBeca.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-
-            <div class="logoNav">
-                <div class="sicenLogo"></div>
-            </div>
-
-            <div class="ddMenu">
-                <div id="userPhoto"></div>
-                <div id="arrow"></div>
-
-                <div class="subMenu">
-                    <a href="#">Perfil</a>
-                    <a href="#">Configuración</a>
-                    <a href="#">Cerrar sesión</a>
-                    </ul>
-                </div>
-            </div>
-
-        </nav>
-    </header>
-
     <main>
-        <div class="allContent">
-            <div class="contenedor">
-                <div class="contenido" style="overflow-y: scroll;">
-
-
-                    <form action="">
-                        <div id="divNombreBeca">
-                            <label for="inputNombreBeca" id="labelNombreBeca">Nombre de la beca</label>
-                            <input type="text" id="inputNombreBeca">
-                        </div>
-
-                        <div id="divDescripcionBeca">
-                            <label for="inputDescripcionBeca" id="labelDescripcionBeca">Descripción de la beca</label>
-                            <input type="text" id="inputDescripcionBeca">
-                        </div>
-
-                        <div>
-                            <button type="button" id="btnRegistrarBeca">Registrar beca</button>
-                        </div>
-                    </form>
-
-
-                </div>
-            </div>
-            <div class="sidebar">
-                <div class="line"></div>
-                <div class="contenedorSidebar">
-                    <div class="opcion">
-                        <li id="li"><a href="#">Ejemplo<i class="fas fa-sort-down"></i></a>
-                            <ul>
-                                <div class="subOpcion">
-                                    <li><a href="#">Registrar</a></li>
-                                </div>
-
-                                <div class="subOpcion">
-                                    <li><a href="#">Informacion</a></li>
-                                </div>
-                            </ul>
-                        </li>
-                    </div>
-
-                    <div class="opcion">
-                        <li id="li"><a href="#">Ejemplo<i class="fas fa-sort-down"></i></a>
-                            <ul>
-                                <div class="subOpcion">
-                                    <li><a href="#">Registrar</a></li>
-                                </div>
-
-                                <div class="subOpcion">
-                                    <li><a href="#">Informacion</a></li>
-                                </div>
-                            </ul>
-                        </li>
-                    </div>
-
-                    <div class="opcion">
-                        <li id="li"><a href="#">Ejemplo<i class="fas fa-sort-down"></i></a>
-                            <ul>
-                                <div class="subOpcion">
-                                    <li><a href="#">Registrar</a></li>
-                                </div>
-
-                                <div class="subOpcion">
-                                    <li><a href="#">Informacion</a></li>
-                                </div>
-                            </ul>
-                        </li>
+        <div class="sidebar">
+            <div class="sicenLogo"></div>
+            <div class="line"></div>
+            <div class="wrapper">
+                <!----------------------Inicio opción---------------------->
+                <div class="opcion">
+                    <h3>Becas</h3>
+                    <div class="subOpcion">
+                        <a href="#">Registrar becas</a>
+                        <a href="#">Mostrar becas</a>
+                        <a href="#">SubAnything #3</a>
+                        </ul>
                     </div>
                 </div>
+                <!----------------------Fin opción---------------------->
+
+                <!----------------------Inicio opción---------------------->
+                <div class="opcion">
+                    <h3>Ejemplo dos</h3>
+                    <div class="subOpcion">
+                        <a href="#">SubAnything #1</a>
+                        <a href="#">SubAnything #2</a>
+                        <a href="#">SubAnything #3</a>
+                        </ul>
+                    </div>
+                </div>
+                <!----------------------Fin opción---------------------->
+
+                <!----------------------Inicio opción---------------------->
+                <div class="opcion">
+                    <h3>Ejemplo tres</h3>
+
+                    <div class="subOpcion">
+                        <a href="#">SubAnything #1</a>
+                        <a href="#">SubAnything #2</a>
+                        <a href="#">SubAnything #3</a>
+                        </ul>
+                    </div>
+                </div>
+                <!----------------------Fin opción---------------------->
             </div>
+
+            <!----------------------Inicio información del perfil---------------------->
+            <div class="userInfo">
+                <div class="userPhoto"></div>
+                <h4></h4>
+                <div class="subMenu">
+                    <a href="userProfileInfo.html">Perfil</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="#" id="logOut">Cerrar sesión</a>
+                </div>
+            </div>
+            <!----------------------Fin información del perfil---------------------->
+
+        </div>
+
+        <div class="contenido" style="overflow-y: scroll;">
+
+            <form action="">
+                <div id="divNombreBeca">
+                    <label for="inputNombreBeca" id="labelNombreBeca">Nombre de la beca</label>
+                    <input type="text" id="inputNombreBeca">
+                </div>
+
+                <div id="divDescripcionBeca">
+                    <label for="inputDescripcionBeca" id="labelDescripcionBeca">Descripción de la beca</label>
+                    <input type="text" id="inputDescripcionBeca">
+                </div>
+
+                <div>
+                    <button type="button" id="btnRegistrarBeca">Registrar beca</button>
+                </div>
+            </form>
+
         </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
+    <script src="js/authentication.js"></script>
+    <script src="js/mostrarNombre.controller.js"></script>
     <script src="js/servicio.registrarBeca.js"></script>
     <script src="js/controlador.registrarBeca.js"></script>
-
 
 </body>
 

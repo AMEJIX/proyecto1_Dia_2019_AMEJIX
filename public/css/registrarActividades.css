@@ -1,0 +1,78 @@
+.errorInput{
+    border: 2px solid #ED4C67;
+}
+
+h1{
+    margin: 30px;
+    font-size: 20px;
+}
+
+
+#frmRegistroUtil{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+form div{
+   margin-right: 90px;
+    margin-bottom: 50px;
+
+    
+}
+
+form div label{
+    display: inline-block;
+    width: 190px;
+    margin-left: 32px;
+}
+
+
+
+form div input{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    
+    outline: none;
+}
+
+textarea{
+    height: 150px;
+    width: 250px;
+    resize: none;
+}
+form div select{
+    display: inline-block;
+    width: 254px;
+    height: 35px;
+}
+
+.imageHolder label{
+    display: inline-block;
+}
+
+.imageHolder figure img{
+    display: inline-block;
+}
+
+
+.btnRegistrar{
+    margin-left: 480px;
+    margin-top: 50px;
+    padding: 14px 50px;
+    background-color: #f9aa33;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.btnRegistrar:hover{
+    background-color: #f9bf33;
+}
+#imgActividades{
+    height: 150px;
+    width: 250px;
+    margin-left: 230px;
+    margin-bottom: -50px;
+}
+

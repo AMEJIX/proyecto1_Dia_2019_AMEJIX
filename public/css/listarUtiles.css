@@ -1,0 +1,50 @@
+
+h1{
+    margin: 30px;
+    font-size: 20px;
+}
+
+form div select{
+    display: inline-block;
+    width: 254px;
+    height: 35px;
+}
+form div{
+    margin-right: 90px;
+     margin-bottom: 50px;
+    
+ }
+ form div label{
+    display: inline-block;
+    width: 190px;
+    margin-left: 32px;
+}
+
+#tblUtiles{
+    border-collapse: collapse;
+    margin-left: 32px;
+    width: 80%;
+    
+}
+
+th{
+    color: white;
+    background-color: #344955;
+    border: 1px solid #344955;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+
+#tblUtiles tbody tr td{
+    color: #344955;
+    border: 1px solid #344955;
+    text-align: center;
+    padding: 8px;
+}
+#tblUtiles tbody tr td:hover{
+    background-color: #f9bf33;
+    color: white;
+}

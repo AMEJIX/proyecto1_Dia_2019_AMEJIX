@@ -1,9 +1,13 @@
 'use strict';
 
+let user = JSON.parse(sessionStorage.getItem('usuario'));
+
 const inputTituloNoticia = document.querySelector('#inputTituloNoticia');
 const inputRegistrarNoticia = document.querySelector('#inputRegistrarNoticia');
 const inputFechaNoticia = document.querySelector('#inputFechaNoticia');
 const botonRegistrarNoticia = document.querySelector('#btnRegistrarNoticia');
+
+const idCE = user._id;
 
 let validar = () => {
     let error = false;
@@ -40,9 +44,10 @@ let obtener_datos = () => {
         let stringTituloNoticia = inputTituloNoticia.value;
         let stringRegistrarNoticia = inputRegistrarNoticia.value;
         let stringFechaNoticia = inputFechaNoticia.value;
+        let idCentroEducativo = idCE;
 
 
-        registrarNoticia(stringTituloNoticia, stringRegistrarNoticia, stringFechaNoticia);
+        registrarNoticia(stringTituloNoticia, stringRegistrarNoticia, stringFechaNoticia, idCentroEducativo);
 
     } else {
         swal.fire({

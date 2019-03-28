@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Standard</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/registrarActividades.css">
+</head>
+
+
+<body>
+
+    <main>
+        <div class="sidebar">
+            <div class="sicenLogo"></div>
+            <div class="line"></div>
+            <div class="wrapper">
+                <!----------------------Inicio opción---------------------->
+                <div class="opcion">
+                    <h3>Actividades</h3>
+                    <div class="subOpcion">
+                        <a href="registrarActividades.html">Registrar</a>
+                        <a href="listarActividadesPropiasCE.html">Ver</a>
+                        <a href="#">Modificar</a>
+                        <a href="#">Eliminar/a>
+
+                        </ul>
+                    </div>
+                </div>
+                <!----------------------Fin opción---------------------->
+
+                <!----------------------Inicio opción---------------------->
+           
+                <!----------------------Fin opción---------------------->
+
+                <!----------------------Inicio opción---------------------->
+             
+                <!----------------------Fin opción---------------------->
+            </div>
+
+            <!----------------------Inicio información del perfil---------------------->
+            <div class="userInfo">
+                <div class="userPhoto"></div>
+                <h4></h4>
+                <div class="subMenu">
+                    <a href="userProfileInfo.html">Perfil</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="#" id="logOut">Cerrar sesión</a>
+                </div>
+            </div>
+            <!----------------------Fin información del perfil---------------------->
+
+        </div>
+
+        <div class="contenido" style="overflow-y: scroll;">
+            <h1>Registro de actividades del centro educativo</h1>
+            <form id="frmRegistroCriterio">
+                <div>
+                    <label for="txtActividad">Actividad</label>
+                    <input type="text" id="txtActividad">
+                </div>
+                <div>
+                    <label for="txtDescripcion" id="labelDescripcion">Descripción</label>
+                    <textarea id="txtDescripcion" placeholder="Describa la actividad"></textarea>
+                </div>
+                <div>
+                    <label for="inputFecha">Fecha</label>
+                    <input type="date" id="inputFecha">
+                </div>
+                <div class="imageHolder">
+                    <label for="figure">Foto de la actividad</label>
+                    <figure id="figure">
+                        <img src="img/upload.png" id="imgActividades">
+                    </figure>
+
+                </div>
+                <!-- <div>
+                                    <button type="button" id="btnImagen">Subir imagen</button>
+                                </div> -->
+
+                <div>
+                    <button type="button" class="btnRegistrar" id="btnRegistrar">Registrar</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+    <script src="js/authentication.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicioInicio.js"></script>
+    <script src="js/servicio.actividades.js"></script>
+    <script src="js/controlador.registrarActividades.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js" type="text/javascript"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="js/servicio.imagenActividades.js"></script>
+    <script src="js/mostrarNombre.controller.js"></script>
+
+</body>
+
+
+</html>

@@ -8,6 +8,12 @@ if(user.userType === 'padreFamilia'){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
 }
 
+if (user.userType === 'centroEducativo'){
+    document.querySelector('#nueva').style.display = 'none';
+    document.querySelector('form').style.display = 'none';
+    document.querySelector('button').style.display = 'none';
+}
+
 let listaEtiquetas = getCriteriosBusqueda();
 
 insertarMensaje(`No se encontró ningún criterio de búsqueda`);

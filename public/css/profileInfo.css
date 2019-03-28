@@ -1,7 +1,22 @@
 
 
-#padreFamilia, #centroEducativo{
+#padreFamilia, #centroEducativo, #superAdministrador{
     display: none;
+
+}
+
+
+#vistaCEporSA, #vistaCEporPF{
+    display: none;
+}
+
+#aVerCita, #menuCitasEnCE{
+    display: none;
+}
+
+img{
+    width: 200px;
+    height: 200px;
 }
 
 #map 

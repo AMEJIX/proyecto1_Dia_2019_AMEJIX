@@ -5,318 +5,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <title>Standard</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="css/profileInfo.css">
-    
+
 </head>
 
 <body>
-    <header>
-        <nav>
-            <button id="arrow"><i class="fas fa-sort-down"></i></button>
-            <a href="userProfileInfo.html"><button id="userPhoto"></button></a>
-        </nav>
-    </header>
+
 
     <main>
-        <div class="allContent">
-            <div class="contenedor">
-                <div class="contenido" style="overflow-y: scroll;">
-                    <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+        <div class="sidebar">
+            <div class="sicenLogo"></div>
+            <div class="line"></div>
+            <div class="wrapper">
+                <!----------------------Inicio opción---------------------->
+                <div class="opcion" id="menuInformativo">
+                    <h3>Información</h3>
+                    <div class="subOpcion">
+                        <a href="registrarMatriculaCostos.html">Matrícula</a>
+                        <a href="mostrarBecas.html">Becas</a>
+                        <a href="misCitasCE.html">Citas</a>
+                        <a href="registrarMaterialInformativo.html">Material Informativo</a>
+                        <a href="mostrarNoticias.html">Noticias</a>
+                        <a href="registrarActividades.html">Actividades</a>
+                        <a href="registrarUtiles.html">Útiles</a>
+                        <a href="criteriosBusqueda.html">Etiquetas</a>
+                        <a href="preguntasFrecuentesCE&Admin.html" id="aPreguntasCE">Preguntas frecuentes</a>
+                        <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>
+                    </div>
+                </div>
+                <!----------------------Fin opción---------------------->
 
-                    <!-- Data PF -->
-                    <section id="padreFamilia">
+                <!----------------------Inicio opción---------------------->
+                <div class="opcion" id="menuAdministrativo">
+                    <h3>Administrativo</h3>
+                    <div class="subOpcion">
+                        <a href="#">Bitácora</a>
+                        <a href="#">Notificaciones</a>
+                        <a href="registrarCriteriosMEP.html">Criterios de Evaluación</a>
+                        <a href="registrarUtiles.html">Lista de útiles</a>
+                        <a href="criteriosBusqueda.html">Etiquetas</a>
+                    </div>
+                </div>
+                <!----------------------Fin opción---------------------->
 
-                        <div class="leftColumn">
-                            <div>
-                                <label for="spanNombre">Primer nombre:</label>
-                                <span id="spanNombre"></span>
-                            </div>
+                <!----------------------Inicio opción---------------------->
+                <div class="opcion" id="menuInfoCE">
+                    <h3>Centros educativos</h3>
 
+                    <div class="subOpcion">
+                        <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
+                        <a href="listarCentrosEducativos.html">Buscar</a>
+                        <a href="#" id="aFavoritos">Favoritos</a>
+                        <a href="#">Top</a>
+                        <a href="listarCEUbicacion.html">Centros educativos cercanos</a>
 
-                            <div>
-                                <label for="spanSegundoNombre">Segundo nombre:</label>
-                                <span id="spanSegundoNombre"></span>
-                            </div>
-                            <div>
-                                <label for="spanApellido">Primer apellido:</label>
-                                <span id="spanApellido"></span>
-                            </div>
-                            <div>
-                                <label for="spanSegundoApellido">Segundo apellido:</label>
-                                <span id="spanSegundoApellido"></span>
-                            </div>
-                            <div>
-                                <label for="spanNumID">Identificación:</label>
-                                <span id="spanNumID"></span>
-                            </div>
-                            <div>
-                                <label for="spanNacionalidad">Nacionalidad:</label>
-                                <span id="spanNacionalidad"></span>
-                            </div>
-                            <div>
-                                <label for="spanEmail">Correo electrónico:</label>
-                                <span id="spanEmail"></span>
-                            </div>
-                            <div>
-                                <label for="spanTelefono">Teléfono:</label>
-                                <span id="spanTelefono"></span>
-                            </div>
-                            <div>
-                                <label for="spanProvincia">Provincia</label>
-                                <span id="spanProvincia"></span>
-                            </div>
-                            <div>
-                                <label for="spanCanton">Cantón</label>
-                                <span id="spanCanton"></span>
-                            </div>
-                            <div>
-                                <label for="spanDistrito">Distrito</label>
-                                <span id="spanDistrito"></span>
-                            </div>
-                            <div>
-                                <label for="spanHijos">Cantidad de hijos: </label>
-                                <span id="spanHijos"></span>
-                            </div>
+                    </div>
+                </div>
 
-
-                            <div id="divEdadHijos">
-
-                            </div>
-
-
-
-
-
-                        </div> <!-- Fin columna izquierda -->
-
-                        <div class="rightColumn">
-
-
-                            <div>
-                                    <h1></h1>
-                                    <img id="imagenPF">
-                                </div>
-
-
+                <div class="opcion" id="menuReportes">
+                        <h3>Reportes</h3>
+    
+                        <div class="subOpcion">
+                            <a href="#">Ranking MEP</a>
+                            <a href="#">Vistas</a>
+                            <a href="#" id="aHijos">Hijos</a>
+                            <a href="#">Ranking padres de familia</a>                           
                         </div>
+                    </div>
 
+                <div class="opcion" id="menuCitas">
+                    <h3>Mis citas</h3>                
+                    <div class="subOpcion">
+                        <a href="misCitasPF.html">Citas agendadas</a>
+                    </div>
+                </div>
 
-
-
-
-
-
-
-                    </section>
-
-
-
-
-                    <!-- FIN Data PF -->
-
-                    <!-- Data CE -->
-
-
-                    <section id="centroEducativo">
-
-                        <div class='columns'>
-                            <div class="leftColumn">
-                                <div>
-                                    <h1></h1>
-                                    <img id="imagenCE">
-                                </div>
-                                <div>
-                                    <label for="spanInstitución">Nombre institución: </label>
-                                    <span id="spanInstitución">
-                                </div>
-                                <div>
-                                    <label for="spanCedulaJuridica">Cédula Juridica: </label>
-                                    <span id="spanCedulaJuridica" title="opcional">
-                                </div>
-
-                                <div>
-                                    <label for="spanComercial">Nombre comercial: </label>
-                                    <span id="spanComercial">
-                                </div>
-                                <div>
-                                    <label for="spanAnno">Año fundación: </label>
-                                    <span id="spanAnno">
-                                </div>
-
-                                <div>
-                                    <label for="spanTipoInst">Tipo de institución: </label>
-                                    <span id="spanTipoInst"></span>
-                                </div>
-
-                                <div>
-                                    <label for="spanClasificacion">Clasificación: </label>
-                                    <span id="spanClasificacion"></span>
-                                </div>
-                                <div>
-                                    <label for="spanGrados">Grados: </label>
-                                    <span id="spanGrados"></span>
-                                </div>
-
-                                <div>
-                                    <label for="spanPrivacidad">Privado/Publico: </label>
-                                    <span id="spanPrivacidad"></span>
-                                </div>
-
-                                <div>
-                                    <label for="spanGenero">Género especifico: </label>
-                                    <span id="spanGenero"></span>
-                                </div>
-                                <div>
-                                    <label for="spanReligion">Religión: </label>
-                                    <span id="spanReligion"></span>
-                                </div>
-
-                                <div>
-                                    <label for="spanTelefonoCE">Teléfono: </label>
-                                    <span id="spanTelefonoCE">
-                                </div>
-                                <div>
-                                    <label for="spanEmailCE">Correo electrónico: </label>
-                                    <span id="spanEmailCE">
-                                </div>
-                                <div>
-                                    <label for="spanSitioWeb">Sitio Web: </label>
-                                    <span id="spanSitioWeb">
-                                </div>
-
-                                <div>
-                                    <label for="spanFacebook">Facebook: </label>
-                                    <span id="spanFacebook">
-                                </div>
-                                <div>
-                                    <label for="spanTwitter">Twitter: </label>
-                                    <span id="spanTwitter">
-                                </div>
-                                <div>
-                                    <label for="spanInstagram">Instagram: </label>
-                                    <span id="spanInstagram">
-                                </div>
-
-
-                                <div>
-                                    <label for="spanFax">Fax: </label>
-                                    <span id="spanFax">
-                                </div>
-
-                                <div id="divServicios">
-                                        <label for="spanServicios">Actividades: </label>
-                                        <span id="spanServicios">
-                                </div>
-
-
-
-
-
-                            </div>
-                            <div class="rightColumn">
-
-
-
-                                <div>
-                                    <h1 for="spanHistoria">Reseña Histórica: </h1>
-                                    <textarea id="spanHistoria"></textarea>
-                                </div>
-
-                                <div>
-                                    <h1 for="textAreaDireccionExacta">Direccion Exacta: </h1>
-                                    <textarea id="textAreaDireccionExacta"></textarea>
-                                </div>
-
-                                <div>
-                                    <label for="spanProvinciaCE">Provincia: </label>
-                                    <span id="spanProvinciaCE"></span>
-                                </div>
-                                <div>
-                                    <label for="spanCantonCE">Cantón: </label>
-                                    <span id="spanCantonCE"></span>
-                                </div>
-                                <div>
-                                    <label for="spanDistritoCE">Distrito: </label>
-                                    <span id="spanDistritoCE"></span>
-                                </div>
-
-
-
-                                <h1>Personal a cargo</h1>
-                                <div>
-                                    <label for="spanNombreCEP">Nombre: </label>
-                                    <span id="spanNombreCEP">
-                                </div>
-                                <div>
-                                    <label for="spanSegundoNombreCEP">Segundo Nombre: </label>
-                                    <span id="spanSegundoNombreCEP">
-                                </div>
-                                <div>
-                                    <label for="spanApellidoCEP">Apellido: </label>
-                                    <span id="spanApellidoCEP">
-                                </div>
-                                <div>
-                                    <label for="spanSegundoApellidoCEP">Segundo Apellido: </label>
-                                    <span id="spanSegundoApellidoCEP">
-                                </div>
-                                <div>
-                                    <label for="spanDepartamento">Departamento: </label>
-                                    <span id="spanDepartamento">
-                                </div>
-                                <div>
-                                    <label for="spanTelefonoCEP">Teléfono: </label>
-                                    <span id="spanTelefonoCEP">
-                                </div>
-                                <div>
-                                    <label for="spanExtension">extensión: </label>
-                                    <span id="spanExtension">
-                                </div>
-                                <div>
-                                    <label for="spanNumIDCEP">Identificación: </label>
-                                    <span id="spanNumIDCEP">
-                                </div>
-                                <div>
-                                    <label for="spanEmailCEP">Correo electrónico: </label>
-                                    <span id="spanEmailCEP">
-                                </div>
-                                <div>
-                                    <h1></h1>
-                                    <img id="imagenCEP">
-                                </div>
-
-
-
-                            </div>
-                            <!-- FIN - Columna Derecha-->
-
-                            <div>
-
-                                <div id="map"></div>
-                            </div>
-
+                <div class="opcion" id="verPadres">
+                        <h3>Padres de familia</h3>                
+                        <div class="subOpcion">
+                            <a href="listarPadresFamilia.html">Buscar padres de familia</a>                        
                         </div>
+                    </div>
+                <!----------------------Fin opción---------------------->
+            </div>
 
-                    </section>
-                    <!-- FIN Data CE -->
 
-                    <!-- FIN TODO EL CONTENIDO DEL CASO DE USO -->
+
+            <!----------------------Inicio información del perfil---------------------->
+            <div class="userInfo">
+                <div class="userPhoto"></div>
+                <h4></h4>
+                <div class="subMenu">
+                    <a href="userProfileInfo.html">Perfil</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="#" id="logOut">Cerrar sesión</a>
+                    
                 </div>
             </div>
-            <div class="sidebar">
-                <div class="sicenLogo"></div>
-                <div class="line"></div>
-                <a href="index.html">Sicen</a>
-                <a href="#" id="logOut">Cerrar Sesión</a>
 
-            </div>
+            
+            <!----------------------Fin información del perfil---------------------->
+
+        </div>
+
+        <div class="contenido" style="overflow-y: scroll;">
+            
         </div>
     </main>
 
@@ -328,6 +130,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
         async defer></script>
     <script src="js/mapUser.js"></script>
+    <script src="js/mostrarNombre.controller.js"></script>
+
 
 </body>
 

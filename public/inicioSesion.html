@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inicio Sesión</title>
+    <title>Iniciar sesión</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/perfil.css">
@@ -17,61 +18,70 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <button id="arrow"><i class="fas fa-sort-down"></i></button>
-            <button id="userPhoto"></button>
-        </nav>
-    </header>
-
     <main>
-        <div class="allContent">
-            <div class="contenedor">
-                <div class="contenido" style="overflow-y: scroll;">
-                    <!-- TODO EL CONTENIDO DEL CASO DE USO -->
-
-
-                    <div class="login">
-                        <div class="espacio">
-
-                        </div>
-                        <div>
-                            <h3 class="titulo">
-                                Inicio de Sesión
-                            </h3>
-                        </div>
-                        <div>
-                            <label for="txtUsuario">Usuario</label>
-                            <input type="text" id="txtUsuario" placeholder="user@example.com ">
-                        </div>
-                        <div>
-                            <label for="txtPW">Clave</label>
-                            <input type="password" id="txtPW" placeholder="">
-                        </div>
-
-                        <button type="button" id="btnIniciar">Iniciar Sesión</button>
-
-                        <div class="espacio">
-
-                        </div>
-                    </div>
-
-                    <!-- FIN CONTENIDO CASO DE USO -->
-                </div>
+        <div class="login">
+            <div class="candado">
+                <h3 class="titulo">Iniciar sesión</h3>
+                <i class="fas fa-user-lock"></i>
             </div>
-            <div class="sidebar">
-                <div class="sicenLogo"></div>
-                <div class="line"></div>
-                <a href="index.html">Sicen</a>
-
+            <div>
+                <input type="text" id="txtUsuario" placeholder="Correo electrónico">
             </div>
+            <div>
+                <input type="password" id="txtPW" placeholder="Contraseña">
+            </div>
+
+            <button type="button" id="btnIniciar">Iniciar Sesión</button>
+            <a href="registroUsuarios.html">¿Nuevo en SICEN? Registrate ahora mismo >></a>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-    <footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-    </footer>
 
+    <script src='js/servicioInicio.js'></script>
+    <script src='js/controllerInicio.js'></script>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/inicioSesion.css">
+</head>
+
+<body>
+    <main>
+        <div class="login">
+            <div class="candado">
+                <h3 class="titulo">Iniciar sesión</h3>
+                <i class="fas fa-user-lock"></i>
+            </div>
+            <div>
+                <input type="text" id="txtUsuario" placeholder="Correo electrónico">
+            </div>
+            <div>
+                <input type="password" id="txtPW" placeholder="Contraseña">
+            </div>
+
+            <button type="button" id="btnIniciar">Iniciar Sesión</button>
+            <a href="registroUsuarios.html">¿Nuevo en SICEN? Registrate ahora mismo >></a>
+        </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"

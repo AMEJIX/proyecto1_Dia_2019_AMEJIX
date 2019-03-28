@@ -1,9 +1,12 @@
 'use strict';
 
+let user = JSON.parse(sessionStorage.getItem('usuario'));
+
 const inputNombreMatricula = document.querySelector('#inputNombreMatricula');
 const inputPrecioMatricula = document.querySelector('#inputPrecioMatricula');
 const inputfieldsetPrecio = document.querySelector('#fieldsetPrecio');
 const botonRegistrarMatricula = document.querySelector('#btnRegistrarMatricula');
+const idCE = user._id;
 
 let validar = () => {
     let error = false;
@@ -42,8 +45,9 @@ let obtener_datos = () => {
         let stringNombreMatricula = inputNombreMatricula.value;
         let stringPrecioMatricula = inputPrecioMatricula.value;
         let fieldsetnumberPrecioMatricula = document.querySelector('#fieldsetPrecio input[type=radio]:checked').value;
+        let idCentroEducativo = idCE;
 
-        registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula);
+        registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idCentroEducativo);
 
     } else {
         swal.fire({

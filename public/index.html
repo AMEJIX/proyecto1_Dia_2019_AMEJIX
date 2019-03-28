@@ -1,48 +1,313 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <title>SICEN - Inicio</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <button id="arrow"><i class="fas fa-sort-down"></i></button>
-            <a href="userProfileInfo.html"><button id="userPhoto"></button></a>
-        </nav>
-    </header>
-
     <main>
-        <div class="allContent">
-            <div class="contenedor">
-                <div class="contenido" style="overflow-y: scroll;">
-                    <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+        <div id="home">
+            <div class="nav">
+                <div class="sicenLogo"></div>
+                <a href="inicioSesion.html">Iniciar sesión</a>
+            </div>
+            <div class="text">
+                <h1>SICEN</h1>
+                <p>Una aplicación del MEP para ayudar a los padres de familia a encontrar el centro educativo perfecto
+                    para sus hijos.</p>
+                <h2>¡Registrate ahora mismo!</h2>
+                <div class="btnDiv"><a href="registroUsuarios.html">Registrarse</a></div>
+            </div>
+            <a href="#tops" class="down"><i class="fas fa-chevron-down"></i></a> 
+        </div>
+
+        <div id="tops">
+            <h1>TOP 10</h1>
+            <h2>Centros educativos</h2>
+
+            <div class="padre">
+                <div class="left">
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">1</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
+
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">2</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
+
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">3</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
+
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">4</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
+
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">5</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">6</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
+
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">7</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
+
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">8</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
+
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">9</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
+
+                    <div class="centroEducativo" id="CE">
+                        <div class="position">
+                            <span id="spanPosition">10</span>
+                        </div>
+                        <div class="photoCE">
+                            <span id="spanFoto"></span>
+                        </div>
+                        <div class="nombreCE">
+                            <span id="spanNombre">Colegio Redentorista San Alfonso</span>
+                        </div>
+                        <div class="tel">
+                            <span id="spanTelefono">60298167</span>
+                        </div>
+                        <div class="tipoCE">
+                            <span id="spanTipoInst">Colegio</span>
+                        </div>
+                        <div class="provincia">
+                            <span id="spanProvincia">Alajuela</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="sidebar">
-                <div class="sicenLogo"></div>
-                <div class="line"></div>
-                <a href="inicioSesion.html">Iniciar Sesión</a>
-                <a href="registroUsuarios.html">Registrar Cuenta</a>
 
-            </div>
+        </div>
+
+        <div id="list">
+        <div class="line"></div>
+            <h1>Lista de útiles</h1>
+            <h2>Oficial del MEP</h2>
+
+            <form>
+
+                <div>
+                    <label for="selectNivel">Nivel escolar</label>
+                    <select id="selectNivel">
+                        <optgroup label="Escuela"></optgroup>
+                        <option value="1">Primero</option>
+                        <option value="2">Segundo</option>
+                        <option value="3">Tercero</option>
+                        <option value="4">Cuarto</option>
+                        <option value="5">Quinto</option>
+                        <option value="6">Sexto</option>
+                        <optgroup label="Colegio"></optgroup>
+                        <option value="7">Séptimo</option>
+                        <option value="8">Octavo</option>
+                        <option value="9">Noveno</option>
+                        <option value="10">Décimo</option>
+                        <option value="11">Undécimo</option>
+                        <option value="12">Duodécimo</option>
+                    </select>
+                </div>
+            </form>
+
+            <table id="tblUtiles">
+                <thead>
+                    <tr>
+                        <th>Nombre del útil</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+
+            </table>
         </div>
     </main>
 
     <footer>
 
     </footer>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        <script src="js/controlador.general.js"></script>
+        <script src="js/servicio.listarUtilesIndex.js"></script>
+        <script src="js/controlador.listarUtilesIndex.js"></script>
 </body>
 
 </html>
