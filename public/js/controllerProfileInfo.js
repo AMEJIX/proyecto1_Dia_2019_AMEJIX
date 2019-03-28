@@ -26,6 +26,7 @@ function ocultar() {
         document.querySelector('#menuInformativo').style.display = 'none';
         document.querySelector('#menuCitas').style.display = 'none';
         document.querySelector('#aFavoritos').style.display = 'none';
+        document.querySelector('#aCEcercanos').style.display = 'none';
     }
 
 }

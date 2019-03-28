@@ -5,7 +5,7 @@ let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 
 'use strict';
-const aInfoPF= document.querySelector('#aVerinfoPadre de familia');
+const aInfoPF= document.querySelector('#aVerinfoPadredefamilia');
 // const aCitas= document.querySelector('#aCitas');
 
 let agregarParametroUrl = (pParametro) => {
