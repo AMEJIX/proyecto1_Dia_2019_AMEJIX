@@ -20,7 +20,7 @@ let agregarParametroUrl = (pParametro) => {
         // aMatricula = 'mostrarMatriculaCostos.html?idCE=' + pParametro;
         // aBecas = 'mostrarBecas.html?idCE=' + pParametro;
 
-        // aMaterialInformativo = 'mostrarMaterialInformativo.html?idCE=' + pParametro;
+        aMaterialInformativo.href = 'mostrarMaterialInformativo.html?idCE=' + pParametro;
         // aNoticias = 'mostrarNoticias.html?idCE=' + pParametro;
         aActividades.href ='listarActividades.html?idCE=' + pParametro;
         aUtiles.href ='listarUtiles.html?idCE=' + pParametro;
@@ -36,10 +36,7 @@ let agregarVariosParametroUrl = (pParametro, ...args) => {
     }
     aCitas.href = 'citas.html?idCE=' + pParametro + masParametros;
 };
-// let agregarDosParametros = (pparam1, pparam2) =>{
-//     aCitas.href = 'citas.html?idCE=' + pparam1 + '&centroEducativo=' +  pparam2;
-// };
-console.log(NombreGeneralCE);
+
 agregarParametroUrl(IdGeneralCE);
 agregarVariosParametroUrl(IdGeneralCE, NombreGeneralCE);
 

@@ -85,7 +85,7 @@ module.exports.listarPreguntasFrecuentes = (req, res) =>{
             console.log("Id del centro recibido: " + req.body.idCE);
             console.log(preguntasFrecuentesCE);
 
-            if (preguntasFrecuentes.length > 0 && req.body.idCE !== undefined){
+            if (preguntasFrecuentesCE.length > 0 && req.body.idCE !== undefined){
 
                 res.json(
                     {

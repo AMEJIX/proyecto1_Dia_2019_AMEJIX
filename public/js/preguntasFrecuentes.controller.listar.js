@@ -6,16 +6,19 @@ const inputFiltrar = document.querySelector('#txtFiltrar');
 let user = JSON.parse(sessionStorage.getItem('usuario'));//ya está declarado
 
 let idCentroEducativo = user._id;
-console.log(idCentroEducativo);
+
 if (user.userType != 'centroEducativo'){
     idCentroEducativo = IdGeneralCE;
+} else {
+    if (location.pathname.split("/").slice(-1) != 'loSentimos.html') setTimeout(location.href='loSentimos.html', 0);
 }
 
 let listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
 
 //
-// console.log(user.userType);
-if(user.userType == 'centroEducativo' || user.userType == 'administrador'){
+console.log(listaPreguntasFrecuentes.length);
+
+if(user.userType == 'administrador'){
 
     if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html', 0);
 
@@ -44,7 +47,7 @@ function mostrarPreguntasFrecuentes() {
 
     tabla.innerHTML = '';
 
-    if (listaPreguntasFrecuentes.length > 0){
+    if (listaPreguntasFrecuentes.length > 0 && /^([0-9])*$/.test(listaPreguntasFrecuentes)){
 
         if (document.getElementById('error')) eliminarMensaje();
 
