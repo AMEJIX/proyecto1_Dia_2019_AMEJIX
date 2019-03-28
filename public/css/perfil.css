@@ -139,6 +139,8 @@ h3:hover {
 
 h4 {
     color: white;
+    width: 135px;
+    height: 5px;
     font-size: 11px;
     padding: 28px 0px;
     margin-left: 15px;

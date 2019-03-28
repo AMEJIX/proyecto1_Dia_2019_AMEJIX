@@ -46,13 +46,14 @@ form, #nueva{
 
 #cajaFiltrar{
     margin-top: 50px;
-    display: inline-block;
+    text-align: center;
 }
 
 #txtFiltrar, #txtNombreEtiqueta{
-    font-size: 16px;
+    font-size: 14px;
     outline: none;
-    border: 2px #344955 solid;
+    width: 480px;
+    height: 25px;
 }
 
 #txtNombreEtiqueta{

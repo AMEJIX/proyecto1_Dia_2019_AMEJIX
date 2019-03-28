@@ -27,14 +27,34 @@ let registrarMaterialInformativo = (ptema, pdescripcion, pfile, pIdCentro) => {
     });
 };
 
+let listarMaterialUsuario = (idCE) => {
+    let listaMaterialUser = [];
+    let request = $.ajax({
+        url: "http://localhost:4000/api/centroEducativo/listarMaterialUsuario/" + idCE,
+        method: "GET",
+        data: {},
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async: false
+    });
+
+    request.done(function (res) {
+        listaMaterialUser = res.material;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+
+    return listaMaterialUser; 
+};
+
 let listarMaterial = () => {
     let listaMaterial = [];
     let request = $.ajax({
         url: "http://localhost:4000/api/listarMaterialInformativo",
         method: "GET",
-        data: {
-
-        },
+        data: {},
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         async: false

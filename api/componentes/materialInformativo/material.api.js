@@ -31,6 +31,34 @@ module.exports.registrar = (req, res) => {
     });
 };
 
+module.exports.listarMaterialUsuario = (req, res) => {
+    materialModel.find().then(
+        function (material) {
+
+            let listaMaterialesUser = [];
+
+            for (let materialUser of material) {
+                if (materialUser.idCE == req.body.idCE) {
+                    listaMaterialesUser.push(materialUser);
+                }
+            }
+            console.log(listaMaterialesUser);
+            console.log(req.body.idCE);
+            if (listaMaterialesUser.length > 0) {
+                res.json({
+                    success: true,
+                    material: listaMaterialesUser
+                });
+            } else {
+                res.json({
+                    success: false,
+                    material: 'No se encontraron materiales informativos registrados'
+                });
+            }
+        }
+    );
+};
+
 module.exports.listarMaterial = (req, res) => {
     materialModel.find().then(
         function (material) {

@@ -38,15 +38,25 @@ html {
     color: #f9aa33;
 }
 
+#home .left {
+    display: inline-block;
+    width: 49%;
+    height: 80vh;
+    float: left;
+}
+
+#home .right {
+    display: inline-block;
+    width: 49.5%;
+    height: 80vh;
+}
+
 #home .text {
     width: 35rem;
     height: 30rem;
-    float: right;
+    float: left;
     margin-top: 7%;
-    margin-right: 20%;
     border-left: white solid 1px;
-    display: table-cell;
-    vertical-align: middle;
 }
 
 #home .text h1 {
@@ -95,13 +105,13 @@ html {
 
 .down {
     text-align: center;
-    width: 100%;
     color: white;
     font-size: 45px;
     transition: all 300ms ease;
     position: absolute;
     bottom: 0;
     margin: 0 auto;
+    margin-bottom: 25px;
 }
 
 #tops {
@@ -130,7 +140,7 @@ html {
     color: #344955;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-    margin-top: 40px;
+    padding-top: 25px;
 }
 
 #tops h2 {
@@ -167,7 +177,7 @@ html {
 #spanPosition {
     float: left;
     font-family: 'Open Sans', sans-serif;
-    color: #232f34;
+    color: #f9aa33;
     padding-top: 26px;
     padding-bottom: 26px;
     margin-left: 50px;
@@ -214,6 +224,16 @@ html {
     margin-left: 13px;
 }
 
+.listDown {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: #f9aa33;
+    font-size: 45px;
+    transition: all 300ms ease;
+    padding-top: 2%;
+}
+
 #list {
     background: white;
     width: 100%;
@@ -250,8 +270,8 @@ form div{
 }
 form div label{
     display: inline-block;
-    width: 190px;
-    margin-left: 32px;
+    width: 165px;
+    margin-left: 10.7%;
 }
 
 #tblUtiles{
@@ -271,7 +291,6 @@ th{
 
 }
 
-
 #tblUtiles tbody tr td{
     color: #344955;
     border: 1px solid #344955;
@@ -281,4 +300,22 @@ th{
 #tblUtiles tbody tr td:hover{
     background-color: #f9bf33;
     color: white;
+}
+
+footer {
+    width: 100%;
+    height: 120px;
+    background-color: #232F34;
+}
+
+footer .amejix {
+    background-image: url(../img/logoAmejixBlanco.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat-y: no-repeat;
+    background-repeat-x: no-repeat;
+    width: 8%;
+    height: 35.5%;
+    margin:  0 auto;
+    padding: 38px 0px;
 }
