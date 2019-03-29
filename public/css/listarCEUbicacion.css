@@ -55,8 +55,8 @@ form div{
 
 th{
     color: white;
-    background-color: #344955;
-    border: 1px solid #344955;
+    background-color: #f9bf33;
+    border: #2c3e50 solid 1px;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -72,9 +72,5 @@ th{
     padding: 8px;
     size: 20px;
     vertical-align: middle !important;
-}
-#tblCentrosCercanos tbody tr td:hover{
-    background-color: #f9bf33;
-    color: white;
 }
 

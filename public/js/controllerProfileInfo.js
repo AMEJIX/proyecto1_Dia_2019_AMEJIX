@@ -12,6 +12,7 @@ function ocultar() {
         document.querySelector('#verPadres').style.display = 'none';
         document.querySelector('#aPreguntasCE').style.display = 'none';
         
+        
        
     } else if (user.userType == "centroEducativo") {
         document.querySelector('#menuAdministrativo').style.display = 'none';

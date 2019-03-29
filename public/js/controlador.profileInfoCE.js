@@ -47,6 +47,8 @@ function ocultar() {
 
     }else if(user.userType == "superAdministrador"){
         document.querySelector('#menuCitasEnCE').style.display = 'none';
+        document.querySelector('#aCitas').style.display = 'none';
+        
     }
 }
 
