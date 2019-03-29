@@ -4,14 +4,14 @@ let user = JSON.parse(sessionStorage.getItem("usuario"));
 const tabla = document.querySelector('#tblMaterialInformativo tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 
-let idUusarioCE = user._id;
+let idUsuarioCE = user._id;
 if(user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
 } else {
 
 }
 
-let temas = listarMaterialUsuario(idUusarioCE);
+let temas = listarMaterialUsuario(idUsuarioCE);
 mostrarDatos();
 
 
