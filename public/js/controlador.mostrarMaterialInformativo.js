@@ -41,6 +41,6 @@ function mostrarDatos() {
                 }
                 imagenTema.appendChild(imagen);
             }
-        };
+        }
     }
 }
