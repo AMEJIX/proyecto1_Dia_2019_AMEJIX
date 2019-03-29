@@ -89,7 +89,7 @@ textarea{
     width: 404px;
     resize: none;
 }
-form select{
+select{
     display: inline-block;
     width: 200px;
     height: 25px;
