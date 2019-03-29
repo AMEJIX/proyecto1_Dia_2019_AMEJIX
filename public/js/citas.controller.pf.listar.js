@@ -10,7 +10,7 @@ if(user.userType === 'centroEducativo'){
 
 let correoDelPadreDeFamilia = user.email;
 
-let listaPreguntasFrecuentes = getCitasPF(correoDelPadreDeFamilia);
+let listaCitas = getCitasPF(correoDelPadreDeFamilia);
 
 document.getElementById('tblCitas').insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> No se encontró ninguna cita agendada relacionada con el usuario con el correo ${correoDelPadreDeFamilia}</p>`);
 
@@ -26,12 +26,12 @@ function mostrarCitas() {
 
     tabla.innerHTML = '';
 
-    if (listaPreguntasFrecuentes.length > 0){
+    if (listaCitas.length > 0 || !(typeof listaCitas == 'string')){
 
         if (document.getElementById('error')) eliminarMensaje();
 
-        for (let i = 0; i < listaPreguntasFrecuentes.length; i++) {
-            if (listaPreguntasFrecuentes[i]['nombreCentroEducativo'].toLowerCase().includes(busqueda.toLowerCase())){
+        for (let i = 0; i < listaCitas.length; i++) {
+            if (listaCitas[i]['nombreCentroEducativo'].toLowerCase().includes(busqueda.toLowerCase())){
                 if (document.getElementById('error')) eliminarMensaje();
 
                 let fila = tabla.insertRow();
@@ -40,13 +40,13 @@ function mostrarCitas() {
 
                 fechaHora.classList.add('fechaHora');
 
-                fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm a');
+                fechaHora.innerHTML = moment(listaCitas[i]['fechaHora']).format('DD/mm/YY hh:mm a');
 
                 let institucion = fila.insertCell();
 
                 institucion.classList.add('institucion');
 
-                institucion.innerHTML = listaPreguntasFrecuentes[i]['nombreCentroEducativo'];
+                institucion.innerHTML = listaCitas[i]['nombreCentroEducativo'];
             } else {
                 if (document.getElementById('error')) eliminarMensaje();
                 insertarMensaje(`No se encontró ninguna cita agendada con ${busqueda}`);

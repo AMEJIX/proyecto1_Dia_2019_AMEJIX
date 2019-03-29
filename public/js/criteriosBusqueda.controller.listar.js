@@ -31,7 +31,7 @@ function mostrarCriterios() {
     tabla.innerHTML = '';
 
     console.log(listaEtiquetas.length);
-    if (listaEtiquetas.length > 0){
+    if (listaEtiquetas.length > 0 || !(typeof listaCitas == 'string')){
 
         if (document.getElementById('error')) eliminarMensaje();
 

@@ -10,7 +10,7 @@ if(user.userType === 'padreFamilia'){
 
 let nombreDelCentroEducativo = user.centroEducativo;
 
-let listaPreguntasFrecuentes = getCitasCE(nombreDelCentroEducativo);
+let listaCitas = getCitasCE(nombreDelCentroEducativo);
 
 insertarMensaje(`No se encontró ninguna cita agendada con el centro educativo ${nombreDelCentroEducativo}`);
 
@@ -26,12 +26,12 @@ function mostrarCitas() {
 
     tabla.innerHTML = '';
 
-    if (listaPreguntasFrecuentes !== 'No se encontró ninguna cita') {
+    if (listaCitas !== 'No se encontró ninguna cita') {
 
         if (document.getElementById('error')) eliminarMensaje();
 
-        for (let i = 0; i < listaPreguntasFrecuentes.length; i++) {
-            if (listaPreguntasFrecuentes[i]['nombrePadreFamilia'].toLowerCase().includes(busqueda.toLowerCase())) {
+        for (let i = 0; i < listaCitas.length; i++) {
+            if (listaCitas[i]['nombrePadreFamilia'].toLowerCase().includes(busqueda.toLowerCase())) {
 
                 if (document.getElementById('error')) eliminarMensaje();
 
@@ -41,13 +41,13 @@ function mostrarCitas() {
 
                 fechaHora.classList.add('fechaHora');
 
-                fechaHora.innerHTML = moment(listaPreguntasFrecuentes[i]['fechaHora']).format('DD/mm/YY hh:mm a');
+                fechaHora.innerHTML = moment(listaCitas[i]['fechaHora']).format('DD/mm/YY hh:mm a');
 
                 let institucion = fila.insertCell();
 
                 institucion.classList.add('padre');
 
-                institucion.innerHTML = listaPreguntasFrecuentes[i]['nombrePadreFamilia'];
+                institucion.innerHTML = listaCitas[i]['nombrePadreFamilia'];
             } else {
                 if (document.getElementById('error')) eliminarMensaje();
                 insertarMensaje(`No se encontró ninguna cita agendada con ${busqueda}`);

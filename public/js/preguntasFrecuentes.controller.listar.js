@@ -40,8 +40,7 @@ function mostrarPreguntasFrecuentes() {
 
     tabla.innerHTML = '';
 
-    if (listaPreguntasFrecuentes.length > 0 && !
-        /^([0-9])*$/.test(listaPreguntasFrecuentes)){
+    if (listaPreguntasFrecuentes.length > 0 && !(typeof listaPreguntasFrecuentes == 'string')){
 
         if (document.getElementById('error')) eliminarMensaje();
 
