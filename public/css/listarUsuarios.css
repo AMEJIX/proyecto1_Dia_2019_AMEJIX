@@ -14,6 +14,10 @@ h1 {
     margin-right: 5%;
 }
 
+#txtFiltro{
+    width: 170px;
+}
+
 .centroEducativo {
     display: inline-block;  
     margin-left: 5%;
@@ -78,13 +82,15 @@ td {
     color: #2c3e50;
 }
 
-td:hover {
-    color: white;
-    background: #4a6572;
-}
+
 
 td, th {
     text-align: center;
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
+}
+
+#tblUsuarios a:hover{
+    text-decoration: none;
+    color: #f9aa33
 }
