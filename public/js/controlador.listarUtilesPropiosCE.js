@@ -6,6 +6,10 @@ const selectNivel = document.querySelector("#selectNivel");
 const tabla = document.querySelector("#tblUtiles tbody");
 const IdGeneralCE = user._id;
 
+if(user.userType == 'padreFamilia' || user.userType == 'superAdministrador' ){
+    window.location.href = 'loSentimos.html';
+}
+
 let utiles = listarUtilesNivel(); 
 
 let mostrarUtiles = () =>{  

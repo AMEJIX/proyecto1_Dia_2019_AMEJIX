@@ -1,11 +1,13 @@
 'use strict';
-
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 const selectCriterio = document.querySelector('#selectCriterio');
 const inputDescripcion = document.querySelector('#txtDescripcion');
 const selectPuntaje= document.querySelector('#selectPuntaje');
 const botonRegistrarCriterio= document.querySelector('#btnRegistrarCriterio');
 
-
+if(user.userType == 'centroEducativo' || user.userType == 'padreFamilia'){
+    window.location.href = 'loSentimos.html';
+}
 
 let validarCriterio = () =>{
     let error = false;

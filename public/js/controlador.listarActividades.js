@@ -1,7 +1,12 @@
 'use strict';
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tablaActividades = document.querySelector('#tblActividades tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
+
+if(user.userType == 'centroEducativo'){
+    window.location.href = 'loSentimos.html';
+}
 
 let actividades = listarActividades();
 
