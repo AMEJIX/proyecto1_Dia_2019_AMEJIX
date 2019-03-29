@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf22022-7a7d-4a24-95d7-c6b6f83fc35d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/js/controllerRegistroUsuarios.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controllerRegistroUsuarios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/componentes/registrarBeca/registrarBeca.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/becas/becas.api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/componentes/registrarBeca/registrarBeca.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/becas/becas.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/componentes/registrarBeca/registrarBeca.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/becas/becas.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/componentes/registrarMatriculaCostos/registrarMatriculaCostos.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/componentes/registrarMatriculaCostos/registrarMatriculaCostos.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/componentes/registrarMatriculaCostos/registrarMatriculaCostos.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/componentes/registrarNoticia/registrarNoticia.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/noticias/noticias.api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/componentes/registrarNoticia/registrarNoticia.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/noticias/noticias.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/componentes/registrarNoticia/registrarNoticia.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/noticias/noticias.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/controlador.registrarBeca.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controlador.registrarBeca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/controlador.registrarNoticia.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controlador.registrarNoticia.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,65 +27,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/preguntasFrecuentes.servicio.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/componentes/preguntasfrecuentes/preguntasFrecuentes.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/componentes/preguntasfrecuentes/preguntasFrecuentes.api.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js">
+        <entry file="file://$PROJECT_DIR$/api/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="13" column="83" lean-forward="true" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
+            <state relative-caret-position="189">
+              <caret line="99" column="11" selection-start-line="99" selection-start-column="11" selection-end-line="99" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/preguntasFrecuentesCE&amp;Admin.html">
+        <entry file="file://$PROJECT_DIR$/api/componentes/becas/becas.api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/profileInfoCE.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="85" column="40" lean-forward="true" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controlador.profileInfoCE.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="89" lean-forward="true" selection-start-line="22" selection-start-column="89" selection-end-line="22" selection-end-column="89" />
+            <state relative-caret-position="1020">
+              <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -96,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/misCitas.html" />
         <option value="$PROJECT_DIR$/public/js/citas.controller.listar.js" />
         <option value="$PROJECT_DIR$/public/preguntasFrecuentes.html" />
         <option value="$PROJECT_DIR$/api/components/citas/citas.model.js" />
@@ -105,7 +71,6 @@
         <option value="$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.ce.listar.js" />
         <option value="$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.pf.listar.js" />
         <option value="$PROJECT_DIR$/api/components/preguntasfrecuentes/preguntasFrecuentes.model.js" />
-        <option value="$PROJECT_DIR$/api/index.js" />
         <option value="$PROJECT_DIR$/public/css/reset.css" />
         <option value="$PROJECT_DIR$/public/inicioSesion.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -147,6 +112,8 @@
         <option value="$PROJECT_DIR$/public/profileInfoCE.html" />
         <option value="$PROJECT_DIR$/public/preguntasFrecuentesCE&amp;Admin.html" />
         <option value="$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js" />
+        <option value="$PROJECT_DIR$/api/componentes/becas/becas.api.js" />
+        <option value="$PROJECT_DIR$/api/index.js" />
       </list>
     </option>
   </component>
@@ -184,24 +151,26 @@
               <item name="proyecto1_Dia_2019_AMEJIX" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="preguntasfrecuentes" type="462c0819:PsiDirectoryNode" />
+              <item name="becas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proyecto1_Dia_2019_AMEJIX" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proyecto1_Dia_2019_AMEJIX" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="componentes" type="462c0819:PsiDirectoryNode" />
+              <item name="matriculasCostos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proyecto1_Dia_2019_AMEJIX" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proyecto1_Dia_2019_AMEJIX" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="componentes" type="462c0819:PsiDirectoryNode" />
+              <item name="noticias" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proyecto1_Dia_2019_AMEJIX" type="b2602c69:ProjectViewProjectNode" />
               <item name="proyecto1_Dia_2019_AMEJIX" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proyecto1_Dia_2019_AMEJIX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proyecto1_Dia_2019_AMEJIX" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proyecto1_Dia_2019_AMEJIX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proyecto1_Dia_2019_AMEJIX" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proyecto1_Dia_2019_AMEJIX" type="b2602c69:ProjectViewProjectNode" />
@@ -284,7 +253,7 @@
       <workItem from="1553528179490" duration="747000" />
       <workItem from="1553529438611" duration="1280000" />
       <workItem from="1553530880180" duration="28931000" />
-      <workItem from="1553744426049" duration="11935000" />
+      <workItem from="1553744426049" duration="13249000" />
     </task>
     <task id="LOCAL-00001" summary="Registrar preguntas frecuentes 1.0 listo.">
       <created>1552448241416</created>
@@ -307,11 +276,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553561387439</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Errores corregidos de preguntas frecuentes">
+      <created>1553878325529</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1553878325529</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157671000" />
+    <option name="totallyTimeSpent" value="158985000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -324,16 +300,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="804" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49925262" visible="true" weight="0.20886981" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49925262" visible="true" weight="0.20886981" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.66367716" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.50224215" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003524" side_tool="true" weight="0.32935917" />
-      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49964765" weight="0.3278272" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49964765" weight="0.32735425" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32786885" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32735425" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.32884902" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
@@ -375,65 +352,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Registrar preguntas frecuentes 1.0 listo." />
     <MESSAGE value="Versión antes de pegar 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Versión antes de pegar 1.0" />
+    <MESSAGE value="Errores corregidos de preguntas frecuentes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Errores corregidos de preguntas frecuentes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/components/usuarios/usuarios.api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3704">
-          <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#ul#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#1;n#ul#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#ul#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#1;n#ul#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/components/usuarios/usuarios.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllerRegistroUsuarios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7890">
-          <caret line="526" column="6" lean-forward="true" selection-start-line="526" selection-start-column="6" selection-end-line="526" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/citas.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/components/usuarios/usuarios.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/email.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -563,13 +486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="26" column="13" selection-start-line="26" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
         </state>
       </provider>
     </entry>
@@ -712,9 +628,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-59">
+          <caret line="13" column="83" lean-forward="true" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/preguntasFrecuentesCE&amp;Admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/profileInfoCE.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
+        <state relative-caret-position="340">
           <caret line="85" column="40" lean-forward="true" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
         </state>
       </provider>
@@ -726,17 +656,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/preguntasFrecuentesCE&amp;Admin.html">
+    <entry file="file://$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.model.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/componentes/becas/becas.model.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/componentes/becas/becas.route.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
+        <state relative-caret-position="-628" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/componentes/becas/becas.api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js">
+    <entry file="file://$PROJECT_DIR$/api/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="13" column="83" lean-forward="true" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
+        <state relative-caret-position="189">
+          <caret line="99" column="11" selection-start-line="99" selection-start-column="11" selection-end-line="99" selection-end-column="11" />
         </state>
       </provider>
     </entry>

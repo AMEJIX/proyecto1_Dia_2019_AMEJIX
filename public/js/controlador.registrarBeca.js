@@ -40,7 +40,7 @@ let obtener_datos = () => {
     } else {
         swal.fire({
             type: 'warning',
-            title: 'La beca no fue registrada',
+            title: 'La becas no fue registrada',
             text: 'Por favor revise los campos resaltados'
         });
     }

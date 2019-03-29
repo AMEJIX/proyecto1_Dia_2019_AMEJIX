@@ -1,6 +1,6 @@
 'use strict';
 
-const modeloRegistrarNoticia = require('./registrarNoticia.model');
+const modeloRegistrarNoticia = require('./noticias.model');
 
 module.exports.registrar = (req, res) => {
 

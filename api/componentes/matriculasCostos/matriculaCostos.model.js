@@ -9,4 +9,4 @@ let schemaRegistrarMatriculaCostos = new mongoose.Schema({
     idCE: { type: String, required: true },
 });
 
-module.exports = mongoose.model('matriculaCostos', schemaRegistrarMatriculaCostos);
+module.exports = mongoose.model('matriculasCostos', schemaRegistrarMatriculaCostos);

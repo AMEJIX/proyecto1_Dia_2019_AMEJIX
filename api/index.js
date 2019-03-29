@@ -97,14 +97,14 @@ app.use('/api', criteriosBusqueda);
 const citas = require('./componentes/citas/citas.route');
 app.use('/api', citas);
 
-const registrarBeca = require('./componentes/registrarBeca/registrarBeca.route');
-app.use('/api', registrarBeca);
+const becas = require('./componentes/becas/becas.route');
+app.use('/api', becas);
 
-const registrarNoticia = require('./componentes/registrarNoticia/registrarNoticia.route');
-app.use('/api', registrarNoticia);
+const noticias = require('./componentes/noticias/noticias.route');
+app.use('/api', noticias);
 
-const registrarMatriculaCostos = require('./componentes/registrarMatriculaCostos/registrarMatriculaCostos.route');
-app.use('/api', registrarMatriculaCostos);
+const matriculaCostos = require('./componentes/matriculasCostos/matriculaCostos.route');
+app.use('/api', matriculaCostos);
 
 
 

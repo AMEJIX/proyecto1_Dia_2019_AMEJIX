@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const apiRegistrarMatricula = require('./registrarMatriculaCostos.api');
+const apiRegistrarMatricula = require('./matriculaCostos.api');
 
 router.param('idCE', (req, res, next, idCE) => {
     req.body.idCE = idCE;

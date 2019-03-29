@@ -2,31 +2,31 @@
 
 const express = require('express');
 const router = express.Router();
-const apiRegistrarBeca = require('./registrarBeca.api');
+const apiRegistrarNoticia = require('./noticias.api');
 
 router.param('idCE', (req, res, next, idCE) => {
     req.body.idCE = idCE;
     next();
 });
 
-router.route('/registrarBeca')
+router.route('/noticias')
     .post(
         function (req, res) {
-            apiRegistrarBeca.registrar(req, res);
+            apiRegistrarNoticia.registrar(req, res);
         }
     );
 
-router.route('/listarBecas')
+router.route('/listarNoticias')
     .get(
         function (req, res) {
-            apiRegistrarBeca.listarBecas(req, res);
+            apiRegistrarNoticia.listarNoticias(req, res);
         }
     );
 
-router.route('/listarBecasCE/:idCE')
+router.route('/listarNoticiasCE/:idCE')
     .get(
         function (req, res) {
-            apiRegistrarBeca.listarBecasCE(req, res);
+            apiRegistrarBeca.listarNoticiasCE(req, res);
         }
     );
 
