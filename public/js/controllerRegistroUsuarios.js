@@ -504,6 +504,17 @@ let validarCentroEducativo = () => {
     let idiomasSeleccionados = document.querySelector('#fieldsetIdiomas input[type=checkbox]:checked')
   
 
+    
+
+    if (inputDireccionExacta.value == '') {
+        error = true;
+        inputDireccionExacta.classList.add('errorInput');
+    } else {
+        inputDireccionExacta.classList.remove('errorInput');
+    }
+
+
+
     if (inputCentroEducativo.value == '') {
         error = true;
         inputCentroEducativo.classList.add('errorInput');
