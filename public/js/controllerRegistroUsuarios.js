@@ -501,6 +501,8 @@ let validarCentroEducativo = () => {
     let religionSeleccionada = document.querySelector('#fieldsetReligion input[type=radio]:checked');
     let clasificacionSeleccionada = document.querySelector('#fieldsetClasificacion input[type=radio]:checked')
     let tipoSeleccionado = document.querySelector('#fieldsetTipo input[type=checkbox]:checked')
+    let idiomasSeleccionados = document.querySelector('#fieldsetIdiomas input[type=radio]:checked')
+  
 
     if (inputCentroEducativo.value == '') {
         error = true;
@@ -574,6 +576,13 @@ let validarCentroEducativo = () => {
         fieldsetClasificacion.classList.remove('errorInput');
     }
 
+    if (idiomasSeleccionados == null) {
+        error = true;
+        fieldsetIdiomas.classList.add('errorInput');
+    } else {
+        fieldsetIdiomas.classList.remove('errorInput');
+    }
+
     if (tipoSeleccionado == null) {
         error = true;
         fieldsetTipo.classList.add('errorInput');
@@ -581,8 +590,76 @@ let validarCentroEducativo = () => {
         fieldsetTipo.classList.remove('errorInput');
     }
 
+    if (inputNombreCEP.value == '') {
+        error = true;
+        inputNombreCEP.classList.add('errorInput');
+    } else {
+        inputNombreCEP.classList.remove('errorInput');
+    }
 
 
+    if (inputApellidoCEP.value == '') {
+        error = true;
+        inputApellidoCEP.classList.add('errorInput');
+    } else {
+        inputApellidoCEP.classList.remove('errorInput');
+    }
+
+
+    if (inputDepartament.value == '') {
+        error = true;
+        inputDepartament.classList.add('errorInput');
+    } else {
+        inputDepartament.classList.remove('errorInput');
+    }
+
+
+    if (inputTelefonoCEP.value == '') {
+        error = true;
+        inputTelefonoCEP.classList.add('errorInput');
+    } else {
+        inputTelefonoCEP.classList.remove('errorInput');
+    }
+
+
+    if (inputExtension.value == '') {
+        error = true;
+        inputExtension.classList.add('errorInput');
+    } else {
+        inputExtension.classList.remove('errorInput');
+    }
+
+
+    if (inputNumIDCEP.value == '') {
+        error = true;
+        inputNumIDCEP.classList.add('errorInput');
+    } else {
+        inputNumIDCEP.classList.remove('errorInput');
+    }
+
+
+    if (inputEmailCEP.value == '') {
+        error = true;
+        inputEmailCEP.classList.add('errorInput');
+    } else {
+        inputEmailCEP.classList.remove('errorInput');
+    }
+
+    if (inputNombreComercial.value == '') {
+        error = true;
+        inputNombreComercial.classList.add('errorInput');
+    } else {
+        inputNombreComercial.classList.remove('errorInput');
+    }
+
+    if (inputTelCE.value == '') {
+        error = true;
+        inputTelCE.classList.add('errorInput');
+    } else {
+        inputTelCE.classList.remove('errorInput');
+    }
+
+   
 
     return error;
 }
@@ -627,13 +704,6 @@ function obtenerDatosCentroEducativo() {
         let contrasenna = contrasennaGenerada
         let privacidad = document.querySelector('#fieldsetPrivacidad input[type=radio]:checked').value;
         let clasificacion = document.querySelector('#fieldsetClasificacion input[type=radio]:checked').value;
-
-
-
-
-
-
-
 
 
 
