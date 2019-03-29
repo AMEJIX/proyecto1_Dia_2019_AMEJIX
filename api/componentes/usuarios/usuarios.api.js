@@ -78,7 +78,7 @@ function correoPF(pemail, pnombre, pcontrasena) {
 
 }
 
-function correoCE(pemail, pnombre, pcontrasena) { 
+function correoCE(pemail, pcentroEducativo, pcontrasena) { 
        //se define el correo que se va utilizar para enviar el email
        let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -96,7 +96,7 @@ function correoCE(pemail, pnombre, pcontrasena) {
     //se redacta el email
 
     let email = pemail;
-    let centroEducativo = pnombre;
+    let centroEducativo = pcentroEducativo;
     let contrasenna = pcontrasena;
 
 
@@ -248,7 +248,7 @@ module.exports.registrar = (req, res) => {
                     break;
                 case 'centroEducativo':
                 console
-                    correoCE(req.body.email, req.body.nombre, req.body.contrasenna)
+                    correoCE(req.body.email, req.body.centroEducativo, req.body.contrasenna)
                     break;
                 default:
                 // code block
