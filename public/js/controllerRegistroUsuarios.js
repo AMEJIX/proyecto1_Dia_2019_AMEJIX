@@ -501,8 +501,19 @@ let validarCentroEducativo = () => {
     let religionSeleccionada = document.querySelector('#fieldsetReligion input[type=radio]:checked');
     let clasificacionSeleccionada = document.querySelector('#fieldsetClasificacion input[type=radio]:checked')
     let tipoSeleccionado = document.querySelector('#fieldsetTipo input[type=checkbox]:checked')
-    let idiomasSeleccionados = document.querySelector('#fieldsetIdiomas input[type=radio]:checked')
+    let idiomasSeleccionados = document.querySelector('#fieldsetIdiomas input[type=checkbox]:checked')
   
+
+    
+
+    if (inputDireccionExacta.value == '') {
+        error = true;
+        inputDireccionExacta.classList.add('errorInput');
+    } else {
+        inputDireccionExacta.classList.remove('errorInput');
+    }
+
+
 
     if (inputCentroEducativo.value == '') {
         error = true;
