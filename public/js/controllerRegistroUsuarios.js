@@ -520,15 +520,14 @@ let validarCentroEducativo = () => {
     }
 
 
-
-
-
-    if (inputAnno.value == '') {
+    if (inputAnno.value < 0 || inputAnno.value == "")  {
         error = true;
         inputAnno.classList.add('errorInput');
     } else {
         inputAnno.classList.remove('errorInput');
     }
+
+
 
     if (inputEmailCE.value == '') {
         error = true;
