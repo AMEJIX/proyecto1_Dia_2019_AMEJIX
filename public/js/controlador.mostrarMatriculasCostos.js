@@ -23,7 +23,7 @@ function mostrarMatriculas() {
 
     tabla.innerHTML = ' ';
 
-    if (/^([0-9])*$/.test(matriculas)) {
+    if (!(typeof temas == 'string')) {
         for (let i = 0; i < matriculas.length; i++) {
 
             if (matriculas[i]['matricula'].toLowerCase().includes(filtro.toLowerCase())) {
