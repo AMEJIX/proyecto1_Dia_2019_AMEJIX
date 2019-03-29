@@ -5,12 +5,19 @@ const inputFiltrar = document.querySelector('#txtFiltrar');
 
 let user = JSON.parse(sessionStorage.getItem('usuario'));//ya está declarado
 
-let idCentroEducativo = user._id;
+let idCentroEducativo;
 
-if (user.userType != 'centroEducativo'){
-    idCentroEducativo = IdGeneralCE;
+
+if (user.userType == 'padreFamilia' ) {//REDIRECCIONAMIENTO
+    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html') setTimeout(location.href='\'preguntasFrecuentesPF.html?idCE='+IdGeneralCE, 0);
 } else {
-    if (location.pathname.split("/").slice(-1) != 'loSentimos.html') setTimeout(location.href='loSentimos.html', 0);
+    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE, 0);
+}
+
+if (user.userType == 'padreFamilia' || user.userType == 'superAdministrador' ){
+    idCentroEducativo = IdGeneralCE;
+}else {
+    idCentroEducativo = user._id;
 }
 
 let listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
@@ -18,25 +25,11 @@ let listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
 //
 console.log(listaPreguntasFrecuentes.length);
 
-if(user.userType == 'administrador'){
+insertarMensaje(`No se encontró ninguna pregunta frecuente relacionada con este centro educativo`);
 
-    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html', 0);
+mostrarPreguntasFrecuentes();
 
-    insertarMensaje(`No se encontró ninguna pregunta frecuente relacionada con este centro educativo`);
-
-    mostrarPreguntasFrecuentes();
-
-    inputFiltrar.addEventListener('keyup', mostrarPreguntasFrecuentes);
-
-} else {
-    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html')  setTimeout(location.href='preguntasFrecuentesPF.html', 0);
-
-    insertarMensaje(`No se encontró ninguna pregunta frecuente relacionada con este centro educativo`);
-
-    mostrarPreguntasFrecuentes();
-
-    inputFiltrar.addEventListener('keyup', mostrarPreguntasFrecuentes);
-}
+inputFiltrar.addEventListener('keyup', mostrarPreguntasFrecuentes);
 
 
 function mostrarPreguntasFrecuentes() {
@@ -47,7 +40,8 @@ function mostrarPreguntasFrecuentes() {
 
     tabla.innerHTML = '';
 
-    if (listaPreguntasFrecuentes.length > 0 && /^([0-9])*$/.test(listaPreguntasFrecuentes)){
+    if (listaPreguntasFrecuentes.length > 0 && !
+        /^([0-9])*$/.test(listaPreguntasFrecuentes)){
 
         if (document.getElementById('error')) eliminarMensaje();
 
