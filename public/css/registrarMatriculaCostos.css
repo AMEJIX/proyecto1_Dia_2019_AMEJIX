@@ -19,30 +19,16 @@ tbody{
     margin-top: 50%;
 }
 
-#divNombreMatricula{
+#divPrecioMatricula{
     margin: 0% auto;
-    margin-left: 20%;    
+    margin-left: 27%;    
     margin-top: 10%;
 }
 
-#divPrecioMatricula{
+#divPrecioMensualidad{
     margin: 0% auto;
-    margin-left: 20%; 
+    margin-left: 27%; 
     margin-top: 3%;   
-}
-
-#labelNombreMatricula{
-    margin: 0% auto;
-    margin-right: 10px;
-    font-size: 25px;
-    color: #344955;
-}
-
-#inputNombreMatricula{
-    margin: 0% auto;
-    width: 230px;
-    height: 30px;
-    margin-left: 15px;
 }
 
 #labelPrecioMatricula{
@@ -53,6 +39,20 @@ tbody{
 }
 
 #inputPrecioMatricula{
+    margin: 0% auto;
+    width: 230px;
+    height: 30px;
+    margin-left: 80px;
+}
+
+#labelPrecioMensualidad{
+    margin: 0% auto;
+    margin-right: 10px;
+    font-size: 25px;
+    color: #344955;
+}
+
+#inputPrecioMensualidad{
     margin: 0% auto;
     width: 232px;
     height: 30px;

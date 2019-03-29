@@ -9,7 +9,7 @@ module.exports.registrar = (req, res) => {
             tituloNoticia: req.body.tituloNoticia,
             fechaNoticia: req.body.fechaNoticia,
             registrarNoticia: req.body.registrarNoticia,
-            idCE : req.body.idCE,
+            idCE: req.body.idCE,
         }
     );
 
@@ -25,7 +25,7 @@ module.exports.registrar = (req, res) => {
             res.json(
                 {
                     success: true,
-                    msg: `Su beca ha sido registrada`
+                    msg: `Su noticia ha sido registrada`
                 }
             );
         }
@@ -34,27 +34,36 @@ module.exports.registrar = (req, res) => {
 
 };
 
-module.exports.listarNoticias = (req, res) => {
-
+module.exports.listarNoticiasCE = (req, res) => {
     modeloRegistrarNoticia.find().then(
-        function (registrarNoticia) {
+        noticiasListadasCE => {
+            let arregloNoticias = [];
 
-            if (registrarNoticia.length > 0) {
+            for (let noticia of noticiasListadasCE) {
+                if (noticia.idCE == req.body.idCE) {
+                    arregloNoticias.push(noticia);
+                }
+            }
+
+            console.log(arregloNoticias);
+            console.log(req.body.idCE);
+
+            if (arregloNoticias.length > 0) {
                 res.json(
                     {
                         success: true,
-                        registrarNoticia: registrarNoticia,
+                        notichas: arregloNoticias,
+
                     }
                 )
             } else {
                 res.json(
                     {
                         success: false,
-                        registrarNoticia: "No se encontraron noticias"
+                        notichas: "No se encontraron noticias registradas"
                     }
                 )
             }
         }
     )
-
 };

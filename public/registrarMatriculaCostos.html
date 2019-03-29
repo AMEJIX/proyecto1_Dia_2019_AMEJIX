@@ -24,24 +24,33 @@
             <div class="wrapper">
                 <!----------------------Inicio opción---------------------->
                 <div class="opcion">
-                    <h3>Matrícula</h3>
+                    <h3>Matrículas</h3>
                     <div class="subOpcion">
-                        <a href="#">Registrar matrícula</a>
-                        <a href="#">Mostrar matrícula</a>
+                        <a href="registrarMatriculaCostos.html">Registrar matrículas</a>
+                        <a href="mostrarMatriculaCostos.html">Mostrar matrículas</a>
+                        </ul>
                     </div>
                 </div>
                 <!----------------------Fin opción---------------------->
 
+                <!----------------------Inicio opción---------------------->
+                
+                <!----------------------Fin opción---------------------->
+
+                <!----------------------Inicio opción---------------------->
+                
+                <!----------------------Fin opción---------------------->
             </div>
 
             <!----------------------Inicio información del perfil---------------------->
             <div class="userInfo">
                 <div class="userPhoto"></div>
-                <h4></h4>
+                <h4>Fulanito Mengano</h4>
                 <div class="subMenu">
-                    <a href="userProfileInfo.html">Perfil</a>
-                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="#">Perfil</a>
+                    <a href="#">Configuración</a>
                     <a href="#" id="logOut">Cerrar sesión</a>
+                    </ul>
                 </div>
             </div>
             <!----------------------Fin información del perfil---------------------->
@@ -51,14 +60,14 @@
         <div class="contenido" style="overflow-y: scroll;">
 
 
-            <div id="divNombreMatricula">
-                <label for="inputNombreMatricula" id="labelNombreMatricula">Nombre de la matrícula</label>
-                <input type="text" id="inputNombreMatricula">
+            <div id="divPrecioMatricula">
+                <label for="inputPrecioMatricula" id="labelPrecioMatricula">Matrícula</label>
+                <input type="number" id="inputPrecioMatricula">
             </div>
 
-            <div id="divPrecioMatricula">
-                <label for="#inputPrecioMatricula" id="labelPrecioMatricula">Precio de la matrícula</label>
-                <input type="number" id="inputPrecioMatricula">
+            <div id="divPrecioMensualidad">
+                <label for="inputPrecioMensualidad" id="labelPrecioMensualidad">Mensualidad</label>
+                <input type="number" id="inputPrecioMensualidad">
             </div>
 
             <fieldset id="fieldsetPrecio">
@@ -82,9 +91,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/authentication.js"></script>
+    <script src="js/controlador.registrarMatriculaCostos.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
     <script src="js/servicio.registrarMatriculaCostos.js"></script>
-    <script src="js/controlador.registrarMatriculaCostos.js"></script>
 </body>
 
 </html>

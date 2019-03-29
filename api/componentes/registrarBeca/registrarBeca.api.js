@@ -8,7 +8,7 @@ module.exports.registrar = (req, res) => {
         {
             nombreBeca: req.body.nombreBeca,
             descripcionBeca: req.body.descripcionBeca,
-            idCE : req.body.idCE,
+            idCE: req.body.idCE,
         }
     );
     nuevaBeca.save(function (error) {
@@ -48,11 +48,43 @@ module.exports.listarBecas = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        registrarBeca: "No se encontraron becas"
+                        registrarBeca: "No se encontraron becas",
                     }
                 )
             }
         }
     )
 
+};
+
+module.exports.listarBecasCE = (req, res) => {
+    modeloBeca.find().then(
+        becasListadasCE => {
+            let arregloBecas = [];
+
+            for (let bequitas of becasListadasCE) {
+                if (bequitas.idCE == req.body.idCE) {
+                    arregloBecas.push(bequitas);
+                }
+            }
+            console.log(arregloBecas);
+            console.log(req.body.idCE);
+
+            if (arregloBecas.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        becas: arregloBecas,
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        becas: "No se encontraron becas"
+                    }
+                )
+            }
+        }
+    )
 };

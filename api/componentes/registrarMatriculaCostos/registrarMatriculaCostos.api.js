@@ -5,10 +5,10 @@ const modeloRegistrarMatriculaCostos = require('./registrarMatriculaCostos.model
 module.exports.registrar = (req, res) => {
     let nuevaMatricula = new modeloRegistrarMatriculaCostos(
         {
-            nombre: req.body.nombre,
-            precio: req.body.precio,
+            matricula: req.body.matricula,
+            mensualidad: req.body.mensualidad,
             fieldsetPrecio: req.body.fieldsetPrecio,
-            idCE : req.body.idCE,
+            idCE: req.body.idCE,
         }
     );
 
@@ -56,4 +56,38 @@ module.exports.listarMatriculas = (req, res) => {
         }
     )
 
+};
+
+module.exports.listarMatriculasCE = (req, res) => {
+    modeloRegistrarMatriculaCostos.find().then(
+        matriculasListadasCE => {
+            let arregloMatriculas = [];
+
+            for (let matriculitas of matriculasListadasCE) {
+                if (matriculitas.idCE == req.body.idCE){
+                    arregloMatriculas.push(matriculitas)
+                }
+      S      }
+
+            console.log(arregloMatriculas);
+            console.log(req.body.idCE);
+
+            if (arregloMatriculas.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        matriculo: arregloMatriculas,
+
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        matriculo: "No se encontraron matrículas registradas"
+                    }
+                )
+            }
+        }
+    )
 };
