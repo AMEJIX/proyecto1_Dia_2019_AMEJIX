@@ -45,8 +45,8 @@ module.exports.listarNoticiasCE = (req, res) => {
                 }
             }
 
-            console.log(arregloNoticias);
-            console.log(req.body.idCE);
+            // console.log(arregloNoticias);
+            // console.log(req.body.idCE);
 
             if (arregloNoticias.length > 0) {
                 res.json(

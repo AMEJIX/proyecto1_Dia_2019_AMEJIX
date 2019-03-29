@@ -122,3 +122,7 @@ fieldset{
     margin-top: 2%;
     margin-left: 45%;
 }
+
+.classNoPuede{
+    display: none;
+}

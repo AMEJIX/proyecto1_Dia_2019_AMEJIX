@@ -31,6 +31,6 @@ function mostrarNoticias() {
         } else {
             tabla.innerHTML = 'No existen noticias registradas para este nivel';
         }
-    };
-};
-mostrarNoticias()
+    }
+}
+mostrarNoticias();

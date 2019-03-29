@@ -3,7 +3,7 @@
 let registrarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfieldsetNumberPrecioMatricula, pidCentroEducativo) => {
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/registrar_matricula",
+        url: "http://localhost:4000/api/registrarMatricula",
         method: "POST",
         data: {
 
@@ -40,7 +40,7 @@ let registrarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfie
 let listarMatriculas = (idCE) => {
     let listaMatriculas = [];
     let request = $.ajax({
-        url: "http://localhost:4000/api/listarMatriculaCostosCE"+idCE,
+        url: "http://localhost:4000/api/listarMatriculasCE/"+idCE,
         method: "GET",
         data: {
 

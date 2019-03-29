@@ -29,7 +29,7 @@ function mostrarBecas() {
         } else {
             tabla.innerHTML = 'No existen becas registradas para este nivel';
         }
-    };
-};
+    }
+}
 
 mostrarBecas();

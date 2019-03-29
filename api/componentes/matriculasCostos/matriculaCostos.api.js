@@ -61,13 +61,14 @@ module.exports.listarMatriculas = (req, res) => {
 module.exports.listarMatriculasCE = (req, res) => {
     modeloRegistrarMatriculaCostos.find().then(
         matriculasListadasCE => {
+            console.log(matriculasListadasCE);
             let arregloMatriculas = [];
 
             for (let matriculitas of matriculasListadasCE) {
                 if (matriculitas.idCE == req.body.idCE){
                     arregloMatriculas.push(matriculitas)
                 }
-      S      }
+            }
 
             console.log(arregloMatriculas);
             console.log(req.body.idCE);

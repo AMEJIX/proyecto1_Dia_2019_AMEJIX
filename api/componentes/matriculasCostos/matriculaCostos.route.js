@@ -16,17 +16,17 @@ router.route('/registrarMatricula')
         }
     );
 
-router.route('/listarMatriculas')
-    .get(
-        function (req, res) {
-            apiRegistrarMatricula.listarMatriculas(req, res);
-        }
-    );
+// router.route('/listarMatriculas')
+//     .get(
+//         function (req, res) {
+//             apiRegistrarMatricula.listarMatriculas(req, res);
+//         }
+//     );
 
 router.route('/listarMatriculasCE/:idCE')
     .get(
         function (req, res) {
-            apiRegistrarBeca.listarMatriculasCE(req, res);
+            apiRegistrarMatricula.listarMatriculasCE(req, res);
         }
     );
 

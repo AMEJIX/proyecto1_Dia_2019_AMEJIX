@@ -15,18 +15,18 @@ router.route('/noticias')
             apiRegistrarNoticia.registrar(req, res);
         }
     );
-
-router.route('/listarNoticias')
-    .get(
-        function (req, res) {
-            apiRegistrarNoticia.listarNoticias(req, res);
-        }
-    );
+//
+// router.route('/listarNoticias')
+//     .get(
+//         function (req, res) {
+//             apiRegistrarNoticia.listarNoticias(req, res);
+//         }
+//     );
 
 router.route('/listarNoticiasCE/:idCE')
     .get(
         function (req, res) {
-            apiRegistrarBeca.listarNoticiasCE(req, res);
+            apiRegistrarNoticia.listarNoticiasCE(req, res);
         }
     );
 

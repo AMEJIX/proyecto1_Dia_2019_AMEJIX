@@ -2,32 +2,44 @@
 
 let user = JSON.parse(sessionStorage.getItem('usuario'));
 
-const inputNombreMatricula = document.querySelector('#inputNombreMatricula');
-const inputPrecioMatricula = document.querySelector('#inputPrecioMatricula');
+const inputMatricula = document.querySelector('#inputPrecioMatricula');
+const inputMensualidad = document.querySelector('#inputPrecioMensualidad');
 const inputfieldsetPrecio = document.querySelector('#fieldsetPrecio');
 const botonRegistrarMatricula = document.querySelector('#btnRegistrarMatricula');
-const idCE = user._id;
+let idUsuarioCE = user._id;
 
+const opcionRegistrar = document.querySelector('#registrarMatriculaCostos');
+
+if(user.userType != "centroEducativo") {
+    idUsuarioCE = IdGeneralCE;
+    if (location.pathname.split("/").slice(-1) != 'mostrarMatriculaCostos.html') setTimeout(location.href='mostrarMatriculaCostos.html?idCE='+IdGeneralCE, 0);
+    opcionRegistrar.classList.add('classNoPuede');
+    if(user.userType == "padreFamilia"){
+
+    }
+} else {
+
+}
 let validar = () => {
     let error = false;
 
-    let inputfieldsetPrecio = document.querySelector('#fieldsetPrecio input[type=radio]:checked');
+    let monedaSeleccionada = document.querySelector('#fieldsetPrecio input[type=radio]:checked');
 
-    if (inputNombreMatricula == ' ') {
+    if (inputMatricula.value == '') {
         error = true;
-        inputNombreMatricula.classList.add('error_input');
+        inputMatricula.classList.add('error_input');
     } else {
-        inputNombreMatricula.classList.remove('error_input');
+        inputMatricula.classList.remove('error_input');
     }
 
-    if (inputPrecioMatricula == ' ') {
+    if (inputMensualidad.value == '') {
         error = true;
-        inputPrecioMatricula.classList.add('error_input');
+        inputMensualidad.classList.add('error_input');
     } else {
-        inputPrecioMatricula.classList.remove('error_input');
+        inputMensualidad.classList.remove('error_input');
     }
 
-    if (inputfieldsetPrecio ==  null) {
+    if (monedaSeleccionada ==  null) {
         error = true;
         inputfieldsetPrecio.classList.add('error_input');
     } else {
@@ -42,10 +54,10 @@ let obtener_datos = () => {
 
     if (validar() == false) {
 
-        let stringNombreMatricula = inputNombreMatricula.value;
-        let stringPrecioMatricula = inputPrecioMatricula.value;
+        let stringNombreMatricula = inputMatricula.value;
+        let stringPrecioMatricula = inputMensualidad.value;
         let fieldsetnumberPrecioMatricula = document.querySelector('#fieldsetPrecio input[type=radio]:checked').value;
-        let idCentroEducativo = idCE;
+        let idCentroEducativo = idUsuarioCE;
 
         registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idCentroEducativo);
 

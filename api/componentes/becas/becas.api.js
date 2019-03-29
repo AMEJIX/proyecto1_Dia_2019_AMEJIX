@@ -67,7 +67,7 @@ module.exports.listarBecasCE = (req, res) => {
                     arregloBecas.push(bequitas);
                 }
             }
-            console.log(arregloBecas);
+            // console.log(arregloBecas);
             console.log(req.body.idCE);
 
             if (arregloBecas.length > 0) {
