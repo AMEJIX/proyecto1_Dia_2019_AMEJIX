@@ -8,6 +8,10 @@ const file = document.querySelector('#documentPreview');
 const btnGuardar = document.querySelector('#btnGuardar');
 const idCE = user._id;
 
+if(user.userType == 'padreFamilia' || user.userType == 'superAdministrador'){
+    window.location.href = 'loSentimos.html';
+}
+
 let validar = () => {
     let error = false;
 

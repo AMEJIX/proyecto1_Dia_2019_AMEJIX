@@ -5,6 +5,10 @@ const conectado = sessionStorage.getItem('conectado');
 const tipo_usuario = user.userType;
 const cantonUsuario =user.canton;
 
+if(user.userType == 'centroEducativo' || user.userType == 'superAdministrador'){
+    window.location.href = 'loSentimos.html';
+}
+
 if(conectado){
     if(tipo_usuario){
         'padreFamilia'

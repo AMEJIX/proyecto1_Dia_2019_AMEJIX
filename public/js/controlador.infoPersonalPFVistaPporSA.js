@@ -2,6 +2,10 @@
 //padre de familia
 let user = JSON.parse(sessionStorage.getItem("usuario"));
 
+if(user.userType == 'padreFamilia' || user.userType == 'centroEducativo'){
+    window.location.href = 'loSentimos.html';
+}
+
 function ocultar() {
     console.log(user.userType);
     if(user.userType == "superAdministrador"){

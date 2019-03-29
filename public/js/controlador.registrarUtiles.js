@@ -9,6 +9,11 @@ const selectNivel = document.querySelector('#selectNivel');
 const botonRegistrar = document.querySelector('#btnRegistrar');
 const idCE = user._id;
 
+
+if(user.userType == 'padreFamilia'){
+    window.location.href = 'loSentimos.html';
+}
+
 let validar = () =>{
     let error = false;
     if(inputNombre.value == ''){

@@ -9,6 +9,9 @@ const imagenActividad = document.querySelector('#imgActividades');
 const botonRegistrar = document.querySelector('#btnRegistrar');
 const idCE = user._id;
 
+if(user.userType == 'padreFamilia'){
+    window.location.href = 'loSentimos.html';
+}
 
 
 let validar = () =>{

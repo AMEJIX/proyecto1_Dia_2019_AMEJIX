@@ -8,6 +8,10 @@ const tablaActividades = document.querySelector('#tblActividades tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 const IdGeneralCE = user._id;
 
+if(user.userType == 'padreFamilia' || user.userType == 'superAdministrador'){
+    window.location.href = 'loSentimos.html';
+}
+
 let actividades = listarActividades();
 
 // function mostrarActividades(){

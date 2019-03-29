@@ -1,10 +1,14 @@
 'use strict';
-
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 const selectRangos= document.querySelector('#selectRangos');
 const selectValorMinimo= document.querySelector('#selectValorMinimo');
 const selectValorMaximo= document.querySelector('#selectValorMaximo');
 const selectEstrellas= document.querySelector('#selectEstrellas');
 const botonRegistrarRango= document.querySelector('#btnRegistrarRango');
+
+if(user.userType == 'centroEducativo' || user.userType == 'padreFamilia'){
+    window.location.href = 'loSentimos.html';
+}
 
 let validarRango = () =>{
     let error = false;
