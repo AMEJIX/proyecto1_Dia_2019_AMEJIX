@@ -4,8 +4,16 @@ let user = JSON.parse(sessionStorage.getItem("usuario"));
 const tabla = document.querySelector('#tblMaterialInformativo tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 
-let temas = listarMaterialUsuario(user._id);
+let idUusarioCE = user._id;
+if(user.userType != "centroEducativo") {
+    idUsuarioCE = IdGeneralCE;
+} else {
+
+}
+
+let temas = listarMaterialUsuario(idUusarioCE);
 mostrarDatos();
+
 
 inputFiltro.addEventListener('keyup', mostrarDatos);
 
