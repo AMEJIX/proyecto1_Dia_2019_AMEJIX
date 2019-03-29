@@ -22,7 +22,7 @@ function mostrarDatos() {
     tabla.innerHTML = '';
     let filtro = inputFiltro.value;
 
-    if (!/^([0-9])*$/.test(listarMaterialUsuario)) {
+    if (!(typeof temas == 'string')) {
         for (let i = 0; i < temas.length; i++) {
 
             if (temas[i]['tema'].toLowerCase().includes(filtro.toLowerCase()) || temas[i]['descripcion'].toLowerCase().includes(filtro.toLowerCase())) {
@@ -41,6 +41,6 @@ function mostrarDatos() {
                 }
                 imagenTema.appendChild(imagen);
             }
-        };
+        }
     }
 }
