@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf22022-7a7d-4a24-95d7-c6b6f83fc35d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/mostrarMatriculaCostos.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mostrarMatriculaCostos.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/registrarMatriculaCostos.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/registrarMatriculaCostos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/citas.controller.ce.listar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/citas.controller.ce.listar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/citas.controller.pf.listar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/citas.controller.pf.listar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/controlador.mostrarMatriculasCostos.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controlador.mostrarMatriculasCostos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/controlador.profileInfoCE.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controlador.profileInfoCE.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/controlador.registrarMatriculaCostos.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controlador.registrarMatriculaCostos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/criteriosBusqueda.controller.listar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/criteriosBusqueda.controller.listar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/servicio.registrarMatriculaCostos.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/servicio.registrarMatriculaCostos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/misCitasCE.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/misCitasCE.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/misCitasPF.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/misCitasPF.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mostrarMatriculaCostos.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/mostrarMatriculaCostos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/userProfileInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/userProfileInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/preguntasFrecuentesPF.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/preguntasFrecuentesPF.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,82 +23,37 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controlador.mostrarMatriculasCostos.js">
+        <entry file="file://$PROJECT_DIR$/public/misCitasCE.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+            <state relative-caret-position="162">
+              <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/mostrarMatriculaCostos.css">
+        <entry file="file://$PROJECT_DIR$/public/misCitasPF.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+            <state relative-caret-position="148">
+              <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/mostrarMatriculaCostos.html">
+        <entry file="file://$PROJECT_DIR$/public/js/citas.controller.ce.listar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controlador.registrarMatriculaCostos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="57" column="110" lean-forward="true" selection-start-line="57" selection-start-column="110" selection-end-line="57" selection-end-column="110" />
+            <state relative-caret-position="90">
+              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-end-line="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.api.js">
+        <entry file="file://$PROJECT_DIR$/public/js/citas.controller.pf.listar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/servicio.registrarMatriculaCostos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/registrarMatriculaCostos.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.model.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="10" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="10" />
+            <state relative-caret-position="83">
+              <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -130,10 +81,7 @@
         <option value="$PROJECT_DIR$/public/js/denegado.controller.js" />
         <option value="$PROJECT_DIR$/public/citas.html" />
         <option value="$PROJECT_DIR$/public/criteriosBusqueda.html" />
-        <option value="$PROJECT_DIR$/public/misCitasPF.html" />
-        <option value="$PROJECT_DIR$/public/preguntasFrecuentesPF.html" />
         <option value="$PROJECT_DIR$/public/css/misCitas.css" />
-        <option value="$PROJECT_DIR$/public/misCitasCE.html" />
         <option value="$PROJECT_DIR$/api/components/preguntasfrecuentes/preguntasFrecuentes.route.js" />
         <option value="$PROJECT_DIR$/api/components/preguntasfrecuentes/preguntasFrecuentes.api.js" />
         <option value="$PROJECT_DIR$/public/js/preguntasFrecuentes.servicio.js" />
@@ -157,14 +105,10 @@
         <option value="$PROJECT_DIR$/api/componentes/becas/becas.api.js" />
         <option value="$PROJECT_DIR$/api/componentes/noticias/noticias.api.js" />
         <option value="$PROJECT_DIR$/public/registrarMatriculaCostos.html" />
-        <option value="$PROJECT_DIR$/public/js/citas.controller.pf.listar.js" />
-        <option value="$PROJECT_DIR$/public/js/citas.controller.ce.listar.js" />
-        <option value="$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js" />
         <option value="$PROJECT_DIR$/public/css/registroUsuarios.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/public/js/controlador.mostrarMaterialInformativo.js" />
         <option value="$PROJECT_DIR$/api/componentes/citas/citas.api.js" />
-        <option value="$PROJECT_DIR$/public/mostrarMatriculaCostos.html" />
         <option value="$PROJECT_DIR$/public/js/controlador.profileInfoCE.js" />
         <option value="$PROJECT_DIR$/public/userProfileInfo.html" />
         <option value="$PROJECT_DIR$/public/js/criteriosBusqueda.controller.listar.js" />
@@ -175,7 +119,14 @@
         <option value="$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.api.js" />
         <option value="$PROJECT_DIR$/public/js/servicio.registrarMatriculaCostos.js" />
         <option value="$PROJECT_DIR$/public/css/mostrarMatriculaCostos.css" />
+        <option value="$PROJECT_DIR$/public/mostrarMatriculaCostos.html" />
         <option value="$PROJECT_DIR$/public/js/controlador.mostrarMatriculasCostos.js" />
+        <option value="$PROJECT_DIR$/public/preguntasFrecuentesPF.html" />
+        <option value="$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js" />
+        <option value="$PROJECT_DIR$/public/misCitasCE.html" />
+        <option value="$PROJECT_DIR$/public/misCitasPF.html" />
+        <option value="$PROJECT_DIR$/public/js/citas.controller.ce.listar.js" />
+        <option value="$PROJECT_DIR$/public/js/citas.controller.pf.listar.js" />
       </list>
     </option>
   </component>
@@ -314,7 +265,7 @@
       <workItem from="1553528179490" duration="747000" />
       <workItem from="1553529438611" duration="1280000" />
       <workItem from="1553530880180" duration="28931000" />
-      <workItem from="1553744426049" duration="30270000" />
+      <workItem from="1553744426049" duration="31427000" />
     </task>
     <task id="LOCAL-00001" summary="Registrar preguntas frecuentes 1.0 listo.">
       <created>1552448241416</created>
@@ -348,7 +299,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176006000" />
+    <option name="totallyTimeSpent" value="177163000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -366,7 +317,7 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49925262" visible="true" weight="0.20886981" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.2690583" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.34529147" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003524" side_tool="true" weight="0.32935917" />
       <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49964765" weight="0.32735425" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -418,27 +369,6 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/preguntasFrecuentes.servicio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/componentes/preguntasfrecuentes/preguntasFrecuentes.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/preguntasFrecuentesCE&amp;Admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -522,13 +452,6 @@
         <state relative-caret-position="-305" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="42" column="95" lean-forward="true" selection-start-line="42" selection-start-column="95" selection-end-line="42" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/citas.servicio.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -554,20 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="91" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/citas.controller.pf.listar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/citas.controller.ce.listar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -705,20 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/mostrarMatriculaCostos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controlador.mostrarMatriculasCostos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/mostrarMatriculaCostos.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -728,8 +623,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/componentes/matriculasCostos/matriculaCostos.api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="300">
+          <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mostrarMatriculaCostos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="29" column="83" selection-start-line="29" selection-start-column="83" selection-end-line="29" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controlador.mostrarMatriculasCostos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="74" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/preguntasFrecuentesPF.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="33" column="74" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/preguntasFrecuentes.controller.listar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/misCitasPF.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/misCitasCE.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/citas.controller.ce.listar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/citas.controller.pf.listar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,6 @@
 'use strict';
 
+const opcionVer = document.querySelector('#opcionVer');
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
@@ -9,9 +10,11 @@ let idCentroEducativo;
 
 
 if (user.userType == 'padreFamilia' ) {//REDIRECCIONAMIENTO
-    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html') setTimeout(location.href='\'preguntasFrecuentesPF.html?idCE='+IdGeneralCE, 0);
+    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html') setTimeout(location.href='preguntasFrecuentesPF.html?idCE='+IdGeneralCE, 0);
+    opcionVer.href = 'preguntasFrecuentesPF.html?idCE='+IdGeneralCE;
 } else {
     if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE, 0);
+    opcionVer.href = 'preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE;
 }
 
 if (user.userType == 'padreFamilia' || user.userType == 'superAdministrador' ){

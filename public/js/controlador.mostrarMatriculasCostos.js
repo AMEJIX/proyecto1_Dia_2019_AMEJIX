@@ -1,7 +1,10 @@
 'use strict';
 
+
+
 let user = JSON.parse(sessionStorage.getItem("usuario"));
 const opcionRegistrar = document.querySelector('.subOpcion #registrarMatriculaCostos');
+const opcionMostrar = document.querySelector('.subOpcion #mostrarMatriculas');
 
 let idUsuarioCE = user._id;
 
@@ -9,6 +12,7 @@ if(user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
     opcionRegistrar.style.display = 'none';
     opcionRegistrar.style.visibility = 'none';
+    opcionMostrar.href = 'mostrarMatriculaCostos.html?idCE='+ IdGeneralCE;
 }
 
 insertarMensaje(`No se encontró información de los costos de matrícula`);

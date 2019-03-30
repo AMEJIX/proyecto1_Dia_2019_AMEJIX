@@ -4,6 +4,8 @@ const inputFiltrar = document.querySelector('#txtFiltrar');
 
 let user = JSON.parse(sessionStorage.getItem('usuario'));
 
+// const opcionMisCitas = document.querySelector('#opcionMisCitas');
+
 if(user.userType === 'centroEducativo'){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
 }
