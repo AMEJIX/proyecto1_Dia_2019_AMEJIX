@@ -4,7 +4,7 @@ var marker, lat, lng;
 function initMap() {
     var myLatLng = new google.maps.LatLng( 9.9281, -84.0907 ),
         myOptions = {
-            zoom: 12,
+            zoom: 10,
             center: myLatLng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
             },
