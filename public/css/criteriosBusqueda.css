@@ -1,3 +1,7 @@
+.contenido{
+    text-align: center;
+}
+
 h1{
     font-size: 42px;
     display: block;
@@ -38,6 +42,7 @@ form, #nueva{
     margin-left: 12px;
     width: 435px;
     margin-bottom: 50px;
+    outline: none;
 }
 
 #txtFiltrar::placeholder{
@@ -129,5 +134,4 @@ td:hover{
     font-size: 20px;
     color: #f9aa33;
     width: 400px;
-    margin-left: 400px;
 }
