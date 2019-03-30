@@ -1,53 +1,44 @@
 #divFiltrar{
-    margin: 0% auto; 
-    margin-left: 10%; 
-    margin-top: 2%; 
+    float: right;
+    margin-top: 40px;
+    margin-right: 5%;
+    margin-bottom: 10px;
+    margin-top: 70px;
 }
 
 #labelFiltrar{
-    margin: 0% auto; 
-    margin-right: 10px; 
-    font-size: 20px; 
-    color: #344955; 
+    margin-right: 7px;
 }
 
 #inputFiltrar{
-    margin: 0% auto; 
-    width: 230px; 
-    height: 25px; 
-    margin-left: 5px; 
+    width: 175px;
+    height: 20px;
 }
 
-#tblBecas{
-    margin-top: 2.50%;
-    margin-left: 10%; 
-    margin-right: 10%; 
+#tblBecas {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-#thTituloUno{
-    background-color: #344955;
-    padding: 2%;
-    text-align: center;
+th {
+    background: #f9aa33;
     color: white;
-    font-size: 110%;
 }
 
-#thTituloDos{
-    background: #344955;
-    padding: 1%;
+td {
+    color: #2c3e50;
+}
+
+td:hover {
+    color: white;
+    background: #4a6572;
+}
+
+td, th {
     text-align: center;
-    color: white;   
-    font-size: 110%;
-}
-
-
-tr, td{
-    padding: 1%;
-    text-align: center;
-}
-
-tbody{
-    margin-top: 50%;
-    font-size: 105%;
-    line-height: 180%;
+    padding: 12px 5px;
+    border: #2c3e50 solid 1px;
 }
