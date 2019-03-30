@@ -288,7 +288,7 @@ function checkCaptchaPF() {
         btnRegistrarPadreFamilia.style.display = 'block';
         divCaptchaPF.style.display = 'none';
     } else {
-        spanCaptcha.innerHTML = passwordGen();
+        spanCaptchaPF.innerHTML = passwordGen();
     }
 }
 
@@ -359,7 +359,7 @@ function checkCaptchaCE() {
         btnRegistrarCentroEducativo.style.display = 'block';
         divCaptchaCE.style.display = 'none';
     } else {
-        spanCaptcha.innerHTML = passwordGen();
+        spanCaptchaCF.innerHTML = passwordGen();
     }
 }
 
