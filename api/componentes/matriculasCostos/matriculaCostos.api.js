@@ -1,16 +1,17 @@
 'use strict';
 
-const modeloRegistrarMatriculaCostos = require('./matriculaCostos.model');
+const modeloMatriculas = require('./matriculaCostos.model');
 
 module.exports.registrar = (req, res) => {
-    let nuevaMatricula = new modeloRegistrarMatriculaCostos(
+    let nuevaMatricula = new modeloMatriculas(
         {
             matricula: req.body.matricula,
             mensualidad: req.body.mensualidad,
-            fieldsetPrecio: req.body.fieldsetPrecio,
+            moneda: req.body.moneda,
             idCE: req.body.idCE,
         }
     );
+
 
     nuevaMatricula.save(function (error) {
         if (error) {
@@ -33,51 +34,49 @@ module.exports.registrar = (req, res) => {
 
 };
 
-module.exports.listarMatriculas = (req, res) => {
-
-    modeloRegistrarMatriculaCostos.find().then(
-        function (registrarMatricula) {
-
-            if (registrarMatricula.length > 0) {
-                res.json(
+module.exports.validarCostosMatricula = () =>{
+    modeloMatriculas.findOne({idCE: req.body.idCE}).then(
+        usuario =>{
+            if (usuario){
+                respuesta.json(
                     {
-                        success: true,
-                        registrarMatricula: registrarMatricula,
+                        tieneInfo: true,
+                        info: usuario
                     }
-                )
+                );
             } else {
                 res.json(
                     {
-                        success: false,
-                        registrarMatricula: "No se encontraron matrículas",
+                        tieneInfo: false
                     }
-                )
+                );
             }
         }
-    )
-
+    );
 };
 
+
 module.exports.listarMatriculasCE = (req, res) => {
-    modeloRegistrarMatriculaCostos.find().then(
+    modeloMatriculas.find().then(
         matriculasListadasCE => {
             console.log(matriculasListadasCE);
-            let arregloMatriculas = [];
 
-            for (let matriculitas of matriculasListadasCE) {
-                if (matriculitas.idCE == req.body.idCE){
-                    arregloMatriculas.push(matriculitas)
+            let infoCostosMatricula;
+
+            for (let matricula of matriculasListadasCE) {
+                if (matricula.idCE == req.body.idCE){
+                    infoCostosMatricula = matricula;
                 }
             }
 
-            console.log(arregloMatriculas);
+            console.log(infoCostosMatricula);
             console.log(req.body.idCE);
 
-            if (arregloMatriculas.length > 0) {
+            if (infoCostosMatricula) {
                 res.json(
                     {
                         success: true,
-                        matriculo: arregloMatriculas,
+                        matricula: infoCostosMatricula,
 
                     }
                 )
@@ -85,7 +84,7 @@ module.exports.listarMatriculasCE = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        matriculo: "No se encontraron matrículas registradas"
+                        matriculo: "No se encontraron los costos de matrícula"
                     }
                 )
             }

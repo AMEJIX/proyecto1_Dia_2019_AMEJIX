@@ -1,44 +1,49 @@
 'use strict';
 
-const inputFiltrar = document.querySelector('#inputFiltrar')
 let user = JSON.parse(sessionStorage.getItem("usuario"));
-const opcionRegistrar = document.querySelector('#registrarMatriculaCostos');
+const opcionRegistrar = document.querySelector('.subOpcion #registrarMatriculaCostos');
 
 let idUsuarioCE = user._id;
 
 if(user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
-    opcionRegistrar.classList.add('classNoPuede');
-
-} else {
-
+    opcionRegistrar.style.display = 'none';
+    opcionRegistrar.style.visibility = 'none';
 }
+
+insertarMensaje(`No se encontró información de los costos de matrícula`);
+
 let matriculas = listarMatriculas(idUsuarioCE);
-inputFiltrar.addEventListener('keyup', mostrarMatriculas);
 
 function mostrarMatriculas() {
 
     const tabla = document.querySelector('#tblMatriculas tbody');
-    const filtro = inputFiltrar.value;
 
-    tabla.innerHTML = ' ';
+    tabla.innerHTML = '';
 
-    if (!(typeof temas == 'string')) {
+    if (!(typeof matriculas == 'string')) {
+        eliminarMensaje();
         for (let i = 0; i < matriculas.length; i++) {
 
-            if (matriculas[i]['matricula'].toLowerCase().includes(filtro.toLowerCase())) {
-                let fila = tabla.insertRow();
+            let fila = tabla.insertRow();
 
-                fila.insertCell().innerHTML = matriculas[i]['matricula'];
-                fila.insertCell().innerHTML = matriculas[i]['mensualidad'];
-                fila.insertCell().innerHTML = matriculas[i]['fieldsetPrecio'];
-            } else {
-                tabla.innerHTML = 'No existen matrículas registradas para este nivel';
-            }
+            fila.insertCell().innerHTML = matriculas[i]['matricula'];
+            fila.insertCell().innerHTML = matriculas[i]['mensualidad'];
+            fila.insertCell().innerHTML = matriculas[i]['moneda'];
         }
     } else {
-        tabla.innerHTML = 'No existen matrículas registradas para este nivel';
+        if (document.getElementById('tblMatriculas #error')) {
+            insertarMensaje(`No se encontró información de los costos de matrícula`);
+        }
     }
 }
 
 mostrarMatriculas();
+
+function eliminarMensaje() {
+    document.querySelector('.contenido').removeChild(document.getElementById('error'));
+}
+
+function insertarMensaje(mensaje) {
+    document.getElementById('tblMatriculas').insertAdjacentHTML('afterend', `<p id="error"> ${mensaje}</p>`);
+}

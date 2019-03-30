@@ -94,5 +94,5 @@ function eliminarMensaje() {
 }
 
 function insertarMensaje(mensaje) {
-    document.getElementById('tblCriteriosBusqueda').insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> ${mensaje}</p>`);
+    document.getElementById('tblCriteriosBusqueda').insertAdjacentHTML('afterend', `<p id="error"> ${mensaje}</p>`);
 }

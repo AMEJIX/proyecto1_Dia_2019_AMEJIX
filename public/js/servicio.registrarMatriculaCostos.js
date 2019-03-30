@@ -9,7 +9,7 @@ let registrarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfie
 
             matricula: pstringPrecioMatricula,
             mensualidad: pnumberPrecioMensualidad,
-            fieldsetPrecio: pfieldsetNumberPrecioMatricula,
+            moneda: pfieldsetNumberPrecioMatricula,
             idCE: pidCentroEducativo,
 
         },
@@ -51,7 +51,7 @@ let listarMatriculas = (idCE) => {
     });
 
     request.done(function (msg) {
-        listaMatriculas = msg.matriculo;
+        listaMatriculas.push(msg.matricula);
     });
 
     request.fail(function (jqXHR, textStatus) {

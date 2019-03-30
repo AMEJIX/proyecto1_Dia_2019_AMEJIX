@@ -19,7 +19,6 @@ let agregarParametroUrl = (pParametro) => {
         aInfoCE.href = 'informacionPersonalCEVistaOtroUsuario.html?idCE=' + pParametro;
         aMatricula.href = 'mostrarMatriculaCostos.html?idCE=' + pParametro;
         aBecas.href = 'mostrarBecas.html?idCE=' + pParametro;
-
         aMaterialInformativo.href = 'mostrarMaterialInformativo.html?idCE=' + pParametro;
         aNoticias.href = 'mostrarNoticias.html?idCE=' + pParametro;
         aActividades.href ='listarActividades.html?idCE=' + pParametro;

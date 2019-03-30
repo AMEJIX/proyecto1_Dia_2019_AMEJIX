@@ -45,6 +45,11 @@ tbody{
     margin-left: 80px;
 }
 
+#inputPrecioMatricula, #inputPrecioMensualidad{
+    font-size: 20px;
+    outline: none;
+}
+
 #labelPrecioMensualidad{
     margin: 0% auto;
     margin-right: 10px;

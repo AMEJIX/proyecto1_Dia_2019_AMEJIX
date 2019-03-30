@@ -30,4 +30,11 @@ router.route('/listarMatriculasCE/:idCE')
         }
     );
 
+router.route('/validarMatriculaCostos/:idCE')
+    .get(
+        function (req, res) {
+            apiRegistrarMatricula.validarCostosMatricula(req, res);
+        }
+    );
+
 module.exports = router;

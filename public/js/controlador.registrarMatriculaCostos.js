@@ -8,18 +8,15 @@ const inputfieldsetPrecio = document.querySelector('#fieldsetPrecio');
 const botonRegistrarMatricula = document.querySelector('#btnRegistrarMatricula');
 let idUsuarioCE = user._id;
 
-const opcionRegistrar = document.querySelector('#registrarMatriculaCostos');
+const opcionRegistrar = document.querySelector('.subOpcion #registrarMatriculaCostos');
 
 if(user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
-    if (location.pathname.split("/").slice(-1) != 'mostrarMatriculaCostos.html') setTimeout(location.href='mostrarMatriculaCostos.html?idCE='+IdGeneralCE, 0);
-    opcionRegistrar.classList.add('classNoPuede');
-    if(user.userType == "padreFamilia"){
-
-    }
-} else {
-
+    opcionRegistrar.style.display = 'none';
+    if (location.pathname.split("/").slice(-1) != 'loSentimos.html') setTimeout(location.href='loSentimos.html?idCE='+IdGeneralCE, 0);
 }
+
+
 let validar = () => {
     let error = false;
 
@@ -52,14 +49,13 @@ let validar = () => {
 
 let obtener_datos = () => {
 
-    if (validar() == false) {
+    if (!validar()) {
 
         let stringNombreMatricula = inputMatricula.value;
         let stringPrecioMatricula = inputMensualidad.value;
         let fieldsetnumberPrecioMatricula = document.querySelector('#fieldsetPrecio input[type=radio]:checked').value;
-        let idCentroEducativo = idUsuarioCE;
 
-        registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idCentroEducativo);
+        registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idUsuarioCE);
 
     } else {
         swal.fire({

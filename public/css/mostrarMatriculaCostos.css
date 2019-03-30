@@ -1,27 +1,42 @@
+.contenido{
+    text-align: center;
+}
+
+h1{
+    font-size: 42px;
+    display: block;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    color: #f9aa33;
+    /*text-shadow: -3px -2px 10px #344955;*/
+}
+
 #divFiltrar{
-    margin: 0% auto; 
+    margin: 0 auto;
     margin-left: 10%; 
     margin-top: 2%; 
 }
 
 #labelFiltrar{
-    margin: 0% auto; 
+    margin: 0 auto;
     margin-right: 10px; 
     font-size: 20px; 
     color: #344955; 
 }
 
 #inputFiltrar{
-    margin: 0% auto; 
+    margin: 0 auto;
     width: 230px; 
     height: 25px; 
     margin-left: 5px; 
 }
 
 #tblMatriculas{
-    margin-top: 2.50%;
-    margin-left: 25%; 
-    margin-right: 10%; 
+    margin-top: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
 }
 
 #thTituloNombreMatricula{
@@ -59,63 +74,6 @@ tbody{
     text-align: center;
 }
 
-#divNombreMatricula{
-    margin: 0% auto;
-    margin-left: 20%;    
-    margin-top: 10%;
-}
-
-#divPrecioMatricula{
-    margin: 0% auto;
-    margin-left: 20%; 
-    margin-top: 3%;   
-}
-
-#labelNombreMatricula{
-    margin: 0% auto;
-    margin-right: 10px;
-    font-size: 25px;
-    color: #344955;
-}
-
-#inputNombreMatricula{
-    margin: 0% auto;
-    width: 230px;
-    height: 30px;
-    margin-left: 15px;
-}
-
-#labelPrecioMatricula{
-    margin: 0% auto;
-    margin-right: 10px;
-    font-size: 25px;
-    color: #344955;
-}
-
-#inputPrecioMatricula{
-    margin: 0% auto;
-    width: 232px;
-    height: 30px;
-    margin-left: 38px;
-}
-
-#btnRegistrarMatricula{
-    margin: 0% auto;
-    margin-left: 46%;
-    background: #344955;
-    width: 290px;
-    height: 60px;
-    border: none;
-    color: white;
-    margin-top: 25px;
-    font-size: 20px;
-    border-radius: 5px;
-}
-
-.error_input{
-    border: 2px solid #ED4C67;
-}
-
 fieldset{
     width: 290px;
     height: 40px;
@@ -123,6 +81,22 @@ fieldset{
     margin-left: 45%;
 }
 
-.classNoPuede{
-    display: none;
+#error{
+    display: inline-block;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 20px;
+    color: #f9aa33;
+    width: 25%;
+}
+
+#mensaje{
+    display: inline-block;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 30px;
+    color: #f9aa33;
+    width: 25%;
 }
