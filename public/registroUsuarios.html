@@ -17,80 +17,95 @@
 
 </head>
 
-<body> 
+<body>
+
 
     <main>
-
-        <!-- Seleccion de tipo de usuario-->
-        <section class="userType">
-            <div id="type">
-                <label for="selectUser">Tipo de usuario: </label>
-                <select id="selectUser" size="">
-                    <option value="" selected disabled>Opciones</option>
-                    <option value="padreFamilia">Padre de familia</option>
-                    <option value="centroEducativo">Centro Educativo</option>
-                </select>
-            </div>
-        </section>
-
-        <!-- FIN - Seleccion de tipo de usuario-->
-
-        <!-- Seleccion de tipo Padre Familia-->
-
-        <!-- Falata foto-->
-        <!-- Falata edad por cada hijo dependiendo de hijos ingresados-->
-        <!-- Falata ubicacion-->
-        <!-- Captcha-->
-        <section class="registroUsuarios" id="registroPadreFamilia">
-            <h1 class="title">Registro de padre de familia</h1>
-
-            <div class="formIzquierda">
+        <div class="sidebar">
+            <div class="sicenLogo"></div>
+            <div class="line"></div>
+            <div class="wrapper">
 
             </div>
+            <!----------------------Inicio información del perfil---------------------->
+           
+
+            <!----------------------Fin información del perfil---------------------->
+
+        </div>
+
+        <div class="contenido" style="overflow-y: scroll;">
+
+            <!-- Seleccion de tipo de usuario-->
+            <section class="userType">
+                <div id="type">
+                    <label for="selectUser">Tipo de usuario: </label>
+                    <select id="selectUser" size="">
+                        <option value="" selected disabled>Opciones</option>
+                        <option value="padreFamilia">Padre de familia</option>
+                        <option value="centroEducativo">Centro Educativo</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- FIN - Seleccion de tipo de usuario-->
+
+            <!-- Seleccion de tipo Padre Familia-->
+
+            <!-- Falata foto-->
+            <!-- Falata edad por cada hijo dependiendo de hijos ingresados-->
+            <!-- Falata ubicacion-->
+            <!-- Captcha-->
+            <section class="registroUsuarios" id="registroPadreFamilia">
+                <h1 class="title">Registro de padre de familia</h1>
+
+                <div class="formIzquierda">
+
+                </div>
 
 
-            <form>
-                <div class='column'>
+                <form>
+                    <div class='column'>
 
-                    <div>
-                        <label for="txtNombre">Primer nombre:</label>
-                        <input type="text" maxlength="20" id="txtNombre">
-                    </div>
-                    <div>
-                        <label for="txtSegundoNombre">Segundo nombre:</label>
-                        <input type="text" maxlength="20" id="txtSegundoNombre" title="opcional">
-                    </div>
-                    <div>
-                        <label for="txtApellido">Primer apellido:</label>
-                        <input type="text" maxlength="20" id="txtApellido">
-                    </div>
-                    <div>
-                        <label for="txtSegundoApellido">Segundo apellido:</label>
-                        <input type="text" maxlength="20" id="txtSegundoApellido" title="opcional">
-                    </div>
-                    <div>
-                        <label for="numID">Identificación:</label>
-                        <input type="text" id="numID">
+                        <div>
+                            <label for="txtNombre">Primer nombre:</label>
+                            <input type="text" maxlength="20" id="txtNombre">
+                        </div>
+                        <div>
+                            <label for="txtSegundoNombre">Segundo nombre:</label>
+                            <input type="text" maxlength="20" id="txtSegundoNombre" title="opcional">
+                        </div>
+                        <div>
+                            <label for="txtApellido">Primer apellido:</label>
+                            <input type="text" maxlength="20" id="txtApellido">
+                        </div>
+                        <div>
+                            <label for="txtSegundoApellido">Segundo apellido:</label>
+                            <input type="text" maxlength="20" id="txtSegundoApellido" title="opcional">
+                        </div>
+                        <div>
+                            <label for="numID">Identificación:</label>
+                            <input type="text" id="numID">
 
-                    </div>
-                    <div>
-                        <label for="txtNacionalidad">Nacionalidad:</label>
-                        <input type="text" maxlength="20" id="txtNacionalidad">
-                    </div>
-                    <div>
-                        <label for="txtEmail">Correo electrónico:</label>
-                        <input type="email" id="txtEmail" maxlength="60" placeholder="user@example.com">
-                    </div>
-                    <div>
-                        <label for="txtTelefono">Teléfono:</label>
-                        <input type="tel" maxlength="20" id="txtTelefono">
-                    </div>
+                        </div>
+                        <div>
+                            <label for="txtNacionalidad">Nacionalidad:</label>
+                            <input type="text" maxlength="20" id="txtNacionalidad">
+                        </div>
+                        <div>
+                            <label for="txtEmail">Correo electrónico:</label>
+                            <input type="email" id="txtEmail" maxlength="60" placeholder="user@example.com">
+                        </div>
+                        <div>
+                            <label for="txtTelefono">Teléfono:</label>
+                            <input type="tel" maxlength="20" id="txtTelefono">
+                        </div>
 
-                    <div>
-                        <label for="selectProvincias">Provincia:</label>
-                        <select id="selectProvincias" size="" class="selectProvincias">
+                        <div>
+                            <label for="selectProvincias">Provincia:</label>
+                            <select id="selectProvincias" size="" class="selectProvincias">
 
-                            <!-- <option value="" selected disabled>Provincias</option>
+                                <!-- <option value="" selected disabled>Provincias</option>
                                         <option value="Alajuela"> Alajuela</option>
                                         <option value="Cartago">Cartago</option>
                                         <option value="Guanacaste">Guanacaste</option>
@@ -98,398 +113,405 @@
                                         <option value="Limon">Limón</option>
                                         <option value="Puntarena">Puntarena</option>
                                         <option value="SanJose">San José</option> -->
-                        </select>
-                    </div>
-
-
-
-                    <div>
-                        <label for="selectCantones">Cantón:</label>
-                        <select id="selectCantones" size="" class="selectCantones">
-                            <option value="" selected disabled>Cantones</option>
-                        </select>
-
-                    </div>
-                    <div>
-                        <label for="selectDistritos">Distrito:</label>
-                        <select id="selectDistritos" size="" class="selectDistritos">
-                            <option value="" selected disabled>Distritos</option>
-                        </select>
-                    </div>
-
-                    <div id="divCantidadHijos">
-                        <label for="cantHijos">Cantidad de hijos: </label>
-                        <select id="cantHijos" size="">
-                            <option value="" selected disabled>Opciones</option>
-
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-
-                        </select>
-                    </div>
-
-
-                    <!-- Edad por hijo-->
-
-                    <div class="edadHijos">
-
-                    </div>
-
-
-                    <figure class='imageHolder'>
-                        <img id="imagePreviewPF">
-                    </figure>
-                    <div>
-                        <button class="button" type="button" id="fotoPF">Subir Foto</button>
-                    </div>
-
-                    <div id="divCaptchaPF">
-                        <h1> Ingreso de Captcha</h1>
-                        <label for="spanCaptchaPF">Captcha:</label>
-                        <span id="spanCaptchaPF"></span>
-                        <input type="tel" maxlength="20" id="textCaptchaPF" title="opcional">
-                        <button class="button" type="button" id="buttonCheckCaptchaPF">Revisar</button>
-                    </div>
-
-                    <div class="boton registroPadreFamilia">
-                        <button class="button" type="button" id="btnRegistrarPadreFamilia">Registrar</button>
-                    </div>
-
-
-
-
-                </div>
-            </form>
-        </section>
-
-
-        <!-- FIN - Seleccion de tipo Padre Familia-->
-
-
-        <!-- Seleccion de tipo Centro Educativo-->
-
-        <!-- Captcha-->
-
-
-        <section class="registroUsuarios" id="registroCentroEducativo">
-            <h1 class="title">Registro de centro educativo</h1>
-
-
-
-            <form>
-                <div class='columns'>
-                    <div class="leftColumn">
-
-                        <div>
-                            <label for="txtInstitución">Nombre institución:</label>
-                            <input type="text" maxlength="200" id="txtInstitución">
-                        </div>
-                        <div>
-                            <label for="txtCedulaJuridica">Cédula Juridica:</label>
-                            <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
-                        </div>
-
-                        <div>
-                            <label for="txtComercial">Nombre comercial:</label>
-                            <input type="text" maxlength="30" id="txtComercial">
-                        </div>
-                        <div>
-                            <label for="txtAnno">Año fundación:</label>
-                            <input type="number" maxlength="15" id="txtAnno">
-                        </div>
-
-                        <div>
-                            <label for="txtTelefonoCE">Teléfono:</label>
-                            <input type="tel" maxlength="20" id="txtTelefonoCE">
-                        </div>
-                        <div>
-                            <label for="txtEmailCE">Correo electrónico:</label>
-                            <input type="email" id="txtEmailCE" maxlength="50" placeholder="user@example.com">
-                        </div>
-                        <div>
-                            <label for="txtSitioWeb">Sitio Web:</label>
-                            <input type="text" id="txtSitioWeb" maxlength="50" placeholder="Sitio web">
-                        </div>
-                        <div>
-                            <label for="textFacebook"> Facebook:</label>
-                            <input type="text" id="textFacebook" maxlength="50" placeholder="Red Social">
-                        </div>
-                        <div>
-                            <label for="textTwitter"> Twitter:</label>
-                            <input type="text" id="textTwitter" maxlength="50" placeholder="Red Social">
-                        </div>
-                        <div>
-                            <label for="textInstagram"> Instagram:</label>
-                            <input type="text" id="textInstagram" maxlength="50" placeholder="Red Social">
-                        </div>
-                        <div>
-                            <label for="txtFAx">Fax:</label>
-                            <input type="tel" maxlength="20" id="txtFAx">
-                        </div>
-
-                        <h1>Personal a cargo</h1>
-                        <div>
-                            <label for="txtnombreCEP">Nombre:</label>
-                            <input type="text" maxlength="20" id="txtnombreCEP" title="opcional">
-                        </div>
-
-                        <div>
-                            <label for="textSegundoNombreCEP">Segundo nombre:</label>
-                            <input type="text" maxlength="20" id="textSegundoNombreCEP" title="opcional">
-                        </div>
-
-                        <div>
-                            <label for="textApellidoCEP">Apellido:</label>
-                            <input type="text" maxlength="20" id="textApellidoCEP" title="opcional">
-                        </div>
-
-                        <div>
-                            <label for="textSegundoApellidoCEP">Segundo apellido:</label>
-                            <input type="text" maxlength="20" id="textSegundoApellidoCEP" title="opcional">
-                        </div>
-
-
-                        <div>
-                            <label for="txtdepartamento">Departamento:</label>
-                            <input type="text" maxlength="20" id="txtdepartamento" title="opcional">
-                        </div>
-                        <div>
-                            <label for="txtTelefonoCEP">Teléfono:</label>
-                            <input type="tel" maxlength="20" id="txtTelefonoCEP" title="opcional">
-                        </div>
-                        <div>
-                            <label for="txtExtension">Extensión:</label>
-                            <input type="tel" maxlength="20" id="txtExtension" title="opcional">
-                        </div>
-                        <div>
-                            <label for="txtNumIDCEP">Identificación:</label>
-                            <input type="text" id="txtNumIDCEP" title="opcional">
-                        </div>
-                        <div>
-                            <label for="txtEmailCEP">Correo electrónico:</label>
-                            <input type="email" id="txtEmailCEP" maxlength="50" placeholder="user@example.com">
-                        </div>
-
-                        <figure class='imageHolder'>
-                            <img id="imagePreviewCEP">
-                        </figure>
-                        <div>
-                            <button class="button" type="button" id="fotoCEP">Subir Foto</button>
-                        </div>
-
-                        <h1>Reseña Histórica</h1>
-                        <div>
-
-                            <textarea id="txt_historia"></textarea>
-                        </div>
-
-                        <h1>Dirección exacta</h1>
-                        <div>
-
-                            <textarea id="textDireccionExacta"></textarea>
-                        </div>
-
-
-
-
-
-
-
-                    </div>
-                    <!-- column -->
-                    <div class="rightColumn">
-
-
-                        <div>
-                            <label for="selectProvinciasCE">Provincia:</label>
-                            <select id="selectProvinciasCE" size="" class="selectProvincias">
-
-
                             </select>
                         </div>
 
 
 
                         <div>
-                            <label for="selectCantonesCE">Cantón:</label>
-                            <select id="selectCantonesCE" size="" class="selectCantones">
+                            <label for="selectCantones">Cantón:</label>
+                            <select id="selectCantones" size="" class="selectCantones">
                                 <option value="" selected disabled>Cantones</option>
                             </select>
 
                         </div>
                         <div>
-                            <label for="selectDistritosCE">Distrito:</label>
-                            <select id="selectDistritosCE" size="" class="selectDistritos">
+                            <label for="selectDistritos">Distrito:</label>
+                            <select id="selectDistritos" size="" class="selectDistritos">
                                 <option value="" selected disabled>Distritos</option>
                             </select>
                         </div>
- 
-                        <fieldset id="fieldsetTipo">
-                            <h1>Tipo de institución - Grados ofrecidos</h1>
 
-                            <ul> <input type="checkbox" value="Escuela" class="checkboxTipo" id="checkBoxEscuela">
-                                Escuela</ul>
-                            <ul> <input type="checkbox" value="Colegio" class="checkboxTipo" id="checkBoxColegio">
-                                Colegio</ul>
+                        <div id="divCantidadHijos">
+                            <label for="cantHijos">Cantidad de hijos: </label>
+                            <select id="cantHijos" size="">
+                                <option value="" selected disabled>Opciones</option>
 
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
 
-
-                            <!-- Con el siguiente link se puede crear un codigo que ejecute una funcion en el js -->
-                            <!-- <a href="#" onClick="cualquierFuncion(); return false;"> Nombre del link</a> -->
-
-                        </fieldset>
-
-                        <div class="divNivelesEscuela">
-
-                        </div>
-
-                        <div class="divNivelesColegio">
-
-                        </div>
-
-                        <fieldset id="fieldsetIdiomas">
-                            <h1>Idiomas ofrecidos</h1>
-
-                            <ul> <input type="checkbox" value="Inglés" class="checkboxIdioma" id="checkBoxIngles">
-                                Inglés</ul>
-
-                            <ul> <input type="checkbox" value="Portugués" class="checkboxIdioma" id="checkBoxPortugues">
-                                Portugués</ul>
-
-                            <ul> <input type="checkbox" value="Alemán" class="checkboxIdioma" id="checkBoxAleman">
-                                Alemán</ul>
-
-                            <ul> <input type="checkbox" value="Francés" class="checkboxIdioma" id="checkBoxFrances">
-                                Francés</ul>
-
-                            <ul> <input type="checkbox" value="Japonés" class="checkboxIdioma" id="checkBoxJapones">
-                                Japonés</ul>
-
-                            <ul> <input type="checkbox" value="Mandarín" class="checkboxIdioma" id="checkBoxMandarin">
-                                Mandarín</ul>
-
-                        </fieldset>
-
-                        <div>
-                            <fieldset id="fieldsetClasificacion">
-                                <h1>Clasificación:</h1>
-
-
-                                <ul> <input type="radio" id="radioTecnico" name="radioClasificacion" value="Tecnico">
-                                    Técnico</ul>
-                                <ul> <input type="radio" id="radioProfesional" name="radioClasificacion"
-                                        value="Profesional">
-                                    Profesional</ul>
-                                <ul> <input type="radio" id="radioCientifico" name="radioClasificacion"
-                                        value="Científico">
-                                    Científico</ul>
-                                <ul> <input type="radio" id="radioPedagogico" name="radioClasificacion"
-                                        value="Pedagógico">
-                                    Pedagógico</ul>
-                                <ul> <input type="radio" id="radioAcademico" name="radioClasificacion"
-                                        value="Académico">
-                                    Académico</ul>
-
-                            </fieldset>
+                            </select>
                         </div>
 
 
+                        <!-- Edad por hijo-->
 
-
-                        <fieldset id="fieldsetPrivacidad">
-                            <h1>Institución pública/privada</h1>
-
-                            <ul> <input type="radio" id="radioPrivado" name="rbt_privacidad" value="privado">
-                                Privado</ul>
-
-
-                            <ul><input type="radio" id="radioPublico" name="rbt_privacidad" value="publico">
-                                Público</ul>
-
-                        </fieldset>
-
-
-                        <fieldset id="fieldsetGenero">
-                            <h1>Género:</h1>
-
-                            <ul><input type="radio" id="radioFemenino" name="rbt_sexo" value="Femenino">Femenino
-                            </ul>
-
-
-                            <ul><input type="radio" id="radioMasculino" name="rbt_sexo" value="Masculino">Masculino</ul>
-
-
-                            <ul> <input type="radio" id="radioMixto" name="rbt_sexo" value="Mixto">Mixto
-                            </ul>
-
-
-                        </fieldset>
-
-                        <fieldset id="fieldsetReligion">
-                            <h1>Religión</h1>
-
-                            <ul><input type="radio" id="radioSi" name="rbt_religion" value="si">Si</ul>
-                            <ul><input type="radio" id="radioNo" name="rbt_religion" value="no">No <ul>
-                                </ul>
-
-                        </fieldset>
-
-                        <h1>Servicios Adicionales</h1>
-                        <div class="serviciosAdicionales">
+                        <div class="edadHijos">
 
                         </div>
-                        <button id="agregarServicios" type="button">Agregar servicio</button>
 
-                        <div>
-                            <figure class='imageHolder'>
-                                <img id="documentPreview">
-                            </figure>
-                            <button id="buttonAgregarDocumento" type="button">Agregar PDF</button>
-                        </div>
 
                         <figure class='imageHolder'>
-                            <img id="imagePreview">
+                            <img id="imagePreviewPF">
                         </figure>
-                        <button type="button" id="butonSubirImagen" class="buttonImagen">Subir
-                            Imagen</button>
+                        <div>
+                            <button class="button" type="button" id="fotoPF">Subir Foto</button>
+                        </div>
+
+                        <div id="divCaptchaPF">
+                            <h1> Ingreso de Captcha</h1>
+                            <label for="spanCaptchaPF">Captcha:</label>
+                            <span id="spanCaptchaPF"></span>
+                            <input type="tel" maxlength="20" id="textCaptchaPF" title="opcional">
+                            <button class="button" type="button" id="buttonCheckCaptchaPF">Revisar</button>
+                        </div>
+
+                        <div class="boton registroPadreFamilia">
+                            <button class="button" type="button" id="btnRegistrarPadreFamilia">Registrar</button>
+                        </div>
+
+
 
 
                     </div>
-                    <!-- FIN - Columna Derecha-->
+                </form>
+            </section>
 
-                </div>
 
-                <h1>Ubicación en mapa</h1>
-                <div id="map"></div>
+            <!-- FIN - Seleccion de tipo Padre Familia-->
 
-                <div id="divCaptchaCE">
-                    <h1> Ingreso de Captcha</h1>
-                    <label for="spanCaptchaCF">Captcha:</label>
-                    <span id="spanCaptchaCF"></span>
-                    <input type="tel" maxlength="20" id="textCaptchaCE" title="opcional">
-                    <button class="button" type="button" id="buttonCheckCaptchaCE">Revisar</button>
-                </div>
 
-                <div class="boton RegistroCentroEducativo">
-                    <button class="button" type="button" id="btnRegistrarCentroEducativo">Registrar</button>
-                </div>
+            <!-- Seleccion de tipo Centro Educativo-->
+
+            <!-- Captcha-->
+
+
+            <section class="registroUsuarios" id="registroCentroEducativo">
+                <h1 class="title">Registro de centro educativo</h1>
 
 
 
+                <form>
+                    <div class='columns'>
+                        <div class="leftColumn">
+
+                            <div>
+                                <label for="txtInstitución">Nombre institución:</label>
+                                <input type="text" maxlength="200" id="txtInstitución">
+                            </div>
+                            <div>
+                                <label for="txtCedulaJuridica">Cédula Juridica:</label>
+                                <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
+                            </div>
+
+                            <div>
+                                <label for="txtComercial">Nombre comercial:</label>
+                                <input type="text" maxlength="30" id="txtComercial">
+                            </div>
+                            <div>
+                                <label for="txtAnno">Año fundación:</label>
+                                <input type="number" maxlength="15" id="txtAnno">
+                            </div>
+
+                            <div>
+                                <label for="txtTelefonoCE">Teléfono:</label>
+                                <input type="tel" maxlength="20" id="txtTelefonoCE">
+                            </div>
+                            <div>
+                                <label for="txtEmailCE">Correo electrónico:</label>
+                                <input type="email" id="txtEmailCE" maxlength="50" placeholder="user@example.com">
+                            </div>
+                            <div>
+                                <label for="txtSitioWeb">Sitio Web:</label>
+                                <input type="text" id="txtSitioWeb" maxlength="50" placeholder="Sitio web">
+                            </div>
+                            <div>
+                                <label for="textFacebook"> Facebook:</label>
+                                <input type="text" id="textFacebook" maxlength="50" placeholder="Red Social">
+                            </div>
+                            <div>
+                                <label for="textTwitter"> Twitter:</label>
+                                <input type="text" id="textTwitter" maxlength="50" placeholder="Red Social">
+                            </div>
+                            <div>
+                                <label for="textInstagram"> Instagram:</label>
+                                <input type="text" id="textInstagram" maxlength="50" placeholder="Red Social">
+                            </div>
+                            <div>
+                                <label for="txtFAx">Fax:</label>
+                                <input type="tel" maxlength="20" id="txtFAx">
+                            </div>
+
+                            <h1>Personal a cargo</h1>
+                            <div>
+                                <label for="txtnombreCEP">Nombre:</label>
+                                <input type="text" maxlength="20" id="txtnombreCEP" title="opcional">
+                            </div>
+
+                            <div>
+                                <label for="textSegundoNombreCEP">Segundo nombre:</label>
+                                <input type="text" maxlength="20" id="textSegundoNombreCEP" title="opcional">
+                            </div>
+
+                            <div>
+                                <label for="textApellidoCEP">Apellido:</label>
+                                <input type="text" maxlength="20" id="textApellidoCEP" title="opcional">
+                            </div>
+
+                            <div>
+                                <label for="textSegundoApellidoCEP">Segundo apellido:</label>
+                                <input type="text" maxlength="20" id="textSegundoApellidoCEP" title="opcional">
+                            </div>
 
 
-            </form>
-        </section>
+                            <div>
+                                <label for="txtdepartamento">Departamento:</label>
+                                <input type="text" maxlength="20" id="txtdepartamento" title="opcional">
+                            </div>
+                            <div>
+                                <label for="txtTelefonoCEP">Teléfono:</label>
+                                <input type="tel" maxlength="20" id="txtTelefonoCEP" title="opcional">
+                            </div>
+                            <div>
+                                <label for="txtExtension">Extensión:</label>
+                                <input type="tel" maxlength="20" id="txtExtension" title="opcional">
+                            </div>
+                            <div>
+                                <label for="txtNumIDCEP">Identificación:</label>
+                                <input type="text" id="txtNumIDCEP" title="opcional">
+                            </div>
+                            <div>
+                                <label for="txtEmailCEP">Correo electrónico:</label>
+                                <input type="email" id="txtEmailCEP" maxlength="50" placeholder="user@example.com">
+                            </div>
+
+                            <figure class='imageHolder'>
+                                <img id="imagePreviewCEP">
+                            </figure>
+                            <div>
+                                <button class="button" type="button" id="fotoCEP">Subir Foto</button>
+                            </div>
+
+                            <h1>Reseña Histórica</h1>
+                            <div>
+
+                                <textarea id="txt_historia"></textarea>
+                            </div>
+
+                            <h1>Dirección exacta</h1>
+                            <div>
+
+                                <textarea id="textDireccionExacta"></textarea>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                        <!-- column -->
+                        <div class="rightColumn">
+
+
+                            <div>
+                                <label for="selectProvinciasCE">Provincia:</label>
+                                <select id="selectProvinciasCE" size="" class="selectProvincias">
+
+
+                                </select>
+                            </div>
+
+
+
+                            <div>
+                                <label for="selectCantonesCE">Cantón:</label>
+                                <select id="selectCantonesCE" size="" class="selectCantones">
+                                    <option value="" selected disabled>Cantones</option>
+                                </select>
+
+                            </div>
+                            <div>
+                                <label for="selectDistritosCE">Distrito:</label>
+                                <select id="selectDistritosCE" size="" class="selectDistritos">
+                                    <option value="" selected disabled>Distritos</option>
+                                </select>
+                            </div>
+
+                            <fieldset id="fieldsetTipo">
+                                <h1>Tipo de institución - Grados ofrecidos</h1>
+
+                                <ul> <input type="checkbox" value="Escuela" class="checkboxTipo" id="checkBoxEscuela">
+                                    Escuela</ul>
+                                <ul> <input type="checkbox" value="Colegio" class="checkboxTipo" id="checkBoxColegio">
+                                    Colegio</ul>
+
+
+
+                                <!-- Con el siguiente link se puede crear un codigo que ejecute una funcion en el js -->
+                                <!-- <a href="#" onClick="cualquierFuncion(); return false;"> Nombre del link</a> -->
+
+                            </fieldset>
+
+                            <div class="divNivelesEscuela">
+
+                            </div>
+
+                            <div class="divNivelesColegio">
+
+                            </div>
+
+                            <fieldset id="fieldsetIdiomas">
+                                <h1>Idiomas ofrecidos</h1>
+
+                                <ul> <input type="checkbox" value="Inglés" class="checkboxIdioma" id="checkBoxIngles">
+                                    Inglés</ul>
+
+                                <ul> <input type="checkbox" value="Portugués" class="checkboxIdioma"
+                                        id="checkBoxPortugues">
+                                    Portugués</ul>
+
+                                <ul> <input type="checkbox" value="Alemán" class="checkboxIdioma" id="checkBoxAleman">
+                                    Alemán</ul>
+
+                                <ul> <input type="checkbox" value="Francés" class="checkboxIdioma" id="checkBoxFrances">
+                                    Francés</ul>
+
+                                <ul> <input type="checkbox" value="Japonés" class="checkboxIdioma" id="checkBoxJapones">
+                                    Japonés</ul>
+
+                                <ul> <input type="checkbox" value="Mandarín" class="checkboxIdioma"
+                                        id="checkBoxMandarin">
+                                    Mandarín</ul>
+
+                            </fieldset>
+
+                            <div>
+                                <fieldset id="fieldsetClasificacion">
+                                    <h1>Clasificación:</h1>
+
+
+                                    <ul> <input type="radio" id="radioTecnico" name="radioClasificacion"
+                                            value="Tecnico">
+                                        Técnico</ul>
+                                    <ul> <input type="radio" id="radioProfesional" name="radioClasificacion"
+                                            value="Profesional">
+                                        Profesional</ul>
+                                    <ul> <input type="radio" id="radioCientifico" name="radioClasificacion"
+                                            value="Científico">
+                                        Científico</ul>
+                                    <ul> <input type="radio" id="radioPedagogico" name="radioClasificacion"
+                                            value="Pedagógico">
+                                        Pedagógico</ul>
+                                    <ul> <input type="radio" id="radioAcademico" name="radioClasificacion"
+                                            value="Académico">
+                                        Académico</ul>
+
+                                </fieldset>
+                            </div>
+
+
+
+
+                            <fieldset id="fieldsetPrivacidad">
+                                <h1>Institución pública/privada</h1>
+
+                                <ul> <input type="radio" id="radioPrivado" name="rbt_privacidad" value="privado">
+                                    Privado</ul>
+
+
+                                <ul><input type="radio" id="radioPublico" name="rbt_privacidad" value="publico">
+                                    Público</ul>
+
+                            </fieldset>
+
+
+                            <fieldset id="fieldsetGenero">
+                                <h1>Género:</h1>
+
+                                <ul><input type="radio" id="radioFemenino" name="rbt_sexo" value="Femenino">Femenino
+                                </ul>
+
+
+                                <ul><input type="radio" id="radioMasculino" name="rbt_sexo" value="Masculino">Masculino
+                                </ul>
+
+
+                                <ul> <input type="radio" id="radioMixto" name="rbt_sexo" value="Mixto">Mixto
+                                </ul>
+
+
+                            </fieldset>
+
+                            <fieldset id="fieldsetReligion">
+                                <h1>Religión</h1>
+
+                                <ul><input type="radio" id="radioSi" name="rbt_religion" value="si">Si</ul>
+                                <ul><input type="radio" id="radioNo" name="rbt_religion" value="no">No <ul>
+                                    </ul>
+
+                            </fieldset>
+
+                            <h1>Servicios Adicionales</h1>
+                            <div class="serviciosAdicionales">
+
+                            </div>
+                            <button id="agregarServicios" type="button">Agregar servicio</button>
+
+                            <div>
+                                <figure class='imageHolder'>
+                                    <img id="documentPreview">
+                                </figure>
+                                <button id="buttonAgregarDocumento" type="button">Agregar PDF</button>
+                            </div>
+
+                            <figure class='imageHolder'>
+                                <img id="imagePreview">
+                            </figure>
+                            <button type="button" id="butonSubirImagen" class="buttonImagen">Subir
+                                Imagen</button>
+
+
+                        </div>
+                        <!-- FIN - Columna Derecha-->
+
+                    </div>
+
+                    <h1>Ubicación en mapa</h1>
+                    <div id="map"></div>
+
+                    <div id="divCaptchaCE">
+                        <h1> Ingreso de Captcha</h1>
+                        <label for="spanCaptchaCF">Captcha:</label>
+                        <span id="spanCaptchaCF"></span>
+                        <input type="tel" maxlength="20" id="textCaptchaCE" title="opcional">
+                        <button class="button" type="button" id="buttonCheckCaptchaCE">Revisar</button>
+                    </div>
+
+                    <div class="boton RegistroCentroEducativo">
+                        <button class="button" type="button" id="btnRegistrarCentroEducativo">Registrar</button>
+                    </div>
+
+
+
+
+
+
+        </div>
     </main>
 
+    <footer>
+
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -513,6 +535,7 @@
     <script src="js/servicioRegistroUsuarios.js"></script>
     <script src="js/controllerRegistroUsuarios.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
+
 
 </body>
 

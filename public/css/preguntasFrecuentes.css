@@ -42,16 +42,18 @@ textarea{
     vertical-align:top;
 }
 
+
 #lblFiltrar{
     width: 120px;
-    margin-left: 200px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 #txtFiltrar{
     margin-left: 12px;
-    width: 500px;
-    border: 2px #344955 solid;
+    width: 435px;
     margin-bottom: 50px;
+    outline: none;
 }
 
 #txtFiltrar::placeholder{
@@ -60,7 +62,7 @@ textarea{
 
 #cajaFiltrar{
     margin-top: 50px;
-    display: inline-block;
+    text-align: center;
 }
 
 

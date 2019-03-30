@@ -12,6 +12,7 @@ if(user.userType != "centroEducativo" || typeof listaPreguntasFrecuentes == 'str
 } else {
 
 }
+
 let becas = listarBecas(idUsuarioCE);
 inputFiltrar.addEventListener('keyup', mostrarBecas);
 
