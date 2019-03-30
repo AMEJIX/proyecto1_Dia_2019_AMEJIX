@@ -28,8 +28,6 @@ function mostrarNoticias() {
             fila.insertCell().innerHTML = noticias[i]['tituloNoticia'];
             fila.insertCell().innerHTML = noticias[i]['fechaNoticia'];
             fila.insertCell().innerHTML = noticias[i]['registrarNoticia'];
-        } else {
-            tabla.innerHTML = 'No existen noticias registradas para este nivel';
         }
     }
 }
