@@ -9,7 +9,7 @@ router.param('idCE', (req, res, next, idCE) => {
     next();
 });
 
-router.route('/becas')
+router.route('/registrarBeca')
     .post(
         function (req, res) {
             apiRegistrarBeca.registrar(req, res);

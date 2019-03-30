@@ -9,7 +9,7 @@ router.param('idCE', (req, res, next, idCE) => {
     next();
 });
 
-router.route('/noticias')
+router.route('/registrarNoticia')
     .post(
         function (req, res) {
             apiRegistrarNoticia.registrar(req, res);

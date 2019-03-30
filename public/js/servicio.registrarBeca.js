@@ -3,7 +3,7 @@
 let registrarBeca = (pstringNombreBeca, pstringDescripcionBeca, pidCentroEducativo) => {
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/registrar_beca",
+        url: "http://localhost:4000/api/registrarBeca",
         method: "POST",
         data: {
 
