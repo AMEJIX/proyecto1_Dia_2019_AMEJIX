@@ -8,7 +8,7 @@ const opcionMostrar = document.querySelector('.subOpcion #mostrarMatriculas');
 
 let idUsuarioCE = user._id;
 
-if(user.userType != "centroEducativo") {
+if(user.userType != "centroEducativo" || typeof listaPreguntasFrecuentes == 'string') {
     idUsuarioCE = IdGeneralCE;
     opcionRegistrar.style.display = 'none';
     opcionRegistrar.style.visibility = 'none';

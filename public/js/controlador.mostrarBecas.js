@@ -5,7 +5,9 @@ let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 let idUsuarioCE = user._id;
 
-if(user.userType != "centroEducativo") {
+
+
+if(user.userType != "centroEducativo" || typeof listaPreguntasFrecuentes == 'string') {
     idUsuarioCE = IdGeneralCE;
 } else {
 
