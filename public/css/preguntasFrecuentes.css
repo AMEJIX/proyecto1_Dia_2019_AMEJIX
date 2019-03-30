@@ -1,3 +1,6 @@
+.contenido{
+    text-align: center;
+}
 
 h1{
     font-size: 42px;
@@ -19,7 +22,7 @@ h1{
 
 table#tblPreguntasFrecuentes{
    margin: 0 auto;
-    width: 800px;
+    width: 70%px;
 }
 
 form, #nueva{
@@ -150,5 +153,4 @@ button:hover{
     font-size: 20px;
     color: #f9aa33;
     width: 400px;
-    margin-left: 400px;
 }

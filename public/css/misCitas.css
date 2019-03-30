@@ -1,3 +1,7 @@
+.contenido{
+    text-align: center;
+}
+
 h1{
     font-size: 42px;
     display: block;
@@ -10,6 +14,7 @@ h1{
 
 table#tblCitas{
     margin: 0 auto;
+    width: 80%;
 }
 
 #lblFiltrar{
@@ -21,7 +26,7 @@ table#tblCitas{
 
 #txtFiltrar{
     margin-left: 20px;
-    width: 790px;
+    width: 100%;
     margin-bottom: 50px;
     font-size: 18px;
     outline: none;
@@ -42,11 +47,12 @@ thead{
 }
 
 table#tblCitas thead th, table#tblCitas tbody tr td{
-    width: 400px;
+    width: 50%;
     height: 80px;
     vertical-align: middle;
     text-align: center;
 }
+
 
 th{
     color: #f9aa33;
@@ -69,5 +75,4 @@ td:hover{
     font-size: 20px;
     color: #f9aa33;
     width: 400px;
-    margin-left: 400px;
 }
