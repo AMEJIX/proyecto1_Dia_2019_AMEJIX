@@ -73,20 +73,20 @@ textarea{
 }
 
 #txtPregunta, #txtRespuesta{
-    width: 100%;
+    width: 35%;
     height: 150px;
     text-indent: 18px;
     margin: 5px;
 }
 
 #cajaRegistrarPregunta{
-    float: left;
-    margin-left: 25%;
+    /*float: left;*/
+    /*margin-left: 50%;*/
 }
 
 #cajaRegistrarRespuesta{
-    float: right;
-    margin-right: 25%;
+    /*float: right;*/
+    /*margin-right: 50%;*/
 }
 
 #cajaRegistrarPregunta, #cajaRegistrarRespuesta{
@@ -111,11 +111,11 @@ table#tblPreguntasFrecuentes tr{
 }
 
 .pregunta:hover{
-    font-size: 26px;
+    /*font-size: 26px;*/
 }
 
 .respuesta:hover{
-    font-size: 20px;
+    /*font-size: 20px;*/
 }
 
 .respuesta{
@@ -127,12 +127,17 @@ table#tblPreguntasFrecuentes tr{
 button{
     padding: 20px;
     background: #f9aa33;
-    color: #344955;
     font-size: 22px;
+    /*padding: 14px 50px;*/
     margin-top: 50px;
     margin-left: 50%;
     margin-right: 50%;
     margin-bottom: 50px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    float: bottom;
 }
 
 button:hover{

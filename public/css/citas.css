@@ -78,7 +78,10 @@ form{
 button{
     padding: 20px;
     background: #f9aa33;
-    color: #344955;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
     font-size: 22px;
     display: inline-block;
     margin: 0 auto;
