@@ -44,14 +44,15 @@ let agregar = () =>{
         } else {
             idUsuario = IdGeneralCE;
         }
+
         registrarPreguntaFrecuente(idUsuario, pregunta, respuesta);
+
+        txtRespuesta.innerHTML = '';
+        txtPregunta.innerHTML = '';
 
         setTimeout("location.reload()", 1500);
 
         // mostrarPreguntasFrecuentes();
-
-        txtRespuesta.innerHTML = '';
-        txtPregunta.innerHTML = '';
 
     } else {
         swal.fire(
