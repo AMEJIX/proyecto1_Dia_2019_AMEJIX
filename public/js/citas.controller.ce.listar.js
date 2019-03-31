@@ -45,11 +45,17 @@ function mostrarCitas() {
 
                 fechaHora.innerHTML = moment(listaCitas[i]['fechaHora']).format('DD/mm/YY hh:mm a');
 
-                let institucion = fila.insertCell();
+                let nombrePF = fila.insertCell();
 
-                institucion.classList.add('padre');
+                nombrePF.classList.add('padre');
 
-                institucion.innerHTML = listaCitas[i]['nombrePadreFamilia'];
+                nombrePF.innerHTML = listaCitas[i]['nombrePadreFamilia'];
+
+                let correoPF = fila.insertCell();
+
+                correoPF.classList.add('padre');
+
+                correoPF.innerHTML = listaCitas[i]['correoPadreFamilia'];
             } else {
                 if (document.getElementById('error')) eliminarMensaje();
                 insertarMensaje(`No se encontró ninguna cita agendada con ${busqueda}`);

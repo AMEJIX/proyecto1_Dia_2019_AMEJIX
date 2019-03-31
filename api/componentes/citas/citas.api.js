@@ -61,7 +61,7 @@ module.exports.registrarCita = (req, res) =>{
                             .container{
                                 margin: 0 auto;
                                 background: #fff;
-                                width: 1000px;
+                                width: 80%;
                                 text-align: left;
                                 padding: 10px;
                             }

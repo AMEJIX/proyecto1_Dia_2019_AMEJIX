@@ -43,19 +43,20 @@ table#tblCitas{
 }
 
 thead{
-    background-color: #344955;
+    background-color: #f9aa33;
 }
 
 table#tblCitas thead th, table#tblCitas tbody tr td{
-    width: 50%;
+    width: 25%;
     height: 80px;
     vertical-align: middle;
     text-align: center;
+    border: 1px #344955 solid;
 }
 
 
 th{
-    color: #f9aa33;
+    color: #ffffff;
 }
 
 td:hover{
