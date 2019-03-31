@@ -13,7 +13,7 @@ const aActividades= document.querySelector('#aActividades');
 const aUtiles= document.querySelector('#aUtiles');
 const aPreguntasFrecuentes = document.querySelector('#aPreguntasFrecuentes');
 // const = document.querySelector('#aEtiquetas');                          
-
+const volver = document.querySelector('#volver');
 
 let agregarParametroUrl = (pParametro) => {
         aInfoCE.href = 'informacionPersonalCEVistaOtroUsuario.html?idCE=' + pParametro;
@@ -48,6 +48,8 @@ function ocultar() {
         document.querySelector('#menuCitasEnCE').style.display = 'none';
         document.querySelector('#aCitas').style.display = 'none';
         
+    } else{
+        volver.style.display = 'none';
     }
 }
 
