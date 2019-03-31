@@ -45,10 +45,10 @@ let agregar = () =>{
             idUsuario = IdGeneralCE;
         }
 
-        registrarPreguntaFrecuente(idUsuario, pregunta, respuesta);
+        txtRespuesta.value = '';
+        txtPregunta.value = '';
 
-        txtRespuesta.innerHTML = '';
-        txtPregunta.innerHTML = '';
+        registrarPreguntaFrecuente(idUsuario, pregunta, respuesta);
 
         setTimeout("location.reload()", 1500);
 

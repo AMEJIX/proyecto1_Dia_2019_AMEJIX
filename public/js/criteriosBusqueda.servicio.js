@@ -18,7 +18,15 @@ let getCriteriosBusqueda = () =>{
     });
 
     request.fail(function (jqXHR, textStatus) {
-
+        swal.fire(
+            {
+                type: 'warning',
+                title: 'Ya existe',
+                text: `No puede agregar una etiqueta que ya ha sido registrada`,
+                showConfirmButton: true,
+                timer: 1500
+            }
+        );
     });
 
     return lista;

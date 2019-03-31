@@ -10,11 +10,13 @@ module.exports.validarNuevaPregunta = (req, res) =>{
                 let existe = false;
 
                 for (let preguntaFrecuente of preguntasFrecuentes){
-                    if (preguntaFrecuente.pregunta.toLowerCase() === req.body.pregunta.toLowerCase()){
+                    if (preguntaFrecuente.pregunta.toLowerCase() == req.body.pregunta.toLowerCase()){
                         existe = true;
                     }
                 }
-                console.log(existe);
+                // console.log(preguntasFrecuentes);
+                // console.log(req.body.pregunta);
+                // console.log(existe);
                 if (existe){
                     res.json(
                         {
