@@ -23,7 +23,7 @@ let mostrarUtiles = () =>{
     };
 };
 
-selectNivel.addEventListener('click', mostrarUtiles);
+selectNivel.addEventListener('change', mostrarUtiles);
 // mostrar_utiles();
 // boton_buscar.click(mostrar_utiles());
 // boton_buscar.onclick = function() {mostrar_utiles()};
