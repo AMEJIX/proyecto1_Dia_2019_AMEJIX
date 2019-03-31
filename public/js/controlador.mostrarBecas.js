@@ -7,10 +7,10 @@ let idUsuarioCE = user._id;
 
 
 
-if(user.userType != "centroEducativo" || typeof listaPreguntasFrecuentes == 'string') {
+if (user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
 } else {
-
+    typeof listaPreguntasFrecuentes == 'string';
 }
 
 let becas = listarBecas(idUsuarioCE);
@@ -29,8 +29,6 @@ function mostrarBecas() {
 
             fila.insertCell().innerHTML = becas[i]['nombreBeca'];
             fila.insertCell().innerHTML = becas[i]['descripcionBeca'];
-        } else {
-            tabla.innerHTML = 'No existen becas registradas para este nivel';
         }
     }
 }

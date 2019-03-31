@@ -15,10 +15,6 @@
   
 }
 
-body {
-    overflow:scroll;
-}
-
 
 span {
     border: 1px solid black;
@@ -29,6 +25,10 @@ span {
     margin-bottom: 20px;
 }
 
+img{
+    max-width: 400px;
+    max-height: 400px;
+}
 
 
 

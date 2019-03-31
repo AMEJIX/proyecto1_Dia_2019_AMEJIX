@@ -43,11 +43,7 @@ tbody{
     width: 230px;
     height: 30px;
     margin-left: 80px;
-}
-
-#inputPrecioMatricula, #inputPrecioMensualidad{
-    font-size: 20px;
-    outline: none;
+    outline-color: #f9aa33;
 }
 
 #labelPrecioMensualidad{
@@ -62,18 +58,19 @@ tbody{
     width: 232px;
     height: 30px;
     margin-left: 38px;
+    outline-color: #f9aa33;
 }
 
 #btnRegistrarMatricula{
     margin: 0% auto;
-    margin-left: 46%;
-    background: #344955;
-    width: 290px;
-    height: 60px;
+    margin-left: 47%;
+    background: #f9aa33;
+    width: 210px;
+    height: 40px;
     border: none;
     color: white;
     margin-top: 25px;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 5px;
 }
 
