@@ -54,3 +54,27 @@ let listarNoticias = () => {
     });
     return listarNoticias;
 };
+
+let listarNoticias = (idCE) => {
+    let listarNoticias = [];
+
+    let request = $.ajax({
+        url: "http://localhost:4000/api/listarNoticiasCE"+idCE,
+        method: "GET",
+        data: {
+
+        },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false,
+    });
+
+    request.done(function (msg) {
+        listarNoticias = msg.registrarBeca;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+    return listarNoticias;
+};

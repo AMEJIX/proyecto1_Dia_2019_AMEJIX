@@ -1,8 +1,16 @@
 'use strict';
 
 const inputFiltrar = document.querySelector('#inputFiltrar')
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 
-let becas = listarBecas();
+let idUsuarioCE = user._id;
+
+if(user.userType != "centroEducativo") {
+    idUsuarioCE = IdGeneralCE;
+} else {
+
+}
+let becas = listarBecas(idUsuarioCE);
 inputFiltrar.addEventListener('keyup', mostrarBecas);
 
 function mostrarBecas() {
@@ -18,8 +26,10 @@ function mostrarBecas() {
 
             fila.insertCell().innerHTML = becas[i]['nombreBeca'];
             fila.insertCell().innerHTML = becas[i]['descripcionBeca'];
+        } else {
+            tabla.innerHTML = 'No existen becas registradas para este nivel';
         }
     };
 };
 
-mostrarBecas()
+mostrarBecas();

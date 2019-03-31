@@ -32,10 +32,10 @@ let registrarBeca = (pstringNombreBeca, pstringDescripcionBeca, pidCentroEducati
 
 };
 
-let listarBecas = () => {
+let listarBecas = (idCE) => {
     let listaBecas = [];
     let request = $.ajax({
-        url: "http://localhost:4000/api/listar_becas",
+        url: "http://localhost:4000/api/listarBecasCE/"+idCE,
         method: "GET",
         data: {
 
@@ -46,7 +46,7 @@ let listarBecas = () => {
     });
 
     request.done(function (msg) {
-        listaBecas = msg.registrarBeca;
+        listaBecas = msg.becas;
     });
 
     request.fail(function (jqXHR, textStatus) {

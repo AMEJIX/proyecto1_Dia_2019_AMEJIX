@@ -1,8 +1,16 @@
 'use strict';
 
 const inputFiltrar = document.querySelector('#inputFiltrar');
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 
-let noticias = listarNoticias();
+let idUsuarioCE = user._id;
+
+if(user.userType != "centroEducativo") {
+    idUsuarioCE = IdGeneralCE;
+} else {
+
+}
+let noticias = listarNoticias(idUsuarioCE);
 inputFiltrar.addEventListener('keyup', mostrarNoticias);
 
 function mostrarNoticias() {
@@ -11,9 +19,8 @@ function mostrarNoticias() {
     const filtro = inputFiltrar.value;
 
     tabla.innerHTML = '';
-
     for (let i = 0; i < noticias.length; i++) {
-
+        
         if (noticias[i]['tituloNoticia'].toLowerCase().includes(filtro.toLowerCase())) {
 
             let fila = tabla.insertRow();
@@ -21,6 +28,8 @@ function mostrarNoticias() {
             fila.insertCell().innerHTML = noticias[i]['tituloNoticia'];
             fila.insertCell().innerHTML = noticias[i]['fechaNoticia'];
             fila.insertCell().innerHTML = noticias[i]['registrarNoticia'];
+        } else {
+            tabla.innerHTML = 'No existen noticias registradas para este nivel';
         }
     };
 };
