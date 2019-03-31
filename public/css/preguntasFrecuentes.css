@@ -51,9 +51,10 @@ textarea{
 
 #txtFiltrar{
     margin-left: 12px;
-    width: 435px;
+    width: 45%;
     margin-bottom: 50px;
     outline: none;
+    border: 2px #344955 solid;
 }
 
 #txtFiltrar::placeholder{

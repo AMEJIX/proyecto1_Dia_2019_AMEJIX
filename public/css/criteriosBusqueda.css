@@ -32,6 +32,7 @@ form, #nueva{
     margin-top: 50px;
 }
 
+
 #lblFiltrar{
     width: 120px;
     margin-right: 50px;
@@ -40,14 +41,14 @@ form, #nueva{
 
 #txtFiltrar{
     margin-left: 12px;
-    width: 40%;
+    width: 25%;
     margin-bottom: 50px;
     outline: none;
+    border: 2px #344955 solid;
 }
 
 #txtFiltrar::placeholder{
     text-align: center;
-    outline: none;
 }
 
 #cajaFiltrar{

@@ -17,18 +17,17 @@ table#tblCitas{
     width: 80%;
 }
 
+
 #lblFiltrar{
     width: 120px;
-    margin-right: 25px;
-    margin-left: 25px;
-    font-size: 18px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 #txtFiltrar{
-    margin-left: 20px;
-    width: 100%;
+    margin-left: 12px;
+    width: 40%;
     margin-bottom: 50px;
-    font-size: 18px;
     outline: none;
     border: 2px #344955 solid;
 }
@@ -39,9 +38,12 @@ table#tblCitas{
 
 #cajaFiltrar{
     margin-top: 50px;
-    display: inline-block;
+    text-align: center;
 }
 
+#txtFiltrar, #lblFiltrar{
+    font-size: 20px;
+}
 thead{
     background-color: #f9aa33;
 }
