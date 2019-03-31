@@ -1,5 +1,29 @@
 'use strict';
 
+let validarEtiqueta = (nombre) =>{
+    let lista = [];
+    let request = $.ajax(
+        {
+            url: "http://localhost:4000/api/validarEtiqueta/" + nombre,
+            method: "GET",
+            data: {},
+            contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            async: false
+        }
+    );
+
+    request.done(function (res) {
+        lista = res.success;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+
+    return lista;
+};
+
 let getCriteriosBusqueda = () =>{
     let lista = [];
     let request = $.ajax(
