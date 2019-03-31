@@ -27,14 +27,11 @@ function mostrarMatriculas() {
 
     if (!(typeof matriculas == 'string')) {
         eliminarMensaje();
-        for (let i = 0; i < matriculas.length; i++) {
-
             let fila = tabla.insertRow();
 
-            fila.insertCell().innerHTML = matriculas[i]['matricula'];
-            fila.insertCell().innerHTML = matriculas[i]['mensualidad'];
-            fila.insertCell().innerHTML = matriculas[i]['moneda'];
-        }
+            fila.insertCell().innerHTML = matriculas['matricula'];
+            fila.insertCell().innerHTML = matriculas['mensualidad'];
+            fila.insertCell().innerHTML = matriculas['moneda'];
     } else {
         if (document.getElementById('tblMatriculas #error')) {
             insertarMensaje(`No se encontró información de los costos de matrícula`);

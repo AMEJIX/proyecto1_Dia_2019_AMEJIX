@@ -84,7 +84,7 @@ module.exports.listarMatriculasCE = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        matriculo: "No se encontraron los costos de matrícula"
+                        matricula: "No se encontraron los costos de matrícula"
                     }
                 )
             }

@@ -32,6 +32,10 @@ h1{
     margin-left: 5px; 
 }
 
+tr{
+    border: 1px #344955 solid;
+}
+
 #tblMatriculas{
     margin-top: 50px;
     margin-left: 15%;
@@ -40,36 +44,44 @@ h1{
 }
 
 #thTituloNombreMatricula{
-    background-color: #344955;
+    background-color: #f9aa33;
     padding: 2%;
     text-align: center;
     color: white;
-    font-size: 110%;
+    font-size: 150%;
 }
 
 #thPrecioMatricula{
-    background: #344955;
+    background: #f9aa33;
     padding: 1%;
     text-align: center;
     color: white;   
-    font-size: 110%;
+    font-size: 150%;
 }
 
 #thfieldsetPrecio{
-    background: #344955;
+    background: #f9aa33;
     padding: 1%;
     text-align: center;
     color: white;   
-    font-size: 110%;
+    font-size: 150%;
 }
 
 tr, td{
     padding: 1%;
     text-align: center;
+    color: #344955;
+}
+
+th, td{
+    border: 1px #344955 solid;
+    height: 60px;
+    vertical-align: middle;
 }
 
 tbody{
-    font-size: 105%;
+    border: 1px #344955 solid;
+    font-size: 130%;
     line-height: 180%;
     text-align: center;
 }

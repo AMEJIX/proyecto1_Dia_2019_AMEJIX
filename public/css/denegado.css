@@ -1,3 +1,7 @@
+.contenido{
+    text-align: center;
+}
+
 #error{
     display: inline-block;
     text-align: center;
@@ -5,8 +9,7 @@
     margin-bottom: 100px;
     font-size: 20px;
     color: #344955;
-    width: 400px;
-    margin-left: 400px;
+    width: 50%;
 }
 
 #cajaImagen{

@@ -40,13 +40,14 @@ form, #nueva{
 
 #txtFiltrar{
     margin-left: 12px;
-    width: 435px;
+    width: 40%;
     margin-bottom: 50px;
     outline: none;
 }
 
 #txtFiltrar::placeholder{
     text-align: center;
+    outline: none;
 }
 
 #cajaFiltrar{
@@ -57,7 +58,7 @@ form, #nueva{
 #txtFiltrar, #txtNombreEtiqueta{
     font-size: 14px;
     outline: none;
-    width: 480px;
+    width: 80%p;
     height: 25px;
 }
 
