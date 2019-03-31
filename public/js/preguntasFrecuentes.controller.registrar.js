@@ -38,8 +38,13 @@ let agregar = () =>{
     if (!validar()){
         pregunta = txtPregunta.value;
         respuesta = txtRespuesta.value;
-
-        registrarPreguntaFrecuente(user._id, pregunta, respuesta);
+        let idUsuario;
+        if(user.userType == 'centroEducativo'){
+            idUsuario = user._id;
+        } else {
+            idUsuario = IdGeneralCE;
+        }
+        registrarPreguntaFrecuente(idUsuario, pregunta, respuesta);
 
         setTimeout("location.reload()", 1500);
 
