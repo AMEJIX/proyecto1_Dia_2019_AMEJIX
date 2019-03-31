@@ -36,6 +36,7 @@ html {
 
 #home .nav a:hover {
     color: #f9aa33;
+    transition: all 300ms ease;
 }
 
 #home .left {
@@ -183,10 +184,101 @@ html {
     margin-left: 50px;
 }
 
-#spanFoto {
+#spanFoto1 {
     width: 70px;
     height: 70px;
-    background: #232f34;
+    background-image: url(../img/IdeA.jpeg);
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanFoto2 {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/sunny.jpeg);
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanFoto3 {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/quepos.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanFoto4 {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/ctplimon.jpeg);
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanFoto5 {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/reden.png);
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanFoto6 {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/luisa.jpeg);
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanFoto7 {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/upala.jpeg);
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanFoto8 {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/urizarc.jpeg);
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanFoto9 {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/curubande.jpeg);
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 13px;
+}
+
+#spanFoto10 {
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/coto.jpeg);
+    background-size: cover;
     border-radius: 50%;
     float: left;
     margin-left: 13px;
