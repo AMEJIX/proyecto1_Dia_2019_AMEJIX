@@ -6,7 +6,7 @@ const apiCEUbicacion = require('./centrosEducativosUbicacion.api');
 
 
 router.route('/listarCEUbicacion')
-    .get(
+    .post(
     function(req, res){
         apiCEUbicacion.listarCEUbicacion(req, res);
     });

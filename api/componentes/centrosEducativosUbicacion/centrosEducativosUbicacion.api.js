@@ -4,8 +4,9 @@ const modeloCEUbicacion = require('../usuarios/usuarios.model');
 
 
 
-module.exports.listarCEUbicacion = (req, res)=>{    
-    modeloCEUbicacion.find({userType: 'centroEducativo'}).then(
+module.exports.listarCEUbicacion = (req, res)=>{
+        
+    modeloCEUbicacion.find({userType: 'centroEducativo', canton: req.body.canton}).then(
         function(centrosEducativos){
             if(centrosEducativos.length >0){
                 res.json(

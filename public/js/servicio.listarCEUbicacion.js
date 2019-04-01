@@ -2,13 +2,14 @@
 
 
 
-let listarCEUbicacion= () =>{
+let listarCEUbicacion= (pcantonUsuario) =>{
     let listaCEUbicacion= [];    
     let request = $.ajax({ 
       url: "http://localhost:4000/api/listarCEUbicacion",
-      type: "GET",
+      type: "POST",
       
       data: {
+        canton : pcantonUsuario
           
       },
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
