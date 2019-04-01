@@ -1,12 +1,16 @@
 h1{
-    margin: 30px;
-    font-size: 20px;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 5%;
+    font-size: 25px;
+    color: #2c3e50;
 }
 
 .filtro{
-    
-    margin-right: 90px;
-    margin-bottom: 20px;
+    float: right;
+    margin-top: 40px;
+    margin-right: 5%;
+    margin-bottom: 50px;
 }
 .filtro label{
     display: inline-block;

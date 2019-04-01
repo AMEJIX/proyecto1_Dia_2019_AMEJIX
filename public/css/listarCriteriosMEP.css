@@ -2,6 +2,7 @@
 h1{
     margin: 30px;
     font-size: 20px;
+    text-align: center;
 }
 
 form div select{
@@ -21,18 +22,20 @@ form div{
 }
 
 #tblCriteriosMEP{
-    
+    text-align: center;
     border-collapse: collapse;
-    margin-left: 32px;
-    width: 80%;
+    /* margin-left: 32px; */
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 100px;
     
 }
 
 #tblRangoCriteriosMEP{
-    
+    text-align: center;
     border-collapse: collapse;
-    margin-left: 32px;
-    width: 80%;
+    width: 90%;
+    margin: 0 auto;
     margin-bottom: 50px;
    
 }
