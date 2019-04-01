@@ -17,7 +17,7 @@ h1{
 }
 
 .successInput{
-    border: 2px #344955 solid;
+    /*border: 2px #344955 solid;*/
 }
 
 table#tblCriteriosBusqueda{
@@ -44,7 +44,7 @@ form, #nueva{
     width: 25%;
     margin-bottom: 50px;
     outline: none;
-    border: 2px #344955 solid;
+    /*border: 2px #344955 solid;*/
 }
 
 #txtFiltrar::placeholder{
@@ -53,7 +53,7 @@ form, #nueva{
 
 #cajaFiltrar{
     margin-top: 50px;
-    text-align: center;
+    text-align: left;
 }
 
 #txtFiltrar, #txtNombreEtiqueta{
@@ -66,7 +66,7 @@ form, #nueva{
 #txtNombreEtiqueta{
     width: 30%;
     height: 20px;
-    border: 2px #344955 solid;
+    /*border: 2px #344955 solid;*/
 }
 
 
@@ -121,14 +121,16 @@ button:hover{
 }
 
 td{
-    border: 2px #f9aa33 dotted;
+    /*border: 2px #f9aa33 dotted;*/
+    border: 1px #344955 solid;
     vertical-align: middle;
     text-align: center;
 }
 
 td:hover{
     background-color: #344955;
-    color: #f9aa33;
+    /*color: #f9aa33;*/
+    color: #ffffff;
 }
 
 #error{
