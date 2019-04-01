@@ -98,6 +98,7 @@ function setEdadHijos() {
 
         var newInput = document.createElement("input");
         newInput.classList.add('input_hijo');
+        newInput.type = 'Number';
 
         newSecondDiv.appendChild(newLabel);
         newSecondDiv.appendChild(newInput);
