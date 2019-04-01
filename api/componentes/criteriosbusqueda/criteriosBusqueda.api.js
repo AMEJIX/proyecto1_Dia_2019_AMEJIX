@@ -2,6 +2,48 @@
 
 const modeloCriteriosBusqueda = require('./criteriosBusqueda.model');
 
+module.exports.validarEtiqueta = (req, res) =>{
+
+    modeloCriteriosBusqueda.find().sort({pregunta: 'asc'}).then(
+        function (criteriosBusqueda) {
+            if (criteriosBusqueda.length > 0){
+                let existe = false;
+
+                for (let etiqueta of criteriosBusqueda){
+                    if (etiqueta.nombre.toLowerCase() == req.body.nombre.toLowerCase()){
+                        existe = true;
+                    }
+                }
+                // console.log(preguntasFrecuentes);
+                // console.log(req.body.pregunta);
+                // console.log(existe);
+                if (existe){
+                    res.json(
+                        {
+                            success: true,
+                            msg: 'Ya existe la etiqueta'
+                        }
+                    );
+                } else {
+                    res.json(
+                        {
+                            success: false,
+                            msg: 'No existe la etiqueta'
+                        }
+                    );
+                }
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        preguntasFrecuentes: 'No hay preguntas aún'
+                    }
+                );
+            }
+        }
+    );
+};
+
 module.exports.registrarCriterioBusqueda = (req, res) =>{
     let nuevoCriterioBusqueda = new modeloCriteriosBusqueda(
         {

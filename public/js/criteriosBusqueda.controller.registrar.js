@@ -7,7 +7,7 @@ let validar = () =>{
 
     let error = false;
 
-    if (inputEtiqueta.value === ''){
+    if (inputEtiqueta.value === '' || validarEtiqueta()){
         error = true;
         inputEtiqueta.classList.add('errorInput');
     } else {
@@ -22,6 +22,8 @@ let agregar = () =>{
     if (!validar()){
         let nombre = inputEtiqueta.value;
 
+        inputEtiqueta.value = '';
+
         registrarCriterioBusqueda(nombre);
 
         setTimeout("location.reload()", 1500);
@@ -31,7 +33,7 @@ let agregar = () =>{
             {
                 type: 'warning',
                 title: 'Registro fallido de la etiqueta',
-                text: 'Asegúrese de haber agregado un nombre'
+                text: 'Asegúrese de haber llenado el campo o que la etiqueta no exista'
             }
         );
     }

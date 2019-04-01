@@ -9,6 +9,7 @@ h1{
 #frmRegistroUtil{
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 440px;
 }
 form div{
    margin-right: 90px;
@@ -45,7 +46,7 @@ form div select{
 }
 
 #btnRegistrar{
-    margin-left: 480px;
+    margin-left: 190px;
     padding: 14px 50px;
     background-color: #f9aa33;
     color: white;
