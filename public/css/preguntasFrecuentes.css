@@ -17,7 +17,7 @@ h1{
 }
 
 .successInput{
-    border: 2px #344955 solid;
+    /*border: 2px #344955 solid;*/
 }
 
 table#tblPreguntasFrecuentes{
@@ -35,7 +35,7 @@ form, #nueva{
 
 textarea{
     padding: 4px 2px;
-    border: 2px #344955 solid;
+    border: 1px #344955 solid;
     background: #fff;
     width: 30%;
     resize: none;
@@ -54,7 +54,7 @@ textarea{
     width: 45%;
     margin-bottom: 50px;
     outline: none;
-    border: 2px #344955 solid;
+    /*border: 2px #344955 solid;*/
 }
 
 #txtFiltrar::placeholder{
@@ -63,7 +63,8 @@ textarea{
 
 #cajaFiltrar{
     margin-top: 50px;
-    text-align: center;
+    margin-right: 50px;
+    text-align: right;
 }
 
 
@@ -126,19 +127,16 @@ table#tblPreguntasFrecuentes tr{
 }
 
 button{
-    padding: 20px;
+    display: block;
+    margin-top: 45px;
+    padding: 14px 50px;
+    margin: 0 auto;
     background: #f9aa33;
-    font-size: 22px;
-    /*padding: 14px 50px;*/
-    margin-top: 50px;
-    margin-left: 50%;
-    margin-right: 50%;
-    margin-bottom: 50px;
     color: white;
     border: none;
     border-radius: 5px;
     outline: none;
-    float: bottom;
+    margin-bottom: 50px;
 }
 
 button:hover{
