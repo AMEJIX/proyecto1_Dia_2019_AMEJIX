@@ -57,6 +57,7 @@ input {
     border-radius: 7px;
     background-color: #F9AA33;
     color: white; 
+    outline-color: #F9AA33;
 }
 
 .login a {

@@ -3,12 +3,11 @@
 }
 
 h1{
-    font-size: 42px;
-    display: block;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    font-size: 25px;
     text-align: center;
-    color: #f9aa33;
+    color: #2c3e50;
+    margin-top: 40px;
+    margin-bottom: 40px;
     /*text-shadow: -3px -2px 10px #344955;*/
 }
 
@@ -19,30 +18,31 @@ table#tblCitas{
 
 
 #lblFiltrar{
-    width: 120px;
+    width: 100px;
     margin-right: 50px;
     margin-left: 50px;
 }
 
 #txtFiltrar{
     margin-left: 12px;
-    width: 40%;
+    width: 20%;
     margin-bottom: 50px;
     outline: none;
-    border: 2px #344955 solid;
+    border: 1px #344955 solid;
 }
 
-#txtFiltrar::placeholder{
+/* #txtFiltrar::placeholder{
     text-align: center;
-}
+} */
 
 #cajaFiltrar{
     margin-top: 50px;
-    text-align: center;
+    text-align: right;
+    margin-right: 10%;
 }
 
 #txtFiltrar, #lblFiltrar{
-    font-size: 20px;
+    font-size: 14px;
 }
 thead{
     background-color: #f9aa33;
@@ -63,7 +63,7 @@ th{
 
 td:hover{
     background-color: #344955;
-    color: #f9aa33;
+    color: white;
 }
 
 .institucion, .fechaHora, .padre{
