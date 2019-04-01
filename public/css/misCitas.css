@@ -38,6 +38,11 @@ table#tblCitas{
     border: 1px #344955 solid;
 }
 
+#txtFiltrar::placeholder{
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+}
+
 /* #txtFiltrar::placeholder{
     text-align: center;
 } */

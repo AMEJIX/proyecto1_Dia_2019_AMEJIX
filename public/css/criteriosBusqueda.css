@@ -54,7 +54,8 @@ form, #nueva{
 }
 
 #txtFiltrar::placeholder{
-    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
 }
 
 #cajaFiltrar{
