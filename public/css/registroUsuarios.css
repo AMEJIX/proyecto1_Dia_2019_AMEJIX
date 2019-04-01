@@ -98,6 +98,7 @@ select{
     display: inline-block;
     width: 200px;
     height: 25px;
+    outline-color: #f9bf33;
 }
 
 form button{

@@ -354,6 +354,7 @@ form div select{
     display: inline-block;
     width: 254px;
     height: 35px;
+    outline-color: #f9bf33;
 }
 form div{
     margin-right: 90px;
