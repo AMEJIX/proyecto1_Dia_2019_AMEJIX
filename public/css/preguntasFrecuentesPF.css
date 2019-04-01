@@ -16,18 +16,14 @@ h1 {
 }
 
 .left {
-    width: 45%;
+    display: block;
+    width: 90%;
     height: 90vh;
-    float: left;
-    border-right: 1px solid #344955;
+    margin: 0 auto;
+   
 }
 
-.right {
-    width: 45%;
-    height: 90vh;
-    float: right;
-    
-}
+
 
 #nueva {
     display: block;
@@ -102,8 +98,4 @@ button{
     border-radius: 5px;
     outline: none;
     margin-bottom: 50px;
-}
-
-.left{
-    margin-left: 20px;
 }

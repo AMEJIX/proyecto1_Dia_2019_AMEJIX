@@ -8,7 +8,7 @@
     <title>Preguntas frecuentes</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -21,7 +21,7 @@
     </header>
 
     <main>
-            <div class="sidebar">
+        <div class="sidebar">
             <div class="sicenLogo"></div>
             <div class="line"></div>
             <div class="wrapper">
@@ -58,24 +58,27 @@
 
         <div class="contenido" style="overflow-y: scroll;">
             <!-- TODO EL CONTENIDO DEL CASO DE USO -->
-            <h1>Preguntas frecuentes</h1>
+            <div class="head">
+                    <h1>Preguntas frecuentes</h1>
 
-
-
-            <div id="cajaFiltrar">
-                <label for="txtFiltrar" id="lblFiltrar">Busca tu pregunta</label>
-                <input type="text" id="txtFiltrar" placeholder="Escriba su pregunta sobre el centro educativo">
+                    <div id="cajaFiltrar">
+                        <label for="txtFiltrar" id="lblFiltrar">Busca tu pregunta</label>
+                        <input type="text" id="txtFiltrar" placeholder="Escriba su pregunta">
+                    </div>
             </div>
 
-            <table id="tblPreguntasFrecuentes" align="center">
-                <tbody></tbody>
-            </table>
+            <div class="left">
+                <table id="tblPreguntasFrecuentes">
+                    <tbody></tbody>
+                </table>
+            </div>
 
-            <p id="nueva">¿Nueva pregunta frecuente?</p>
+            <div class="right">
+                <p id="nueva">¿Nueva pregunta frecuente?</p>
             <form>
                 <div id="cajaRegistrarPregunta">
                     <label for="txtPregunta">Escriba la pregunta</label>
-                     <textarea id="txtPregunta" type="text" maxlength="100"></textarea>
+                    <textarea id="txtPregunta" type="text" maxlength="100"></textarea>
                 </div>
                 <div id="cajaRegistrarRespuesta">
                     <label for="txtRespuesta">Escriba la respuesta</label>
@@ -84,11 +87,13 @@
 
             </form>
             <button type="button" id="btnEnviar">Agregar</button>
+            </div>
         </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controlador.general.js"></script>
     <script src="js/preguntasFrecuentes.servicio.js"></script>

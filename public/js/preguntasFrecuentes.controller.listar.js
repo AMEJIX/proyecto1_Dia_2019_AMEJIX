@@ -77,7 +77,7 @@ function mostrarPreguntasFrecuentes() {
 }
 
 function eliminarMensaje() {
-    document.querySelector('.contenido').removeChild(document.getElementById('error'));
+    document.querySelector('.left').removeChild(document.getElementById('error'));
 }
 
 function insertarMensaje(mensaje) {
