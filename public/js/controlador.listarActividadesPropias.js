@@ -12,8 +12,8 @@ if(user.userType == 'padreFamilia' || user.userType == 'superAdministrador'){
     window.location.href = 'loSentimos.html';
 }
 
-let actividades = listarActividades();
-
+// let actividades = listarActividades();
+// console.log(actividades);
 // function mostrarActividades(){
 let mostrarActividades = () => {
     
@@ -21,25 +21,31 @@ let mostrarActividades = () => {
     let filtro = inputFiltro.value;
     tablaActividades.innerHTML= '';
     
-    for(let i=0; i<actividades.length; i++){
-
-        if(actividades[i]['actividad'].toLowerCase().includes(filtro.toLowerCase())){
-            let fila = tablaActividades.insertRow();
-            fila.insertCell().innerHTML = actividades [i] ['actividad'];
-            fila.insertCell().innerHTML = actividades [i] ['descripcion'];
-            fila.insertCell().innerHTML = actividades [i] ['fecha'];
-            let imagenActividad = fila.insertCell();
-                        
-            let imagen = document.createElement('img');
-            imagen.classList.add('celdaImagen');
-                if(actividades [i] ['imagen']){
-                    imagen.src = actividades [i] ['imagen'];
-                }else{
-                    imagen.src = 'img/upload.png';
-                }
-            imagenActividad.appendChild(imagen); 
-        }          
+    if(actividades !== "No se encontraron actividades registradas"){
+        for(let i=0; i<actividades.length; i++){
+            
+            if(actividades[i]['actividad'].toLowerCase().includes(filtro.toLowerCase())){
+                
+                let fila = tablaActividades.insertRow();
+                fila.insertCell().innerHTML = actividades [i] ['actividad'];
+                fila.insertCell().innerHTML = actividades [i] ['descripcion'];
+                fila.insertCell().innerHTML = actividades [i] ['fecha'];
+                let imagenActividad = fila.insertCell();
+                            
+                let imagen = document.createElement('img');
+                imagen.classList.add('celdaImagen');
+                    if(actividades [i] ['imagen']){
+                        imagen.src = actividades [i] ['imagen'];
+                    }else{
+                        imagen.src = 'img/upload.png';
+                    }
+                imagenActividad.appendChild(imagen); 
+            }          
+        }
+    }else{
+        tablaActividades.innerHTML = "No se encontraron actividades registradas";
     }
+    
 };
 
 mostrarActividades();
