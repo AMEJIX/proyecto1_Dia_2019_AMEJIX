@@ -15,7 +15,7 @@ let mostrarActividades = () => {
     let actividades = listarActividades(IdGeneralCE);
     let filtro = inputFiltro.value;
     tablaActividades.innerHTML= '';
-    
+    if(actividades !== "No se encontraron actividades registradas"){
     for(let i=0; i<actividades.length; i++){
 
         if(actividades[i]['actividad'].toLowerCase().includes(filtro.toLowerCase())){
@@ -34,6 +34,8 @@ let mostrarActividades = () => {
                 }
             imagenActividad.appendChild(imagen); 
         }          
+    } }else{
+        tablaActividades.innerHTML = "No se encontraron actividades registradas";
     }
 };
 
