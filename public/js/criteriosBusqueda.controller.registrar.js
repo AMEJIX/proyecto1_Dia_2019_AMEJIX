@@ -7,7 +7,7 @@ let validar = () =>{
 
     let error = false;
 
-    if (inputEtiqueta.value === '' || validarEtiqueta()){
+    if (inputEtiqueta.value === '' || validarEtiqueta(inputEtiqueta.value)){
         error = true;
         inputEtiqueta.classList.add('errorInput');
     } else {

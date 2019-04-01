@@ -64,8 +64,9 @@ form, #nueva{
 }
 
 #txtNombreEtiqueta{
-    width: 400px;
-    height: 16px;
+    width: 30%;
+    height: 20px;
+    border: 2px #344955 solid;
 }
 
 
