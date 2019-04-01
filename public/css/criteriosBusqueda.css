@@ -121,14 +121,16 @@ button:hover{
 }
 
 td{
-    border: 2px #f9aa33 dotted;
+    /*border: 2px #f9aa33 dotted;*/
+    border: 1px #344955 solid;
     vertical-align: middle;
     text-align: center;
 }
 
 td:hover{
     background-color: #344955;
-    color: #f9aa33;
+    /*color: #f9aa33;*/
+    color: #ffffff;
 }
 
 #error{
