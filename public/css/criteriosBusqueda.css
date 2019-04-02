@@ -28,6 +28,8 @@ h1{
 
 table#tblCriteriosBusqueda{
     margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 15px 15px;
 }
 
 form, #nueva{
