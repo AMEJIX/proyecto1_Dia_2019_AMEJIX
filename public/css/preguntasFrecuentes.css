@@ -44,7 +44,10 @@ textarea {
     resize: none;
     margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
+}
 
+textarea#txtPregunta{
+    height: 90px;
 }
 
 form div label{
@@ -64,12 +67,16 @@ form div label{
 .pregunta{
     font-size: 24px;
     color: #344955;
-    
-    
 }
 
 #error {
     margin-left: 5%;
+    font-size: 20px;
+    color: #f9aa33;
+}
+
+.errorInput{
+    border: 1px red solid;
 }
 
 .pregunta:hover{
@@ -86,12 +93,13 @@ form div label{
 }
 
 tr{
-    height: 50px;
+    height: 80px;
  
 }
 
-
-
+tr:hover{
+    color: #f9aa33;
+}
 
 button{
     display: block;

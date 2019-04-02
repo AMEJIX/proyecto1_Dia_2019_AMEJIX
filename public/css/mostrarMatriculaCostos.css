@@ -80,6 +80,11 @@ tr, td{
     color: #344955;
 }
 
+td:hover{
+    background: #2c3e50;
+    color: white;
+}
+
 th, td{
     border: 1px #344955 solid;
     height: 60px;

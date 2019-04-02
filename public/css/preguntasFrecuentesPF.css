@@ -23,8 +23,6 @@ h1 {
    
 }
 
-
-
 #nueva {
     display: block;
     margin-top: 40px;
@@ -40,13 +38,16 @@ textarea {
     resize: none;
     margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
-
 }
 
 form div label{
     display: block;
     width: 190px;
     margin-bottom: 10px;
+}
+
+#tblPreguntasFrecuentes{
+    margin-left: 100px;
 }
 
 #cajaRegistrarPregunta  {
@@ -60,8 +61,6 @@ form div label{
 .pregunta{
     font-size: 24px;
     color: #344955;
-    
-    
 }
 
 #error {
@@ -86,8 +85,15 @@ tr{
  
 }
 
+tr:hover{
+    color: #f9aa33;
+}
 
-
+#error {
+    margin-left: 5%;
+    font-size: 20px;
+    color: #f9aa33;
+}
 
 button{
     display: block;
