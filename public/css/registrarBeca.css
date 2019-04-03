@@ -1,26 +1,34 @@
+h1 {
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 5%;
+    font-size: 25px;
+    color: #2c3e50
+}
+
 #divNombreBeca{
     margin: 0% auto;
-    margin-left: 20%;
-    margin-top: 15%;
+    margin-left: 15%;
+    margin-top: 5%;
 }
 
 #divDescripcionBeca{
     margin: 0% auto;
-    margin-left: 20%;
+    margin-left: 15%;
     margin-top: 30px;
 }
 
 #labelNombreBeca{
     margin: 0% auto;
-    margin-right: 10px;
+    margin-right: 15px;
     font-size: 25px;
     color: #344955;
 }
 
 #inputNombreBeca{
     margin: 0% auto;
-    width: 320px;
-    height: 30px;
+    width: 530px;
+    height: 40px;
     margin-left: 38px;
     outline-color: #f9aa33;
 }
@@ -34,14 +42,15 @@
 
 #inputDescripcionBeca{
     margin: 0% auto;
-    width: 320px;
-    height: 30px;
+    width: 530px;
+    height: 300px;
+    resize: none;
     outline-color: #f9aa33;
 }
 
 div button{
     margin: 0% auto;
-    margin-left: 47%;
+    margin-left: 51%;
     background: #f9aa33;
     width: 210px;
     height: 40px;
