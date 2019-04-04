@@ -2,6 +2,7 @@
 
 const nodemailer = require("nodemailer");
 const modelo_usuario = require('./usuarios.model');
+const modeloBitacora = require('../bitacora/bitacora.model')
 
 function correoPF(pemail, pnombre, pcontrasena) {
     //se define el correo que se va utilizar para enviar el email
@@ -78,9 +79,9 @@ function correoPF(pemail, pnombre, pcontrasena) {
 
 }
 
-function correoCE(pemail, pcentroEducativo, pcontrasena) { 
-       //se define el correo que se va utilizar para enviar el email
-       let transporter = nodemailer.createTransport({
+function correoCE(pemail, pcentroEducativo, pcontrasena) {
+    //se define el correo que se va utilizar para enviar el email
+    let transporter = nodemailer.createTransport({
         service: 'gmail',
         port: 4000,
         secure: false,
@@ -217,7 +218,7 @@ module.exports.registrar = (req, res) => {
             idiomas: req.body.idiomas,
             servicios: req.body.servicios,
             descipcionesServicio: req.body.descipcionesServicio,
-            documentCE : req.body.documentCE,
+            documentCE: req.body.documentCE,
 
 
 
@@ -247,18 +248,41 @@ module.exports.registrar = (req, res) => {
                     correoPF(req.body.email, req.body.nombre, req.body.contrasenna)
                     break;
                 case 'centroEducativo':
-                console
+                    console
                     correoCE(req.body.email, req.body.centroEducativo, req.body.contrasenna)
                     break;
                 default:
                 // code block
             }
 
-          
+            /**********Bitacora***********/
+            if (req.body.userType = 'padreFamilia') {
+
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombre,
+                    tipoDeMovimiento: "Creación de usuario",
+                    fecha: new Date()
+                })
+                nuevaBitacora.save();
+
+
+            } else if (req.body.userType = 'centroEducativo') {
+
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.centroEducativo,
+                    tipoDeMovimiento: "Creación de centro educativo",
+                    fecha: new Date()
+                })
+                nuevaBitacora.save();
+            }
+
+
+
             res.json(
                 {
                     success: true,
                     msj: 'Se registro el usuario correctamente'
+
                 }
             )
         }
@@ -301,8 +325,8 @@ module.exports.validar = (req, res) => {
 
 
 module.exports.listarCE = (req, res) => {
-    modelo_usuario.find({userType: 'centroEducativo'}).then(
-        function(usuario) {
+    modelo_usuario.find({ userType: 'centroEducativo' }).then(
+        function (usuario) {
             if (usuario.length > 0) {
                 res.json({
                     success: true,
@@ -319,8 +343,8 @@ module.exports.listarCE = (req, res) => {
 }
 
 module.exports.listarPF = (req, res) => {
-    modelo_usuario.find({userType: 'padreFamilia'}).then(
-        function(usuario) {
+    modelo_usuario.find({ userType: 'padreFamilia' }).then(
+        function (usuario) {
             if (usuario.length > 0) {
                 res.json({
                     success: true,
@@ -337,8 +361,8 @@ module.exports.listarPF = (req, res) => {
 }
 
 module.exports.listarCEOusuario = (req, res) => {
-    modelo_usuario.find({userType: 'centroEducativo', _id: req.body.idCE}).then(
-        function(centrosEducativos) {
+    modelo_usuario.find({ userType: 'centroEducativo', _id: req.body.idCE }).then(
+        function (centrosEducativos) {
             if (centrosEducativos.length > 0) {
                 res.json({
                     success: true,
@@ -355,8 +379,8 @@ module.exports.listarCEOusuario = (req, res) => {
 }
 
 module.exports.listarPFPorSA = (req, res) => {
-    modelo_usuario.find({userType: 'padreFamilia', _id: req.body.idPF}).then(
-        function(padreFamilia) {
+    modelo_usuario.find({ userType: 'padreFamilia', _id: req.body.idPF }).then(
+        function (padreFamilia) {
             if (padreFamilia.length > 0) {
                 res.json({
                     success: true,
@@ -373,9 +397,9 @@ module.exports.listarPFPorSA = (req, res) => {
 }
 
 module.exports.listarMEP = (req, res) => {
-    modelo_usuario.find({userType: 'superAdministrador'}).then(
-        function(infoSA) {
-            if (infoSA.length >0) {
+    modelo_usuario.find({ userType: 'superAdministrador' }).then(
+        function (infoSA) {
+            if (infoSA.length > 0) {
                 res.json({
                     success: true,
                     infoSA: infoSA
