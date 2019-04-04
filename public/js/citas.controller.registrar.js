@@ -45,10 +45,10 @@ let validar = () =>{
     //
     // fechaHoraIngresada.getFullYear() - new Date().getFullYear() < 2
 
-    console.log(inputFecha.value === '');
-    console.log(fechaHoraIngresada < new Date());
-    console.log(diasDiferencia, ' dias de diferencia');
-    console.log(!esDiaHabil);
+    // console.log(inputFecha.value === '');
+    // console.log(fechaHoraIngresada < new Date());
+    // console.log(diasDiferencia, ' dias de diferencia');
+    // console.log(!esDiaHabil);
 
     if (inputFecha.value === ''
         || (fechaHoraIngresada < new Date()

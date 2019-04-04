@@ -1,15 +1,45 @@
+.contenido{
+    text-align: center;
+    margin: 0 auto;
+}
+
 .sidebar a:hover, .subMenu a:hover{
     text-decoration: none;
+}
+label{
+    color: #f9aa33;
+
+}
+
+form{
+    display: inline-block;
+    margin: 50px;
+    width: 60%;
+    max-width: 60%;
+    background: #2c3e50;
+    border-radius: 10px;
 }
 
 #lblERRFecha, #lblERRHora{
     float: right;
     margin-right: 50px;
     margin-top: 55px;
+    color: white;
 }
 
 #lblERRHora{
     margin-top: 30px;
+}
+
+#cajaFechaHora{
+    display: inline-block;
+    /*background: #2c3e50;*/
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 50px;
 }
 
 .mensajeError{
@@ -17,11 +47,12 @@
     font-size: 18px;
     padding: 4px 18px;
     color: #D8000C;
-
+    margin-left: 5px;
     border: 1px solid #D8000C;
-    margin: 40px;
+    /*margin: 40px;*/
     position:relative;
     top:4px;
+    width: 70px;
 }
 
 .mensajeError:before{
@@ -29,7 +60,6 @@
 }
 
 h1 {
-    display: inline-block;
     margin-top: 40px;
     text-align: center;
     font-size: 25px;
@@ -44,19 +74,19 @@ label{
 }
 
 input[type=date]{
-    width: 30%;
     height: 150px;
     font-size: 45px;
-    color: #344955;
+    color: #ffffff;
+    background: #2c3e50;
 }
 
 input[type=time]{
     font-size: 45px;
     text-align: left;
     letter-spacing: 3px;
-    width: 30%;
     height: 100px;
-    color: #344955;
+    color: #ffffff;
+    background: #2c3e50;
 }
 
 input[type=time],input[type=date] {
@@ -64,6 +94,7 @@ input[type=time],input[type=date] {
     outline: none;
     margin-bottom: 50px;
     display: inline-block;
+    width: 45%;
 }
 
 form{

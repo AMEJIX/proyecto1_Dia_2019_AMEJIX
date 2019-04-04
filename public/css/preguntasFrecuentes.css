@@ -6,6 +6,18 @@ h1 {
     color: #2c3e50;
     margin-left: 5%;
     margin-bottom: 50px;
+    float: top;
+
+}
+
+.awesome_images{
+    display: inline-block;
+    float: right;
+    text-align: center;
+    margin: 0 auto;
+    color: #f9aa33;
+    /*width: 100%;*/
+    /*margin-left: 40px;*/
 }
 
 #cajaFiltrar {
@@ -16,17 +28,18 @@ h1 {
 }
 
 .left {
-    width: 45%;
+    width: 30%;
     height: 90vh;
     float: left;
-    border-right: 1px solid #344955;
+    margin-left: 10%;
 }
 
 .right {
-    width: 45%;
+    width: 60%;
     height: 90vh;
     float: right;
-    
+    border-left: 1px solid #344955;
+
 }
 
 #nueva {
@@ -94,7 +107,7 @@ form div label{
 
 tr{
     height: 80px;
- 
+
 }
 
 tr:hover{
@@ -116,4 +129,9 @@ button{
 
 .left{
     margin-left: 20px;
+}
+
+#tblPreguntasFrecuentes{
+    width: 80%;
+    margin-left: 50px;
 }

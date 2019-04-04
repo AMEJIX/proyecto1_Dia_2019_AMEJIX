@@ -64,6 +64,12 @@ function mostrarPreguntasFrecuentes() {
                 respuesta.classList.add('respuesta');
 
                 respuesta.innerHTML = listaPreguntasFrecuentes[i]['respuesta'];
+
+                if (user.userType === 'superAdministrador' || user.userType === 'centroEducativo'){
+                    pregunta.insertAdjacentHTML('beforeend', `<div class="opciones" id="${listaPreguntasFrecuentes[i]['_id']}"><div class="awesome_images"></i><i class="fas fa-edit modificar"></i><i class="fas fa-trash-alt eliminar"></i></div></div>`);
+                    respuesta.insertAdjacentHTML('beforeend', `<div class="opciones" id="${listaPreguntasFrecuentes[i]['_id']}"><div class="awesome_images"></i><i class="fas fa-edit modificar"></i><i class="fas fa-trash-alt eliminar"></i></div></div>`);
+                }
+
             } else{
                 if (document.getElementById('error')) eliminarMensaje();
                 insertarMensaje(`No se encontró la pregunta ${busqueda}`);

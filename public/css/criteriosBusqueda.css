@@ -15,7 +15,7 @@ h1{
     margin-left: 5%;
     font-size: 25px;
     color: #2c3e50;
-    float: left;
+    float: top;
 }
 
 .errorInput{
@@ -30,6 +30,7 @@ table#tblCriteriosBusqueda{
     margin: 0 auto;
     border-collapse: separate;
     border-spacing: 15px 15px;
+    width: 80%;
 }
 
 form, #nueva{
@@ -89,12 +90,12 @@ form, #nueva{
 table#tblCriteriosBusqueda tr{
     margin-top: 50px;
     height: 100px;
-    width: 600px;
+    width: 100%;
 }
 
 table#tblCriteriosBusqueda td{
     height: 60px;
-    width: 200px;
+    width: 30%;
 }
 
 .etiqueta{
@@ -139,12 +140,21 @@ td{
     border: 1px #344955 solid;
     vertical-align: middle;
     text-align: center;
+    transition: all 500ms ease;
 }
+
+td *{
+    display: inline-block;
+    /*width: 80%;*/
+}
+
 
 td:hover{
     background-color: #344955;
     /*color: #f9aa33;*/
     color: #ffffff;
+    transition: all 500ms ease;
+
 }
 
 #error{
@@ -155,4 +165,20 @@ td:hover{
     font-size: 20px;
     color: #f9aa33;
     width: 400px;
+}
+
+.awesome_images{
+    display: inline-block;
+    float: right;
+    text-align: center;
+    margin: 0 auto;
+    /*width: 100%;*/
+    /*margin-left: 40px;*/
+}
+i{
+    font-size: 15px;
+    margin-left: 10px;
+}
+i:hover{
+    color: #f9aa33;
 }

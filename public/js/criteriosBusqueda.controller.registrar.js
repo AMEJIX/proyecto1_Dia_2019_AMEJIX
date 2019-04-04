@@ -3,6 +3,11 @@
 const inputEtiqueta = document.querySelector('#txtNombreEtiqueta');
 const btnAgregar = document.querySelector('#btnAgregar');
 
+// inputEtiqueta.classList.add('chips');
+//
+// inputEtiqueta.classList.add('chips-autocomplete');
+// inputEtiqueta.classList.add('chips-placeholder');
+
 let validar = () =>{
 
     let error = false;

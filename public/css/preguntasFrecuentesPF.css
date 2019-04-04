@@ -1,11 +1,15 @@
+.contenido{
+    margin: 0 auto;
+}
+
 h1 {
-    display: inline-block;
     margin-top: 40px;
     text-align: center;
     font-size: 25px;
     color: #2c3e50;
     margin-left: 5%;
     margin-bottom: 50px;
+    float: top;
 }
 
 #cajaFiltrar {
@@ -48,6 +52,7 @@ form div label{
 
 #tblPreguntasFrecuentes{
     margin-left: 100px;
+    width: 80%;
 }
 
 #cajaRegistrarPregunta  {

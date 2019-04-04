@@ -13,7 +13,7 @@ window.onload = function() {
     if (usuario.userType === 'padreFamilia' || usuario.userType === 'superAdministrador') {
         nombre += usuario.nombre;
         if (usuario.segundoNombre) {
-            nombre = " " + usuario.segundoNombre;
+            nombre += " " + usuario.segundoNombre;
         }
         nombre += " " + usuario.apellido;
 

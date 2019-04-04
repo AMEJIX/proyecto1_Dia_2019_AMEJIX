@@ -60,15 +60,18 @@
             <h1 class="tituloPrincipal">Agendar cita</h1>
 
             <form>
-                <div id="cajaFecha">
-                    <label for="fechaCita">Fecha: </label>
-                    <input id="fechaCita" type="date"><label  for="fechaCita" id="lblERRFecha"></label>
+                <div id="cajaFechaHora">
+                    <div id="cajaFecha">
+                        <label for="fechaCita">Fecha: </label>
+                        <input id="fechaCita" type="date"><label  for="fechaCita" id="lblERRFecha"></label>
 
+                    </div>
+                    <div id="cajaHora">
+                        <label for="horaCita">Hora: </label><label  for="fechaCita" id="lblERRHora"></label>
+                        <input id="horaCita" type="time" value="13:00" step="900" min="8:00" max="16:00">
+                    </div>
                 </div>
-                <div id="cajaHora">
-                    <label for="horaCita">Hora: </label><label  for="fechaCita" id="lblERRHora"></label>
-                    <input id="horaCita" type="time">
-                </div>
+
 
                 <!--<div class='col-md-6'>
                    <div class="form-group">
