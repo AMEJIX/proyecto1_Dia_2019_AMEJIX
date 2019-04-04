@@ -152,6 +152,39 @@ function setServicios() {
 }
 
 
+//Lo siguiente permite hacer inputs nuevos por cada vez que se hace click en el boton de idiomas
+
+const buttonAgregarIdioma = document.querySelector('#agregarIdioma')
+buttonAgregarIdioma.addEventListener('click', setIdiomas);
+
+function setIdiomas() {
+
+    var newDiv = document.querySelector('.divIdiomasOfrecidos');
+
+
+
+    var newSecondDiv = document.createElement('div');
+    newSecondDiv.style.display = 'block';
+
+    var newLabel = document.createElement("label");
+    newLabel.innerHTML = "Idioma ";
+
+    var newInput = document.createElement("input");
+    newInput.classList.add('idiomas');
+
+    newSecondDiv.appendChild(newLabel);
+    newSecondDiv.appendChild(newInput);
+
+
+    newDiv.appendChild(newSecondDiv);
+
+
+    newDiv.style.height = '150px';
+    newDiv.style.overflow = 'auto';
+
+}
+
+
 // Agragar niveles educativos
 let checkBoxEscuela = document.getElementById('checkBoxEscuela');
 checkBoxEscuela.addEventListener('change', mostrarNivelesEscuela);
@@ -274,6 +307,8 @@ const fotoRegistroPF = document.querySelector('#imagePreviewPF');
 
 
 /******************** Captcha PF ********************/
+
+
 let divCaptchaPF = document.querySelector('#divCaptchaPF');
 let spanCaptchaPF = document.querySelector('#spanCaptchaPF');
 spanCaptchaPF.innerHTML = passwordGen();
@@ -283,15 +318,32 @@ let buttonCheckCaptchaPF = document.querySelector('#buttonCheckCaptchaPF')
 
 buttonCheckCaptchaPF.addEventListener('click', checkCaptchaPF);
 
-function checkCaptchaPF() {
 
-    if (textCaptchaPF.value == spanCaptchaPF.innerHTML) {
-        btnRegistrarPadreFamilia.style.display = 'block';
-        divCaptchaPF.style.display = 'none';
+function checkCaptchaPF() {
+    if (!validarPadreFamilia()) {
+
+
+        if (textCaptchaPF.value == spanCaptchaPF.innerHTML) {
+            btnRegistrarPadreFamilia.style.display = 'block';
+            divCaptchaPF.style.display = 'none';
+        } else {
+            spanCaptchaPF.innerHTML = passwordGen();
+        }
+
     } else {
-        spanCaptchaPF.innerHTML = passwordGen();
+
+        console.log(`La información no fue llenada correctamente`);
+
+        swal.fire({
+            type: 'warning',
+            title: 'La información no fue llenada correctamente',
+            text: `Porfavor revisar los campos`,
+
+        });
+
     }
 }
+
 
 /**************************************************/
 
@@ -355,13 +407,28 @@ let buttonCheckCaptchaCE = document.querySelector('#buttonCheckCaptchaCE')
 buttonCheckCaptchaCE.addEventListener('click', checkCaptchaCE);
 
 function checkCaptchaCE() {
+    if (!validarCentroEducativo()) {
+        if (textCaptchaCE.value == spanCaptchaCF.innerHTML) {
+            btnRegistrarCentroEducativo.style.display = 'block';
+            divCaptchaCE.style.display = 'none';
+        } else {
+            spanCaptchaCF.innerHTML = passwordGen();
+        }
 
-    if (textCaptchaCE.value == spanCaptchaCF.innerHTML) {
-        btnRegistrarCentroEducativo.style.display = 'block';
-        divCaptchaCE.style.display = 'none';
     } else {
-        spanCaptchaCF.innerHTML = passwordGen();
+
+        console.log(`La información no fue llenada correctamente`);
+
+        swal.fire({
+            type: 'warning',
+            title: 'La información no fue llenada correctamente',
+            text: `Porfavor revisar los campos`,
+
+        });
+
     }
+
+
 }
 
 /**************************************************/
@@ -454,7 +521,7 @@ function obtenerDatosPadreFamilia() {
         }
 
         let imagenPF = fotoRegistroPF.src;
-      
+
 
         console.log(contrasenna)
         registrarPadreFamilia(userType,
@@ -502,10 +569,9 @@ let validarCentroEducativo = () => {
     let religionSeleccionada = document.querySelector('#fieldsetReligion input[type=radio]:checked');
     let clasificacionSeleccionada = document.querySelector('#fieldsetClasificacion input[type=radio]:checked')
     let tipoSeleccionado = document.querySelector('#fieldsetTipo input[type=checkbox]:checked')
-    let idiomasSeleccionados = document.querySelector('#fieldsetIdiomas input[type=checkbox]:checked')
-  
 
-    
+
+
 
     if (inputDireccionExacta.value == '') {
         error = true;
@@ -532,7 +598,7 @@ let validarCentroEducativo = () => {
     }
 
 
-    if (inputAnno.value < 0 || inputAnno.value == "")  {
+    if (inputAnno.value < 0 || inputAnno.value == "") {
         error = true;
         inputAnno.classList.add('errorInput');
     } else {
@@ -587,12 +653,7 @@ let validarCentroEducativo = () => {
         fieldsetClasificacion.classList.remove('errorInput');
     }
 
-    if (idiomasSeleccionados == null) {
-        error = true;
-        fieldsetIdiomas.classList.add('errorInput');
-    } else {
-        fieldsetIdiomas.classList.remove('errorInput');
-    }
+
 
     if (tipoSeleccionado == null) {
         error = true;
@@ -670,7 +731,7 @@ let validarCentroEducativo = () => {
         inputTelCE.classList.remove('errorInput');
     }
 
-   
+
 
     return error;
 }
@@ -729,15 +790,7 @@ function obtenerDatosCentroEducativo() {
             }
         }
 
-        //Lo siguiente permite obtener los datos selccionads del checkList tipo de idiomas
-        let arregloIdiomas = document.getElementsByClassName('checkboxIdioma');
-        let idiomas = "";
-        for (let i = 0; i < arregloIdiomas.length; i++) {
-
-            if (arregloIdiomas[i].checked === true) {
-                idiomas += arregloIdiomas[i].value + ', ';
-            }
-        }
+      
 
 
         //Lo siguiente permite obtener los datos selccionads del checkList de grados
@@ -776,7 +829,17 @@ function obtenerDatosCentroEducativo() {
             descipcionesServicio += inputsDescripcionServicios[i].value + ', ';
         }
 
-        
+        // Lo siguiente permite guardar los datos de los idiomas
+        const inputsIdioma = document.querySelectorAll('.idiomas');
+
+        let idiomas = "";
+        for (let i = 0; i < inputsIdioma.length; i++) {
+
+            idiomas += inputsIdioma[i].value + ', ';
+        }
+
+
+
         let documentCE = documentoCE.src;
 
         registrarCentroEducativo(userType,
