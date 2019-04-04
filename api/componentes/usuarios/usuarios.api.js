@@ -2,7 +2,8 @@
 
 const nodemailer = require("nodemailer");
 const modelo_usuario = require('./usuarios.model');
-const modeloBitacora = require('../bitacora/bitacora.model')
+const modeloBitacora = require('../bitacora/bitacora.model');
+const modeloSolicitud = require('../solicitudes/solicitudes.model');
 
 function correoPF(pemail, pnombre, pcontrasena) {
     //se define el correo que se va utilizar para enviar el email
@@ -255,27 +256,78 @@ module.exports.registrar = (req, res) => {
                 // code block
             }
 
-            /**********Bitacora***********/
+            /**************************Bitacora/**************************/
             if (req.body.userType = 'padreFamilia') {
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                diaActual = yyyy + '-' + mm + '-' + dd;
 
                 let nuevaBitacora = new modeloBitacora({
                     usuario: req.body.nombre,
                     tipoDeMovimiento: "Creación de usuario",
-                    fecha: new Date()
+                    fecha: diaActual,
                 })
                 nuevaBitacora.save();
 
-
             } else if (req.body.userType = 'centroEducativo') {
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                diaActual = yyyy + '-' + mm + '-' + dd;
 
                 let nuevaBitacora = new modeloBitacora({
                     usuario: req.body.centroEducativo,
                     tipoDeMovimiento: "Creación de centro educativo",
-                    fecha: new Date()
+                    fecha: diaActual,
+
                 })
                 nuevaBitacora.save();
             }
 
+            /**************************Fin Bitacora**************************/
+
+            /**************************Solicitud**************************/
+
+            if (req.body.userType = 'padreFamilia') {
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                diaActual = yyyy + '-' + mm + '-' + dd;
+
+                let nuevaSolicitud = new modeloSolicitud({
+                    usuario: req.body.nombre,
+                    estado: "activo",
+                    fecha: diaActual,
+
+                })
+                nuevaSolicitud.save();
+            }
+            
+            else if (req.body.userType = 'centroEducativo') {
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                diaActual = yyyy + '-' + mm + '-' + dd;
+
+                let nuevaSolicitud = new modeloSolicitud({
+                    usuario: req.body.centroEducativo,
+                    estado: "pendiente",
+                    fecha: diaActual,
+
+                })
+                nuevaSolicitud.save();
+            }
+
+          /**************************Fin Solicitud**************************/
 
 
             res.json(

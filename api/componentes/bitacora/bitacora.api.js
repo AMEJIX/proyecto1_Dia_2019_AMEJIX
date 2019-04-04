@@ -1,6 +1,6 @@
 'use strict';
 
-const modeloBitacora = require('./usuarios.model');
+const modeloBitacora = require('./bitacora.model');
 
 
 
@@ -40,19 +40,26 @@ module.exports.registrarBitacora = (req, res) => {
 }
 
 module.exports.listarBitacora = (req, res) => {
-    modeloBitacora.find({}).then().then(
+    modeloBitacora.find().then(
         function(bitacora) {
             if (bitacora.length > 0) {
                 res.json({
                     success: true,
+                    bitacora: bitacora
                    
                 })
             } else {
                 res.json({
                     success: false,
-                    usuario: 'No se encontraron movimientos.'
+                    bitacora: 'No se encontraron movimientos.'
                 })
             }
         }
     )
 }
+
+
+
+
+
+     

@@ -8,15 +8,15 @@ const apiBitacora = require('./bitacora.api');
 router.route('/registrarBitacora')
     .post(
         function (req, res) {
-            api_usuarios.registrar(req, res);
+            apiBitacora.registrarBitacora(req, res);
         }
     );
 
 
-router.route('/listBitacora')
+router.route('/listarBitacora')
     .get(
         function (req, res) {
-            api_usuarios.listarPF(req, res);
+            apiBitacora.listarBitacora(req, res);
         }
     );
 
