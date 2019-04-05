@@ -19,128 +19,104 @@
 </head>
 
 <body>
+    <header>
+        <nav>
 
-
-    <main>
-        <div class="sidebar">
-            <div class="sicenLogo"></div>
-            <div class="line"></div>
-            <div class="wrapper">
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion" id="menuInformativo">
-                    <h3>Información</h3>
-                    <div class="subOpcion">
-                        <a href="mostrarMatriculaCostos.html">Matrícula</a>
-                        <a href="mostrarBecas.html">Becas</a>
-                        <a href="misCitasCE.html">Citas</a>
-                        <a href="mostrarMaterialInformativo.html">Material Informativo</a>
-                        <a href="mostrarNoticias.html">Noticias</a>
-                        <a href="listarActividadesPropiasCE.html">Actividades</a>
-                        <a href="listarUtilesPropiosCE.html">Útiles</a>
-                        <a href="criteriosBusqueda.html">Etiquetas</a>
-                        <a href="preguntasFrecuentesCE&Admin.html" id="aPreguntasCE">Preguntas frecuentes</a>
-                        <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
-
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion" id="menuAdministrativo">
-                    <h3>Administrativo</h3>
-                    <div class="subOpcion">
-                        <a href="bitacora.html">Bitácora</a>
-                        <a href="#">Notificaciones</a>
-                        <a href="listarCriteriosMEP.html">Criterios de Evaluación</a>
-                        <a href="listarUtilesOficiales.html">Lista de útiles</a>
-                        <a href="criteriosBusqueda.html">Etiquetas</a>
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
-
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion" id="menuInfoCE">
-                    <h3>Centros educativos</h3>
-
-                    <div class="subOpcion">
-                        <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
-                        <a href="listarCentrosEducativos.html">Buscar</a>
-                        <a href="#" id="aFavoritos">Favoritos</a>
-                        <a href="#">Top</a>
-                        <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
-
-                    </div>
-                </div>
-
-                <div class="opcion" id="menuReportes">
-                        <h3>Reportes</h3>
-    
-                        <div class="subOpcion">
-                            <a href="#">Ranking MEP</a>
-                            <a href="#">Vistas</a>
-                            <a href="#" id="aHijos">Hijos</a>
-                            <a href="#">Ranking padres de familia</a>                           
-                        </div>
-                    </div>
-
-                <div class="opcion" id="menuCitas">
-                    <h3>Mis citas</h3>                
-                    <div class="subOpcion">
-                        <a href="misCitasPF.html">Citas agendadas</a>
-                    </div>
-                </div>
-
-                <div class="opcion" id="verPadres">
-                        <h3>Padres de familia</h3>                
-                        <div class="subOpcion">
-                            <a href="listarPadresFamilia.html">Buscar padres de familia</a>                        
-                        </div>
-                    </div>
-
-                    <div class="opcion" id="verInfoMep">
-                        <h3>MEP</h3>                
-                        <div class="subOpcion">
-                            <a href="listarInfoMep.html">Contacto</a>
-                            <a href="listarUtilesOficiales.html">Útiles MEP</a>                        
-                        </div>
-                    </div>
-                <!----------------------Fin opción---------------------->
-            </div>
-
-
-
-            <!----------------------Inicio información del perfil---------------------->
             <div class="userInfo">
                 <div class="userPhoto"></div>
-                <h4></h4>
+                <div class="nameWrapper">
+                    <h4></h4>
+                </div>
+
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
-                    <a href="#" id="logOut">Cerrar sesión</a>
-                    
+                    <a href="" id="logOut">Cerrar sesión</a>
+                    </ul>
                 </div>
             </div>
 
-            
-            <!----------------------Fin información del perfil---------------------->
+        </nav>
+    </header>
+    <main>
+
+        <div class="sideNav">
+            <a class="aBack" href="userProfileInfo.html">
+                <div class="sicenLogo"></div>
+            </a>
+            <div class="line"></div>
+
+            <button class="btnDropdown" id="menuInformativo">
+                <span><i class="fas fa-info"></i></span>
+                Información
+            </button>
+            <div class="dropdownContainer">
+                <a href="mostrarMatriculaCostos.html">Matrícula</a>
+                <a href="mostrarBecas.html">Becas</a>
+                <a href="misCitasCE.html">Citas</a>
+                <a href="mostrarMaterialInformativo.html">Material Informativo</a>
+                <a href="mostrarNoticias.html">Noticias</a>
+                <a href="listarActividadesPropiasCE.html">Actividades</a>
+                <a href="listarUtilesPropiosCE.html">Útiles</a>
+                <a href="criteriosBusqueda.html">Etiquetas</a>
+                <a href="preguntasFrecuentesCE&Admin.html" id="aPreguntasCE">Preguntas frecuentes</a>
+                <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>
+            </div>
+
+            <button class="btnDropdown" id="menuAdministrativo">
+                <span><i class="fas fa-info"></i></span>
+                Administrativo
+            </button>
+            <div class="dropdownContainer">
+                <a href="bitacora.html">Bitácora</a>
+                <a href="#">Notificaciones</a>
+                <a href="listarCriteriosMEP.html">Criterios de Evaluación</a>
+                <a href="listarUtilesOficiales.html">Lista de útiles</a>
+                <a href="criteriosBusqueda.html">Etiquetas</a>
+            </div>
+
+            <button class="btnDropdown" id="menuInfoCE">
+                <span><i class="fas fa-info"></i></span>
+                Centros educativos
+            </button>
+            <div class="dropdownContainer">
+                <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
+                <a href="listarCentrosEducativos.html">Buscar</a>
+                <a href="#" id="aFavoritos">Favoritos</a>
+                <a href="#">Top</a>
+                <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
+            </div>
+
+            <a href="misCitasPF.html" id="menuCitas"><span><i class="far fa-calendar-check"></i></span>Citas
+                agendadas</a>
+
+            <a href="listarPadresFamilia.html" id="verPadres"><span><i class="fas fa-search"></i></span>Buscar
+                padres de familia</a>
+
+            <button class="btnDropdown" id="verInfoMep">
+                <span><i class="fas fa-university"></i></span>
+                MEP
+            </button>
+            <div class="dropdownContainer">
+                <a href="listarInfoMep.html">Contacto</a>
+                <a href="listarUtilesOficiales.html">Útiles MEP</a>
+            </div>
 
         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
-            
+            <!-- TODO EL CONTENIDO -->
         </div>
     </main>
 
-    <footer>
-
-    </footer>
+    <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
         async defer></script>
     <script src="js/mapUser.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
-
-
+    
 </body>
 
 </html>
