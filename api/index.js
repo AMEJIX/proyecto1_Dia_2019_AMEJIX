@@ -70,8 +70,6 @@ app.use('/api', usuarios);
 const bitacora = require('./componentes/bitacora/bitacora.route');
 app.use('/api', bitacora);
 
-const solicitud = require('./componentes/solicitudes/solicitudes.route');
-app.use('api', bitacora);
 
 
 const utiles = require('./componentes/utiles/utiles.route');
