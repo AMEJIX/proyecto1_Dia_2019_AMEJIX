@@ -82,11 +82,11 @@ let registrarUtil = (pnombre, pdescripcion, pcantidad, pnivel, pidCentroEducativ
 
     });
     request.done(function( msg ) {
-        swal.fire({
-            type: 'success',
-            title: 'Util registrado correctamente',
-            text: `El util escolar ${pnombre} se registró con la descripción ${pdescripcion}, la cantidad del útil fue ${pcantidad} y el nivel escolar es ${pnivel}`
-        });
+        // swal.fire({
+        //     type: 'success',
+        //     title: 'Util registrado correctamente',
+        //     text: `El util escolar ${pnombre} se registró con la descripción ${pdescripcion}, la cantidad del útil fue ${pcantidad} y el nivel escolar es ${pnivel}`
+        // });
       });
        
       request.fail(function( jqXHR, textStatus ) {

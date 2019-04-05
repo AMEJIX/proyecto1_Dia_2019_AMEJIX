@@ -61,6 +61,10 @@ let obtenerDatosCriterio = () =>{
             let criterio = Number(selectCriterio.value);
             let descripcion = inputDescripcion.value;
             let puntaje = Number(selectPuntaje.value);
+
+            selectCriterio.value = '';
+            inputDescripcion.value = '';
+            selectPuntaje.value = '';
     
             registrarCriterio(criterio, descripcion, puntaje);
         }else{

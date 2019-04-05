@@ -1,5 +1,5 @@
 'use strict';
-// let user = JSON.parse(sessionStorage.getItem("usuario"));
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 const selectRangos= document.querySelector('#selectRangos');
 const selectValorMinimo= document.querySelector('#selectValorMinimo');
 const selectValorMaximo= document.querySelector('#selectValorMaximo');
@@ -94,6 +94,11 @@ let obtenerDatosRango = () =>{
             let valorMinimo = Number(selectValorMinimo.value);
             let valorMaximo = Number(selectValorMaximo.value);
             let estrellas = selectEstrellas.value;
+
+            selectRangos.value = '';
+            selectValorMinimo.value = '';
+            selectValorMaximo.value = '';
+            selectEstrellas.value = '';
     
             registrarRango(rango, valorMinimo, valorMaximo, estrellas);
         }else{

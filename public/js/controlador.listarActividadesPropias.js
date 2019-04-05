@@ -32,14 +32,27 @@ let mostrarActividades = () => {
                 fila.insertCell().innerHTML = actividades [i] ['fecha'];
                 let imagenActividad = fila.insertCell();
                             
-                let imagen = document.createElement('img');
-                imagen.classList.add('celdaImagen');
+                // let imagen = document.createElement('img');
+                // imagen.classList.add('celdaImagen');
+                // imagen.style.display = 'inline-block';
+                
                     if(actividades [i] ['imagen']){
-                        imagen.src = actividades [i] ['imagen'];
+                        let stringImg = actividades [i] ['imagen'];
+                        let arregloImg = stringImg.split(",");
+                        console.log(arregloImg);
+                        for(let a=0; a<arregloImg.length; a++){
+                            let imagen = document.createElement('img');
+                            imagen.src = arregloImg [a];                            
+                            imagenActividad.appendChild(imagen);                            
+                            imagen.classList.add('celdaImagen');
+                            imagen.style.display = 'inline-block'; 
+                        }
+                        // imagen.src = actividades [i] ['imagen'];
                     }else{
                         imagen.src = 'img/upload.png';
+                        imagenActividad.appendChild(imagen); 
                     }
-                imagenActividad.appendChild(imagen); 
+                // imagenActividad.appendChild(imagen); 
             }          
         }
     }else{

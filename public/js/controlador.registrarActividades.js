@@ -2,16 +2,33 @@
 
 let user = JSON.parse(sessionStorage.getItem("usuario"));
 
+if(user.userType == 'padreFamilia'){
+    window.location.href = 'loSentimos.html';
+};
+
 const inputActividad = document.querySelector('#txtActividad');
 const inputDescripcion = document.querySelector('#txtDescripcion');
 const inputFecha = document.querySelector('#inputFecha');
 const imagenActividad = document.querySelector('#imgActividades');
+const botonAgregar = document.querySelector('#btnAgregar');
 const botonRegistrar = document.querySelector('#btnRegistrar');
 const idCE = user._id;
 
-if(user.userType == 'padreFamilia'){
-    window.location.href = 'loSentimos.html';
-}
+
+//Agregar atributo de día actual máximo disponible para actividades
+var diaActual = new Date();
+var dd = diaActual.getDate();
+var mm = diaActual.getMonth()+1; //January is 0!
+var yyyy = diaActual.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+    diaActual = yyyy+'-'+mm+'-'+dd;
+    inputFecha.setAttribute("max", diaActual);
+
 
 
 let validar = () =>{
@@ -36,10 +53,36 @@ let validar = () =>{
     }else{
         inputFecha.classList.remove('errorInput');
     }
-  
     return error;
 
 };
+
+    let stringImgActividades = "";
+    
+    let i = 0;
+function obtenerImagenVarias(){
+    let sectionImgActividades = document.querySelector('.sctImagenes');
+   
+        if(imagenActividad.src === 'http://localhost:3000/public/img/upload.png'){            
+            swal.fire({
+                type: 'warning',
+                title: 'No ha subido una imagen',
+                text: 'Por favor suba una imagen'
+            });
+        }else{
+            stringImgActividades = stringImgActividades == "" ? imagenActividad.src : stringImgActividades + "," + imagenActividad.src;        
+            let nuevoImg = document.createElement('img');
+            nuevoImg.style.display = 'inline-block';
+            nuevoImg.classList.add('imageActividadAgregada');
+            nuevoImg.src = imagenActividad.src;
+            sectionImgActividades.appendChild(nuevoImg);
+            imagenActividad.src = 'img/upload.png';
+            i = i + 1; 
+        }       
+    
+}
+botonAgregar.addEventListener('click', obtenerImagenVarias);
+
 
 
 function obtenerDatosActividad(){
@@ -47,10 +90,21 @@ function obtenerDatosActividad(){
         let actividad = inputActividad.value;
         let descripcion = inputDescripcion.value;
         let fecha = inputFecha.value;
-        let imagen = imagenActividad.src;
+
+        let fechaOrdenada = fecha.split("-");
+        let dia = fechaOrdenada[2];
+        let mes = fechaOrdenada[1];
+        let ano = fechaOrdenada[0];
+        
+        let fechaCorrecta = dia+"/"+mes+"/"+ano;
+
         let idCentroEducativo = idCE;
 
-        registrarActividad(actividad, descripcion, fecha, imagen, idCentroEducativo);
+        inputActividad.value = '';
+        inputDescripcion.value = '';
+        inputFecha.value = '';
+        
+        registrarActividad(actividad, descripcion, fechaCorrecta, stringImgActividades, idCentroEducativo);
 
     }else{
         swal.fire({
