@@ -40,6 +40,16 @@ function mostrarDatos() {
                     imagen.src = 'img/placeHolderImagen.png';
                 }
                 imagenTema.appendChild(imagen);
+
+                let celdaConfiguracion = fila.insertCell();
+
+                // Creacion del boton de editar
+
+                let botonEditar = document.createElement('a');
+                botonEditar.textContent = 'Editar';
+                botonEditar.href = `editarMaterialInformativo.html?idMaterial=${temas[i]['_id']}`;
+
+                celdaConfiguracion.appendChild(botonEditar);
             }
         }
     }

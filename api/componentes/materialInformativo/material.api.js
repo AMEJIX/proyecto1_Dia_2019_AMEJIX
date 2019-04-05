@@ -76,3 +76,27 @@ module.exports.listarMaterial = (req, res) => {
         }
     )
 };
+
+module.exports.listarMaterial = (req, res) => {
+    materialModel.find().then(
+        function (material) {
+            if (material.length > 0) {
+                res.json({
+                    success: true,
+                    material: material
+                })
+            } else {
+                res.json({
+                    success: false,
+                    material: 'No se encontraron materiales informativos registrados'
+                })
+            }
+        }
+    )
+};
+
+module.exports.actualizar = function(req, res) {
+    materialModel.findByIdAndUpdate(req.body.id, {$set: req.body},
+        
+    )
+}
