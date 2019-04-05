@@ -113,7 +113,8 @@ app.use('/api', noticias);
 const matriculaCostos = require('./componentes/matriculasCostos/matriculaCostos.route');
 app.use('/api', matriculaCostos);
 
-
+const articulos = require('./componentes/articulos/articulos.route');
+app.use('/api', articulos);
 
 
 // Se guarda todo lo que se ha realizado
