@@ -1,0 +1,43 @@
+h1 {
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 5%;
+    font-size: 25px;
+    color: #2c3e50
+}
+
+#divIdioma{
+    margin: 0% auto;
+    margin-left: 28%;
+    margin-top: 10%;
+}
+
+#inputIdioma{
+    width: 175px;
+    height: 20px;
+    outline-color: #f9aa33;
+}
+
+#labelIdioma{
+    margin: 0% auto;
+    margin-right: 15px;
+    font-size: 25px;
+    color: #344955;
+}
+
+div button{
+    margin: 0% auto;
+    margin-left: 44%;
+    background: #f9aa33;
+    width: 210px;
+    height: 40px;
+    border: none;
+    color: white;
+    margin-top: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.errorInput{
+    border: 2px solid #ED4C67;
+}
