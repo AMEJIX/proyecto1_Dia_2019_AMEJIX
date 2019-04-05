@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista oficial de útiles del MEP</title>
+    <title>Registrar artículo escolar</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
@@ -14,7 +14,8 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/listarUtiles.css">
+    <link rel="stylesheet" href="css/registroArticulos.css">
+
 </head>
 
 <body>
@@ -39,8 +40,11 @@
     </header>
     <main>
 
-        <!-- <a href="listarUtilesPropiosCE.html">Ver</a>
-                        <a href="registarListaUtiles.html">Registrar</a> -->
+        <!-- <a href="listarArticulosPropios.html">Ver</a>
+                            <a href="registrarArticulos.html">Registrar</a>
+                            <a href="#">Modificar</a>
+                            <a href="#">Eliminar</a>
+                             -->
         <div class="sideNav">
             <a class="aBack" href="index.html">
                 <div class="sicenLogo"></div>
@@ -70,57 +74,36 @@
         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
-            <h1>Lista oficial de útiles del Ministerio de Educación Pública</h1>
+            <h1>Registro de artículos escolares</h1>
+            <form id="frmRegistroUtil">
 
-
-            <form>
-
-                <div>
-                    <label for="selectNivel">Nivel escolar</label>
-                    <select id="selectNivel">
-                        <optgroup label="Escuela"></optgroup>
-                        <option>Seleccione nivel</option>
-                        <option value="1">Primero</option>
-                        <option value="2">Segundo</option>
-                        <option value="3">Tercero</option>
-                        <option value="4">Cuarto</option>
-                        <option value="5">Quinto</option>
-                        <option value="6">Sexto</option>
-                        <optgroup label="Colegio"></optgroup>
-                        <option value="7">Séptimo</option>
-                        <option value="8">Octavo</option>
-                        <option value="9">Noveno</option>
-                        <option value="10">Décimo</option>
-                        <option value="11">Undécimo</option>
-                        <option value="12">Duodécimo</option>
-                    </select>
+                <div class="divFrm">
+                    <label for="txtNombre" class="lblInput">Nombre del artículo escolar</label>
+                    <input type="text" id="txtNombre" placeholder="Tijera">
                 </div>
-            </form>
+                <div class="divFrm">
+                    <label for="txtDescripcion" class="lblTextArea">Descripción</label>
+                    <textarea id="txtDescripcion" placeholder="Marca patito y de punta roma"></textarea>
+                </div>
 
-            <table id="tblUtiles">
-                <thead>
-                    <tr>
-                        <th>Nombre del útil</th>
-                        <th>Descripción</th>
-                        <th>Cantidad</th>
-                    </tr>
-                </thead>
-                <tbody>
+                <div class="btnDiv">
+                    <button type="button" id="btnRegistrar" class="btnRegistrar">Registrar</button>
+                </div>
 
-                </tbody>
-
-            </table>
+            </form> <!-- AQUÍ VA EL CONTENIDO -->
         </div>
     </main>
     <script src="js/style.js"></script>
+    <script src="js/authentication.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-    <script src="js/controlador.general.js"></script>
-    <script src="js/servicio.listarUtilesIndex.js"></script>
-    <script src="js/controlador.listarUtilesIndex.js"></script>
+    <script src="js/servicioInicio.js"></script>
+    <script src="js/servicio.articulos.js"></script>
+    <script src="js/controlador.registarArticulos.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
+
 </body>
+
 
 </html>
