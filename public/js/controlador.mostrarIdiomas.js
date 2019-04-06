@@ -2,22 +2,26 @@
 
 const inputBuscar = document.querySelector('#inputBuscar');
 
-const tamannioArreglo = listarIdiomas;
+let idiomas = listarIdiomas();
+inputBuscar.addEventListener('keyup', mostrarIdiomas);
 
-function llenarTabla() {
+function mostrarIdiomas() {
 
-    const invocarTablaHtml = document.querySelector('#tblIdiomas tbody');
+    const tabla = document.querySelector('#tblIdiomas tbody');
+    const filtro = inputBuscar.value;
 
-    const agarrarLoQueEscribe = inputBuscar.value;
+    tabla.innerHTML = '';
+    for (let i = 0; i < idiomas.length; i++) {
 
-    invocarTablaHtml.innerHTML = '';
-    for (let i = 0; i < tamannioArreglo.length; i++) {
+        if (idiomas[i]['idiomas'].toLowerCase().includes(filtro.toLowerCase())) {
+            
+            let fila = tabla.insertRow();
 
-        let fila = agarrarLoQueEscribe.inserRow();
+            fila.insertCell().innerHTML = idiomas[i]['idiomas'];
 
-        fila.inserCell().innerHTML = tamannioArreglo[i]['idioma'];
+        }
 
     }
 }
 
-llenarTabla();
+mostrarIdiomas();

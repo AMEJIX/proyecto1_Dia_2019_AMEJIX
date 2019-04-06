@@ -117,7 +117,7 @@ const articulos = require('./componentes/articulos/articulos.route');
 app.use('/api', articulos);
 
 const idiomas = require('./componentes/idiomas/idiomas.route');
-app.use('./api', idiomas)
+app.use('/api', idiomas);
 
 
 // Se guarda todo lo que se ha realizado

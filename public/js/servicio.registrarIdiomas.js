@@ -1,12 +1,12 @@
 'use strict';
 
-let registrarIdiomas = (parametrosIdioma) => {
+let registrarIdiomas = (parametrosIdioma) => { 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarIdiomas",
         method: "POST",
         data: {
 
-            idioma: parametrosIdioma,
+            idiomas: parametrosIdioma,
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -42,7 +42,7 @@ let listarIdiomas = () => {
     });
 
     request.done(function (msg) {
-        arregloDeIdiomas = msg.arreglazoDeIdiomas;
+        arregloDeIdiomas = msg.idiomas;
     });
 
     request.fail(function (jqXHR, textStatus) {

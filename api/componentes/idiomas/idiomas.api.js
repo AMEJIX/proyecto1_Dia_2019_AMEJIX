@@ -37,14 +37,14 @@ module.exports.listar = (req, res) => {
                 res.json(
                     {
                         success: true,
-                        registrarIdiomas: registrarIdiomas,
+                        idiomas: registrarIdiomas,
                     }
                 )
             } else {
                 res.json(
                     {
                         success: false,
-                        registrarIdiomas: "No se encontraron idiomas",
+                        idiomas: "No se encontraron idiomas",
                     }
                 )
             }

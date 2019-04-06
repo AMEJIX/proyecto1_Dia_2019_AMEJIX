@@ -3,7 +3,7 @@
 const inputIdioma = document.querySelector('#inputIdioma');
 const botonRegistrarIdioma = document.querySelector('#botonRegistrarIdioma');
 
-function validar() {
+let validar = () => {
     let error = false;
 
     if (inputIdioma.value == '') {
@@ -11,7 +11,6 @@ function validar() {
         inputIdioma.classList.add('errorInput');
     } else {
         inputIdioma.classList.remove('errorInput');
-        error = true;
     }
 
     return error;
@@ -23,12 +22,12 @@ let jalarDatosIdiomas = () => {
 
         let parametrosIdioma = inputIdioma.value;
 
-        registrarIdioma(parametrosIdioma);
+        registrarIdiomas(parametrosIdioma);
     } else {
         swal.fire({
             type: 'warning',
             title: 'Formulario incompleto',
-            text: 'Por favor revise los campos resaltados'
+            text: 'Por favor revise los campos resaltados',
         });
     }
 }
