@@ -1,6 +1,8 @@
 "use strict"
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+if (!user) {
+    let user = JSON.parse(sessionStorage.getItem("usuario"));
+}
 
 function ocultar() {
     console.log(user.userType);
