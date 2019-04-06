@@ -11,7 +11,7 @@ if(user.userType === 'padreFamilia'){
 if (user.userType === 'centroEducativo'){
     document.querySelector('#nueva').style.display = 'none';
     document.querySelector('form').style.display = 'none';
-    document.querySelector('button').style.display = 'none';
+    document.querySelector('#btnAgregar').style.display = 'none';
 }
 
 let listaEtiquetas = getCriteriosBusqueda();
