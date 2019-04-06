@@ -36,19 +36,69 @@
 
         </nav>
     </header>
-
+    <main>
         <div class="sideNav">
-                    <a class="aBack" href="index.html">
+                    <a class="aBack" href="userProfileInfo.html">
                         <div class="sicenLogo"></div>
                     </a>
                     <div class="line"></div>
-                    <button class="btnDropdown">
-                        <span><i class="fas fa-ticket-alt"></i></span>
-                        Criterios de búsqueda
+
+                    <button class="btnDropdown" id="menuInformativo">
+                        <span><i class="fas fa-info"></i></span>
+                        Información
                     </button>
                     <div class="dropdownContainer">
-                        <a href="criteriosBusqueda.html"><i class="fas fa-clipboard-list"></i>Todos los criterios</a>
+                        <a href="mostrarMatriculaCostos.html">Matrícula</a>
+                        <a href="mostrarBecas.html">Becas</a>
+                        <a href="misCitasCE.html">Citas</a>
+                        <a href="mostrarMaterialInformativo.html">Material Informativo</a>
+                        <a href="mostrarNoticias.html">Noticias</a>
+                        <a href="listarActividadesPropiasCE.html">Actividades</a>
+                        <a href="listarUtilesPropiosCE.html">Útiles</a>
+                        <a href="criteriosBusqueda.html">Etiquetas</a>
+                        <a href="preguntasFrecuentesCE&Admin.html" id="aPreguntasCE">Preguntas frecuentes</a>
+                        <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>
                     </div>
+
+                    <button class="btnDropdown" id="menuAdministrativo">
+                        <span><i class="fas fa-info"></i></span>
+                        Administrativo
+                    </button>
+                    <div class="dropdownContainer">
+                        <a href="bitacora.html">Bitácora</a>
+                        <a href="#">Notificaciones</a>
+                        <a href="listarCriteriosMEP.html">Criterios de Evaluación</a>
+                        <a href="listarUtilesOficiales.html">Lista de útiles</a>
+                        <a href="criteriosBusqueda.html">Etiquetas</a>
+                    </div>
+
+                    <button class="btnDropdown" id="menuInfoCE">
+                        <span><i class="fas fa-info"></i></span>
+                        Centros educativos
+                    </button>
+                    <div class="dropdownContainer">
+                        <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
+                        <a href="listarCentrosEducativos.html">Buscar</a>
+                        <a href="#" id="aFavoritos">Favoritos</a>
+                        <a href="#">Top</a>
+                        <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
+                    </div>
+
+                    <a href="misCitasPF.html" id="menuCitas"><span><i class="far fa-calendar-check"></i></span>Citas
+                        agendadas</a>
+
+                    <a href="listarPadresFamilia.html" id="verPadres"><span><i class="fas fa-search"></i></span>Buscar
+                        padres de familia</a>
+
+                    <button class="btnDropdown" id="verInfoMep">
+                        <span><i class="fas fa-university"></i></span>
+                        MEP
+                    </button>
+                    <div class="dropdownContainer">
+                        <a href="listarInfoMep.html">Contacto</a>
+                        <a href="listarUtilesOficiales.html">Útiles MEP</a>
+                    </div>
+
                 </div>
 
         <!-- -->
@@ -87,6 +137,7 @@
     <script src="js/criteriosBusqueda.controller.listar.js"></script>
     <script src="js/criteriosBusqueda.controller.registrar.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
+    <script src="js/controllerProfileInfo.js"></script>
 </body>
 
 </html>
