@@ -12,6 +12,12 @@ router.param('nombre', (req, res, next, nombre) =>{
     next();
 });
 
+router.param('id', (req, res, next, id) =>{
+    req.body.id = id;
+
+    next();
+});
+
 router.route('/validarEtiqueta/:nombre')
     .get(
         function (req, res) {
@@ -30,6 +36,26 @@ router.route('/listarCriteriosBusqueda')
     .get(
         function (req, res) {
             apiCriteriosBusqueda.listarCriteriosBusqueda(req, res);
+        }
+    );
+
+router.route('/obtenerCriterioBusqueda/:id')
+    .get(
+        (req, res) =>{
+            apiCriteriosBusqueda.getEtiqueta(req, res);
+        }
+    );
+
+router.route('/modificarEtiqueta')
+    .post(
+        (req, res) =>{
+            apiCriteriosBusqueda.actualizar(req, res);
+        }
+    );
+router.route('/eliminarEtiqueta')
+    .post(
+        (req, res) =>{
+            apiCriteriosBusqueda.eliminar(req, res);
         }
     );
 

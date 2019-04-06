@@ -91,3 +91,50 @@ module.exports.listarCriteriosBusqueda = (req, res) =>{
         }
     );
 };
+
+module.exports.getEtiqueta = (req, res) =>{
+    modeloCriteriosBusqueda.findOne({nombre: req.body.id}).then(
+        function (etiqueta) {
+            if (etiqueta){
+                res.json(
+                    {
+                        success: true,
+                        etiqueta: etiqueta
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        etiqueta: 'No se encontró la etiqueta'
+                    }
+                );
+            }
+        }
+    );
+};
+
+module.exports.actualizar = (req, res) =>{
+    modeloCriteriosBusqueda.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar la etiqueta'});
+            }else{
+                res.json({success: true , msg : 'La etiqueta se actualizó con éxito'});
+            }
+        }
+
+    );
+};
+
+module.exports.eliminar = (req, res) =>{
+    modeloCriteriosBusqueda.findByIdAndDelete(req.body.id,
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo eliminar la etiqueta'});
+            }else{
+                res.json({success: true , msg : 'La etiqueta se eliminó con éxito'});
+            }
+        }
+    );
+};
