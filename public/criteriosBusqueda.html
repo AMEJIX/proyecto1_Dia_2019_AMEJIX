@@ -18,46 +18,41 @@
 </head>
 
 <body>
-    <header>
-    </header>
+<header>
+        <nav>
 
-    <main>
-            <div class="sidebar">
-            <div class="sicenLogo"></div>
-            <div class="line"></div>
-            <div class="wrapper">
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion">
-                    <h3>Criterios de búsqueda</h3>
-
-                    <div class="subOpcion">
-                        <a href="criteriosBusqueda.html">Lista y registro</a>
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
-                 <div class="opcion">
-                    <h3>Regresar</h3>
-                    <div class="subOpcion">
-                        <a href="javascript:window.history.back();">&laquo; Volver atrás</a>
-                    </div>
-                </div>
-            </div>
-
-            <!----------------------Inicio información del perfil---------------------->
             <div class="userInfo">
                 <div class="userPhoto"></div>
-                <h4>Nombre del perfil</h4>
+                <div class="nameWrapper">
+                    <h4></h4>
+                </div>
+
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
-                    <a href="#">Configuración</a>
-                    <a href="#" id="logOut">Cerrar sesión</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="" id="logOut">Cerrar sesión</a>
                 </div>
             </div>
-            <!----------------------Fin información del perfil---------------------->
 
-        </div>
+        </nav>
+    </header>
 
-        <div class="contenido DOMContentLoaded" style="overflow-y: scroll;">
+        <div class="sideNav">
+                    <a class="aBack" href="index.html">
+                        <div class="sicenLogo"></div>
+                    </a>
+                    <div class="line"></div>
+                    <button class="btnDropdown">
+                        <span><i class="fas fa-ticket-alt"></i></span>
+                        Criterios de búsqueda
+                    </button>
+                    <div class="dropdownContainer">
+                        <a href="criteriosBusqueda.html"><i class="fas fa-clipboard-list"></i>Todos los criterios</a>
+                    </div>
+                </div>
+
+        <!-- -->
+        <div class="contenido" style="overflow-y: scroll;">
                             <!-- TODO EL CONTENIDO DEL CASO DE USO -->
             <h1>Criterios de búsqueda</h1>
 
@@ -84,6 +79,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/criteriosBusqueda.servicio.js"></script>
         <script src="js/criteriosBusqueda.controller.eliminar.js"></script>
