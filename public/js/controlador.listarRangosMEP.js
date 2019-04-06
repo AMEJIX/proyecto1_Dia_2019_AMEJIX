@@ -1,6 +1,6 @@
 'use strict'
 
-// let user = JSON.parse(sessionStorage.getItem("usuario"));
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tablaRangos = document.querySelector('#tblRangoCriteriosMEP tbody');
 

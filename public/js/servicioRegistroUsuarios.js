@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, provincia, canton, distrito, contrasenna, edades, imagenPF) => {
+let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, provincia, canton, distrito, contrasenna, edades, imagenPF, estado) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_usuario",
@@ -20,7 +20,8 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
             distrito: distrito,
             contrasenna: contrasenna,
             edades : edades,
-            imagenPF: imagenPF
+            imagenPF: imagenPF,
+            estado: estado
            
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -54,7 +55,7 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
 
 };
 
-let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP,direccionExacta, idiomas, servicios, descipcionesServicio, documentCE) => {
+let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP,direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_usuario",
@@ -101,7 +102,8 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
             idiomas : idiomas,
             servicios : servicios,
             descipcionesServicio : descipcionesServicio,
-            documentCE : documentCE
+            documentCE : documentCE,
+            estado : estado
 
             
 

@@ -31,4 +31,11 @@ router.route('/centroEducativo/listarMaterialUsuario/:idCE')
             }
         );
 
+router.route('/buscarMaterial')
+.post(
+    function (req, res) {
+        materialApi.actualizar(req, res);
+    }
+);
+
 module.exports = router;

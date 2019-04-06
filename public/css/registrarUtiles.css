@@ -3,9 +3,14 @@
 }
 
 h1{
-    margin-left: 567px;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 25px;
+    color: #2c3e50;
+    /* margin-left: 567px;
     margin: 30px;
-    font-size: 20px;
+    font-size: 20px; */
 }
 #frmRegistroUtil{
     margin-top: 20px;

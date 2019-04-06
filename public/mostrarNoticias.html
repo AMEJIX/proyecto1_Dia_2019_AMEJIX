@@ -6,56 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mostrar noticias</title>
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="css/mostrarNoticias.css">
 </head>
 
 <body>
-    <main>
-        <div class="sidebar">
-            <div class="sicenLogo"></div>
-            <div class="line"></div>
-            <div class="wrapper">
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion">
-                    <h3>Noticias</h3>
-                    <div class="subOpcion">
-                        <a href="registrarNoticia.html">Registrar noticias</a>
-                        <a href="mostrarNoticias.html">Mostrar noticias</a>
-                        <a href="javascript:window.history.back();">&laquo; Regresar</a>
-                        </ul>
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
+    <header>
+        <nav>
 
-                <!----------------------Inicio opción---------------------->
-
-                <!----------------------Fin opción---------------------->
-
-                <!----------------------Inicio opción---------------------->
-
-                <!----------------------Fin opción---------------------->
-            </div>
-
-            <!----------------------Inicio información del perfil---------------------->
             <div class="userInfo">
                 <div class="userPhoto"></div>
-                <h4>Fulanito Mengano</h4>
+                <div class="nameWrapper">
+                    <h4></h4>
+                </div>
+
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
-                    <a href="informacionPersonalUsuario.html">Información personal</a>
-                    <a href="#" id="logOut">Cerrar sesión</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="" id="logOut">Cerrar sesión</a>
                     </ul>
                 </div>
             </div>
-            <!----------------------Fin información del perfil---------------------->
 
+        </nav>
+    </header>
+    <main>
+
+        <div class="sideNav">
+            <a class="aBack" href="index.html">
+                <div class="sicenLogo"></div>
+            </a>
+            <div class="line"></div>
+            <button class="btnDropdown">
+                <span><i class="fas fa-school"></i></span>
+                Centros educativos
+            </button>
+            <div class="dropdownContainer">
+                <a href="#">Buscar</a>
+                <a href="#">Favoritos</a>
+                <a href="#">TOP 10</a>
+                <a href="#">Centros educativos cercanos</a>
+            </div>
+
+            <a href="#"><span><i class="far fa-calendar-check"></i></span>Citas</a>
+
+            <button class="btnDropdown">
+                <span><i class="fas fa-info"></i></span>
+                MEP
+            </button>
+            <div class="dropdownContainer">
+                <a href="#">Contacto</a>
+                <a href="#">MEP</a>
+            </div>
         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
@@ -73,6 +81,8 @@
                         <th>Título de la noticia</th>
                         <th>Fecha de la noticia</th>
                         <th>Descripción de la noticia</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,11 +92,12 @@
 
         </div>
     </main>
-
+    <script src="js/style.js"></script>
+    <script src="js/authentication.js"></script>
+    <script src="js/controllerProfileInfo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/authentication.js"></script>
     <script src="js/controlador.general.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
     <script src="js/servicio.registrarNoticia.js"></script>

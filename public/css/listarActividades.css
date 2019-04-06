@@ -1,9 +1,14 @@
 h1{
-    display: inline-block;
+    display: block;
+   margin-top: 30px;
+   text-align: center;
+   font-size: 25px;
+   color: #2c3e50;
+    /* display: inline-block;
     margin-top: 40px;
     margin-left: 5%;
     font-size: 25px;
-    color: #2c3e50;
+    color: #2c3e50; */
 }
 
 .filtro{
@@ -28,42 +33,56 @@ h1{
 
 #tblActividades {
     border-collapse: collapse;
-    margin-left: 32px;
-    /* width: 80%; */
-    margin-bottom: 120px;
     width: 90%;
     margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+    /* border-collapse: collapse;
+    margin-left: 32px;
+    /* width: 80%; */
+    /* margin-bottom: 120px;
+    width: 90%;
+    margin: 0 auto; */ 
     
 }
 .celdaImagen{
     height: 120px;
     width: 110px;
+    margin-right: 2px;
     object-fit: contain;
 }
 
 th{
+    background: #f9aa33;
     color: white;
-    background-color: #f9bf33;
-    border: #2c3e50 solid 1px;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 65px;
-    padding-left: 65px;
-
-    
+   padding: 12px 1px;
+   border: #2c3e50 solid 1px;
+   vertical-align: middle;   
    
 }
 
 
 #tblActividades tbody tr td{
+    color: #2c3e50;
+    vertical-align: middle;
+    text-align: center;
+    padding: 12px 1px;
+    border: #2c3e50 solid 1px;
+    vertical-align: middle;
+/*     
     color: #344955;
     border: 1px solid #344955;
     text-align: center;
     padding: 8px;
     size: 20px;
-    vertical-align: middle !important;
+    vertical-align: middle !important; */
     
+}
+#tblActividades tbody tr td:hover{
+    color: white;
+    background: #4a6572;
 }
 
 

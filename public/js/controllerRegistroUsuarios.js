@@ -1,4 +1,5 @@
 'use strict'
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 //genre un captcha
 // el correo es para padres de familia
@@ -37,13 +38,14 @@ function setDivisionPolitica(data) {
 
         let provincia;
         let htmlProvincias;
+        htmlProvincias += "<option value=''>" + 'Provincia' + "</option>";
         for (var i = 0; i < data.provincias.length; i++) {
             htmlProvincias += "<option value='" + data.provincias[i].title + "'>" + data.provincias[i].title + "</option>";
         }
         const selectProvincias = document.querySelector('#' + idSelectProvincia);
         selectProvincias.innerHTML = htmlProvincias;
         selectProvincias.addEventListener('change', setCantones);
-        setCantones();
+
 
         function setCantones() {
             provincia = data.provincias.find(function (current, index, arr) {
@@ -513,6 +515,7 @@ function obtenerDatosPadreFamilia() {
         let distrito = selectDistrito.value
         let contrasenna = contrasennaGenerada
         const inputsEdades = document.querySelectorAll('.input_hijo');
+        let estado = "Activo";
 
         let edades = "";
         for (let i = 0; i < inputsEdades.length; i++) {
@@ -538,7 +541,8 @@ function obtenerDatosPadreFamilia() {
             distrito,
             contrasenna,
             edades,
-            imagenPF
+            imagenPF,
+            estado
         )
 
         console.log('console.log(`La información fue enviada correctamente`);')
@@ -776,7 +780,19 @@ function obtenerDatosCentroEducativo() {
         let contrasenna = contrasennaGenerada
         let privacidad = document.querySelector('#fieldsetPrivacidad input[type=radio]:checked').value;
         let clasificacion = document.querySelector('#fieldsetClasificacion input[type=radio]:checked').value;
+        let estado = "";
 
+        if (user) {
+
+        if (user.userType = "superAdministrador") {
+            estado = "Activo"
+        } else {
+            estado = "Pendiente"
+        }
+
+    } else {
+        estado = "Pendiente"
+    }
 
 
 
@@ -790,7 +806,7 @@ function obtenerDatosCentroEducativo() {
             }
         }
 
-      
+
 
 
         //Lo siguiente permite obtener los datos selccionads del checkList de grados
@@ -882,7 +898,8 @@ function obtenerDatosCentroEducativo() {
             idiomas,
             servicios,
             descipcionesServicio,
-            documentCE
+            documentCE,
+            estado
 
 
         )

@@ -70,8 +70,6 @@ app.use('/api', usuarios);
 const bitacora = require('./componentes/bitacora/bitacora.route');
 app.use('/api', bitacora);
 
-const solicitud = require('./componentes/solicitudes/solicitudes.route');
-app.use('api', bitacora);
 
 
 const utiles = require('./componentes/utiles/utiles.route');
@@ -113,7 +111,11 @@ app.use('/api', noticias);
 const matriculaCostos = require('./componentes/matriculasCostos/matriculaCostos.route');
 app.use('/api', matriculaCostos);
 
+const articulos = require('./componentes/articulos/articulos.route');
+app.use('/api', articulos);
 
+const idiomas = require('./componentes/idiomas/idiomas.route');
+app.use('/api', idiomas);
 
 
 // Se guarda todo lo que se ha realizado

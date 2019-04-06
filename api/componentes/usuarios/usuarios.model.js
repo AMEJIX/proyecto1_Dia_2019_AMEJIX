@@ -24,6 +24,7 @@ let usuarioSchema = new mongoose.Schema(
         contrasenna : { type : String, required : false},
         edades : {type: String, required: false},
         imagenPF: {type: String, required: false},
+        estado: {type: String, required: false},
        
 //CE
 

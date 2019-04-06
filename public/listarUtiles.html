@@ -19,48 +19,54 @@
 
 
 <body>
-    <main>
-        <div class="sidebar">
-            <div class="sicenLogo"></div>
-            <div class="line"></div>
-            <div class="wrapper">
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion">
-                    <h3>Útiles</h3>
-                    <div class="subOpcion">
-                        <a href="listarUtiles.html">Ver</a>
-                    </div>
-                </div>
+    <header>
+        <nav>
 
-                <div class="opcion">
-                    <h3>Regresar</h3>
-                    <div class="subOpcion">
-                        <a href="javascript:window.history.back();">&laquo; Volver atrás</a>
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
-
-                <!----------------------Inicio opción---------------------->
-             
-                <!----------------------Fin opción---------------------->
-
-                <!----------------------Inicio opción---------------------->
-              
-                <!----------------------Fin opción---------------------->
-            </div>
-
-            <!----------------------Inicio información del perfil---------------------->
             <div class="userInfo">
                 <div class="userPhoto"></div>
-                <h4></h4>
+                <div class="nameWrapper">
+                    <h4></h4>
+                </div>
+
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
-                    <a href="#" id="logOut">Cerrar sesión</a>
+                    <a href="" id="logOut">Cerrar sesión</a>
+                    </ul>
                 </div>
             </div>
-            <!----------------------Fin información del perfil---------------------->
 
+        </nav>
+    </header>
+    <main>
+        <!-- <a href="listarUtiles.html">Ver</a> -->
+
+        <div class="sideNav">
+            <a class="aBack" href="index.html">
+                <div class="sicenLogo"></div>
+            </a>
+            <div class="line"></div>
+            <button class="btnDropdown">
+                <span><i class="fas fa-school"></i></span>
+                Centros educativos
+            </button>
+            <div class="dropdownContainer">
+                <a href="#">Buscar</a>
+                <a href="#">Favoritos</a>
+                <a href="#">TOP 10</a>
+                <a href="#">Centros educativos cercanos</a>
+            </div>
+
+            <a href="#"><span><i class="far fa-calendar-check"></i></span>Citas</a>
+
+            <button class="btnDropdown">
+                <span><i class="fas fa-info"></i></span>
+                MEP
+            </button>
+            <div class="dropdownContainer">
+                <a href="#">Contacto</a>
+                <a href="#">MEP</a>
+            </div>
         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
@@ -104,11 +110,12 @@
             </table>
         </div>
     </main>
-
+    <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
     <script src="js/controlador.general.js"></script>
     <script src="js/servicio.utiles.js"></script>
     <script src="js/controlador.listarUtiles.js"></script>
