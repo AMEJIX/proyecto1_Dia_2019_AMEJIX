@@ -118,7 +118,13 @@ let mostrarActividades = () => {
             }
         }
     } else {
-        sectionActividades.innerHTML = "No se encontraron actividades registradas";
+        let cardNingunaActividad = document.createElement('div');
+        cardNingunaActividad.classList.add('cardNingunaActi');
+        let tituloAux = document.createElement('h2');
+        tituloAux.classList.add('h2tituloAux');
+        tituloAux.textContent = "No se encontraron actividades registradas";
+        cardNingunaActividad.appendChild(tituloAux);
+        sectionActividades.appendChild(cardNingunaActividad);
     } 
    
 }

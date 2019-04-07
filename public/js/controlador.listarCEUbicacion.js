@@ -29,9 +29,17 @@ if(user.userType == 'centroEducativo' || user.userType == 'superAdministrador'){
             // if (cantonUsuario == centrosEUbicacion[i]['canton']) {
                 if (centrosEUbicacion[i]['centroEducativo'].toLowerCase().includes(filtro.toLowerCase())) {
                     let fila = tablaCEUbicacion.insertRow();
-                    fila.insertCell().innerHTML = centrosEUbicacion[i]['centroEducativo'];
+                    let centroEducativo = fila.insertCell();
+                    
                     fila.insertCell().innerHTML = centrosEUbicacion[i]['canton'];
                     let imagenCE = fila.insertCell();
+
+                    let cEElementa = document.createElement('a');
+                    cEElementa.innerHTML= centrosEUbicacion[i] ['centroEducativo'];
+                    cEElementa.href =
+                    'profileInfoCE.html?idCE=' + centrosEUbicacion [i] ['_id'] + '&centroEducativo=' + centrosEUbicacion [i] ['centroEducativo'];
+                    cEElementa.value = centrosEUbicacion [i] ['_id'];            
+                    centroEducativo.appendChild(cEElementa);
 
                     let imagen = document.createElement('img');
                     imagen.classList.add('celdaImagen');
@@ -41,6 +49,12 @@ if(user.userType == 'centroEducativo' || user.userType == 'superAdministrador'){
                         imagen.src = 'img/userPlaceholder.png';
                     }
                     imagenCE.appendChild(imagen);
+
+
+
+                    
+            // fila.insertCell().innerHTML = usuarios[i]['centroEducativo'];
+        
 
                 // }
             };

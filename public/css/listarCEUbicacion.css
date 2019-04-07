@@ -81,3 +81,14 @@ th{
 color: white;
     background: #4a6572;
 }
+
+#tblCentrosCercanos a:hover{
+    text-decoration: none;
+    color: #f9aa33
+}
+
+#tblCentrosCercanos a{
+    text-decoration: none;
+    color: #2c3e50;
+
+}
