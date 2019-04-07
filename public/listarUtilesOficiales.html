@@ -71,35 +71,47 @@
 
         <div class="contenido" style="overflow-y: scroll;">
             <h1>Lista oficial de útiles del Ministerio de Educación Pública</h1>
-
-
+           
             <form>
 
                 <div>
-                    <label for="selectNivel">Nivel escolar</label>
-                    <select id="selectNivel">
-                        <optgroup label="Escuela"></optgroup>
-                        <option>Seleccione nivel</option>
-                        <option value="1">Primero</option>
-                        <option value="2">Segundo</option>
-                        <option value="3">Tercero</option>
-                        <option value="4">Cuarto</option>
-                        <option value="5">Quinto</option>
-                        <option value="6">Sexto</option>
-                        <optgroup label="Colegio"></optgroup>
-                        <option value="7">Séptimo</option>
-                        <option value="8">Octavo</option>
-                        <option value="9">Noveno</option>
-                        <option value="10">Décimo</option>
-                        <option value="11">Undécimo</option>
-                        <option value="12">Duodécimo</option>
-                    </select>
+                    <div class="filtroIzquierda">
+                        <label for="selectNivel">Nivel escolar</label>
+                        <select id="selectNivel">
+                            <optgroup label="Escuela"></optgroup>
+                            <option value="">Seleccione nivel</option>
+                            <option value="1">Primero</option>
+                            <option value="2">Segundo</option>
+                            <option value="3">Tercero</option>
+                            <option value="4">Cuarto</option>
+                            <option value="5">Quinto</option>
+                            <option value="6">Sexto</option>
+                            <optgroup label="Colegio"></optgroup>
+                            <option value="7">Séptimo</option>
+                            <option value="8">Octavo</option>
+                            <option value="9">Noveno</option>
+                            <option value="10">Décimo</option>
+                            <option value="11">Undécimo</option>
+                            <option value="12">Duodécimo</option>
+                        </select>
+                    </div>
+                    <div class="filtroDerecha">
+                        <label for="txtFiltro">Buscar</label>
+                        <input type="text" id="txtFiltro" placeholder="Escriba el nombre del artículo">
+                    </div>
+
                 </div>
+
+                <div>
+
+                </div>
+
             </form>
 
             <table id="tblUtiles">
                 <thead>
                     <tr>
+                        <th>Lista</th>
                         <th>Nombre del útil</th>
                         <th>Descripción</th>
                         <th>Cantidad</th>

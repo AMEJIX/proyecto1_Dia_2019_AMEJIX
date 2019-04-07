@@ -65,7 +65,7 @@ let listarTodos= () =>{
 
 
 
-let registrarUtil = (pnombre, pdescripcion, pcantidad, pnivel, pidCentroEducativo) =>{
+let registrarUtil = (pnombre, pdescripcion, pcantidad, pnivel, pidCentroEducativo, pnombreLista) =>{
     
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarUtil",
@@ -75,7 +75,8 @@ let registrarUtil = (pnombre, pdescripcion, pcantidad, pnivel, pidCentroEducativ
             descripcion : pdescripcion,
             cantidad : pcantidad,
             nivel : pnivel,
-            idCE : pidCentroEducativo
+            idCE : pidCentroEducativo,
+            nombreLista: pnombreLista
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType : "json"

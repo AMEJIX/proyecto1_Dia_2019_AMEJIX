@@ -11,17 +11,33 @@ h1{
     color: #2c3e50; */
 }
 
-.filtro{
+.filtroIzquierda{
+    float: left;
+    margin-top: 40px;
+    margin-left: 5%;
+    margin-bottom: 50px;
+}
+
+.filtroDerecha{
     float: right;
     margin-top: 40px;
     margin-right: 5%;
     margin-bottom: 50px;
 }
-.filtro label{
+
+.filtroDerecha label{
     display: inline-block;
     width: 60px;
     margin-left: 53px;
 }
+
+.txtFiltro{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+}
+
 
 #txtFiltro{
     display: inline-block;
@@ -210,7 +226,6 @@ select::after {
     display: block;
     margin: 0 auto;
 }
-
 .btnRegistrar{
     display: block;
     padding: 14px 45px;

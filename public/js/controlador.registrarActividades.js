@@ -59,7 +59,7 @@ let validar = () =>{
 
     let stringImgActividades = "";
     
-    let i = 0;
+    let j = 0;
 function obtenerImagenVarias(){
     let sectionImgActividades = document.querySelector('.sctImagenes');
    
@@ -77,7 +77,7 @@ function obtenerImagenVarias(){
             nuevoImg.src = imagenActividad.src;
             sectionImgActividades.appendChild(nuevoImg);
             imagenActividad.src = 'img/upload.png';
-            i = i + 1; 
+            j = j + 1; 
         }       
     
 }
