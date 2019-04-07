@@ -12,6 +12,12 @@ router.route('/registrar_usuario')
         }
     );
 
+router.route('/actualizar')
+    .post(
+        function (req, res) {
+            api_usuarios.actualizar(req, res);
+        }
+    );
 
 
 router.route('/validarCredenciales')
@@ -27,6 +33,16 @@ router.route('/validarCredenciales')
             api_usuarios.listarCE(req, res);
         }
     );
+
+    router.route('/solicitudes')
+    .get(
+        function (req, res) {
+            api_usuarios.solicitudes(req, res);
+        }
+    );    
+
+
+    
 
 router.route('/listaPF')
     .get(
