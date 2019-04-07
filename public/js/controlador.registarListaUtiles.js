@@ -4,6 +4,7 @@ let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tabla = document.querySelector("#tblArticulos tbody");
 const inputFiltro = document.querySelector('#txtFiltro');
+const inputNombre = document.querySelector('#inputNombre');
 const selectNivel = document.querySelector('#selectNivel');
 const botonRegistrar = document.querySelector('#btnRegistrar');
 const IdGeneralCE = user._id;
@@ -80,7 +81,7 @@ let validar = () => {
         if (inputCantAuxiliar.value == '' || inputCantAuxiliar.value == "0") {
             camposCantVacios = camposCantVacios + 1;
             if(camposCantVacios == numeroFilas){
-                // document.querySelector('.cantidad').classList.add('errorInput');
+               
                 let clases = document.getElementsByClassName("cantidad");
                 for (let j = 0; j < clases.length; j++) {
                     clases[j].style.border = "2px solid #ED4C67";
@@ -99,15 +100,17 @@ let validar = () => {
             
         } else { 
 
-            if (selectNivel.value == '') {                
+            if (selectNivel.value == '' && inputNombre.value == ''){                
                 selectNivel.classList.add('errorSelect');
+                inputNombre.classList.add('errorInput');
                 swal.fire({
                     type: 'warning',
                     title: 'La lista de utiles no se registró correctamente',
-                    text: 'Revise el campo resaltado'
+                    text: 'Revise los campos resaltado'
                 });
             } else {
                 selectNivel.classList.remove('errorSelect');
+                inputNombre.classList.remove('errorInput');
                 obtenerDatos(i);
                 inserto = true;
             }
@@ -116,6 +119,9 @@ let validar = () => {
     }       
      
     if(inserto){
+        inputNombre.value = '';
+        selectNivel.value = '';
+        
         swal.fire({
             type: 'success',
             title: 'Lista escolar registrada correctamente',
@@ -131,8 +137,11 @@ let obtenerDatos = (piDinamico) => {
         let cantidad = document.querySelector('#inpCant' + piDinamico).value;
         let nivel = selectNivel.value;
         let idCentroEducativo = IdGeneralCE;
-
-        registrarUtil(nombre, descripcion, cantidad, nivel, idCentroEducativo);
+        let nombreLista = inputNombre.value;
+        document.querySelector('#inpCant' + piDinamico).value = '';
+        registrarUtil(nombre, descripcion, cantidad, nivel, idCentroEducativo, nombreLista);
 };
 
 botonRegistrar.addEventListener('click', validar);
+
+

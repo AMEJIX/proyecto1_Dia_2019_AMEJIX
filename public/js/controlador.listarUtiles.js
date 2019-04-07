@@ -1,34 +1,60 @@
 'use strict';
 
 let user = JSON.parse(sessionStorage.getItem("usuario"));
+
 const selectNivel = document.querySelector("#selectNivel");
 const tabla = document.querySelector("#tblUtiles tbody");
+const inputFiltro = document.querySelector("#txtFiltro");
 
 if(user.userType == 'centroEducativo'){
     window.location.href = 'loSentimos.html';
 }
-let mostrarUtiles = () =>{  
 
-        let nivel = selectNivel.value;
-        let utiles = listarUtilesNivel(nivel, IdGeneralCE);        
+
+
+let utiles = listarUtilesNivel(); 
+
+let mostrarUtiles = () =>{  
+     
+    let nivel = selectNivel.value;
+    if (validar() == false){
+        let utiles = listarUtilesNivel(nivel, IdGeneralCE);  
+        let filtro = inputFiltro.value;  
         tabla.innerHTML = '';
-        for(let i=0; i<utiles.length; i++){
-            if(utiles[i]['nivel'] == nivel){
-                let fila = tabla.insertRow();
-                fila.insertCell().innerHTML = utiles [i]  ['nombre'];
-                fila.insertCell().innerHTML = utiles [i]  ['descripcion'];
-                fila.insertCell().innerHTML = utiles [i]  ['cantidad'];
-            }else{                
-                tabla.innerHTML = 'No existen útiles registrados para este nivel';  
-            }         
-        };   
+        
+        if(utiles !== "No se encontraron útiles escolares registrados"){
+            for(let i=0; i<utiles.length; i++){
+                if(utiles[i]['nombreLista'].toLowerCase().includes(filtro.toLowerCase())){
+                    let fila = tabla.insertRow();
+                    fila.insertCell().innerHTML = utiles [i]  ['nombreLista'];
+                    fila.insertCell().innerHTML = utiles [i]  ['nombre'];
+                    fila.insertCell().innerHTML = utiles [i]  ['descripcion'];
+                    fila.insertCell().innerHTML = utiles [i]  ['cantidad'];
+                }      
+            }
+        }else{                
+            tabla.innerHTML = 'No existen útiles registrados para este nivel';  
+        }  
+    }
+   
 };
 
-selectNivel.addEventListener('click', mostrarUtiles);
-// mostrar_utiles();
-// boton_buscar.click(mostrar_utiles());
-// boton_buscar.onclick = function() {mostrar_utiles()};
-// boton_buscar.addEventListener('click', mostrar_utiles);
+let validar = () => {
+    let error = false;
+
+    if(selectNivel.value == ''){
+        error = true;
+        selectNivel.classList.add('errorSelect');
+    }
+    else{
+        selectNivel.classList.remove('errorSelect');
+    }
+
+    return error;
+}
+
+selectNivel.addEventListener('change', mostrarUtiles);
+inputFiltro.addEventListener('keyup', mostrarUtiles);
 
 
 
