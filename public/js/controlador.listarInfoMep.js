@@ -1,29 +1,68 @@
 "use strict"
 
-    
-
+    let sectionInfoMep = document.querySelector('#sectionInfo');
     function mostrarDatosSA (){
     let infoMEP = listarInfoMEP();
-    console.log(infoMEP);
+    sectionInfoMep.innerHTML = '';
 
-    let spanNombreSA = document.getElementById('spanNombreSA');
-    let spanSegundoNombreSA = document.getElementById('spanSegundoNombreSA');
-    let spanApellidoSA = document.getElementById('spanApellidoSA');
-    let spanSegundoApellidoSA = document.getElementById('spanSegundoApellidoSA');
-    let spanEmailSA = document.getElementById('spanEmailSA');
-    let spanTelefonoSA = document.getElementById('spanTelefonoSA');
-    let spanPuestoMEPSA = document.getElementById('spanPuestoMEPSA');    
-    let imagenSA = document.getElementById('imagenSA');
+    let spanNombreSA = document.createElement('h2');
+    spanNombreSA.classList.add('h2');
+    spanNombreSA.textContent = infoMEP [0] ['nombre'] ;
+    let spanSegundoNombreSA = document.createElement('h3');
+    spanSegundoNombreSA.classList.add('h3');
+    spanSegundoNombreSA.textContent  =infoMEP [0] ['segundoNombre'];
+    let spanApellidoSA = document.createElement('h3');
+    spanApellidoSA.classList.add('h3');
+    spanApellidoSA.textContent = infoMEP [0] ['apellido'];
+    let spanSegundoApellidoSA = document.createElement('h3');
+    spanSegundoApellidoSA.classList.add('h3');
+    spanSegundoApellidoSA.textContent = infoMEP [0] ['segundoApellido'];
+    let spanEmailSA = document.createElement('h3');
+    spanEmailSA.classList.add('h3');
+    spanEmailSA.textContent = infoMEP [0] ['email'];
+    let spanTelefonoSA = document.createElement('h3');
+    spanTelefonoSA.classList.add('h3');
+    spanTelefonoSA.textContent = infoMEP [0] ['telefono'];
+    let spanPuestoMEPSA = document. createElement('h3');
+    spanPuestoMEPSA.classList.add('h3');
+    spanPuestoMEPSA.textContent = infoMEP [0] ['puesto'];    
+   
+        
+    let cardInfoMEP = document.createElement('div');
+        cardInfoMEP.classList.add('cardInfoMep');
+    let columnaIzq = document.createElement('div');
+        columnaIzq.classList.add('colIzq');
+    let columnaDer = document.createElement('div');
+        columnaDer.classList.add('colDer');
+    
+        let divImagen = document.createElement('div');
+        let imagenSA = document.createElement('img');
+        imagenSA.classList.add('img');
+        imagenSA.src = infoMEP [0] ['imagenPF'];
+       
 
+        columnaIzq.appendChild(spanNombreSA);
+        columnaIzq.appendChild(spanSegundoNombreSA);
+        columnaIzq.appendChild(spanApellidoSA);
+        columnaIzq.appendChild(spanSegundoApellidoSA);
+        columnaIzq.appendChild(spanEmailSA);
+        columnaIzq.appendChild(spanTelefonoSA);
+        columnaIzq.appendChild(spanPuestoMEPSA);
+        cardInfoMEP.appendChild(columnaIzq);
+        divImagen.appendChild(imagenSA);
+        columnaDer.appendChild(divImagen);
+        cardInfoMEP.appendChild(columnaDer);
+        sectionInfoMep.appendChild(cardInfoMEP);
+    
 
-    spanNombreSA.innerHTML = infoMEP [0] ['nombre'] ;
-    spanSegundoNombreSA.innerHTML =infoMEP [0] ['segundoNombre'];
-    spanApellidoSA.innerHTML = infoMEP [0] ['apellido'];
-    spanSegundoApellidoSA.innerHTML = infoMEP [0] ['segundoApellido'];
-    spanEmailSA.innerHTML = infoMEP [0] ['email'];
-    spanTelefonoSA.innerHTML = infoMEP [0] ['telefono'];
-    spanPuestoMEPSA.innerHTML = infoMEP [0] ['puesto'];    
-    imagenSA.src = infoMEP [0] ['imagenPF'];
+    
+    
+    
+    
+    
+   
+      
+    
 }
 mostrarDatosSA();
 
