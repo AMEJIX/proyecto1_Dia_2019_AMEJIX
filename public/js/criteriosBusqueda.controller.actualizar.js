@@ -17,18 +17,18 @@ let actualizarEtiqueta = (pnombre, pid, pnombreAnterior) =>{
 
             // document.getElementById(`etiqueta_${pid}`).style.background = 'inherit';
         } else {
-            if (validarEtiqueta(pnombre)){
+            if (pnombre === pnombreAnterior){
+                swal.fire({
+                    title: 'No se produjeron cambios',
+                    type: 'info',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+            } else if (validarEtiqueta(pnombre)){
                 swal.fire({
                     title: 'Lo sentimos',
                     text: 'La pregunta ya existe',
                     type: 'error',
-                    showConfirmButton: false,
-                    timer: 1000
-                });
-            } else {
-                swal.fire({
-                    title: 'No se produjeron cambios',
-                    type: 'info',
                     showConfirmButton: false,
                     timer: 1000
                 });
