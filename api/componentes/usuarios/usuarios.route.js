@@ -19,6 +19,14 @@ router.route('/actualizar')
         }
     );
 
+router.route('/eliminar')
+    .post(
+        function (req, res) {
+            api_usuarios.eliminarUsuario(req, res);
+        }
+    );
+    
+
 
 router.route('/validarCredenciales')
     .post(

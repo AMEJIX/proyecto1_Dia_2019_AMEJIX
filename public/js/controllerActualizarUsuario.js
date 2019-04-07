@@ -287,17 +287,37 @@ function passwordGen() {
 //DATOS PADRE FAMILIA
 
 const inputNombre = document.querySelector('#txtNombre')
-inputNombre.value = "hello"
+inputNombre.value = user.nombre;
+
 const inputSegundoNombre = document.querySelector('#txtSegundoNombre')
+inputSegundoNombre.value = user.segundoNombre;
+
 const inputApellido = document.querySelector('#txtApellido')
+inputApellido.value = user.apellido;
+
 const inputSegundoApellido = document.querySelector('#txtSegundoApellido')
+inputSegundoApellido.value = user.segundoApellido;
+
 const inputIdentificacion = document.querySelector('#numID')
+inputIdentificacion.value = user.identificacion;
+
 const inputNacionalidad = document.querySelector('#txtNacionalidad')
+inputNacionalidad.value = user.nacionalidad;
+
 const inputEmail = document.querySelector('#txtEmail')
+inputEmail.value = user.email;
+
+
 const inputTel = document.querySelector('#txtTelefono')
+inputTel.value = user.telefono;
+
 const selectProvincia = document.querySelector('#selectProvincias')
+
+
 const selectCanton = document.querySelector('#selectCantones')
 const selectDistrito = document.querySelector('#selectDistritos')
+
+
 const btnRegistroFam = document.querySelector('#btnRegistrarPadreFamilia')
 
 const contrasennaGenerada = passwordGen()
@@ -305,46 +325,6 @@ const fotoRegistroPF = document.querySelector('#imagePreviewPF');
 
 
 
-/******************** Captcha PF ********************/
-
-
-let divCaptchaPF = document.querySelector('#divCaptchaPF');
-let spanCaptchaPF = document.querySelector('#spanCaptchaPF');
-spanCaptchaPF.innerHTML = passwordGen();
-let textCaptchaPF = document.querySelector('#textCaptchaPF');
-let buttonCheckCaptchaPF = document.querySelector('#buttonCheckCaptchaPF')
-
-
-buttonCheckCaptchaPF.addEventListener('click', checkCaptchaPF);
-
-
-function checkCaptchaPF() {
-    if (!validarPadreFamilia()) {
-
-
-        if (textCaptchaPF.value == spanCaptchaPF.innerHTML) {
-            btnRegistrarPadreFamilia.style.display = 'block';
-            divCaptchaPF.style.display = 'none';
-        } else {
-            spanCaptchaPF.innerHTML = passwordGen();
-        }
-
-    } else {
-
-        console.log(`La información no fue llenada correctamente`);
-
-        swal.fire({
-            type: 'warning',
-            title: 'La información no fue llenada correctamente',
-            text: `Porfavor revisar los campos`,
-
-        });
-
-    }
-}
-
-
-/**************************************************/
 
 
 
@@ -429,11 +409,11 @@ selectProvinciaCE.value = user.provincia;
 const fieldsetTipo = document.querySelector('#fieldsetTipo');
 
 let arregloTipo = document.getElementsByClassName('checkboxTipo');
-let arregloTipoUser = user.tipo.split(", ");
+// let arregloDeTipoInstitucion = user.tipo.split(", ");
 
 // for (let i = 0; i < arregloTipo.length; i++) {
-//     for (let j = 0; arregloTipoUser.length; j++) {
-//         if (arregloTipo[i].value == arregloTipoUser[j]) {
+//     for (let j = 0; arregloDeTipoInstitucion.length; j++) {
+//         if (arregloTipo[i].value == arregloDeTipoInstitucion[j]) {
 //             arregloTipo[i].checked = true;
 //         }
 //     }
@@ -547,9 +527,9 @@ function obtenerDatosPadreFamilia() {
 
         let imagenPF = fotoRegistroPF.src;
 
-
+        let id = user._id;
         console.log(contrasenna)
-        registrarPadreFamilia(userType,
+        actualizarPF(userType,
             nombre,
             segundoNombre,
             apellido,
@@ -564,7 +544,8 @@ function obtenerDatosPadreFamilia() {
             contrasenna,
             edades,
             imagenPF,
-            estado
+            estado,
+            id
         )
 
         console.log('console.log(`La información fue enviada correctamente`);')

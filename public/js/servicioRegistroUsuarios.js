@@ -142,6 +142,47 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
 
 };
 
+
+let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, provincia, canton, distrito, contrasenna, edades, imagenPF, estado, id) =>{
+    let request = $.ajax({
+
+        url: "http://localhost:4000/api/actualizar",
+        method: "POST",
+        data: {
+            userType: userType,
+            nombre: nombre,
+            segundoNombre: segundoNombre,
+            apellido: apellido,
+            segundoApellido: segundoApellido,
+            identificacion: identificacion,
+            nacionalidad: nacionalidad,
+            email: email,
+            telefono: telefono,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito,
+            contrasenna: contrasenna,
+            edades : edades,
+            imagenPF: imagenPF,
+            estado: estado
+        },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json"
+    });
+
+    request.done(function (res) {
+        swal.fire({
+            type: 'success',
+            title: 'exito',
+            text: res.msg
+
+        });
+     });
+
+
+
+};
+
 let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP,direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado, id) =>{
     let request = $.ajax({
 

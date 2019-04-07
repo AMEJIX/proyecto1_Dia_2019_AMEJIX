@@ -784,7 +784,7 @@ function obtenerDatosCentroEducativo() {
 
         if (user) {
 
-        if (user.userType = "superAdministrador") {
+        if (user.userType == "superAdministrador") {
             estado = "Activo"
         } else {
             estado = "Pendiente"
