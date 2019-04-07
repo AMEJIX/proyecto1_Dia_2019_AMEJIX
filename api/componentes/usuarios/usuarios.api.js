@@ -152,7 +152,22 @@ function correoCE(pemail, pcentroEducativo, pcontrasena) {
 }
 
 
+/************************** Actualizar Usuario**************************/
 
+module.exports.actualizar = function(req, res){
+
+    modelo_usuario.findByIdAndUpdate(req.body.id, {$set: req.body},
+        function(error){
+            if(error){
+                res.json({success: false, msg: 'No se pudo actualizar el usuario'})
+            }else{
+                res.json({success: true, msg: 'Se actualizó el usuario'})
+            }
+        }
+        )
+
+}
+/************************************************************************/
 
 
 
@@ -337,6 +352,44 @@ module.exports.validar = (req, res) => {
     )
 
 }
+/************************** Lista CE Pendiente/Notificaciones SA**************************/
+module.exports.solicitudes = (req, res) => {
+    modelo_usuario.find({ estado: 'Pendiente' }).then(
+        function (usuario) {
+            if (usuario.length > 0) {
+                res.json({
+                    success: true,
+                    usuario: usuario
+                })
+            } else {
+                res.json({
+                    success: false,
+                    usuario: 'No se encontraron centros educativos.'
+                })
+            }
+        }
+    );
+}
+/************************************************************************/
+
+/************************** Eliminar Usuario*************************/
+module.exports.eliminarUsuario = function(req, res){
+
+    modelo_usuario.findByIdAndRemove({ _id: req.body.id },
+        function(error){
+            if(error){
+                res.json({success: false, msg: 'No se pudo eliminar el usuario'})
+            }else{
+                res.json({success: true, msg: 'Se eliminó el usuario'})
+            }
+        }
+        )
+
+}
+/************************************************************************/
+
+
+
 
 //Api de alejandro listar usuarios
 

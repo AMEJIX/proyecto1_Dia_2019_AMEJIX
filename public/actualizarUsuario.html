@@ -15,8 +15,10 @@
     <link rel="stylesheet" href="css/perfil.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/tabs.css">
-    <link rel="stylesheet" href="css/registroUsuarios.css">
+    <link rel="stylesheet" href="css/actualizarUsuario.css">
     
+</head>
+
 </head>
 
 
@@ -108,17 +110,7 @@
 
         <div class="contenido" style="overflow-y: scroll;">
 
-            <!-- Seleccion de tipo de usuario-->
-            <section class="userType">
-                <div id="type">
-                    <label for="selectUser">Tipo de usuario: </label>
-                    <select id="selectUser" size="">
-                        <option value="" selected disabled>Opciones</option>
-                        <option value="padreFamilia">Padre de familia</option>
-                        <option value="centroEducativo">Centro Educativo</option>
-                    </select>
-                </div>
-            </section>
+
              <!-- FIN Seleccion de tipo de usuario-->
 
 
@@ -605,16 +597,10 @@
                     <!--  Registro CE TAB  -->
                     <div id="registroCETab" class="tabcontent">
         
-                        <div id="divCaptchaCE">
-                            <h1> Ingreso de captcha</h1>
-                            <label for="spanCaptchaCF">Captcha:</label>
-                            <span id="spanCaptchaCF"></span>
-                            <input type="tel" maxlength="20" id="textCaptchaCE" title="opcional">
-                            <button class="yellowButton" type="button" id="buttonCheckCaptchaCE">Revisar</button>
-                        </div>
+                   
         
                         <div class="boton RegistroCentroEducativo">
-                            <button class="yellowButton" type="button" id="btnRegistrarCentroEducativo">Registrar</button>
+                            <button class="yellowButton" type="button" id="btnRegistrarCentroEducativo">Actualizar</button>
                         </div>
         
         
@@ -647,7 +633,7 @@
         async defer></script>
 
 
-    <script src="js/map.js"></script>
+        <script src="js/mapUser.js"></script>
 
     <!-- Cloudinary Scripts-->
     <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"
@@ -659,7 +645,7 @@
     <script src="js/servicioDivicionPolitica.js"></script>
     <script src="js/servicioRegistroUsuarios.js"></script>
     <script src="js/tabs.js"></script>
-    <script src="js/controllerRegistroUsuarios.js"></script>
+    <script src="js/controllerActualizarUsuario.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
 
 

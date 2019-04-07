@@ -18,63 +18,90 @@
 
 </head>
 
+
 <body>
+    <header>
+        <nav>
 
-
-    <main>
-        <div class="sidebar">
-            <div class="sicenLogo"></div>
-            <div class="line"></div>
-            <div class="wrapper">
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion" id="menuInformativo">
-                    <h3>Información</h3>
-                    <div class="subOpcion">
-                        <a href="" id="aInfoCE">Información del Centro educativo</a>
-                        <a href="" id="aMatricula">Matrícula</a>
-                        <a href="" id="aBecas">Becas</a>
-                        <a href="" id="aCitas">Citas</a>
-                        <a href="" id="aMaterialInformativo">Material Informativo</a>
-                        <a href="" id="aNoticias">Noticias</a>
-                        <a href="" id="aActividades">Actividades</a>
-                        <a href="" id="aUtiles">Lista de útiles</a>
-                        <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
-                        <a href="" id="aEtiquetas">Etiquetas</a>
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
-              
-
-                <div class="opcion" id="menuCitasEnCE">
-                    <h3>Citas</h3>                
-                    <div class="subOpcion">
-                        <a href="citas.html" id="aAgendarCita">Agendar cita</a>
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
-                 <div class="opcion">
-                    <h3>Regresar</h3>
-                    <div class="subOpcion">
-                        <a href="javascript:window.history.back();" id="volver">&laquo; Volver atrás</a>
-                    </div>
-                </div>x
-            </div>
-
-
-
-            <!----------------------Inicio información del perfil---------------------->
             <div class="userInfo">
                 <div class="userPhoto"></div>
-                <h4></h4>
+                <div class="nameWrapper">
+                    <h4></h4>
+                </div>
+
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
-                    <a href="#" id="logOut">Cerrar sesión</a>
+                    <a href="" id="logOut">Cerrar sesión</a>
+                    </ul>
                 </div>
             </div>
 
-            
-            <!----------------------Fin información del perfil---------------------->
+        </nav>
+    </header>
+    <main>
+
+        <div class="sideNav">
+            <a class="aBack" href="userProfileInfo.html">
+                <div class="sicenLogo"></div>
+            </a>
+            <div class="line"></div>
+
+            <button class="btnDropdown" id="menuInformativo">
+                <span><i class="fas fa-info"></i></span>
+                Información
+            </button>
+            <div class="dropdownContainer">
+                <a href="mostrarMatriculaCostos.html">Matrícula</a>
+                <a href="mostrarBecas.html">Becas</a>
+                <a href="misCitasCE.html">Citas</a>
+                <a href="mostrarMaterialInformativo.html">Material Informativo</a>
+                <a href="mostrarNoticias.html">Noticias</a>
+                <a href="listarActividadesPropiasCE.html">Actividades</a>
+                <a href="listarUtilesPropiosCE.html">Útiles</a>
+                <a href="criteriosBusqueda.html">Etiquetas</a>
+                <a href="preguntasFrecuentesCE&Admin.html" id="aPreguntasCE">Preguntas frecuentes</a>
+                <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>
+            </div>
+
+            <button class="btnDropdown" id="menuAdministrativo">
+                <span><i class="fas fa-info"></i></span>
+                Administrativo
+            </button>
+            <div class="dropdownContainer">
+                <a href="bitacora.html">Bitácora</a>
+                <a href="#">Notificaciones</a>
+                <a href="listarCriteriosMEP.html">Criterios de Evaluación</a>
+                <a href="listarUtilesOficiales.html">Lista de útiles</a>
+                <a href="criteriosBusqueda.html">Etiquetas</a>
+            </div>
+
+            <button class="btnDropdown" id="menuInfoCE">
+                <span><i class="fas fa-info"></i></span>
+                Centros educativos
+            </button>
+            <div class="dropdownContainer">
+                <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
+                <a href="listarCentrosEducativos.html">Buscar</a>
+                <a href="#" id="aFavoritos">Favoritos</a>
+                <a href="#">Top</a>
+                <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
+            </div>
+
+            <a href="misCitasPF.html" id="menuCitas"><span><i class="far fa-calendar-check"></i></span>Citas
+                agendadas</a>
+
+            <a href="listarPadresFamilia.html" id="verPadres"><span><i class="fas fa-search"></i></span>Buscar
+                padres de familia</a>
+
+            <button class="btnDropdown" id="verInfoMep">
+                <span><i class="fas fa-university"></i></span>
+                MEP
+            </button>
+            <div class="dropdownContainer">
+                <a href="listarInfoMep.html">Contacto</a>
+                <a href="listarUtilesOficiales.html">Útiles MEP</a>
+            </div>
 
         </div>
 
@@ -83,9 +110,7 @@
         </div>
     </main>
 
-    <footer>
-
-    </footer>
+   
     <script src="js/authentication.js"></script>
     <script src="js/servicioInicio.js"></script>
     <script src="js/controlador.general.js"></script>
