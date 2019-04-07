@@ -101,18 +101,26 @@ form div label{
 }
 
 .respuesta{
+    display: inline-block;
     margin-top: 20px;
     font-size: 18px;
 }
 
+.pregunta, .respuesta{
+
+}
+
+.pregunta *, .respuesta *{
+    max-width: 401.967px;
+}
 tr{
     height: 80px;
 
 }
 
 tr:hover{
-    background: #344955;
-    color: white;
+    /*background: #344955;*/
+    /*color: white;*/
 }
 
 button#btnEnviar{
@@ -129,23 +137,44 @@ button#btnEnviar{
 }
 
 .left{
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 #tblPreguntasFrecuentes{
+    position: relative;
+    top: -50px;
     width: 80%;
-    margin-left: 50px;
+    margin-left: 100px;
+    border-collapse: separate;
+    border-spacing: 0px 50px;
+
 }
 
 .awesome_images{
     display: none;
-    float: right;
+    margin: 5px;
     height: 100%;
 }
 
 .awesome_images i{
-    vertical-align: center;
-    horiz-align: center;
+    height: 100%;
+    margin-bottom: 5px;
+    color: #344955;
+}
+
+.modoCambio{
+    background: #F9AA33;
+    color: #ffffff;
+}
+
+.modoCambio:hover{
+    background: #F9AA33;
+    color: #ffffff;
+}
+
+.modoCambio::selection{
+    background: #344955;
+    color: white;
 }
 
 .awesome_images i:hover{

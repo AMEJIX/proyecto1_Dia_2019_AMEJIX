@@ -93,7 +93,9 @@ module.exports.listarCriteriosBusqueda = (req, res) =>{
 };
 
 module.exports.getEtiqueta = (req, res) =>{
-    modeloCriteriosBusqueda.findOne({nombre: req.body.id}).then(
+    // console.log(modeloCriteriosBusqueda.find().then(eti =>{res.json({eti})}));
+
+    modeloCriteriosBusqueda.findOne({_id: req.body.id}).then(
         function (etiqueta) {
             if (etiqueta){
                 res.json(

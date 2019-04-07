@@ -2,7 +2,7 @@
 
 'use strict';
 
-let actualizarPregunta = (ppregunta, prespuesta, pid, ppreguntaAnterior, prespuestaAnterior) =>{
+let actualizarPregunta = (ppregunta, prespuesta,pidCE, pid, ppreguntaAnterior, prespuestaAnterior) =>{
 
     Swal.fire({
         title: 'Está seguro que desea modificar la pregunta?',
@@ -12,14 +12,35 @@ let actualizarPregunta = (ppregunta, prespuesta, pid, ppreguntaAnterior, prespue
         cancelButtonColor: '#dddddd',
         confirmButtonText: 'Sí, modificar'
     }).then((result) => {
-        if (result.value) {
-            modificarPregunta(ppregunta, prespuesta, pid);
-            document.getElementById(`pregunta_${pid}`).contentEditable = false;
+        if (result.value && !(ppregunta === '' || prespuesta === '') && (ppregunta != ppreguntaAnterior || prespuesta != prespuestaAnterior) && !validarPregunta(ppregunta)) {
+            modificarPregunta(ppregunta, prespuesta, pidCE, pid);
+            document.getElementById(`${pid}`).contentEditable = false;
+            document.getElementById(`${pid}`).classList.remove('modoCambio');
+
             // document.getElementById(`etiqueta_${pid}`).style.background = 'inherit';
         } else {
+            if (validarPregunta(ppregunta)){
+                swal.fire({
+                    title: 'Lo sentimos',
+                    text: 'La pregunta ya existe',
+                    type: 'error',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+            } else {
+                swal.fire({
+                    title: 'No se produjeron cambios',
+                    type: 'info',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+            }
+
+            document.getElementById(`${pid}`).classList.remove('modoCambio');
+
+            document.getElementById(`${pid}`).contentEditable = false;
             document.getElementById(`pregunta_${pid}`).textContent = ppreguntaAnterior;
             document.getElementById(`respuesta_${pid}`).textContent = prespuestaAnterior;
-            document.getElementById(`pregunta_${pid}`).contentEditable = false;
             // document.getElementById(`etiqueta_${pid}`).style.background = 'inherit';
         }
         // setTimeout('location.reload()', 1500);

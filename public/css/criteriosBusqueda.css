@@ -184,7 +184,7 @@ td{
     border: 1px #344955 solid;
     vertical-align: middle;
     text-align: center;
-    transition: all 500ms ease;
+    transition: all 0.5s ease-in-out;
 }
 
 td *{
@@ -197,7 +197,7 @@ td:hover{
     background-color: #344955;
     /*color: #f9aa33;*/
     color: #ffffff;
-    transition: all 500ms ease;
+    transition: all 0.5s ease-in-out;
 
 }
 
@@ -229,4 +229,18 @@ i:hover{
 
 .opciones{
     display: none;
+}
+
+.modoCambio{
+    background: #f9aa33;
+    color: white;
+}
+.modoCambio:hover{
+    background: #F9AA33;
+    color: #ffffff;
+}
+
+.modoCambio::selection{
+    background: #344955;
+    color: white;
 }
