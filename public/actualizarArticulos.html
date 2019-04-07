@@ -2,44 +2,42 @@
 <html lang="es">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Artículos escolares</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/listarArticulos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Actualizar artículo escolar</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/registroArticulos.css">
+
 </head>
 
-
-
-
 <body>
-        <header>
-                <nav>
-        
-                    <div class="userInfo">
-                        <div class="userPhoto"></div>
-                        <div class="nameWrapper">
-                            <h4></h4>
-                        </div>
-        
-                        <div class="subMenu">
-                            <a href="userProfileInfo.html">Perfil</a>
-                            <a href="informacionPersonalUsuario.html">Información Personal</a>
-                            <a href="" id="logOut">Cerrar sesión</a>
-                            </ul>
-                        </div>
-                    </div>
-        
-                </nav>
-            </header>
+    <header>
+        <nav>
+
+            <div class="userInfo">
+                <div class="userPhoto"></div>
+                <div class="nameWrapper">
+                    <h4></h4>
+                </div>
+
+                <div class="subMenu">
+                    <a href="userProfileInfo.html">Perfil</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="" id="logOut">Cerrar sesión</a>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
     <main>
         <div class="sideNav">
             <a class="aBack" href="userProfileInfo.html">
@@ -141,31 +139,25 @@
             </div>
 
         </div>
-        
-                <div class="contenido" style="overflow-y: scroll;">
-            <h1>Artículos escolares</h1>
 
-            <div class="filtro">
-                <label for="txtFiltro">Buscar</label>
-                <input type="text" id="txtFiltro" placeholder="Escriba el nombre del artículo">
-            </div>
+        <div class="contenido" style="overflow-y: scroll;">
+            <h1>Actualizar artículos escolares</h1>
+            <form id="frmRegistroUtil">
 
+                <div class="divFrm">
+                    <label for="txtNombre" class="lblInput">Nombre del artículo escolar</label>
+                    <input type="text" id="txtNombre" placeholder="Tijera">
+                </div>
+                <div class="divFrm">
+                    <label for="txtDescripcion" class="lblTextArea">Descripción</label>
+                    <textarea id="txtDescripcion" placeholder="Marca patito y de punta roma"></textarea>
+                </div>
 
-            <table id="tblArticulos">
-                <thead>
-                    <tr>
-                        <th>Artículo escolar</th> 
-                        <th>Descripción</th>
-                        <th>Editar</th>  
-                        <th>Eliminar</th>                   
-                        
-                    </tr>
-                </thead>
-                <tbody>
+                <div class="btnDiv">
+                    <button type="button" id="btnRegistrar" class="btnRegistrar">Actualizar</button>
+                </div>
 
-                </tbody>
-
-            </table><!-- TODO EL CONTENIDO DEL CASO DE USO -->
+            </form> <!-- AQUÍ VA EL CONTENIDO -->
         </div>
     </main>
     <script src="js/style.js"></script>
@@ -174,12 +166,13 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap" async defer></script>
     <script src="js/mapUser.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicioInicio.js"></script>
-    <!-- <script src="js/controlador.general.js"></script> -->
     <script src="js/servicio.articulos.js"></script>
-    <script src="js/controlador.listarPropiosArticulos.js"></script>
+    <script src="js/controlador.actualizarArticulos.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
+
 </body>
 
 

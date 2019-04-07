@@ -49,12 +49,46 @@ module.exports.listarArticulo = (req, res)=>{
     )
 };
 
-module.exports.buscarArticuloId = (req, res) =>{
-    modeloArticulo.find({_id: "req.body.idDelArticulo"}).then()
+module.exports.buscarArticulo = function (req, res){
+    modeloArticulo.find({_id : req.body._id}).then(
+        function(articulo){
+            if(articulo){
+                res.json({success: true, articulo : articulo});
+            }else{
+                res.json({success: false, articulo : articulo});
+            }
+        }
+
+    );
+
+};
+
+
+module.exports.actualizar = function(req, res){
+   
+    modeloArticulo.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar el artículo'});
+            }else{
+                res.json({success: true , msg : 'El artículo se actualizó con éxito'});
+            }
+        }
+    
+    );
 }
 
-module.exports.actualizarArticulo = function(req, res){
-    modeloArticulo.findByIdAndUpdate(req.body.id, { $set: req.body},
-        )
+module.exports.eliminar = function(req, res){
+    modeloArticulo.findByIdAndDelete(req.body.id,
+        function(error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo eliminar el artículo'});
+            }else{
+                res.json({success: true , msg : 'El artículo se eliminó con éxito'});
+            }
+        })
 }
+
+
+
 
