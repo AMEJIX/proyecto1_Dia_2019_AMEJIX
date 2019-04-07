@@ -30,40 +30,44 @@
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
                     <a href="" id="logOut">Cerrar sesión</a>
-                    </ul>
                 </div>
             </div>
 
         </nav>
     </header>
     <main>
-
         <div class="sideNav">
-            <a class="aBack" href="index.html">
+            <a class="aBack" href="userProfileInfo.html">
                 <div class="sicenLogo"></div>
             </a>
             <div class="line"></div>
-            <button class="btnDropdown">
-                <span><i class="fas fa-school"></i></span>
-                Centros educativos
-            </button>
-            <div class="dropdownContainer">
-                <a href="#">Buscar</a>
-                <a href="#">Favoritos</a>
-                <a href="#">TOP 10</a>
-                <a href="#">Centros educativos cercanos</a>
-            </div>
 
-            <a href="#"><span><i class="far fa-calendar-check"></i></span>Citas</a>
-
-            <button class="btnDropdown">
+            <button class="btnDropdown" id="menuInformativo">
                 <span><i class="fas fa-info"></i></span>
-                MEP
+                Información
+            </button>
+            <!----------------------Inicio opción---------------------->
+            <div class="dropdownContainer">
+                <a href="" id="aInfoCE">Información del Centro educativo</a>
+                <a href="" id="aMatricula">Matrícula</a>
+                <a href="" id="aBecas">Becas</a>
+                <!--<a href="" id="aCitas">Citas</a>-->
+                <a href="" id="aMaterialInformativo">Material Informativo</a>
+                <a href="" id="aNoticias">Noticias</a>
+                <a href="" id="aActividades">Actividades</a>
+                <a href="" id="aUtiles">Lista de útiles</a>
+                <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
+                <a href="" id="aEtiquetas">Etiquetas</a>
+            </div>
+
+            <button class="btnDropdown" id="menuCitasEnCE">
+                <span><i class="far fa-calendar-check"></i></span>
+                Citas
             </button>
             <div class="dropdownContainer">
-                <a href="#">Contacto</a>
-                <a href="#">MEP</a>
+                <a href="citas.html" id="aAgendarCita">Agendar cita</a>
             </div>
+
         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
