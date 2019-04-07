@@ -101,7 +101,7 @@ let modificarEtiqueta = (pnombre, pid) =>{
             title : 'Etiqueta de búsqueda actualizada',
             text : res.msg,
             onClose: () => {
-                // location.reload();
+                location.reload();
             }
         });
 
