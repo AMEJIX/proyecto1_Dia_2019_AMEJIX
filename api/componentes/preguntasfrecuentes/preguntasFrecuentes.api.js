@@ -84,8 +84,8 @@ module.exports.listarPreguntasFrecuentes = (req, res) =>{
                 }
             }
 
-            console.log("Id del centro recibido: " + req.body.idCE);
-            console.log(preguntasFrecuentesCE);
+            // console.log("Id del centro recibido: " + req.body.idCE);
+            // console.log(preguntasFrecuentesCE);
 
             if (preguntasFrecuentesCE.length > 0 && req.body.idCE !== undefined){
 
@@ -100,6 +100,29 @@ module.exports.listarPreguntasFrecuentes = (req, res) =>{
                     {
                         success: false,
                         preguntasFrecuentes: 'No se encontraron preguntas frecuentes'
+                    }
+                );
+            }
+        }
+    );
+};
+
+module.exports.getPregunta = (req, res) =>{
+    console.log(req.body.id);
+    modeloPreguntasFrecuentes.findOne({_id: req.body.id}).then(
+        pregunta =>{
+            if (pregunta){
+                res.json(
+                    {
+                        success: true,
+                        pregunta: pregunta
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        pregunta: 'No se encontró la pregunta'
                     }
                 );
             }

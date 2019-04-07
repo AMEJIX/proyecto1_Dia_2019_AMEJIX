@@ -64,7 +64,8 @@ function mostrarCriterios() {
                         botonModificar.addEventListener('click', activarCampoTexto =>{
                             if (z % 2 === 0) {
                                 etiquetap.contentEditable = true;
-                                etiquetap.style.background = '#f9aa33';
+                                // etiquetap.style.background = '#f9aa33';
+                                etiquetap.classList.add('modoCambio');
                                 etiquetap.selected = true;
                                 $(`#${etiquetap.id}`).keypress(function(e) {
                                     var keycode = (e.keyCode ? e.keyCode : e.which);
@@ -84,7 +85,7 @@ function mostrarCriterios() {
                     });
                     nuevaEtiqueta.addEventListener('mouseleave', retornar =>{
                         document.getElementById(`opciones_${nuevaEtiqueta.id}`).style.display  = 'none';
-                        etiquetap.style.background = 'inherit';
+                        // etiquetap.style.background = 'inherit';
                     });
                 }
 
@@ -115,7 +116,8 @@ function mostrarCriterios() {
                                 botonModificar.addEventListener('click', activarCampoTexto =>{
                                     if (z % 2 === 0) {
                                         etiquetap1.contentEditable = true;
-                                        etiquetap1.style.background = '#f9aa33';
+                                        // etiquetap1.style.background = '#f9aa33';
+                                        etiquetap1.classList.add('modoCambio');
                                         etiquetap1.selected = true;
                                         $(`#${etiquetap1.id}`).keypress(function(e) {
                                             var keycode = (e.keyCode ? e.keyCode : e.which);
@@ -135,7 +137,7 @@ function mostrarCriterios() {
                             });
                             nuevaEtiqueta1.addEventListener('mouseleave', eliminar =>{
                                 document.getElementById(`opciones_${nuevaEtiqueta1.id}`).style.display  = 'none';
-                                etiquetap1.style.background = 'inherit';
+                                // etiquetap1.style.background = 'inherit';
                             });
                         }
                     }
@@ -170,7 +172,8 @@ function mostrarCriterios() {
                                 botonModificar.addEventListener('click', activarCampoTexto =>{
                                     if (z % 2 === 0) {
                                         etiquetap2.contentEditable = true;
-                                        etiquetap2.style.background = '#f9aa33';
+                                        // etiquetap2.style.background = '#f9aa33';
+                                        etiquetap2.classList.add('modoCambio');
                                         etiquetap2.selected = true;
                                         $(`#${etiquetap2.id}`).keypress(function(e) {
                                             var keycode = (e.keyCode ? e.keyCode : e.which);
@@ -190,7 +193,7 @@ function mostrarCriterios() {
                             });
                             nuevaEtiqueta2.addEventListener('mouseleave', eliminar =>{
                                 document.getElementById(`opciones_${nuevaEtiqueta2.id}`).style.display  = 'none';
-                                etiquetap2.style.background = 'inherit';
+                                // etiquetap2.style.background = 'inherit';
                             });
                         }
                     }

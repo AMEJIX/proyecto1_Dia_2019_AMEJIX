@@ -61,9 +61,12 @@ function mostrarPreguntasFrecuentes() {
 
                 pregunta.id = listaPreguntasFrecuentes[i]['_id'];
 
+                let laPregunta = document.createElement('p');
+                laPregunta.textContent = listaPreguntasFrecuentes[i]['pregunta'];
+                laPregunta.id = `pregunta_${listaPreguntasFrecuentes[i]['_id']}`;
                 pregunta.classList.add('pregunta');
 
-                pregunta.innerHTML = listaPreguntasFrecuentes[i]['pregunta'];
+                pregunta.appendChild(laPregunta);
 
                 let contenidoP = pregunta.textContent;
 
@@ -73,7 +76,7 @@ function mostrarPreguntasFrecuentes() {
 
                 if (user.userType === 'superAdministrador' || user.userType === 'centroEducativo'){
 
-                    pregunta.insertAdjacentHTML('beforeend', `<div class="awesome_images" id="opciones_${pregunta.id}"></i><i class="fas fa-edit modificar" id="modificar_${pregunta.id}"></i><i class="fas fa-trash-alt eliminar" id="eliminar_${pregunta.id}"></i></div>`);
+                    pregunta.insertAdjacentHTML('beforeend', `<div class="awesome_images opciones" id="opciones_${pregunta.id}"></i><i class="fas fa-edit modificar" id="modificar_${pregunta.id}"></i><i class="fas fa-trash-alt eliminar" id="eliminar_${pregunta.id}"></i></div>`);
 
 
                     pregunta.addEventListener('mouseover', mostrar =>{
@@ -87,13 +90,14 @@ function mostrarPreguntasFrecuentes() {
                         botonModificar.addEventListener('click', activarCampoTexto =>{
                             if (z % 2 === 0) {
                                 pregunta.contentEditable = true;
-                                pregunta.style.background = '#f9aa33';
+                                pregunta.classList.add('modoCambio');
+                                pregunta.style.setProperty('selection', 'background-color: #EDF0F5');
                                 pregunta.selected = true;
                                 $(`#${pregunta.id}`).keypress(function(e) {
                                     var keycode = (e.keyCode ? e.keyCode : e.which);
                                     console.log(keycode);
                                     if (keycode == '13') {
-                                        actualizarPregunta(pregunta.textContent, respuesta.textContent, pregunta.id, contenidoP, contenidoR);
+                                        actualizarPregunta(laPregunta.textContent, document.getElementById(`respuesta_${pregunta.id}`).textContent,listaPreguntasFrecuentes[i]['idCE'], listaPreguntasFrecuentes[i]['_id'], contenidoP, contenidoR);
                                         e.preventDefault();
                                         return false;
                                     }
@@ -102,12 +106,13 @@ function mostrarPreguntasFrecuentes() {
                             z++;
                         });
                         botonEliminar.addEventListener('click', eliminar =>{
-                            eliminarPregunta(nuevaEtiqueta.id);
+                            eliminarPregunta(pregunta.id);
                         });
                     });
 
                     pregunta.addEventListener('mouseleave', retornar =>{
                         document.getElementById(`opciones_${pregunta.id}`).style.display  = 'none';
+                        // document.getElementById(`${listaPreguntasFrecuentes[i]['_id']}`).style.backgroundColor = '#EDF0F5';
 
                     });
                 }

@@ -18,6 +18,12 @@ router.param('pregunta', (req, res, next, pregunta) =>{
     next();
 });
 
+router.param('id', (req, res, next, id) =>{
+    req.body.id = id;
+
+    next();
+});
+
 router.route('/validarNuevaPregunta/:pregunta')
     .get(
         function (req, res) {
@@ -39,14 +45,14 @@ router.route('/centroEducativo/listarPreguntasFrecuentes/:idCE')
         }
     );
 
-router.route('modificarPregunta')
+router.route('/modificarPregunta')
     .post(
         (req, res) =>{
             apiPreguntasFrecuentes.actualizar(req, res);
         }
     );
 
-router.route('eliminarPregunta')
+router.route('/eliminarPregunta')
     .post(
         (req, res) =>{
             apiPreguntasFrecuentes.eliminar(req, res);

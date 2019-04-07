@@ -15,7 +15,6 @@ body {
 *::-moz-selection {
     background: #F9AA33;
     color: white;
-    text-shadow: 1px 1px #fff;
 }
 
 header nav {

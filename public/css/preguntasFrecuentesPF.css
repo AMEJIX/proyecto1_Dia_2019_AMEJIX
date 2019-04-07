@@ -51,8 +51,13 @@ form div label{
 }
 
 #tblPreguntasFrecuentes{
+    /*position: relative;*/
+    top: -20px;
+    margin-top: 100px;
     margin-left: 100px;
     width: 80%;
+    border-collapse: separate;
+    border-spacing: 50px 50px;
 }
 
 #cajaRegistrarPregunta  {
@@ -81,7 +86,7 @@ form div label{
 }
 
 .respuesta{
-   
+    margin-top: 20px;
     font-size: 18px;
 }
 
@@ -91,8 +96,8 @@ tr{
 }
 
 tr:hover{
-    background: #344955;
-    color: white;
+    /*background: #344955;*/
+    /*color: white;*/
 }
 
 #error {

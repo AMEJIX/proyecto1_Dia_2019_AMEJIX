@@ -49,3 +49,12 @@ module.exports.listarArticulo = (req, res)=>{
     )
 };
 
+module.exports.buscarArticuloId = (req, res) =>{
+    modeloArticulo.find({_id: "req.body.idDelArticulo"}).then()
+}
+
+module.exports.actualizarArticulo = function(req, res){
+    modeloArticulo.findByIdAndUpdate(req.body.id, { $set: req.body},
+        )
+}
+

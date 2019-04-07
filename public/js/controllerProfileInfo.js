@@ -15,7 +15,11 @@ function ocultar() {
         document.querySelector('#aRegistrarCE').style.display = 'none';
         document.querySelector('#verPadres').style.display = 'none';
         document.querySelector('#aPreguntasCE').style.display = 'none';
-        
+        document.querySelector('#reportesSA').style.display = 'none';
+        document.querySelector('#aEliminarCE').style.display = 'none';
+        document.querySelector('#aActivarDesCE').style.display = 'none';   
+        document.querySelector('#reportesCE').style.display = 'none';
+        document.querySelector('#aEvaluarCE').style.display = 'none';   
         
        
     } else if (userLog.userType == "centroEducativo") {
@@ -24,15 +28,17 @@ function ocultar() {
         // document.querySelector('#aHijos').style.display = 'none';
         document.querySelector('#menuCitasPF').style.display = 'none';
         document.querySelector('#verPadres').style.display = 'none';
-        document.querySelector('#aPreguntasPF').style.display = 'none';
+        document.querySelector('#aPreguntasPF').style.display = 'none'; 
+        document.querySelector('#reportesSA').style.display = 'none';
 
 
     }else if(userLog.userType == "superAdministrador"){
         document.querySelector('#menuInformativo').style.display = 'none';
         document.querySelector('#menuCitasPF').style.display = 'none';
-        document.querySelector('#aFavoritos').style.display = 'none';
+        document.querySelector('#aFavoritos').style.display = 'none'; 
         document.querySelector('#aCEcercanos').style.display = 'none';
         document.querySelector('#verInfoMep').style.display = 'none';
+        document.querySelector('#reportesCE').style.display = 'none';
     }
 
 }
