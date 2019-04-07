@@ -107,68 +107,27 @@ module.exports.listarPreguntasFrecuentes = (req, res) =>{
     );
 };
 
-/*
-module.exports.listarPreguntasFrecuentesPorPerfil = (req, res) =>{
-    modeloPreguntasFrecuentes.find().sort({pregunta: 'asc'}).then(
-        preguntasFrecuentes =>{
-
-            let preguntasFrecuentesCE = [];
-
-            for (let pregFrec of preguntasFrecuentes){
-                if (pregFrec.idCE === req.body.idCE){
-                    preguntasFrecuentesCE.push(pregFrec);
-                }
+module.exports.actualizar = (req, res) =>{
+    modeloPreguntasFrecuentes.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar la pregunta'});
+            }else{
+                res.json({success: true , msg : 'La pregunta se actualizó con éxito'});
             }
+        }
 
-            console.log("Id del centro recibido: " + req.body.idCE);
-            // console.log(preguntasFrecuentesCE);
+    );
+};
 
-            if (preguntasFrecuentes.length > 0 && req.body.idCE !== undefined){
-
-                res.json(
-                    {
-                        success: true,
-                        preguntasFrecuentes: preguntasFrecuentesCE
-                    }
-                );
-            } else {
-                res.json(
-                    {
-                        success: false,
-                        preguntasFrecuentes: 'No se encontraron preguntas frecuentes'
-                    }
-                );
+module.exports.eliminar = (req, res) =>{
+    modeloPreguntasFrecuentes.findByIdAndDelete(req.body.id,
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo eliminar la pregunta'});
+            }else{
+                res.json({success: true , msg : 'La pregunta se eliminó con éxito'});
             }
         }
     );
-};*/
-// module.exports.listarPreguntasFrecuentesPF = (req, res) =>{
-//     modeloPreguntasFrecuentes.find().sort({pregunta: 'asc'}).then(
-//          preguntasFrecuentes =>{
-//             if (preguntasFrecuentes.length > 0){
-//
-//                 let preguntasFrecuentesCE = [];
-//
-//                 for (let pregFrec of preguntasFrecuentes){
-//                     if (pregFrec.idCE === req.body.idCE){
-//                         preguntasFrecuentesCE.push(pregFrec);
-//                     }
-//                 }
-//
-//                 res.json(
-//                     {
-//                         success: true,
-//                         preguntasFrecuentes: preguntasFrecuentes
-//                     }
-//                 );
-//             } else {
-//                 res.json(
-//                     {
-//                         success: false,
-//                         preguntasFrecuentes: 'No se encontraron preguntas frecuentes'
-//                     }
-//                 );
-//             }
-//         }
-//     );
-// };
+};

@@ -10,56 +10,74 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">-->
     <!--<link rel="import" href="bower_components/vaadin-date-picker/vaadin-date-picker.html">-->
     <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="css/citas.css">
+
 </head>
 
 <body>
     <header>
-    </header>
+        <nav>
 
-    <main>
-            <div class="sidebar">
-            <div class="sicenLogo"></div>
-            <div class="line"></div>
-            <div class="wrapper">
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion">
-                    <h3>Citas</h3>
-                    <div class="subOpcion">
-                        <a href="citas.html">Agendar</a>
-                    </div>
-                </div>
-                 <div class="opcion">
-                    <h3>Regresar</h3>
-                    <div class="subOpcion">
-                        <a href="javascript:window.history.back();">&laquo; Volver atrás</a>
-                    </div>
-                </div>
-            </div>
-
-            <!----------------------Inicio información del perfil---------------------->
             <div class="userInfo">
                 <div class="userPhoto"></div>
-                <h4></h4>
+                <div class="nameWrapper">
+                    <h4></h4>
+                </div>
+
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
-                    <a href="#" id="logOut">Cerrar sesión</a>
-
+                    <a href="" id="logOut">Cerrar sesión</a>
                 </div>
             </div>
-            <!----------------------Fin información del perfil---------------------->
 
-        </div>
+        </nav>
+    </header>
+    <main>
+        <div class="sideNav">
+            <a class="aBack" href="userProfileInfo.html">
+                <div class="sicenLogo"></div>
+            </a>
+            <div class="line"></div>
+
+            <button class="btnDropdown" id="menuInformativo">
+                <span><i class="fas fa-info"></i></span>
+                Información
+            </button>
+                <!----------------------Inicio opción---------------------->
+                <div class="dropdownContainer">
+                    <a href="" id="aInfoCE">Información del Centro educativo</a>
+                    <a href="" id="aMatricula">Matrícula</a>
+                    <a href="" id="aBecas">Becas</a>
+                    <!--<a href="" id="aCitas">Citas</a>-->
+                    <a href="" id="aMaterialInformativo">Material Informativo</a>
+                    <a href="" id="aNoticias">Noticias</a>
+                    <a href="" id="aActividades">Actividades</a>
+                    <a href="" id="aUtiles">Lista de útiles</a>
+                    <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
+                    <a href="" id="aEtiquetas">Etiquetas</a>
+                </div>
+
+                <button class="btnDropdown" id="menuCitasEnCE">
+                    <span><i class="far fa-calendar-check"></i></span>
+                    Citas
+                </button>
+                <div class="dropdownContainer">
+                    <a href="citas.html" id="aAgendarCita">Agendar cita</a>
+                </div>
+
+            </div>
 
         <div class="contenido" style="overflow-y: scroll;">
             <h1 class="tituloPrincipal">Agendar cita</h1>
 
-            <form>
+            <form id="frmAgendar">
                 <div id="cajaFechaHora">
                     <div id="cajaFecha">
                         <label for="fechaCita">Fecha: </label>
@@ -89,6 +107,8 @@
         </div>
     </main>
 
+    <script src="js/style.js"></script>
+    <script src="js/authentication.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -102,8 +122,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
-    <script src="js/authentication.js"></script>
     <script src="js/controlador.general.js"></script>
+    <script src="js/controlador.profileInfoCE.js"></script>
     <script src="js/citas.servicio.js"></script>
     <script src="js/moment.js"></script>
     <script src="js/citas.controller.registrar.js"></script>

@@ -83,7 +83,7 @@ let getCriterioBusqueda = (id) =>{
 
 let modificarEtiqueta = (pnombre, pid) =>{
     let request = $.ajax({
-        url : 'http://localhost:4000/api/modificarEtiqueta',
+        url : 'http://localhost:4000/api/administrador/modificarEtiqueta',
         method : "POST",
         data : {
             nombre : pnombre,
@@ -101,7 +101,7 @@ let modificarEtiqueta = (pnombre, pid) =>{
             title : 'Etiqueta de búsqueda actualizada',
             text : res.msg,
             onClose: () => {
-                location.reload();
+                // location.reload();
             }
         });
 
@@ -120,7 +120,7 @@ let modificarEtiqueta = (pnombre, pid) =>{
 
 let deleteEtiqueta = (pid) =>{
     let request = $.ajax({
-        url : 'http://localhost:4000/api/eliminarEtiqueta',
+        url : 'http://localhost:4000/api/administrador/eliminarEtiqueta',
         method : "POST",
         data : {
             id : pid
@@ -137,7 +137,7 @@ let deleteEtiqueta = (pid) =>{
             title : 'Etiqueta de búsqueda eliminada',
             text : res.msg,
             onClose: () => {
-                location.reload();
+                // location.reload();
             }
         });
 
@@ -157,7 +157,7 @@ let deleteEtiqueta = (pid) =>{
 let registrarCriterioBusqueda = (pnombre) =>{
     let request = $.ajax(
         {
-            url: "http://localhost:4000/api/registrarCriterioBusqueda",
+            url: "http://localhost:4000/api/administrador/registrarCriterioBusqueda",
             method: "POST",
             data: {
                 nombre : pnombre

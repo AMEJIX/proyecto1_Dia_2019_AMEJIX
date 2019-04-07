@@ -39,6 +39,20 @@ router.route('/centroEducativo/listarPreguntasFrecuentes/:idCE')
         }
     );
 
+router.route('modificarPregunta')
+    .post(
+        (req, res) =>{
+            apiPreguntasFrecuentes.actualizar(req, res);
+        }
+    );
+
+router.route('eliminarPregunta')
+    .post(
+        (req, res) =>{
+            apiPreguntasFrecuentes.eliminar(req, res);
+        }
+    );
+
 // router.route('/padreFamilia/listarPreguntasFrecuentes')
 //     .get(
 //         function (req, res) {

@@ -1,6 +1,9 @@
 'use strict';
 
-const opcionVer = document.querySelector('#opcionVer');
+// const opcionVer = document.querySelector('#opcionVer');
+const opcionVerPF = document.querySelector('#aPreguntasPF');
+const opcionVerCE = document.querySelector('#aPreguntasCE');
+
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
@@ -8,13 +11,14 @@ let user = JSON.parse(sessionStorage.getItem('usuario'));//ya está declarado
 
 let idCentroEducativo;
 
-
 if (user.userType == 'padreFamilia' ) {//REDIRECCIONAMIENTO
     if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html') setTimeout(location.href='preguntasFrecuentesPF.html?idCE='+IdGeneralCE, 0);
-    opcionVer.href = 'preguntasFrecuentesPF.html?idCE='+IdGeneralCE;
+
+    if (opcionVerPF)  opcionVerPF.href = 'preguntasFrecuentesPF.html?idCE='+IdGeneralCE;
 } else {
     if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE, 0);
-    opcionVer.href = 'preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE;
+
+    if (opcionVerCE) opcionVerCE.href = 'preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE;
 }
 
 if (user.userType == 'padreFamilia' || user.userType == 'superAdministrador' ){
@@ -55,19 +59,57 @@ function mostrarPreguntasFrecuentes() {
 
                 let pregunta = tabla.insertRow();
 
+                pregunta.id = listaPreguntasFrecuentes[i]['_id'];
+
                 pregunta.classList.add('pregunta');
 
                 pregunta.innerHTML = listaPreguntasFrecuentes[i]['pregunta'];
 
-                let respuesta = tabla.insertRow();
+                let contenidoP = pregunta.textContent;
 
-                respuesta.classList.add('respuesta');
+                pregunta.insertAdjacentHTML('beforeend',`<p class="respuesta" id="respuesta_${pregunta.id}">${listaPreguntasFrecuentes[i]['respuesta']}</p>` );
 
-                respuesta.innerHTML = listaPreguntasFrecuentes[i]['respuesta'];
+                let contenidoR = document.getElementById(`respuesta_${pregunta.id}`).textContent;
 
                 if (user.userType === 'superAdministrador' || user.userType === 'centroEducativo'){
-                    pregunta.insertAdjacentHTML('beforeend', `<div class="opciones" id="${listaPreguntasFrecuentes[i]['_id']}"><div class="awesome_images"></i><i class="fas fa-edit modificar"></i><i class="fas fa-trash-alt eliminar"></i></div></div>`);
-                    respuesta.insertAdjacentHTML('beforeend', `<div class="opciones" id="${listaPreguntasFrecuentes[i]['_id']}"><div class="awesome_images"></i><i class="fas fa-edit modificar"></i><i class="fas fa-trash-alt eliminar"></i></div></div>`);
+
+                    pregunta.insertAdjacentHTML('beforeend', `<div class="awesome_images" id="opciones_${pregunta.id}"></i><i class="fas fa-edit modificar" id="modificar_${pregunta.id}"></i><i class="fas fa-trash-alt eliminar" id="eliminar_${pregunta.id}"></i></div>`);
+
+
+                    pregunta.addEventListener('mouseover', mostrar =>{
+
+                        document.getElementById(`opciones_${pregunta.id}`).style.display = 'inline-block';
+                        document.getElementById(`opciones_${pregunta.id}`).style.color = 'white';
+
+                        let botonModificar = document.getElementById(`modificar_${pregunta.id}`);
+                        let botonEliminar = document.getElementById(`eliminar_${pregunta.id}`);
+                        let z = 2;
+                        botonModificar.addEventListener('click', activarCampoTexto =>{
+                            if (z % 2 === 0) {
+                                pregunta.contentEditable = true;
+                                pregunta.style.background = '#f9aa33';
+                                pregunta.selected = true;
+                                $(`#${pregunta.id}`).keypress(function(e) {
+                                    var keycode = (e.keyCode ? e.keyCode : e.which);
+                                    console.log(keycode);
+                                    if (keycode == '13') {
+                                        actualizarPregunta(pregunta.textContent, respuesta.textContent, pregunta.id, contenidoP, contenidoR);
+                                        e.preventDefault();
+                                        return false;
+                                    }
+                                });
+                            }
+                            z++;
+                        });
+                        botonEliminar.addEventListener('click', eliminar =>{
+                            eliminarPregunta(nuevaEtiqueta.id);
+                        });
+                    });
+
+                    pregunta.addEventListener('mouseleave', retornar =>{
+                        document.getElementById(`opciones_${pregunta.id}`).style.display  = 'none';
+
+                    });
                 }
 
             } else{

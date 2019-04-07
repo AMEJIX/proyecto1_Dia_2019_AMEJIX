@@ -8,7 +8,7 @@ const lblERRHora = document.querySelector('#lblERRHora');
 
 let user = JSON.parse(sessionStorage.getItem('usuario'));
 
-if(user.userType === 'centroEducativo' || NombreGeneralCE === ''){
+ if(user.userType === 'centroEducativo' || NombreGeneralCE === ''){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
 }
 

@@ -77,6 +77,14 @@ let registrarCita = (pfechaHora, pnombreCE, pnombrePF, pcorreoPF) =>{
     });
 
     request.fail(function (jqXHR, textStatus) {
-
+        swal.fire(
+            {
+                type: 'error',
+                title: 'No se pudo agendar la cita',
+                text: ``,
+                showConfirmButton: false,
+                timer: 1500
+            }
+        );
     });
 };

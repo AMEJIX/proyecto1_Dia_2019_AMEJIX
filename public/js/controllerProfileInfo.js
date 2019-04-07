@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 // if (user == undefined) {
 //     let user = JSON.parse(sessionStorage.getItem("usuario"));
@@ -11,7 +11,7 @@ function ocultar() {
     if (userLog.userType == "padreFamilia") {
         document.querySelector('#menuAdministrativo').style.display = 'none';
         document.querySelector('#menuInformativo').style.display = 'none';
-        document.querySelector('#menuReportes').style.display = 'none';
+        // document.querySelector('#menuReportes').style.display = 'none';
         document.querySelector('#aRegistrarCE').style.display = 'none';
         document.querySelector('#verPadres').style.display = 'none';
         document.querySelector('#aPreguntasCE').style.display = 'none';

@@ -28,7 +28,7 @@ function mostrarCitas() {
 
     tabla.innerHTML = '';
 
-    if (listaCitas.length > 0 || !(typeof listaCitas == 'string')){
+    if (listaCitas.length > 0 && !(typeof listaCitas == 'string')){
 
         if (document.getElementById('error')) eliminarMensaje();
 

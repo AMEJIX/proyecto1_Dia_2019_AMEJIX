@@ -78,11 +78,11 @@ function mostrarCriterios() {
                             }
                             z++;
                         });
-                        botonEliminar.addEventListener('click', activarCampoTexto =>{
+                        botonEliminar.addEventListener('click', eliminar =>{
                             eliminarEtiqueta(nuevaEtiqueta.id);
                         });
                     });
-                    nuevaEtiqueta.addEventListener('mouseleave', eliminar =>{
+                    nuevaEtiqueta.addEventListener('mouseleave', retornar =>{
                         document.getElementById(`opciones_${nuevaEtiqueta.id}`).style.display  = 'none';
                         etiquetap.style.background = 'inherit';
                     });

@@ -25,7 +25,7 @@ router.route('/validarEtiqueta/:nombre')
         }
     );
 
-router.route('/registrarCriterioBusqueda')
+router.route('/administrador/registrarCriterioBusqueda')
     .post(
         function (req, res) {
             apiCriteriosBusqueda.registrarCriterioBusqueda(req, res);
@@ -46,13 +46,13 @@ router.route('/obtenerCriterioBusqueda/:id')
         }
     );
 
-router.route('/modificarEtiqueta')
+router.route('/administrador/modificarEtiqueta')
     .post(
         (req, res) =>{
             apiCriteriosBusqueda.actualizar(req, res);
         }
     );
-router.route('/eliminarEtiqueta')
+router.route('/administrador/eliminarEtiqueta')
     .post(
         (req, res) =>{
             apiCriteriosBusqueda.eliminar(req, res);

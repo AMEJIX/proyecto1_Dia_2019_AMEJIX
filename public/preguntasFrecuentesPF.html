@@ -19,54 +19,61 @@
 
 <body>
     <header>
-    </header>
+        <nav>
 
-    <main>
-        <div class="sidebar">
-            <div class="sicenLogo"></div>
-            <div class="line"></div>
-            <div class="wrapper">
-
-                <!----------------------Inicio opción---------------------->
-                <div class="opcion">
-                    <h3>Preguntas frecuentes</h3>
-                    <div class="subOpcion">
-                        <!--<a href="preguntasFrecuentesCE&Admin.html">Mis preguntas frecuentes</a>-->
-                        <a href="preguntasFrecuentesPF.html" id="opcionVer">Ver</a>
-
-                        <!-- LOS DOS HTML REDIRECCIONAN A LA PÁGINA CONTRARIA EN CASO DE INTENTAR ACCEDER A LA QUE NO TIENE PERMISO-->
-                    </div>
-                </div>
-                <!----------------------Fin opción---------------------->
-                <div class="opcion">
-                    <h3>Regresar</h3>
-                    <div class="subOpcion">
-                        <a href="javascript:window.history.back();">&laquo; Volver atrás</a>
-                    </div>
-                </div>
-            </div>
-
-            <!----------------------Inicio información del perfil---------------------->
             <div class="userInfo">
                 <div class="userPhoto"></div>
-                <h4>Nombre del perfil</h4>
+                <div class="nameWrapper">
+                    <h4></h4>
+                </div>
+
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
-                    <a href="#" id="logOut">Cerrar sesión</a>
+                    <a href="" id="logOut">Cerrar sesión</a>
                 </div>
             </div>
-            <!----------------------Fin información del perfil---------------------->
 
-        </div>
+        </nav>
+    </header>
+    <main>
+        <div class="sideNav">
+            <a class="aBack" href="userProfileInfo.html">
+                <div class="sicenLogo"></div>
+            </a>
+            <div class="line"></div>
+
+            <button class="btnDropdown" id="menuInformativo">
+                <span><i class="fas fa-info"></i></span>
+                Información
+            </button>
+                <!----------------------Inicio opción---------------------->
+                <div class="dropdownContainer">
+                    <a href="" id="aInfoCE">Información del Centro educativo</a>
+                    <a href="" id="aMatricula">Matrícula</a>
+                    <a href="" id="aBecas">Becas</a>
+                    <!--<a href="" id="aCitas">Citas</a>-->
+                    <a href="" id="aMaterialInformativo">Material Informativo</a>
+                    <a href="" id="aNoticias">Noticias</a>
+                    <a href="" id="aActividades">Actividades</a>
+                    <a href="" id="aUtiles">Lista de útiles</a>
+                    <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
+                    <a href="" id="aEtiquetas">Etiquetas</a>
+                </div>
+
+                <button class="btnDropdown" id="menuCitasEnCE">
+                    <span><i class="far fa-calendar-check"></i></span>
+                    Citas
+                </button>
+                <div class="dropdownContainer">
+                    <a href="citas.html" id="aAgendarCita">Agendar cita</a>
+                </div>
+
+            </div>
+        <!-- <a href="preguntasFrecuentesPF.html" id="opcionVer">Ver</a>-->
 
         <div class="contenido" style="overflow-y: scroll;">
             <!-- TODO EL CONTENIDO DEL CASO DE USO -->
-
-
-
-
-
             <div class="right">
                 <h1>Preguntas frecuentes</h1>
                 <div id="cajaFiltrar">
@@ -81,11 +88,13 @@
         </div>
     </main>
 
+    <script src="js/style.js"></script>
+    <script src="js/authentication.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/authentication.js"></script>
     <script src="js/controlador.general.js"></script>
+    <script src="js/controlador.profileInfoCE.js"></script>
     <script src="js/preguntasFrecuentes.servicio.js"></script>
     <script src="js/preguntasFrecuentes.controller.listar.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
