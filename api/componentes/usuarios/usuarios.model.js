@@ -7,6 +7,10 @@ let usuarioSchema = new mongoose.Schema(
 
     {
 
+
+        //SA
+
+        userType: { puesto: String, required: false },
 //PF
 
         userType: { type: String, required: false },

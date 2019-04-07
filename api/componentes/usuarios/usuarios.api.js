@@ -227,6 +227,10 @@ module.exports.registrar = (req, res) => {
 
 
             userType: req.body.userType,
+
+            //SA:
+            puesto: req.body.puesto,
+
             //PF
 
             nombre: req.body.nombre,

@@ -19,10 +19,10 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
             canton: canton,
             distrito: distrito,
             contrasenna: contrasenna,
-            edades : edades,
+            edades: edades,
             imagenPF: imagenPF,
             estado: estado
-           
+
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
@@ -55,7 +55,7 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
 
 };
 
-let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP,direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado) => {
+let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_usuario",
@@ -77,35 +77,35 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
             fax: fax,
             histroia: histroia,
             provincia: provincia,
-            canton : canton,
-            distrito : distrito,
+            canton: canton,
+            distrito: distrito,
             nombreCEP: nombreCEP,
-            segundoNombreCEP : segundoNombreCEP,
+            segundoNombreCEP: segundoNombreCEP,
             apellidoCEP: apellidoCEP,
-            segundoApellidoCEP : segundoApellidoCEP,
+            segundoApellidoCEP: segundoApellidoCEP,
             departamento: departamento,
             telCEP: telCEP,
             extension: extension,
             numIDCEP: numIDCEP,
             email: email,
             emailCEP: emailCEP,
-            lat : lat,
-            lng : lng,
-            contrasenna : contrasenna,
-            privacidad : privacidad,
-            clasificacion : clasificacion,
-            tipo : tipo,
-            grados : grados,
-            imagen : imagen,
-            imagenCEP : imagenCEP,
-            direccionExacta : direccionExacta,
-            idiomas : idiomas,
-            servicios : servicios,
-            descipcionesServicio : descipcionesServicio,
-            documentCE : documentCE,
-            estado : estado
+            lat: lat,
+            lng: lng,
+            contrasenna: contrasenna,
+            privacidad: privacidad,
+            clasificacion: clasificacion,
+            tipo: tipo,
+            grados: grados,
+            imagen: imagen,
+            imagenCEP: imagenCEP,
+            direccionExacta: direccionExacta,
+            idiomas: idiomas,
+            servicios: servicios,
+            descipcionesServicio: descipcionesServicio,
+            documentCE: documentCE,
+            estado: estado
 
-            
+
 
 
 
@@ -143,7 +143,7 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
 };
 
 
-let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, provincia, canton, distrito, contrasenna, edades, imagenPF, estado, id) =>{
+let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, provincia, canton, distrito, contrasenna, edades, imagenPF, estado, id) => {
     let request = $.ajax({
 
         url: "http://localhost:4000/api/actualizar",
@@ -162,9 +162,10 @@ let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, 
             canton: canton,
             distrito: distrito,
             contrasenna: contrasenna,
-            edades : edades,
+            edades: edades,
             imagenPF: imagenPF,
-            estado: estado
+            estado: estado,
+            id: id
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
@@ -177,13 +178,13 @@ let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, 
             text: res.msg
 
         });
-     });
+    });
 
 
 
 };
 
-let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP,direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado, id) =>{
+let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado, id) => {
     let request = $.ajax({
 
         url: "http://localhost:4000/api/actualizar",
@@ -204,33 +205,33 @@ let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, 
             fax: fax,
             histroia: histroia,
             provincia: provincia,
-            canton : canton,
-            distrito : distrito,
+            canton: canton,
+            distrito: distrito,
             nombreCEP: nombreCEP,
-            segundoNombreCEP : segundoNombreCEP,
+            segundoNombreCEP: segundoNombreCEP,
             apellidoCEP: apellidoCEP,
-            segundoApellidoCEP : segundoApellidoCEP,
+            segundoApellidoCEP: segundoApellidoCEP,
             departamento: departamento,
             telCEP: telCEP,
             extension: extension,
             numIDCEP: numIDCEP,
             email: email,
             emailCEP: emailCEP,
-            lat : lat,
-            lng : lng,
-            contrasenna : contrasenna,
-            privacidad : privacidad,
-            clasificacion : clasificacion,
-            tipo : tipo,
-            grados : grados,
-            imagen : imagen,
-            imagenCEP : imagenCEP,
-            direccionExacta : direccionExacta,
-            idiomas : idiomas,
-            servicios : servicios,
-            descipcionesServicio : descipcionesServicio,
-            documentCE : documentCE,
-            estado : estado,
+            lat: lat,
+            lng: lng,
+            contrasenna: contrasenna,
+            privacidad: privacidad,
+            clasificacion: clasificacion,
+            tipo: tipo,
+            grados: grados,
+            imagen: imagen,
+            imagenCEP: imagenCEP,
+            direccionExacta: direccionExacta,
+            idiomas: idiomas,
+            servicios: servicios,
+            descipcionesServicio: descipcionesServicio,
+            documentCE: documentCE,
+            estado: estado,
             id: id
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -244,7 +245,46 @@ let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, 
             text: res.msg
 
         });
-     });
+    });
+
+
+
+};
+
+let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, contrasenna, edades, imagenPF, estado, id, puesto) => {
+    let request = $.ajax({
+
+        url: "http://localhost:4000/api/actualizar",
+        method: "POST",
+        data: {
+            userType: userType,
+            nombre: nombre,
+            segundoNombre: segundoNombre,
+            apellido: apellido,
+            segundoApellido: segundoApellido,
+            identificacion: identificacion,
+            nacionalidad: nacionalidad,
+            email: email,
+            telefono: telefono,
+            contrasenna: contrasenna,
+            edades: edades,
+            imagenPF: imagenPF,
+            estado: estado,
+            id: id,
+            puesto: puesto
+        },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json"
+    });
+
+    request.done(function (res) {
+        swal.fire({
+            type: 'success',
+            title: 'exito',
+            text: res.msg
+
+        });
+    });
 
 
 
