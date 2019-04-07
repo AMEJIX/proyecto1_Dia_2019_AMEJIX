@@ -28,6 +28,11 @@ let mostrarArticulos = () =>{
                 let fila = tabla.insertRow();
                 fila.insertCell().innerHTML = articulos[i]['nombre'];
                 fila.insertCell().innerHTML = articulos[i]['descripcion'];
+                let celdaConfiguracion = fila.insertCell();
+                let botonEditar = document.createElement('a');
+                botonEditar.textContent = 'Editar';
+                botonEditar.href = `actualizarArticulos.html?idArticulo=${articulos[0]['_id']}`
+                celdaConfiguracion.appendChild(botonEditar);
             }
 
         };

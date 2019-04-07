@@ -10,11 +10,13 @@
         <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+       
         <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/listarActividades.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="css/swiper.actividades.css">
+        <link rel="stylesheet" href="css/style.Actividades.css">
+        <link rel="stylesheet" href="css/listarActividades.css">
 </head>
 
 
@@ -41,41 +43,40 @@
                 </nav>
             </header>
     <main>
-    
                         <!-- <a href="registrarActividades.html">Registrar</a>
                         <a href="listarActividadesPropiasCE.html">Ver</a>
                         <a href="#">Modificar</a>
                         <a href="#">Eliminar</a> -->
                         
-                        <div class="sideNav">
-                                <a class="aBack" href="index.html">
-                                    <div class="sicenLogo"></div>
-                                </a>
-                                <div class="line"></div>
-                                <button class="btnDropdown">
-                                    <span><i class="fas fa-school"></i></span>
-                                    Centros educativos
-                                </button>
-                                <div class="dropdownContainer">
-                                    <a href="#">Buscar</a>
-                                    <a href="#">Favoritos</a>
-                                    <a href="#">TOP 10</a>
-                                    <a href="#">Centros educativos cercanos</a>
-                                </div>
-                    
-                                <a href="#"><span><i class="far fa-calendar-check"></i></span>Citas</a>
-                    
-                                <button class="btnDropdown">
-                                    <span><i class="fas fa-info"></i></span>
-                                    MEP
-                                </button>
-                                <div class="dropdownContainer">
-                                    <a href="#">Contacto</a>
-                                    <a href="#">MEP</a>
-                                </div>
-                            </div>
-                    
-                            <div class="contenido" style="overflow-y: scroll;">
+        <div class="sideNav">
+                <a class="aBack" href="index.html">
+                    <div class="sicenLogo"></div>
+                </a>
+                <div class="line"></div>
+                <button class="btnDropdown">
+                    <span><i class="fas fa-school"></i></span>
+                    Centros educativos
+                </button>
+                <div class="dropdownContainer">
+                    <a href="#">Buscar</a>
+                    <a href="#">Favoritos</a>
+                    <a href="#">TOP 10</a>
+                    <a href="#">Centros educativos cercanos</a>
+                </div>
+    
+                <a href="#"><span><i class="far fa-calendar-check"></i></span>Citas</a>
+    
+                <button class="btnDropdown">
+                    <span><i class="fas fa-info"></i></span>
+                    MEP
+                </button>
+                <div class="dropdownContainer">
+                    <a href="#">Contacto</a>
+                    <a href="#">MEP</a>
+                </div>
+            </div>
+    
+            <div class="contenido" style="overflow-y: scroll;">
             <h1>Actividades del centro educativo</h1>
 
             <div class="filtro">
@@ -83,27 +84,17 @@
                 <input type="text" id="txtFiltro" placeholder="Escriba el nombre de la actividad">
             </div>
 
+        <section id="sectionActividades">
 
-            <table id="tblActividades">
-                <thead>
-                    <tr>
-                        <th>Actividad</th>
-                        <th>Descripción</th>
-                        <th>Fecha</th>
-                        <th>Imagen</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-
-            </table><!-- TODO EL CONTENIDO DEL CASO DE USO -->
+        </section>
+          
         </div>
     </main>
     <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        
     <script src="js/servicioInicio.js"></script>
     <script src="js/servicio.actividades.js"></script>
     <script src="js/controlador.listarActividadesPropias.js"></script>

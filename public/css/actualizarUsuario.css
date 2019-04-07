@@ -1,0 +1,172 @@
+
+
+
+#registroPadreFamilia, #registroCentroEducativo{
+    display: none;
+}
+
+
+
+span {
+    border: 1px solid black;
+}
+
+
+#divCantidadHijos{
+    margin-bottom: 20px;
+}
+
+img{
+    max-width: 400px;
+    max-height: 400px;
+}
+
+
+
+main{
+    color : #344955;
+}
+
+.errorInput{
+    border: 2px solid #ED4C67;
+}
+
+h1{
+    margin-top: 20px;
+
+    margin-bottom: 20px;
+
+    font-size: 18px;
+    text-align: center;
+}
+
+.title{
+    margin-top: 40px;
+
+    margin-bottom: 40px;
+
+    font-size: 22px;
+    text-align: center;
+}
+
+ div{
+ 
+    margin-bottom: 20px;
+
+    
+}
+
+ div label{
+    display: inline-block;
+    width: 190px;
+    margin-left: 5%;
+  
+}
+
+
+section.userType{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+input{
+    display: inline-block;
+    width: 200px;
+    height: 18px;
+    outline: none;
+}
+
+textarea{
+    height: 150px;
+    width: 404px;
+    resize: none;
+}
+select{
+    display: inline-block;
+    width: 200px;
+    height: 25px;
+    outline-color: #f9bf33;
+}
+
+.yellowButton{
+    display: block;
+    margin: 0 auto;
+    padding: 14px 50px;
+    background-color: #f9aa33;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 200px;
+}
+
+
+form button:hover{
+    background-color: #f9bf33;
+}
+
+input[type="checkbox"]{
+    width: 25px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+}
+
+input[type="radio"]{
+    width: 25px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 1px;
+
+}
+
+div ul{
+    margin-bottom: 5px;
+    font-size: 14px;
+
+}
+
+#map 
+{ 
+height: 400px; 
+width: 900px;
+display: block;
+margin : 0 auto;
+
+}
+
+
+.column{
+    display: block;
+    margin: 0 auto;
+}
+
+.columns{
+    display: flow-root;
+    
+}
+
+.leftColumn{
+    width: 45%;
+    float: left;
+ 
+}
+
+
+.leftColumn{
+    margin-left: 50px;
+ 
+}
+
+
+.rightColumn{
+    width: 45%;
+    float: right;
+    
+    }

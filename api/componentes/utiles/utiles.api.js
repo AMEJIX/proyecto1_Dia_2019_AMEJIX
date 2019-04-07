@@ -9,7 +9,8 @@ module.exports.registrar = (req, res) =>{
         descripcion : req.body.descripcion,
         cantidad : req.body.cantidad,
         nivel : req.body.nivel,
-        idCE : req.body.idCE
+        idCE : req.body.idCE,
+        nombreLista : req.body.nombreLista
 
     });
 
