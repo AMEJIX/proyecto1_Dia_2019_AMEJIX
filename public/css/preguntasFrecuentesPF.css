@@ -91,7 +91,8 @@ tr{
 }
 
 tr:hover{
-    color: #f9aa33;
+    background: #344955;
+    color: white;
 }
 
 #error {
@@ -100,15 +101,15 @@ tr:hover{
     color: #f9aa33;
 }
 
-button{
-    display: block;
-    margin-top: 45px;
-    padding: 14px 50px;
-    margin: 0 auto;
-    background: #f9aa33;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    margin-bottom: 50px;
-}
+/*button{*/
+/*    display: block;*/
+/*    margin-top: 45px;*/
+/*    padding: 14px 50px;*/
+/*    margin: 0 auto;*/
+/*    background: #f9aa33;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    outline: none;*/
+/*    margin-bottom: 50px;*/
+/*}*/

@@ -7,6 +7,17 @@ body {
     background: #EDF0F5;
 }
 
+*::selection {
+    background: #F9AA33;
+    color: white;
+}
+
+*::-moz-selection {
+    background: #F9AA33;
+    color: white;
+    text-shadow: 1px 1px #fff;
+}
+
 header nav {
     width: 84.3%;
     height: 70px;

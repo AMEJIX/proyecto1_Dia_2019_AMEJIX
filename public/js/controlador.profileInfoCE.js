@@ -1,12 +1,12 @@
 "use strict";
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"));
 
 'use strict';
 const aInfoCE= document.querySelector('#aInfoCE');
 const aMatricula= document.querySelector('#aMatricula');
 const aBecas= document.querySelector('#aBecas');
-const aCitas= document.querySelector('#aCitas');
+const aCitas= document.querySelector('#aAgendarCita');
 const aMaterialInformativo= document.querySelector('#aMaterialInformativo');
 const aNoticias= document.querySelector('#aNoticias');
 const aActividades= document.querySelector('#aActividades'); 
@@ -15,16 +15,9 @@ const aPreguntasFrecuentes = document.querySelector('#aPreguntasFrecuentes');
 // const = document.querySelector('#aEtiquetas');                          
 const volver = document.querySelector('#volver');
 
-let agregarParametroUrl = (pParametro) => {
-        aInfoCE.href = 'informacionPersonalCEVistaOtroUsuario.html?idCE=' + pParametro;
-        aMatricula.href = 'mostrarMatriculaCostos.html?idCE=' + pParametro;
-        aBecas.href = 'mostrarBecas.html?idCE=' + pParametro;
-        aMaterialInformativo.href = 'mostrarMaterialInformativo.html?idCE=' + pParametro;
-        aNoticias.href = 'mostrarNoticias.html?idCE=' + pParametro;
-        aActividades.href ='listarActividades.html?idCE=' + pParametro;
-        aUtiles.href ='listarUtiles.html?idCE=' + pParametro;
-        aPreguntasFrecuentes.href = 'preguntasFrecuentesPF.html?idCE=' + pParametro;
-};
+// let agregarParametroUrl = (pParametro) => {
+//
+// };
 
 let agregarVariosParametroUrl = (pParametro, ...args) => {
     let masParametros = '';
@@ -34,17 +27,25 @@ let agregarVariosParametroUrl = (pParametro, ...args) => {
         i++;
     }
     aCitas.href = 'citas.html?idCE=' + pParametro + masParametros;
+    aInfoCE.href = 'informacionPersonalCEVistaOtroUsuario.html?idCE=' + pParametro+ masParametros;
+    aMatricula.href = 'mostrarMatriculaCostos.html?idCE=' + pParametro+ masParametros;
+    aBecas.href = 'mostrarBecas.html?idCE=' + pParametro+ masParametros;
+    aMaterialInformativo.href = 'mostrarMaterialInformativo.html?idCE=' + pParametro+ masParametros;
+    aNoticias.href = 'mostrarNoticias.html?idCE=' + pParametro+ masParametros;
+    aActividades.href ='listarActividades.html?idCE=' + pParametro+ masParametros;
+    aUtiles.href ='listarUtiles.html?idCE=' + pParametro+ masParametros;
+    aPreguntasFrecuentes.href = 'preguntasFrecuentesPF.html?idCE=' + pParametro+ masParametros;
 };
 
-agregarParametroUrl(IdGeneralCE);
+// agregarParametroUrl(IdGeneralCE);
 agregarVariosParametroUrl(IdGeneralCE, NombreGeneralCE);
 
 function ocultar() {
-    console.log(user.userType);
-    if (user.userType == "padreFamilia") {     
-        // document.querySelector('#aVerCita').style.display = 'none';
+    console.log(usuarioLogeado.userType);
+    if (usuarioLogeado.userType == "padreFamilia") {
+        document.querySelector('#menuCitasEnCE').style.display = 'block';
 
-    }else if(user.userType == "superAdministrador"){
+    }else if(usuarioLogeado.userType == "superAdministrador"){
         document.querySelector('#menuCitasEnCE').style.display = 'none';
         document.querySelector('#aCitas').style.display = 'none';
         

@@ -81,3 +81,77 @@ let registrarPreguntaFrecuente = (idCE, ppregunta, prespuesta) =>{
 
     });
 };
+
+let modificarPregunta = (ppregunta, prespuesta, pid) =>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/modificarPregunta',
+        method : "POST",
+        data : {
+            pregunta: ppregunta,
+            respuesta: prespuesta,
+            id : pid
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+
+    request.done(function(res){
+
+
+        swal.fire({
+            type : 'success',
+            title : 'Pregunta frecuente actualizada',
+            text : res.msg,
+            onClose: () => {
+                // location.reload();
+            }
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'No se pudo modificar la pregunta frecuente',
+            text : res.msg
+        });
+
+    });
+
+};
+
+let deletePregunta = (pid) =>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/eliminarPregunta',
+        method : "POST",
+        data : {
+            id : pid
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+
+    request.done(function(res){
+
+
+        swal.fire({
+            type : 'success',
+            title : 'Pregunta frecuente eliminada',
+            text : res.msg,
+            onClose: () => {
+                // location.reload();
+            }
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'No se pudo eliminar la pregunta frecuente',
+            text : res.msg
+        });
+
+    });
+
+};

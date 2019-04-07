@@ -56,10 +56,108 @@ let getCriteriosBusqueda = () =>{
     return lista;
 };
 
+
+let getCriterioBusqueda = (id) =>{
+    let etiqueta = {};
+    let request = $.ajax(
+        {
+            url: "http://localhost:4000/api/obtenerCriterioBusqueda/" + id,
+            method: "GET",
+            data: {},
+            contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            async: false
+        }
+    );
+
+    request.done(function (res) {
+        etiqueta = Object.assign({}, res.etiqueta);
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        console.log('Ocurrió un error');
+    });
+
+    return etiqueta;
+};
+
+let modificarEtiqueta = (pnombre, pid) =>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/administrador/modificarEtiqueta',
+        method : "POST",
+        data : {
+            nombre : pnombre,
+            id : pid
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+
+    request.done(function(res){
+
+
+        swal.fire({
+            type : 'success',
+            title : 'Etiqueta de búsqueda actualizada',
+            text : res.msg,
+            onClose: () => {
+                // location.reload();
+            }
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'No se pudo modificar la etiqueta',
+            text : res.msg
+        });
+
+    });
+
+};
+
+let deleteEtiqueta = (pid) =>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/administrador/eliminarEtiqueta',
+        method : "POST",
+        data : {
+            id : pid
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+
+    request.done(function(res){
+
+
+        swal.fire({
+            type : 'success',
+            title : 'Etiqueta de búsqueda eliminada',
+            text : res.msg,
+            onClose: () => {
+                // location.reload();
+            }
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'No se pudo eliminar la etiqueta',
+            text : res.msg
+        });
+
+    });
+
+};
+
 let registrarCriterioBusqueda = (pnombre) =>{
     let request = $.ajax(
         {
-            url: "http://localhost:4000/api/registrarCriterioBusqueda",
+            url: "http://localhost:4000/api/administrador/registrarCriterioBusqueda",
             method: "POST",
             data: {
                 nombre : pnombre

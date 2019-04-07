@@ -95,8 +95,8 @@ module.exports.listarMaterial = (req, res) => {
     )
 };
 
-module.exports.actualizar = function(req, res) {
-    materialModel.findByIdAndUpdate(req.body.id, {$set: req.body},
+// module.exports.actualizar = function(req, res) {
+//     materialModel.findByIdAndUpdate(req.body.id, {$set: req.body},
         
-    )
-}
+//     )
+// }

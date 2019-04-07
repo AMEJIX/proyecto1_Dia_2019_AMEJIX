@@ -24,18 +24,6 @@ h1 {
     outline-color: #f9aa33;
 }
 
-div button{ 
-    margin: 0% auto; 
-    margin-left: 42%; 
-    background: #344955; 
-    width: 210px; 
-    height: 40px; 
-    border: none; 
-    color: white; 
-    margin-top: 25px; 
-    font-size: 20px; 
-    border-radius: 5px; 
-} 
 .error_input{ 
     border: 2px 
     solid #ED4C67; 

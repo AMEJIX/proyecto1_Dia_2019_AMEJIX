@@ -3,13 +3,11 @@
 }
 
 #error{
-    display: inline-block;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 125px;
     margin-bottom: 100px;
     font-size: 20px;
     color: #344955;
-    width: 50%;
 }
 
 #cajaImagen{
@@ -21,9 +19,18 @@
 h1{
     font-size: 50px;
     display: block;
-    margin-top: 50px;
+    margin-top: 150px;
     margin-bottom: 100px;
     text-align: center;
     color: #f9aa33;
-    /*text-shadow: -3px -2px 10px #344955;*/
+}
+
+a {
+    display: inline-block;
+    text-align: center;
+    color: #344955;
+}
+
+a:hover {
+    color: #f9aa33;
 }

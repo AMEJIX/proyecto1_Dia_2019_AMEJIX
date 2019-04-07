@@ -101,7 +101,7 @@ form div label{
 }
 
 .respuesta{
-   
+    margin-top: 20px;
     font-size: 18px;
 }
 
@@ -111,10 +111,11 @@ tr{
 }
 
 tr:hover{
-    color: #f9aa33;
+    background: #344955;
+    color: white;
 }
 
-button{
+button#btnEnviar{
     display: block;
     margin-top: 45px;
     padding: 14px 50px;
@@ -134,4 +135,19 @@ button{
 #tblPreguntasFrecuentes{
     width: 80%;
     margin-left: 50px;
+}
+
+.awesome_images{
+    display: none;
+    float: right;
+    height: 100%;
+}
+
+.awesome_images i{
+    vertical-align: center;
+    horiz-align: center;
+}
+
+.awesome_images i:hover{
+    color: #f9aa33;
 }

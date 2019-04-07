@@ -1,31 +1,35 @@
-"use strict"
+"use strict";
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// if (user == undefined) {
+//     let user = JSON.parse(sessionStorage.getItem("usuario"));
+// }
+
+let userLog = JSON.parse(sessionStorage.getItem("usuario"));
 
 function ocultar() {
-    console.log(user.userType);
-    if (user.userType == "padreFamilia") {
+    console.log(userLog.userType);
+    if (userLog.userType == "padreFamilia") {
         document.querySelector('#menuAdministrativo').style.display = 'none';
         document.querySelector('#menuInformativo').style.display = 'none';
-        document.querySelector('#menuReportes').style.display = 'none';
+        // document.querySelector('#menuReportes').style.display = 'none';
         document.querySelector('#aRegistrarCE').style.display = 'none';
         document.querySelector('#verPadres').style.display = 'none';
         document.querySelector('#aPreguntasCE').style.display = 'none';
         
         
        
-    } else if (user.userType == "centroEducativo") {
+    } else if (userLog.userType == "centroEducativo") {
         document.querySelector('#menuAdministrativo').style.display = 'none';
         document.querySelector('#menuInfoCE').style.display = 'none';
-        document.querySelector('#aHijos').style.display = 'none';
-        document.querySelector('#menuCitas').style.display = 'none';
+        // document.querySelector('#aHijos').style.display = 'none';
+        document.querySelector('#menuCitasPF').style.display = 'none';
         document.querySelector('#verPadres').style.display = 'none';
         document.querySelector('#aPreguntasPF').style.display = 'none';
 
 
-    }else if(user.userType == "superAdministrador"){
+    }else if(userLog.userType == "superAdministrador"){
         document.querySelector('#menuInformativo').style.display = 'none';
-        document.querySelector('#menuCitas').style.display = 'none';
+        document.querySelector('#menuCitasPF').style.display = 'none';
         document.querySelector('#aFavoritos').style.display = 'none';
         document.querySelector('#aCEcercanos').style.display = 'none';
         document.querySelector('#verInfoMep').style.display = 'none';

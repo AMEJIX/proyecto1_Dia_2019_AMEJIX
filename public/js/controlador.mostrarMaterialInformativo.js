@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 const tabla = document.querySelector('#tblMaterialInformativo tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 
@@ -8,7 +8,13 @@ let idUsuarioCE = user._id;
 if(user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
 } else {
+    
+}
 
+if (user.userType = "superAdministrador") {
+    window.location.href = 'loSentimos.html';
+} else {
+    
 }
 
 let temas = listarMaterialUsuario(idUsuarioCE);
