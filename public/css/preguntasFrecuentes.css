@@ -163,13 +163,17 @@ button#btnEnviar{
 }
 
 .modoCambio{
-    background: #F9AA33;
-    color: #ffffff;
+    /*border: 2px #F9AA33 solid;*/
+    background: #ffffff;
+
+    /*color: #ffffff;*/
 }
 
 .modoCambio:hover{
-    background: #F9AA33;
-    color: #ffffff;
+    /*border: 2px #F9AA33 solid;*/
+    background: #ffffff;
+
+    /*color: #ffffff;*/
 }
 
 .modoCambio::selection{

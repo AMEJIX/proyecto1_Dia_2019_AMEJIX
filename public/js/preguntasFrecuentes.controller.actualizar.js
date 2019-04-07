@@ -5,7 +5,7 @@
 let actualizarPregunta = (ppregunta, prespuesta,pidCE, pid, ppreguntaAnterior, prespuestaAnterior) =>{
 
     Swal.fire({
-        title: 'Está seguro que desea modificar la pregunta?',
+        title: '¿Está seguro que desea modificar la pregunta?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#f9aa33',

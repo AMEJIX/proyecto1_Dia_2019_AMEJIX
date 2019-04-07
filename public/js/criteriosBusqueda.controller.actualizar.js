@@ -3,7 +3,7 @@
 let actualizarEtiqueta = (pnombre, pid, pnombreAnterior) =>{
 
     Swal.fire({
-        title: 'Está seguro que desea modificar la etiqueta?',
+        title: '¿Está seguro que desea modificar la etiqueta?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#f9aa33',
