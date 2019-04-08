@@ -17,8 +17,10 @@ let eliminarUsuario = (nombre, id) =>{
         swal.fire({
             type: 'success',
             title: 'Eliminar',
-            text: res.msg
-
+            text: res.msg,
+            onClose: () =>{
+                location.reload();
+            }
         });
      });
 
