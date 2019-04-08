@@ -8,10 +8,12 @@ const inputFiltro = document.querySelector("#txtFiltro");
 let mostrarUtiles = () =>{
     let nivel = selectNivel.value;
     let idSA = "5c9947ace0fb7a30848f605a";
-    if(validar() == false){
+
+    if (validar() == false){
         let utiles = listarUtilesNivel(nivel, idSA);
         let filtro = inputFiltro.value;
         tabla.innerHTML = '';
+        
         if(utiles !== "No se encontraron útiles escolares registrados"){
             for(let i=0; i<utiles.length; i++){
                 if(utiles[i]['nombreLista'].toLowerCase().includes(filtro.toLowerCase())){
@@ -22,9 +24,9 @@ let mostrarUtiles = () =>{
                     fila.insertCell().innerHTML = utiles [i]  ['cantidad'];
                 }      
             }
-        }else{
+        }else{                
             tabla.innerHTML = 'No existen útiles registrados para este nivel';  
-        }
+        }  
     }
     
   

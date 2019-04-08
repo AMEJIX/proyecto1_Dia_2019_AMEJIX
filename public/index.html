@@ -265,13 +265,17 @@
             <h1>Lista de útiles</h1>
             <h2>Oficial del MEP</h2>
 
-            <form>
+            <div class="filtroDerecha">
+                <label for="txtFiltro">Buscar</label>
+                <input type="text" id="txtFiltro" placeholder="Escriba el nombre del artículo">
+            </div>
 
-                <div>
-                    <label for="selectNivel">Nivel escolar</label>
-                    <select id="selectNivel">
+            <div class="filtroIzquierda">
+                <label for="selectNivel">Nivel escolar</label>
+                <div class="select">
+                    <select name="slct" id="selectNivel">
                         <optgroup label="Escuela"></optgroup>
-                        <option>Seleccione nivel</option>
+                        <option value="">Seleccione nivel</option>
                         <option value="1">Primero</option>
                         <option value="2">Segundo</option>
                         <option value="3">Tercero</option>
@@ -287,11 +291,13 @@
                         <option value="12">Duodécimo</option>
                     </select>
                 </div>
-            </form>
+            </div>
+
 
             <table id="tblUtiles">
                 <thead>
                     <tr>
+                        <th>Lista</th>
                         <th>Nombre del útil</th>
                         <th>Descripción</th>
                         <th>Cantidad</th>
