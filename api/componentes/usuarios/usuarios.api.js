@@ -155,59 +155,61 @@ function correoCE(pemail, pcentroEducativo, pcontrasena) {
 /************************** Actualizar Usuario**************************/
 
 module.exports.actualizar = function (req, res) {
-
+    console.log('api')
+    console.log(req.body.id)
     modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
         function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo actualizar el usuario' })
             } else {
 
-                            /**************************Bitacora/**************************/
-            if (req.body.userType == 'padreFamilia') {
+                /**************************Bitacora/**************************/
+                if (req.body.userType == 'padreFamilia' || req.body.userType == 'superAdimistrador') {
 
-                var diaActual = new Date();
-                var dd = diaActual.getDate();
-                var mm = diaActual.getMonth();
-                var yyyy = diaActual.getFullYear();
-                var hora = diaActual.getHours();
-                var minutos = diaActual.getMinutes();
-                var segundos = diaActual.getSeconds();
-
-
-                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
-
-                let nuevaBitacora = new modeloBitacora({
-                    usuario: req.body.nombre,
-                    tipoDeMovimiento: "Modificación de información usuario",
-                    fecha: diaActual,
-                })
-                nuevaBitacora.save();
-
-            } else if (req.body.userType == 'centroEducativo') {
-
-                var diaActual = new Date();
-                var dd = diaActual.getDate();
-                var mm = diaActual.getMonth();
-                var yyyy = diaActual.getFullYear();
-                var hora = diaActual.getHours();
-                var minutos = diaActual.getMinutes();
-                var segundos = diaActual.getSeconds();
+                    var diaActual = new Date();
+                    var dd = diaActual.getDate();
+                    var mm = diaActual.getMonth();
+                    var yyyy = diaActual.getFullYear();
+                    var hora = diaActual.getHours();
+                    var minutos = diaActual.getMinutes();
+                    var segundos = diaActual.getSeconds();
 
 
-                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+                    diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+                    let nuevaBitacora = new modeloBitacora({
+                        usuario: req.body.nombre,
+                        tipoDeMovimiento: "Modificación de información usuario",
+                        fecha: diaActual,
+                    })
+                    nuevaBitacora.save();
+
+                } else if (req.body.userType == 'centroEducativo') {
+
+                    var diaActual = new Date();
+                    var dd = diaActual.getDate();
+                    var mm = diaActual.getMonth();
+                    var yyyy = diaActual.getFullYear();
+                    var hora = diaActual.getHours();
+                    var minutos = diaActual.getMinutes();
+                    var segundos = diaActual.getSeconds();
 
 
-                let nuevaBitacora = new modeloBitacora({
-                    usuario: req.body.centroEducativo,
-                    tipoDeMovimiento: "Modificación de información centro educativo",
-                    fecha: diaActual,
+                    diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
 
-                })
-                nuevaBitacora.save();
-            }
 
-            /**************************Fin Bitacora**************************/
-                
+                    let nuevaBitacora = new modeloBitacora({
+                        usuario: req.body.centroEducativo,
+                        tipoDeMovimiento: "Modificación de información centro educativo",
+                        fecha: diaActual,
+
+                    })
+                    nuevaBitacora.save();
+                } 
+
+
+                /**************************Fin Bitacora**************************/
+
                 res.json({ success: true, msg: 'Se actualizó el usuario' })
             }
         }
@@ -447,7 +449,7 @@ module.exports.eliminarUsuario = function (req, res) {
             } else {
 
 
-                
+
                 /**************************Bitacora*/
                 var diaActual = new Date();
                 var dd = diaActual.getDate();

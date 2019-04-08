@@ -4,10 +4,16 @@
 //     let user = JSON.parse(sessionStorage.getItem("usuario"));
 // }
 
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 let userLog = JSON.parse(sessionStorage.getItem("usuario"));
 
+if (user.estado != "Activo"){
+    sessionStorage.setItem('usuario', null);
+    window.location.href = 'loSentimosEstadoNoPermitido.html';
+}
+
 function ocultar() {
-    console.log(userLog.userType);
+    
     if (userLog.userType == "padreFamilia") {
         document.querySelector('#menuAdministrativo').style.display = 'none';
         document.querySelector('#menuInformativo').style.display = 'none';
