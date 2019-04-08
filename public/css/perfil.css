@@ -20,6 +20,7 @@ body {
 header nav {
     width: 84.3%;
     height: 70px;
+    margin-bottom: 1%;
     background: white;
     float: right;
     -webkit-box-shadow: 2px 0 4px rgba(0, 0, 0, .08);
