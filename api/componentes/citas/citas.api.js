@@ -190,3 +190,13 @@ module.exports.listarCitasCE = (req, res) =>{
         }
     );
 };
+
+module.exports.cancelar = (req, res) =>{
+    modeloCitas.findOneAndDelete(req.body.id, error =>{
+        if (error){
+            res.json({success: false, msg : 'No se pudo cancelar la cita'});
+        } else {
+            res.json({success: true, msg : 'Se canceló la cita con éxito'});
+        }
+    });
+};

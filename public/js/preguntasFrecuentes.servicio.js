@@ -166,7 +166,7 @@ let deletePregunta = (pid) =>{
             title : 'Pregunta frecuente eliminada',
             text : res.msg,
             onClose: () => {
-                // location.reload();
+                location.reload();
             }
         });
 

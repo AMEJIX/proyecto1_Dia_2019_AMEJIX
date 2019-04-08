@@ -137,7 +137,7 @@ let deleteEtiqueta = (pid) =>{
             title : 'Etiqueta de búsqueda eliminada',
             text : res.msg,
             onClose: () => {
-                // location.reload();
+                location.reload();
             }
         });
 

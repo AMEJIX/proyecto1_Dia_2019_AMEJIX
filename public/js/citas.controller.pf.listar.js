@@ -38,6 +38,8 @@ function mostrarCitas() {
 
                 let fila = tabla.insertRow();
 
+                fila.id = listaCitas[i]['_id'];
+
                 let fechaHora = fila.insertCell();
 
                 fechaHora.classList.add('fechaHora');
@@ -49,6 +51,17 @@ function mostrarCitas() {
                 institucion.classList.add('institucion');
 
                 institucion.innerHTML = listaCitas[i]['nombreCentroEducativo'];
+
+                let cancelar = fila.insertCell();
+
+                cancelar.classList.add('celdaCancelar');
+
+                cancelar.insertAdjacentHTML('beforeend', `<div class="opciones" id="opciones_${listaCitas[i]['_id']}"><div class="awesome_images"></i><i class="fas fa-trash-alt eliminar" id="eliminar_${cancelar.id}"></i></div></div>`);
+
+                document.getElementById(`opciones_${listaCitas[i]['_id']}`).addEventListener('click', cancelar =>{
+                    cancelarCita(fila.id);
+                });
+
             } else {
                 if (document.getElementById('error')) eliminarMensaje();
                 insertarMensaje(`No se encontró ninguna cita agendada con ${busqueda}`);

@@ -197,7 +197,7 @@ td:hover{
     background-color: #344955;
     /*color: #f9aa33;*/
     color: #ffffff;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
 }
 
@@ -241,6 +241,6 @@ i:hover{
 }
 
 .modoCambio::selection{
-    background: #344955;
-    color: white;
+    background: white;
+    color: #344955;
 }

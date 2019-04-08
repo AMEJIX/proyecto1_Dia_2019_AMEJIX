@@ -88,3 +88,38 @@ let registrarCita = (pfechaHora, pnombreCE, pnombrePF, pcorreoPF) =>{
         );
     });
 };
+
+let eliminarCita = (pid) =>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/padreFamilia/cancelarCita',
+        method : "POST",
+        data : {
+            id : pid
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+
+    request.done(function(res){
+
+
+        swal.fire({
+            type : 'success',
+            title : 'Cita cancelada',
+            text : res.msg,
+            onClose: () => {
+                location.reload();
+            }
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'No se pudo cancelar la cita',
+            text : res.msg
+        });
+
+    });
+};

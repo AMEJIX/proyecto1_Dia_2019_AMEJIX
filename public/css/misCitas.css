@@ -56,27 +56,57 @@ table#tblCitas{
 #txtFiltrar, #lblFiltrar{
     font-size: 14px;
 }
-thead{
-    background-color: #f9aa33;
+/*thead{*/
+/*    background-color: #f9aa33;*/
+/*}*/
+
+/*table#tblCitas thead th, table#tblCitas tbody tr td{*/
+/*    width: 25%;*/
+/*    height: 80px;*/
+/*    vertical-align: middle;*/
+/*    text-align: center;*/
+/*    border: 1px #344955 solid;*/
+/*}*/
+
+
+/*th{*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*td:hover{*/
+/*    background-color: #344955;*/
+/*    color: white;*/
+/*}*/
+#tblCitas{
+border-collapse: collapse;
+width: 90%;
+margin: 0 auto;
+margin-top: 40px;
+margin-bottom: 40px;
 }
 
-table#tblCitas thead th, table#tblCitas tbody tr td{
-    width: 25%;
-    height: 80px;
-    vertical-align: middle;
-    text-align: center;
-    border: 1px #344955 solid;
-}
-
-
-th{
-    color: #ffffff;
-}
-
-td:hover{
-    background-color: #344955;
+th {
+    background: #f9aa33;
     color: white;
 }
+
+td {
+    color: #2c3e50;
+    vertical-align: middle;
+}
+
+td:hover {
+    color: white;
+    background: #4a6572;
+}
+
+td, th {
+    text-align: center;
+    padding: 12px 1px;
+    border: #2c3e50 solid 1px;
+    vertical-align: middle;
+}
+
 
 .institucion, .fechaHora, .padre{
     font-family: 'Raleway', sans-serif;
@@ -90,4 +120,20 @@ td:hover{
     font-size: 20px;
     color: #f9aa33;
     width: 400px;
+}
+
+.celdaCancelar{
+    width: 50px;
+}
+
+.awesome_images{
+    text-align: center;
+}
+.awesome_images i{
+    display: inline-block;
+    font-size: 20px;
+}
+
+.awesome_images i:hover{
+    color: #f9aa33;
 }

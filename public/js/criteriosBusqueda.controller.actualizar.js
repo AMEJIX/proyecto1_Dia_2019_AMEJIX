@@ -17,7 +17,7 @@ let actualizarEtiqueta = (pnombre, pid, pnombreAnterior) =>{
 
             // document.getElementById(`etiqueta_${pid}`).style.background = 'inherit';
         } else {
-            if (pnombre === pnombreAnterior || pnombre === pnombreAnterior || !(result.value)){
+            if (pnombre === pnombreAnterior || pnombre === '' || pnombre === pnombreAnterior || !(result.value)){
                 swal.fire({
                     title: 'No se produjeron cambios',
                     type: 'info',
