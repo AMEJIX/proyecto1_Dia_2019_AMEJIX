@@ -4,7 +4,7 @@ let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tabla = document.querySelector("#tblArticulos tbody");
 const inputFiltro = document.querySelector('#txtFiltro');
-const IdGeneralCE = user._id;
+// const IdGeneralCE = user._id;
 
 
 if(user.userType == 'padreFamilia'){

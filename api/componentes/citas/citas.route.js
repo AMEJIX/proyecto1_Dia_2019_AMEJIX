@@ -38,6 +38,12 @@ router.route('/centroEducativo/listarCitas/:nombreCE')
         }
     );
 
+router.route('/padreFamilia/cancelarCita')
+    .post(
+        (req, res) =>{
+            apiCitas.cancelar(req, res);
+        }
+    );
 
 
 module.exports = router;

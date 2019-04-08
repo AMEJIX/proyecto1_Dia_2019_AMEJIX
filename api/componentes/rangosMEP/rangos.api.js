@@ -51,3 +51,45 @@ module.exports.listarLosRangos = (req, res)=>{
         }
     )
 }; 
+
+
+module.exports.buscarRango = function (req, res){
+    modeloRango.find({_id : req.body._id}).then(
+        function(rango){
+            if(rango){
+                res.json({success: true, rango : rango});
+            }else{
+                res.json({success: false, rango : rango});
+            }
+        }
+
+    );
+
+};
+
+
+module.exports.actualizar = function(req, res){
+   
+    modeloRango.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar el rango'});
+            }else{
+                res.json({success: true , msg : 'El rango se actualizó con éxito'});
+            }
+        }
+    
+    );
+}
+
+module.exports.eliminar = function(req, res){
+    modeloRango.findByIdAndDelete(req.body.id,
+        function(error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo eliminar el rango'});
+            }else{
+                res.json({success: true , msg : 'El rango se eliminó con éxito'});
+            }
+        })
+}
+

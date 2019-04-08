@@ -62,57 +62,107 @@ let listarCriterios= () =>{
 };
 
 
+let buscarCriterio = (_id) => {
+  let criterio = [];
 
+  let request = $.ajax({
+    url: "http://localhost:4000/api/buscarCriterio/"+ _id,
+    method: "GET",
+    data: {
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
+  });
 
-
-
-
-
-  // let registrarCriterio = (pcriterio, pdescripcion, ppuntaje) =>{
-
-  //   // let listaTodosCriterios = listarCriterios();
-
-  //   // console.log(listaTodosCriterios.length);
-  //   // let sumaPuntaje = 0;
-  //   // for (let i = 0; i < listaTodosCriterios.length; i++){
-  //   //     sumaPuntaje = sumaPuntaje + listaTodosCriterios [i] ['puntaje'];
-  //   // }
-
-  //   // if(sumaPuntaje < 100){
-  //     let request = $.ajax({
-  //     url: "http://localhost:4000/api/registrarCriterio",
-  //     method: "POST",
-  //     data: {
-  //         criterio : pcriterio,
-  //         descripcion : pdescripcion,
-  //         puntaje : ppuntaje
-  //     },
-  //     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-  //     dataType : "json"
-
-  // });
-  // request.done(function( msg ) {
-  //     swal.fire({
-  //         type: 'success',
-  //         title: 'Criterio registrado correctamente',
-  //         text: `El ${pcriterio} se registró con el puntaje de ${ppuntaje}`
-  //     });
-  //   });
-     
-  //   request.fail(function( jqXHR, textStatus ) {
-      
-  //   });
-
-    // }
-    // else{
-    //   swal.fire({
-    //     type: 'warning',
-    //     title: 'El rango no se registró correctamente',
-    //     text: 'El puntaje no se permite'
-    // });
-    // }
+  request.done(function (res) {
+      criterio = res.criterio;
     
-// };
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+    
+  });
+  return criterio;
+ 
+};
+
+let actualizarCriterio = (pcriterio, pdescripcion, ppuntaje, p_id) =>{
+  let request = $.ajax({
+      url : 'http://localhost:4000/api/actualizarCriterio',
+      method : "POST",
+      data : {
+        criterio : pcriterio,
+        descripcion : pdescripcion,
+        puntaje : ppuntaje,    
+          id : p_id
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+  request.done(function(res){     
+     
+      swal.fire({
+          type : 'success',
+          title : 'Criterio actualizado con éxito',
+          text : res.msg,
+          onClose: () => {
+              window.location.href = 'listarCriteriosMEP.html';
+            }    
+      });
+
+  });
+
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};
+
+
+
+let eliminarCriterio = (p_id) =>{
+  let request = $.ajax({
+      url : 'http://localhost:4000/api/eliminarCriterio',
+      method : "POST",
+      data : {         
+          id : p_id
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+  request.done(function(res){     
+     
+      swal.fire({
+          type : 'success',
+          title : 'Criterio eliminado con éxito',
+          text : res.msg,
+          onClose: () => {
+              window.location.href = 'listarCriteriosMEP.html';
+            }    
+      });
+
+  });
+
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};
+
+
+
+
 
 
 

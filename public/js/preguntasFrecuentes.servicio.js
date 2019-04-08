@@ -130,7 +130,7 @@ let modificarPregunta = (ppregunta, prespuesta,pidCE, pid) =>{
             title : 'Pregunta frecuente actualizada',
             text : res.msg,
             onClose: () => {
-                // location.reload();
+                location.reload();
             }
         });
 
@@ -166,7 +166,7 @@ let deletePregunta = (pid) =>{
             title : 'Pregunta frecuente eliminada',
             text : res.msg,
             onClose: () => {
-                // location.reload();
+                location.reload();
             }
         });
 

@@ -8,14 +8,14 @@ h1 {
     color: #2c3e50;
 }
 
-.filtrar {
+.inputStandard {
     float: right;
     margin-top: 40px;
     margin-right: 5%;
 }
 
 #txtFiltro{
-    width: 170px;
+    width: 205px;
 }
 
 .centroEducativo {

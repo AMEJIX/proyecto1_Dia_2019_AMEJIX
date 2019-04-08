@@ -101,7 +101,7 @@ let modificarEtiqueta = (pnombre, pid) =>{
             title : 'Etiqueta de búsqueda actualizada',
             text : res.msg,
             onClose: () => {
-                // location.reload();
+                location.reload();
             }
         });
 
@@ -137,7 +137,7 @@ let deleteEtiqueta = (pid) =>{
             title : 'Etiqueta de búsqueda eliminada',
             text : res.msg,
             onClose: () => {
-                // location.reload();
+                location.reload();
             }
         });
 

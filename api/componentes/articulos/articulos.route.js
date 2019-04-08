@@ -4,15 +4,24 @@ const express = require('express');
 const router = express.Router();
 const apiArticulos = require('./articulos.api');
 
-router.param('idDelArticulo', function(req, res, next, idDelArticulo){
-    req.body.idDelArticulo = idDelArticulo;
+router.param('_id', function(req, res, next, _id){
+    req.body._id = _id;
     next();
 });
+
+
 
 router.route('/registrarArticulo')
 .post(
     function(req, res){
         apiArticulos.registrar(req, res);
+    }
+);
+
+router.route('/actualizarArticulo')
+.post(
+    function(req , res){
+        apiArticulos.actualizar(req, res);
     }
 );
 
@@ -23,11 +32,21 @@ router.route('/listarArticulo')
     }
 );
 
-router.route('/buscarArticulo/:idDelArticulo')
+
+
+router.route('/buscarArticulo/:_id')
 .get(
     function(req, res){
-        apiArticulos.buscarArticuloId(req, res);
+        apiArticulos.buscarArticulo(req, res);
     }
 );
+
+
+router.route('/eliminarArticulo')
+    .post(
+        (req, res) =>{
+            apiArticulos.eliminar(req, res);
+        }
+    );
 
 module.exports = router;

@@ -2,196 +2,295 @@
 <html lang="es">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Centro educativo</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/perfil.css">
-       
-        <link rel="stylesheet" href="css/profileInfo.css">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Centro educativo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/perfil.css">
+
+    <!-- <link rel="stylesheet" href="css/profileInfo.css"> -->
+    <link rel="stylesheet" href="css/profileCE.css">
+    <link rel="stylesheet" href="css/listarArticulos.css">
+
 
 </head>
 
 <body>
 
-        <header>
-                <nav>
-        
-                    <div class="userInfo">
-                        <div class="userPhoto"></div>
-                        <div class="nameWrapper">
-                            <h4></h4>
-                        </div>
-        
-                        <div class="subMenu">
-                            <a href="userProfileInfo.html">Perfil</a>
-                            <a href="informacionPersonalUsuario.html">Información Personal</a>
-                            <a href="" id="logOut">Cerrar sesión</a>
-                            </ul>
-                        </div>
-                    </div>
-        
-                </nav>
-            </header>
+    <header>
+        <nav>
+
+            <div class="userInfo">
+                <div class="userPhoto"></div>
+                <div class="nameWrapper">
+                    <h4></h4>
+                </div>
+
+                <div class="subMenu">
+                    <a href="userProfileInfo.html">Perfil</a>
+                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="" id="logOut">Cerrar sesión</a>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
     <main>
 
 
-            <div class="sideNav">
-                    <a class="aBack" href="userProfileInfo.html">
-                        <div class="sicenLogo"></div>
-                    </a>
-                    <div class="line"></div>
-        
-                    <button class="btnDropdown" id="menuInformativo">
-                        <span><i class="fas fa-info"></i></span>
-                        Información
-                    </button>
-                    <div class="dropdownContainer">
-                        <a href="mostrarMatriculaCostos.html">Matrícula</a>
-                        <a href="mostrarBecas.html">Becas</a>
-                        <a href="misCitasCE.html">Citas</a>
-                        <a href="mostrarMaterialInformativo.html">Material Informativo</a>
-                        <a href="mostrarNoticias.html">Noticias</a>
-                        <a href="listarActividadesPropiasCE.html">Actividades</a>
-                        <a href="listarArticulosPropios.html">Artículos escolares</a>
-                        <a href="listarUtilesPropiosCE.html">Lista de útiles</a>
-                        <a href="criteriosBusqueda.html">Etiquetas</a>
-                        <a href="preguntasFrecuentesCE&Admin.html" id="aPreguntasCE">Preguntas frecuentes</a>
-                        <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>                
-                    </div>
-        
-                    <button class="btnDropdown" id="menuAdministrativo">
-                        <span><i class="fas fa-clipboard-list"></i></span>
-                        Administrativo
-                    </button>
-                    <div class="dropdownContainer">
-                        <a href="bitacora.html">Bitácora</a>
-                        <a href="#">Notificaciones</a>
-                        <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
-                        <a href="listarRangosMEP.html">Rangos de evaluación</a>
-                        <a href="listarArticulosPropios.html">Artículos escolares</a>
-                        <a href="listarUtilesOficiales.html">Lista de útiles</a>
-                        <a href="criteriosBusqueda.html">Etiquetas</a>
-                    </div>
-        
-                    <button class="btnDropdown" id="menuInfoCE">
-                        <span><i class="fas fa-school"></i></span>
-                        Centros educativos
-                    </button>
-                    <div class="dropdownContainer">
-                        <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
-                        <a href="listarCentrosEducativos.html">Buscar</a>
-                        <a href="#" id="aFavoritos">Favoritos</a>
-                        <a href="#">Top</a>
-                        <a href="#" id="aEvaluarCE">Evaluar centro educativo</a>
-                        <a href="#" id="aActivarDesCE">Activar o desactivar</a>
-                        <a href="#" id="aEliminarCE">Eliminar</a>
-                        <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
-                    </div>
-        
-                    <button class="btnDropdown" id="verPadres">
-                        <span><i class="fas fa-user-friends"></i></span>
-                        Padres de familia
-                    </button>
-                    <div class="dropdownContainer">
-                        <a href="listarPadresFamilia.html">Buscar</a>
-                        <a href="#" id="aActivarDesPF">Activar o desactivar</a>
-                        <a href="#" id="aEliminarPF">Eliminar</a>
-                    </div>
-        
-                    <a href="misCitasPF.html" id="menuCitasPF"><span><i class="far fa-calendar-check"></i></span>Citas
-                        agendadas</a>
-        
-                    <!-- <a href="listarPadresFamilia.html" id="verPadres"><span><i class="fas fa-search"></i></span>Buscar
+        <div class="sideNav">
+            <a class="aBack" href="userProfileInfo.html">
+                <div class="sicenLogo"></div>
+            </a>
+            <div class="line"></div>
+
+            <button class="btnDropdown" id="menuInformativo">
+                <span><i class="fas fa-info"></i></span>
+                Información
+            </button>
+            <div class="dropdownContainer">
+                <a href="mostrarMatriculaCostos.html">Matrícula</a>
+                <a href="mostrarBecas.html">Becas</a>
+                <a href="misCitasCE.html">Citas</a>
+                <a href="mostrarMaterialInformativo.html">Material Informativo</a>
+                <a href="mostrarNoticias.html">Noticias</a>
+                <a href="listarActividadesPropiasCE.html">Actividades</a>
+                <a href="listarArticulosPropios.html">Artículos escolares</a>
+                <a href="listarUtilesPropiosCE.html">Lista de útiles</a>
+                <a href="criteriosBusqueda.html">Etiquetas</a>
+                <a href="preguntasFrecuentesCE&Admin.html" id="aPreguntasCE">Preguntas frecuentes</a>
+                <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>
+            </div>
+
+            <button class="btnDropdown" id="menuAdministrativo">
+                <span><i class="fas fa-clipboard-list"></i></span>
+                Administrativo
+            </button>
+            <div class="dropdownContainer">
+                <a href="bitacora.html">Bitácora</a>
+                <a href="#">Notificaciones</a>
+                <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
+                <a href="listarRangosMEP.html">Rangos de evaluación</a>
+                <a href="listarArticulosPropios.html">Artículos escolares</a>
+                <a href="listarUtilesOficiales.html">Lista de útiles</a>
+                <a href="criteriosBusqueda.html">Etiquetas</a>
+            </div>
+
+            <button class="btnDropdown" id="menuInfoCE">
+                <span><i class="fas fa-school"></i></span>
+                Centros educativos
+            </button>
+            <div class="dropdownContainer">
+                <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
+                <a href="listarCentrosEducativos.html">Buscar</a>
+                <a href="#" id="aFavoritos">Favoritos</a>
+                <a href="#">Top</a>
+                <a href="#" id="aEvaluarCE">Evaluar centro educativo</a>
+                <a href="#" id="aActivarDesCE">Activar o desactivar</a>
+                <a href="#" id="aEliminarCE">Eliminar</a>
+                <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
+            </div>
+
+            <button class="btnDropdown" id="verPadres">
+                <span><i class="fas fa-user-friends"></i></span>
+                Padres de familia
+            </button>
+            <div class="dropdownContainer">
+                <a href="listarPadresFamilia.html">Buscar</a>
+                <a href="#" id="aActivarDesPF">Activar o desactivar</a>
+                <a href="#" id="aEliminarPF">Eliminar</a>
+            </div>
+
+            <a href="misCitasPF.html" id="menuCitasPF"><span><i class="far fa-calendar-check"></i></span>Citas
+                agendadas</a>
+
+            <!-- <a href="listarPadresFamilia.html" id="verPadres"><span><i class="fas fa-search"></i></span>Buscar
                         padres de familia</a> -->
-        
-                    <button class="btnDropdown" id="verInfoMep">
-                        <span><i class="fas fa-university"></i></span>
-                        MEP
-                    </button>
-                    <div class="dropdownContainer">
-                        <a href="listarInfoMep.html">Contacto</a>
-                        <a href="listarUtilesOficiales.html">Lista oficial de útiles</a>
-                    </div>
-        
-                    <button class="btnDropdown" id="reportesSA">
-                        <span><i class="fas fa-file-alt"></i></i></span>
-                        Reportes
-                    </button>
-                    <div class="dropdownContainer">
-                        <a href="#">Ranking MEP</a>
-                        <a href="#">Visitas</a>
-                        <a href="#">Hijos</a>
-                        <a href="#">Ranking por padres de familia</a>
-                    </div>
-        
-                    <button class="btnDropdown" id="reportesCE">
-                        <span><i class="fas fa-file-alt"></i></span>
-                        Reportes
-                    </button>
-                    <div class="dropdownContainer">
-                        <a href="#">Ranking MEP</a>
-                        <a href="#">Visitas</a>
-                        <a href="#">Ranking por padres de familia</a>
-                    </div>
-        
-                </div>
+
+            <button class="btnDropdown" id="verInfoMep">
+                <span><i class="fas fa-university"></i></span>
+                MEP
+            </button>
+            <div class="dropdownContainer">
+                <a href="listarInfoMep.html">Contacto</a>
+                <a href="listarUtilesOficiales.html">Lista oficial de útiles</a>
+            </div>
+
+            <button class="btnDropdown" id="reportesSA">
+                <span><i class="fas fa-file-alt"></i></i></span>
+                Reportes
+            </button>
+            <div class="dropdownContainer">
+                <a href="#">Ranking MEP</a>
+                <a href="#">Visitas</a>
+                <a href="#">Hijos</a>
+                <a href="#">Ranking por padres de familia</a>
+            </div>
+
+            <button class="btnDropdown" id="reportesCE">
+                <span><i class="fas fa-file-alt"></i></span>
+                Reportes
+            </button>
+            <div class="dropdownContainer">
+                <a href="#">Ranking MEP</a>
+                <a href="#">Visitas</a>
+                <a href="#">Ranking por padres de familia</a>
+            </div>
+
+        </div>
 
         <!-- el menú que estaba antes y que es lo que pude hacer el SA en pefil PF -->
-  
-                <!----------------------Fin opción---------------------->
-           
-            <div class="opcion"  id="menuInformativo">
-               
-                <h3>Informacion</h3>
-                <div class="subOpcion">
-                    <a href="" id="aInfoCE">Información del Centro educativo</a>
-                    <a href="" id="aMatricula">Matrícula</a>
-                    <a href="" id="aBecas">Becas</a>
-                    <!--<a href="" id="aCitas">Citas</a>-->
-                    <a href="" id="aMaterialInformativo">Material Informativo</a>
-                    <a href="" id="aNoticias">Noticias</a>
-                    <a href="" id="aActividades">Actividades</a>
-                    <a href="" id="aUtiles">Lista de útiles</a>
-                    <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
-                    <a href="" id="aEtiquetas">Etiquetas</a>
-                </div>
 
-                <div class="opcion">
-                    <h3>Citas</h3>
-                  
+        <!----------------------Fin opción---------------------->
+
+        <!-- <div class="opcion" id="menuInformativo">
+
+            <h3>Informacion</h3>
+            <div class="subOpcion">
+                <a href="" id="aInfoCE">Información del Centro educativo</a>
+                <a href="" id="aMatricula">Matrícula</a>
+                <a href="" id="aBecas">Becas</a>
+                <a href="" id="aMaterialInformativo">Material Informativo</a>
+                <a href="" id="aNoticias">Noticias</a>
+                <a href="" id="aActividades">Actividades</a>
+                <a href="" id="aUtiles">Lista de útiles</a>
+                <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
+                <a href="" id="aEtiquetas">Etiquetas</a>
+            </div>
+
+            <div class="opcion">
+                <h3>Citas</h3>
+
                 <div class="subOpcion">
                     <a href="citas.html" id="aAgendarCita">Agendar cita</a>
                 </div>
 
-            </div>
+            </div> -->
 
 
         <div class="contenido" style="overflow-y: scroll;">
-            
+
+            <div class="infoCE">
+                <div class="photoCE"></div>
+                <div class="infoWrapper">
+                    <div class="info">
+                        <h2>Nombre de la institucion</h2>
+                        <h3>Direccion exacta</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <h2>Nombre de la institucion</h2>
+            <h3>Direccion exacta</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div> -->
+            <!-- <a href="" id="aInfoCE">Información del Centro educativo</a>
+                <a href="" id="aMatricula">Matrícula</a>
+                <a href="" id="aBecas">Becas</a>
+                <a href="" id="aMaterialInformativo">Material Informativo</a>
+                <a href="" id="aNoticias">Noticias</a>
+                <a href="" id="aActividades">Actividades</a>
+                <a href="" id="aUtiles">Lista de útiles</a>
+                <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
+                <a href="" id="aEtiquetas">Etiquetas</a>
+                <a href="citas.html" id="aAgendarCita">Agendar cita</a> -->
+
+            <div class="tabs">
+                <div class="tabContainer">
+                    <div class="buttonContainer">
+                        <button onclick="showPanel(0, '#fff')">Información</button>
+                        <button onclick="showPanel(1, '#fff')">Matrícula</button>
+                        <button onclick="showPanel(2, '#fff')">Becas</button>
+                        <button onclick="showPanel(3, '#fff')">Material Informativo</button>
+                        <button onclick="showPanel(4, '#fff')">Noticias</button>
+                        <button onclick="showPanel(5, '#fff')">Actividades</button>
+                        <button onclick="showPanel(6, '#fff')">Artículos</button>
+                        <button onclick="showPanel(7, '#fff')">Lista de útiles</button>
+                        <button onclick="showPanel(8, '#fff')">Preguntas Frecuentes</button>
+                        <button onclick="showPanel(9, '#fff')">Etiquetas</button>
+                        <button onclick="showPanel(10, '#fff')">Agendar cita</button>
+                    </div>
+
+                    <div class="tabPanel">Información</div>
+                    <div class="tabPanel">Matrícula</div>
+                    <div class="tabPanel">Becas</div>
+                    <div class="tabPanel">Material Informativo</div>
+                    <div class="tabPanel">Noticias</div>
+                    <div class="tabPanel">Actividades</div>
+                    <div class="tabPanel">
+                        <h1>Artículos escolares</h1>
+
+                        <div class="filtro">
+                            <label for="txtFiltro">Buscar</label>
+                            <input type="text" id="txtFiltro" placeholder="Escriba el nombre del artículo">
+                        </div>
+
+
+                        <table id="tblArticulos">
+                            <thead>
+                                <tr>
+                                    <th>Artículo escolar</th>
+                                    <th>Descripción</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="tabPanel">Lista de útiles</div>
+                    <div class="tabPanel">Preguntas Frecuentes</div>
+                    <div class="tabPanel">Etiquetas</div>
+                    <div class="tabPanel">Agendar cita</div>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <footer>
-
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/style.js"></script>
+    <script src="js/profileCE.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap" async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
+        async defer></script> -->
+
+
     <script src="js/mapUser.js"></script>
     <script src="js/servicioInicio.js"></script>
     <script src="js/controlador.general.js"></script>
-    <script src="js/controlador.profileInfoCE.js"></script>
-   
+    <!-- <script src="js/controlador.profileInfoCE.js"></script> -->
+
+    <script src="js/servicio.articulos.js"></script>
+    <script src="js/controlador.listarArticulos.js"></script>
+
     <script src="js/mostrarNombre.controller.js"></script>
 
 </body>

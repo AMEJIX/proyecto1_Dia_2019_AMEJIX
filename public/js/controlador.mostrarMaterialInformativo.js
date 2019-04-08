@@ -1,17 +1,19 @@
 'use strict';
 
-// let user = JSON.parse(sessionStorage.getItem("usuario"));
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 const tabla = document.querySelector('#tblMaterialInformativo tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 
 let idUsuarioCE = user._id;
+
 if(user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
 } else {
     
 }
 
-if (user.userType = "superAdministrador") {
+
+if (user.userType == "superAdministrador") {
     window.location.href = 'loSentimos.html';
 } else {
     
@@ -56,7 +58,16 @@ function mostrarDatos() {
                 botonEditar.href = `editarMaterialInformativo.html?idMaterial=${temas[i]['_id']}`;
 
                 celdaConfiguracion.appendChild(botonEditar);
+                let botonEliminar = document.createElement('button');
+                botonEliminar.textContent = 'Eliminar';
+                botonEliminar.id = 'btnEliminar';                
+                botonEliminar.addEventListener('click', eliminar =>{
+                    eliminarArticuloControlador(articulos[i]['_id']);
+                });
+                celdaEliminar.appendChild(botonEliminar);
             }
         }
+    } else {
+        tabla.innerHTML = "No se encontró material informativo registrado";
     }
 }

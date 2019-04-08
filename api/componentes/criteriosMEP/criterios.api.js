@@ -51,3 +51,44 @@ module.exports.listarLosCriterios = (req, res)=>{
     )
 }; 
 
+
+module.exports.buscarCriterio = function (req, res){
+    modeloCriterio.find({_id : req.body._id}).then(
+        function(criterio){
+            if(criterio){
+                res.json({success: true, criterio : criterio});
+            }else{
+                res.json({success: false, criterio : criterio});
+            }
+        }
+
+    );
+
+};
+
+
+module.exports.actualizar = function(req, res){
+   
+    modeloCriterio.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar el criterio'});
+            }else{
+                res.json({success: true , msg : 'El criterio se actualizó con éxito'});
+            }
+        }
+    
+    );
+}
+
+module.exports.eliminar = function(req, res){
+    modeloCriterio.findByIdAndDelete(req.body.id,
+        function(error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo eliminar el criterio'});
+            }else{
+                res.json({success: true , msg : 'El criterio se eliminó con éxito'});
+            }
+        })
+}
+
