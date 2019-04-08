@@ -39,8 +39,8 @@ let agregar = () =>{
         pregunta = txtPregunta.value;
         respuesta = txtRespuesta.value;
         let idUsuario;
-        if(user.userType == 'centroEducativo'){
-            idUsuario = user._id;
+        if(elUsuario.userType == 'centroEducativo'){
+            idUsuario = elUsuario._id;
         } else {
             idUsuario = IdGeneralCE;
         }
@@ -50,7 +50,7 @@ let agregar = () =>{
 
         registrarPreguntaFrecuente(idUsuario, pregunta, respuesta);
 
-        setTimeout("location.reload()", 1500);
+        // setTimeout("location.reload()", 1500);
 
         // mostrarPreguntasFrecuentes();
 

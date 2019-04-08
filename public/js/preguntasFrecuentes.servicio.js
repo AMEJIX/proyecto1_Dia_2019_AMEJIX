@@ -72,7 +72,10 @@ let registrarPreguntaFrecuente = (idCE, ppregunta, prespuesta) =>{
                 title: 'Se registró correctamente la pregunta frecuente',
                 text: `La pregunta con su respuesta se ha añadido a su perfil.`,
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1500,
+                onClose: () => {
+                    location.reload();
+                }
             }
         );
     });
