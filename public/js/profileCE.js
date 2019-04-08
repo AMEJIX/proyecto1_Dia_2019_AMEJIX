@@ -24,20 +24,20 @@ showPanel(0, '#fff');
 
 // **************************************************************************
 
-let usuario = JSON.parse(sessionStorage.getItem('usuario'));
+// let usuario = JSON.parse(sessionStorage.getItem('usuario'));
 
-let fotoCE = document.querySelector('.photoCE')
+// let fotoCE = document.querySelector('.photoCE')
 
-let nombreCE = document.querySelector('.infoWrapper .info h2');
+// let nombreCE = document.querySelector('.infoWrapper .info h2');
 
-let direccionCE = document.querySelector('.infoWrapper .info h3');
+// let direccionCE = document.querySelector('.infoWrapper .info h3');
 
-window.onload = function () {
-    let nombre = '';
+// window.onload = function () {
+//     let nombre = '';
 
-    if ( === 'centroEducativo') {
+//     if ( === 'centroEducativo') {
         
-    } else {
+//     } else {
         
-    }
-};
+//     }
+// };

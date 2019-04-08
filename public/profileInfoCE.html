@@ -17,6 +17,7 @@
 
     <!-- <link rel="stylesheet" href="css/profileInfo.css"> -->
     <link rel="stylesheet" href="css/profileCE.css">
+    <link rel="stylesheet" href="css/listarArticulos.css">
 
 
 </head>
@@ -223,10 +224,11 @@
                         <button onclick="showPanel(3, '#fff')">Material Informativo</button>
                         <button onclick="showPanel(4, '#fff')">Noticias</button>
                         <button onclick="showPanel(5, '#fff')">Actividades</button>
-                        <button onclick="showPanel(6, '#fff')">Lista de útiles</button>
-                        <button onclick="showPanel(7, '#fff')">Preguntas Frecuentes</button>
-                        <button onclick="showPanel(8, '#fff')">Etiquetas</button>
-                        <button onclick="showPanel(9, '#fff')">Agendar cita</button>
+                        <button onclick="showPanel(6, '#fff')">Artículos</button>
+                        <button onclick="showPanel(7, '#fff')">Lista de útiles</button>
+                        <button onclick="showPanel(8, '#fff')">Preguntas Frecuentes</button>
+                        <button onclick="showPanel(9, '#fff')">Etiquetas</button>
+                        <button onclick="showPanel(10, '#fff')">Agendar cita</button>
                     </div>
 
                     <div class="tabPanel">Información</div>
@@ -235,6 +237,31 @@
                     <div class="tabPanel">Material Informativo</div>
                     <div class="tabPanel">Noticias</div>
                     <div class="tabPanel">Actividades</div>
+                    <div class="tabPanel">
+                        <h1>Artículos escolares</h1>
+
+                        <div class="filtro">
+                            <label for="txtFiltro">Buscar</label>
+                            <input type="text" id="txtFiltro" placeholder="Escriba el nombre del artículo">
+                        </div>
+
+
+                        <table id="tblArticulos">
+                            <thead>
+                                <tr>
+                                    <th>Artículo escolar</th>
+                                    <th>Descripción</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+
+                        </table>
+                    </div>
                     <div class="tabPanel">Lista de útiles</div>
                     <div class="tabPanel">Preguntas Frecuentes</div>
                     <div class="tabPanel">Etiquetas</div>
@@ -244,16 +271,25 @@
 
         </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/style.js"></script>
     <script src="js/profileCE.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
-        async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
+        async defer></script> -->
+
+
     <script src="js/mapUser.js"></script>
     <script src="js/servicioInicio.js"></script>
     <script src="js/controlador.general.js"></script>
-    <script src="js/controlador.profileInfoCE.js"></script>
+    <!-- <script src="js/controlador.profileInfoCE.js"></script> -->
+
+    <script src="js/servicio.articulos.js"></script>
+    <script src="js/controlador.listarArticulos.js"></script>
 
     <script src="js/mostrarNombre.controller.js"></script>
 
