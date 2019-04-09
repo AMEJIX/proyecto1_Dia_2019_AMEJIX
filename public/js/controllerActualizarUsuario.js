@@ -42,24 +42,20 @@ function setDivisionPolitica(data) {
         let htmlProvincias;
         htmlProvincias += "<option value=''>" + 'Provincia' + "</option>";
         for (var i = 0; i < data.provincias.length; i++) {
-            // htmlProvincias += "<option value='" + data.provincias[i].title + "'>" + data.provincias[i].title + "</option>";
-            htmlProvincias += `<option value="${data.provincias[i].title}" ${data.provincias[i].title == user.provincia ? 'selected' : ''}>` + data.provincias[i].title + "</option>";
-            
+            htmlProvincias += "<option value='" + data.provincias[i].title + "'>" + data.provincias[i].title + "</option>";
         }
         const selectProvincias = document.querySelector('#' + idSelectProvincia);
         selectProvincias.innerHTML = htmlProvincias;
         selectProvincias.addEventListener('change', setCantones);
-        setCantones();
-      
+
+
         function setCantones() {
             provincia = data.provincias.find(function (current, index, arr) {
                 return current.title === selectProvincias.options[selectProvincias.selectedIndex].value;
             });
             let htmlCantones;
             for (var i = 0; i < provincia.cantones.length; i++) {
-                // htmlCantones += "<option value='" + provincia.cantones[i].title + "'>" + provincia.cantones[i].title + "</option>";
-              htmlCantones += `<option value="${provincia.cantones[i].title}" ${provincia.cantones[i].title == user.canton ? 'selected': ''}>` + provincia.cantones[i].title + "</option>";
-             
+                htmlCantones += "<option value='" + provincia.cantones[i].title + "'>" + provincia.cantones[i].title + "</option>";
             }
             const selectCantones = document.querySelector('#' + idSelectCanton);
             selectCantones.innerHTML = htmlCantones;
@@ -73,9 +69,7 @@ function setDivisionPolitica(data) {
 
                 let htmlDistritos;
                 for (var i = 0; i < canton.distritos.length; i++) {
-                    // htmlDistritos += "<option value'" + canton.distritos[i].title + "'>" + canton.distritos[i].title + "</option>";
-                    htmlDistritos += `<option value="${canton.distritos[i].title}" ${canton.distritos[i].title == user.distrito ? 'selected': ''}>` + canton.distritos[i].title + "</option>";
-                 
+                    htmlDistritos += "<option value'" + canton.distritos[i].title + "'>" + canton.distritos[i].title + "</option>";
                 }
                 const selectDistritos = document.querySelector('#' + idSelectDistrito);
                 selectDistritos.innerHTML = htmlDistritos;
@@ -221,19 +215,13 @@ function mostrarNivelesEscuela() {
             newCheckbox.classList.add('gradoEducativo');
             newCheckbox.value = (i + 1)
 
-            let gradosUsuario = user.grados.split(', ');
-   
-            for (let i = 0; i < gradosUsuario.length; i++) {
-                if(gradosUsuario.indexOf(newCheckbox.value) > -1){
-                    newCheckbox.checked = true;
-                }
-            }
 
-         
 
             newSecondDiv.appendChild(newCheckbox);
             newSecondDiv.appendChild(newLabel)
             newDiv.appendChild(newSecondDiv)
+
+
         }
 
     }
@@ -266,13 +254,6 @@ function mostrarNivelesColegio() {
             newCheckbox.classList.add('gradoEducativo');
             newCheckbox.value = (i + 1)
 
-            let gradosUsuario = user.grados.split(', ');
-   
-            for (let i = 0; i < gradosUsuario.length; i++) {
-                if(gradosUsuario.indexOf(newCheckbox.value) > -1){
-                    newCheckbox.checked = true;
-                }
-            }
 
 
             newSecondDiv.appendChild(newCheckbox);
@@ -430,23 +411,22 @@ const selectDistritoCE = document.querySelector('#selectDistritosCE')
 //Como actualizo el select con el dato de la provincia
 selectProvinciaCE.value = user.provincia;
 
-
+//intento de tipo - no sirve
 const fieldsetTipo = document.querySelector('#fieldsetTipo');
 
 let arregloTipo = document.getElementsByClassName('checkboxTipo');
-console.log(arregloTipo)
+// let arregloDeTipoInstitucion = user.tipo.split(", ");
 
-let nivelEducacion = user.tipo.split(", ");
-console.log(nivelEducacion)
+// for (let i = 0; i < arregloTipo.length; i++) {
+//     for (let j = 0; arregloDeTipoInstitucion.length; j++) {
+//         if (arregloTipo[i].value == arregloDeTipoInstitucion[j]) {
+//             arregloTipo[i].checked = true;
+//         }
+//     }
+// }
 
-for (let i = 0; i < arregloTipo.length; i++) {
-   
-    if(nivelEducacion.indexOf(arregloTipo[i].value) > -1){
-        arregloTipo[i].checked = true;
-        mostrarNivelesEscuela();
-        mostrarNivelesColegio();
-    }    
-}
+
+
 
 const btnRegistrarCentroEducativo = document.querySelector('#btnRegistrarCentroEducativo')
 
@@ -454,20 +434,6 @@ const fieldsetGenero = document.querySelector('#fieldsetGenero');
 const fieldsetPrivacidad = document.querySelector('#fieldsetPrivacidad');
 const fieldsetReligion = document.querySelector('#fieldsetReligion');
 const fieldsetClasificacion = document.querySelector('#fieldsetClasificacion');
-//Intento de mostrar clasificaion
-
-let clasificacionUser = user.clasificacion.split(', ')
-let opcionesClasificacion = document.querySelectorAll('input[name="radioClasificacion"]');
-console.log(Array.from(opcionesClasificacion).map((i) => i.value));
-
-for(let i = 0; i < opcionesClasificacion.length; i++){
-    if(clasificacionUser.indexOf(opcionesClasificacion[i].value) > -1){
-        opcionesClasificacion[i].checked = true;
-    }
-}
-
-// let clasificacionSeleccionada = document.querySelector('#fieldsetClasificacion input[type=radio]:checked')
-
 
 const fieldsetIdiomas = document.querySelector('#fieldsetIdiomas');
 const fotoRegistroCE = document.querySelector('#imagePreview');
@@ -568,7 +534,7 @@ function obtenerDatosPadreFamilia() {
         let imagenPF = fotoRegistroPF.src;
 
         let id = user._id;
-
+        console.log(contrasenna)
         actualizarPF(userType,
             nombre,
             segundoNombre,
@@ -581,6 +547,7 @@ function obtenerDatosPadreFamilia() {
             provincia,
             canton,
             distrito,
+            contrasenna,
             edades,
             imagenPF,
             estado,
@@ -836,7 +803,7 @@ function obtenerDatosCentroEducativo() {
                 tipo += arregloTipo[i].value + ', ';
             }
         }
-       
+
 
 
 
@@ -919,6 +886,7 @@ function obtenerDatosCentroEducativo() {
             emailCEP,
             window.mapLatLng.lat,
             window.mapLatLng.lng,
+            contrasenna,
             privacidad,
             clasificacion,
             tipo,
@@ -956,157 +924,4 @@ function obtenerDatosCentroEducativo() {
 btnRegistrarCentroEducativo.addEventListener('click', obtenerDatosCentroEducativo);
 
 
-
 /******************SA */
-
-//DATOS SA
-const inputNombreSA = document.querySelector('#txtNombreSA')
-inputNombreSA.value = user.nombre;
-
-const inputSegundoNombreSA = document.querySelector('#txtSegundoNombreSA')
-inputSegundoNombreSA.value = user.segundoNombre;
-
-const inputApellidoSA = document.querySelector('#txtApellidoSA')
-inputApellidoSA.value = user.apellido;
-
-const inputSegundoApellidoSA = document.querySelector('#txtSegundoApellidoSA')
-inputSegundoApellidoSA.value = user.segundoApellido;
-
-const inputIdentificacionSA = document.querySelector('#numIDSA')
-inputIdentificacionSA.value = user.identificacion;
-
-const inputNacionalidadSA = document.querySelector('#txtNacionalidadSA')
-inputNacionalidadSA.value = user.nacionalidad;
-
-const inputEmailSA = document.querySelector('#txtEmailSA')
-inputEmailSA.value = user.email;
-
-const inputPuestoSA = document.querySelector('#textPuestoSA');
-inputPuestoSA.value = user.puesto;
-
-const inputTelSA = document.querySelector('#txtTelefonoSA')
-inputTelSA.value = user.telefono;
-
-const buttonActualizarSA =document.querySelector('#buttonActualizarSA');
-
-
-
-
-let validarSA = () => {
-    let error = false;
-
-    if (inputNombreSA.value == '') {
-        error = true;
-        inputNombreSA.classList.add('errorInput');
-    } else {
-        inputNombreSA.classList.remove('errorInput');
-    }
-
-
-    if (inputApellidoSA.value == '') {
-        error = true;
-        inputApellidoSA.classList.add('errorInput');
-    } else {
-        inputApellidoSA.classList.remove('errorInput');
-    }
-
-
-
-    if (inputIdentificacionSA.value == '') {
-        error = true;
-        inputIdentificacionSA.classList.add('errorInput');
-    } else {
-        inputIdentificacionSA.classList.remove('errorInput');
-    }
-
-    if (inputNacionalidadSA.value == '') {
-        error = true;
-        inputNacionalidadSA.classList.add('errorInput');
-    } else {
-        inputNacionalidadSA.classList.remove('errorInput');
-    }
-
-
-    if (inputEmailSA.value == '') {
-        error = true;
-        inputEmailSA.classList.add('errorInput');
-    } else {
-        inputEmailSA.classList.remove('errorInput');
-    }
-
-
-    if (inputPuestoSA.value == '') {
-        error = true;
-        inputPuestoSA.classList.add('errorInput');
-    } else {
-        inputPuestoSA.classList.remove('errorInput');
-    }
-
-
-
-
-    return error;
-}
-
-
-
-function obtenerDatosSA() {
-
-    if (!validarSA()) {
-
-        let userType = "superAdministrador"
-        let nombre = inputNombreSA.value;
-        let segundoNombre = inputSegundoNombreSA.value
-        let apellido = inputApellidoSA.value;
-        let segundoApellido = inputSegundoApellidoSA.value
-        let identificacion = inputIdentificacionSA.value
-        let nacionalidad = inputNacionalidadSA.value
-        let email = inputEmailSA.value
-        let telefono = inputTelSA.value
-        let puesto = inputPuestoSA.value
-
-
-        let estado = "Activo";
-
-        let imagenPF = fotoRegistroPF.src;
-
-        let id = user._id;
-
-        
-        actualizarSA(userType,
-            nombre,
-            segundoNombre,
-            apellido,
-            segundoApellido,
-            identificacion,
-            nacionalidad,
-            email,
-            telefono,
-            imagenPF,
-            estado,
-            id,
-            puesto
-        )
-
-        console.log('console.log(`La información fue enviada correctamente`);')
-
-    } else {
-
-        console.log(`La información no fue enviada correctamente`);
-
-        swal.fire({
-            type: 'warning',
-            title: 'La informacion no fue enviada correctamente',
-            text: `Porfavor revisar los campos`,
-
-        });
-
-    }
-
-}
-
-buttonActualizarSA.addEventListener('click', obtenerDatosSA);
-
-
-
-

@@ -94,5 +94,142 @@ let registrarUtil = (pnombre, pdescripcion, pcantidad, pnivel, pidCentroEducativ
         
       });
 };
+//buscar, modificar, eliminar
+
+
+let buscarUtilIndividual = (_id) => {
+  let utiles = [];
+
+  let request = $.ajax({
+    
+    url: "http://localhost:4000/api/buscarUtilIndividual/" + _id,
+
+    method: "GET",
+    data: {
+      
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
+  });
+
+  request.done(function (res) {
+      utiles = res.utiles;
+    
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+    
+  });
+  return utiles;
+ 
+};
+
+
+
+let actualizarUtil = (pcantidad, p_id) =>{
+  let request = $.ajax({
+      url : 'http://localhost:4000/api/actualizarUtil',
+      method : "POST",
+      data : {       
+        cantidad : pcantidad,        
+        id : p_id
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+  request.done(function(res){     
+     
+      swal.fire({
+          type : 'success',
+          title : 'Útil actualizado con éxito',
+          text : res.msg,
+          onClose: () => {
+              window.location.href = 'listarUtilesOficialesSA.html';
+            }    
+      });
+
+  });
+
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};
+
+
+let eliminarUtil = (p_id) =>{
+  let request = $.ajax({
+      url : 'http://localhost:4000/api/eliminarUtil',
+      method : "POST",
+      data : {         
+          id : p_id
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+  request.done(function(res){     
+     
+      swal.fire({
+          type : 'success',
+          title : 'Útil eliminado con éxito',
+          text : res.msg,
+          onClose: () => {
+              window.location.href = 'listarUtilesOficialesSA.html';
+            }    
+      });
+
+  });
+
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};
+
+
+let eliminarLista = (pnombreLista) =>{
+  let request = $.ajax({
+      url : 'http://localhost:4000/api/eliminarLista',
+      method : "POST",
+      data : {         
+        nombreLista: pnombreLista
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+  request.done(function(res){     
+     
+      swal.fire({
+          type : 'success',
+          title : 'Lista eliminada con éxito',
+          text : res.msg,
+          onClose: () => {
+              window.location.href = 'listarUtilesOficialesSA.html';
+            }    
+      });
+
+  });
+
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};
 
 

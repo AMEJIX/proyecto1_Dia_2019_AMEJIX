@@ -4,16 +4,10 @@
 //     let user = JSON.parse(sessionStorage.getItem("usuario"));
 // }
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
 let userLog = JSON.parse(sessionStorage.getItem("usuario"));
 
-if (user.estado != "Activo"){
-    sessionStorage.setItem('usuario', null);
-    window.location.href = 'loSentimosEstadoNoPermitido.html';
-}
-
 function ocultar() {
-    
+    console.log(userLog.userType);
     if (userLog.userType == "padreFamilia") {
         document.querySelector('#menuAdministrativo').style.display = 'none';
         document.querySelector('#menuInformativo').style.display = 'none';
@@ -23,25 +17,25 @@ function ocultar() {
         document.querySelector('#aPreguntasCE').style.display = 'none';
         document.querySelector('#reportesSA').style.display = 'none';
         document.querySelector('#aEliminarCE').style.display = 'none';
-        document.querySelector('#aActivarDesCE').style.display = 'none';   
+        document.querySelector('#aActivarDesCE').style.display = 'none';
         document.querySelector('#reportesCE').style.display = 'none';
-        document.querySelector('#aEvaluarCE').style.display = 'none';   
-        
-       
+        document.querySelector('#aEvaluarCE').style.display = 'none';
+
+
     } else if (userLog.userType == "centroEducativo") {
         document.querySelector('#menuAdministrativo').style.display = 'none';
         document.querySelector('#menuInfoCE').style.display = 'none';
         // document.querySelector('#aHijos').style.display = 'none';
         document.querySelector('#menuCitasPF').style.display = 'none';
         document.querySelector('#verPadres').style.display = 'none';
-        document.querySelector('#aPreguntasPF').style.display = 'none'; 
+        document.querySelector('#aPreguntasPF').style.display = 'none';
         document.querySelector('#reportesSA').style.display = 'none';
 
 
-    }else if(userLog.userType == "superAdministrador"){
+    } else if (userLog.userType == "superAdministrador") {
         document.querySelector('#menuInformativo').style.display = 'none';
         document.querySelector('#menuCitasPF').style.display = 'none';
-        document.querySelector('#aFavoritos').style.display = 'none'; 
+        document.querySelector('#aFavoritos').style.display = 'none';
         document.querySelector('#aCEcercanos').style.display = 'none';
         document.querySelector('#verInfoMep').style.display = 'none';
         document.querySelector('#reportesCE').style.display = 'none';
@@ -51,6 +45,27 @@ function ocultar() {
 
 ocultar();
 
+let mostrarDatosCE = () => {
+    let centroEducativo = listarUsuariosCEencabezado(IdGeneralCE);
+
+    console.log(centroEducativo);
+
+    let foto = document.querySelector('.photoCE');
+    let nombre = document.querySelector('.info h2');
+    let direccion = document.querySelector('.info h3');
+
+    foto.src = centroEducativo[0]['imagen'];
+    nombre.textContent = centroEducativo[0]['centroEducativo'];
+    direccion.textContent = centroEducativo[0]['direccionExacta'];
+
+    if (foto.src === ''){
+        foto.src = 'img/icons8-user.png'
+    }
+    foto.style.backgroundImage = `url(${foto .src})`;
+
+};
+
+mostrarDatosCE();
 
 // switch (user.userType) {
 //     case "padreFamilia":
@@ -102,7 +117,7 @@ ocultar();
 
 
 
-    
+
 //         let arregloEdades = user.edades.split(", ");
 //         spanHijos.innerHTML = arregloEdades.length - 1;
 
@@ -129,7 +144,7 @@ ocultar();
 //         }
 
 
-    
+
 //     //  imagenPF.src = user.imagen;
 // }
 
@@ -156,7 +171,7 @@ ocultar();
 //     spanTelefonoSA.innerHTML = user.telefono;
 //     spanPuestoMEPSA.innerHTML = user.puesto;
 //     imagenSA.innerHTML = user.imagenSA;
-   
+
 // }
 
 // function centroEducativo(){
@@ -240,7 +255,7 @@ ocultar();
 //     spanEmailCE.innerHTML = user.email;
 
 //     //let spanActividades = doucment.getElementById('spanActividades')
-       
+
 //     let arregloServicios = user.servicios.split(", ");
 //     let arregloDescripcionesServicios = user.descipcionesServicio.split(", ");
 
@@ -248,7 +263,7 @@ ocultar();
 //     divServicios.innerHTML = '';
 
 //     for (let i = 0; i < arregloServicios.length - 1; i++) {
-   
+
 //         var newDiv = document.createElement('div');
 //         newDiv.style.display = 'block';
 
@@ -259,7 +274,7 @@ ocultar();
 //         var newSpan = document.createElement("span");
 //         newSpan.innerHTML = " " + arregloServicios[i];
 
-        
+
 //         var newDivDescripciones = document.createElement('div');
 //         newDivDescripciones.style.display = 'block';
 
@@ -269,7 +284,7 @@ ocultar();
 //         var newSpanDescripciones = document.createElement("span");
 //         newSpanDescripciones.innerHTML = " " + arregloDescripcionesServicios[i];
 
-        
+
 
 //         newDiv.appendChild(newLabel);
 //         newDiv.appendChild(newSpan);

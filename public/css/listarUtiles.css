@@ -62,13 +62,23 @@ form div{
     
 }
 
-#tblUtiles{
-    
+#tablaNombreListaU{
     border-collapse: collapse;
     margin-left: 32px;
     margin-bottom: 50px;
     width: 90%;
     margin: 0 auto;
+}
+
+
+
+#tblUtiles{    
+    border-collapse: collapse;
+    margin-left: 32px;
+    margin-bottom: 50px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 149px;
 }
 
 th{
@@ -81,6 +91,12 @@ th{
     
 }
 
+#tablaNombreListaU tbody tr td{
+    color: #344955;
+    border: #2c3e50 solid 1px;
+    text-align: center;
+    padding: 8px;
+}
 
 #tblUtiles tbody tr td{
     color: #344955;
@@ -91,4 +107,59 @@ th{
 
 .errorSelect{    
     background-color: #ED4C67;
+}
+
+.divBotonEliminar{
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+#btnEliminarLista{
+    display: block;
+    padding: 14px 45px;
+    margin: 0 auto;
+    background: #f9aa33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+
+#btnEliminarLista:hover{
+    background: #f9bf33;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+
+.divBotonActualizar{
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+#botonActualizar{
+    display: block;
+    padding: 14px 45px;
+    margin: 0 auto;
+    background: #f9aa33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+
+#botonActualizar:hover{
+    background: #f9bf33;
+    cursor: pointer;
+    transition: all 300ms ease;
 }

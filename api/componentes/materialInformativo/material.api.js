@@ -59,22 +59,18 @@ module.exports.listarMaterialUsuario = (req, res) => {
     );
 };
 
-module.exports.listarMaterial = (req, res) => {
-    materialModel.find().then(
+module.exports.buscarMaterial = function (req, res) {
+    materialModel.find({ _id: req.body._id }).then(
         function (material) {
-            if (material.length > 0) {
-                res.json({
-                    success: true,
-                    material: material
-                })
+            if (material) {
+                res.json({ success: true, material: material });
             } else {
-                res.json({
-                    success: false,
-                    material: 'No se encontraron materiales informativos registrados'
-                })
+                res.json({ success: false, material: material });
             }
         }
-    )
+
+    );
+
 };
 
 module.exports.listarMaterial = (req, res) => {
@@ -95,8 +91,47 @@ module.exports.listarMaterial = (req, res) => {
     )
 };
 
-// module.exports.actualizar = function(req, res) {
-//     materialModel.findByIdAndUpdate(req.body.id, {$set: req.body},
-        
-//     )
-// }
+module.exports.listarMaterial = (req, res) => {
+    materialModel.find().then(
+        function (material) {
+            if (material.length > 0) {
+                res.json({
+                    success: true,
+                    material: material
+                })
+            } else {
+                res.json({
+                    success: false,
+                    material: 'No se encontraron materiales informativos registrados'
+                })
+            }
+        }
+    )
+};
+
+
+
+module.exports.editar = function (req, res) {
+
+    materialModel.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo actualizar el material informativo' });
+            } else {
+                res.json({ success: true, msg: 'El material informativo se actualizó con éxito' });
+            }
+        }
+
+    );
+}
+
+module.exports.eliminar = function (req, res) {
+    materialModel.findByIdAndDelete(req.body.id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el material informativo' });
+            } else {
+                res.json({ success: true, msg: 'El material informativo se eliminó con éxito' });
+            }
+        })
+}
