@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tabla = document.querySelector('#tblUsuarios tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
@@ -87,7 +87,7 @@ function mostrarDatos() {
                     swal.fire({
                         type: 'warning',
                         title: 'No se pudo actualizar el estado',
-                        text: `El estad debe ser "Activo" - "Pendiente" - "Inactivo"`,
+                        text: `El estado debe ser "Activo" - "Pendiente" - "Inactivo"`,
 
                     });
                 }
