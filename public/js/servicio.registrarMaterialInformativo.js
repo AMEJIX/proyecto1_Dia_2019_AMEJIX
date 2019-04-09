@@ -27,6 +27,31 @@ let registrarMaterialInformativo = (ptema, pdescripcion, pfile, pIdCentro) => {
     });
 };
 
+let buscarMaterial = (_id) => {
+    let material = [];
+
+    let request = $.ajax({
+        url: "http://localhost:4000/api/buscarMaterial/" + _id,
+        method: "GET",
+        data: {
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async: false
+    });
+
+    request.done(function (res) {
+        material = res.material;
+
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+    return material;
+
+};
+
 let listarMaterialUsuario = (idCE) => {
     let listaMaterialUser = [];
     let request = $.ajax({
@@ -46,7 +71,7 @@ let listarMaterialUsuario = (idCE) => {
 
     });
 
-    return listaMaterialUser; 
+    return listaMaterialUser;
 };
 
 let listarMaterial = () => {
@@ -69,4 +94,76 @@ let listarMaterial = () => {
     });
 
     return listaMaterial;
+};
+
+let editarMaterial = (ptema, pdescripcion, pfile, pIdCentro, p_id) => {
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/editarMaterial',
+        method: "POST",
+        data: {
+            tema: ptema,
+            descripcion: pdescripcion,
+            file: pfile,
+            idCE: pIdCentro,
+            id: p_id
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'Material informativo actualizado con éxito',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'mostrarMaterialInformativo.html';
+            }
+        });
+
+    });
+
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Proceso no realizado',
+            text: res.msg
+        });
+
+    });
+
+};
+
+let eliminarMaterial = (p_id) => {
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/eliminarMaterial',
+        method: "POST",
+        data: {
+            id: p_id
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'Material eliminado con éxito',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'mostrarMaterialInformativo.html';
+            }
+        });
+
+    });
+
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Proceso no realizado',
+            text: res.msg
+        });
+
+    });
+
 };

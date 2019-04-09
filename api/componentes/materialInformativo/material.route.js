@@ -10,6 +10,11 @@ router.param('idCE', (req, res, next, idCE) => {
     next();
 });
 
+router.param('_id', function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
+
 router.route('/registrarMaterialInformativo')
     .post(
         function (req, res) {
@@ -25,17 +30,31 @@ router.route('/listarMaterialInformativo')
     );
 
 router.route('/centroEducativo/listarMaterialUsuario/:idCE')
-        .get(
-            function (req, res) {
-                materialApi.listarMaterialUsuario(req, res);
-            }
-        );
+    .get(
+        function (req, res) {
+            materialApi.listarMaterialUsuario(req, res);
+        }
+    );
 
-// router.route('/buscarMaterial')
-// .post(
-//     function (req, res) {
-//         materialApi.actualizar(req, res);
-//     }
-// );
+router.route('/editarMaterial')
+    .post(
+        function (req, res) {
+            materialApi.editar(req, res);
+        }
+    );
+
+router.route('/buscarMaterial/:_id')
+    .get(
+        function (req, res) {
+            materialApi.buscarMaterial(req, res);
+        }
+    );
+
+router.route('/eliminarMaterial')
+    .post(
+        (req, res) => {
+            materialApi.eliminar(req, res);
+        }
+    );
 
 module.exports = router;

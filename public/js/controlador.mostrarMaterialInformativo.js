@@ -50,8 +50,7 @@ function mostrarDatos() {
                 imagenTema.appendChild(imagen);
 
                 let celdaConfiguracion = fila.insertCell();
-
-                // Creacion del boton de editar
+                let celdaEliminar = fila.insertCell();
 
                 let botonEditar = document.createElement('a');
                 botonEditar.textContent = 'Editar';
@@ -62,7 +61,7 @@ function mostrarDatos() {
                 botonEliminar.textContent = 'Eliminar';
                 botonEliminar.id = 'btnEliminar';                
                 botonEliminar.addEventListener('click', eliminar =>{
-                    eliminarArticuloControlador(articulos[i]['_id']);
+                    eliminarMaterialControlador(temas[i]['_id']);
                 });
                 celdaEliminar.appendChild(botonEliminar);
             }
@@ -70,4 +69,26 @@ function mostrarDatos() {
     } else {
         tabla.innerHTML = "No se encontró material informativo registrado";
     }
+};
+
+mostrarDatos();
+
+inputFiltro.addEventListener('keyup', mostrarDatos);
+
+let eliminarMaterialControlador=(p_id)=>{
+    Swal.fire({
+        title: '¿Está seguro que desea eliminar el material informativo?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#dddddd',
+        confirmButtonText: 'Sí, eliminar'
+    }).then((result) => {
+        if (result.value) {    
+            eliminarMaterial(p_id);          
+        } else {    
+        }
+      
+    })
+    
 }

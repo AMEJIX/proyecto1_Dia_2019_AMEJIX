@@ -117,6 +117,8 @@ app.use('/api', articulos);
 const idiomas = require('./componentes/idiomas/idiomas.route');
 app.use('/api', idiomas);
 
+const CEperfil = require('./componentes/CEperfil/CEperfil.route');
+app.use('/api', CEperfil);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;

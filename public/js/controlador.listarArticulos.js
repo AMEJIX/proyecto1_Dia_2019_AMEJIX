@@ -7,7 +7,7 @@ const inputFiltro = document.querySelector('#txtFiltro');
 // const IdGeneralCE = user._id;
 
 
-if(user.userType == 'centroEducativo'){
+if(user.userType == 'padreFamilia'){
     window.location.href = 'loSentimos.html';
 }
 

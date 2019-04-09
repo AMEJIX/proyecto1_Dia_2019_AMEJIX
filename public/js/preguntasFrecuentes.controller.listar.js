@@ -4,49 +4,27 @@
 const opcionVerPF = document.querySelector('#aPreguntasPF');
 const opcionVerCE = document.querySelector('#aPreguntasCE');
 
-// window.onunload = () =>{
-//     showPanel(8, '#fff');
-// };
 
-let inputFiltrar = document.querySelector('#txtFiltrar');
+const inputFiltrar = document.querySelector('#txtFiltrar');
 
-let elUsuario = JSON.parse(sessionStorage.getItem('usuario'));
-
-
-if (elUsuario.userType === 'padreFamilia') {
-    inputFiltrar = document.querySelector('#txtFiltrarPF');
-}
+let user = JSON.parse(sessionStorage.getItem('usuario'));//ya está declarado
 
 let idCentroEducativo;
 
-if (location.pathname.split("/").slice(-1) == 'profileInfoCE.html'){
-    if (elUsuario.userType == 'padreFamilia' ) {//OCULTAR
-        document.getElementById('preguntasFrecuentesCE&Admin').style.display = 'none';
-    } else {
-        document.getElementById('preguntasFrecuentesPF').style.display = 'none';
-    }
+if (user.userType == 'padreFamilia' ) {//REDIRECCIONAMIENTO
+    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html') setTimeout(location.href='preguntasFrecuentesPF.html?idCE='+IdGeneralCE, 0);
+
+    if (opcionVerPF)  opcionVerPF.href = 'preguntasFrecuentesPF.html?idCE='+IdGeneralCE;
 } else {
-    alert('Salió mal');
+    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE, 0);
 
-    if (elUsuario.userType == 'padreFamilia' ) {//REDIRECCIONAMIENTO
-        if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html') setTimeout(location.href='preguntasFrecuentesPF.html?idCE='+IdGeneralCE, 0);
-
-        if (opcionVerPF)  opcionVerPF.href = 'preguntasFrecuentesPF.html?idCE='+IdGeneralCE;
-    } else {
-        if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE, 0);
-
-        if (opcionVerCE) opcionVerCE.href = 'preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE;
-    }
+    if (opcionVerCE) opcionVerCE.href = 'preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE;
 }
 
-
-
-
-
-if (elUsuario.userType == 'padreFamilia' || elUsuario.userType == 'superAdministrador' ){
+if (user.userType == 'padreFamilia' || user.userType == 'superAdministrador' ){
     idCentroEducativo = IdGeneralCE;
 }else {
-    idCentroEducativo = elUsuario._id;
+    idCentroEducativo = user._id;
 }
 
 let listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
@@ -63,13 +41,7 @@ inputFiltrar.addEventListener('keyup', mostrarPreguntasFrecuentes);
 
 function mostrarPreguntasFrecuentes() {
 
-    let tabla;
-
-    if (elUsuario.userType === 'padreFamilia'){
-        tabla = document.querySelector('#tblPreguntasFrecuentesPF tbody');
-    } else {
-        tabla = document.querySelector('#tblPreguntasFrecuentes tbody');
-    }
+    let tabla = document.querySelector('#tblPreguntasFrecuentes tbody');
 
     let busqueda = inputFiltrar.value;
 
@@ -102,7 +74,7 @@ function mostrarPreguntasFrecuentes() {
 
                 let contenidoR = document.getElementById(`respuesta_${pregunta.id}`).textContent;
 
-                if (elUsuario.userType === 'superAdministrador' || elUsuario.userType === 'centroEducativo'){
+                if (user.userType === 'superAdministrador' || user.userType === 'centroEducativo'){
 
                     pregunta.insertAdjacentHTML('beforeend', `<div class="awesome_images opciones" id="opciones_${pregunta.id}"></i><i class="fas fa-edit modificar" id="modificar_${pregunta.id}"></i><i class="fas fa-trash-alt eliminar" id="eliminar_${pregunta.id}"></i></div>`);
 
@@ -158,23 +130,9 @@ function mostrarPreguntasFrecuentes() {
 }
 
 function eliminarMensaje() {
-    let columna;
-    if (elUsuario.userType === 'padreFamilia'){
-        columna = document.querySelector('.center');
-    } else {
-        columna = document.querySelector('.right');
-
-    }
-    columna.removeChild(document.getElementById('error'));
+    document.querySelector('.right').removeChild(document.getElementById('error'));
 }
 
 function insertarMensaje(mensaje) {
-    let tablita;
-
-    if (elUsuario.userType === 'padreFamilia'){
-        tablita = document.getElementById('tblPreguntasFrecuentesPF');
-    } else {
-        tablita = document.getElementById('tblPreguntasFrecuentes');
-    }
-    tablita.insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> ${mensaje}</p>`);
+    document.getElementById('tblPreguntasFrecuentes').insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> ${mensaje}</p>`);
 }

@@ -1,3 +1,5 @@
+'use strict';
+
 let tabButtons = document.querySelectorAll('.tabContainer .buttonContainer button');
 let tabPanels = document.querySelectorAll('.tabContainer .tabPanel');
 
@@ -24,7 +26,6 @@ showPanel(0, '#fff');
 
 // **************************************************************************
 
-// let usuario = JSON.parse(sessionStorage.getItem('usuario'));
 
 // let fotoCE = document.querySelector('.photoCE')
 
@@ -33,11 +34,5 @@ showPanel(0, '#fff');
 // let direccionCE = document.querySelector('.infoWrapper .info h3');
 
 // window.onload = function () {
-//     let nombre = '';
 
-//     if ( === 'centroEducativo') {
-        
-//     } else {
-        
-//     }
 // };
