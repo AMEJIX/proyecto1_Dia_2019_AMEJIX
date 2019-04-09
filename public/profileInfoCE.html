@@ -17,6 +17,8 @@
 
     <!-- <link rel="stylesheet" href="css/profileInfo.css"> -->
     <link rel="stylesheet" href="css/profileCE.css">
+
+    <link rel="stylesheet" href="css/comentarios.css">
     <link rel="stylesheet" href="css/listarArticulos.css">
 
 
@@ -185,35 +187,14 @@
                         <h2></h2>
                         <h3></h3>
                         <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <div class="stars-outer">
+                                <div class="stars-inner"></div>
+                            </div>
+                            <span class="number-rating"></span>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- <h2>Nombre de la institucion</h2>
-            <h3>Direccion exacta</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div> -->
-            <!-- <a href="" id="aInfoCE">Información del Centro educativo</a>
-                <a href="" id="aMatricula">Matrícula</a>
-                <a href="" id="aBecas">Becas</a>
-                <a href="" id="aMaterialInformativo">Material Informativo</a>
-                <a href="" id="aNoticias">Noticias</a>
-                <a href="" id="aActividades">Actividades</a>
-                <a href="" id="aUtiles">Lista de útiles</a>
-                <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
-                <a href="" id="aEtiquetas">Etiquetas</a>
-                <a href="citas.html" id="aAgendarCita">Agendar cita</a> -->
 
             <div class="tabs">
                 <div class="tabContainer">
@@ -231,12 +212,37 @@
                         <button onclick="showPanel(10, '#fff')">Agendar cita</button>
                     </div>
 
-                    <div class="tabPanel">Información</div>
+                    <div class="tabPanel">
+                        <div class="comentarios">
+                            <h1>Comentarios</h1>
+
+                            <div id="registrarComentarioDiv">
+                                <div class="textAreaStandard">
+                                    <div>
+                                        <label for="">Comentario</label>
+                                    </div>
+                                    <div>
+                                        <textarea type="text" id="textarea" placeholder=""></textarea>
+                                    </div>
+                                </div>
+
+                                <button type="button" id="send"><i class="fas fa-paper-plane"></i></button>
+
+                            </div>
+
+                        </div>
+                    </div>
+
                     <div class="tabPanel">Matrícula</div>
+
                     <div class="tabPanel">Becas</div>
+
                     <div class="tabPanel">Material Informativo</div>
+
                     <div class="tabPanel">Noticias</div>
+
                     <div class="tabPanel">Actividades</div>
+
                     <div class="tabPanel">
                         <h1>Artículos escolares</h1>
 
@@ -262,10 +268,15 @@
 
                         </table>
                     </div>
+
                     <div class="tabPanel">Lista de útiles</div>
+
                     <div class="tabPanel">Preguntas Frecuentes</div>
+
                     <div class="tabPanel">Etiquetas</div>
+
                     <div class="tabPanel">Agendar cita</div>
+
                 </div>
             </div>
 
@@ -273,13 +284,16 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/style.js"></script>
     <script src="js/controlador.general.js"></script>
     <script src="js/servicio.profileCE.js"></script>
     <script src="js/profileCE.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
+    <script src="js/mostrarNombre.controller.js"></script>
+    <script src="js/controlador.rating.js"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
         async defer></script> -->
 
@@ -287,14 +301,39 @@
     <script src="js/mapUser.js"></script>
     <script src="js/servicioInicio.js"></script>
 
-    <!-- <script src="js/controlador.profileInfoCE.js"></script> -->
+    <!-- Información -->
 
-    
+    <!-- Aqui se van a insertar los comentarios -->
 
+    <!-- Matricula -->
+
+
+    <!-- Becas -->
+
+
+    <!-- Material Informativo -->
+
+
+    <!-- Noticias -->
+
+
+    <!-- Actividades -->
+
+
+    <!-- Articulos -->
     <script src="js/servicio.articulos.js"></script>
     <script src="js/controlador.listarArticulos.js"></script>
 
-    <script src="js/mostrarNombre.controller.js"></script>
+    <!-- Lista de utiles -->
+
+
+    <!-- Preguntas Frecuentes -->
+
+
+    <!-- Etiquetas -->
+
+
+    <!-- Agendar cita -->
 
 </body>
 
