@@ -82,3 +82,74 @@ module.exports.listarTodos = (req, res)=>{
         }
     )
 }; 
+
+
+
+//segunda iteracion
+
+module.exports.buscarUtilIndividual = function (req, res){
+    modeloUtil.find({_id: req.body._id}).then(
+        function(utiles){
+            if(utiles){
+                res.json({success: true, utiles : utiles});
+            }else{
+                res.json({success: false, utiles : utiles});
+            }
+        }
+
+    );
+}
+
+
+
+module.exports.actualizarUtil = function(req, res){
+   
+    modeloUtil.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar el útil escolar'});
+            }else{
+                res.json({success: true , msg : 'El útil escolar se actualizó con éxito'});
+            }
+        }
+    
+    );
+}
+
+module.exports.eliminarUtil = function(req, res){
+    modeloUtil.findByIdAndDelete(req.body.id,
+        function(error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo eliminar el útil escolar'});
+            }else{
+                res.json({success: true , msg : 'El útil escolar se eliminó con éxito'});
+            }
+        })
+}
+module.exports.eliminarLista = function(req, res){
+    modeloUtil.remove({nombreLista : req.body.nombreLista},
+        function(error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo eliminar la lista de útiles'});
+            }else{
+                res.json({success: true , msg : 'La lista de útiles se eliminó con éxito'});
+            }
+        }
+        )
+        // function(error){
+        //     if(error){
+        //         res.json({success : false , msg : 'No se pudo eliminar la lista de útiles'});
+        //     }else{
+        //         res.json({success: true , msg : 'La lista de útiles se eliminó con éxito'});
+        //     }
+        // })
+
+        // modeloUtil.findOneAndDelete(req.body.nombreLista,
+        //     function(error){
+        //         if(error){
+        //             res.json({success : false , msg : 'No se pudo eliminar la lista de útiles'});
+        //         }else{
+        //             res.json({success: true , msg : 'La lista de útiles se eliminó con éxito'});
+        //         }
+        //     })
+}
