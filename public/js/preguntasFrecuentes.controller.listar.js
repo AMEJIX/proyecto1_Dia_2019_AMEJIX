@@ -38,6 +38,13 @@ mostrarPreguntasFrecuentes();
 
 inputFiltrar.addEventListener('keyup', mostrarPreguntasFrecuentes);
 
+let responsable;
+
+if(user.userType == 'centroEducativo'){
+    responsable = user.centroEducativo;
+} else {
+    responsable = user.nombre + ' ' + user.segundoNombre + ' ' + user.apellido + ' ' + user.segundoApellido;
+}
 
 function mostrarPreguntasFrecuentes() {
 
@@ -97,7 +104,8 @@ function mostrarPreguntasFrecuentes() {
                                     var keycode = (e.keyCode ? e.keyCode : e.which);
                                     console.log(keycode);
                                     if (keycode == '13') {
-                                        actualizarPregunta(laPregunta.textContent, document.getElementById(`respuesta_${pregunta.id}`).textContent,listaPreguntasFrecuentes[i]['idCE'], listaPreguntasFrecuentes[i]['_id'], contenidoP, contenidoR);
+
+                                        actualizarPregunta(laPregunta.textContent, document.getElementById(`respuesta_${pregunta.id}`).textContent,listaPreguntasFrecuentes[i]['idCE'], listaPreguntasFrecuentes[i]['_id'], contenidoP, contenidoR, responsable);
                                         e.preventDefault();
                                         return false;
                                     }
@@ -106,7 +114,7 @@ function mostrarPreguntasFrecuentes() {
                             z++;
                         });
                         botonEliminar.addEventListener('click', eliminar =>{
-                            eliminarPregunta(pregunta.id);
+                            eliminarPregunta(pregunta.id, responsable);
                         });
                     });
 

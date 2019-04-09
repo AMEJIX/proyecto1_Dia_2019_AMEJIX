@@ -1,6 +1,8 @@
 'use strict';
 
 const modeloCriteriosBusqueda = require('./criteriosBusqueda.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
+
 
 module.exports.validarEtiqueta = (req, res) =>{
 
@@ -122,6 +124,26 @@ module.exports.actualizar = (req, res) =>{
             if(error){
                 res.json({success : false , msg : 'No se pudo actualizar la etiqueta'});
             }else{
+
+
+                /**************************Bitacora*/
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombre,
+                    tipoDeMovimiento: "Modificación de criterio de búsqueda",
+                    fecha: diaActual,
+                });
+                nuevaBitacora.save();
+                /**************************/
+
                 res.json({success: true , msg : 'La etiqueta se actualizó con éxito'});
             }
         }
@@ -135,6 +157,25 @@ module.exports.eliminar = (req, res) =>{
             if(error){
                 res.json({success : false , msg : 'No se pudo eliminar la etiqueta'});
             }else{
+
+                /**************************Bitacora*/
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombre,
+                    tipoDeMovimiento: "Eliminación de criterio de búsqueda",
+                    fecha: diaActual,
+                });
+                nuevaBitacora.save();
+                /**************************/
+
                 res.json({success: true , msg : 'La etiqueta se eliminó con éxito'});
             }
         }

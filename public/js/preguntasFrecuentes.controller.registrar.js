@@ -38,17 +38,20 @@ let agregar = () =>{
     if (!validar()){
         pregunta = txtPregunta.value;
         respuesta = txtRespuesta.value;
+        let responsable;
         let idUsuario;
         if(user.userType == 'centroEducativo'){
             idUsuario = user._id;
+            responsable = user.centroEducativo;
         } else {
+            responsable = user.nombre + ' ' + user.segundoNombre + ' ' + user.apellido + ' ' + user.segundoApellido;
             idUsuario = IdGeneralCE;
         }
 
         txtRespuesta.value = '';
         txtPregunta.value = '';
 
-        registrarPreguntaFrecuente(idUsuario, pregunta, respuesta);
+        registrarPreguntaFrecuente(idUsuario, pregunta, respuesta, responsable);
 
         setTimeout("location.reload()", 1500);
 
