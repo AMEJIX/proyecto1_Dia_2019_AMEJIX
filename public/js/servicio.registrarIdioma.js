@@ -1,12 +1,13 @@
 'use strict';
 
-let registrarIdiomas = (parametrosIdioma) => { 
+let registrarIdiomas = (parametrosIdioma, pidCentroEducativo) => { 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarIdiomas",
         method: "POST",
         data: {
 
             idiomas: parametrosIdioma,
+            idCE: pidCentroEducativo,
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -28,10 +29,10 @@ let registrarIdiomas = (parametrosIdioma) => {
     });
 }
 
-let listarIdiomas = () => {
-    let arregloDeIdiomas = [];
+let listarIdiomas = (idCE) => {
+    let listarIdiomas = [];
     let request = $.ajax({
-        url: "http://localhost:4000/api/listarIdiomas",
+        url: "http://localhost:4000/api/listarIdiomasCE/"+idCE,
         method: "GET",
         data: {
 
@@ -42,11 +43,81 @@ let listarIdiomas = () => {
     });
 
     request.done(function (msg) {
-        arregloDeIdiomas = msg.idiomas;
+        listarIdiomas = msg.idiomas;
     });
 
     request.fail(function (jqXHR, textStatus) {
 
     });
-    return arregloDeIdiomas;
+    return listarIdiomas;
+};
+
+let editarIdioma = (parametrosIdioma, pidCentroEducativo, p_id) => {
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/editarMaterial',
+        method: "POST",
+        data: {
+            idiomas: parametrosIdioma,
+            idCE: pidCentroEducativo,
+            id: p_id
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'Idioma actualizado',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'mostrarIdiomas.html';
+            }
+        });
+
+    });
+
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Proceso no realizado',
+            text: res.msg
+        });
+
+    });
+
+};
+
+let eliminarIdioma = (p_id) => {
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/eliminarIdioma',
+        method: "POST",
+        data: {
+            id: p_id
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'Idioma eliminado',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'mostrarIdiomas.html';
+            }
+        });
+
+    });
+
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Proceso no realizado',
+            text: res.msg
+        });
+
+    });
+
 };

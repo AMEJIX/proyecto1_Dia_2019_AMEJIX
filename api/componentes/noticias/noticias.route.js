@@ -9,6 +9,11 @@ router.param('idCE', (req, res, next, idCE) => {
     next();
 });
 
+router.param('_id', function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
+
 router.route('/registrarNoticia')
     .post(
         function (req, res) {
@@ -27,6 +32,21 @@ router.route('/listarNoticiasCE/:idCE')
     .get(
         function (req, res) {
             apiRegistrarNoticia.listarNoticiasCE(req, res);
+        }
+    );
+
+router.route('/editarNoticia')
+    .post(
+        function (req, res) {
+            apiRegistrarNoticia.editar(req, res);
+        }
+    );
+
+
+router.route('/eliminarNoticia')
+    .post(
+        (req, res) => {
+            apiRegistrarNoticia.eliminar(req, res);
         }
     );
 

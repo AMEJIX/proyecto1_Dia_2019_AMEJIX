@@ -6,8 +6,13 @@ const inputTituloNoticia = document.querySelector('#inputTituloNoticia');
 const inputRegistrarNoticia = document.querySelector('#inputRegistrarNoticia');
 const inputFechaNoticia = document.querySelector('#inputFechaNoticia');
 const botonRegistrarNoticia = document.querySelector('#btnRegistrarNoticia');
-
 const idCE = user._id;
+
+if(user.userType != "centroEducativo") {
+    idUsuarioCE = IdGeneralCE;
+    opcionRegistrar.style.display = 'none';
+    if (location.pathname.split("/").slice(-1) != 'loSentimos.html') setTimeout(location.href='loSentimos.html?idCE='+IdGeneralCE, 0);
+}
 
 let validar = () => {
     let error = false;

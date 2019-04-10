@@ -18,7 +18,7 @@ module.exports.registrar = (req, res) => {
             res.json(
                 {
                     success: false,
-                    msg: `No se pudo registrar su beca, ocurrió el sigiente error ${error}`
+                    msg: `No se pudo registrar su noticia, ocurrió el sigiente error ${error}`
                 }
             );
         } else {
@@ -33,6 +33,7 @@ module.exports.registrar = (req, res) => {
     });
 
 };
+
 
 module.exports.listarNoticiasCE = (req, res) => {
     modeloRegistrarNoticia.find().then(
@@ -60,10 +61,35 @@ module.exports.listarNoticiasCE = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        notichas: "No se encontraron noticias registradas"
+                        notichas: "No se encontraron noticias",
                     }
                 )
             }
         }
     )
 };
+
+module.exports.editar = function (req, res) {
+
+    modeloRegistrarNoticia.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo actualizar su noticia' });
+            } else {
+                res.json({ success: true, msg: 'Su noticia ha sido actualizada' });
+            }
+        }
+
+    );
+}
+
+module.exports.eliminar = function (req, res) {
+    modeloRegistrarNoticia.findByIdAndDelete(req.body.id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar su noticia' });
+            } else {
+                res.json({ success: true, msg: 'Su noticia ha sido eliminada' });
+            }
+        })
+}

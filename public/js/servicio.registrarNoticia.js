@@ -59,7 +59,7 @@ let listarNoticias = (idCE) => {
     let listarNoticias = [];
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/listarNoticiasCE/"+idCE,
+        url: "http://localhost:4000/api/listarNoticiasCE/" + idCE,
         method: "GET",
         data: {
 
@@ -77,4 +77,76 @@ let listarNoticias = (idCE) => {
 
     });
     return listarNoticias;
+};
+
+let editarMatricula = (pstringTituloNoticia, pstringRegistrarNoticia, pstringFechaNoticia, pidCentroEducativo, p_id) => {
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/editarMatricula',
+        method: "POST",
+        data: {
+            tituloNoticia: pstringTituloNoticia,
+            registrarNoticia: pstringRegistrarNoticia,
+            fechaNoticia: pstringFechaNoticia,
+            idCE: pidCentroEducativo,
+            id: p_id
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'Noticia actualizada',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'mostrarNoticias.html';
+            }
+        });
+
+    });
+
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Proceso no realizado',
+            text: res.msg
+        });
+
+    });
+
+};
+
+let eliminarNoticia = (p_id) => {
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/eliminarNoticia',
+        method: "POST",
+        data: {
+            id: p_id
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'Noticia eliminada',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'mostrarNoticias.html';
+            }
+        });
+
+    });
+
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Proceso no realizado',
+            text: res.msg
+        });
+
+    });
+
 };
