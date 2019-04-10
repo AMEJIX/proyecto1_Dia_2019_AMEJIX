@@ -34,6 +34,44 @@ let listarUtilesNivel = (pnivel, pIdCentro) =>{
   return listaUtiles; 
 };
 
+
+let listarUtilesNivelPropio = (pnivel, pIdCentro, pidFiltro) =>{
+    
+  let listaUtiles= [];
+  let request = $.ajax({ 
+    
+    url: "http://localhost:4000/api/listarUtilNivelPropio",
+    method: "POST",
+    
+    data: {
+        nivel : pnivel,
+        idCE : pIdCentro,
+        nombreLista : pidFiltro
+    },
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json",
+    async : false
+
+  });
+   
+  request.done(function( res ) {
+    
+      listaUtiles = res.utiles;
+    
+    
+    
+
+  });
+   
+  request.fail(function( jqXHR, textStatus ) {
+    
+  });  
+  return listaUtiles; 
+};
+
+
+
+
 let listarTodos= () =>{
     
     let listaUtiles= [];
@@ -146,6 +184,41 @@ let actualizarUtil = (pcantidad, p_id) =>{
           text : res.msg,
           onClose: () => {
               window.location.href = 'listarUtilesOficialesSA.html';
+            }    
+      });
+
+  });
+
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};
+
+let actualizarUtilCE = (pcantidad, p_id) =>{
+  let request = $.ajax({
+      url : 'http://localhost:4000/api/actualizarUtil',
+      method : "POST",
+      data : {       
+        cantidad : pcantidad,        
+        id : p_id
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+  request.done(function(res){     
+     
+      swal.fire({
+          type : 'success',
+          title : 'Útil actualizado con éxito',
+          text : res.msg,
+          onClose: () => {
+              window.location.href = 'listarUtilesPropiosCE.html';
             }    
       });
 
