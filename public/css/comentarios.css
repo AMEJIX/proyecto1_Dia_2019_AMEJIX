@@ -1,3 +1,11 @@
+.errorInput {
+    border: #e74c3c solid 1px;
+}
+
+.selected {
+    color: #F9AA33;
+}
+
 .comentarios h1 {
     padding-bottom: 2%;
 }
@@ -29,6 +37,7 @@
 
 .btnStars {
     float: left;
+    cursor: default;
 }
 
 .starsPF button {
@@ -70,6 +79,7 @@
     float: left;
     margin-top: 160px;
     margin-left: 5px;
+    outline: none;
 }
 
 #send:hover {

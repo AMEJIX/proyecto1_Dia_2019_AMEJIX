@@ -10,7 +10,8 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
 
@@ -18,9 +19,10 @@
     <link rel="stylesheet" href="css/profileCE.css">
 
     <link rel="stylesheet" href="css/comentarios.css">
+    <link rel="stylesheet" href="css/mostrarMaterialInformativo.css">
     <link rel="stylesheet" href="css/listarArticulos.css">
-    <link rel="stylesheet" href="css/preguntasFrecuentes2.0.css">
-    <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css">
+    <!-- <link rel="stylesheet" href="css/preguntasFrecuentes2.0.css">
+    <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css"> -->
 
 </head>
 
@@ -218,27 +220,25 @@
 
                             <div id="registrarComentarioDiv">
                                 <div class="starsPF">
-                                    <form action="">
-                                        <!-- <input type="radio" name="star" id="1" value="1">
-                                        <input type="radio" name="star" id="2" value="2">
-                                        <input type="radio" name="star" id="3" value="3">
-                                        <input type="radio" name="star" id="4" value="4">
-                                        <input type="radio" name="star" id="5" value="5"> -->
-                                    </form>
                                     <div class="btnStars">
-                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
-                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
-                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
-                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
-                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="uno" value="1"><i
+                                                class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="dos" value="2"><i
+                                                class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="tres" value="3"><i
+                                                class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="cuatro" value="4"><i
+                                                class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="cinco" value="5"><i
+                                                class="fas fa-star"></i></button>
                                     </div>
                                 </div>
                                 <div class="textAreaStandard">
                                     <div>
-                                        <label for="">Comentario</label>
+                                        <label for="inputComentario">Comentario</label>
                                     </div>
                                     <div>
-                                        <textarea type="text" id="textarea" placeholder=""></textarea>
+                                        <textarea type="text" id="inputComentario" placeholder=""></textarea>
                                     </div>
                                 </div>
 
@@ -253,7 +253,30 @@
 
                     <div class="tabPanel">Becas</div>
 
-                    <div class="tabPanel">Material Informativo</div>
+                    <div class="tabPanel">
+                        <h1>Material informativo</h1>
+
+                        <div class="filtrar">
+                            <label for="txtFiltro">Buscar</label>
+                            <input type="text" id="txtFiltro">
+                        </div>
+
+                        <table id="tblMaterialInformativo">
+                            <thead>
+                                <tr>
+                                    <th>Tema</th>
+                                    <th>Descripción</th>
+                                    <th>Brochure informativo</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="tabPanel">Noticias</div>
 
@@ -368,6 +391,9 @@
     <!-- Información -->
 
     <!-- Aqui se van a insertar los comentarios -->
+    <script src="js/servicio.comentarios.js"></script>
+    <script src="js/controlador.registrarComentario.js"></script>
+    <script src="js/controlador.mostrarComentarios.js"></script>
 
     <!-- Matricula -->
 
@@ -376,7 +402,8 @@
 
 
     <!-- Material Informativo -->
-
+    <script src="js/servicio.registrarMaterialInformativo.js"></script>
+    <script src="js/controlador.mostrarMaterialInformativo.js"></script>
 
     <!-- Noticias -->
 
@@ -401,7 +428,6 @@
     <!--Preguntas frecuentes PF-->
 
     <script src="js/preguntasFrecuentes.servicio.js"></script>
-    <!--PARA CUALQUIER USUARIO-->
     <script src="js/preguntasFrecuentes.controller.listar.js"></script>
     <!--PARA CUALQUIER USUARIO-->
 
