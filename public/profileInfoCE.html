@@ -10,8 +10,7 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
 
@@ -20,7 +19,8 @@
 
     <link rel="stylesheet" href="css/comentarios.css">
     <link rel="stylesheet" href="css/listarArticulos.css">
-
+    <link rel="stylesheet" href="css/preguntasFrecuentes2.0.css">
+    <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css">
 
 </head>
 
@@ -217,6 +217,22 @@
                             <h1>Comentarios</h1>
 
                             <div id="registrarComentarioDiv">
+                                <div class="starsPF">
+                                    <form action="">
+                                        <!-- <input type="radio" name="star" id="1" value="1">
+                                        <input type="radio" name="star" id="2" value="2">
+                                        <input type="radio" name="star" id="3" value="3">
+                                        <input type="radio" name="star" id="4" value="4">
+                                        <input type="radio" name="star" id="5" value="5"> -->
+                                    </form>
+                                    <div class="btnStars">
+                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="1" value="1"><i class="fas fa-star"></i></button>
+                                    </div>
+                                </div>
                                 <div class="textAreaStandard">
                                     <div>
                                         <label for="">Comentario</label>
@@ -271,7 +287,55 @@
 
                     <div class="tabPanel">Lista de útiles</div>
 
-                    <div class="tabPanel">Preguntas Frecuentes</div>
+                    <div class="tabPanel">
+                        <div id="preguntasFrecuentesPF">
+                            <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+                            <div class="center">
+                                <h1>Preguntas frecuentes</h1>
+                                <div id="cajaFiltrarPF">
+                                    <label for="txtFiltrarPF" id="lblFiltrarPF">Buscar</label>
+                                    <input type="text" id="txtFiltrarPF" placeholder="Escriba su pregunta">
+                                </div>
+                                <table id="tblPreguntasFrecuentesPF">
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div id="preguntasFrecuentesCE&Admin">
+                            <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+                            <div class="head">
+                                <h1>Preguntas frecuentes</h1>
+
+                                <div id="cajaFiltrar">
+                                    <label for="txtFiltrar" id="lblFiltrar">Buscar</label>
+                                    <input type="text" id="txtFiltrar" placeholder="Escriba su pregunta">
+                                </div>
+                            </div>
+
+                            <div class="right">
+                                <table id="tblPreguntasFrecuentes">
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+
+                            <div class="left">
+                                <p id="nueva">¿Nueva pregunta frecuente?</p>
+                                <form>
+                                    <div id="cajaRegistrarPregunta">
+                                        <label for="txtPregunta">Escriba la pregunta</label>
+                                        <textarea id="txtPregunta" type="text" maxlength="100"></textarea>
+                                    </div>
+                                    <div id="cajaRegistrarRespuesta">
+                                        <label for="txtRespuesta">Escriba la respuesta</label>
+                                        <textarea type="text" id="txtRespuesta" maxlength="350"></textarea>
+                                    </div>
+
+                                </form>
+                                <button type="button" id="btnEnviar">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="tabPanel">Etiquetas</div>
 
@@ -329,6 +393,28 @@
 
     <!-- Preguntas Frecuentes -->
 
+    <!--Isaac-->
+
+    <!--Preguntas frecuentes PF-->
+
+
+    <!--Preguntas frecuentes PF-->
+
+    <script src="js/preguntasFrecuentes.servicio.js"></script>
+    <!--PARA CUALQUIER USUARIO-->
+    <script src="js/preguntasFrecuentes.controller.listar.js"></script>
+    <!--PARA CUALQUIER USUARIO-->
+
+    <!--Preguntas frecuentes CE y ADMIN-->
+
+    <script src="js/preguntasFrecuentes.controller.actualizar.js"></script>
+    <script src="js/preguntasFrecuentes.controller.eliminar.js"></script>
+    <script src="js/preguntasFrecuentes.controller.registrar.js"></script>
+
+    <!--Preguntas frecuentes CE y ADMIN-->
+
+
+    <!--Isaac-->
 
     <!-- Etiquetas -->
 

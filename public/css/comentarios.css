@@ -5,8 +5,45 @@
 #registrarComentarioDiv {
     width: 50%;
     margin: 0 auto;
-    height: 210px;
+    height: 290px;
+    /* background: fuchsia; */
 }
+
+.starsPF {
+    /* background: gray; */
+    width: 40%;
+    height: 30px;
+    margin-left: 21.5%;
+}
+
+/* .starsPF input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    font-family: FontAwesome;
+    content: "\f005";
+    color: #F9AA33;
+} */
+
+.btnStars {
+    float: left;
+}
+
+.starsPF button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-color: transparent;
+    color: gainsboro;
+    outline: none;
+    cursor: pointer;
+}
+
+/* .starsPF button:hover {
+    color: #F9AA33;
+} */
 
 #registrarComentarioDiv label {
     color: #2c3e50;
@@ -36,8 +73,7 @@
 }
 
 #send:hover {
-   color: #F9AA33;
-   cursor: pointer; 
-   transition: all 200ms ease;
-
+    color: #F9AA33;
+    cursor: pointer;
+    transition: all 200ms ease;
 }
