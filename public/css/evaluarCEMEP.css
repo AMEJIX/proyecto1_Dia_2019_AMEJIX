@@ -1,0 +1,273 @@
+.errorInput{
+    border: 2px solid #ED4C67;
+}
+
+#idCentroEducativo{
+    display: none;
+}
+
+
+h1{
+    display: block;
+   margin-top: 30px;
+   text-align: center;
+   font-size: 25px;
+   color: #2c3e50;
+   margin-bottom: 40px;
+
+    /* margin: 30px;
+    font-size: 20px;
+    text-align: center; */
+}
+.filtroDerecha{
+    float: right;
+    margin-top: 40px;
+    margin-right: 13%;;
+    margin-bottom: 50px;
+}
+
+.filtroDerecha div{
+    margin-right: 90px;
+     margin-bottom: 50px;
+
+}
+
+.filtroDerecha div label{
+    display: inline-block;
+    width: 190px;
+    margin-left: 32px;
+    font-size: 20px;
+}
+
+#tablaListaCE{
+    border-collapse: collapse;
+    width: 74%;
+
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 200px;
+}
+
+.txtFiltro{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+}
+
+
+#txtFiltro{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+}
+
+
+
+#tablaListaCE tbody tr td{
+
+    color: #2c3e50;
+   vertical-align: middle;
+   text-align: center;
+   padding: 12px 1px;
+   border: #2c3e50 solid 1px;
+   vertical-align: middle;
+
+/*    
+    color: #344955;
+    border: 1px solid #344955;
+    text-align: center;
+    padding: 8px; */
+}
+
+#tablaListaCE tbody tr td:hover{
+    color: white;
+    background: #4a6572;
+}
+
+
+
+
+#tblCriteriosMEP{
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+ 
+
+    /* text-align: center;
+    border-collapse: collapse;
+    /* margin-left: 32px; */
+    /* width: 90%;
+    margin: 0 auto;
+    margin-bottom: 100px; */ 
+    
+}
+
+#tblRangoCriteriosMEP{
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+ 
+
+    /* text-align: center;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px; */
+   
+}
+
+th{
+
+    background: #f9aa33;
+    color: white;
+    text-align: center;
+   padding: 12px 1px;
+   border: #2c3e50 solid 1px;
+   vertical-align: middle;
+
+ 
+    /* color: white;
+    background-color: #f9bf33;
+    border: #2c3e50 solid 1px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 65px;
+    padding-left: 65px; */
+
+   
+    
+}
+
+
+
+
+#tblCriteriosMEP tbody tr td{
+
+    color: #2c3e50;
+   vertical-align: middle;
+   text-align: center;
+   padding: 12px 1px;
+   border: #2c3e50 solid 1px;
+   vertical-align: middle;
+
+/*    
+    color: #344955;
+    border: 1px solid #344955;
+    text-align: center;
+    padding: 8px; */
+}
+
+#tblCriteriosMEP tbody tr td:hover{
+    color: white;
+    background: #4a6572;
+}
+
+
+#tblRangoCriteriosMEP tbody tr td{
+    color: #2c3e50;
+    vertical-align: middle;
+    text-align: center;
+    padding: 12px 1px;
+    border: #2c3e50 solid 1px;
+    vertical-align: middle;
+
+    /* color: #344955;
+    border: 1px solid #344955;
+    text-align: center;
+    padding: 8px; */
+}
+#tblRangoCriteriosMEP tbody tr td:hover{
+    color: white;
+    background: #4a6572;
+}
+
+a{
+    color: #2c3e50;
+    text-decoration: none;
+    
+
+}
+
+a:hover{    
+    text-decoration: none;
+    color: #f9aa33
+    
+}
+
+.divRegistrar{
+    display: block;
+    margin-top: 50px;
+    margin-left: 5%;
+
+    
+}
+
+#segundoContenido{
+    margin-bottom: 150px;
+}
+
+.btnDiv{
+    display: block;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+
+#btnRegistrar{
+    
+    padding: 14px 50px;
+    background-color: #f9aa33;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+#btnRegistrar:hover{
+    background-color: #f9bf33;
+}
+
+.contenidoCEEncabezado{
+    text-align: center;
+}
+
+#nombreCE{
+    border: none;
+    background-color: #EDF0F5;
+    font-size: 20px;
+    margin-bottom: 30px;
+    width: 17%;
+}
+
+#inpEstrellas{
+    border: none;
+    background-color: #EDF0F5;
+    font-size: 20px;
+    margin-bottom: 30px;
+   
+}
+
+#inpTotal{
+    border: none;
+    background-color: #EDF0F5;
+    font-size: 20px;
+    margin-bottom: 30px;
+   
+}
+
+.labels{
+  font-size: 18px;
+    
+}
+
+
+
+

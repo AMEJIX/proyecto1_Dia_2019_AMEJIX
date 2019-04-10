@@ -4,27 +4,53 @@
 const opcionVerPF = document.querySelector('#aPreguntasPF');
 const opcionVerCE = document.querySelector('#aPreguntasCE');
 
+// window.onunload = () =>{
+//     showPanel(8, '#fff');
+// };
 
-const inputFiltrar = document.querySelector('#txtFiltrar');
+let inputFiltrar = document.querySelector('#txtFiltrar');
 
-let user = JSON.parse(sessionStorage.getItem('usuario'));//ya está declarado
+let elUsuario = JSON.parse(sessionStorage.getItem('usuario'));
+
+
+if (elUsuario.userType === 'padreFamilia') {
+    inputFiltrar = document.querySelector('#txtFiltrarPF');
+}
 
 let idCentroEducativo;
 
-if (user.userType == 'padreFamilia' ) {//REDIRECCIONAMIENTO
-    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html') setTimeout(location.href='preguntasFrecuentesPF.html?idCE='+IdGeneralCE, 0);
-
-    if (opcionVerPF)  opcionVerPF.href = 'preguntasFrecuentesPF.html?idCE='+IdGeneralCE;
+if (location.pathname.split("/").slice(-1) == 'profileInfoCE.html'){
+    if (elUsuario.userType == 'padreFamilia' ) {//OCULTAR
+        document.getElementById('preguntasFrecuentesCE&Admin').style.display = 'none';
+    } else {
+        document.getElementById('preguntasFrecuentesPF').style.display = 'none';
+    }
 } else {
-    if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE, 0);
+    // alert('Salió mal');
 
-    if (opcionVerCE) opcionVerCE.href = 'preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE;
+    if (elUsuario.userType == 'padreFamilia' ) {//REDIRECCIONAMIENTO
+        if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesPF.html') setTimeout(location.href='preguntasFrecuentesPF.html?idCE='+IdGeneralCE, 0);
+
+        if (opcionVerPF)  opcionVerPF.href = 'preguntasFrecuentesPF.html?idCE='+IdGeneralCE;
+    } else {
+        if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') setTimeout(location.href='preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE, 0);
+
+        if (opcionVerCE) opcionVerCE.href = 'preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE;
+    }
 }
 
-if (user.userType == 'padreFamilia' || user.userType == 'superAdministrador' ){
+if (elUsuario.userType == 'padreFamilia' || elUsuario.userType == 'superAdministrador' ){
     idCentroEducativo = IdGeneralCE;
 }else {
-    idCentroEducativo = user._id;
+    idCentroEducativo = elUsuario._id;
+}
+
+let responsable;
+
+if(elUsuario.userType == 'centroEducativo'){
+    responsable = elUsuario.centroEducativo;
+} else {
+    responsable = elUsuario.nombre + ' ' + elUsuario.segundoNombre + ' ' + elUsuario.apellido + ' ' + elUsuario.segundoApellido;
 }
 
 let listaPreguntasFrecuentes = getPreguntasFrecuentes(idCentroEducativo);
@@ -38,10 +64,15 @@ mostrarPreguntasFrecuentes();
 
 inputFiltrar.addEventListener('keyup', mostrarPreguntasFrecuentes);
 
-
 function mostrarPreguntasFrecuentes() {
 
-    let tabla = document.querySelector('#tblPreguntasFrecuentes tbody');
+    let tabla;
+
+    if (elUsuario.userType === 'padreFamilia'){
+        tabla = document.querySelector('#tblPreguntasFrecuentesPF tbody');
+    } else {
+        tabla = document.querySelector('#tblPreguntasFrecuentes tbody');
+    }
 
     let busqueda = inputFiltrar.value;
 
@@ -74,7 +105,7 @@ function mostrarPreguntasFrecuentes() {
 
                 let contenidoR = document.getElementById(`respuesta_${pregunta.id}`).textContent;
 
-                if (user.userType === 'superAdministrador' || user.userType === 'centroEducativo'){
+                if (elUsuario.userType === 'superAdministrador' || elUsuario.userType === 'centroEducativo'){
 
                     pregunta.insertAdjacentHTML('beforeend', `<div class="awesome_images opciones" id="opciones_${pregunta.id}"></i><i class="fas fa-edit modificar" id="modificar_${pregunta.id}"></i><i class="fas fa-trash-alt eliminar" id="eliminar_${pregunta.id}"></i></div>`);
 
@@ -97,7 +128,7 @@ function mostrarPreguntasFrecuentes() {
                                     var keycode = (e.keyCode ? e.keyCode : e.which);
                                     console.log(keycode);
                                     if (keycode == '13') {
-                                        actualizarPregunta(laPregunta.textContent, document.getElementById(`respuesta_${pregunta.id}`).textContent,listaPreguntasFrecuentes[i]['idCE'], listaPreguntasFrecuentes[i]['_id'], contenidoP, contenidoR);
+                                        actualizarPregunta(laPregunta.textContent, document.getElementById(`respuesta_${pregunta.id}`).textContent,listaPreguntasFrecuentes[i]['idCE'], listaPreguntasFrecuentes[i]['_id'], contenidoP, contenidoR, responsable);
                                         e.preventDefault();
                                         return false;
                                     }
@@ -106,7 +137,7 @@ function mostrarPreguntasFrecuentes() {
                             z++;
                         });
                         botonEliminar.addEventListener('click', eliminar =>{
-                            eliminarPregunta(pregunta.id);
+                            eliminarPregunta(pregunta.id, responsable);
                         });
                     });
 
@@ -130,9 +161,23 @@ function mostrarPreguntasFrecuentes() {
 }
 
 function eliminarMensaje() {
-    document.querySelector('.right').removeChild(document.getElementById('error'));
+    let columna;
+    if (elUsuario.userType === 'padreFamilia'){
+        columna = document.querySelector('.center');
+    } else {
+        columna = document.querySelector('.right');
+
+    }
+    columna.removeChild(document.getElementById('error'));
 }
 
 function insertarMensaje(mensaje) {
-    document.getElementById('tblPreguntasFrecuentes').insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> ${mensaje}</p>`);
+    let tablita;
+
+    if (elUsuario.userType === 'padreFamilia'){
+        tablita = document.getElementById('tblPreguntasFrecuentesPF');
+    } else {
+        tablita = document.getElementById('tblPreguntasFrecuentes');
+    }
+    tablita.insertAdjacentHTML('afterend', `<p id="error" id="mensajito"> ${mensaje}</p>`);
 }

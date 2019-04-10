@@ -31,13 +31,16 @@ let mostrarArticulos = () =>{
                 fila.insertCell().innerHTML = articulos[i]['descripcion'];
                 let celdaConfiguracion = fila.insertCell();
                 let celdaEliminar = fila.insertCell();
+
                 let botonEditar = document.createElement('a');
                 botonEditar.textContent = 'Editar';
                 botonEditar.href = `actualizarArticulos.html?idArticulo=${articulos[i]['_id']}`
                 celdaConfiguracion.appendChild(botonEditar);
+
                 let botonEliminar = document.createElement('button');
-                botonEliminar.textContent = 'Eliminar';
-                botonEliminar.id = 'btnEliminar';                
+                // botonEliminar.textContent = 'Eliminar';
+                botonEliminar.id = 'btnEliminar';   
+                botonEliminar.classList('class="fas fa-edit modificar')             
                 botonEliminar.addEventListener('click', eliminar =>{
                     eliminarArticuloControlador(articulos[i]['_id']);
                 });

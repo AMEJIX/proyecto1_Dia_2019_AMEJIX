@@ -16,7 +16,7 @@ let mostrarUtiles = () =>{
         
         if(utiles !== "No se encontraron útiles escolares registrados"){
             for(let i=0; i<utiles.length; i++){
-                if(utiles[i]['nombreLista'].toLowerCase().includes(filtro.toLowerCase())){
+                if(utiles[i]['nombreLista'].toLowerCase().includes(filtro.toLowerCase()) || utiles[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
                     let fila = tabla.insertRow();
                     fila.insertCell().innerHTML = utiles [i]  ['nombreLista'];
                     fila.insertCell().innerHTML = utiles [i]  ['nombre'];

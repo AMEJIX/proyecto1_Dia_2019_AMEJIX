@@ -35,12 +35,14 @@ let mostrarArticulos = () =>{
                 botonEditar.textContent = 'Editar';
                 botonEditar.href = `actualizarArticulos.html?idArticulo=${articulos[i]['_id']}`
                 celdaConfiguracion.appendChild(botonEditar);
-                let botonEliminar = document.createElement('button');
+                let botonEliminar = document.createElement('button');  
                 botonEliminar.textContent = 'Eliminar';
-                botonEliminar.id = 'btnEliminar';                
+                botonEliminar.id = 'btnEliminar'; 
+                      
                 botonEliminar.addEventListener('click', eliminar =>{
                     eliminarArticuloControlador(articulos[i]['_id']);
                 });
+                
                 celdaEliminar.appendChild(botonEliminar);
             }
 

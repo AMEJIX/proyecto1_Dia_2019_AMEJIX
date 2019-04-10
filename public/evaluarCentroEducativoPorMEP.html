@@ -14,7 +14,8 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/listarUtiles.css">
+    <!-- <link rel="stylesheet" href="css/listarUtiles.css"> -->
+    <link rel="stylesheet"  href="css/evaluarCEMEP.css">
 </head>
 
 <body>
@@ -143,83 +144,92 @@
                         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
-            <h1>Lista oficial de útiles del Ministerio de Educación Pública</h1>
-
-              <div class="divRegistrar">
-                <a href="registrarListaUtiles.html">Nueva lista</a>                   
-            </div>
+       <div id="primerContenido">
+            <h1>Lista de centros educativos</h1>                    
            
-            <form>
-
-                <div>
-                    <div class="filtroIzquierda">
-                        <label for="selectNivel">Nivel escolar</label>
-                        <select id="selectNivel">
-                            <optgroup label="Escuela"></optgroup>
-                            <option value="">Seleccione nivel</option>
-                            <option value="1">Primero</option>
-                            <option value="2">Segundo</option>
-                            <option value="3">Tercero</option>
-                            <option value="4">Cuarto</option>
-                            <option value="5">Quinto</option>
-                            <option value="6">Sexto</option>
-                            <optgroup label="Colegio"></optgroup>
-                            <option value="7">Séptimo</option>
-                            <option value="8">Octavo</option>
-                            <option value="9">Noveno</option>
-                            <option value="10">Décimo</option>
-                            <option value="11">Undécimo</option>
-                            <option value="12">Duodécimo</option>
-                        </select>
-                    </div>
+            
+                                
                     <div class="filtroDerecha">
                         <label for="txtFiltro">Buscar</label>
-                        <input type="text" id="txtFiltro" placeholder="Escriba el nombre del artículo">
-                    </div>
-                  
+                        <input type="text" id="txtFiltro" placeholder="Escriba el nombre de la institución">
+                    </div>  
+                
 
+           
+            <table id="tablaListaCE">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Valorar</th>   
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+       </div>
+
+       <div id="segundoContenido">
+            <h1>Evaluación del centro educativo</h1>
+            <div id="contenidoEncabezadoCE" class="contenidoCEEncabezado">
+                    <input type="text" id="idCentroEducativo"> 
+                    <input type="text" disabled id="nombreCE">
+                    <h2 id="anno"></h2>
+            </div>
+            
+            <div class="contenedorTablas">
+                <div class="divTablaIzquierda"></div>
+                <table id="tblCriteriosMEP">
+                        <thead>
+                            <tr>
+                                <th>Criterio</th>
+                                <th>Descripción</th>
+                                <th>Puntaje</th>
+                                <th>Cumple</th>                          
+                            </tr>
+                        </thead>
+                        <tbody>
+        
+                        </tbody>
+     
+                    </table>
+                    <div class="divTotal contenidoCEEncabezado">
+                        <label for="inpTotal" id="lblTotal" class="labels">Total</label>
+                        <input type="number" disabled id="inpTotal" >
+                    </div>
+
+                <div class="divTablaDerecha"></div>
+
+                <table id="tblRangoCriteriosMEP">
+                        <thead>
+                            <tr>
+                                <th>Rango</th>
+                                <th>Valor mínimo</th>
+                                <th>Valor máximo</th>
+                                <th>Cantidad de estrellas</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+        
+                        </tbody>
+        
+                    </table>
+                    <div class="divEstrellas contenidoCEEncabezado">
+                        <label for="inpEstrellas" class="labels">Estrellas</label>
+                        <input type="text" disabled id="inpEstrellas">
+                    </div>
+            </div>
+           
+            <div class="btnDiv">
+                    <button type="button" class="btnRegistrar" id="btnRegistrar">Registrar</button>
                 </div>
 
-                
-            </form>
+       </div>
+
+      
            
-            <table id="tablaNombreListaU">
-                <thead>
-                    <tr>
-                        <th>Nombre de la lista</th>
-                        <th>Seleccionar</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-                    
-                
-
-            <table id="tblUtiles">
-                <thead>
-                    <tr>
-                        <th>Lista</th>
-                        <th>Nombre del útil</th>
-                        <th>Descripción</th>
-                        <th>Cantidad</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-
-            </table>
-            <div id="idDivBoton" class="divBotonEliminar">
-                
-            </div>
-            <div id="idDivBotonActualizar" class="divBotonActualizar">
-                
-            </div>
+          
         </div>
     </main>
     <script src="js/style.js"></script>
@@ -228,12 +238,11 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap" async defer></script>
     <script src="js/mapUser.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <script src="js/controlador.general.js"></script>
-    <script src="js/servicio.utiles.js"></script>
-    <script src="js/controlador.listarUtilesOficialesSa.js"></script>
+    <script src="js/servicio.evaluarCEPorMEP.js"></script>
+    <script src="js/controlador.evaluarCentroEducativoPorMEP.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
 </body>
 

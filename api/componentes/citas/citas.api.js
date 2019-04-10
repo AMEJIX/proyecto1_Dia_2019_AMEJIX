@@ -2,6 +2,7 @@
 
 const modeloCitas = require('./citas.model');
 const nodeMailer = require('nodemailer');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 
 const transporter = nodeMailer.createTransport(
@@ -114,6 +115,26 @@ module.exports.registrarCita = (req, res) =>{
                     console.log('El correo fue enviado con éxito. ' + info.response);
                 }
             });
+
+
+            /**************************Bitacora*/
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.nombre,
+                tipoDeMovimiento: "Agendación de cita",
+                fecha: diaActual,
+            });
+            nuevaBitacora.save();
+            /**************************/
+
             res.json(
                 {
                     success: true,
@@ -196,6 +217,26 @@ module.exports.cancelar = (req, res) =>{
         if (error){
             res.json({success: false, msg : 'No se pudo cancelar la cita'});
         } else {
+
+
+            /**************************Bitacora*/
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.nombre,
+                tipoDeMovimiento: "Cancelación de cita exitosa",
+                fecha: diaActual,
+            });
+            nuevaBitacora.save();
+            /**************************/
+
             res.json({success: true, msg : 'Se canceló la cita con éxito'});
         }
     });

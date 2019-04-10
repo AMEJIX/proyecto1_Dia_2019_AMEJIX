@@ -1,6 +1,6 @@
 'use strict';
 
-let eliminarEtiqueta = (pid) =>{
+let eliminarEtiqueta = (pid, presponsable) =>{
 
     Swal.fire({
         title: '¿sEstá seguro que desea eliminar la etiqueta?',
@@ -12,7 +12,7 @@ let eliminarEtiqueta = (pid) =>{
     }).then((result) => {
         if (result.value) {
 
-            deleteEtiqueta(pid);
+            deleteEtiqueta(pid, presponsable);
             let elementoEliminado = document.getElementById(pid);
             elementoEliminado.parentElement.removeChild(elementoEliminado);
         } else {

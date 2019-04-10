@@ -1,6 +1,6 @@
 'use strict';
 
-let eliminarPregunta = (pid) =>{
+let eliminarPregunta = (pid, presponsable) =>{
 
     Swal.fire({
         title: '¿Está seguro que desea eliminar la pregunta?',
@@ -12,7 +12,7 @@ let eliminarPregunta = (pid) =>{
     }).then((result) => {
         if (result.value) {
 
-            deletePregunta(pid);
+            deletePregunta(pid, presponsable);
             let elementoEliminado = document.getElementById(pid);
             elementoEliminado.parentElement.removeChild(elementoEliminado);
         } else {

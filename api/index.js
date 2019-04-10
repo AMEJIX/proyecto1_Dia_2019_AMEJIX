@@ -123,6 +123,9 @@ app.use('/api', CEperfil);
 const comentarios = require('./componentes/comentarios/comentarios.route');
 app.use('/api', comentarios);
 
+const evaluacionesMEP = require('./componentes/evaluacionesMEP/evaluacionesMEP.route');
+app.use('/api', evaluacionesMEP);
+
 // Se guarda todo lo que se ha realizado
 module.exports = app;
 

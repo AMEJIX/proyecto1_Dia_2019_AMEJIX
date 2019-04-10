@@ -1,6 +1,6 @@
 'use strict';
 
-
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 const selectNivel = document.querySelector("#selectNivel");
 const tabla = document.querySelector("#tblUtiles tbody");
 const inputFiltro = document.querySelector("#txtFiltro");
@@ -8,14 +8,15 @@ const tablaNombreLista = document.querySelector("#tablaNombreListaU tbody");
 const radioButtonTodos = document.querySelector('#tablaNombreListaU tbody tr td');
 const divDelBoton = document.querySelector('#idDivBoton');
 const divDelBotonActualizar = document.querySelector('#idDivBotonActualizar');
+const  IdUs = user._id;
 
 
 let mostrarListas = () => {
     let nivel = selectNivel.value;
-    let idSA = "5c9947ace0fb7a30848f605a";
+    
     document.querySelector('#tblUtiles').style.display = 'none';
     // if (validar() == false){
-        let utiles = listarUtilesNivel(nivel, idSA);
+        let utiles = listarUtilesNivel(nivel, IdUs);
         
         tabla.innerHTML = '';
         tablaNombreLista.innerHTML = '';
@@ -53,9 +54,9 @@ mostrarListas();
 
 let mostrarUtiles = (pfiltro) =>{
     let nivel = selectNivel.value;
-    let idSA = "5c9947ace0fb7a30848f605a";
+    
     let contador = 0;
-        let utiles = listarUtilesNivel(nivel, idSA);        
+        let utiles = listarUtilesNivel(nivel, IdUs);        
         tabla.innerHTML = '';        
 
         document.querySelector('#tablaNombreListaU').style.display = 'none';
@@ -76,7 +77,7 @@ let mostrarUtiles = (pfiltro) =>{
                 inputCantidad.type = 'Number';
                 inputCantidad.min = "0";
                 inputCantidad.value = utiles [a]  ['cantidad']; 
-                inputCantidad.disabled = 'diabled';
+                inputCantidad.disabled = 'disabled';
                
                 campoCantidadCell.appendChild(inputCantidad);
 

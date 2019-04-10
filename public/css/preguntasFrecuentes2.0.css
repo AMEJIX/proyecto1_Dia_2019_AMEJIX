@@ -11,7 +11,8 @@
 /*}*/
 
 #preguntasFrecuentesCE\&Admin{
-    /*margin-top: 50px;*/
+    /*position: relative;*/
+    /*top: -70px;*/
 }
 
 .awesome_images{
@@ -157,6 +158,9 @@ button#btnEnviar{
     margin-left: 70px;
     border-collapse: separate;
     border-spacing: 0px 50px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+
 }
 
 .awesome_images{

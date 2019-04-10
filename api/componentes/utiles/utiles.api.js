@@ -60,6 +60,33 @@ module.exports.listarUtilNivel = (req, res)=>{
     )
 };
 
+
+
+module.exports.listarUtilNivelPropio = (req, res)=>{    
+    
+    modeloUtil.find({nivel: req.body.nivel, idCE: req.body.idCE, nombreLista: req.body.nombreLista}).then(
+        function(utiles){
+            if(utiles.length >0){
+                res.json(
+                    {
+                        success: true,
+                        utiles: utiles
+                    }
+                )
+            }else{
+                res.json(
+                    {
+                        success: false,
+                        utiles: 'No se encontraron útiles escolares registrados'
+                    }
+                )
+            }
+        }
+    )
+};
+
+
+
 module.exports.listarTodos = (req, res)=>{
     
     modeloUtil.find().then(
