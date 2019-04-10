@@ -119,7 +119,7 @@ let registrarEvaluacionMEP = (pnombre, ptotal, pestrellas, panno, pidCE) =>{
 
 
 
-let listarCEEvaluados= (pidCE, panno) =>{
+let listarCEEvaluados= (panno, pidCE) =>{
   let listaCE= [];    
   let request = $.ajax({ 
     url: "http://localhost:4000/api/listarCEEvaluados",

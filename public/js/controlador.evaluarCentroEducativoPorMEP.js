@@ -14,7 +14,9 @@ const primerContenido = document.querySelector('#primerContenido');
 const filtroDerecha = document.querySelector('#filtroDerecha');
 const segundoContenido = document.querySelector('#segundoContenido');
 const nombreDelCE = document.querySelector('#nombreCE');
-const idCEducativo = document.querySelector('#idCentroEducativo');
+const divIDInvisible = document.querySelector('#divInputCE');
+
+
 
 
 const inputFiltro = document.querySelector('#txtFiltro');
@@ -43,7 +45,7 @@ function mostrarCE() {
                 botonValorar.textContent = 'Valorar';
                 botonValorar.addEventListener('click', mostrarPanelValorar =>{
                     mostrarTablasValoracion(centrosEducativos[i]['centroEducativo'], centrosEducativos[i]['_id']);
-                    
+                   
                 });
                 celdaValorar.appendChild(botonValorar);
                 
@@ -56,11 +58,10 @@ function mostrarCE() {
 
 
    let  mostrarTablasValoracion=(pnombreCentroEducativo, pidCE)=>{
+    
         primerContenido.style.display = 'none';
        
         segundoContenido.style.display = 'block';
-        idCEducativo.value = pidCE;
-
         let nombreCE = pnombreCentroEducativo;
 
         document.querySelector('#nombreCE').textContent = nombreCE;
@@ -69,7 +70,7 @@ function mostrarCE() {
 
         let criterios = listarCriterios(); 
         let rangos = listarRangos(); 
-        console.log(rangos);
+     
            
         for(let i=0; i<criterios.length; i++){
             let fila = tablaCriterios.insertRow();
@@ -102,7 +103,17 @@ function mostrarCE() {
         }
 
         nombreDelCE.value = nombreCE;
+        let inputIdInvisible = document.createElement('input');
+        inputIdInvisible.value = pidCE;
+        inputIdInvisible.id = 'inputIdInvisible';
+        inputIdInvisible.classList.add('inputInvisible');
+        inputIdInvisible.disabled = 'diabled';
+        divIDInvisible.appendChild(inputIdInvisible);
+       
     }
+
+
+
     let aux = 0;
     let mostrarTotal = (ppuntajeCriterio, prangos) =>{
         aux = aux + ppuntajeCriterio;
@@ -127,10 +138,8 @@ console.log(totalEvaluacion);
         }
     }
     let pannoJS = new Date().getFullYear();
-
+  
     
-    let centroEDatosEvaluacion = listarCEEvaluados(pannoJS, idCEducativo.value);
-
    
     let validar = () => {
         let error = false;   
@@ -150,30 +159,32 @@ console.log(totalEvaluacion);
         else{
             inputEstrellas.classList.remove('errorSelect');
         }
-       
-       
-
         return error;
     }
 
-    let validarAnno = () =>{
+    let validarAnno = () =>{    
+      let pid = document.querySelector('#inputIdInvisible').value;
+      console.log(pannoJS, pid);
+    let centroEDatosEvaluacion = listarCEEvaluados(pannoJS, pid);   
+        console.log(centroEDatosEvaluacion);
         let error = false;
-        if(centroEDatosEvaluacion){
+        if(centroEDatosEvaluacion !== 'No se encontraron centros educativos registrados'){
             error = true;
         }else{
             error = false;
         }
         return error;
+        
     }
 
     let obtenerDatosEvaluacion = () =>{
-        if(validarAnno == false){
+        if(validarAnno() == false){
             if(validar() == false){
                 let nombre =  nombreDelCE.value;
                 let total = inputTotal.value;
                 let estrellas = inputEstrellas.value;
                 let anno = new Date().getFullYear();
-                let idCE = idCEducativo.value;
+                let idCE = document.querySelector('#inputIdInvisible').value;
     
                 
     
