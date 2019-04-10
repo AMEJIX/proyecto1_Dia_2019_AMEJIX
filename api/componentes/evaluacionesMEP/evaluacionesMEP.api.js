@@ -34,7 +34,7 @@ const modeloEvaluacionesCE = require('./evaluacionesMEP.model');
 
 
 module.exports.listarCEEvaluados = (req, res)=>{        
-    modeloCE.findOne({anno: req.body.anno, idCE: req.body.idCE}).then(
+    modeloEvaluacionesCE.find({anno: req.body.anno, idCE: req.body.idCE}).then(
         function(centrosEducativosEvaluados){
             if(centrosEducativosEvaluados.length >0){
                 res.json(
