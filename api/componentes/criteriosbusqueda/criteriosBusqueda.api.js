@@ -62,6 +62,24 @@ module.exports.registrarCriterioBusqueda = (req, res) =>{
                 }
             );
         } else {
+            /**************************Bitacora*/
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.responsable,
+                tipoDeMovimiento: "Registro de criterio de búsqueda",
+                fecha: diaActual,
+            });
+            nuevaBitacora.save();
+            /**************************/
+
             res.json(
                 {
                     success: true,
@@ -137,7 +155,7 @@ module.exports.actualizar = (req, res) =>{
                 diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
 
                 let nuevaBitacora = new modeloBitacora({
-                    usuario: req.body.nombre,
+                    usuario: req.body.responsable,
                     tipoDeMovimiento: "Modificación de criterio de búsqueda",
                     fecha: diaActual,
                 });
@@ -169,7 +187,7 @@ module.exports.eliminar = (req, res) =>{
                 diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
 
                 let nuevaBitacora = new modeloBitacora({
-                    usuario: req.body.nombre,
+                    usuario: req.body.responsable,
                     tipoDeMovimiento: "Eliminación de criterio de búsqueda",
                     fecha: diaActual,
                 });

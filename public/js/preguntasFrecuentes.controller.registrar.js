@@ -38,13 +38,11 @@ let agregar = () =>{
     if (!validar()){
         pregunta = txtPregunta.value;
         respuesta = txtRespuesta.value;
-        let responsable;
+        // let responsable;
         let idUsuario;
-        if(user.userType == 'centroEducativo'){
-            idUsuario = user._id;
-            responsable = user.centroEducativo;
+        if(elUsuario.userType == 'centroEducativo'){
+            idUsuario = elUsuario._id;
         } else {
-            responsable = user.nombre + ' ' + user.segundoNombre + ' ' + user.apellido + ' ' + user.segundoApellido;
             idUsuario = IdGeneralCE;
         }
 

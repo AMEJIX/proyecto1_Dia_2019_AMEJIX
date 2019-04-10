@@ -1,7 +1,7 @@
 'use strict';
 
-let actualizarEtiqueta = (pnombre, pid, pnombreAnterior) =>{
-
+let actualizarEtiqueta = (pnombre, pid, pnombreAnterior, presponsable) =>{
+    console.log(presponsable);
     Swal.fire({
         title: '¿Está seguro que desea modificar la etiqueta?',
         type: 'warning',
@@ -11,7 +11,7 @@ let actualizarEtiqueta = (pnombre, pid, pnombreAnterior) =>{
         confirmButtonText: 'Sí, modificar'
     }).then((result) => {
         if (result.value && !(validarEtiqueta(pnombre)) && !(pnombre === pnombreAnterior) && !(pnombre === '')) {
-            modificarEtiqueta(pnombre, pid);
+            modificarEtiqueta(pnombre, pid, presponsable);
             document.getElementById(`etiqueta_${pid}`).contentEditable = false;
             document.getElementById(`etiqueta_${pid}`).classList.remove('modoCambio');
 
