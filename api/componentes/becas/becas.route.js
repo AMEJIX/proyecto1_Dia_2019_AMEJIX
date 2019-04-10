@@ -9,6 +9,11 @@ router.param('idCE', (req, res, next, idCE) => {
     next();
 });
 
+router.param('_id', function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
+
 router.route('/registrarBeca')
     .post(
         function (req, res) {
@@ -27,6 +32,21 @@ router.route('/listarBecasCE/:idCE')
     .get(
         function (req, res) {
             apiRegistrarBeca.listarBecasCE(req, res);
+        }
+    );
+
+router.route('/editarBeca')
+    .post(
+        function (req, res) {
+            apiRegistrarBeca.editar(req, res);
+        }
+    );
+
+
+router.route('/eliminarBeca')
+    .post(
+        (req, res) => {
+            apiRegistrarBeca.eliminar(req, res);
         }
     );
 
