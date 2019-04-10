@@ -120,6 +120,9 @@ app.use('/api', idiomas);
 const CEperfil = require('./componentes/CEperfil/CEperfil.route');
 app.use('/api', CEperfil);
 
+const evaluacionesMEP = require('./componentes/evaluacionesMEP/evaluacionesMEP.route');
+app.use('/api', evaluacionesMEP);
+
 // Se guarda todo lo que se ha realizado
 module.exports = app;
 
