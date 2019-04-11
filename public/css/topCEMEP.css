@@ -1,0 +1,146 @@
+h1{
+    display: block;
+   margin-top: 30px;
+   text-align: center;
+   font-size: 25px;
+   color: #2c3e50;
+
+}
+
+#divSelect{
+    margin-top: 50px;
+    margin-right: 90px;
+    margin-bottom: 50px;
+    margin-left: 8%;
+}
+
+#divSelect select{
+    display: inline-block;
+    width: 254px;
+    height: 35px;
+}
+
+#divSelect label{
+    display: inline-block;
+    width: 60px;
+    margin-left: 32px;
+}
+
+section{
+    display: block;
+    margin-bottom: 100px;
+    
+}
+
+.cardCETop{
+    display: flow-root;
+    width: 80%;
+    height: 140px;
+    margin: 0 auto;
+    -webkit-box-shadow: 2px 0 4px rgba(.08, .08, .08, .08);
+    box-shadow: 2px 0 4px rgba(0.4, 0.4, 0.4, 0.4);
+    background-color: #2c3e50;
+    margin-bottom: 20px;
+
+}
+.columnaIzquierda{   
+    float: left;
+    width: 45%;
+    margin-top: 20px;
+}
+
+.columnaDerecha{   
+    float: right;
+    width: 45%;
+    margin-top: 20px;
+    
+}
+
+.divPosicion{
+    display: inline-block;
+    width: 10%;
+}
+
+.divImagen{
+    display: inline-block;
+    width: 20%;
+    margin-top: 9px;
+}
+
+.divNombre{
+    display: inline-block;
+    width: 45%
+}
+.divEstrellas{
+    display: inline-block;
+    width: 15%
+}
+
+.h2{
+    display: block;
+   margin-top: 30px;
+   text-align: center;
+   font-size: 25px;
+   color: #f9aa33;
+   font-style: bold;
+   margin-bottom: 50px;
+}
+
+
+
+.carousel {
+   
+    margin: 0 auto;
+    display: flex;
+}
+
+
+.imagenCE{
+    display: block;
+    width: 53%;
+    height: 120px;
+    background-size: contain;
+    border-radius: 16px;
+    margin: 0 auto;
+    
+}
+
+
+
+
+.h2Posicion{
+    display: block;
+    
+    text-align: center;
+    font-size: 25px;
+    color: #f9aa33;
+    font-style: bold;
+    vertical-align: middle;
+}
+
+
+
+.h2Nombre{
+    display: block;
+   
+    text-align: center;
+    font-size: 25px;
+    color: #f9aa33;
+    font-style: bold;
+    vertical-align: middle;
+}
+
+
+
+.h2Estrellas{
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 25px;
+    color: #f9aa33;
+    font-style: bold;
+    vertical-align: middle;
+  
+}
+
+
