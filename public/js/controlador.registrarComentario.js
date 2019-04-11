@@ -37,11 +37,11 @@ let validar = () => {
 
 let obtenerDatos = () => {
     if (validar() == false) {
-        let Comentario = inputComentario.value;
+        let comment = inputComentario.value;
         let idCentroEducativo = IdGeneralCE;
 
         // registrarComentario(pstars, inputComentario, idCentroEducativo);
-        registrarComentario(Comentario, idCentroEducativo);
+        registrarComentario(comment, idCentroEducativo);
 
     } else {
         swal.fire({
@@ -53,3 +53,4 @@ let obtenerDatos = () => {
 };
 
 btnEnviar.addEventListener('click', obtenerDatos);
+

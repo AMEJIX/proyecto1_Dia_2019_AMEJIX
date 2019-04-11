@@ -6,7 +6,7 @@ let registrarComentario = (pcomment, pIdCentro) => {
         method: "POST",
         data: {
             // pstars: pstars,
-            pcomment: pcomment,
+            comment: pcomment,
             idCE: pIdCentro
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
