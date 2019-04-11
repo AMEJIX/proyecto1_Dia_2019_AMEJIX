@@ -54,6 +54,20 @@ module.exports.listar = (req, res) => {
 
 };
 
+module.exports.buscarIdioma = function (req, res) {
+    modeloIdiomas.find({ _id: req.body._id }).then(
+        function (idioma) {
+            if (idioma) {
+                res.json({ success: true, idioma: idioma });
+            } else {
+                res.json({ success: false, idioma: idioma });
+            }
+        }
+
+    );
+
+};
+
 module.exports.listarIdiomasCE = (req, res) => {
     modeloIdiomas.find().then(
         idiomasListadasCE => {

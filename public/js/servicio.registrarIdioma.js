@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarIdiomas = (parametrosIdioma, pidCentroEducativo) => { 
+let registrarIdiomas = (parametrosIdioma, pidCentroEducativo) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarIdiomas",
         method: "POST",
@@ -29,10 +29,35 @@ let registrarIdiomas = (parametrosIdioma, pidCentroEducativo) => {
     });
 }
 
+let buscarIdioma = (_id) => {
+    let idioma = [];
+
+    let request = $.ajax({
+        url: "http://localhost:4000/api/buscarIdioma/" + _id,
+        method: "GET",
+        data: {
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async: false
+    });
+
+    request.done(function (res) {
+        idioma = res.idioma;
+
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+    return idioma;
+
+};
+
 let listarIdiomas = (idCE) => {
     let listarIdiomas = [];
     let request = $.ajax({
-        url: "http://localhost:4000/api/listarIdiomasCE/"+idCE,
+        url: "http://localhost:4000/api/listarIdiomasCE/" + idCE,
         method: "GET",
         data: {
 

@@ -42,6 +42,13 @@ router.route('/editarIdioma')
         }
     );
 
+router.route('/buscarIdioma/:_id')
+    .get(
+        function (req, res) {
+            apiRegistrarIdiomas.buscarIdioma(req, res);
+        }
+    );
+
 
 router.route('/eliminarIdioma')
     .post(
