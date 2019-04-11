@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Costos para la matrícula</title>
+    <title>Mostrar matrículas</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
@@ -74,12 +74,17 @@
 
             <h1>Costos para matrícula</h1>
 
+            <div id="divBuscar">
+                <label for="inputBuscar" id="labelBuscar">Buscar</label>
+                <input type="text" id="inputBuscar">
+            </div>
+
             <table id="tblMatriculas">
                 <thead>
                     <tr>
-                        <td id="thTituloNombreMatricula">Matrícula</td>
-                        <td id="thPrecioMatricula">Mensualidad</td>
-                        <td id="thfieldsetPrecio">Moneda</td>
+                        <th>Matrícula</th>
+                        <th>Mensualidad</th>
+                        <th>Moneda</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -98,7 +103,7 @@
     <script src="js/controlador.general.js"></script>
         <script src="js/controlador.profileInfoCE.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
-    <script src="js/servicio.registrarMatriculaCostos.js"></script>
+    <script src="js/servicio.registrarMatriculaCosto.js"></script>
     <script src="js/controlador.mostrarMatriculasCostos.js"></script>
 
 </body>

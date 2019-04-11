@@ -1,50 +1,80 @@
 'use strict';
 
-
-
+const inputBuscar = document.querySelector('#inputBuscar');
 let user = JSON.parse(sessionStorage.getItem("usuario"));
-// const opcionRegistrar = document.querySelector('#registrarMatriculaCostos');
-// const opcionMostrar = document.querySelector('#mostrarMatriculas');
-
 let idUsuarioCE = user._id;
 
-if(user.userType != "centroEducativo") {
+/**************************************************************************************************************/
+
+if (user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
-    // opcionRegistrar.style.display = 'none';
-    // opcionRegistrar.style.visibility = 'none';
-    // opcionMostrar.href = 'mostrarMatriculaCostos.html?idCE='+ IdGeneralCE;
+} else {
+
 }
 
-insertarMensaje(`No se encontró información de los costos de matrícula`);
+/**************************************************************************************************************/
 
 let matriculas = listarMatriculas(idUsuarioCE);
+inputBuscar.addEventListener('keyup', mostrarMatriculas);
+
+/**************************************************************************************************************/
 
 function mostrarMatriculas() {
 
     const tabla = document.querySelector('#tblMatriculas tbody');
+    const filtro = inputBuscar.value;
 
     tabla.innerHTML = '';
+    for (let i = 0; i < matriculas.length; i++) {
 
-    if (!(typeof matriculas == 'string')) {
-        eliminarMensaje();
+        if (matriculas[i]['matricula'].toLowerCase().includes(filtro.toLowerCase())) {
+
             let fila = tabla.insertRow();
 
-            fila.insertCell().innerHTML = matriculas['matricula'];
-            fila.insertCell().innerHTML = matriculas['mensualidad'];
-            fila.insertCell().innerHTML = matriculas['moneda'];
-    } else {
-        if (document.getElementById('tblMatriculas #error')) {
-            insertarMensaje(`No se encontró información de los costos de matrícula`);
+            fila.insertCell().innerHTML = matriculas[i]['matricula'];
+            fila.insertCell().innerHTML = matriculas[i]['mensualidad'];
+            fila.insertCell().innerHTML = matriculas[i]['moneda'];
+
+            let celdaConfiguracion = fila.insertCell();
+            let celdaEliminar = fila.insertCell();
+
+            let botonEditar = document.createElement('a');
+            botonEditar.textContent = 'Editar';
+            botonEditar.href = `editarMatriculas.html?idMatricula=${matriculas[i]['_id']}`;
+
+            celdaConfiguracion.appendChild(botonEditar);
+            let botonEliminar = document.createElement('button');
+            botonEliminar.textContent = 'Eliminar';
+            botonEliminar.id = 'btnEliminar';
+            botonEliminar.addEventListener('click', eliminar => {
+                eliminarMatriculas(matriculas[i]['_id']);
+            });
+            celdaEliminar.appendChild(botonEliminar);
         }
+
     }
 }
 
 mostrarMatriculas();
 
-function eliminarMensaje() {
-    document.querySelector('.contenido').removeChild(document.getElementById('error'));
-}
+inputBuscar.addEventListener('keyup', mostrarMatriculas);
 
-function insertarMensaje(mensaje) {
-    document.getElementById('tblMatriculas').insertAdjacentHTML('afterend', `<p id="error"> ${mensaje}</p>`);
+/**************************************************************************************************************/
+
+let eliminarMatriculas = (p_id) => {
+    Swal.fire({
+        title: '¿Está seguro que desea eliminar la matrícula?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#dddddd',
+        confirmButtonText: 'Sí, eliminar'
+    }).then((result) => {
+        if (result.value) {
+            eliminarMatricula(p_id);
+        } else {
+        }
+
+    })
+
 }

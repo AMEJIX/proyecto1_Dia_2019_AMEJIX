@@ -1,12 +1,15 @@
 'use strict';
 
-let registrarIdiomas = (parametrosIdioma, pidCentroEducativo) => {
+let registrarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfieldsetNumberPrecioMatricula, pidCentroEducativo) => {
+
     let request = $.ajax({
-        url: "http://localhost:4000/api/registrarIdiomas",
+        url: "http://localhost:4000/api/registrarMatricula",
         method: "POST",
         data: {
 
-            idiomas: parametrosIdioma,
+            matricula: pstringPrecioMatricula,
+            mensualidad: pnumberPrecioMensualidad,
+            moneda: pfieldsetNumberPrecioMatricula,
             idCE: pidCentroEducativo,
 
         },
@@ -18,20 +21,25 @@ let registrarIdiomas = (parametrosIdioma, pidCentroEducativo) => {
 
         swal.fire({
             type: 'success',
-            title: 'Su idioma ha sido registrado',
+            title: 'Su matrícula ha sido registrada',
             text: ``
         });
     });
     request.fail(function (jqXHR, textStatus) {
+        swal.fire({
+            type: 'error',
+            title: 'Su matrícula no ha sido registrada',
+            text: '',
+        });
     });
-}
+};
 
 /**************************************************************************************************************/
 
-let listarIdiomas = (idCE) => {
-    let listarIdiomas = [];
+let listarMatriculas = (idCE) => {
+    let listaMatriculas = '';
     let request = $.ajax({
-        url: "http://localhost:4000/api/listarIdiomasCE/" + idCE,
+        url: "http://localhost:4000/api/listarMatriculasCE/" + idCE,
         method: "GET",
         data: {
 
@@ -41,20 +49,20 @@ let listarIdiomas = (idCE) => {
         async: false,
     });
     request.done(function (msg) {
-        listarIdiomas = msg.idiomas;
+        listaMatriculas = msg.matricula;
     });
     request.fail(function (jqXHR, textStatus) {
     });
-    return listarIdiomas;
+    return listaMatriculas;
 };
 
 /**************************************************************************************************************/
 
-let buscarIdioma = (_id) => {
-    let idioma = [];
+let buscarMatricula = (_id) => {
+    let matricula = [];
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/buscarIdioma/" + _id,
+        url: "http://localhost:4000/api/buscarMatricula/" + _id,
         method: "GET",
         data: {
 
@@ -64,24 +72,25 @@ let buscarIdioma = (_id) => {
         async: false,
     });
     request.done(function (res) {
-        idioma = res.idioma;
+        matricula = res.matricula;
     });
     request.fail(function (jqXHR, textStatus) {
     });
-    return idioma;
+    return matricula;
 };
 
 /**************************************************************************************************************/
 
-let editarIdioma = (parametrosIdioma, pidCentroEducativo, p_id) => {
+let editarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfieldsetNumberPrecioMatricula, pidCentroEducativo, p_id) => {
     let request = $.ajax({
-        url: 'http://localhost:4000/api/editarIdioma',
+        url: 'http://localhost:4000/api/editarMatricula',
         method: "POST",
         data: {
 
-            idiomas: parametrosIdioma,
+            matricula: pstringPrecioMatricula,
+            mensualidad: pnumberPrecioMensualidad,
+            moneda: pfieldsetNumberPrecioMatricula,
             idCE: pidCentroEducativo,
-            id: p_id,
 
         },
         dataType: "json",
@@ -91,17 +100,17 @@ let editarIdioma = (parametrosIdioma, pidCentroEducativo, p_id) => {
 
         swal.fire({
             type: 'success',
-            title: 'Su idioma ha sido actualizado',
+            title: 'Su matrícula ha sido actualizada',
             text: res.msg,
             onClose: () => {
-                window.location.href = 'mostrarIdiomas.html';
+                window.location.href = 'mostrarMatriculas.html';
             }
         });
     });
     request.fail(function (res) {
         swal.fire({
             type: 'error',
-            title: 'Su idioma no ha sido actualizado',
+            title: 'Su matrícula no ha sido actualizada',
             text: res.msg
         });
     });
@@ -109,14 +118,12 @@ let editarIdioma = (parametrosIdioma, pidCentroEducativo, p_id) => {
 
 /**************************************************************************************************************/
 
-let eliminarIdioma = (p_id) => {
+let eliminarMatricula = (p_id) => {
     let request = $.ajax({
-        url: 'http://localhost:4000/api/eliminarIdioma',
+        url: 'http://localhost:4000/api/eliminarMatricula',
         method: "POST",
         data: {
-
-            id: p_id,
-
+            id: p_id
         },
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -125,10 +132,10 @@ let eliminarIdioma = (p_id) => {
 
         swal.fire({
             type: 'success',
-            title: 'Su idioma ha sido eliminado',
+            title: 'Su matricula ha sido eliminada',
             text: res.msg,
             onClose: () => {
-                window.location.href = 'mostrarIdiomas.html';
+                window.location.href = 'mostrarMatriculas.html';
             }
         });
 
@@ -136,7 +143,7 @@ let eliminarIdioma = (p_id) => {
     request.fail(function (res) {
         swal.fire({
             type: 'error',
-            title: 'Su idioma no ha sido eliminado',
+            title: 'Su matrícula no ha sido eliminada',
             text: res.msg
         });
     });

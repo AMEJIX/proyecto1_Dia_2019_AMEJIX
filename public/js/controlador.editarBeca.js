@@ -1,9 +1,8 @@
 'use strict';
 
 let user = JSON.parse(sessionStorage.getItem("usuario"));
-const tabla = document.querySelector('#tblIdiomas tbody');
-const inputBuscar = document.querySelector('#inputBuscar');
-
+const tabla = document.querySelector('#tblBecas tbody');
+const inputFiltrar = document.querySelector('#inputBuscar');
 let idUsuarioCE = user._id;
 
 /**************************************************************************************************************/
@@ -30,11 +29,11 @@ let get_param = (param) => {
     return id;
 };
 
-let _id = get_param('idIdioma');
+let _id = get_param('idBeca');
 
-let idioma = buscarIdioma(_id);
+let beca = buscarBeca(_id);
 
-let mostrarDatoIdioma = () => {
-    inputIdioma.value = idioma[0]['idiomas'];
+let mostrarDatoBeca = () => {
+    inputBeca.value = beca[0]['nombreBeca'];
 
 };

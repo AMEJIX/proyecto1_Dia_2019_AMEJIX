@@ -34,6 +34,7 @@ module.exports.registrar = (req, res) => {
 
 };
 
+/**************************************************************************************************************/
 
 module.exports.listarNoticiasCE = (req, res) => {
     modeloRegistrarNoticia.find().then(
@@ -69,6 +70,8 @@ module.exports.listarNoticiasCE = (req, res) => {
     )
 };
 
+/**************************************************************************************************************/
+
 module.exports.editar = function (req, res) {
 
     modeloRegistrarNoticia.findByIdAndUpdate(req.body.id, { $set: req.body },
@@ -82,6 +85,8 @@ module.exports.editar = function (req, res) {
 
     );
 }
+
+/**************************************************************************************************************/
 
 module.exports.eliminar = function (req, res) {
     modeloRegistrarNoticia.findByIdAndDelete(req.body.id,

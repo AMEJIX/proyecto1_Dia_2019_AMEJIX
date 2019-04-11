@@ -34,10 +34,12 @@ module.exports.registrar = (req, res) => {
 
 };
 
-module.exports.validarCostosMatricula = () =>{
-    modeloMatriculas.findOne({idCE: req.body.idCE}).then(
-        usuario =>{
-            if (usuario){
+/**************************************************************************************************************/
+
+module.exports.validarCostosMatricula = () => {
+    modeloMatriculas.findOne({ idCE: req.body.idCE }).then(
+        usuario => {
+            if (usuario) {
                 respuesta.json(
                     {
                         tieneInfo: true,
@@ -55,6 +57,7 @@ module.exports.validarCostosMatricula = () =>{
     );
 };
 
+/**************************************************************************************************************/
 
 module.exports.listarMatriculasCE = (req, res) => {
     modeloMatriculas.find().then(
@@ -64,7 +67,7 @@ module.exports.listarMatriculasCE = (req, res) => {
             let infoCostosMatricula;
 
             for (let matricula of matriculasListadasCE) {
-                if (matricula.idCE == req.body.idCE){
+                if (matricula.idCE == req.body.idCE) {
                     infoCostosMatricula = matricula;
                 }
             }

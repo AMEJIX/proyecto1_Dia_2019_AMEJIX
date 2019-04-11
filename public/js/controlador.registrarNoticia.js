@@ -8,39 +8,45 @@ const inputFechaNoticia = document.querySelector('#inputFechaNoticia');
 const botonRegistrarNoticia = document.querySelector('#btnRegistrarNoticia');
 const idCE = user._id;
 
+/**************************************************************************************************************/
+
 if(user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
     opcionRegistrar.style.display = 'none';
     if (location.pathname.split("/").slice(-1) != 'loSentimos.html') setTimeout(location.href='loSentimos.html?idCE='+IdGeneralCE, 0);
 }
 
+/**************************************************************************************************************/
+
 let validar = () => {
     let error = false;
 
     if (inputTituloNoticia.value == '') {
         error = true;
-        inputTituloNoticia.classList.add('error_input');
+        inputTituloNoticia.classList.add('errorInput');
     } else {
-        inputTituloNoticia.classList.remove('error_input');
+        inputTituloNoticia.classList.remove('errorInput');
     }
 
     if (inputFechaNoticia.value == '') {
         error = true;
-        inputFechaNoticia.classList.add('error_input');
+        inputFechaNoticia.classList.add('errorInput');
     } else {
-        inputFechaNoticia.classList.remove('error_input');
+        inputFechaNoticia.classList.remove('errorInput');
     }
 
     if (inputRegistrarNoticia.value == '') {
         error = true;
-        inputRegistrarNoticia.classList.add('error_input');
+        inputRegistrarNoticia.classList.add('errorInput');
     } else {
-        inputRegistrarNoticia.classList.remove('error_input');
+        inputRegistrarNoticia.classList.remove('errorInput');
     }
 
 
     return error;
 };
+
+/**************************************************************************************************************/
 
 let obtener_datos = () => {
 

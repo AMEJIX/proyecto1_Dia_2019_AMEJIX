@@ -4,10 +4,14 @@ const express = require('express');
 const router = express.Router();
 const apiRegistrarMatricula = require('./matriculaCostos.api');
 
+/**************************************************************************************************************/
+
 router.param('idCE', (req, res, next, idCE) => {
     req.body.idCE = idCE;
     next();
 });
+
+/**************************************************************************************************************/
 
 router.route('/registrarMatricula')
     .post(
@@ -16,12 +20,7 @@ router.route('/registrarMatricula')
         }
     );
 
-// router.route('/listarMatriculas')
-//     .get(
-//         function (req, res) {
-//             apiRegistrarMatricula.listarMatriculas(req, res);
-//         }
-//     );
+/**************************************************************************************************************/
 
 router.route('/listarMatriculasCE/:idCE')
     .get(
@@ -30,11 +29,34 @@ router.route('/listarMatriculasCE/:idCE')
         }
     );
 
-router.route('/validarMatriculaCostos/:idCE')
+/**************************************************************************************************************/
+
+router.route('/buscarMatricula/:_id')
     .get(
         function (req, res) {
-            apiRegistrarMatricula.validarCostosMatricula(req, res);
+            apiRegistrarMatricula.buscarMatricula(req, res);
         }
     );
+
+/**************************************************************************************************************/
+
+router.route('/editarMatricula')
+    .post(
+        function (req, res) {
+            apiRegistrarMatricula.editar(req, res);
+        }
+    );
+
+/**************************************************************************************************************/
+
+
+router.route('/eliminarMatricula')
+    .post(
+        (req, res) => {
+            apiRegistrarMatricula.eliminar(req, res);
+        }
+    );
+
+module.exports = router;
 
 module.exports = router;

@@ -2,16 +2,19 @@
 
 const inputBuscar = document.querySelector('#inputBuscar');
 let user = JSON.parse(sessionStorage.getItem('usuario'));
-
 const inputIdioma = document.querySelector('#inputIdioma');
 const botonRegistrarIdioma = document.querySelector('#botonRegistrarIdioma');
 const idCE = user._id;
+
+/**************************************************************************************************************/
 
 if (user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
 } else {
 
 }
+
+/**************************************************************************************************************/
 
 let get_param = (param) => {
     let url_string = window.location.href;
@@ -35,6 +38,8 @@ if (idioma) {
     mostrarDatoIdioma();
 }
 
+/**************************************************************************************************************/
+
 let validar = () => {
     let error = false;
 
@@ -47,6 +52,8 @@ let validar = () => {
 
     return error;
 }
+
+/**************************************************************************************************************/
 
 let jalarDatosIdiomas = () => {
     if (validar() == false) {
@@ -63,7 +70,7 @@ let jalarDatosIdiomas = () => {
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {
-                editarIdiomas(parametrosIdioma, idCentroEducativo, _id);
+                editarIdioma(parametrosIdioma, idCentroEducativo, _id);
             }
         })
     } else {
@@ -77,3 +84,4 @@ let jalarDatosIdiomas = () => {
 };
 
 botonRegistrarIdioma.addEventListener('click', jalarDatosIdiomas);
+
