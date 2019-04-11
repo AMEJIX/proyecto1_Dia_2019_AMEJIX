@@ -11,7 +11,8 @@ const modeloEvaluacionesCE = require('./evaluacionesMEP.model');
         total : req.body.total,
         estrellas : req.body.estrellas,
         anno : req.body.anno,
-        idCE: req.body.idCE
+        idCE: req.body.idCE,
+        tipo: req.body.tipo
         
     });
         nuevaEvaluacion.save(function (error){

@@ -44,7 +44,7 @@ function mostrarCE() {
                 botonValorar.type = 'button';
                 botonValorar.textContent = 'Valorar';
                 botonValorar.addEventListener('click', mostrarPanelValorar =>{
-                    mostrarTablasValoracion(centrosEducativos[i]['centroEducativo'], centrosEducativos[i]['_id']);
+                    mostrarTablasValoracion(centrosEducativos[i]['centroEducativo'], centrosEducativos[i]['_id'], centrosEducativos[i]['tipo']);
                    
                 });
                 celdaValorar.appendChild(botonValorar);
@@ -57,7 +57,7 @@ function mostrarCE() {
     //VALIDAR CAMPOS PARA REGISTRAR EVALUACIÓN
 
 
-   let  mostrarTablasValoracion=(pnombreCentroEducativo, pidCE)=>{
+   let  mostrarTablasValoracion=(pnombreCentroEducativo, pidCE, ptipo)=>{
     
         primerContenido.style.display = 'none';
        
@@ -107,8 +107,14 @@ function mostrarCE() {
         inputIdInvisible.value = pidCE;
         inputIdInvisible.id = 'inputIdInvisible';
         inputIdInvisible.classList.add('inputInvisible');
-        inputIdInvisible.disabled = 'diabled';
+        inputIdInvisible.disabled = 'disabled';
         divIDInvisible.appendChild(inputIdInvisible);
+        let inputTipoInvisible = document.createElement('input');
+        inputTipoInvisible.value = ptipo;
+        inputTipoInvisible.id = 'inputTipoInvisible';
+        inputTipoInvisible.classList.add('inputInvisible');
+        inputTipoInvisible.disabled = 'disabled';
+        divIDInvisible.appendChild(inputTipoInvisible);
        
     }
 
@@ -185,6 +191,7 @@ console.log(totalEvaluacion);
                 let estrellas = inputEstrellas.value;
                 let anno = new Date().getFullYear();
                 let idCE = document.querySelector('#inputIdInvisible').value;
+                let tipo = document.querySelector('#inputTipoInvisible').value;
     
                 
     
@@ -194,7 +201,7 @@ console.log(totalEvaluacion);
                 document.getElementsByClassName('claseCheck').checked = false;
                 
     
-                registrarEvaluacionMEP(nombre, total, estrellas, anno, idCE);
+                registrarEvaluacionMEP(nombre, total, estrellas, anno, idCE, tipo);
             }else{
                 swal.fire({
                     type: 'warning',

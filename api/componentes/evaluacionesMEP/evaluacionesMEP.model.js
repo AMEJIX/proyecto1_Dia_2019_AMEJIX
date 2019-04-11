@@ -8,7 +8,8 @@ let schemaEvaluacionMEP = new mongoose.Schema(
         total : {type: Number, required: true},
         estrellas: {type: String, required: true},       
         anno: {type: Number, required: true},
-        idCE: {type: String, required: true}
+        idCE: {type: String, required: true},
+        tipo: {type: String, required: true}
     }
 );
 
