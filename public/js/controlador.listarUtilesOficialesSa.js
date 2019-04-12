@@ -45,7 +45,7 @@ let mostrarListas = () => {
             }
            
         }else{                
-            tabla.innerHTML = 'No existen útiles registrados para este nivel';  
+            tablaNombreLista.innerHTML = 'No existen útiles registrados para este nivel';  
         }  
     // }
     
