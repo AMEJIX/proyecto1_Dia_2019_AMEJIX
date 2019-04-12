@@ -6,7 +6,7 @@ const tabla = document.querySelector("#tblUtiles tbody");
 const inputFiltro = document.querySelector("#txtFiltro");
 const tablaNombreLista = document.querySelector("#tablaNombreListaU tbody");
 const radioButtonTodos = document.querySelector('#tablaNombreListaU tbody tr td');
-const divDelBoton = document.querySelector('#idDivBoton');
+// const divDelBoton = document.querySelector('#idDivBoton');
 const divDelBotonActualizar = document.querySelector('#idDivBotonActualizar');
 const  IdUs = user._id;
 
@@ -29,6 +29,7 @@ let mostrarListas = () => {
                     let fila = tablaNombreLista.insertRow();
                     fila.insertCell().innerHTML = utiles[i]['nombreLista'];                
                     let celdaRadioButton = fila.insertCell();
+                    let celdaEliminarLista = fila.insertCell();
     
                     let radioButton = document.createElement('input');
                     radioButton.type = 'radio';
@@ -36,8 +37,17 @@ let mostrarListas = () => {
                     radioButton.id = 'radiobtn'+i;
                     radioButton.value = utiles[i]['nombreLista'];
                     radioButton.addEventListener('change', mandarFiltro=>{
-                        mostrarUtiles(utiles[i]['nombreLista']);
+                        mostrarUtiles(utiles[i]['nombreLista']);                 
+                    
                     });
+
+                    let botonEliminarLaLista = document.createElement('button');
+                    botonEliminarLaLista.type = 'button';
+                    botonEliminarLaLista.id = 'btnEliminarLista';
+                    botonEliminarLaLista.textContent = 'Eliminar';
+                    botonEliminarLaLista.addEventListener('click', eliminar =>{
+                        eliminarListaControlador(utiles[i]['nombreLista']);}); 
+                    celdaEliminarLista.appendChild(botonEliminarLaLista);
                     celdaRadioButton.appendChild(radioButton);
                     aux = utiles[i]['nombreLista'];
                 }                 
@@ -103,13 +113,7 @@ let mostrarUtiles = (pfiltro) =>{
                     contador = contador + 1;
             }      
         }
-        let botonEliminarLista = document.createElement('button');
-        botonEliminarLista.type = 'button';
-        botonEliminarLista.id = 'btnEliminarLista';
-        botonEliminarLista.textContent = 'Eliminar lista';
-        botonEliminarLista.addEventListener('click', eliminar =>{
-            eliminarListaControlador(pfiltro);});       
-        idDivBoton.appendChild(botonEliminarLista);
+     
         
     
 }//fin funcion

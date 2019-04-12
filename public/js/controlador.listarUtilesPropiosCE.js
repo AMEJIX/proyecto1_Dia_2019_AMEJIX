@@ -30,7 +30,8 @@ let mostrarListas = () => {
                     let fila = tablaNombreLista.insertRow();
                     fila.insertCell().innerHTML = utiles[i]['nombreLista'];                
                     let celdaRadioButton = fila.insertCell();
-    
+                    let celdaEliminarLista = fila.insertCell();
+
                     let radioButton = document.createElement('input');
                     radioButton.type = 'radio';
                     radioButton.name = 'radiobNombreLista';
@@ -39,8 +40,18 @@ let mostrarListas = () => {
                     radioButton.addEventListener('change', mandarFiltro=>{
                         mostrarUtiles(utiles[i]['nombreLista']);
                     });
+
+                    let botonEliminarLaLista = document.createElement('button');
+                    botonEliminarLaLista.type = 'button';
+                    botonEliminarLaLista.id = 'btnEliminarLista';
+                    botonEliminarLaLista.textContent = 'Eliminar';
+                    botonEliminarLaLista.addEventListener('click', eliminar =>{
+                        eliminarListaControlador(utiles[i]['nombreLista']);}); 
+
+                    celdaEliminarLista.appendChild(botonEliminarLaLista);
                     celdaRadioButton.appendChild(radioButton);
                     aux = utiles[i]['nombreLista'];
+                   
                 }                 
                
             }
@@ -110,13 +121,7 @@ let mostrarUtiles = (pfiltro) =>{
                
             }      
         }
-        let botonEliminarLista = document.createElement('button');
-        botonEliminarLista.type = 'button';
-        botonEliminarLista.id = 'btnEliminarLista';
-        botonEliminarLista.textContent = 'Eliminar lista';
-        botonEliminarLista.addEventListener('click', eliminar =>{
-            eliminarListaControlador(pfiltro);});       
-        idDivBoton.appendChild(botonEliminarLista);
+    
         
     
 }//fin funcion
