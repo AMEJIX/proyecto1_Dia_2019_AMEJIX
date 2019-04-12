@@ -26,6 +26,14 @@ router.route('/registrarNoticia')
             apiRegistrarNoticia.registrar(req, res);
         }
     );
+/**************************************************************************************************************/
+
+router.route('/listarNoticias')
+    .post(
+        function (req, res) {
+            apiRegistrarNoticia.listar(req, res);
+        }
+    );
 
 /**************************************************************************************************************/
 

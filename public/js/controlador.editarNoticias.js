@@ -1,5 +1,6 @@
 'use strict';
 
+const inputFiltrar = document.querySelector('#inputBuscar');
 let user = JSON.parse(sessionStorage.getItem('usuario'));
 const inputTituloNoticia = document.querySelector('#inputTituloNoticia');
 const inputRegistrarNoticia = document.querySelector('#inputRegistrarNoticia');
@@ -29,8 +30,10 @@ let noticia = buscarNoticia(_id);
 
 console.log(noticia);
 
-let mostrarDatoIdioma = () => {
-    inputIdioma.value = noticia[0]['tituloNoticia'];
+let mostrarDatoNoticia = () => {
+    inputTituloNoticia.value = noticia[0]['tituloNoticia'];
+    inputFechaNoticia.value = noticia[0]['fechaNoticia'];
+    inputRegistrarNoticia.value = noticia[0]['registrarNoticia'];
 
 };
 
@@ -86,7 +89,7 @@ let obtener_datos = () => {
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {
-                editarNoticias(stringTituloNoticia, stringRegistrarNoticia, stringFechaNoticia, idCentroEducativo, _id);
+                editarNoticia(stringTituloNoticia, stringRegistrarNoticia, stringFechaNoticia, idCentroEducativo, _id);
             }
         })
     } else {

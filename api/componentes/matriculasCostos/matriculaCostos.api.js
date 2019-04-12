@@ -59,27 +59,52 @@ module.exports.validarCostosMatricula = () => {
 
 /**************************************************************************************************************/
 
-module.exports.listarMatriculasCE = (req, res) => {
+module.exports.listar = (req, res) => {
+
     modeloMatriculas.find().then(
-        matriculasListadasCE => {
-            console.log(matriculasListadasCE);
+        function (registrarMatricula) {
 
-            let infoCostosMatricula;
-
-            for (let matricula of matriculasListadasCE) {
-                if (matricula.idCE == req.body.idCE) {
-                    infoCostosMatricula = matricula;
-                }
-            }
-
-            console.log(infoCostosMatricula);
-            console.log(req.body.idCE);
-
-            if (infoCostosMatricula) {
+            if (registrarMatricula.length > 0) {
                 res.json(
                     {
                         success: true,
-                        matricula: infoCostosMatricula,
+                        matriculas: registrarMatricula,
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        matriculas: "No se encontraron matrículas",
+                    }
+                )
+            }
+        }
+    )
+
+};
+
+/**************************************************************************************************************/
+
+module.exports.listarMatriculasCE = (req, res) => {
+    modeloMatriculas.find().then(
+        matriculasListadasCE => {
+            let arregloMatriculas = [];
+
+            for (let matricula of matriculasListadasCE) {
+                if (matricula.idCE == req.body.idCE) {
+                    arregloMatriculas = push(matricula);
+                }
+            }
+
+            console.log(arregloMatriculas);
+            console.log(req.body.idCE);
+
+            if (arregloMatriculas.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        matricula: arregloMatriculas,
 
                     }
                 )
@@ -94,3 +119,31 @@ module.exports.listarMatriculasCE = (req, res) => {
         }
     )
 };
+
+module.exports.editar = function (req, res) {
+
+    modeloMatriculas.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'Su matrícula no ha sido eliminada' });
+            } else {
+                res.json({ success: true, msg: 'Su matrícula ha sido eliminada' });
+            }
+        }
+
+    );
+
+}
+
+/**************************************************************************************************************/
+
+module.exports.eliminar = function (req, res) {
+    modeloMatriculas.findByIdAndDelete(req.body.id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'Su matrícula no ha sido eliminada' });
+            } else {
+                res.json({ success: true, msg: 'Su matrícula ha sido eliminada' });
+            }
+        })
+}

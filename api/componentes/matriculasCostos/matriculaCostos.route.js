@@ -13,10 +13,26 @@ router.param('idCE', (req, res, next, idCE) => {
 
 /**************************************************************************************************************/
 
+router.param('_id', function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
+
+/**************************************************************************************************************/
+
 router.route('/registrarMatricula')
     .post(
         function (req, res) {
             apiRegistrarMatricula.registrar(req, res);
+        }
+    );
+
+/**************************************************************************************************************/
+
+router.route('/listarMatriculas')
+    .get(
+        function (req, res) {
+            apiRegistrarMatricula.listar(req, res);
         }
     );
 
@@ -56,7 +72,5 @@ router.route('/eliminarMatricula')
             apiRegistrarMatricula.eliminar(req, res);
         }
     );
-
-module.exports = router;
 
 module.exports = router;

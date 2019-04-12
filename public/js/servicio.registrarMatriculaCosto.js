@@ -37,7 +37,7 @@ let registrarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfie
 /**************************************************************************************************************/
 
 let listarMatriculas = (idCE) => {
-    let listaMatriculas = '';
+    let listarMatriculas = [];
     let request = $.ajax({
         url: "http://localhost:4000/api/listarMatriculasCE/" + idCE,
         method: "GET",
@@ -49,11 +49,11 @@ let listarMatriculas = (idCE) => {
         async: false,
     });
     request.done(function (msg) {
-        listaMatriculas = msg.matricula;
+        listarMatriculas = msg.matricula;
     });
     request.fail(function (jqXHR, textStatus) {
     });
-    return listaMatriculas;
+    return listarMatriculas;
 };
 
 /**************************************************************************************************************/
