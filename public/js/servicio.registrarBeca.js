@@ -66,19 +66,17 @@ let buscarBeca = (_id) => {
         url: "http://localhost:4000/api/buscarBeca/" + _id,
         method: "GET",
         data: {
+
         },
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         async: false,
     });
-
     request.done(function (res) {
         beca = res.beca;
 
     });
-
     request.fail(function (jqXHR, textStatus) {
-
     });
     return beca;
 

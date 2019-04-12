@@ -25,13 +25,13 @@ let get_param = (param) => {
 };
 
 
-let _id = get_param('idIdioma');
+let _id = get_param('idBeca');
 let beca = buscarBeca(_id);
 
 console.log(beca);
 
 let mostrarDatoBeca = () => {
-    inputBeca.value = beca[0]['nombreBeca'];
+    inputNombreBeca.value = beca[0]['nombreBeca'];
 
 };
 
@@ -78,7 +78,7 @@ let obtener_datos = () => {
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {
-                editarBecas(stringNombreBeca, stringDescripcionBeca, idCentroEducativo, _id);
+                editarBeca(stringNombreBeca, stringDescripcionBeca, idCentroEducativo, _id);
             }
         })
     } else {
