@@ -4,15 +4,21 @@ const express = require('express');
 const router = express.Router();
 const apiRegistrarIdiomas = require('./idiomas.api');
 
+/**************************************************************************************************************/
+
 router.param('idCE', (req, res, next, idCE) => {
     req.body.idCE = idCE;
     next();
 });
 
+/**************************************************************************************************************/
+
 router.param('_id', function (req, res, next, _id) {
     req.body._id = _id;
     next();
 });
+
+/**************************************************************************************************************/
 
 router.route('/registrarIdiomas')
     .post(
@@ -21,12 +27,16 @@ router.route('/registrarIdiomas')
         }
     );
 
+/**************************************************************************************************************/
+
 router.route('/listarIdiomas')
     .get(
         function (req, res) {
             apiRegistrarIdiomas.listar(req, res);
         }
     );
+
+/**************************************************************************************************************/
 
 router.route('/listarIdiomasCE/:idCE')
     .get(
@@ -35,13 +45,24 @@ router.route('/listarIdiomasCE/:idCE')
         }
     );
 
+/**************************************************************************************************************/
+
+router.route('/buscarIdioma/:_id')
+    .get(
+        function (req, res) {
+            apiRegistrarIdiomas.buscarIdioma(req, res);
+        }
+    );
+
+/**************************************************************************************************************/
+
 router.route('/editarIdioma')
     .post(
         function (req, res) {
             apiRegistrarIdiomas.editar(req, res);
         }
     );
-
+/**************************************************************************************************************/
 
 router.route('/eliminarIdioma')
     .post(

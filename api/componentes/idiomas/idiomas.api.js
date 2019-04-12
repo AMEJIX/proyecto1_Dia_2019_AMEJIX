@@ -29,6 +29,8 @@ module.exports.registrar = (req, res) => {
     });
 }
 
+/**************************************************************************************************************/
+
 module.exports.listar = (req, res) => {
 
     modeloIdiomas.find().then(
@@ -54,6 +56,24 @@ module.exports.listar = (req, res) => {
 
 };
 
+/**************************************************************************************************************/
+
+module.exports.buscarIdioma = function (req, res) {
+    modeloIdiomas.find({ _id: req.body._id }).then(
+        function (idioma) {
+            if (idioma) {
+                res.json({ success: true, idioma: idioma });
+            } else {
+                res.json({ success: false, idioma: idioma });
+            }
+        }
+
+    );
+
+};
+
+/**************************************************************************************************************/
+
 module.exports.listarIdiomasCE = (req, res) => {
     modeloIdiomas.find().then(
         idiomasListadasCE => {
@@ -64,7 +84,7 @@ module.exports.listarIdiomasCE = (req, res) => {
                     arregloIdiomas.push(idiomitas);
                 }
             }
-            // console.log(arregloIdiomas);
+            console.log(arregloIdiomas);
             console.log(req.body.idCE);
 
             if (arregloIdiomas.length > 0) {
@@ -86,6 +106,8 @@ module.exports.listarIdiomasCE = (req, res) => {
     )
 };
 
+/**************************************************************************************************************/
+
 module.exports.editar = function (req, res) {
 
     modeloIdiomas.findByIdAndUpdate(req.body.id, { $set: req.body },
@@ -98,7 +120,10 @@ module.exports.editar = function (req, res) {
         }
 
     );
+
 }
+
+/**************************************************************************************************************/
 
 module.exports.eliminar = function (req, res) {
     modeloIdiomas.findByIdAndDelete(req.body.id,

@@ -2,8 +2,9 @@
 
 const inputBuscar = document.querySelector('#inputBuscar');
 let user = JSON.parse(sessionStorage.getItem("usuario"));
-
 let idUsuarioCE = user._id;
+
+/**************************************************************************************************************/
 
 if (user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
@@ -11,8 +12,12 @@ if (user.userType != "centroEducativo") {
 
 }
 
+/**************************************************************************************************************/
+
 let idiomas = listarIdiomas(idUsuarioCE);
 inputBuscar.addEventListener('keyup', mostrarIdiomas);
+
+/**************************************************************************************************************/
 
 function mostrarIdiomas() {
 
@@ -52,6 +57,8 @@ function mostrarIdiomas() {
 mostrarIdiomas();
 
 inputBuscar.addEventListener('keyup', mostrarIdiomas);
+
+/**************************************************************************************************************/
 
 let eliminarIdiomas = (p_id) => {
     Swal.fire({

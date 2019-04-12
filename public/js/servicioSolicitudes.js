@@ -25,14 +25,18 @@ let listarSolicitudes = () => {
 
 
 
-let actualizarEstadoSolicitud = (estado, id) =>{
+let actualizarEstadoSolicitud = (estado, id, centroEducativo, email, userType, contrasenna) =>{
     let request = $.ajax({
 
         url: "http://localhost:4000/api/actualizar",
         method: "POST",
         data: {
             estado: estado,
-            id: id
+            id: id,
+            centroEducativo: centroEducativo,
+            email: email,
+            userType: userType,
+            contrasenna : contrasenna
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"

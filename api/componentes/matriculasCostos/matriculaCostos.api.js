@@ -34,10 +34,12 @@ module.exports.registrar = (req, res) => {
 
 };
 
-module.exports.validarCostosMatricula = () =>{
-    modeloMatriculas.findOne({idCE: req.body.idCE}).then(
-        usuario =>{
-            if (usuario){
+/**************************************************************************************************************/
+
+module.exports.validarCostosMatricula = () => {
+    modeloMatriculas.findOne({ idCE: req.body.idCE }).then(
+        usuario => {
+            if (usuario) {
                 respuesta.json(
                     {
                         tieneInfo: true,
@@ -55,28 +57,70 @@ module.exports.validarCostosMatricula = () =>{
     );
 };
 
+/**************************************************************************************************************/
+
+module.exports.listar = (req, res) => {
+
+    modeloMatriculas.find().then(
+        function (registrarMatricula) {
+
+            if (registrarMatricula.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        matriculas: registrarMatricula,
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        matriculas: "No se encontraron matrículas",
+                    }
+                )
+            }
+        }
+    )
+
+};
+
+/**************************************************************************************************************/
+
+module.exports.buscarMatricula = function (req, res) {
+    modeloMatriculas.find({ _id: req.body._id }).then(
+        function (matricula) {
+            if (matricula) {
+                res.json({ success: true, matricula: matricula });
+            } else {
+                res.json({ success: false, matricula: matricula });
+            }
+        }
+
+    );
+
+};
+
+/**************************************************************************************************************/
 
 module.exports.listarMatriculasCE = (req, res) => {
     modeloMatriculas.find().then(
         matriculasListadasCE => {
-            console.log(matriculasListadasCE);
+            let arregloMatriculas = [];
 
-            let infoCostosMatricula;
-
-            for (let matricula of matriculasListadasCE) {
-                if (matricula.idCE == req.body.idCE){
-                    infoCostosMatricula = matricula;
+            for (let matriculitas of matriculasListadasCE) {
+                if (matriculitas.idCE == req.body.idCE) {
+                    arregloMatriculas.push(matriculitas);
                 }
             }
 
-            console.log(infoCostosMatricula);
+            console.log(arregloMatriculas);
             console.log(req.body.idCE);
 
-            if (infoCostosMatricula) {
+            if (arregloMatriculas.length > 0) {
                 res.json(
                     {
                         success: true,
-                        matricula: infoCostosMatricula,
+                        matriculas: arregloMatriculas,
 
                     }
                 )
@@ -84,10 +128,40 @@ module.exports.listarMatriculasCE = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        matricula: "No se encontraron los costos de matrícula"
+                        matriculas: "No se encontraron los costos de matrícula"
                     }
                 )
             }
         }
     )
 };
+
+/**************************************************************************************************************/
+
+module.exports.editar = function (req, res) {
+
+    modeloMatriculas.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'Su matrícula no ha sido eliminada' });
+            } else {
+                res.json({ success: true, msg: 'Su matrícula ha sido eliminada' });
+            }
+        }
+
+    );
+
+}
+
+/**************************************************************************************************************/
+
+module.exports.eliminar = function (req, res) {
+    modeloMatriculas.findByIdAndDelete(req.body.id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'Su matrícula no ha sido eliminada' });
+            } else {
+                res.json({ success: true, msg: 'Su matrícula ha sido eliminada' });
+            }
+        })
+}

@@ -34,6 +34,7 @@ module.exports.registrar = (req, res) => {
 
 };
 
+/**************************************************************************************************************/
 
 module.exports.listarNoticiasCE = (req, res) => {
     modeloRegistrarNoticia.find().then(
@@ -69,6 +70,24 @@ module.exports.listarNoticiasCE = (req, res) => {
     )
 };
 
+/**************************************************************************************************************/
+
+module.exports.buscarNoticia = function (req, res) {
+    modeloRegistrarNoticia.find({ _id: req.body._id }).then(
+        function (noticia) {
+            if (noticia) {
+                res.json({ success: true, noticia: noticia });
+            } else {
+                res.json({ success: false, noticia: noticia });
+            }
+        }
+
+    );
+
+};
+
+/**************************************************************************************************************/
+
 module.exports.editar = function (req, res) {
 
     modeloRegistrarNoticia.findByIdAndUpdate(req.body.id, { $set: req.body },
@@ -82,6 +101,8 @@ module.exports.editar = function (req, res) {
 
     );
 }
+
+/**************************************************************************************************************/
 
 module.exports.eliminar = function (req, res) {
     modeloRegistrarNoticia.findByIdAndDelete(req.body.id,

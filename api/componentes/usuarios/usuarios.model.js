@@ -71,6 +71,7 @@ let usuarioSchema = new mongoose.Schema(
         servicios : {type : String, required : false},
         descipcionesServicio : {type : String, required : false},
         documentCE : {type : String, required : false},
+        responsable: {type : String, required : false},
 
         
 

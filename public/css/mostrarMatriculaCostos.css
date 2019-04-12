@@ -1,42 +1,27 @@
-.contenido{
-    text-align: center;
-}
-
 h1{
-    /*font-size: 42px;*/
-    /*display: block;*/
-    /*margin-top: 100px;*/
-    /*margin-bottom: 100px;*/
-    /*text-align: center;*/
-    /*color: #f9aa33;*/
-    /*text-shadow: -3px -2px 10px #344955;*/
     display: inline-block;
     margin-top: 40px;
     margin-left: 5%;
     font-size: 25px;
-    color: #2c3e50;
-    text-align: left;
-    float: left;
+    color: #2c3e50
 }
 
-#divFiltrar{
-    margin: 0 auto;
-    margin-left: 10%; 
-    margin-top: 2%; 
+#divBuscar{
+    float: right;
+    margin-top: 40px;
+    margin-right: 5%;
+    margin-bottom: 10px;
+    margin-top: 70px;
 }
 
-#labelFiltrar{
-    margin: 0 auto;
-    margin-right: 10px; 
-    font-size: 20px; 
-    color: #344955; 
+#labelBuscar{
+    margin-right: 7px;
 }
 
-#inputFiltrar{
-    margin: 0 auto;
-    width: 230px; 
-    height: 25px; 
-    margin-left: 5px;
+#inputBuscar{
+    width: 175px;
+    height: 20px;
+    outline-color: #f9aa33;
 }
 
 tr{
@@ -103,24 +88,4 @@ fieldset{
     height: 40px;
     margin-top: 2%;
     margin-left: 45%;
-}
-
-#error{
-    display: inline-block;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    font-size: 20px;
-    color: #f9aa33;
-    width: 25%;
-}
-
-#mensaje{
-    display: inline-block;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    font-size: 30px;
-    color: #f9aa33;
-    width: 25%;
 }

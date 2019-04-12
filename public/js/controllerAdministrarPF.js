@@ -96,7 +96,23 @@ function mostrarDatos() {
 
 
             function eliminarPF() {
-                eliminarUsuario(nombrePF,id);
+                
+
+                Swal.fire({
+                    title: 'Está seguro que desea eliminar al usuario?',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#dddddd',
+                    confirmButtonText: 'Sí, eliminar'
+                }).then(result =>{
+                    if(result.value){
+                        eliminarUsuario(nombrePF,id);
+                    } else {
+                        
+                    }
+                });
+
 
             }
             actualizar.addEventListener('click', obtenerDatosPF);

@@ -21,7 +21,7 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
             contrasenna: contrasenna,
             edades: edades,
             imagenPF: imagenPF,
-            estado: estado
+            estado: estado,
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -55,7 +55,7 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
 
 };
 
-let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado) => {
+let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado, responsable) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_usuario",
@@ -103,12 +103,8 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
             servicios: servicios,
             descipcionesServicio: descipcionesServicio,
             documentCE: documentCE,
-            estado: estado
-
-
-
-
-
+            estado: estado,
+            responsable: responsable
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -142,8 +138,7 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
 
 };
 
-
-let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, provincia, canton, distrito, contrasenna, edades, imagenPF, estado, id) => {
+let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, provincia, canton, distrito, edades, imagenPF, estado, id) => {
     let request = $.ajax({
 
         url: "http://localhost:4000/api/actualizar",
@@ -161,7 +156,6 @@ let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, 
             provincia: provincia,
             canton: canton,
             distrito: distrito,
-            contrasenna: contrasenna,
             edades: edades,
             imagenPF: imagenPF,
             estado: estado,
@@ -171,20 +165,26 @@ let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, 
         dataType: "json"
     });
 
-    request.done(function (res) {
-        swal.fire({
-            type: 'success',
-            title: 'exito',
-            text: res.msg
-
+        validarCredenciales(user.email, user.contrasenna, function(res) {
+           console.log('hello')
+            if (res.success) {
+                console.log('redirección');
+                window.location.href = 'userProfileInfo.html';
+            } else {
+                swal.fire({
+                    type: 'warning',
+                    title: res.msg,
+                });
+            }
         });
-    });
+
+
 
 
 
 };
 
-let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado, id) => {
+let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado, id) => {
     let request = $.ajax({
 
         url: "http://localhost:4000/api/actualizar",
@@ -219,7 +219,6 @@ let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, 
             emailCEP: emailCEP,
             lat: lat,
             lng: lng,
-            contrasenna: contrasenna,
             privacidad: privacidad,
             clasificacion: clasificacion,
             tipo: tipo,
@@ -245,13 +244,26 @@ let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, 
             text: res.msg
 
         });
+
+        validarCredenciales(user.email, user.contrasenna, function(res) {
+           console.log('hello')
+            if (res.success) {
+                console.log('redirección');
+                window.location.href = 'userProfileInfo.html';
+            } else {
+                swal.fire({
+                    type: 'warning',
+                    title: res.msg,
+                });
+            }
+        });
     });
 
 
 
 };
 
-let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, contrasenna, edades, imagenPF, estado, id, puesto) => {
+let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, imagenPF, estado, id, puesto) => {
     let request = $.ajax({
 
         url: "http://localhost:4000/api/actualizar",
@@ -266,8 +278,6 @@ let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, 
             nacionalidad: nacionalidad,
             email: email,
             telefono: telefono,
-            contrasenna: contrasenna,
-            edades: edades,
             imagenPF: imagenPF,
             estado: estado,
             id: id,
@@ -275,6 +285,9 @@ let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
+
+
+        
     });
 
     request.done(function (res) {
@@ -284,8 +297,37 @@ let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, 
             text: res.msg
 
         });
+
+   
+
     });
 
 
 
 };
+
+let actualizarPW = (id, contrasenna, callback) => {
+    let request = $.ajax({
+
+        url: "http://localhost:4000/api/actualizar",
+        method: "POST",
+        data: {
+
+            id: id,
+            contrasenna : contrasenna
+
+        },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json"
+
+    });
+
+    request.done(function (res) {
+        swal.fire({
+            type: 'success',
+            title: 'exito',
+            text: res.msg
+        });
+        callback(res);
+    });
+}

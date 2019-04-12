@@ -6,16 +6,17 @@ const inputMatricula = document.querySelector('#inputPrecioMatricula');
 const inputMensualidad = document.querySelector('#inputPrecioMensualidad');
 const inputfieldsetPrecio = document.querySelector('#fieldsetPrecio');
 const botonRegistrarMatricula = document.querySelector('#btnRegistrarMatricula');
-let idUsuarioCE = user._id;
+const idCE = user._id;
 
-const opcionRegistrar = document.querySelector('.subOpcion #registrarMatriculaCostos');
+/**************************************************************************************************************/
 
-if(user.userType != "centroEducativo") {
+if (user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
     opcionRegistrar.style.display = 'none';
-    if (location.pathname.split("/").slice(-1) != 'loSentimos.html') setTimeout(location.href='loSentimos.html?idCE='+IdGeneralCE, 0);
+    if (location.pathname.split("/").slice(-1) != 'loSentimos.html') setTimeout(location.href = 'loSentimos.html?idCE=' + IdGeneralCE, 0);
 }
 
+/**************************************************************************************************************/
 
 let validar = () => {
     let error = false;
@@ -24,38 +25,41 @@ let validar = () => {
 
     if (inputMatricula.value == '') {
         error = true;
-        inputMatricula.classList.add('error_input');
+        inputMatricula.classList.add('errorInput');
     } else {
-        inputMatricula.classList.remove('error_input');
+        inputMatricula.classList.remove('errorInput');
     }
 
     if (inputMensualidad.value == '') {
         error = true;
-        inputMensualidad.classList.add('error_input');
+        inputMensualidad.classList.add('errorInput');
     } else {
-        inputMensualidad.classList.remove('error_input');
+        inputMensualidad.classList.remove('errorInput');
     }
 
-    if (monedaSeleccionada ==  null) {
+    if (monedaSeleccionada == null) {
         error = true;
-        inputfieldsetPrecio.classList.add('error_input');
+        inputfieldsetPrecio.classList.add('errorInput');
     } else {
-        inputfieldsetPrecio.classList.remove('error_input');
+        inputfieldsetPrecio.classList.remove('errorInput');
     }
 
 
     return error;
 };
 
+/**************************************************************************************************************/
+
 let obtener_datos = () => {
 
-    if (!validar()) {
+    if (validar() == false) {
 
         let stringNombreMatricula = inputMatricula.value;
         let stringPrecioMatricula = inputMensualidad.value;
         let fieldsetnumberPrecioMatricula = document.querySelector('#fieldsetPrecio input[type=radio]:checked').value;
+        let idCentroEducativo = idCE;
 
-        registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idUsuarioCE);
+        registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idCentroEducativo);
 
     } else {
         swal.fire({

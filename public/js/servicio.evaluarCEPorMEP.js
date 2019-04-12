@@ -85,7 +85,7 @@ let listarCriterios= () =>{
 };
 
 
-let registrarEvaluacionMEP = (pnombre, ptotal, pestrellas, panno, pidCE, ptipo) =>{
+let registrarEvaluacionMEP = (pnombre, ptotal, pestrellas, panno, pidCE, ptipo, pimagen, pposicion) =>{
  
   let request = $.ajax({
       url: "http://localhost:4000/api/registrarEvaluacionMEP",
@@ -96,7 +96,9 @@ let registrarEvaluacionMEP = (pnombre, ptotal, pestrellas, panno, pidCE, ptipo) 
           estrellas : pestrellas,
           anno : panno,
           idCE: pidCE,
-          tipo: ptipo          
+          tipo: ptipo,
+          imagen: pimagen,
+          posicion: pposicion          
       },
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType : "json"
@@ -129,6 +131,32 @@ let listarCEEvaluados= (panno, pidCE) =>{
       anno: panno,
       idCE: pidCE
         
+    },
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json",
+    async : false
+
+  });
+   
+  request.done(function( res ) {
+      listaCE = res.centrosEducativosEvaluados;
+    
+
+  });
+   
+  request.fail(function( jqXHR, textStatus ) {
+    
+  });  
+  return listaCE; 
+};
+
+let listarCETop= (anno) =>{
+  let listaCE= [];    
+  let request = $.ajax({ 
+    url: "http://localhost:4000/api/listarCEEvaluadosTop/" + anno,
+    type: "GET",    
+    data: {      
+          
     },
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json",

@@ -44,7 +44,7 @@ function mostrarCE() {
                 botonValorar.type = 'button';
                 botonValorar.textContent = 'Valorar';
                 botonValorar.addEventListener('click', mostrarPanelValorar =>{
-                    mostrarTablasValoracion(centrosEducativos[i]['centroEducativo'], centrosEducativos[i]['_id'], centrosEducativos[i]['tipo']);
+                    mostrarTablasValoracion(centrosEducativos[i]['centroEducativo'], centrosEducativos[i]['_id'], centrosEducativos[i]['tipo'], centrosEducativos[i]['imagen']);
                    
                 });
                 celdaValorar.appendChild(botonValorar);
@@ -57,7 +57,7 @@ function mostrarCE() {
     //VALIDAR CAMPOS PARA REGISTRAR EVALUACIÓN
 
 
-   let  mostrarTablasValoracion=(pnombreCentroEducativo, pidCE, ptipo)=>{
+   let  mostrarTablasValoracion=(pnombreCentroEducativo, pidCE, ptipo, pimagen)=>{
     
         primerContenido.style.display = 'none';
        
@@ -115,6 +115,12 @@ function mostrarCE() {
         inputTipoInvisible.classList.add('inputInvisible');
         inputTipoInvisible.disabled = 'disabled';
         divIDInvisible.appendChild(inputTipoInvisible);
+        let inputImagenInvisible = document.createElement('input');
+        inputImagenInvisible.value = pimagen;
+        inputImagenInvisible.id = 'inputImagenInvisible';
+        inputImagenInvisible.classList.add('inputInvisible');
+        inputImagenInvisible.disabled = 'disabled';
+        divIDInvisible.appendChild(inputImagenInvisible);
        
     }
 
@@ -165,6 +171,8 @@ console.log(totalEvaluacion);
         else{
             inputEstrellas.classList.remove('errorSelect');
         }
+        
+
         return error;
     }
 
@@ -192,6 +200,14 @@ console.log(totalEvaluacion);
                 let anno = new Date().getFullYear();
                 let idCE = document.querySelector('#inputIdInvisible').value;
                 let tipo = document.querySelector('#inputTipoInvisible').value;
+                let posicion = '';
+                
+                let imagen = document.querySelector('#inputImagenInvisible').value;
+                if(imagen == ''){
+                    imagen = 'sinImagen';
+                }
+
+                console.log(imagen);
     
                 
     
@@ -201,7 +217,7 @@ console.log(totalEvaluacion);
                 document.getElementsByClassName('claseCheck').checked = false;
                 
     
-                registrarEvaluacionMEP(nombre, total, estrellas, anno, idCE, tipo);
+                registrarEvaluacionMEP(nombre, total, estrellas, anno, idCE, tipo, imagen, posicion);
             }else{
                 swal.fire({
                     type: 'warning',

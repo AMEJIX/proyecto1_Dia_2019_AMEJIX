@@ -9,7 +9,9 @@ let schemaEvaluacionMEP = new mongoose.Schema(
         estrellas: {type: String, required: true},       
         anno: {type: Number, required: true},
         idCE: {type: String, required: true},
-        tipo: {type: String, required: true}
+        tipo: {type: String, required: true},
+        imagen: {type: String, required: true},
+        posicion: {type: Number, required: false}
     }
 );
 

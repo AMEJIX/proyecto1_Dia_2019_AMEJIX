@@ -1,9 +1,10 @@
 'use strict';
 
-const inputFiltrar = document.querySelector('#inputFiltrar');
+const inputFiltrar = document.querySelector('#inputBuscar');
 let user = JSON.parse(sessionStorage.getItem("usuario"));
-
 let idUsuarioCE = user._id;
+
+/**************************************************************************************************************/
 
 if (user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
@@ -11,8 +12,12 @@ if (user.userType != "centroEducativo") {
 
 }
 
+/**************************************************************************************************************/
+
 let noticias = listarNoticias(idUsuarioCE);
 inputFiltrar.addEventListener('keyup', mostrarNoticias);
+
+/**************************************************************************************************************/
 
 function mostrarNoticias() {
 
@@ -51,8 +56,9 @@ function mostrarNoticias() {
 }
 mostrarNoticias();
 
-
 inputFiltrar.addEventListener('keyup', mostrarNoticias);
+
+/**************************************************************************************************************/
 
 let eliminarNoticias = (p_id) => {
     Swal.fire({

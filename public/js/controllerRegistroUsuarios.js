@@ -1,15 +1,26 @@
 'use strict'
 let user = JSON.parse(sessionStorage.getItem("usuario"));
 
-//genre un captcha
-// el correo es para padres de familia
-//campo redes sociales
-// para los centros educativos se envia una notificacion al admi
-//agregar fotos
-
 
 //La funcion siguiente permite mostrar el formulario respectivo de cada tipo de usuario
 const selectUser = document.querySelector('#selectUser')
+
+try {
+    
+ if (user.userType == "superAdministrador") {
+        document.querySelector('#registroCentroEducativo').style.display = 'block';
+        document.querySelector('#registroPadreFamilia').style.display = 'none';
+        document.querySelector('#selectUser').style.display = 'none';
+        document.querySelector('#labelTipoUsuario').style.display = 'none';
+
+    }
+
+} catch (error) {
+
+    console.log('not logged in');
+    
+}
+
 
 function ocultar() {
     console.log(this.value);
@@ -23,6 +34,8 @@ function ocultar() {
         document.querySelector('#registroPadreFamilia').style.display = 'none';
 
     }
+
+   
 }
 
 //Esto activa la funcion al haber un campio en el select
@@ -527,6 +540,7 @@ function obtenerDatosPadreFamilia() {
 
 
         console.log(contrasenna)
+     
         registrarPadreFamilia(userType,
             nombre,
             segundoNombre,
@@ -542,7 +556,8 @@ function obtenerDatosPadreFamilia() {
             contrasenna,
             edades,
             imagenPF,
-            estado
+            estado,
+        
         )
 
         console.log('console.log(`La información fue enviada correctamente`);')
@@ -854,9 +869,21 @@ function obtenerDatosCentroEducativo() {
             idiomas += inputsIdioma[i].value + ', ';
         }
 
-
-
         let documentCE = documentoCE.src;
+
+        let responsable = " ";
+        try {
+                 
+        if (user.userType == "superAdministrador"){
+                responsable = user.userType;
+            }
+           
+          }
+          catch(err) {
+            console.log("not logged in")
+          }
+
+
 
         registrarCentroEducativo(userType,
             centroEducativo,
@@ -899,7 +926,8 @@ function obtenerDatosCentroEducativo() {
             servicios,
             descipcionesServicio,
             documentCE,
-            estado
+            estado,
+            responsable
 
 
         )
