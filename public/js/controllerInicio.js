@@ -15,6 +15,9 @@ function obtenerDatos(){
     if (!errorBlanks) {
          validarCredenciales(usuario, contrasenna, function(res) {
             if (res.success) {
+
+
+
                 console.log('redirección');
                 window.location.href = 'userProfileInfo.html';
             } else {

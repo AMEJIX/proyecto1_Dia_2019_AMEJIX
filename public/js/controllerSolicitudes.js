@@ -50,7 +50,11 @@ function mostrarDatos() {
             actualizar.href = `#`;
             celdaActualizar.appendChild(actualizar);
 
-        
+            
+            let email = usuarios[i]['email'];
+            let centroEducativo = usuarios[i]['centroEducativo'];
+            let userType = usuarios[i]['userType'];
+            let contrasenna = usuarios[i]['contrasenna'];
            
             let id = usuarios[i]['_id'];
 
@@ -74,7 +78,7 @@ function mostrarDatos() {
                 if (!validarCentroEducativo()) {
                     let estado = inputEstado.value;
                     console.log(estado);
-                    actualizarEstadoSolicitud(estado, id)
+                    actualizarEstadoSolicitud(estado, id, centroEducativo, email, userType, contrasenna)
 
                 } else {
 

@@ -21,7 +21,7 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
             contrasenna: contrasenna,
             edades: edades,
             imagenPF: imagenPF,
-            estado: estado
+            estado: estado,
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -55,7 +55,7 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
 
 };
 
-let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado) => {
+let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, contrasenna, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado, responsable) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_usuario",
@@ -103,12 +103,8 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
             servicios: servicios,
             descipcionesServicio: descipcionesServicio,
             documentCE: documentCE,
-            estado: estado
-
-
-
-
-
+            estado: estado,
+            responsable: responsable
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -141,7 +137,6 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
 
 
 };
-
 
 let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, provincia, canton, distrito, contrasenna, edades, imagenPF, estado, id) => {
     let request = $.ajax({

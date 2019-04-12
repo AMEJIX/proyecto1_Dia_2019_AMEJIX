@@ -80,7 +80,7 @@ function correoPF(pemail, pnombre, pcontrasena) {
 
 }
 
-function correoCE(pemail, pcentroEducativo, pcontrasena) {
+function correoCE(pemail, pcentroEducativo, pcontrasena, pestado) {
     //se define el correo que se va utilizar para enviar el email
     let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -100,13 +100,15 @@ function correoCE(pemail, pcentroEducativo, pcontrasena) {
     let email = pemail;
     let centroEducativo = pcentroEducativo;
     let contrasenna = pcontrasena;
+    let estado = pestado;
 
+    if (estado == "Activo") {
 
-    let mailOptions = {
-        from: 'sicen.amejix@gmail.com',
-        to: 'amejixteam@gmail.com',
-        subject: 'Registro de centro educativo',
-        html: `<html>
+        let mailOptions = {
+            from: 'sicen.amejix@gmail.com',
+            to: email,
+            subject: 'Registro de centro educativo',
+            html: `<html>
 
         <head>
             <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -123,7 +125,7 @@ function correoCE(pemail, pcentroEducativo, pcontrasena) {
                         </h2>
         
                         <p style="margin: 2px; font-size: 22px; padding-left: 20px; color: #fff;">
-                            Saludos SA. El centro educativo ${centroEducativo}, se ha registrado exitosamente a la aplicación Sicen del Ministerio de Educación.
+                            Saludos ${centroEducativo}, se ha registrado su cuenta exitosamente a la aplicación Sicen del Ministerio de Educación.
                         </p>
         
                         <ul style="font-size: 18px; color: #fff; margin: 10px 0; padding-left: 50px;">
@@ -140,15 +142,188 @@ function correoCE(pemail, pcentroEducativo, pcontrasena) {
         </body>
         
         </html>`
-    };
+        };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+    } else {
+        let mailOptions = {
+            from: 'sicen.amejix@gmail.com',
+            to: email,
+            subject: 'Registro de centro educativo',
+            html: `<html>
+
+        <head>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        </head>
+        
+        <body style="font-family: 'Montserrat', sans-serif; background-size: cover; ">
+            <main style="background: #4a6572; width:100%; height: 100%;">
+                <div style="background: #4a6572; max-width: 700px; padding: 10px; margin:0 auto; border-collapse: collapse;">
+        
+                    <div style="color: #fff; margin: 4% 10% 2%; font-family: sans-serif;">
+        
+                        <h2 style="color: #fff; margin: 0 0 7px; font-size: 40px; margin: 0 auto; text-align: center; padding-bottom: 30px">
+                            Sicen
+                        </h2>
+        
+                        <p style="margin: 2px; font-size: 22px; padding-left: 20px; color: #fff;">
+                            Saludos ${centroEducativo}, se ha registrado exitosamente a la aplicación Sicen del Ministerio de Educación.
+                            Su cuenta esta siendo revisada por el personal de Sicen. Prontamente recibirá un correo con el resultado de la revisión.
+                        </p>
+        
+                        <ul style="font-size: 18px; color: #fff; margin: 10px 0; padding-left: 50px;">
+
+                        </ul>
+                        
+                   
+                    </div>
+                </div>
+        
+        
+            </main>
+        </body>
+        
+        </html>`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+    }
+
+}
+
+function correoCEActivacion(pemail, pcentroEducativo, pcontrasena, pestado) {
+    //se define el correo que se va utilizar para enviar el email
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        port: 4000,
+        secure: false,
+        auth: {
+            user: 'sicen.amejix@gmail.com',
+            pass: 'amejix12345'
+        },
+        tls: {
+            rejectUnauthorized: false
         }
     });
+
+    //se redacta el email
+
+    let email = pemail;
+    let centroEducativo = pcentroEducativo;
+    let contrasenna = pcontrasena;
+    let estado = pestado;
+
+    if (estado == "Activo") {
+
+        let mailOptions = {
+            from: 'sicen.amejix@gmail.com',
+            to: email,
+            subject: 'Registro de centro educativo',
+            html: `<html>
+
+        <head>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        </head>
+        
+        <body style="font-family: 'Montserrat', sans-serif; background-size: cover; ">
+            <main style="background: #4a6572; width:100%; height: 100%;">
+                <div style="background: #4a6572; max-width: 700px; padding: 10px; margin:0 auto; border-collapse: collapse;">
+        
+                    <div style="color: #fff; margin: 4% 10% 2%; font-family: sans-serif;">
+        
+                        <h2 style="color: #fff; margin: 0 0 7px; font-size: 40px; margin: 0 auto; text-align: center; padding-bottom: 30px">
+                            Sicen
+                        </h2>
+        
+                        <p style="margin: 2px; font-size: 22px; padding-left: 20px; color: #fff;">
+                            Saludos ${centroEducativo}, se ha aprobado su cuenta. Bienvenido a Sicen.
+                        </p>
+        
+                        <ul style="font-size: 18px; color: #fff; margin: 10px 0; padding-left: 50px;">
+                            <ul style="padding: 10px;">El usuario del centro es: ${email}</ul>
+                            <ul style="padding: 10px;">Su codigo de verificacíon es: ${contrasenna}</ul>
+                        </ul>
+                        
+                   
+                    </div>
+                </div>
+        
+        
+            </main>
+        </body>
+        
+        </html>`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+    } else if (estado == "Inactivo"){
+        let mailOptions = {
+            from: 'sicen.amejix@gmail.com',
+            to: email,
+            subject: 'Registro de centro educativo',
+            html: `<html>
+
+        <head>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        </head>
+        
+        <body style="font-family: 'Montserrat', sans-serif; background-size: cover; ">
+            <main style="background: #4a6572; width:100%; height: 100%;">
+                <div style="background: #4a6572; max-width: 700px; padding: 10px; margin:0 auto; border-collapse: collapse;">
+        
+                    <div style="color: #fff; margin: 4% 10% 2%; font-family: sans-serif;">
+        
+                        <h2 style="color: #fff; margin: 0 0 7px; font-size: 40px; margin: 0 auto; text-align: center; padding-bottom: 30px">
+                            Sicen
+                        </h2>
+        
+                        <p style="margin: 2px; font-size: 22px; padding-left: 20px; color: #fff;">
+                            Saludos ${centroEducativo}, su cuenta ahora esta en estado de inactividad.
+                            En caso de haber enviado una solicitud, esta no fue aceptada.
+                        </p>
+        
+                        <ul style="font-size: 18px; color: #fff; margin: 10px 0; padding-left: 50px;">
+
+                        </ul>
+                        
+                   
+                    </div>
+                </div>
+        
+        
+            </main>
+        </body>
+        
+        </html>`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+    }
+
 }
 
 
@@ -205,10 +380,25 @@ module.exports.actualizar = function (req, res) {
 
                     })
                     nuevaBitacora.save();
-                } 
+                }
 
 
                 /**************************Fin Bitacora**************************/
+
+                /**************************Correo CE**************************/
+
+                if (req.body.userType == 'centroEducativo' && req.body.estado == 'Activo'){
+
+                    correoCEActivacion(req.body.email, req.body.centroEducativo, req.body.contrasenna, req.body.estado);
+                    
+                } else if(req.body.userType == 'centroEducativo' && req.body.estado == 'Inactivo'){
+
+                    correoCEActivacion(req.body.email, req.body.centroEducativo, req.body.contrasenna, req.body.estado);
+
+                };
+
+
+                /**************************Fin Correo CE**************************/
 
                 res.json({ success: true, msg: 'Se actualizó el usuario' })
             }
@@ -289,6 +479,7 @@ module.exports.registrar = (req, res) => {
             descipcionesServicio: req.body.descipcionesServicio,
             documentCE: req.body.documentCE,
             estado: req.body.estado,
+            responsable: req.body.responsable
 
 
 
@@ -319,7 +510,7 @@ module.exports.registrar = (req, res) => {
                     break;
                 case 'centroEducativo':
                     console
-                    correoCE(req.body.email, req.body.centroEducativo, req.body.contrasenna)
+                    correoCE(req.body.email, req.body.centroEducativo, req.body.contrasenna, req.body.estado)
                     break;
                 default:
                 // code block
