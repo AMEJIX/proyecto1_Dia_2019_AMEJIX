@@ -49,7 +49,7 @@ let mostrarDatosTop = () =>{
 
                 let divEstrellas = document.createElement('div');
                 divEstrellas.classList.add('divEstrellas');
-                if(centrosETop[a]['estrellas'])
+                // if(centrosETop[a]['estrellas'])
                 let h2Estrellas = document.createElement('h2');
                 h2Estrellas.classList.add('h2Estrellas');
                 h2Estrellas.textContent = centrosETop[a]['estrellas'];

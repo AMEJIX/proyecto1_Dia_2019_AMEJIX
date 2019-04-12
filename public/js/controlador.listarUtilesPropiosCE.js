@@ -18,11 +18,11 @@ let mostrarListas = () => {
     document.querySelector('#tblUtiles').style.display = 'none';
     // if (validar() == false){
         let utiles = listarUtilesNivel(nivel, IdUs);
-        
+        console.log(utiles);
         tabla.innerHTML = '';
         tablaNombreLista.innerHTML = '';
         
-        if(utiles !== "No se encontraron útiles escolares registrados"){
+        if(utiles != "No se encontraron útiles escolares registrados"){
             let aux = '';
             for(let i=0; i<utiles.length; i++){
                 //listar el nombre de la lista                
@@ -45,8 +45,9 @@ let mostrarListas = () => {
                
             }
            
-        }else{                
-            tabla.innerHTML = 'No existen útiles registrados para este nivel';  
+        }else{ 
+            console.log('hola');               
+            tablaNombreLista.innerHTML = 'No existen útiles registrados para este nivel';  
         }  
     // }
     
@@ -64,9 +65,9 @@ let mostrarUtiles = (pfiltro) =>{
 
         document.querySelector('#tablaNombreListaU').style.display = 'none';
         document.querySelector('#tblUtiles').style.display = 'table';
-        let filtro = inputFiltro.value;
+        
         for(let a = 0; a<utiles.length; a++){
-            if(utiles[a]['nombreLista'].toLowerCase().includes(filtro.toLowerCase())){
+            if(utiles[a]['nombreLista'].toLowerCase().includes(pfiltro.toLowerCase())){
                 // if(){
                     let fila = tabla.insertRow();
                     fila.insertCell().innerHTML = utiles [a]  ['nombreLista'];

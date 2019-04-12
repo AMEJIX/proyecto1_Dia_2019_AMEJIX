@@ -49,7 +49,7 @@ let listarMatriculas = (idCE) => {
         async: false,
     });
     request.done(function (msg) {
-        listarMatriculas = msg.matricula;
+        listarMatriculas = msg.matriculas;
     });
     request.fail(function (jqXHR, textStatus) {
     });
