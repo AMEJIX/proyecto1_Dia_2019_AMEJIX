@@ -112,7 +112,7 @@ module.exports.listarMatriculasCE = (req, res) => {
                     arregloMatriculas.push(matriculitas);
                 }
             }
-
+            
             console.log(arregloMatriculas);
             console.log(req.body.idCE);
 
@@ -128,7 +128,7 @@ module.exports.listarMatriculasCE = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        matriculas: "No se encontraron los costos de matrícula"
+                        matriculas: "No se encontraron matrículas",
                     }
                 )
             }
