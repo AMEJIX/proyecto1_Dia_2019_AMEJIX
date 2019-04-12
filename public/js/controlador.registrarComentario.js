@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 let centroEducativo = listarUsuariosCEencabezado(IdGeneralCE);
 
 const inputComentario = document.querySelector('#inputComentario');
