@@ -22,7 +22,7 @@ router.route('/registrarComentario')
         }
     );
 
-router.route('/centroEducativo/listarComentarioUsuario/:idCE')
+router.route('/listarComentarioUsuario/:idCE')
     .get(
         function (req, res) {
             comentariosApi.listarComentarioUsuario(req, res);
