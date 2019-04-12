@@ -40,8 +40,17 @@ let registrarPadreFamilia = (userType, nombre, segundoNombre, apellido, segundoA
         swal.fire({
             type: resType,
             title: res.msj,
+            showConfirmButton: true,
+            onClose: () => {
+                window.location.href = 'index.html';
+            }
+            
 
         });
+
+       
+
+
     });
 
 
@@ -121,10 +130,19 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
 
 
         swal.fire({
+
             type: resType,
             title: res.msj,
+            showConfirmButton: true,
+            onClose: () => {
+                window.location.href = 'index.html';
+            }
+            // type: resType,
+            // title: res.msj,
 
         });
+
+     
     });
 
 

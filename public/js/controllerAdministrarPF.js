@@ -8,7 +8,7 @@ const inputFiltro = document.querySelector('#txtFiltro');
 if (user.userType == 'centroEducativo' || user.userType == 'padreFamilia') {
     window.location.href = 'loSentimos.html';
 }
-let usuarios = listarUsuariosPF();
+// let usuarios = listarUsuariosPF();
 mostrarDatos();
 
 inputFiltro.addEventListener('keyup', mostrarDatos);

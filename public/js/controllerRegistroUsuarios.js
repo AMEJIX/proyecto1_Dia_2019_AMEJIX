@@ -1,5 +1,5 @@
 'use strict'
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 
 //La funcion siguiente permite mostrar el formulario respectivo de cada tipo de usuario
