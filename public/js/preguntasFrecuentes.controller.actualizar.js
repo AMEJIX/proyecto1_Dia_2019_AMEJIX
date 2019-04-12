@@ -2,7 +2,7 @@
 
 'use strict';
 
-let actualizarPregunta = (ppregunta, prespuesta,pidCE, pid, ppreguntaAnterior, prespuestaAnterior) =>{
+let actualizarPregunta = (ppregunta, prespuesta,pidCE, pid, ppreguntaAnterior, prespuestaAnterior, presponsable) =>{
 
     Swal.fire({
         title: '¿Está seguro que desea modificar la pregunta?',
@@ -13,7 +13,7 @@ let actualizarPregunta = (ppregunta, prespuesta,pidCE, pid, ppreguntaAnterior, p
         confirmButtonText: 'Sí, modificar'
     }).then((result) => {
         if (result.value && !(ppregunta === '' || prespuesta === '') && (ppregunta != ppreguntaAnterior || prespuesta != prespuestaAnterior) && !validarPregunta(ppregunta)) {
-            modificarPregunta(ppregunta, prespuesta, pidCE, pid);
+            modificarPregunta(ppregunta, prespuesta, pidCE, pid, presponsable);
             document.getElementById(`${pid}`).contentEditable = false;
             document.getElementById(`${pid}`).classList.remove('modoCambio');
 

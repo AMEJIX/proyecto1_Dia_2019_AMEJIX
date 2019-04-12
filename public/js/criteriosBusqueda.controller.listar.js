@@ -14,6 +14,8 @@ if (user.userType === 'centroEducativo'){
     document.querySelector('#btnAgregar').style.display = 'none';
 }
 
+let responsable = user.nombre + ' ' + user.segundoNombre + ' ' + user.apellido + ' ' + user.segundoApellido;
+
 let listaEtiquetas = getCriteriosBusqueda();
 
 insertarMensaje(`No se encontró ningún criterio de búsqueda`);
@@ -68,10 +70,11 @@ function mostrarCriterios() {
                                 etiquetap.classList.add('modoCambio');
                                 etiquetap.selected = true;
                                 $(`#${etiquetap.id}`).keypress(function(e) {
-                                    var keycode = (e.keyCode ? e.keyCode : e.which);
-                                    console.log(keycode);
+                                    let keycode = (e.keyCode ? e.keyCode : e.which);
+                                    // console.log(keycode);
+                                    console.log(responsable);
                                     if (keycode == '13') {
-                                        actualizarEtiqueta(etiquetap.textContent, nuevaEtiqueta.id, contenido);
+                                        actualizarEtiqueta(etiquetap.textContent, nuevaEtiqueta.id, contenido, responsable);
                                         e.preventDefault();
                                         return false;
                                     }
@@ -80,7 +83,8 @@ function mostrarCriterios() {
                             z++;
                         });
                         botonEliminar.addEventListener('click', eliminar =>{
-                            eliminarEtiqueta(nuevaEtiqueta.id);
+                            console.log(responsable);
+                            eliminarEtiqueta(nuevaEtiqueta.id, responsable);
                         });
                     });
                     nuevaEtiqueta.addEventListener('mouseleave', retornar =>{

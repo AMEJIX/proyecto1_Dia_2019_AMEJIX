@@ -50,7 +50,7 @@ let getPreguntasFrecuentes = (idCE) =>{
 
 
 
-let registrarPreguntaFrecuente = (idCE, ppregunta, prespuesta) =>{
+let registrarPreguntaFrecuente = (idCE, ppregunta, prespuesta, presponsable) =>{
     let request = $.ajax(
         {
             url: "http://localhost:4000/api/registrarPreguntaFrecuente",
@@ -58,7 +58,8 @@ let registrarPreguntaFrecuente = (idCE, ppregunta, prespuesta) =>{
             data: {
                 idCE: idCE,
                 pregunta: ppregunta,
-                respuesta: prespuesta
+                respuesta: prespuesta,
+                responsable: presponsable
             },
             contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
             dataType: "json"
@@ -107,7 +108,7 @@ let getPregunta = (id) =>{
 };
 
 
-let modificarPregunta = (ppregunta, prespuesta,pidCE, pid) =>{
+let modificarPregunta = (ppregunta, prespuesta,pidCE, pid, presponsable) =>{
     let request = $.ajax({
         url : 'http://localhost:4000/api/modificarPregunta',
         method : "POST",
@@ -115,8 +116,8 @@ let modificarPregunta = (ppregunta, prespuesta,pidCE, pid) =>{
             id : pid,
             pregunta: ppregunta,
             respuesta: prespuesta,
-            idCE: pidCE
-
+            idCE: pidCE,
+            responsable: presponsable
         },
         dataType : "json",
         contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -147,12 +148,13 @@ let modificarPregunta = (ppregunta, prespuesta,pidCE, pid) =>{
 
 };
 
-let deletePregunta = (pid) =>{
+let deletePregunta = (pid, presponsable) =>{
     let request = $.ajax({
         url : 'http://localhost:4000/api/eliminarPregunta',
         method : "POST",
         data : {
-            id : pid
+            id : pid,
+            responsable: presponsable
         },
         dataType : "json",
         contentType : 'application/x-www-form-urlencoded; charset=UTF-8'

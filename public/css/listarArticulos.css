@@ -11,17 +11,40 @@ h1{
     color: #2c3e50; */
 }
 
-.filtro{
+.filtroIzquierda{
+    float: left;
+    margin-top: 40px;
+    margin-left: 5%;
+    margin-bottom: 50px;
+}
+
+a{
+    color: #2c3e50;
+    text-decoration: none;
+    
+
+}
+
+a:hover{    
+    text-decoration: none;
+    color: #f9aa33
+    
+}
+
+.filtroDerecha{
     float: right;
     margin-top: 40px;
     margin-right: 5%;
     margin-bottom: 50px;
 }
-.filtro label{
+
+.txtFiltro{
     display: inline-block;
-    width: 60px;
-    margin-left: 53px;
+    width: 250px;
+    height: 30px;
+    outline: none;
 }
+
 
 #txtFiltro{
     display: inline-block;
@@ -29,6 +52,15 @@ h1{
     height: 30px;
     outline: none;
 }
+
+
+.filtro label{
+    display: inline-block;
+    width: 60px;
+    margin-left: 53px;
+}
+
+
 
 
 #tblArticulos {

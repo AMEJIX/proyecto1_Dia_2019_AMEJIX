@@ -32,6 +32,8 @@ module.exports.registrar = (req, res) => {
 
 };
 
+/**************************************************************************************************************/
+
 module.exports.listarBecas = (req, res) => {
 
     modeloBeca.find().then(
@@ -56,6 +58,8 @@ module.exports.listarBecas = (req, res) => {
     )
 
 };
+
+/**************************************************************************************************************/
 
 module.exports.listarBecasCE = (req, res) => {
     modeloBeca.find().then(
@@ -88,3 +92,49 @@ module.exports.listarBecasCE = (req, res) => {
         }
     )
 };
+
+/**************************************************************************************************************/
+
+module.exports.buscarBeca = function (req, res) {
+    modeloBeca.find({ _id: req.body._id }).then(
+        function (beca) {
+            if (beca) {
+                res.json({ success: true, beca: beca });
+            } else {
+                res.json({ success: false, beca: beca });
+            }
+        }
+
+    );
+
+};
+
+/**************************************************************************************************************/
+
+module.exports.editar = function (req, res) {
+
+    modeloBeca.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo actualizar su beca' });
+            } else {
+                res.json({ success: true, msg: 'Su beca ha sido actualizada' });
+            }
+        }
+
+    );
+
+}
+
+/**************************************************************************************************************/
+
+module.exports.eliminar = function (req, res) {
+    modeloBeca.findByIdAndDelete(req.body.id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar su beca' });
+            } else {
+                res.json({ success: true, msg: 'Su beca ha sido eliminada' });
+            }
+        })
+}

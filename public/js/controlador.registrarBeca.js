@@ -7,24 +7,36 @@ const inputDescripcionBeca = document.querySelector('#inputDescripcionBeca');
 const botonRegistrarBeca = document.querySelector('#btnRegistrarBeca');
 const idCE = user._id;
 
+/**************************************************************************************************************/
+
+if (user.userType != "centroEducativo") {
+    idUsuarioCE = IdGeneralCE;
+    opcionRegistrar.style.display = 'none';
+    if (location.pathname.split("/").slice(-1) != 'loSentimos.html') setTimeout(location.href = 'loSentimos.html?idCE=' + IdGeneralCE, 0);
+}
+
+/**************************************************************************************************************/
+
 let validar = () => {
     let error = false;
     if (inputNombreBeca.value == '') {
         error = true;
-        inputNombreBeca.classList.add('error_input');
+        inputNombreBeca.classList.add('errorInput');
     } else {
-        inputNombreBeca.classList.remove('error_input');
+        inputNombreBeca.classList.remove('errorInput');
     }
 
     if (inputDescripcionBeca.value == '') {
         error = true;
-        inputDescripcionBeca.classList.add('error_input');
+        inputDescripcionBeca.classList.add('errorInput');
     } else {
-        inputDescripcionBeca.classList.remove('error_input');
+        inputDescripcionBeca.classList.remove('errorInput');
     }
 
     return error;
 };
+
+/**************************************************************************************************************/
 
 let obtener_datos = () => {
 

@@ -29,7 +29,7 @@ let agregar = () =>{
 
         inputEtiqueta.value = '';
 
-        registrarCriterioBusqueda(nombre);
+        registrarCriterioBusqueda(nombre, responsable);
 
         setTimeout("location.reload()", 1500);
     } else {

@@ -81,13 +81,14 @@ let getCriterioBusqueda = (id) =>{
     return etiqueta;
 };
 
-let modificarEtiqueta = (pnombre, pid) =>{
+let modificarEtiqueta = (pnombre, pid, presponsable) =>{
     let request = $.ajax({
         url : 'http://localhost:4000/api/administrador/modificarEtiqueta',
         method : "POST",
         data : {
             nombre : pnombre,
-            id : pid
+            id : pid,
+            responsable: presponsable
         },
         dataType : "json",
         contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -118,12 +119,13 @@ let modificarEtiqueta = (pnombre, pid) =>{
 
 };
 
-let deleteEtiqueta = (pid) =>{
+let deleteEtiqueta = (pid, presponsable) =>{
     let request = $.ajax({
         url : 'http://localhost:4000/api/administrador/eliminarEtiqueta',
         method : "POST",
         data : {
-            id : pid
+            id : pid,
+            responsable: presponsable
         },
         dataType : "json",
         contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -154,13 +156,14 @@ let deleteEtiqueta = (pid) =>{
 
 };
 
-let registrarCriterioBusqueda = (pnombre) =>{
+let registrarCriterioBusqueda = (pnombre, presponsable) =>{
     let request = $.ajax(
         {
             url: "http://localhost:4000/api/administrador/registrarCriterioBusqueda",
             method: "POST",
             data: {
-                nombre : pnombre
+                nombre : pnombre,
+                responsable: presponsable
             },
             contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
             dataType: "json"

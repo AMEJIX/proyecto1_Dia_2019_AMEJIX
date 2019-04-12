@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 const tabla = document.querySelector('#tblMaterialInformativo tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 
@@ -59,7 +59,11 @@ function mostrarDatos() {
                 celdaConfiguracion.appendChild(botonEditar);
                 let botonEliminar = document.createElement('button');
                 botonEliminar.textContent = 'Eliminar';
-                botonEliminar.id = 'btnEliminar';                
+                botonEliminar.id = 'btnEliminar';   
+
+                botonEliminar.classList.add('btnEliminar');  
+                // botonEliminar.textContent = '<i class="fas fa-trash"></i>';
+
                 botonEliminar.addEventListener('click', eliminar =>{
                     eliminarMaterialControlador(temas[i]['_id']);
                 });

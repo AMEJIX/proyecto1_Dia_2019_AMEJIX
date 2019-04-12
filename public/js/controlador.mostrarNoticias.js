@@ -1,17 +1,23 @@
 'use strict';
 
-const inputFiltrar = document.querySelector('#inputFiltrar');
+const inputFiltrar = document.querySelector('#inputBuscar');
 let user = JSON.parse(sessionStorage.getItem("usuario"));
-
 let idUsuarioCE = user._id;
 
-if (user.userType != "centroEducativo" || typeof listaPreguntasFrecuentes == 'string') {
+/**************************************************************************************************************/
+
+if (user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
 } else {
 
 }
+
+/**************************************************************************************************************/
+
 let noticias = listarNoticias(idUsuarioCE);
 inputFiltrar.addEventListener('keyup', mostrarNoticias);
+
+/**************************************************************************************************************/
 
 function mostrarNoticias() {
 
@@ -29,22 +35,45 @@ function mostrarNoticias() {
             fila.insertCell().innerHTML = noticias[i]['fechaNoticia'];
             fila.insertCell().innerHTML = noticias[i]['registrarNoticia'];
 
-            let celda_configuracion = fila.insertCell();
+            let celdaConfiguracion = fila.insertCell();
+            let celdaEliminar = fila.insertCell();
 
-            //Creación del botón de editar
-            let boton_editar = document.createElement('a');
-            boton_editar.textContent = 'Editar';
-            boton_editar.href = `registrarNoticia.html?idCE_noticias = $(noticias[i]['user._id'])`;
+            let botonEditar = document.createElement('a');
+            botonEditar.textContent = 'Editar';
+            botonEditar.href = `editarNoticias.html?idNoticia=${noticias[i]['_id']}`;
 
-            celda_configuracion.appendChild(boton_editar);
-
-            //let boton_eliminar = document.createElement('a');
-            //boton_eliminar.textContent = 'Eliminar';
-            //boton_eliminar.href = `registrarNoticia.html?idCE_noticias = $(noticias[i]['user._id'])`;
-
-            //celda_configuracion.appendChild(boton_eliminar);
+            celdaConfiguracion.appendChild(botonEditar);
+            let botonEliminar = document.createElement('button');
+            botonEliminar.textContent = 'Eliminar';
+            botonEliminar.id = 'btnEliminar';
+            botonEliminar.addEventListener('click', eliminar => {
+                eliminarNoticias(noticias[i]['_id']);
+            });
+            celdaEliminar.appendChild(botonEliminar);
         }
 
     }
 }
 mostrarNoticias();
+
+inputFiltrar.addEventListener('keyup', mostrarNoticias);
+
+/**************************************************************************************************************/
+
+let eliminarNoticias = (p_id) => {
+    Swal.fire({
+        title: '¿Está seguro que desea eliminar la noticia?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#dddddd',
+        confirmButtonText: 'Sí, eliminar'
+    }).then((result) => {
+        if (result.value) {
+            eliminarNoticia(p_id);
+        } else {
+        }
+
+    })
+
+}

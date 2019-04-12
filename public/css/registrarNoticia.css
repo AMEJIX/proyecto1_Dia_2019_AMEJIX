@@ -59,7 +59,7 @@ h1 {
 #inputRegistrarNoticia{ 
     margin: 0% auto; 
     width: 530px;
-    height: 300px;
+    height: 200px;
     margin-left: 95px; 
     resize: none;
     outline-color: #f9aa33;
@@ -76,7 +76,7 @@ h1 {
     font-size: 15px;
     border-radius: 5px; 
 } 
-.error_input{ 
+.errorInput{ 
     border: 2px 
     solid #ED4C67; 
 }

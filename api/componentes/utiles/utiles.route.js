@@ -27,6 +27,14 @@ router.route('/listarUtilNivel')
     }
 )
 
+router.route('/listarUtilNivelPropio')
+.post(
+    function(req, res){
+        apiUtiles.listarUtilNivelPropio(req, res);
+    }
+)
+
+
 router.route('/listarTodos')
 .get(
     function(req, res){

@@ -10,15 +10,19 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
 
     <!-- <link rel="stylesheet" href="css/profileInfo.css"> -->
     <link rel="stylesheet" href="css/profileCE.css">
-    <link rel="stylesheet" href="css/listarArticulos.css">
 
+    <link rel="stylesheet" href="css/comentarios.css">
+    <link rel="stylesheet" href="css/mostrarMaterialInformativo.css">
+    <link rel="stylesheet" href="css/listarArticulos.css">
+    <!-- <link rel="stylesheet" href="css/preguntasFrecuentes2.0.css">
+    <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css"> -->
 
 </head>
 
@@ -37,7 +41,6 @@
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
                     <a href="" id="logOut">Cerrar sesión</a>
-                    </ul>
                 </div>
             </div>
 
@@ -80,7 +83,7 @@
                 <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
                 <a href="listarRangosMEP.html">Rangos de evaluación</a>
                 <a href="listarArticulosPropios.html">Artículos escolares</a>
-                <a href="listarUtilesOficiales.html">Lista de útiles</a>
+                <a href="listarUtilesOficialesSA.html">Lista de útiles</a>
                 <a href="criteriosBusqueda.html">Etiquetas</a>
             </div>
 
@@ -93,7 +96,7 @@
                 <a href="listarCentrosEducativos.html">Buscar</a>
                 <a href="#" id="aFavoritos">Favoritos</a>
                 <a href="#">Top</a>
-                <a href="#" id="aEvaluarCE">Evaluar centro educativo</a>
+                <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
                 <a href="#" id="aActivarDesCE">Activar o desactivar</a>
                 <a href="#" id="aEliminarCE">Eliminar</a>
                 <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
@@ -185,35 +188,14 @@
                         <h2></h2>
                         <h3></h3>
                         <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <!-- <div class="stars-outer">
+                                <div class="stars-inner"></div>
+                            </div>
+                            <span class="number-rating"></span> -->
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- <h2>Nombre de la institucion</h2>
-            <h3>Direccion exacta</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div> -->
-            <!-- <a href="" id="aInfoCE">Información del Centro educativo</a>
-                <a href="" id="aMatricula">Matrícula</a>
-                <a href="" id="aBecas">Becas</a>
-                <a href="" id="aMaterialInformativo">Material Informativo</a>
-                <a href="" id="aNoticias">Noticias</a>
-                <a href="" id="aActividades">Actividades</a>
-                <a href="" id="aUtiles">Lista de útiles</a>
-                <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
-                <a href="" id="aEtiquetas">Etiquetas</a>
-                <a href="citas.html" id="aAgendarCita">Agendar cita</a> -->
 
             <div class="tabs">
                 <div class="tabContainer">
@@ -231,12 +213,91 @@
                         <button onclick="showPanel(10, '#fff')">Agendar cita</button>
                     </div>
 
-                    <div class="tabPanel">Información</div>
+                    <div class="tabPanel">
+                        <div class="comentarios">
+                            <h1>Comentarios</h1>
+
+                            <div id="cajaComentarios">
+                                <!-- <div class="commentInfo">
+                                    <div class="userPic"></div>
+                                    <h3></h3>
+                                </div>
+                                <div class="starsRate">
+                                    <div>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                    </div>
+                                </div>
+                                inserto un elemento p -->
+                            </div>
+
+                            <div id="registrarComentarioDiv">
+                                <div class="starsPF">
+                                    <div class="btnStars">
+                                        <button type="button" name="star" id="uno" value="1"><i
+                                                class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="dos" value="2"><i
+                                                class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="tres" value="3"><i
+                                                class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="cuatro" value="4"><i
+                                                class="fas fa-star"></i></button>
+                                        <button type="button" name="star" id="cinco" value="5"><i
+                                                class="fas fa-star"></i></button>
+                                    </div>
+                                </div>
+                                <div class="textAreaStandard">
+                                    <div>
+                                        <label for="inputComentario">Comentario</label>
+                                    </div>
+                                    <div>
+                                        <textarea type="text" id="inputComentario" placeholder=""></textarea>
+                                    </div>
+                                </div>
+
+                                <button type="button" id="send"><i class="fas fa-paper-plane"></i></button>
+
+                            </div>
+
+                        </div>
+                    </div>
+
                     <div class="tabPanel">Matrícula</div>
+
                     <div class="tabPanel">Becas</div>
-                    <div class="tabPanel">Material Informativo</div>
+
+                    <div class="tabPanel">
+                        <h1>Material informativo</h1>
+
+                        <div class="filtrar">
+                            <label for="txtFiltro">Buscar</label>
+                            <input type="text" id="txtFiltro">
+                        </div>
+
+                        <table id="tblMaterialInformativo">
+                            <thead>
+                                <tr>
+                                    <th>Tema</th>
+                                    <th>Descripción</th>
+                                    <th>Brochure informativo</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+
                     <div class="tabPanel">Noticias</div>
+
                     <div class="tabPanel">Actividades</div>
+
                     <div class="tabPanel">
                         <h1>Artículos escolares</h1>
 
@@ -262,10 +323,63 @@
 
                         </table>
                     </div>
+
                     <div class="tabPanel">Lista de útiles</div>
-                    <div class="tabPanel">Preguntas Frecuentes</div>
+
+                    <div class="tabPanel">
+                        <div id="preguntasFrecuentesPF">
+                            <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+                            <div class="center">
+                                <h1>Preguntas frecuentes</h1>
+                                <div id="cajaFiltrarPF">
+                                    <label for="txtFiltrarPF" id="lblFiltrarPF">Buscar</label>
+                                    <input type="text" id="txtFiltrarPF" placeholder="Escriba su pregunta">
+                                </div>
+                                <table id="tblPreguntasFrecuentesPF">
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div id="preguntasFrecuentesCE&Admin">
+                            <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+                            <div class="head">
+                                <h1>Preguntas frecuentes</h1>
+
+                                <div id="cajaFiltrar">
+                                    <label for="txtFiltrar" id="lblFiltrar">Buscar</label>
+                                    <input type="text" id="txtFiltrar" placeholder="Escriba su pregunta">
+                                </div>
+                            </div>
+
+                            <div class="right">
+                                <table id="tblPreguntasFrecuentes">
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+
+                            <div class="left">
+                                <p id="nueva">¿Nueva pregunta frecuente?</p>
+                                <form>
+                                    <div id="cajaRegistrarPregunta">
+                                        <label for="txtPregunta">Escriba la pregunta</label>
+                                        <textarea id="txtPregunta" type="text" maxlength="100"></textarea>
+                                    </div>
+                                    <div id="cajaRegistrarRespuesta">
+                                        <label for="txtRespuesta">Escriba la respuesta</label>
+                                        <textarea type="text" id="txtRespuesta" maxlength="350"></textarea>
+                                    </div>
+
+                                </form>
+                                <button type="button" id="btnEnviar">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="tabPanel">Etiquetas</div>
+
                     <div class="tabPanel">Agendar cita</div>
+
                 </div>
             </div>
 
@@ -273,13 +387,16 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/style.js"></script>
     <script src="js/controlador.general.js"></script>
     <script src="js/servicio.profileCE.js"></script>
     <script src="js/profileCE.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
+    <script src="js/mostrarNombre.controller.js"></script>
+    <script src="js/controlador.rating.js"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
         async defer></script> -->
 
@@ -287,14 +404,64 @@
     <script src="js/mapUser.js"></script>
     <script src="js/servicioInicio.js"></script>
 
-    <!-- <script src="js/controlador.profileInfoCE.js"></script> -->
+    <!-- Información -->
 
-    
+    <!-- Aqui se van a insertar los comentarios -->
+    <script src="js/servicio.comentarios.js"></script>
+    <script src="js/controlador.registrarComentario.js"></script>
+    <script src="js/controlador.mostrarComentarios.js"></script>
 
-    <script src="js/servicio.articulos.js"></script>
-    <script src="js/controlador.listarArticulos.js"></script>
+    <!-- Matricula -->
 
-    <script src="js/mostrarNombre.controller.js"></script>
+
+    <!-- Becas -->
+
+
+    <!-- Material Informativo -->
+    <script src="js/servicio.registrarMaterialInformativo.js"></script>
+    <script src="js/controlador.mostrarMaterialInformativo.js"></script>
+
+    <!-- Noticias -->
+
+
+    <!-- Actividades -->
+
+
+    <!-- Articulos -->
+    <!-- <script src="js/servicio.articulos.js"></script>
+    <script src="js/controlador.listarArticulos.js"></script> -->
+
+    <!-- Lista de utiles -->
+
+
+    <!-- Preguntas Frecuentes -->
+
+    <!--Isaac-->
+
+    <!--Preguntas frecuentes PF-->
+
+
+    <!--Preguntas frecuentes PF-->
+
+    <!-- <script src="js/preguntasFrecuentes.servicio.js"></script>
+    <script src="js/preguntasFrecuentes.controller.listar.js"></script> -->
+    <!--PARA CUALQUIER USUARIO-->
+
+    <!--Preguntas frecuentes CE y ADMIN-->
+
+    <!-- <script src="js/preguntasFrecuentes.controller.actualizar.js"></script>
+    <script src="js/preguntasFrecuentes.controller.eliminar.js"></script>
+    <script src="js/preguntasFrecuentes.controller.registrar.js"></script> -->
+
+    <!--Preguntas frecuentes CE y ADMIN-->
+
+
+    <!--Isaac-->
+
+    <!-- Etiquetas -->
+
+
+    <!-- Agendar cita -->
 
 </body>
 

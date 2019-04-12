@@ -1,20 +1,23 @@
 'use strict';
 
-const inputFiltrar = document.querySelector('#inputFiltrar')
+const inputFiltrar = document.querySelector('#inputBuscar')
 let user = JSON.parse(sessionStorage.getItem("usuario"));
-
 let idUsuarioCE = user._id;
 
-
+/**************************************************************************************************************/
 
 if (user.userType != "centroEducativo") {
     idUsuarioCE = IdGeneralCE;
 } else {
-    typeof listaPreguntasFrecuentes == 'string';
+
 }
+
+/**************************************************************************************************************/
 
 let becas = listarBecas(idUsuarioCE);
 inputFiltrar.addEventListener('keyup', mostrarBecas);
+
+/**************************************************************************************************************/
 
 function mostrarBecas() {
 
@@ -30,16 +33,45 @@ function mostrarBecas() {
             fila.insertCell().innerHTML = becas[i]['nombreBeca'];
             fila.insertCell().innerHTML = becas[i]['descripcionBeca'];
 
-            let celda_configuracion = fila.insertCell();
+            let celdaConfiguracion = fila.insertCell();
+            let celdaEliminar = fila.insertCell();
 
-            //Creación del botón de editar
-            let boton_editar = document.createElement('a');
-            boton_editar.textContent = 'Editar';
-            boton_editar.href = `registrarBeca.html?idCE_becas = $(becas[i]['user._id'])`;
+            let botonEditar = document.createElement('a');
+            botonEditar.textContent = 'Editar';
+            botonEditar.href = `editarBecas.html?idBeca=${becas[i]['_id']}`;
 
-            celda_configuracion.appendChild(boton_editar);
+            celdaConfiguracion.appendChild(botonEditar);
+            let botonEliminar = document.createElement('button');
+            botonEliminar.textContent = 'Eliminar';
+            botonEliminar.id = 'btnEliminar';
+            botonEliminar.addEventListener('click', eliminar => {
+                eliminarBecas(becas[i]['_id']);
+            });
+            celdaEliminar.appendChild(botonEliminar);
         }
     }
 }
 
 mostrarBecas();
+
+inputFiltrar.addEventListener('keyup', mostrarBecas);
+
+/**************************************************************************************************************/
+
+let eliminarBecas = (p_id) => {
+    Swal.fire({
+        title: '¿Está seguro que desea eliminar la beca?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#dddddd',
+        confirmButtonText: 'Sí, eliminar'
+    }).then((result) => {
+        if (result.value) {
+            eliminarBeca(p_id);
+        } else {
+        }
+
+    })
+
+}

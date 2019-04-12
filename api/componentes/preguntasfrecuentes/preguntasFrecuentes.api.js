@@ -1,6 +1,8 @@
 'use strict';
 
 const modeloPreguntasFrecuentes = require('./preguntasFrecuentes.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
+
 
 module.exports.validarNuevaPregunta = (req, res) =>{
 
@@ -62,6 +64,25 @@ module.exports.registrarPreguntaFrecuente = (req, res) =>{
                 }
             );
         } else {
+
+            /**************************Bitacora*/
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.responsable,
+                tipoDeMovimiento: "Registro de pregunta frecuente",
+                fecha: diaActual,
+            });
+            nuevaBitacora.save();
+            /**************************/
+
             res.json(
                 {
                     success: true,
@@ -136,6 +157,25 @@ module.exports.actualizar = (req, res) =>{
             if(error){
                 res.json({success : false , msg : 'No se pudo actualizar la pregunta'});
             }else{
+
+                /**************************Bitacora*/
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.responsable,
+                    tipoDeMovimiento: "Modificación de pregunta frecuente",
+                    fecha: diaActual,
+                });
+                nuevaBitacora.save();
+                /**************************/
+
                 res.json({success: true , msg : 'La pregunta se actualizó con éxito'});
             }
         }
@@ -149,6 +189,26 @@ module.exports.eliminar = (req, res) =>{
             if(error){
                 res.json({success : false , msg : 'No se pudo eliminar la pregunta'});
             }else{
+
+
+                /**************************Bitacora*/
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.responsable,
+                    tipoDeMovimiento: "Eliminación de pregunta frecuente",
+                    fecha: diaActual,
+                });
+                nuevaBitacora.save();
+                /**************************/
+
                 res.json({success: true , msg : 'La pregunta se eliminó con éxito'});
             }
         }

@@ -38,9 +38,10 @@ let agregar = () =>{
     if (!validar()){
         pregunta = txtPregunta.value;
         respuesta = txtRespuesta.value;
+        // let responsable;
         let idUsuario;
-        if(user.userType == 'centroEducativo'){
-            idUsuario = user._id;
+        if(elUsuario.userType == 'centroEducativo'){
+            idUsuario = elUsuario._id;
         } else {
             idUsuario = IdGeneralCE;
         }
@@ -48,7 +49,7 @@ let agregar = () =>{
         txtRespuesta.value = '';
         txtPregunta.value = '';
 
-        registrarPreguntaFrecuente(idUsuario, pregunta, respuesta);
+        registrarPreguntaFrecuente(idUsuario, pregunta, respuesta, responsable);
 
         setTimeout("location.reload()", 1500);
 
