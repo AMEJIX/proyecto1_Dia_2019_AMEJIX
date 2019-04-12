@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tabla = document.querySelector('#tblUsuarios tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
@@ -15,7 +15,7 @@ inputFiltro.addEventListener('keyup', mostrarDatos);
 
 function mostrarDatos() {
 
-    let usuarios = listarUsuariosCE();
+    
     let filtro = inputFiltro.value;
     tabla.innerHTML = '';
 

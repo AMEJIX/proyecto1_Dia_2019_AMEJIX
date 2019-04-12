@@ -13,11 +13,11 @@ if(user.userType != "centroEducativo") {
 }
 
 
-if (user.userType == "superAdministrador") {
-    window.location.href = 'loSentimos.html';
-} else {
+// if (user.userType == "superAdministrador") {
+//     window.location.href = 'loSentimos.html';
+// } else {
     
-}
+// }
 
 let temas = listarMaterialUsuario(idUsuarioCE);
 mostrarDatos();

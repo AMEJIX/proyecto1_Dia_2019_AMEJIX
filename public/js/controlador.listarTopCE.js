@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 const sectionCardsTop = document.querySelector('#seccionRankings');
 const selectTipoTop = document.querySelector('#selectTipoTop');
 const anno = new Date().getFullYear();
@@ -9,8 +7,8 @@ const anno = new Date().getFullYear();
 let mostrarDatosTop = () =>{
 
     let centrosETop = listarCETop(anno);
-    console.log(centrosETop);
-
+    
+console.log(centrosETop);
     for(let  i=0; i<centrosETop.length; i++){
         centrosETop[i]['posicion'] = i+1;
         if(centrosETop[i]['imagen'] ==  'sinImagen'){
@@ -22,6 +20,7 @@ let mostrarDatosTop = () =>{
     switch(selectTipoTop.value){
         //top general
         case "1":
+        sectionCardsTop.innerHTML = '';
             for(let a=0; a < 10; a++){
                 let cardCETop = document.createElement('div');
                 cardCETop.classList.add('cardCETop');
@@ -71,18 +70,23 @@ let mostrarDatosTop = () =>{
         
         // top
         case "Escuela, ":
+        sectionCardsTop.innerHTML = '';
             let efiltro = selectTipoTop.value;
-            let escuelas;
+           
+            let escuelas = [];
             let c = 0;
-
+          
             for(let b= 0; b< centrosETop.length; b++){
                 if(centrosETop[b]['tipo'] == efiltro){
-                    escuelas[c] = centrosETop[b]; 
-                    c = c + 1;}               
+                    escuelas[c] = centrosETop[b];                    
+                    c = c + 1;
+                }               
             }
+           
             
-            
-            for(let a=0; a < 10; a++){
+            if(escuelas != undefined){
+                
+                for(let a=0; a < 10; a++){
              
                     let cardCETop = document.createElement('div');
                     cardCETop.classList.add('cardCETop');
@@ -127,12 +131,24 @@ let mostrarDatosTop = () =>{
                     cardCETop.appendChild(divEstrellas);
                     sectionCardsTop.appendChild(cardCETop);
 
-                              
+            }
+
+            }else{
+
+                let cardNingunTop = document.createElement('div');
+                cardNingunTop.classList.add('cardCETop');
+                let tituloAux = document.createElement('h2');
+                tituloAux.classList.add('h2NoTop');
+                tituloAux.textContent = "No se encontró top de escuelas";
+                cardNingunTop.appendChild(tituloAux);
+                sectionCardsTop.appendChild(cardNingunTop);
 
 
             }
+           
         
         case "Colegio, ":
+        sectionCardsTop.innerHTML = '';
             let cfiltro = selectTipoTop.value;
 
             let colegios = [];
@@ -146,6 +162,8 @@ let mostrarDatosTop = () =>{
                     d = d + 1;
                 }               
             }
+
+            if(escuelas != undefined){
 
             for(let a=0; a < 10; a++){         
 
@@ -194,14 +212,25 @@ let mostrarDatosTop = () =>{
 
             }
 
+            
+        }else{
+
+            let cardNingunTop = document.createElement('div');
+            cardNingunTop.classList.add('cardCETop');
+            let tituloAux = document.createElement('h2');
+            tituloAux.classList.add('h2NoTop');
+            tituloAux.textContent = "No se encontró top de escuelas";
+            cardNingunTop.appendChild(tituloAux);
+            sectionCardsTop.appendChild(cardNingunTop);
+
+
+        }
+
                
                 
         }
         
     }
-
-
-
 
 
 selectTipoTop.addEventListener('change', mostrarDatosTop);

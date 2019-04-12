@@ -1,28 +1,12 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 let centroEducativo = listarUsuariosCEencabezado(IdGeneralCE);
 
-const star1 = document.querySelector('#uno');
-const star2 = document.querySelector('#dos');
-const star3 = document.querySelector('#tres');
-const star4 = document.querySelector('#cuatro');
-const star5 = document.querySelector('#cinco');
 const inputComentario = document.querySelector('#inputComentario');
-const btnEnviar = document.querySelector('#send');
-// const idCE = user._id;
+const btnEnviarComment = document.querySelector('#send');
 
-// let rating = () => {
-//     // let stars;
-//     star1.classList.add('selected');
-// };
-
-// star1.addEventListener('click', rating);
-// let color = () => {
-
-// };
-
-let validar = () => {
+let validarComments = () => {
     let error = false;
 
     if (inputComentario.value == '') {
@@ -36,12 +20,19 @@ let validar = () => {
 };
 
 let obtenerDatos = () => {
-    if (validar() == false) {
+    if (validarComments() == false) {
+        let userPhoto = user.imagenPF;
+        console.log(userPhoto);
+        if (userPhoto == '') {
+            userPhoto = 'img/icons8-user.png';
+        }
+        let userName = user.nombre += " " + user.apellido;
+        // stars
         let comment = inputComentario.value;
         let idCentroEducativo = IdGeneralCE;
 
-        // registrarComentario(pstars, inputComentario, idCentroEducativo);
-        registrarComentario(comment, idCentroEducativo);
+        // registrarComentario(stars, inputComentario, idCentroEducativo);
+        registrarComentario(userPhoto, userName, comment, idCentroEducativo);
 
     } else {
         swal.fire({
@@ -52,5 +43,5 @@ let obtenerDatos = () => {
     }
 };
 
-btnEnviar.addEventListener('click', obtenerDatos);
+btnEnviarComment.addEventListener('click', obtenerDatos);
 

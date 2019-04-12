@@ -22,19 +22,12 @@ router.route('/registrarComentario')
         }
     );
 
-router.route('/centroEducativo/listarComentarioUsuario/:idCE')
+router.route('/listarComentarioUsuario/:idCE')
     .get(
         function (req, res) {
             comentariosApi.listarComentarioUsuario(req, res);
         }
     );
-
-// router.route('/buscarMaterial/:_id')
-//     .get(
-//         function (req, res) {
-//             comentariosApi.buscarMaterial(req, res);
-//         }
-//     );
 
 router.route('/eliminarComentario')
     .post(

@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="css/comentarios.css">
     <link rel="stylesheet" href="css/mostrarMaterialInformativo.css">
     <link rel="stylesheet" href="css/listarArticulos.css">
-    <!-- <link rel="stylesheet" href="css/preguntasFrecuentes2.0.css">
-    <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css"> -->
+    <link rel="stylesheet" href="css/preguntasFrecuentes2.0.css">
+    <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css">
 
 </head>
 
@@ -97,8 +97,9 @@
                 <a href="#" id="aFavoritos">Favoritos</a>
                 <a href="#">Top</a>
                 <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
-                <a href="#" id="aActivarDesCE">Activar o desactivar</a>
-                <a href="#" id="aEliminarCE">Eliminar</a>
+                <!-- <a href="#" id="aActivarDesCE">Activar o desactivar</a> -->
+                <a href="administrarCE.html">Administrar cuentas</a>
+                <!-- <a href="#" id="aEliminarCE">Eliminar</a> -->
                 <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
             </div>
 
@@ -108,8 +109,9 @@
             </button>
             <div class="dropdownContainer">
                 <a href="listarPadresFamilia.html">Buscar</a>
-                <a href="#" id="aActivarDesPF">Activar o desactivar</a>
-                <a href="#" id="aEliminarPF">Eliminar</a>
+                <!-- <a href="#" id="aActivarDesPF">Activar o desactivar</a> -->
+                <a href="administrarPF.html">Administrar cuentas</a>
+                <!-- <a href="#" id="aEliminarPF">Eliminar</a> -->
             </div>
 
             <a href="misCitasPF.html" id="menuCitasPF"><span><i class="far fa-calendar-check"></i></span>Citas
@@ -150,35 +152,6 @@
 
         </div>
 
-        <!-- el menú que estaba antes y que es lo que pude hacer el SA en pefil PF -->
-
-        <!----------------------Fin opción---------------------->
-
-        <!-- <div class="opcion" id="menuInformativo">
-
-            <h3>Informacion</h3>
-            <div class="subOpcion">
-                <a href="" id="aInfoCE">Información del Centro educativo</a>
-                <a href="" id="aMatricula">Matrícula</a>
-                <a href="" id="aBecas">Becas</a>
-                <a href="" id="aMaterialInformativo">Material Informativo</a>
-                <a href="" id="aNoticias">Noticias</a>
-                <a href="" id="aActividades">Actividades</a>
-                <a href="" id="aUtiles">Lista de útiles</a>
-                <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
-                <a href="" id="aEtiquetas">Etiquetas</a>
-            </div>
-
-            <div class="opcion">
-                <h3>Citas</h3>
-
-                <div class="subOpcion">
-                    <a href="citas.html" id="aAgendarCita">Agendar cita</a>
-                </div>
-
-            </div> -->
-
-
         <div class="contenido" style="overflow-y: scroll;">
 
             <div class="infoCE">
@@ -218,7 +191,10 @@
                             <h1>Comentarios</h1>
 
                             <div id="cajaComentarios">
-                                <!-- <div class="commentInfo">
+
+                            </div>
+
+                            <!-- <div class="commentInfo">
                                     <div class="userPic"></div>
                                     <h3></h3>
                                 </div>
@@ -232,7 +208,21 @@
                                     </div>
                                 </div>
                                 inserto un elemento p -->
-                            </div>
+
+                            <!-- <table id="tblComentarios">
+                                <thead>
+                                    <tr>
+                                        <th>Foto</th>
+                                        <th>Nombre</th>
+                                        <th>Comentario</th>
+                                    </tr>
+                                </thead>
+    
+                                <tbody>
+    
+                                </tbody>
+                            </table> -->
+
 
                             <div id="registrarComentarioDiv">
                                 <div class="starsPF">
@@ -443,15 +433,15 @@
 
     <!--Preguntas frecuentes PF-->
 
-    <!-- <script src="js/preguntasFrecuentes.servicio.js"></script>
-    <script src="js/preguntasFrecuentes.controller.listar.js"></script> -->
+    <script src="js/preguntasFrecuentes.servicio.js"></script>
+    <script src="js/preguntasFrecuentes.controller.listar.js"></script>
     <!--PARA CUALQUIER USUARIO-->
 
     <!--Preguntas frecuentes CE y ADMIN-->
 
-    <!-- <script src="js/preguntasFrecuentes.controller.actualizar.js"></script>
+    <script src="js/preguntasFrecuentes.controller.actualizar.js"></script>
     <script src="js/preguntasFrecuentes.controller.eliminar.js"></script>
-    <script src="js/preguntasFrecuentes.controller.registrar.js"></script> -->
+    <script src="js/preguntasFrecuentes.controller.registrar.js"></script>
 
     <!--Preguntas frecuentes CE y ADMIN-->
 

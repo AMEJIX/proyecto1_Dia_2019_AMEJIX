@@ -5,6 +5,8 @@ const comentariosModel = require('./comentarios.model');
 module.exports.registrar = (req, res) => {
     let nuevoComentario = new comentariosModel(
         {
+            userPhoto: req.body.userPhoto,
+            userName: req.body.userName,
             stars: req.body.stars,
             comment: req.body.comment,
             idCE: req.body.idCE
@@ -31,22 +33,14 @@ module.exports.registrar = (req, res) => {
 };
 
 module.exports.listarComentarioUsuario = (req, res) => {
-    comentariosModel.find().then(
+    comentariosModel.find({idCE: req.body.idCE}).then(
         function (comentario) {
 
-            let listaComentariosUser = [];
 
-            for (let comentarioUser of comentario) {
-                if (comentarioUser.idCE == req.body.idCE) {
-                    listaComentariosUser.push(comentarioUser);
-                }
-            }
-            console.log(listaComentariosUser);
-            console.log(req.body.idCE);
-            if (listaComentariosUser.length > 0) {
+            if (comentario.length > 0) {
                 res.json({
                     success: true,
-                    comentario: listaComentariosUser
+                    comentario: comentario
                 });
             } else {
                 res.json({
