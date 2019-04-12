@@ -5,7 +5,7 @@ const inputUsuario = document.querySelector('#txtUsuario');
 const inputPW = document.querySelector('#txtPW');
 const btnIniciar = document.querySelector('#btnIniciar');
 
-function obtenerDatos(){
+function obtenerDatos() {
 
     let usuario = inputUsuario.value;
     let contrasenna = inputPW.value;
@@ -13,13 +13,15 @@ function obtenerDatos(){
     let errorBlanks = validar(usuario, contrasenna);
 
     if (!errorBlanks) {
-         validarCredenciales(usuario, contrasenna, function(res) {
+        validarCredenciales(usuario, contrasenna, function (res) {
             if (res.success) {
-
-
-
+                if (contrasenna.length < 7) {
+                    
+                    window.location.href = 'primerPW.html';
+                }else{
                 console.log('redirección');
                 window.location.href = 'userProfileInfo.html';
+                }
             } else {
                 swal.fire({
                     type: 'warning',

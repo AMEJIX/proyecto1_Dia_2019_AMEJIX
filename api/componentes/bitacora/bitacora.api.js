@@ -40,7 +40,7 @@ module.exports.registrarBitacora = (req, res) => {
 }
 
 module.exports.listarBitacora = (req, res) => {
-    modeloBitacora.find().sort({fecha: 'desc'}).then(
+    modeloBitacora.find().sort({fecha: 'asc'}).then(
         function(bitacora) {
             if (bitacora.length > 0) {
                 res.json({

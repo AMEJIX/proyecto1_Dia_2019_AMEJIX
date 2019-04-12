@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+
 
 const tabla = document.querySelector('#tblUsuarios tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
@@ -104,7 +104,21 @@ function mostrarDatos() {
 
 
             function eliminarCentroEducativo() {
-                eliminarUsuario(nombreCE, id);
+                Swal.fire({
+                    title: 'Está seguro que desea eliminar al usuario?',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#dddddd',
+                    confirmButtonText: 'Sí, eliminar'
+                }).then(result =>{
+                    if(result.value){
+                        eliminarUsuario(nombreCE, id);
+                    } else {
+                        
+                    }
+                });
+               
 
             }
             actualizar.addEventListener('click', obtenerDatosCentroEducativo);

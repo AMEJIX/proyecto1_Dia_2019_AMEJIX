@@ -380,7 +380,7 @@ module.exports.actualizar = function (req, res) {
 
                     })
                     nuevaBitacora.save();
-                }
+                } 
 
 
                 /**************************Fin Bitacora**************************/
