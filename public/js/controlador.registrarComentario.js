@@ -4,9 +4,9 @@ let user = JSON.parse(sessionStorage.getItem("usuario"));
 let centroEducativo = listarUsuariosCEencabezado(IdGeneralCE);
 
 const inputComentario = document.querySelector('#inputComentario');
-const btnEnviar = document.querySelector('#send');
+const btnEnviarComment = document.querySelector('#send');
 
-let validar = () => {
+let validarComments = () => {
     let error = false;
 
     if (inputComentario.value == '') {
@@ -20,7 +20,7 @@ let validar = () => {
 };
 
 let obtenerDatos = () => {
-    if (validar() == false) {
+    if (validarComments() == false) {
         let userPhoto = user.imagenPF;
         console.log(userPhoto);
         if (userPhoto == '') {
@@ -43,5 +43,5 @@ let obtenerDatos = () => {
     }
 };
 
-btnEnviar.addEventListener('click', obtenerDatos);
+btnEnviarComment.addEventListener('click', obtenerDatos);
 

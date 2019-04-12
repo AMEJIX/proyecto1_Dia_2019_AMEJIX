@@ -48,26 +48,6 @@ module.exports.listarComentarioUsuario = (req, res) => {
                     comentario: 'No se encontraron comentarios registrados'
                 });
             }
-            // let listaComentarios = [];
-
-            // for (let comentarioUser of comentario) {
-            //     if (comentarioUser.idCE == req.body.idCE) {
-            //         listaComentarios.push(comentarioUser);
-            //     }
-            // }
-            // console.log(listaComentarios);
-            // console.log(req.body.idCE);
-            // if (listaComentarios.length > 0) {
-            //     res.json({
-            //         success: true,
-            //         comentario: listaComentarios
-            //     });
-            // } else {
-            //     res.json({
-            //         success: false,
-            //         comentario: 'No se encontraron comentarios registrados'
-            //     });
-            // }
         }
     );
 };

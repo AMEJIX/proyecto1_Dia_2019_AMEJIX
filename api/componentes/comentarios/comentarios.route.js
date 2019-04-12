@@ -29,13 +29,6 @@ router.route('/listarComentarioUsuario/:idCE')
         }
     );
 
-// router.route('/buscarMaterial/:_id')
-//     .get(
-//         function (req, res) {
-//             comentariosApi.buscarMaterial(req, res);
-//         }
-//     );
-
 router.route('/eliminarComentario')
     .post(
         (req, res) => {
