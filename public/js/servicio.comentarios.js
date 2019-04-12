@@ -21,7 +21,7 @@ let registrarComentario = (puserPhoto, puserName, pcomment, pIdCentro) => {
             title: 'El comentario se ha registrado correctamente.',
             text: `Se registró correctamente.`,
             onClose: () => {
-                locacion.reload();
+                window.location.href = 'profileInfoCE.html?idCE='+pIdCentro ;
             }
         });
     });
