@@ -86,14 +86,30 @@ module.exports.listar = (req, res) => {
 
 /**************************************************************************************************************/
 
+module.exports.buscarMatricula = function (req, res) {
+    modeloMatriculas.find({ _id: req.body._id }).then(
+        function (matricula) {
+            if (matricula) {
+                res.json({ success: true, matricula: matricula });
+            } else {
+                res.json({ success: false, matricula: matricula });
+            }
+        }
+
+    );
+
+};
+
+/**************************************************************************************************************/
+
 module.exports.listarMatriculasCE = (req, res) => {
     modeloMatriculas.find().then(
         matriculasListadasCE => {
             let arregloMatriculas = [];
 
-            for (let matricula of matriculasListadasCE) {
-                if (matricula.idCE == req.body.idCE) {
-                    arregloMatriculas = push(matricula);
+            for (let matriculitas of matriculasListadasCE) {
+                if (matriculitas.idCE == req.body.idCE) {
+                    arregloMatriculas.push(matriculitas);
                 }
             }
 
@@ -104,7 +120,7 @@ module.exports.listarMatriculasCE = (req, res) => {
                 res.json(
                     {
                         success: true,
-                        matricula: arregloMatriculas,
+                        matriculas: arregloMatriculas,
 
                     }
                 )
@@ -112,13 +128,15 @@ module.exports.listarMatriculasCE = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        matricula: "No se encontraron los costos de matrícula"
+                        matriculas: "No se encontraron los costos de matrícula"
                     }
                 )
             }
         }
     )
 };
+
+/**************************************************************************************************************/
 
 module.exports.editar = function (req, res) {
 

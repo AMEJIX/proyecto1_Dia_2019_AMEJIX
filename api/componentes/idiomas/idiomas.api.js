@@ -84,7 +84,7 @@ module.exports.listarIdiomasCE = (req, res) => {
                     arregloIdiomas.push(idiomitas);
                 }
             }
-            // console.log(arregloIdiomas);
+            console.log(arregloIdiomas);
             console.log(req.body.idCE);
 
             if (arregloIdiomas.length > 0) {
