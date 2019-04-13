@@ -1,5 +1,5 @@
 'use strict'
-// let user = JSON.parse(sessionStorage.getItem("usuario"));
+let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 
 
@@ -1084,7 +1084,6 @@ inputTelSA.value = user.telefono;
 
 const buttonActualizarSA = document.querySelector('#buttonActualizarSA');
 
-const fotoSA = document.querySelector('#imagePreviewSA');
 
 
 
@@ -1164,7 +1163,7 @@ function obtenerDatosSA() {
 
         let estado = "Activo";
 
-        let imagenSA = fotoSA.src;
+        let imagenPF = fotoRegistroPF.src;
 
         let id = user._id;
 
@@ -1178,7 +1177,7 @@ function obtenerDatosSA() {
             nacionalidad,
             email,
             telefono,
-            imagenSA,
+            imagenPF,
             estado,
             id,
             puesto
