@@ -1,7 +1,7 @@
 'use strict';
 
 const inputFiltrar = document.querySelector('#inputBuscar');
-let user = JSON.parse(sessionStorage.getItem('usuario'));
+// let user = JSON.parse(sessionStorage.getItem('usuario'));
 const inputTituloNoticia = document.querySelector('#inputTituloNoticia');
 const inputRegistrarNoticia = document.querySelector('#inputRegistrarNoticia');
 const inputFechaNoticia = document.querySelector('#inputFechaNoticia');

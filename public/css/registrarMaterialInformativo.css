@@ -71,11 +71,11 @@ figure {
     display: inline-block;
 }
 
-#documentPreview {
+/* #documentPreview {
     width: 100px;
     height: 100px;
     margin-bottom: -4px;
-}
+} */
 
 #btnGuardar {
     margin-top: 20px;

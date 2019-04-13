@@ -20,12 +20,12 @@ if(user.userType != "centroEducativo") {
 // }
 
 let temas = listarMaterialUsuario(idUsuarioCE);
-mostrarDatos();
+mostrarDatosPF();
 
 
-inputFiltro.addEventListener('keyup', mostrarDatos);
+inputFiltro.addEventListener('keyup', mostrarDatosPF);
 
-function mostrarDatos() {
+function mostrarDatosPF() {
 
     tabla.innerHTML = '';
     let filtro = inputFiltro.value;
@@ -48,26 +48,6 @@ function mostrarDatos() {
                     imagen.src = 'img/placeHolderImagen.png';
                 }
                 imagenTema.appendChild(imagen);
-
-                let celdaConfiguracion = fila.insertCell();
-                let celdaEliminar = fila.insertCell();
-
-                let botonEditar = document.createElement('a');
-                botonEditar.textContent = 'Editar';
-                botonEditar.href = `editarMaterialInformativo.html?idMaterial=${temas[i]['_id']}`;
-
-                celdaConfiguracion.appendChild(botonEditar);
-                let botonEliminar = document.createElement('button');
-                botonEliminar.textContent = 'Eliminar';
-                botonEliminar.id = 'btnEliminar';   
-
-                botonEliminar.classList.add('btnEliminar');  
-                // botonEliminar.textContent = '<i class="fas fa-trash"></i>';
-
-                botonEliminar.addEventListener('click', eliminar =>{
-                    eliminarMaterialControlador(temas[i]['_id']);
-                });
-                celdaEliminar.appendChild(botonEliminar);
             }
         }
     } else {
@@ -75,24 +55,6 @@ function mostrarDatos() {
     }
 };
 
-mostrarDatos();
+mostrarDatosPF();
 
-inputFiltro.addEventListener('keyup', mostrarDatos);
-
-let eliminarMaterialControlador=(p_id)=>{
-    Swal.fire({
-        title: '¿Está seguro que desea eliminar el material informativo?',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#dddddd',
-        confirmButtonText: 'Sí, eliminar'
-    }).then((result) => {
-        if (result.value) {    
-            eliminarMaterial(p_id);          
-        } else {    
-        }
-      
-    })
-    
-}
+inputFiltro.addEventListener('keyup', mostrarDatosPF);
