@@ -1084,6 +1084,7 @@ inputTelSA.value = user.telefono;
 
 const buttonActualizarSA = document.querySelector('#buttonActualizarSA');
 
+const fotoSA = document.querySelector('#imagePreviewSA');
 
 
 
@@ -1163,7 +1164,7 @@ function obtenerDatosSA() {
 
         let estado = "Activo";
 
-        let imagenPF = fotoRegistroPF.src;
+        let imagenSA = fotoSA.src;
 
         let id = user._id;
 
@@ -1177,7 +1178,7 @@ function obtenerDatosSA() {
             nacionalidad,
             email,
             telefono,
-            imagenPF,
+            imagenSA,
             estado,
             id,
             puesto

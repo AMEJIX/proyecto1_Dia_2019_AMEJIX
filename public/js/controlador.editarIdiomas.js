@@ -1,7 +1,7 @@
 'use strict';
 
 const inputBuscar = document.querySelector('#inputBuscar');
-let user = JSON.parse(sessionStorage.getItem('usuario'));
+// let user = JSON.parse(sessionStorage.getItem('usuario'));
 const inputIdioma = document.querySelector('#inputIdioma');
 const botonRegistrarIdioma = document.querySelector('#botonRegistrarIdioma');
 const idCE = user._id;
