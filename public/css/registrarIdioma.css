@@ -8,26 +8,28 @@ h1 {
 
 #divIdioma{
     margin: 0% auto;
-    margin-left: 36.5%;
-    margin-top: 10%;
+    margin-left: 15%;    
+    margin-top: 5%;
 }
 
 #inputIdioma{
-    width: 175px;
-    height: 20px;
+    margin: 0% auto;
+    width: 500px;
+    height: 30px;
+    margin-left: 80px;
     outline-color: #f9aa33;
 }
 
 #labelIdioma{
     margin: 0% auto;
-    margin-right: 15px;
+    margin-right: 10px;
     font-size: 25px;
     color: #344955;
 }
 
 #botonRegistrarIdioma{
     margin: 0% auto;
-    margin-left: 44%;
+    margin-left: 44.5%;
     background: #f9aa33;
     width: 210px;
     height: 40px;
