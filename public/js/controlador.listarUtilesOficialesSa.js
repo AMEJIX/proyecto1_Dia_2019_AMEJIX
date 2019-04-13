@@ -107,8 +107,9 @@ let mostrarUtiles = (pfiltro) =>{
                 celdaConfiguracion.appendChild(botonEditar);
                  
                 let botonEliminar = document.createElement('button');
+                botonEliminar.type = 'button';                  
+                botonEliminar.id = 'btnEliminarLista';              
                 botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
-                botonEliminar.id = 'btnEliminar';                
                 botonEliminar.addEventListener('click', eliminar =>{
                     eliminarUtilControlador(utiles[a]['_id'])}) ;
                 celdaEliminar.appendChild(botonEliminar);

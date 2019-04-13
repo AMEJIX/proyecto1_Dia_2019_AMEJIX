@@ -1,11 +1,11 @@
 'use strict';
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 
-
 const inputActividad = document.querySelector('#txtActividad');
 const inputDescripcion = document.querySelector('#txtDescripcion');
 const inputFecha = document.querySelector('#inputFecha');
 const imagenActividad = document.querySelector('#imgActividades');
+const botonAgregar = document.querySelector('#btnAgregar');
 
 const botonActualizar = document.querySelector('#btnRegistrar');
 const idCE = user._id;
@@ -14,15 +14,14 @@ var diaActual = new Date();
 var dd = diaActual.getDate();
 var mm = diaActual.getMonth()+1; //January is 0!
 var yyyy = diaActual.getFullYear();
- if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
-    diaActual = yyyy+'-'+mm+'-'+dd;
-    inputFecha.setAttribute("max", diaActual);
-
+if(dd<10){
+    dd='0'+dd
+} 
+if(mm<10){
+    mm='0'+mm
+} 
+diaActual = yyyy+'-'+mm+'-'+dd;
+inputFecha.setAttribute("max", diaActual);
 
 if(user.userType == 'padreFamilia'){
     window.location.href = 'loSentimos.html';
@@ -35,15 +34,14 @@ let get_param = (param) => {
     return id;
 };
 
-
 let _id = get_param('idActividad');
 
-let actividad = buscarActividad(_id); //se levantan los datos de ese inmueble bajo demanda usando su id
+let actividad = buscarActividad(_id); 
+let stringImgActividades = "";    
 
 let mostrarDatoArticulo = () =>{
-   inputActividad.value = actividad[0]['actividad'];
-    inputDescripcion.value = actividad[0]['descripcion']; 
-    inputFecha.value = actividad[0]['fecha'];     
+    inputActividad.value = actividad[0]['actividad'];
+    inputDescripcion.value = actividad[0]['descripcion'];    
     let arregloFecha = [];
     arregloFecha = actividad[0]['fecha'].split("/");    
     let diaActividad = arregloFecha[2]+'-'+arregloFecha[1]+'-'+arregloFecha[0];
@@ -53,55 +51,75 @@ let mostrarDatoArticulo = () =>{
         let stringImg = actividad[0]['imagen'];
         let arregloImg = stringImg.split(",");
         let sectionImgActividades = document.querySelector('.sctImagenes');
+
         for(let v = 0; v<arregloImg.length; v++){
+            let divImagenesTrash = document.createElement('div');
+            divImagenesTrash.classList.add('divImagenesTrash');
+            divImagenesTrash.id = 'divImgTrash' + v;
+            
+           
             let nuevoImg = document.createElement('img');
-            nuevoImg.style.display = 'inline-block';
+            nuevoImg.style.display = 'inline-block';            
             nuevoImg.classList.add('imageActividadAgregada');
             nuevoImg.src = arregloImg[v];
-           
-            sectionImgActividades.appendChild(nuevoImg);          
-        }        
-    }else {
-            imagen.src = 'img/upload.png';
-            imagenActividad.appendChild(imagen);
-        }
 
-    
+            stringImgActividades = stringImgActividades == "" ? nuevoImg.src : stringImgActividades + "," + nuevoImg.src;   
+
+           
+            let botonEliminar = document.createElement('button');
+            botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
+            botonEliminar.id = 'btnEliminar';                       
+            botonEliminar.addEventListener('click', eliminar =>{             
+                
+                eliminarFotoActividad(divImagenesTrash.id);
+                if(0 == v){
+                    stringImgActividades = stringImgActividades.replace(arregloImg[v]+",","");
+                    console.log(stringImgActividades);
+                }else{
+                    stringImgActividades = stringImgActividades.replace(","+arregloImg[v],"");      
+                    console.log(stringImgActividades);             
+                }
+            });
+
+            divImagenesTrash.appendChild(nuevoImg);
+            divImagenesTrash.appendChild(botonEliminar);
+
+            sectionImgActividades.appendChild(divImagenesTrash);          
+        }        
+    }    
+    // else {
+    //         imagen.src = 'img/upload.png';
+    //         imagenActividad.appendChild(imagen);
+    //     }    
 };
 
 if(actividad){
     mostrarDatoArticulo();
 }
 
+let eliminarFotoActividad = (pidElementoImagen) => {
+    let foto = document.querySelector('#'+pidElementoImagen+'');
+    foto.parentNode.removeChild(foto);
+}
 
 
-let stringImgActividades = "";    
 let j = 0;
 function obtenerImagenVarias(){
-let sectionImgActividades = document.querySelector('.sctImagenes');
-    if(imagenActividad.src === 'http://localhost:3000/public/img/upload.png'){        
-        swal.fire({
-            type: 'warning',
-            title: 'No ha subido una imagen',
-            text: 'Por favor suba una imagen'
-        });
-    }else{
-        stringImgActividades = stringImgActividades == "" ? imagenActividad.src : stringImgActividades + "," + imagenActividad.src;        
-        let nuevoImg = document.createElement('img');
-        nuevoImg.style.display = 'inline-block';
-        nuevoImg.classList.add('imageActividadAgregada');
-        nuevoImg.src = imagenActividad.src;
-        sectionImgActividades.appendChild(nuevoImg);
-        imagenActividad.src = 'img/upload.png';
-        j = j + 1; 
-    }     
+    let sectionImgActividades = document.querySelector('.sctImagenes');
+  
+    let nuevoImg = document.createElement('img');
+    nuevoImg.style.display = 'inline-block';
+    nuevoImg.classList.add('imageActividadAgregada');
+    nuevoImg.src = imagenActividad.src;
+    sectionImgActividades.appendChild(nuevoImg);
+
+    stringImgActividades = stringImgActividades == "" ? nuevoImg.src : stringImgActividades + "," + nuevoImg.src; 
+    
+    // imagenActividad.src = 'img/upload.png';
+    j = j + 1; 
+       
 }
-// botonAgregar.addEventListener('click', obtenerImagenVarias);
-
-
-
-
-
+botonAgregar.addEventListener('click', obtenerImagenVarias);
 
 
 let validar = () =>{
@@ -148,7 +166,6 @@ let obtenerDatosActividad = () =>{
         inputDescripcion.value = '';
         inputFecha.value = '';
         
-
         Swal.fire({
             title: '¿Está seguro que desea actualizar la actividad?',
             type: 'warning',
@@ -156,22 +173,18 @@ let obtenerDatosActividad = () =>{
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Sí, estoy seguro'
-          }).then((result) => {
-            if (result.value) {
-               
-        actualizarActividad(actividad, descripcion, fechaCorrecta, stringImgActividades, idCentroEducativo, _id);
+        }).then((result) => {
+            if (result.value) {               
+                actualizarActividad(actividad, descripcion, fechaCorrecta, stringImgActividades, idCentroEducativo, _id);
             }
-          })
+        })
     }else{
         swal.fire({
             type: 'warning',
             title: 'La actividad no se actualizó',
             text: 'Por favor revise los campos resaltados'
         });
-    }
-   
-    
-        
+    }       
     
 };
 

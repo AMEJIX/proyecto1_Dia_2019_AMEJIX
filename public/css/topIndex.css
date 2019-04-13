@@ -1,5 +1,5 @@
 
-section{
+#seccionRankings{
     display: block;
     margin-bottom: 130px;
     padding-top: 50px;
@@ -31,13 +31,13 @@ section{
 
 .cardCETop{
     display: flow-root;
-    width: 80%;
-    height: 140px;
+    width: 70%;
+    height: 100px;
     margin: 0 auto;
     /* -webkit-box-shadow: 2px 0 4px rgba(.08, .08, .08, .08);
     box-shadow: 2px 0 4px rgba(0.4, 0.4, 0.4, 0.4); */
   
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 
 }
 .columnaIzquierda{   
@@ -55,8 +55,9 @@ section{
 
 .divPosicion{
     display: inline-block;
-    padding: 58px;
+    padding: 20px;
     float: left;
+    margin-left: 10%;
 }
 
 .divImagen{
@@ -69,18 +70,18 @@ section{
 
 .divNombre{
     display: inline-block;
-    padding: 58px;
+    padding: 20px;
     float: left;
     width: 40%;
 }
 .divEstrellas{
     display: inline-block;
-    padding: 58px;
+    padding: 20px;
     float: left;
 }
 
 .h2{
-    display: block;
+    display: inline-block;
    margin-top: 30px;
    text-align: center;
    font-size: 25px;
@@ -100,8 +101,8 @@ section{
 
 .imagenCE{
     display: block;
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
     background-size: contain;
     border-radius: 50%;
     margin: 0 auto;
@@ -115,7 +116,7 @@ section{
     display: block;
     
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     color: #2c3e50;
     font-style: bold;
     vertical-align: middle;
@@ -124,7 +125,7 @@ section{
 .h2NoTop{
     display: block;    
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     color: #2c3e50;
     font-style: bold;
     padding-top: 50px;
@@ -138,7 +139,7 @@ section{
     width: 90%;
     
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     color: #2c3e50;
     font-style: bold;
     vertical-align: middle;
@@ -147,11 +148,10 @@ section{
 
 
 .h2Estrellas{
-    display: block;
-
+    display: inline-block;
     text-align: center;
-    font-size: 25px;
-    color: #2c3e50;
+    font-size: 20px;
+    color: #f9aa33;
     font-style: bold;
     vertical-align: middle;
   

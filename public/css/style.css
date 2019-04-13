@@ -128,7 +128,7 @@ html {
 #tops {
     background: white;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     background-size: cover;
 }
 
@@ -154,7 +154,7 @@ html {
     padding-top: 25px;
 }
 
-#tops h2 {
+#h2CentrosEducativos {
     font-size: 40px;
     color: #f9aa33;
     text-align: center;
@@ -352,7 +352,7 @@ html {
     margin-top: 40px;
 }
 
-#list h2 {
+#h2Lista {
     font-size: 40px;
     color: #f9aa33;
     text-align: center;

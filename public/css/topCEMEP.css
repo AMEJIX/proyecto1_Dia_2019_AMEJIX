@@ -82,7 +82,7 @@ section{
 }
 .divEstrellas{
     display: inline-block;
-    padding: 58px;
+    padding: 45px;
     float: left;
 }
 
@@ -154,11 +154,10 @@ section{
 
 
 .h2Estrellas{
-    display: block;
-
+    display: inline-block;
     text-align: center;
     font-size: 25px;
-    color: #2c3e50;
+    color: #f9aa33;
     font-style: bold;
     vertical-align: middle;
   
