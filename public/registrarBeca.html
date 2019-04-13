@@ -30,12 +30,14 @@
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
                     <a href="" id="logOut">Cerrar sesión</a>
+                    </ul>
                 </div>
             </div>
 
         </nav>
     </header>
     <main>
+
         <div class="sideNav">
             <a class="aBack" href="userProfileInfo.html">
                 <div class="sicenLogo"></div>
@@ -46,30 +48,59 @@
                 <span><i class="fas fa-info"></i></span>
                 Información
             </button>
-            <!----------------------Inicio opción---------------------->
             <div class="dropdownContainer">
-                <a href="" id="aInfoCE">Información del Centro educativo</a>
-                <a href="" id="aMatricula">Matrícula</a>
-                <a href="" id="aBecas">Becas</a>
-                <!--<a href="" id="aCitas">Citas</a>-->
-                <a href="" id="aMaterialInformativo">Material Informativo</a>
-                <a href="" id="aNoticias">Noticias</a>
-                <a href="" id="aActividades">Actividades</a>
-                <a href="" id="aUtiles">Lista de útiles</a>
-                <a href="" id="aPreguntasFrecuentes">Preguntas Frecuentes</a>
-                <a href="" id="aEtiquetas">Etiquetas</a>
+                <a href="mostrarMatriculaCostos.html">Matrícula</a>
+                <a href="mostrarBecas.html">Becas</a>
+                <a href="misCitasCE.html">Citas</a>
+                <a href="mostrarMaterialInformativo.html">Material Informativo</a>
+                <a href="mostrarNoticias.html">Noticias</a>
+                <a href="listarActividadesPropiasCE.html">Actividades</a>
+                <a href="listarUtilesPropiosCE.html">Útiles</a>
+                <a href="criteriosBusqueda.html">Etiquetas</a>
+                <a href="preguntasFrecuentesCE&Admin.html" id="aPreguntasCE">Preguntas frecuentes</a>
+                <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>
             </div>
 
-            <button class="btnDropdown" id="menuCitasEnCE">
-                <span><i class="far fa-calendar-check"></i></span>
-                Citas
+            <button class="btnDropdown" id="menuAdministrativo">
+                <span><i class="fas fa-info"></i></span>
+                Administrativo
             </button>
             <div class="dropdownContainer">
-                <a href="citas.html" id="aAgendarCita">Agendar cita</a>
+                <a href="bitacora.html">Bitácora</a>
+                <a href="#">Notificaciones</a>
+                <a href="listarCriteriosMEP.html">Criterios de Evaluación</a>
+                <a href="listarUtilesOficiales.html">Lista de útiles</a>
+                <a href="criteriosBusqueda.html">Etiquetas</a>
+            </div>
+
+            <button class="btnDropdown" id="menuInfoCE">
+                <span><i class="fas fa-info"></i></span>
+                Centros educativos
+            </button>
+            <div class="dropdownContainer">
+                <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
+                <a href="listarCentrosEducativos.html">Buscar</a>
+                <a href="#" id="aFavoritos">Favoritos</a>
+                <a href="#">Top</a>
+                <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
+            </div>
+
+            <a href="misCitasPF.html" id="menuCitas"><span><i class="far fa-calendar-check"></i></span>Citas
+                agendadas</a>
+
+            <a href="listarPadresFamilia.html" id="verPadres"><span><i class="fas fa-search"></i></span>Buscar
+                padres de familia</a>
+
+            <button class="btnDropdown" id="verInfoMep">
+                <span><i class="fas fa-university"></i></span>
+                MEP
+            </button>
+            <div class="dropdownContainer">
+                <a href="listarInfoMep.html">Contacto</a>
+                <a href="listarUtilesOficiales.html">Útiles MEP</a>
             </div>
 
         </div>
-        
         <div class="contenido" style="overflow-y: scroll;">
 
 

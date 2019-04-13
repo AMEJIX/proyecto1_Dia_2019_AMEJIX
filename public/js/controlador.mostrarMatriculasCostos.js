@@ -39,12 +39,12 @@ function mostrarMatriculas() {
             let celdaEliminar = fila.insertCell();
 
             let botonEditar = document.createElement('a');
-            botonEditar.textContent = 'Editar';
+            botonEditar.innerHTML = '<i class ="fas fa-edit"></i>';
             botonEditar.href = `editarMatriculas.html?idMatricula=${matriculas[i]['_id']}`;
 
             celdaConfiguracion.appendChild(botonEditar);
             let botonEliminar = document.createElement('button');
-            botonEliminar.textContent = 'Eliminar';
+            botonEliminar.innerHTML = '<i class ="fas fa-trash-alt"></i>';
             botonEliminar.id = 'btnEliminar';
             botonEliminar.addEventListener('click', eliminar => {
                 eliminarMatriculas(matriculas[i]['_id']);
