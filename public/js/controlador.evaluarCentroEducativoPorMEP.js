@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 const conectado = sessionStorage.getItem('conectado');
 const tipo_usuario = user.userType;
 
@@ -40,13 +40,15 @@ function mostrarCE() {
                 let fila = tablaCE.insertRow();
                fila.insertCell().innerHTML = centrosEducativos[i]['centroEducativo'];      
                 let celdaValorar = fila.insertCell();
-                let botonValorar = document.createElement('button');               
+                let botonValorar = document.createElement('button');  
+                botonValorar.classList.add('botonValorar');             
                 botonValorar.type = 'button';
                 botonValorar.textContent = 'Valorar';
                 botonValorar.addEventListener('click', mostrarPanelValorar =>{
                     mostrarTablasValoracion(centrosEducativos[i]['centroEducativo'], centrosEducativos[i]['_id'], centrosEducativos[i]['tipo'], centrosEducativos[i]['imagen']);
                    
                 });
+                
                 celdaValorar.appendChild(botonValorar);
                 
         };
@@ -130,7 +132,7 @@ function mostrarCE() {
     let mostrarTotal = (ppuntajeCriterio, prangos) =>{
         aux = aux + ppuntajeCriterio;
         inputTotal.value = aux;
-        
+      
         mostrarEstrellas(inputTotal.value, prangos);
     }
 

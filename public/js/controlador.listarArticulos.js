@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tabla = document.querySelector("#tblArticulos tbody");
 const inputFiltro = document.querySelector('#txtFiltro');
@@ -29,22 +29,23 @@ let mostrarArticulos = () =>{
                 let fila = tabla.insertRow();
                 fila.insertCell().innerHTML = articulos[i]['nombre'];
                 fila.insertCell().innerHTML = articulos[i]['descripcion'];
-                let celdaConfiguracion = fila.insertCell();
-                let celdaEliminar = fila.insertCell();
+                // let celdaConfiguracion = fila.insertCell();
+                // let celdaEliminar = fila.insertCell();
 
-                let botonEditar = document.createElement('a');
-                botonEditar.textContent = 'Editar';
-                botonEditar.href = `actualizarArticulos.html?idArticulo=${articulos[i]['_id']}`
-                celdaConfiguracion.appendChild(botonEditar);
+                // let botonEditar = document.createElement('a');
+                // botonEditar.textContent = 'Editar';
+                // botonEditar.href = `actualizarArticulos.html?idArticulo=${articulos[i]['_id']}`
+                // celdaConfiguracion.appendChild(botonEditar);
 
-                let botonEliminar = document.createElement('button');
-                // botonEliminar.textContent = 'Eliminar';
-                botonEliminar.id = 'btnEliminar';   
-                botonEliminar.classList('class="fas fa-edit modificar')             
-                botonEliminar.addEventListener('click', eliminar =>{
-                    eliminarArticuloControlador(articulos[i]['_id']);
-                });
-                celdaEliminar.appendChild(botonEliminar);
+                // let botonEliminar = document.createElement('button');
+                // // botonEliminar.textContent = 'Eliminar';
+                // botonEliminar.id = 'btnEliminar';   
+                // // botonEliminar.classList('class="fas fa-edit modificar')
+                // botonEliminar.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i>';             
+                // botonEliminar.addEventListener('click', eliminar =>{
+                //     eliminarArticuloControlador(articulos[i]['_id']);
+                // });
+                // celdaEliminar.appendChild(botonEliminar);
             }
 
         };

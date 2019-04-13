@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/topIndex.css">
 </head>
 
 <body>
@@ -40,8 +41,19 @@
         <div id="tops">
             <h1>TOP 10</h1>
             <h2>Centros educativos</h2>
+            <div id="divSelect">
+                <label for="selectTipoTop">Top</label>
+                <select name="" id="selectTipoTop">
+                    <option value="">Seleccione un top 10</option>
+                    <option value="1">Top general de evaluaciones por el MEP</option>
+                    <option value="Escuela, ">Top de escuelas evaluadas por el MEP</option>
+                    <option value="Colegio, ">Top de colegios evaluados por el MEP</option>                  
 
-            <div class="padre">
+                </select>
+            </div>
+            <section id="seccionRankings"></section>
+
+            <!-- <div class="padre">
                 <div class="left">
                     <div class="centroEducativo" id="CE">
                         <div class="position">
@@ -147,7 +159,8 @@
                             <span id="spanProvincia">Alajuela</span>
                         </div>
                     </div>
-                </div>
+                </div> 
+            
 
                 <div class="right">
                     <div class="centroEducativo" id="CE">
@@ -255,7 +268,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                
+            </div> -->
             <a href="#list" class="listDown"><i class="fas fa-chevron-down"></i></a>
         </div>
 
@@ -322,6 +336,8 @@
     <script src="js/controlador.general.js"></script>
     <script src="js/servicio.listarUtilesIndex.js"></script>
     <script src="js/controlador.listarUtilesIndex.js"></script>
+    <script src="js/servicio.evaluarCEPorMEP.js"></script>
+    <script src="js/controlador.listarTopCEIndex.js"></script>
 </body>
 
 </html>
