@@ -27,7 +27,7 @@ function mostrarMatriculas() {
     tabla.innerHTML = '';
     for (let i = 0; i < matriculas.length; i++) {
 
-        if (matriculas[i]['matricula'].toLowerCase().includes(filtro.toLowerCase())) {
+        if (matriculas[i]['matricula'].toString().toLowerCase().includes(filtro.toLowerCase())) {
 
             let fila = tabla.insertRow();
 

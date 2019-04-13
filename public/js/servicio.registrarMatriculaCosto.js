@@ -91,6 +91,7 @@ let editarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfields
             mensualidad: pnumberPrecioMensualidad,
             moneda: pfieldsetNumberPrecioMatricula,
             idCE: pidCentroEducativo,
+            id: p_id,
 
         },
         dataType: "json",
@@ -103,7 +104,7 @@ let editarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfields
             title: 'Su matrícula ha sido actualizada',
             text: res.msg,
             onClose: () => {
-                window.location.href = 'mostrarMatriculas.html';
+                window.location.href = 'mostrarMatriculaCostos.html';
             }
         });
     });
@@ -135,7 +136,7 @@ let eliminarMatricula = (p_id) => {
             title: 'Su matricula ha sido eliminada',
             text: res.msg,
             onClose: () => {
-                window.location.href = 'mostrarMatriculas.html';
+                window.location.href = 'mostrarMatriculaCostos.html';
             }
         });
 
