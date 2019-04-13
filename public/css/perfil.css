@@ -287,31 +287,36 @@ span {
 /* IMAGE HOLDER */
 
 .imageHolder {
+    width: 100px;
+    height: 100px;
+}
+
+/* .imageHolder {
     width: 120px;
     height: 110px;
     background-image: url(../img/imageHolder.png);
     border-radius: 5px;
 }
 
-.imageHolder p {
+.imgHover p {
     display: none;
-    width: 120px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     color: white;
     font-size: 12px;
     text-align: center;
     padding-top: 38px;
 }
 
-.imageHolder:hover {
+.imgHover:hover {
     background: #344955;
     transition: ease 650ms;
     cursor: pointer;
 }
 
-.imageHolder:hover p {
+.imgHover:hover p {
     display: block;
-}
+} */
 
 /* TABLA STANDARD */
 

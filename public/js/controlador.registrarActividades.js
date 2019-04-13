@@ -81,6 +81,7 @@ function obtenerImagenVarias(){
         }       
     
 }
+
 botonAgregar.addEventListener('click', obtenerImagenVarias);
 
 

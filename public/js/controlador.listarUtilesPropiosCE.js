@@ -44,13 +44,15 @@ let mostrarListas = () => {
                     let botonEliminarLaLista = document.createElement('button');
                     botonEliminarLaLista.type = 'button';
                     botonEliminarLaLista.id = 'btnEliminarLista';
-                    botonEliminarLaLista.textContent = 'Eliminar';
+                    botonEliminarLaLista.innerHTML= '<i class="fas fa-trash-alt"></i>';
                     botonEliminarLaLista.addEventListener('click', eliminar =>{
                         eliminarListaControlador(utiles[i]['nombreLista']);}); 
 
                     celdaEliminarLista.appendChild(botonEliminarLaLista);
                     celdaRadioButton.appendChild(radioButton);
                     aux = utiles[i]['nombreLista'];
+
+                    
                    
                 }                 
                
@@ -100,7 +102,7 @@ let mostrarUtiles = (pfiltro) =>{
                     
     
                     let botonEditar = document.createElement('a');
-                    botonEditar.textContent = 'Editar';
+                    botonEditar.innerHTML = '<i class="fas fa-edit"></i>';
                     
                     // botonEditar.href = `actualizarListaUtiles.html?idLista=${utiles[a]['nombreLista']}&nivel=${utiles[a]['nivel']}`;
     
@@ -111,7 +113,7 @@ let mostrarUtiles = (pfiltro) =>{
                     celdaConfiguracion.appendChild(botonEditar);
     
                     let botonEliminar = document.createElement('button');
-                    botonEliminar.textContent = 'Eliminar';
+                    botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
                     botonEliminar.id = 'btnEliminar';                
                     botonEliminar.addEventListener('click', eliminar =>{
                         eliminarUtilControlador(utiles[a]['_id'])}) ;

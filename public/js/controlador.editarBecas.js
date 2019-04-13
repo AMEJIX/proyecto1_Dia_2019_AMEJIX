@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem('usuario'));
+// let user = JSON.parse(sessionStorage.getItem('usuario'));
 const inputFiltrar = document.querySelector('#inputBuscar');
 const inputNombreBeca = document.querySelector('#inputNombreBeca');
 const inputDescripcionBeca = document.querySelector('#inputDescripcionBeca');

@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tabla = document.querySelector("#tblArticulos tbody");
 const inputFiltro = document.querySelector('#txtFiltro');
@@ -32,12 +32,15 @@ let mostrarArticulos = () =>{
                 let celdaConfiguracion = fila.insertCell();
                 let celdaEliminar = fila.insertCell();
                 let botonEditar = document.createElement('a');
-                botonEditar.textContent = 'Editar';
+                // botonEditar.textContent = 'Editar';
+                botonEditar.innerHTML = '<i class="fas fa-edit"></i>';
                 botonEditar.href = `actualizarArticulos.html?idArticulo=${articulos[i]['_id']}`
                 celdaConfiguracion.appendChild(botonEditar);
                 let botonEliminar = document.createElement('button');  
-                botonEliminar.textContent = 'Eliminar';
+                // botonEliminar.textContent = 'Eliminar';
+                botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';    
                 botonEliminar.id = 'btnEliminar'; 
+                botonEliminar.classList.add('botonEliminarArticulos');
                       
                 botonEliminar.addEventListener('click', eliminar =>{
                     eliminarArticuloControlador(articulos[i]['_id']);

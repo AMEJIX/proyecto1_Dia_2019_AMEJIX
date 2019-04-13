@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Material informativo</title>
+    <title>Actualizar actividades</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/mostrarMaterialInformativo.css">
+    <link rel="stylesheet" href="css/actualizarActividad.css">
 </head>
+
 
 <body>
     <header>
@@ -72,7 +75,7 @@
                 <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
                 <a href="listarRangosMEP.html">Rangos de evaluación</a>
                 <a href="listarArticulosPropios.html">Artículos escolares</a>
-                <a href="listarUtilesOficiales.html">Lista de útiles</a>
+                <a href="listarUtilesOficialesSA.html">Lista de útiles</a>
                 <a href="criteriosBusqueda.html">Etiquetas</a>
             </div>
 
@@ -84,8 +87,8 @@
                 <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                 <a href="listarCentrosEducativos.html">Buscar</a>
                 <a href="#" id="aFavoritos">Favoritos</a>
-                <a href="#">Top</a>
-                <a href="#" id="aEvaluarCE">Evaluar centro educativo</a>
+                <a href="listarTopCentrosEducativos.html">Top</a>
+                <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
                 <a href="#" id="aActivarDesCE">Activar o desactivar</a>
                 <a href="#" id="aEliminarCE">Eliminar</a>
                 <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
@@ -138,61 +141,62 @@
             </div>
 
         </div>
-
         <div class="contenido" style="overflow-y: scroll;">
+            <h1>Actualizar actividad del centro educativo</h1>
+            <form id="frmRegistroCriterio">
+                <div>
+                    <label for="txtActividad" class="lblInput">Actividad</label>
+                    <input type="text" id="txtActividad">
+                </div>
+                <div>
+                    <label for="txtDescripcion" id="labelDescripcion" class="lblTextArea">Descripción</label>
+                    <textarea id="txtDescripcion" placeholder="Describa la actividad"></textarea>
+                </div>
+                <div>
+                    <label for="inputFecha" class="lblInput">Fecha</label>
+                    <input type="date" id="inputFecha">
+                </div>
+                <div class="imageHolder">
+                    <label for="figure" class="lblInput">Foto de la actividad</label>
+                    <figure id="figure">
+                        <img src="img/upload.png" id="imgActividades" class="imageHolder">
+                    </figure>
+                    <div class="btnDiv">
+                        <button type="button" class="btnRegistrar" id="btnAgregar">Agregar</button>
+                    </div>
 
-            <h1>Material informativo</h1>
-
-            <div class="filtrar">
-                <label for="txtFiltro">Buscar</label>
-                <input type="text" id="txtFiltro">
-            </div>
+                </div>
             
-            <a class="aRegistrar" href="registrarMaterialInformativo.html">Registrar nuevo material informativo</a>
-
-            <table id="tblMaterialInformativo">
-                <thead>
-                    <tr>
-                        <th>Tema</th>
-                        <th>Descripción</th>
-                        <th>Brochure informativo</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                </tbody>
-            </table>
-
-            <!-- <div>
-                <span id="tema"></span>
+            </form>
+            <div class="divSection">
+                <section class="sctImagenes" id="sctImagenes">
+                </section>
             </div>
 
-            <div>
-                <span id="descripcion"></span>
+            <div class="btnDiv">
+                <button type="button" class="btnRegistrar" id="btnRegistrar">Actualizar</button>
             </div>
-
-            <div>
-                <span id="brochure"></span>
-            </div> -->
-
-            <!-- <button type="button" id="btnInfo">Obtener más información</button> -->
         </div>
-
     </main>
     <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap" async defer></script>
+    <script src="js/mapUser.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/controlador.general.js"></script>
-    <script src="js/servicio.materialInformativo.js"></script>
-    <script src="js/controlador.mostrarMaterialInformativoCE.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicioInicio.js"></script>
+    <script src="js/servicio.actividades.js"></script>
+    <script src="js/controlador.actualizarActividades.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"
+        type="text/javascript"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="js/servicio.imagenActividades.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
 
 </body>
+
 
 </html>

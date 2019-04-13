@@ -1,6 +1,5 @@
 .btnEliminar {
-    width: 25px;
-    height: 25px;
+    width: 32px;
     border: none;
     background-color: transparent;
     color: #2c3e50;
@@ -22,7 +21,6 @@ h1 {
     object-fit: contain;
 }
 
-
 .filtrar {
     float: right;
     margin-top: 40px;
@@ -30,11 +28,36 @@ h1 {
     margin-bottom: 45px;
 }
 
+.filtrar label {
+    color: #2c3e50;
+    margin-right: 18px;
+}
+
+.filtrar input {
+    font-family: 'Raleway', sans-serif;
+    width: 255px;
+    height: 22px;
+    outline-color: #F9AA33;
+}
+
+.aRegistrar {
+    display: block;
+    margin-left: 5%;
+    margin-top: 45px;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.aRegistrar:hover {
+    color: #f9aa33;
+    transition: all 300ms;
+}
+
 #tblMaterialInformativo {
     border-collapse: collapse;
     width: 90%;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 

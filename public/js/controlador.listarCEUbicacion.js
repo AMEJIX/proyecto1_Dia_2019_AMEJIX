@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 const conectado = sessionStorage.getItem('conectado');
 const tipo_usuario = user.userType;
 const cantonUsuario =user.canton;
