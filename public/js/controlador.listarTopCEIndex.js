@@ -103,8 +103,8 @@ let mostrarDatosTop = () =>{
                     h2Estrellas3.innerHTML = '<i class="fas fa-star"></i>';
                     h2Estrellas4.innerHTML = '<i class="fas fa-star"></i>';
                 }
-
-               
+            
+                             
 
                 divPosicion.appendChild(h2Posicion);
                 divImagen.appendChild(imagen);
@@ -113,7 +113,7 @@ let mostrarDatosTop = () =>{
                 divEstrellas.appendChild(h2Estrellas1);  
                 divEstrellas.appendChild(h2Estrellas2);
                 divEstrellas.appendChild(h2Estrellas3);
-                divEstrellas.appendChild(h2Estrellas4);       
+                divEstrellas.appendChild(h2Estrellas4);                
 
 
                 cardCETop.appendChild(divPosicion);
@@ -172,59 +172,58 @@ let mostrarDatosTop = () =>{
                     let divEstrellas = document.createElement('div');
                     divEstrellas.classList.add('divEstrellas');
     
-                let h2Estrellas = document.createElement('h2');
-                h2Estrellas.classList.add('h2Estrellas');
-                let h2Estrellas1 = document.createElement('h2');
-                h2Estrellas1.classList.add('h2Estrellas');
-                let h2Estrellas2 = document.createElement('h2');
-                h2Estrellas2.classList.add('h2Estrellas');
-                let h2Estrellas3 = document.createElement('h2');
-                h2Estrellas3.classList.add('h2Estrellas');
-                let h2Estrellas4 = document.createElement('h2');
-                h2Estrellas4.classList.add('h2Estrellas');
-              
-                if(escuelas[a]['estrellas'] ==  "★☆☆☆☆"){
-                    divEstrellas.innerHTML = '';
-
-                    h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas1.innerHTML = '<i class="far fa-star"></i>';
-                    h2Estrellas2.innerHTML = '<i class="far fa-star"></i>';
-                    h2Estrellas3.innerHTML = '<i class="far fa-star"></i>';
-                    h2Estrellas4.innerHTML = '<i class="far fa-star"></i>';
-                } if(escuelas[a]['estrellas'] ==  "★★☆☆☆"){
-                    divEstrellas.innerHTML = '';
-
-                    h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas1.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas2.innerHTML = '<i class="far fa-star"></i>';
-                    h2Estrellas3.innerHTML = '<i class="far fa-star"></i>';
-                    h2Estrellas4.innerHTML = '<i class="far fa-star"></i>';
-                } if(escuelas[a]['estrellas'] ==  "★★★☆☆"){
-                    divEstrellas.innerHTML = '';
-
-                    h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas1.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas2.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas3.innerHTML = '<i class="far fa-star"></i>';
-                    h2Estrellas4.innerHTML = '<i class="far fa-star"></i>';
-                } if(escuelas[a]['estrellas'] ==  "★★★★☆"){
-                    divEstrellas.innerHTML = '';
-
-                    h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas1.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas2.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas3.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas4.innerHTML = '<i class="far fa-star"></i>';
-                } if(escuelas[a]['estrellas'] ==  "★★★★★"){
-                    divEstrellas.innerHTML = '';
-
-                    h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas1.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas2.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas3.innerHTML = '<i class="fas fa-star"></i>';
-                    h2Estrellas4.innerHTML = '<i class="fas fa-star"></i>';
-                }
-
+                    let h2Estrellas = document.createElement('h2');
+                    h2Estrellas.classList.add('h2Estrellas');
+                    let h2Estrellas1 = document.createElement('h2');
+                    h2Estrellas1.classList.add('h2Estrellas');
+                    let h2Estrellas2 = document.createElement('h2');
+                    h2Estrellas2.classList.add('h2Estrellas');
+                    let h2Estrellas3 = document.createElement('h2');
+                    h2Estrellas3.classList.add('h2Estrellas');
+                    let h2Estrellas4 = document.createElement('h2');
+                    h2Estrellas4.classList.add('h2Estrellas');
+                  
+                    if(escuelas[a]['estrellas'] ==  "★☆☆☆☆"){
+                        divEstrellas.innerHTML = '';
+    
+                        h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas1.innerHTML = '<i class="far fa-star"></i>';
+                        h2Estrellas2.innerHTML = '<i class="far fa-star"></i>';
+                        h2Estrellas3.innerHTML = '<i class="far fa-star"></i>';
+                        h2Estrellas4.innerHTML = '<i class="far fa-star"></i>';
+                    } if(escuelas[a]['estrellas'] ==  "★★☆☆☆"){
+                        divEstrellas.innerHTML = '';
+    
+                        h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas1.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas2.innerHTML = '<i class="far fa-star"></i>';
+                        h2Estrellas3.innerHTML = '<i class="far fa-star"></i>';
+                        h2Estrellas4.innerHTML = '<i class="far fa-star"></i>';
+                    } if(escuelas[a]['estrellas'] ==  "★★★☆☆"){
+                        divEstrellas.innerHTML = '';
+    
+                        h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas1.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas2.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas3.innerHTML = '<i class="far fa-star"></i>';
+                        h2Estrellas4.innerHTML = '<i class="far fa-star"></i>';
+                    } if(escuelas[a]['estrellas'] ==  "★★★★☆"){
+                        divEstrellas.innerHTML = '';
+    
+                        h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas1.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas2.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas3.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas4.innerHTML = '<i class="far fa-star"></i>';
+                    } if(escuelas[a]['estrellas'] ==  "★★★★★"){
+                        divEstrellas.innerHTML = '';
+    
+                        h2Estrellas.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas1.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas2.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas3.innerHTML = '<i class="fas fa-star"></i>';
+                        h2Estrellas4.innerHTML = '<i class="fas fa-star"></i>';
+                    }
     
                     divPosicion.appendChild(h2Posicion);
                     divImagen.appendChild(imagen);
@@ -233,7 +232,7 @@ let mostrarDatosTop = () =>{
                     divEstrellas.appendChild(h2Estrellas1);  
                     divEstrellas.appendChild(h2Estrellas2);
                     divEstrellas.appendChild(h2Estrellas3);
-                    divEstrellas.appendChild(h2Estrellas4);               
+                    divEstrellas.appendChild(h2Estrellas4);                  
     
     
                     cardCETop.appendChild(divPosicion);
@@ -267,7 +266,7 @@ let mostrarDatosTop = () =>{
 
             for(let j= 0; j< centrosETop.length; j++){
                 if(centrosETop[j]['tipo'] == cfiltro){
-                   
+                    console.log(centrosETop[j]);
                    colegios[d] = centrosETop[j]; 
                    
                     d = d + 1;
@@ -366,6 +365,7 @@ let mostrarDatosTop = () =>{
                 divEstrellas.appendChild(h2Estrellas2);
                 divEstrellas.appendChild(h2Estrellas3);
                 divEstrellas.appendChild(h2Estrellas4);               
+             
 
 
                 cardCETop.appendChild(divPosicion);

@@ -53,3 +53,44 @@ module.exports.listarActividades = (req, res)=>{
     )
 }; 
 
+
+module.exports.buscarActividad = function (req, res){
+    modeloActividad.find({_id : req.body._id}).then(
+        function(actividad){
+            if(actividad){
+                res.json({success: true, actividad : actividad});
+            }else{
+                res.json({success: false, actividad : actividad});
+            }
+        }
+
+    );
+
+};
+
+
+module.exports.actualizar = function(req, res){
+   
+    modeloActividad.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar la actividad'});
+            }else{
+                res.json({success: true , msg : 'La actividad se actualizó con éxito'});
+            }
+        }
+    
+    );
+}
+
+module.exports.eliminar = function(req, res){
+    modeloActividad.findByIdAndDelete(req.body.id,
+        function(error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo eliminar la actividad'});
+            }else{
+                res.json({success: true , msg : 'La actividad se eliminó con éxito'});
+            }
+        })
+}
+

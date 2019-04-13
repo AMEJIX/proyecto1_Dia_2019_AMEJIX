@@ -148,3 +148,19 @@ a:hover{
 }
 
 
+
+.botonEliminarCriterios{
+    border: none;
+    background-color: transparent;
+    color: #2c3e50;
+    font-size: 15px;
+
+}
+.botonEliminarCriterios:hover{
+    border:none;   
+    background: #4a6572;
+    text-decoration: none;
+    color: #f9aa33;
+}
+
+

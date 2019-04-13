@@ -56,14 +56,14 @@ let mostrarActividades = () => {
                 botonRetroceder.type = 'button';
                 botonRetroceder.classList.add('boton');
                 botonRetroceder.id = 'retroceder';
-                botonRetroceder.textContent = 'Atrás';
+                botonRetroceder.textContent = '◀';
                 
 
                 let botonAvanzar = document.createElement('button');
                 botonAvanzar.type = 'button';
                 botonAvanzar.classList.add('boton');
                 botonAvanzar.id = 'retroceder';
-                botonAvanzar.textContent = 'Adelante';
+                botonAvanzar.textContent = '▶';
                         
 
                 if (actividades[i]['imagen']) {
