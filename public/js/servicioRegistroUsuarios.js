@@ -186,8 +186,21 @@ let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, 
         validarCredenciales(user.email, user.contrasenna, function(res) {
            console.log('hello')
             if (res.success) {
-                console.log('redirección');
-                window.location.href = 'userProfileInfo.html';
+
+
+                swal.fire({
+                    type: 'success',
+                    title: 'exito',
+                    text: res.msg,
+                    showConfirmButton: true,
+                    onClose: () => {
+                        window.location.href = 'userProfileInfo.html';
+                    }
+        
+                });
+
+
+
             } else {
                 swal.fire({
                     type: 'warning',
@@ -202,7 +215,7 @@ let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, 
 
 };
 
-let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, estado, id) => {
+let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, anno, genero, religion, email, telCE, web, facebook, twitter, instagram, fax, histroia, provincia, canton, distrito, nombreCEP, segundoNombreCEP, apellidoCEP, segundoApellidoCEP, departamento, telCEP, extension, numIDCEP, emailCEP, lat, lng, privacidad, clasificacion, tipo, grados, imagen, imagenCEP, direccionExacta, idiomas, servicios, descipcionesServicio, documentCE, id) => {
     let request = $.ajax({
 
         url: "http://localhost:4000/api/actualizar",
@@ -248,7 +261,7 @@ let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, 
             servicios: servicios,
             descipcionesServicio: descipcionesServicio,
             documentCE: documentCE,
-            estado: estado,
+
             id: id
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -266,8 +279,21 @@ let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, 
         validarCredenciales(user.email, user.contrasenna, function(res) {
            console.log('hello')
             if (res.success) {
-                console.log('redirección');
-                window.location.href = 'userProfileInfo.html';
+         
+
+                swal.fire({
+                    type: 'success',
+                    title: 'exito',
+                    text: res.msg,
+                    showConfirmButton: true,
+                    onClose: () => {
+                        window.location.href = 'userProfileInfo.html';
+                    }
+        
+                });
+
+
+                
             } else {
                 swal.fire({
                     type: 'warning',
@@ -309,15 +335,33 @@ let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, 
     });
 
     request.done(function (res) {
-        swal.fire({
-            type: 'success',
-            title: 'exito',
-            text: res.msg
+ 
 
+        validarCredenciales(user.email, user.contrasenna, function(res) {
+           console.log('hello')
+            if (res.success) {
+         
+
+                swal.fire({
+                    type: 'success',
+                    title: 'exito',
+                    text: res.msg,
+                    showConfirmButton: true,
+                    onClose: () => {
+                        window.location.href = 'userProfileInfo.html';
+                    }
+        
+                });
+
+
+                
+            } else {
+                swal.fire({
+                    type: 'warning',
+                    title: res.msg,
+                });
+            }
         });
-
-   
-
     });
 
 

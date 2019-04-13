@@ -1,11 +1,25 @@
 
 
 
+
+
 #registroPadreFamilia, #registroCentroEducativo, #registroSA{
     display: none;
 }
 
+/* .imageHolder{
+    display: block;
+    margin: 0 auto;
+    
+} */
 
+
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 span {
     /* border: 1px solid black; */

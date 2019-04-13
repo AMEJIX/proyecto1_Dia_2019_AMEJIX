@@ -1025,7 +1025,6 @@ function obtenerDatosCentroEducativo() {
             servicios,
             descipcionesServicio,
             documentCE,
-            estado,
             id
 
 
