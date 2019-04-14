@@ -7,14 +7,11 @@
 /*    margin-left: 5%;*/
 /*    margin-bottom: 50px;*/
 /*    float: top;*/
-
 /*}*/
-
 #preguntasFrecuentesCE\&Admin{
     /*position: relative;*/
     /*top: -70px;*/
 }
-
 .awesome_images{
     display: inline-block;
     float: right;
@@ -24,7 +21,6 @@
     /*width: 100%;*/
     /*margin-left: 40px;*/
 }
-
 #cajaFiltrar {
     display: inline-block;
     float: right;
@@ -32,22 +28,18 @@
     margin-right: 5%;
     padding-left: 60%;
 }
-
 .left {
     width: 30%;
     height: 90vh;
     float: left;
     /*margin-left: 10%;*/
 }
-
 .right {
     width: 60%;
     height: 90vh;
     float: right;
     /*border-left: 1px solid #344955;*/
-
 }
-
 #nueva {
     display: block;
     margin-top: 40px;
@@ -56,84 +48,66 @@
     color: #2c3e50;
     margin-bottom: 30px;
 }
-
 #txtPregunta, #txtRespuesta {
     width: 355px;
     height: 120px;
     resize: none;
     margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
-
 }
-
 #txtPregunta{
     height: 90px;
-
 }
-
-form div label{
+form#frmRegistrarPregunta div label{
     display: block;
     width: 190px;
     margin-bottom: 10px;
 }
-
 #cajaRegistrarPregunta  {
     margin: 0 auto;
 }
-
 #cajaRegistrarRespuesta  {
     margin: 0 auto;
 }
-
 .pregunta{
     font-size: 24px;
     color: #344955;
 }
-
 #error {
     margin-left: 5%;
     font-size: 20px;
     color: #f9aa33;
 }
-
 .errorInput{
     border: 1px red solid;
 }
-
 .pregunta:hover{
     /*font-size: 26px;*/
 }
-
 .respuesta:hover{
     /*font-size: 20px;*/
 }
-
 .respuesta{
     display: inline-block;
     margin-top: 20px;
     font-size: 18px;
 }
-
 .pregunta, .respuesta{
-
+    text-align: justify;
 }
-
 .respuesta{
     float: left;
 }
 .pregunta *, .respuesta *{
     max-width: 401.967px;
 }
-tr{
+#tblPreguntasFrecuentes  tr{
     height: 80px;
-
 }
-
-tr:hover{
+#tblPreguntasFrecuentes tr:hover{
     /*background: #344955;*/
     /*color: white;*/
 }
-
 button#btnEnviar{
     display: block;
     margin-top: 45px;
@@ -146,11 +120,9 @@ button#btnEnviar{
     outline: none;
     margin-bottom: 50px;
 }
-
 .left{
     margin-left: 50px;
 }
-
 #tblPreguntasFrecuentes{
     position: relative;
     top: -70px;
@@ -160,44 +132,44 @@ button#btnEnviar{
     border-spacing: 0px 50px;
     margin-top: 70px;
     margin-bottom: 50px;
-
 }
-
 .awesome_images{
     display: none;
     margin: 5px;
     height: 100%;
 }
-
 .awesome_images i{
     height: 100%;
     margin-bottom: 5px;
     color: #344955;
 }
-
 .modoCambio{
     /*border: 2px #F9AA33 solid;*/
     background: #ffffff;
-
     /*color: #ffffff;*/
 }
-
 .modoCambio:hover{
     /*border: 2px #F9AA33 solid;*/
     background: #ffffff;
-
     /*color: #ffffff;*/
 }
-
 .modoCambio::selection{
     background: #344955;
     color: white;
 }
-
 .awesome_images i:hover{
     color: #f9aa33;
 }
-
 /*#preguntasFrecuentesCE\&Admin{*/
 /*    background: #000;*/
 /*}*/
+
+#seccionPreguntasFrecuentes{
+    background: white;
+    /*position: relative;*/
+    /*top: -70px;*/
+}
+#preguntasFrecuentesCE\&Admin{
+    background: white;
+
+}
