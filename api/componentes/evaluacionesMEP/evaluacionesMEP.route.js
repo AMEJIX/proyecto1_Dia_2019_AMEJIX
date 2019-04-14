@@ -57,6 +57,13 @@ router.route('/listarCEEvaluadosTop/:anno')
 
 
 
+router.route('/listarTodosCEEvaluados')
+.get(
+    function(req, res){
+        apiEvaluacionMEP.listarTodosCEEvaluados(req, res);
+    }
+)
+
 
 
 module.exports = router;

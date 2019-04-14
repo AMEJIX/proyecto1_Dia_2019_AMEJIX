@@ -336,6 +336,60 @@ inputEmail.value = user.email;
 const inputTel = document.querySelector('#txtTelefono')
 inputTel.value = user.telefono;
 
+if (user.userType == "padreFamilia"){
+
+    let arregloEdades = user.edades.split(", ");
+
+
+    // let divServicios = document.querySelector('#divServicios');
+    // divServicios.innerHTML = '';
+    let divEdades = document.querySelector('#divEdades');
+    divEdades.innerHTML = '';
+
+    for (let i = 0; i < arregloEdades.length - 1; i++) {
+   
+        var newDiv = document.createElement('div');
+        newDiv.style.display = 'block';
+
+        var newLabel = document.createElement("label");
+        newLabel.innerHTML = "Edad hijo " + Number(i + 1);
+
+
+        var newInput = document.createElement("input");
+        newInput.classList.add('input_hijo');
+        newInput.type = 'Number';
+        newInput.value = arregloEdades[i];
+
+
+
+        newDiv.appendChild(newLabel);
+        newDiv.appendChild(newInput);
+
+
+
+        divEdades.appendChild(newDiv);
+
+    }
+
+    // var newSecondDiv = document.createElement('div');
+    // newSecondDiv.style.display = 'block';
+
+    // var newLabel = document.createElement("label");
+    // newLabel.innerHTML = "Edad hijo " + Number(i + 1);
+
+    // var newInput = document.createElement("input");
+    // newInput.classList.add('input_hijo');
+    // newInput.type = 'Number';
+
+    // newSecondDiv.appendChild(newLabel);
+    // newSecondDiv.appendChild(newInput);
+
+    // newDiv.appendChild(newSecondDiv);
+
+
+}
+
+
 const selectProvincia = document.querySelector('#selectProvincias')
 
 

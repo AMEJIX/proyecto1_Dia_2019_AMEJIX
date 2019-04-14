@@ -107,3 +107,25 @@ module.exports.listarCEEvaluadosTop = (req, res)=>{
     )
 }; 
 
+
+
+module.exports.listarTodosCEEvaluados = (req, res) => {
+    modeloEvaluacionesCE.find().then(
+        function (centrosEducativos){
+            if(centrosEducativos.length > 0){
+                res.json({
+                    success: true,
+                    centrosEducativos: centrosEducativos
+                    
+                })
+            } else {
+                res.json({
+                    success: false,
+                    centrosEducativos: `No se encontraron centros evaluados`
+                })
+            }
+        }
+    )
+}
+
+

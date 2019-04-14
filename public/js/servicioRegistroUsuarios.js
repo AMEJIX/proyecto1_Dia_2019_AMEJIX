@@ -269,12 +269,12 @@ let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, 
     });
 
     request.done(function (res) {
-        swal.fire({
-            type: 'success',
-            title: 'exito',
-            text: res.msg
+        // swal.fire({
+        //     type: 'success',
+        //     title: 'exito',
+        //     text: res.msg
 
-        });
+        // });
 
         validarCredenciales(user.email, user.contrasenna, function(res) {
            console.log('hello')
