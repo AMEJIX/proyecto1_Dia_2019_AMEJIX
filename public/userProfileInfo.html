@@ -22,6 +22,13 @@
 
     <header>
         <nav>
+            <div id="divGeneralEstrellas">
+                <div id="divEncabezadoH2Estrellas">
+                    <h2 id="encabezadoH2Estrellas">Mi evaluación del MEP</h2>
+                </div>              
+                <div id="divEstrellas">
+                </div>
+            </div>
 
             <div class="userInfo">
                 <div class="userPhoto"></div>
@@ -87,7 +94,7 @@
                 <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                 <a href="listarCentrosEducativos.html">Buscar</a>
                 <a href="#" id="aFavoritos">Favoritos</a>
-                <a href="#">Top</a>
+                <a href="listarTopCentrosEducativos.html">Top</a>
                 <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
                 <!-- <a href="#" id="aActivarDesCE">Activar o desactivar</a> -->
                 <a href="administrarCE.html">Administrar cuentas</a>
@@ -137,7 +144,7 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
+                <a href="rankingStarsMEPSolicitudCE.html">Ranking MEP</a>
                 <a href="#">Visitas</a>
                 <a href="#">Ranking por padres de familia</a>
             </div>
@@ -151,7 +158,11 @@
 
     <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/controllerProfileInfo.js"></script>
+    <script src="js/servicio.encabezadoEstrellas.js"></script>
+    <script src="js/encabezadoEstrellas.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
         async defer></script>
     <script src="js/mapUser.js"></script>

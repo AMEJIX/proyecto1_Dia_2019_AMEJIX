@@ -78,4 +78,12 @@ router.route('/listarMiEvaluacion/:id')
 
 
 
+router.route('/listarEstrellasPropias')
+.post(
+    function(req, res){
+        apiEvaluacionMEP.listarEstrellasCE(req, res);
+    }
+)
+
+
 module.exports = router;

@@ -171,4 +171,39 @@ margin : 0 auto;
     float: right;
     display: block;
     
-    }
+}
+
+.estrellas{
+    display: inline-block;
+    text-align: center;
+    font-size: 25px;
+    color: #f9aa33;
+    font-style: bold;
+    vertical-align: middle;
+}
+
+#divGeneralEstrellas{
+    display: inline-block;
+    width: 23%; 
+    text-align: left;
+    font-size: 20px;
+    color: #2c3e50;
+    font-style: bold;
+    margin-top: 20px;
+    margin-left: 1%;
+  
+}
+
+#divEncabezadoH2Estrellas{
+    display: inline-block;
+    float: left;
+}
+#encabezadoH2Estrellas{
+display: inline-block;
+}
+#divEstrellas{
+    display: inline-block;
+
+    float: right;
+}
+
