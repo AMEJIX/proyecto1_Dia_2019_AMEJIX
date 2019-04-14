@@ -12,6 +12,11 @@ router.param('anno', function(req, res, next, anno){
     next();
 });
 
+router.param('id', function(req, res, next, id){
+    req.body.id = id;
+    next();
+});
+
 
 router.route('/listarCE')
     .get(
@@ -61,6 +66,13 @@ router.route('/listarTodosCEEvaluados')
 .get(
     function(req, res){
         apiEvaluacionMEP.listarTodosCEEvaluados(req, res);
+    }
+)
+
+router.route('/listarMiEvaluacion/:id')
+.get(
+    function(req, res){
+        apiEvaluacionMEP.listarEvaluacionCE(req, res);
     }
 )
 

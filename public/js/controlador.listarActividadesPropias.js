@@ -62,10 +62,6 @@ let mostrarActividades = () => {
                     eliminarActividadControlador(actividades[i]['_id']);
                 });
 
-
-
-
-
                 let divCarousel = document.createElement('div');
 
                 divCarousel.classList.add('carousel');
@@ -88,7 +84,7 @@ let mostrarActividades = () => {
                 
                         
 
-                if (actividades[i]['imagen']) {
+                if (actividades[i]['imagen'] != "") {
                     let stringImg = actividades[i]['imagen'];
                     let arregloImg = stringImg.split(",");
                  
@@ -121,8 +117,11 @@ let mostrarActividades = () => {
                     }     
                     renderizarImagen();    
                 } else {
-                    imagen.src = 'img/upload.png';
-                    imagenActividad.appendChild(imagen);
+                    let msgNoImagen = document.createElement('p');
+                    msgNoImagen.textContent = 'No existen fotos';
+                    msgNoImagen.classList.add('pMsgNoImagen');
+                    
+                    divImagen.appendChild(msgNoImagen);
                 }
 
                 sectionActividades.appendChild(cardActividad);
