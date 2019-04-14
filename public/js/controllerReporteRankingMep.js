@@ -5,9 +5,9 @@
 const tabla = document.querySelector('#tblUsuarios tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 
-// // if (user.userType == 'centroEducativo' || user.userType == 'padreFamilia') {
-// //     window.location.href = 'loSentimos.html';
-// // }
+if (user.userType == 'centroEducativo' || user.userType == 'padreFamilia') {
+    window.location.href = 'loSentimos.html';
+}
 
 
 // // let usuarios = listarUsuariosCE();
