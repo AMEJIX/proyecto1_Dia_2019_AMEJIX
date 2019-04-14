@@ -2,15 +2,15 @@
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
-let user = JSON.parse(sessionStorage.getItem('usuario'));
+let userActual = JSON.parse(sessionStorage.getItem('usuario'));
 
 // const opcionMisCitas = document.querySelector('#opcionMisCitas');
 
-if(user.userType === 'padreFamilia'){
+if(userActual.userType === 'padreFamilia'){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
 }
 
-let nombreDelCentroEducativo = user.centroEducativo;
+let nombreDelCentroEducativo = userActual.centroEducativo;
 
 let listaCitas = getCitasCE(nombreDelCentroEducativo);
 

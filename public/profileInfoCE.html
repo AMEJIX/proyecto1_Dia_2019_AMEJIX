@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/listarArticulos.css">
     <link rel="stylesheet" href="css/preguntasFrecuentes2.0.css">
     <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css">
+    <link rel="stylesheet" href="css/citas.css">
 
 </head>
 
@@ -370,7 +371,25 @@
 
                     <div class="tabPanel">Etiquetas</div>
 
-                    <div class="tabPanel">Agendar cita</div>
+                    <div class="tabPanel">
+                        <h1 class="tituloAgendar">Agendar cita</h1>
+
+                            <form id="frmAgendar">
+                                <div id="cajaFechaHora">
+                                    <div id="cajaFecha">
+                                        <label for="fechaCita">Fecha: </label>
+                                        <input id="fechaCita" type="date"><label  for="fechaCita" id="lblERRFecha"></label>
+
+                                    </div>
+                                    <div id="cajaHora">
+                                        <label for="horaCita">Hora: </label><label  for="fechaCita" id="lblERRHora"></label>
+                                        <input id="horaCita" type="time" value="13:00" step="900" min="8:00" max="16:00">
+                                    </div>
+                                </div>
+
+                                <button type="button" id="btnAgendar">Agendar</button>
+                            </form>
+                    </div>
 
                 </div>
             </div>
@@ -430,24 +449,28 @@
 
     <!--Isaac-->
 
-    <!--Preguntas frecuentes PF-->
+        <!--Preguntas frecuentes PF-->
 
 
-    <!--Preguntas frecuentes PF-->
+        <!--Preguntas frecuentes PF-->
 
-    <script src="js/preguntasFrecuentes.servicio.js"></script>
-    <script src="js/preguntasFrecuentes.controller.listar.js"></script>
-    <!--PARA CUALQUIER USUARIO-->
+            <script src="js/preguntasFrecuentes.servicio.js"></script>
+            <script src="js/preguntasFrecuentes.controller.listar.js"></script>
+        <!--PARA CUALQUIER USUARIO-->
 
-    <!--Preguntas frecuentes CE y ADMIN-->
+        <!--Preguntas frecuentes CE y ADMIN-->
 
-    <script src="js/preguntasFrecuentes.controller.actualizar.js"></script>
-    <script src="js/preguntasFrecuentes.controller.eliminar.js"></script>
-    <script src="js/preguntasFrecuentes.controller.registrar.js"></script>
+            <script src="js/preguntasFrecuentes.controller.actualizar.js"></script>
+            <script src="js/preguntasFrecuentes.controller.eliminar.js"></script>
+            <script src="js/preguntasFrecuentes.controller.registrar.js"></script>
 
-    <!--Preguntas frecuentes CE y ADMIN-->
+        <!--Preguntas frecuentes CE y ADMIN-->
 
-
+        <!-- AGENDAR CITAS-->
+            <script src="js/citas.servicio.js"></script>
+            <script src="js/moment.js"></script>
+            <script src="js/citas.controller.registrar.js"></script>
+        <!-- AGENDAR CITAS-->
     <!--Isaac-->
 
     <!-- Etiquetas -->

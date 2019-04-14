@@ -6,9 +6,15 @@ const btnAgendar = document.querySelector('#btnAgendar');
 const lblERRFecha = document.querySelector('#lblERRFecha');
 const lblERRHora = document.querySelector('#lblERRHora');
 
-let user = JSON.parse(sessionStorage.getItem('usuario'));
+let daUser = JSON.parse(sessionStorage.getItem('usuario'));
 
- if(user.userType === 'centroEducativo' || NombreGeneralCE === ''){
+if (location.pathname.split("/").slice(-1) == 'profileInfoCE.html' && daUser.userType == 'superAdministrador'){
+    let form  = document.getElementById('frmAgendar');
+    form.innerHTML = '';
+    form.insertAdjacentHTML('beforeend', `<div class="errorUser">Solo los padres de familia pueden agendar cita.</div>`);
+}
+
+ if(daUser.daUserType === 'centroEducativo' || NombreGeneralCE === ''){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
 }
 
@@ -20,7 +26,7 @@ let user = JSON.parse(sessionStorage.getItem('usuario'));
 
  */
 
-let validar = () =>{
+let validarCita = () =>{
     let error = false;
 
     let fechaHoraIngresada =  new Date(inputFecha.value + ' ' + inputHora.value);
@@ -73,9 +79,9 @@ let validar = () =>{
 
 let agendar = () =>{
 
-    if (!validar()){
-        let nombrePF = user.nombre;
-        let correoPF = user.email;
+    if (!validarCita()){
+        let nombrePF = daUser.nombre;
+        let correoPF = daUser.email;
 
         //////////////// QUEMADO
 
