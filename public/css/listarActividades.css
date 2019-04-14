@@ -26,13 +26,16 @@ h1{
     display: inline-block;
     width: 60px;
     margin-left: 53px;
+    font-size: 25px;
+    margin-right: 42px;
 }
 
 #txtFiltro{
     display: inline-block;
-    width: 250px;
+    width: 500px;
     height: 30px;
     outline: none;
+    font-size: 25px;
 }
 
 section{
@@ -183,6 +186,7 @@ th{
 a{
     color: #2c3e50;
     text-decoration: none;
+    font-size: 25px;
     
 
 }

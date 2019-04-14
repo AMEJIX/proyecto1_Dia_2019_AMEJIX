@@ -10,7 +10,9 @@ const radioButtonTodos = document.querySelector('#tablaNombreListaU tbody tr td'
 const divDelBotonActualizar = document.querySelector('#idDivBotonActualizar');
 const  IdUs = user._id;
 
-
+if(user.userType == 'padreFamilia' || user.userType == 'centroEducativo'){
+    window.location.href = 'loSentimos.html';
+}
 let mostrarListas = () => {
     let nivel = selectNivel.value;
     

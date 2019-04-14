@@ -21,6 +21,7 @@ h1{
 a{
     color: #2c3e50;
     text-decoration: none;
+    font-size: 25px;
     
 
 }
@@ -37,6 +38,13 @@ a:hover{
     margin-right: 5%;
     margin-bottom: 50px;
 }
+.filtroDerecha label{
+    display: inline-block;
+    width: 60px;
+    margin-left: 53px;
+    font-size: 25px;
+    margin-right: 42px;
+}
 
 .txtFiltro{
     display: inline-block;
@@ -47,10 +55,11 @@ a:hover{
 
 
 #txtFiltro{
-    display: inline-block;
-    width: 250px;
+     display: inline-block;
+    width: 500px;
     height: 30px;
     outline: none;
+    font-size: 25px;
 }
 
 
@@ -104,7 +113,8 @@ th{
     text-align: center;
    padding: 12px 1px;
    border: #2c3e50 solid 1px;
-   vertical-align: middle;   
+   vertical-align: middle;  
+   font-size: 25px; 
    
 }
 
@@ -116,6 +126,7 @@ th{
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
     vertical-align: middle;
+    font-size: 25px;
 
 }
 #tblArticulos tbody tr td:hover{
