@@ -17,12 +17,15 @@ let registrarBeca = (pstringNombreBeca, pstringDescripcionBeca, pidCentroEducati
         async: false,
     });
 
-    request.done(function (msg) {
+    request.done(function (res) {
 
         swal.fire({
             type: 'success',
             title: 'Su beca ha sido registrada',
-            text: ``
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'registrarBeca.html';
+            }
         });
     });
 

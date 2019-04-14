@@ -16,12 +16,15 @@ let registrarNoticia = (pstringTituloNoticia, pstringRegistrarNoticia, pstringFe
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
     });
-    request.done(function (msg) {
+    request.done(function (res) {
 
         swal.fire({
             type: 'success',
             title: 'Su noticia ha sido registrada',
-            text: ``,
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'registrarNoticia.html';
+            }
         });
     });
     request.fail(function (jqXHR, textStatus) {

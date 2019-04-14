@@ -35,5 +35,6 @@ let beca = buscarBeca(_id);
 
 let mostrarDatoBeca = () => {
     inputBeca.value = beca[0]['nombreBeca'];
+    inputDescripcionBeca.value = beca[0]['descripcionBeca'];
 
 };

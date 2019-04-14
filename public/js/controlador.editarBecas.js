@@ -32,6 +32,7 @@ console.log(beca);
 
 let mostrarDatoBeca = () => {
     inputNombreBeca.value = beca[0]['nombreBeca'];
+    inputDescripcionBeca.value = beca[0]['descripcionBeca'];
 
 };
 

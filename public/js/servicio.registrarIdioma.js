@@ -14,12 +14,15 @@ let registrarIdiomas = (parametrosIdioma, pidCentroEducativo) => {
         dataType: "json",
         async: false,
     });
-    request.done(function (msg) {
+    request.done(function (res) {
 
         swal.fire({
             type: 'success',
             title: 'Su idioma ha sido registrado',
-            text: ``
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'registrarIdioma.html';
+            }
         });
     });
     request.fail(function (jqXHR, textStatus) {

@@ -17,14 +17,18 @@ let registrarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfie
         dataType: "json",
         async: false,
     });
-    request.done(function (msg) {
+    request.done(function (res) {
 
         swal.fire({
             type: 'success',
             title: 'Su matrícula ha sido registrada',
-            text: ``
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'registrarMatriculaCosto.html';
+            }
         });
     });
+
     request.fail(function (jqXHR, textStatus) {
         swal.fire({
             type: 'error',
