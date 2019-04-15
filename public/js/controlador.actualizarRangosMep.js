@@ -1,6 +1,6 @@
 
 'use strict';
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 const selectRangos= document.querySelector('#selectRangos');
 const selectValorMinimo= document.querySelector('#selectValorMinimo');
 const selectValorMaximo= document.querySelector('#selectValorMaximo');

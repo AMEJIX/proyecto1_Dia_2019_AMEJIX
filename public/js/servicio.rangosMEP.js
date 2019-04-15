@@ -47,7 +47,10 @@ let listarRangos= () =>{
         swal.fire({
             type: 'success',
             title: 'El rango se ha registrado correctamente',
-            text: `El ${prango} se registró con la cantidad de estrellas de ${pestrellas}.`
+            text: `El ${prango} se registró con la cantidad de estrellas de ${pestrellas}.`,
+            onClose: () => {
+              window.location.href = 'listarRangosMEP.html';
+            }    
         });
       });
        

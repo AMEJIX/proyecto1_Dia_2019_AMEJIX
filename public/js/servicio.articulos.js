@@ -50,7 +50,10 @@ let registrarArticulo = (pnombre, pdescripcion, pidCentroEducativo) =>{
         swal.fire({
             type: 'success',
             title: 'Artículo registrado correctamente',
-            text: `El artículo escolar ${pnombre} se registró con la descripción ${pdescripcion}`
+            text: `El artículo escolar ${pnombre} se registró con la descripción ${pdescripcion}`,
+            onClose: () => {
+                window.location.href = 'listarArticulosPropios.html';
+              }    
         });
       });
        

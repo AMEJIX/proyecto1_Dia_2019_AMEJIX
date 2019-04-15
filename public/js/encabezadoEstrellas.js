@@ -5,7 +5,20 @@ const divEstrellas = document.querySelector('#divEstrellas');
 
 const idCentroE = user._id;
 const anno = new Date().getFullYear();
-let estrellas = listarEstrellasPropias(anno, idCentroE);       
+let estrellas = listarEstrellasPropias(anno, idCentroE); 
+
+
+function ocultar() {   
+    if (userLog.userType == "padreFamilia") {
+        document.querySelector('#divGeneralEstrellas').style.display = 'none';  
+    } else if (userLog.userType == "superAdministrador") {
+        document.querySelector('#divGeneralEstrellas').style.display = 'none';  
+    }
+}
+
+ocultar();
+
+
 
 let mostrarEstrellas = () =>{
                  

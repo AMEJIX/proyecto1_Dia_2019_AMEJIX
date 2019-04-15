@@ -11,6 +11,13 @@ h1{
     color: #2c3e50; */
 }
 
+.divRegistrar{
+    display: block;
+    margin-top: 50px;
+    margin-left: 5%;
+    
+}
+
 .filtroIzquierda{
     float: left;
     margin-top: 40px;
@@ -289,6 +296,20 @@ input[type=text]:disabled{
 
 .errorSelect{    
     background-color: #ED4C67;
+}
+
+a{
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 25px;
+    
+
+}
+
+a:hover{    
+    text-decoration: none;
+    color: #f9aa33
+    
 }
 
 
