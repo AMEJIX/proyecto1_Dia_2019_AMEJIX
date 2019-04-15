@@ -93,15 +93,15 @@ let agendar = () =>{
 
         registrarCita(fechaHora, nombreCE, nombrePF, correoPF);
 
-        swal.fire(
-            {
-                type: 'success',
-                title: 'Se agendó la cita con éxito',
-                text: `Revise su correo.`,
-                showConfirmButton: false,
-                timer: 1500
-            }
-        );
+        // swal.fire(
+        //     {
+        //         type: 'success',
+        //         title: 'Se agendó la cita con éxito',
+        //         text: `Revise su correo.`,
+        //         showConfirmButton: false,
+        //         timer: 1500
+        //     }
+        // );
     } else {
         swal.fire(
             {

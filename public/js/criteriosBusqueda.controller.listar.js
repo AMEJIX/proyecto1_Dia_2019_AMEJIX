@@ -2,7 +2,7 @@
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 
-let user = JSON.parse(sessionStorage.getItem('usuario'));
+// let user = JSON.parse(sessionStorage.getItem('usuario'));
 
 if(user.userType === 'padreFamilia'){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
