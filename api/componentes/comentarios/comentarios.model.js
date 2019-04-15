@@ -6,7 +6,7 @@ let comentariosSchema = new mongoose.Schema(
     {
         userPhoto: {type:String, required: true},
         userName: {type:String, required:  true},
-        stars: {type: Number, required: false },
+        stars: {type: Number, required: true },
         comment: {type: String, required: true },
         idCE: {type: String, required: true}
     }

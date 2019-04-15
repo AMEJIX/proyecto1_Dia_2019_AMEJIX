@@ -5,6 +5,14 @@ let centroEducativo = listarUsuariosCEencabezado(IdGeneralCE);
 
 const inputComentario = document.querySelector('#inputComentario');
 const btnEnviarComment = document.querySelector('#send');
+let value;
+
+$('.starrr').starrr({
+    rating:0,
+    change:function(e,valor){
+        value = valor;
+    }
+});
 
 let validarComments = () => {
     let error = false;
@@ -28,11 +36,14 @@ let obtenerDatos = () => {
         }
         let userName = user.nombre += " " + user.apellido;
         // stars
+
+        let stars = value;
+
         let comment = inputComentario.value;
         let idCentroEducativo = IdGeneralCE;
 
         // registrarComentario(stars, inputComentario, idCentroEducativo);
-        registrarComentario(userPhoto, userName, comment, idCentroEducativo);
+        registrarComentario(userPhoto, userName, stars, comment, idCentroEducativo);
 
     } else {
         swal.fire({

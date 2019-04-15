@@ -12,10 +12,13 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
 
     <!-- <link rel="stylesheet" href="css/profileInfo.css"> -->
+
+    <link rel="stylesheet" href="css/starrr.css">
     <link rel="stylesheet" href="css/profileCE.css">
 
     <link rel="stylesheet" href="css/comentarios.css">
@@ -188,72 +191,31 @@
                     </div>
 
                     <div class="tabPanel">
-                        <div class="comentarios">
-                            <h1>Comentarios</h1>
+                        <!-- <div class="comentarios"> -->
+                        <h1>Comentarios</h1>
 
-                            <div id="cajaComentarios">
-
-                            </div>
-
-                            <!-- <div class="commentInfo">
-                                    <div class="userPic"></div>
-                                    <h3></h3>
-                                </div>
-                                <div class="starsRate">
-                                    <div>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                    </div>
-                                </div>
-                                inserto un elemento p -->
-
-                            <!-- <table id="tblComentarios">
-                                <thead>
-                                    <tr>
-                                        <th>Foto</th>
-                                        <th>Nombre</th>
-                                        <th>Comentario</th>
-                                    </tr>
-                                </thead>
-    
-                                <tbody>
-    
-                                </tbody>
-                            </table> -->
-
-
-                            <div id="registrarComentarioDiv">
-                                <div class="starsPF">
-                                    <div class="btnStars">
-                                        <button type="button" name="star" id="uno" value="1"><i
-                                                class="fas fa-star"></i></button>
-                                        <button type="button" name="star" id="dos" value="2"><i
-                                                class="fas fa-star"></i></button>
-                                        <button type="button" name="star" id="tres" value="3"><i
-                                                class="fas fa-star"></i></button>
-                                        <button type="button" name="star" id="cuatro" value="4"><i
-                                                class="fas fa-star"></i></button>
-                                        <button type="button" name="star" id="cinco" value="5"><i
-                                                class="fas fa-star"></i></button>
-                                    </div>
-                                </div>
-                                <div class="textAreaStandard">
-                                    <div>
-                                        <label for="inputComentario">Comentario</label>
-                                    </div>
-                                    <div>
-                                        <textarea type="text" id="inputComentario" placeholder=""></textarea>
-                                    </div>
-                                </div>
-
-                                <button type="button" id="send"><i class="fas fa-paper-plane"></i></button>
-
-                            </div>
+                        <div id="cajaComentarios">
 
                         </div>
+
+                        <div id="registrarComentarioDiv">
+                            <div class="starsPF">
+                                <div class='starrr'></div>
+                            </div>
+                            <div class="textAreaStandard">
+                                <div>
+                                    <label for="inputComentario">Comentario</label>
+                                </div>
+                                <div>
+                                    <textarea type="text" id="inputComentario"
+                                        placeholder="¿Qué te parece este centro educativo?"></textarea>
+                                </div>
+                            </div>
+
+                            <button type="button" id="send"><i class="fas fa-paper-plane"></i></button>
+
+                        </div>
+
                     </div>
 
                     <div class="tabPanel">Matrícula</div>
@@ -374,21 +336,21 @@
                     <div class="tabPanel">
                         <h1 class="tituloAgendar">Agendar cita</h1>
 
-                            <form id="frmAgendar">
-                                <div id="cajaFechaHora">
-                                    <div id="cajaFecha">
-                                        <label for="fechaCita">Fecha: </label>
-                                        <input id="fechaCita" type="date"><label  for="fechaCita" id="lblERRFecha"></label>
+                        <form id="frmAgendar">
+                            <div id="cajaFechaHora">
+                                <div id="cajaFecha">
+                                    <label for="fechaCita">Fecha: </label>
+                                    <input id="fechaCita" type="date"><label for="fechaCita" id="lblERRFecha"></label>
 
-                                    </div>
-                                    <div id="cajaHora">
-                                        <label for="horaCita">Hora: </label><label  for="fechaCita" id="lblERRHora"></label>
-                                        <input id="horaCita" type="time" value="13:00" step="900" min="8:00" max="16:00">
-                                    </div>
                                 </div>
+                                <div id="cajaHora">
+                                    <label for="horaCita">Hora: </label><label for="fechaCita" id="lblERRHora"></label>
+                                    <input id="horaCita" type="time" value="13:00" step="900" min="8:00" max="16:00">
+                                </div>
+                            </div>
 
-                                <button type="button" id="btnAgendar">Agendar</button>
-                            </form>
+                            <button type="button" id="btnAgendar">Agendar</button>
+                        </form>
                     </div>
 
                 </div>
@@ -406,6 +368,8 @@
     <script src="js/profileCE.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/starrr.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
     <script src="js/controlador.rating.js"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
@@ -449,28 +413,28 @@
 
     <!--Isaac-->
 
-        <!--Preguntas frecuentes PF-->
+    <!--Preguntas frecuentes PF-->
 
 
-        <!--Preguntas frecuentes PF-->
+    <!--Preguntas frecuentes PF-->
 
-            <script src="js/preguntasFrecuentes.servicio.js"></script>
-            <script src="js/preguntasFrecuentes.controller.listar.js"></script>
-        <!--PARA CUALQUIER USUARIO-->
+    <script src="js/preguntasFrecuentes.servicio.js"></script>
+    <script src="js/preguntasFrecuentes.controller.listar.js"></script>
+    <!--PARA CUALQUIER USUARIO-->
 
-        <!--Preguntas frecuentes CE y ADMIN-->
+    <!--Preguntas frecuentes CE y ADMIN-->
 
-            <script src="js/preguntasFrecuentes.controller.actualizar.js"></script>
-            <script src="js/preguntasFrecuentes.controller.eliminar.js"></script>
-            <script src="js/preguntasFrecuentes.controller.registrar.js"></script>
+    <script src="js/preguntasFrecuentes.controller.actualizar.js"></script>
+    <script src="js/preguntasFrecuentes.controller.eliminar.js"></script>
+    <script src="js/preguntasFrecuentes.controller.registrar.js"></script>
 
-        <!--Preguntas frecuentes CE y ADMIN-->
+    <!--Preguntas frecuentes CE y ADMIN-->
 
-        <!-- AGENDAR CITAS-->
-            <script src="js/citas.servicio.js"></script>
-            <script src="js/moment.js"></script>
-            <script src="js/citas.controller.registrar.js"></script>
-        <!-- AGENDAR CITAS-->
+    <!-- AGENDAR CITAS-->
+    <script src="js/citas.servicio.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/citas.controller.registrar.js"></script>
+    <!-- AGENDAR CITAS-->
     <!--Isaac-->
 
     <!-- Etiquetas -->
