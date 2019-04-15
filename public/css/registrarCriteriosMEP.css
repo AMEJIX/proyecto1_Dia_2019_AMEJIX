@@ -14,7 +14,7 @@ h1{
 form{
     display: block;
     margin: 0 auto;
-    width: 53%;
+    width: 50%;
     
 }
 
@@ -27,10 +27,10 @@ form{
 
 .lblInput{
     color: #2c3e50;
-    margin-right: 18px;
 
+   
     color: #2c3e50;
-   margin-right: 18px;
+ 
     display: inline-block;
     width: 280px;
     font-size: 25px;
@@ -40,8 +40,9 @@ form{
    color: #2c3e50;
    text-align: left;
    float: left;
-   margin-right: 126px;
-   width: 167px;
+   /* margin-right: 126px; */
+   width: 280px;
+   /* width: 167px; */
    font-size: 25px;
    
 

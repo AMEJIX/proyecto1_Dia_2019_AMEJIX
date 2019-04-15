@@ -21,14 +21,14 @@ h1{
 .filtroIzquierda{
     float: left;
     margin-top: 40px;
-    margin-left: 2%;
+    margin-left: 5%;
     margin-bottom: 50px;
 }
 
 .filtroDerecha{
     float: right;
     margin-top: 40px;
-    margin-right: 2%;
+    margin-right: 5%;
     margin-bottom: 50px;
 }
 
@@ -43,7 +43,7 @@ h1{
 .filtroIzquierda label{
     display: inline-block;
     width: 60px;
-    margin-left: 53px;
+ 
     font-size: 25px;
     margin-right: 42px;
 
@@ -292,6 +292,17 @@ input[type=text]:disabled{
 
 .errorInput{
     border: 1px solid #ED4C67;  
+}
+
+.inputSDescripcion{
+    width: 100%;
+}
+.inputSArticulo{
+    width: 100%;
+}
+
+.cantidad{
+    width: 30%;
 }
 
 .errorSelect{    

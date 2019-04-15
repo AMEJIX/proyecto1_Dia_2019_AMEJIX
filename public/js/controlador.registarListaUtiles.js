@@ -51,12 +51,14 @@ let mostrarArticulos = () => {
                 inputSArticulo.value = articulos[i]['nombre'];
                 inputSArticulo.disabled = 'disabled';
                 inputSArticulo.type = 'text';
-                // inputSArticulo.classList.add('inputDisabled');                
+                inputSArticulo.classList.add('inputSArticulo');                
                 stringArticulo.appendChild(inputSArticulo);
                 let inputSDescripcion = document.createElement('input');
                 inputSDescripcion.id = "inpDescripcion" + contador;
                 inputSDescripcion.value = articulos[i]['descripcion'];
                 inputSDescripcion.type = 'text';
+         
+                inputSDescripcion.classList.add('inputSDescripcion');
                 inputSDescripcion.disabled = 'disabled';
                 // inputSDescripcion.classList.add('inputDisabled');                
                 stringDescripcion.appendChild(inputSDescripcion);
