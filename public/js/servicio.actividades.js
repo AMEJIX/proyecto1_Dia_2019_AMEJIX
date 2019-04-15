@@ -52,7 +52,10 @@ let registrarActividad = (pactividad, pdescripcion, pfecha, parregloImgAct, pidC
         swal.fire({
             type: 'success',
             title: 'La actividad se ha registrado correctamente',
-            text: `La actividad ${pactividad} se registró con la descripción ${pdescripcion}`
+            text: `La actividad ${pactividad} se registró con la descripción ${pdescripcion}`,
+            onClose: () => {
+                window.location.href = 'listarActividadesPropiasCE.html';
+              }    
         });
       });
        

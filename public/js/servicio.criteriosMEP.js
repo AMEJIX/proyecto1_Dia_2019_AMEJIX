@@ -52,7 +52,10 @@ let listarCriterios= () =>{
         swal.fire({
             type: 'success',
             title: 'El criterio se ha registrado correctamente',
-            text: `El ${pcriterio} se registró con el puntaje ${ppuntaje}`
+            text: `El ${pcriterio} se registró con el puntaje ${ppuntaje}`,
+            onClose: () => {
+              window.location.href = 'listarCriteriosMEP.html';
+            }    
         });
       });
        

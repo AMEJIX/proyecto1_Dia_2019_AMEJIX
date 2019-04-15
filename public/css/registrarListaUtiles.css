@@ -11,17 +11,24 @@ h1{
     color: #2c3e50; */
 }
 
+.divRegistrar{
+    display: block;
+    margin-top: 50px;
+    margin-left: 5%;
+    
+}
+
 .filtroIzquierda{
     float: left;
     margin-top: 40px;
-    margin-left: 5%;
+    margin-left: 2%;
     margin-bottom: 50px;
 }
 
 .filtroDerecha{
     float: right;
     margin-top: 40px;
-    margin-right: 5%;
+    margin-right: 2%;
     margin-bottom: 50px;
 }
 
@@ -29,21 +36,35 @@ h1{
     display: inline-block;
     width: 60px;
     margin-left: 53px;
+    font-size: 25px;
+    margin-right: 42px;
+    
+}
+.filtroIzquierda label{
+    display: inline-block;
+    width: 60px;
+    margin-left: 53px;
+    font-size: 25px;
+    margin-right: 42px;
+
 }
 
 .txtFiltro{
     display: inline-block;
-    width: 250px;
+    width: 500px;
     height: 30px;
+    font-size: 25px;
     outline: none;
+    
 }
 
 
 #txtFiltro{
     display: inline-block;
-    width: 250px;
+    width: 500px;
     height: 30px;
     outline: none;
+    font-size: 25px;
 }
 
 
@@ -69,7 +90,8 @@ th{
     text-align: center;
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
-    vertical-align: middle;   
+    vertical-align: middle;
+    font-size: 25px;   
    
 }
 
@@ -81,6 +103,7 @@ th{
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
     vertical-align: middle;
+    font-size: 25px;
 /*     
     color: #344955;
     border: 1px solid #344955;
@@ -189,11 +212,27 @@ form div select{
     padding: 0 0 0 .5em;
     color: #fff;
     cursor: pointer;
+    font-size: 25px;
+    text-align: center;
 
 
     /* display: inline-block;
     width: 254px;
     height: 35px; */
+}
+#tblArticulos tbody td input{
+    font-size: 25px;
+    text-align: center;
+}
+.lblSelect{
+    color: #2c3e50;
+    margin-right: 18px;
+
+    color: #2c3e50;
+    margin-right: 5px;
+    display: inline-block;
+    width: 207px;
+    font-size: 25px;
 }
 
 select::-ms-expand {
@@ -257,6 +296,20 @@ input[type=text]:disabled{
 
 .errorSelect{    
     background-color: #ED4C67;
+}
+
+a{
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 25px;
+    
+
+}
+
+a:hover{    
+    text-decoration: none;
+    color: #f9aa33
+    
 }
 
 

@@ -129,3 +129,54 @@ module.exports.listarTodosCEEvaluados = (req, res) => {
 }
 
 
+
+
+module.exports.listarEvaluacionCE = (req, res)=>{        
+    modeloEvaluacionesCE.find({idCE: req.body.id}).sort({anno: -1}).then(
+        function(centroEducativoEvaluado){
+            if(centroEducativoEvaluado.length >0){
+                res.json(
+                    {
+                        success: true,
+                        centroEducativoEvaluado: centroEducativoEvaluado
+                    }
+                )
+            }else{
+                res.json(
+                    {
+                        success: false,
+                        centroEducativoEvaluado: 'No se encontraron evaluaciones para el centro educativo'
+                    }
+                )
+            }
+        }
+    )
+}; 
+
+
+
+
+module.exports.listarEstrellasCE = (req, res)=>{        
+    modeloEvaluacionesCE.find({anno: req.body.anno, idCE: req.body.idCE}).then(
+        function(estrellasCE){
+            if(estrellasCE.length >0){
+                res.json(
+                    {
+                        success: true,
+                        estrellasCE: estrellasCE
+                    }
+                )
+            }else{
+                res.json(
+                    {
+                        success: false,
+                        estrellasCE: 'No se encontró evaluación para el presente año'
+                    }
+                )
+            }
+        }
+    )
+}; 
+
+
+

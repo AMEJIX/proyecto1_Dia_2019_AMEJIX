@@ -4,6 +4,10 @@ const sectionCardsTop = document.querySelector('#seccionRankings');
 const selectTipoTop = document.querySelector('#selectTipoTop');
 const anno = new Date().getFullYear();
 
+if(user.userType == 'centroEducativo'){
+    window.location.href = 'loSentimos.html';
+}
+
 let mostrarDatosTop = () =>{
 
     let centrosETop = listarCETop(anno);    

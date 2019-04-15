@@ -16,14 +16,17 @@ h1{
 
 #divSelect select{
     display: inline-block;
-    width: 254px;
+    width: 500px;
+
     height: 35px;
+    font-size: 25px;
 }
 
 #divSelect label{
     display: inline-block;
     width: 60px;
     margin-left: 32px;
+    font-size: 25px;
 }
 
 section{
@@ -38,7 +41,7 @@ section{
 
 .cardCETop{
     display: flow-root;
-    width: 80%;
+    width: 77%;
     height: 140px;
     margin: 0 auto;
     /* -webkit-box-shadow: 2px 0 4px rgba(.08, .08, .08, .08);
@@ -62,7 +65,7 @@ section{
 
 .divPosicion{
     display: inline-block;
-    padding: 58px;
+    padding: 35px;
     float: left;
 }
 
@@ -76,13 +79,13 @@ section{
 
 .divNombre{
     display: inline-block;
-    padding: 58px;
+    padding: 35px;
     float: left;
     width: 40%;
 }
 .divEstrellas{
     display: inline-block;
-    padding: 45px;
+    padding: 35px;
     float: left;
 }
 

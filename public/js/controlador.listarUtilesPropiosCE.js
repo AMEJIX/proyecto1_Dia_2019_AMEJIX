@@ -1,6 +1,7 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
+
 const selectNivel = document.querySelector("#selectNivel");
 const tabla = document.querySelector("#tblUtiles tbody");
 const inputFiltro = document.querySelector("#txtFiltro");
@@ -10,7 +11,9 @@ const divDelBoton = document.querySelector('#idDivBoton');
 const divDelBotonActualizar = document.querySelector('#idDivBotonActualizar');
 const  IdUs = user._id;
 
-
+if(user.userType == 'padreFamilia'){
+    window.location.href = 'loSentimos.html';
+}
 
 let mostrarListas = () => {
     let nivel = selectNivel.value;

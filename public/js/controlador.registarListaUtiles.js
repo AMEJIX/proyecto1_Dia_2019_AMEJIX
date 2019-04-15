@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tabla = document.querySelector("#tblArticulos tbody");
 const inputFiltro = document.querySelector('#txtFiltro');
@@ -9,10 +9,23 @@ const selectNivel = document.querySelector('#selectNivel');
 const botonRegistrar = document.querySelector('#btnRegistrar');
 const IdGeneralCE = user._id;
 let numeroFilas = 0;
+const aListaUtil = document.querySelector('#aListaUtil');
+
+
 
 if (user.userType == 'padreFamilia') {
     window.location.href = 'loSentimos.html';
 }
+
+
+if(user.userType == 'superAdministrador'){
+    aListaUtil.href = 'listarUtilesOficialesSA.html';
+}
+
+if(user.userType == 'centroEducativo'){
+    aListaUtil.href = 'listarUtilesPropiosCE.html';
+}
+
 
 let articulos = listarArticulos();
 

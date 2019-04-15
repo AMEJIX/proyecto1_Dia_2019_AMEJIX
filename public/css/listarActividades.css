@@ -26,13 +26,16 @@ h1{
     display: inline-block;
     width: 60px;
     margin-left: 53px;
+    font-size: 25px;
+    margin-right: 42px;
 }
 
 #txtFiltro{
     display: inline-block;
-    width: 250px;
+    width: 500px;
     height: 30px;
     outline: none;
+    font-size: 25px;
 }
 
 section{
@@ -127,6 +130,7 @@ section{
     display: flex;    
     justify-content: center;
     margin-bottom: 30px;
+    padding-top: 20px;
 }
 
 th{
@@ -183,6 +187,7 @@ th{
 a{
     color: #2c3e50;
     text-decoration: none;
+    font-size: 25px;
     
 
 }
@@ -213,11 +218,15 @@ a:hover{
 }
 
 #btnEliminar:hover{
-    border:none;   
-    background: #4a6572;
     text-decoration: none;
-    color: #f9aa33;
+    color: #f9aa33
 
+}
+
+.pMsgNoImagen{
+    text-align: center;
+    font-size: 25px;
+    padding-top: 170px;
 }
 
 

@@ -1,8 +1,8 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 
-if(user.userType == 'padreFamilia'){
+if(user.userType == 'padreFamilia' || user.userType == 'superAdministrador'){
     window.location.href = 'loSentimos.html';
 };
 

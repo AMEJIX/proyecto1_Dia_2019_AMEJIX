@@ -72,7 +72,11 @@ let mostrarDatoArticulo = () =>{
             botonEliminar.addEventListener('click', eliminar =>{             
                 
                 eliminarFotoActividad(divImagenesTrash.id);
-                if(0 == v){
+                
+                if(0 == v && arregloImg.length == 1){
+                    stringImgActividades = stringImgActividades.replace(arregloImg[v],"");
+                }
+                else if(0 == v){
                     stringImgActividades = stringImgActividades.replace(arregloImg[v]+",","");
                     console.log(stringImgActividades);
                 }else{
