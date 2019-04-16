@@ -33,7 +33,7 @@ form{
  
     display: inline-block;
     width: 280px;
-    font-size: 25px;
+    font-size: 20px;
     
 }
 .lblTextArea{
@@ -43,7 +43,7 @@ form{
    /* margin-right: 126px; */
    width: 280px;
    /* width: 167px; */
-   font-size: 25px;
+   font-size: 20px;
    
 
 }
@@ -73,7 +73,7 @@ textarea{
     width: 500px;
     height: 200px;
     outline-color: #F9AA33;
-    font-size: 25px;
+    font-size: 20px;
  
  
 }
@@ -101,7 +101,7 @@ form div select{
    padding: 0 0 0 .5em;
    color: #fff;
    cursor: pointer;
-   font-size: 25px;
+   font-size: 20px;
 
 
     /* display: inline-block;
