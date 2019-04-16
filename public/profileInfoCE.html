@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
 
+    <link rel="stylesheet" href="css/encabezadoStars.css">
+    <link rel="stylesheet" href="css/listarActividadesPICE.css">
+    <link rel="stylesheet" href="css/listarArticulosPICE.css">
+    <link rel="stylesheet" href="css/listarUtilesPICE.css">
+
     <!-- <link rel="stylesheet" href="css/profileInfo.css"> -->
 
     <link rel="stylesheet" href="css/starrr.css">
@@ -99,7 +104,7 @@
                 <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                 <a href="listarCentrosEducativos.html">Buscar</a>
                 <a href="#" id="aFavoritos">Favoritos</a>
-                <a href="#">Top</a>
+                <a href="rankingStarsMEPSolicitudCE.html">Top</a>
                 <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
                 <!-- <a href="#" id="aActivarDesCE">Activar o desactivar</a> -->
                 <a href="administrarCE.html">Administrar cuentas</a>
@@ -149,7 +154,7 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
+                <a href="reporteRankingMEP.html">Ranking MEP</a>
                 <a href="#">Visitas</a>
                 <a href="#">Ranking por padres de familia</a>
             </div>
@@ -249,35 +254,94 @@
 
                     <div class="tabPanel">Noticias</div>
 
-                    <div class="tabPanel">Actividades</div>
+                    <div class="tabPanel">
+                        <h1 id="tituloActividaes">Actividades del centro educativo</h1>
+
+                        <div class="filtroDerechaActividades">
+                            <label for="txtFiltro">Buscar</label>
+                            <input type="text" id="txtFiltroActividades" placeholder="Escriba el nombre de la actividad">
+                        </div>
+                         
+                    <section id="sectionActividades">
+                    </section>    
+                    </div>
+
+
+                    
+                    <div class="tabPanel">
+                      
+                        <h1>Artículos escolares</h1>
+                        <div>
+                        
+                             <div class="filtroDerechaArticulos">
+                                 <label for="txtFiltro">Buscar</label>
+                                 <input type="text" id="txtFiltroArticulos" placeholder="Escriba el nombre del artículo">
+                             </div>
+                        
+                        </div>         
+                        
+                         <table id="tblArticulos">
+                             <thead>
+                                 <tr>
+                                     <th>Artículo escolar</th> 
+                                     <th>Descripción</th>                                 
+                                 </tr>
+                             </thead>
+                             <tbody>
+             
+                             </tbody>
+             
+                         </table>
+
+
+                    </div>
 
                     <div class="tabPanel">
-                        <h1>Artículos escolares</h1>
-
-                        <div class="filtro">
-                            <label for="txtFiltro">Buscar</label>
-                            <input type="text" id="txtFiltro" placeholder="Escriba el nombre del artículo">
-                        </div>
-
-
-                        <table id="tblArticulos">
+                        <h1 id="tituloUtiles">Lista de útiles escolares</h1>
+                        <form>        
+                            <div>
+                                <div class="filtroIzquierda">
+                                    <label for="selectNivel">Nivel escolar</label>
+                                    <select id="selectNivel">
+                                        <optgroup label="Escuela"></optgroup>
+                                        <option value="">Seleccione nivel</option>
+                                        <option value="1">Primero</option>
+                                        <option value="2">Segundo</option>
+                                        <option value="3">Tercero</option>
+                                        <option value="4">Cuarto</option>
+                                        <option value="5">Quinto</option>
+                                        <option value="6">Sexto</option>
+                                        <optgroup label="Colegio"></optgroup>
+                                        <option value="7">Séptimo</option>
+                                        <option value="8">Octavo</option>
+                                        <option value="9">Noveno</option>
+                                        <option value="10">Décimo</option>
+                                        <option value="11">Undécimo</option>
+                                        <option value="12">Duodécimo</option>
+                                    </select>
+                                </div>
+                                <div class="filtroDerecha">
+                                    <label for="txtFiltro" id="lblFiltroDerecha">Buscar</label>
+                                    <input type="text" id="txtFiltroUtiles" placeholder="Escriba el nombre del útil o de la lista">
+                                </div>
+                                </div>
+                                <div>
+                                </div>
+                        </form>
+                        <table id="tblUtilesPICE">
                             <thead>
                                 <tr>
-                                    <th>Artículo escolar</th>
+                                    <th>Lista</th>
+                                    <th>Nombre del útil</th>
                                     <th>Descripción</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
-
+                                    <th>Cantidad</th>
                                 </tr>
                             </thead>
                             <tbody>
-
                             </tbody>
-
                         </table>
-                    </div>
 
-                    <div class="tabPanel">Lista de útiles</div>
+                    </div>
 
                     <div class="tabPanel">
                         <div id="seccionPreguntasFrecuentes">
@@ -365,6 +429,8 @@
     <script src="js/style.js"></script>
     <script src="js/controlador.general.js"></script>
     <script src="js/servicio.profileCE.js"></script>
+    <script src="js/servicio.encabezadoEstrellas.js"></script>
+    <script src="js/encabezadoEstrellasProfileICE.js"></script>
     <script src="js/profileCE.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
@@ -400,14 +466,19 @@
 
 
     <!-- Actividades -->
-
+    <script src="js/servicio.actividades.js"></script>
+    <script src="js/controlador.listarActividades.js"></script>
 
     <!-- Articulos -->
+
+    <script src="js/servicio.articulos.js"></script>
+    <script src="js/controlador.listarArticulos.js"></script>
     <!-- <script src="js/servicio.articulos.js"></script>
     <script src="js/controlador.listarArticulos.js"></script> -->
 
     <!-- Lista de utiles -->
-
+    <script src="js/servicio.utiles.js"></script>
+    <script src="js/controlador.listarUtiles.js"></script>
 
     <!-- Preguntas Frecuentes -->
 

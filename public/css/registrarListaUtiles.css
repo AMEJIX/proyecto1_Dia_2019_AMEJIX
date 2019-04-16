@@ -36,7 +36,7 @@ h1{
     display: inline-block;
     width: 60px;
     margin-left: 53px;
-    font-size: 25px;
+    font-size: 20px;
     margin-right: 42px;
     
 }
@@ -44,7 +44,7 @@ h1{
     display: inline-block;
     width: 60px;
  
-    font-size: 25px;
+    font-size: 20px;
     margin-right: 42px;
 
 }
@@ -53,7 +53,7 @@ h1{
     display: inline-block;
     width: 500px;
     height: 30px;
-    font-size: 25px;
+    font-size:20px;
     outline: none;
     
 }
@@ -64,7 +64,7 @@ h1{
     width: 500px;
     height: 30px;
     outline: none;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 
@@ -91,7 +91,7 @@ th{
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
     vertical-align: middle;
-    font-size: 25px;   
+    font-size: 20px; 
    
 }
 
@@ -103,7 +103,7 @@ th{
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
     vertical-align: middle;
-    font-size: 25px;
+    font-size: 20px;
 /*     
     color: #344955;
     border: 1px solid #344955;
@@ -123,7 +123,7 @@ h1{
     display: block;
     margin-top: 30px;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     color: #2c3e50;
     margin-bottom: 60px;    
 }
@@ -221,7 +221,7 @@ form div select{
     height: 35px; */
 }
 #tblArticulos tbody td input{
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
 }
 .lblSelect{
@@ -232,7 +232,7 @@ form div select{
     margin-right: 5px;
     display: inline-block;
     width: 207px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 select::-ms-expand {
@@ -274,7 +274,7 @@ select::after {
     border: none;
     border-radius: 5px;
     outline: none;
-    margin-bottom: 25px;
+    margin-bottom: 100px;
     margin-top: 25px;
 }
 
@@ -312,7 +312,7 @@ input[type=text]:disabled{
 a{
     color: #2c3e50;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     
 
 }

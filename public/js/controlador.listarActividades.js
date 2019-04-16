@@ -1,19 +1,19 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 
-const inputFiltro = document.querySelector('#txtFiltro');
+const inputFiltroActividades = document.querySelector('#txtFiltroActividades');
 
 const sectionActividades = document.querySelector('#sectionActividades');
 
-if (user.userType == 'centroEducativao') {
-    window.location.href = 'loSentimos.html';
-}
+// if (user.userType == 'centroEducativao') {
+//     window.location.href = 'loSentimos.html';
+// }
 
 let mostrarActividades = () => {   
     let actividades = listarActividades(IdGeneralCE);
     sectionActividades.innerHTML = '';
-    let filtro = inputFiltro.value;
+    let filtro = inputFiltroActividades.value;
 
     if (actividades !== "No se encontraron actividades registradas") {
         for (let i = 0; i < actividades.length; i++) {
@@ -134,4 +134,4 @@ let mostrarActividades = () => {
 
 mostrarActividades();
 
-inputFiltro.addEventListener('keyup', mostrarActividades);
+inputFiltroActividades.addEventListener('keyup', mostrarActividades);

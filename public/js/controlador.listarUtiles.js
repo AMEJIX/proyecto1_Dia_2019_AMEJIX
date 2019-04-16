@@ -3,8 +3,8 @@
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const selectNivel = document.querySelector("#selectNivel");
-const tabla = document.querySelector("#tblUtiles tbody");
-const inputFiltro = document.querySelector("#txtFiltro");
+const tablaUtiles = document.querySelector("#tblUtilesPICE tbody");
+const inputFiltroUtiles = document.querySelector("#txtFiltroUtiles");
 
 if(user.userType == 'centroEducativo'){
     window.location.href = 'loSentimos.html';
@@ -17,15 +17,15 @@ let utiles = listarUtilesNivel();
 let mostrarUtiles = () =>{  
      
     let nivel = selectNivel.value;
-    if (validar() == false){
+    if (validarSelectUtiles() == false){
         let utiles = listarUtilesNivel(nivel, IdGeneralCE);  
-        let filtro = inputFiltro.value;  
-        tabla.innerHTML = '';
+        let filtro = inputFiltroUtiles.value;  
+        tablaUtiles.innerHTML = '';
         
         if(utiles !== "No se encontraron útiles escolares registrados"){
             for(let i=0; i<utiles.length; i++){
                 if(utiles[i]['nombreLista'].toLowerCase().includes(filtro.toLowerCase()) || utiles[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
-                    let fila = tabla.insertRow();
+                    let fila = tablaUtiles.insertRow();
                     fila.insertCell().innerHTML = utiles [i]  ['nombreLista'];
                     fila.insertCell().innerHTML = utiles [i]  ['nombre'];
                     fila.insertCell().innerHTML = utiles [i]  ['descripcion'];
@@ -33,13 +33,13 @@ let mostrarUtiles = () =>{
                 }      
             }
         }else{                
-            tabla.innerHTML = 'No existen útiles registrados para este nivel';  
+            tablaUtiles.innerHTML = 'No existen útiles registrados para este nivel';  
         }  
     }
    
 };
 
-let validar = () => {
+let validarSelectUtiles = () => {
     let error = false;
 
     if(selectNivel.value == ''){
@@ -54,7 +54,7 @@ let validar = () => {
 }
 
 selectNivel.addEventListener('change', mostrarUtiles);
-inputFiltro.addEventListener('keyup', mostrarUtiles);
+inputFiltroUtiles.addEventListener('keyup', mostrarUtiles);
 
 
 
