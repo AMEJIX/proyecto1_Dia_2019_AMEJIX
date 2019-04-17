@@ -205,7 +205,7 @@ let eliminarComentarios = (p_id, nombre) => {
         confirmButtonText: 'Sí, eliminar'
     }).then((result) => {
         if (result.value) {
-            
+
             eliminarComentario(p_id, nombre);
         } else {
         }
