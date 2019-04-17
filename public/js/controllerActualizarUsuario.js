@@ -85,6 +85,7 @@ function setDivisionPolitica(data) {
 
     setProvincias("selectProvincias", "selectCantones", "selectDistritos")
     setProvincias("selectProvinciasCE", "selectCantonesCE", "selectDistritosCE")
+    setProvincias("selectProvinciasSA", "selectCantonesSA", "selectDistritosSA")
 }
 divisionPolitica(setDivisionPolitica)
 
@@ -1135,8 +1136,20 @@ inputPuestoSA.value = user.puesto;
 const inputTelSA = document.querySelector('#txtTelefonoSA')
 inputTelSA.value = user.telefono;
 
+const imagenSA = document.querySelector('#imagePreviewSA');
+imagenSA.src = user.imagenPF;
+
+
 const buttonActualizarSA = document.querySelector('#buttonActualizarSA');
 
+const selectProvinciaSA = document.querySelector('#selectProvinciasSA')
+const selectCantonSA = document.querySelector('#selectCantonesSA')
+const selectDistritoSA = document.querySelector('#selectDistritoSA')
+
+
+// selectProvinciaSA.value = user.provincia;
+// selectCantonSA.value = user.canton;
+// selectDistritoSA.value = user.distrito;
 
 
 
@@ -1216,9 +1229,14 @@ function obtenerDatosSA() {
 
         let estado = "Activo";
 
-        let imagenPF = fotoRegistroPF.src;
+        let imagenSARegistrar = imagenSA.src;
 
         let id = user._id;
+
+        let provincia = selectProvinciaSA.value;
+        let canton = selectCantonSA.value;
+        let distrito = selectProvinciaSA.value;
+
 
 
         actualizarSA(userType,
@@ -1230,10 +1248,13 @@ function obtenerDatosSA() {
             nacionalidad,
             email,
             telefono,
-            imagenPF,
+            imagenSARegistrar,
             estado,
             id,
-            puesto
+            puesto,
+            provincia,
+            canton,
+            distrito
         )
 
         console.log('console.log(`La información fue enviada correctamente`);')

@@ -4,8 +4,12 @@ const tabla = document.querySelector('#tableBitacora');
 
 let mostrarDatos = () => {
 
+
     let bitacoras = listarBitacora();
 console.log(bitacoras)
+
+
+
     for (let i = 0; i< bitacoras.length; i++) {
         let fila = tabla.insertRow();
 
@@ -18,4 +22,8 @@ console.log(bitacoras)
 };
 
 
+
 mostrarDatos();
+
+
+//No se encontraron movimientos

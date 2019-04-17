@@ -1,6 +1,19 @@
 
 
 
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenido{
+    font-family: 'Raleway', sans-serif;
+    outline-color: #F9AA33;
+
+}
+
+
 #registroPadreFamilia, #registroCentroEducativo{
     display: none;
 }

@@ -11,6 +11,7 @@ $(function() {
     let buttonCEP = $('#fotoCEP')
     let buttonPF = $('#fotoPF')
     let buttonDocumento = $('#buttonAgregarDocumento')
+    let buttonSA = $('#fotoSA')
     // Upload button event
     uploadButton.on('click', function(e){
         // Initiate upload
@@ -52,6 +53,20 @@ $(function() {
              console.log(id);
             imagenUrl = 'https://res.cloudinary.com/sicen/image/upload/' + id ;
             document.querySelector('#imagePreviewPF').src = imagenUrl;
+          console.log(imagenUrl);
+        });
+    })
+
+    buttonSA.on('click', function(e){
+        // Initiate upload
+        cloudinary.openUploadWidget({ cloud_name: 'sicen', upload_preset: 'sicenAmejix', tags: ['cgal']},
+        function(error, result) {
+            if(error) console.log(error);
+            // If NO error, log image data to console
+            let id = result[0].public_id;
+             console.log(id);
+            imagenUrl = 'https://res.cloudinary.com/sicen/image/upload/' + id ;
+            document.querySelector('#imagePreviewSA').src = imagenUrl;
           console.log(imagenUrl);
         });
     })

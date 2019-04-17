@@ -190,7 +190,7 @@ let actualizarPF = (userType, nombre, segundoNombre, apellido, segundoApellido, 
 
                 swal.fire({
                     type: 'success',
-                    title: 'exito',
+                    title: 'Éxito',
                     text: res.msg,
                     showConfirmButton: true,
                     onClose: () => {
@@ -283,7 +283,7 @@ let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, 
 
                 swal.fire({
                     type: 'success',
-                    title: 'exito',
+                    title: 'Éxito',
                     text: res.msg,
                     showConfirmButton: true,
                     onClose: () => {
@@ -307,7 +307,7 @@ let actualizarCE = (userType, centroEducativo, cedulaJuridica, nombreComercial, 
 
 };
 
-let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, imagenPF, estado, id, puesto) => {
+let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, identificacion, nacionalidad, email, telefono, imagenPF, estado, id, puesto, provincia, canton, distrito) => {
     let request = $.ajax({
 
         url: "http://localhost:4000/api/actualizar",
@@ -325,7 +325,10 @@ let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, 
             imagenPF: imagenPF,
             estado: estado,
             id: id,
-            puesto: puesto
+            puesto: puesto,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
@@ -344,7 +347,7 @@ let actualizarSA = (userType, nombre, segundoNombre, apellido, segundoApellido, 
 
                 swal.fire({
                     type: 'success',
-                    title: 'exito',
+                    title: 'Éxito',
                     text: res.msg,
                     showConfirmButton: true,
                     onClose: () => {

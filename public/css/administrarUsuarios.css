@@ -94,3 +94,22 @@ td, th {
     text-decoration: none;
     color: #f9aa33
 }
+
+
+input{
+    outline-color: #f9aa33;
+}
+
+
+.yellowButton{
+    display: block;
+    margin-left: 5%;
+    padding: 14px 50px;
+    background-color: #f9aa33;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 200px;
+}

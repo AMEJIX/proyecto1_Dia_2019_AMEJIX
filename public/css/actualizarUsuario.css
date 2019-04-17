@@ -1,6 +1,25 @@
 
 
+#imagePreviewSA{
+    display:block;
+    margin: 0 auto;
+}
+.divImagen{
+    display: block;
+    width: 100%;
+    height: 330px;
 
+}
+
+.divButtonSubirImagen{
+    display: block;
+    width: 100%
+}
+
+.imageHolder{
+    display: block;
+    width: 100%
+}
 
 
 #registroPadreFamilia, #registroCentroEducativo, #registroSA{
@@ -13,13 +32,26 @@
     
 } */
 
+.contenido{
+    font-family: 'Raleway', sans-serif;
+    outline-color: #F9AA33;
 
+
+}
+
+#subContenido{
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+}
 
 textarea {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
+
 
 span {
     /* border: 1px solid black; */
@@ -31,8 +63,10 @@ span {
 }
 
 img{
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 300%;
+    max-height: 300%;
+    display: block;
+    margin: 0 auto;
 }
 
 

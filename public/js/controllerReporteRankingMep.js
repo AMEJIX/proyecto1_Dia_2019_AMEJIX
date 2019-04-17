@@ -5,6 +5,17 @@
 const tabla = document.querySelector('#tblUsuarios tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 
+const buttonPrint = document.querySelector('#buttonPrint');
+buttonPrint.addEventListener('click', imprimir)
+
+function imprimir() {
+
+    window.print();
+}
+
+
+
+
 if (user.userType == 'centroEducativo' || user.userType == 'padreFamilia') {
     window.location.href = 'loSentimos.html';
 }
