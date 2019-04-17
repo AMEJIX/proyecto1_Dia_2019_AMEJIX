@@ -1,6 +1,7 @@
 'use strict';
 
 const materialModel = require('./material.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 module.exports.registrar = (req, res) => {
     let nuevoMaterial = new materialModel(
@@ -21,6 +22,23 @@ module.exports.registrar = (req, res) => {
                 }
             );
         } else {
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+
+
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.nombre,
+                tipoDeMovimiento: "Registro de material informativo",
+                fecha: diaActual,
+            })
+            nuevaBitacora.save();
             res.json(
                 {
                     success: true,

@@ -14,7 +14,7 @@ if (location.pathname.split("/").slice(-1) == 'profileInfoCE.html' && daUser.use
     form.insertAdjacentHTML('beforeend', `<div class="errorUser">Solo los padres de familia pueden agendar cita.</div>`);
 }
 
- if(daUser.daUserType === 'centroEducativo' || NombreGeneralCE === ''){
+ if(daUser.daUserType === 'centroEducativo' || NombreGeneralCE == ''){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
 }
 

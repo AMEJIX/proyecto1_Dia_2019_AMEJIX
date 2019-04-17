@@ -39,7 +39,7 @@ h1 {
 
 #frmInformativo input {
     display: inline-block;
-    width: 290px;
+    width: 420px;
     height: 30px;
     outline-color: #f9aa33;
 }
@@ -51,7 +51,7 @@ h1 {
 
 #frmInformativo textarea {
     resize: none;
-    width: 300px;
+    width: 428px;
     height: 175px;
     font-family: 'Raleway', sans-serif;
     outline-color: #f9aa33;

@@ -1,10 +1,11 @@
 'use strict';
 
-let registrarMaterialInformativo = (ptema, pdescripcion, pfile, pIdCentro) => {
+let registrarMaterialInformativo = (pnombre, ptema, pdescripcion, pfile, pIdCentro) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarMaterialInformativo",
         method: "POST",
         data: {
+            nombre: pnombre,
             tema: ptema,
             descripcion: pdescripcion,
             file: pfile,

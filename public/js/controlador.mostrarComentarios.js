@@ -33,14 +33,130 @@ let mostrarComentarios = () => {
         userName.textContent = comentarios[i]['userName'];
 
         let starsRate = document.createElement('div');
+        // starsRate.textContent = comentarios[i]['stars'];
         starsRate.classList.add('starrr');
 
-        $('.starrr').starrr({
-            rating: comentarios[i]['stars'],
-            readOnly: true
-        });
+        let star1;
+        let star2;
+        let star3;
+        let star4;
+        let star5;
 
-        console.log(comentarios[i]['stars']);
+        switch (comentarios[i]['stars']) {
+
+            case 1:
+                star1 = document.createElement('i');
+                star1.innerHTML = '<i class="fas fa-star"></i>';
+                star1.classList.add('starColor');
+
+                star2 = document.createElement('i');
+                star2.innerHTML = '<i class="fa fa-star-o"></i>';
+                star2.classList.add('starColor');
+
+                star3 = document.createElement('i');
+                star3.innerHTML = '<i class="fa fa-star-o"></i>';
+                star3.classList.add('starColor');
+
+                star4 = document.createElement('i');
+                star4.innerHTML = '<i class="fa fa-star-o"></i>';
+                star4.classList.add('starColor');
+
+                star5 = document.createElement('i');
+                star5.innerHTML = '<i class="fa fa-star-o"></i>';
+                star5.classList.add('starColor');
+                break;
+
+            case 2:
+                star1 = document.createElement('i');
+                star1.innerHTML = '<i class="fas fa-star"></i>';
+                star1.classList.add('starColor');
+
+                star2 = document.createElement('i');
+                star2.innerHTML = '<i class="fas fa-star"></i>';
+                star2.classList.add('starColor');
+
+                star3 = document.createElement('i');
+                star3.innerHTML = '<i class="fa fa-star-o"></i>';
+                star3.classList.add('starColor');
+
+                star4 = document.createElement('i');
+                star4.innerHTML = '<i class="fa fa-star-o"></i>';
+                star4.classList.add('starColor');
+
+                star5 = document.createElement('i');
+                star5.innerHTML = '<i class="fa fa-star-o"></i>';
+                star5.classList.add('starColor');
+                break;
+
+            case 3:
+                star1 = document.createElement('i');
+                star1.innerHTML = '<i class="fas fa-star"></i>';
+                star1.classList.add('starColor');
+
+                star2 = document.createElement('i');
+                star2.innerHTML = '<i class="fas fa-star"></i>';
+                star2.classList.add('starColor');
+
+                star3 = document.createElement('i');
+                star3.innerHTML = '<i class="fas fa-star"></i>';
+                star3.classList.add('starColor');
+
+                star4 = document.createElement('i');
+                star4.innerHTML = '<i class="fa fa-star-o"></i>';
+                star4.classList.add('starColor');
+
+                star5 = document.createElement('i');
+                star5.innerHTML = '<i class="fa fa-star-o"></i>';
+                star5.classList.add('starColor');
+                break;
+
+            case 4:
+                star1 = document.createElement('i');
+                star1.innerHTML = '<i class="fas fa-star"></i>';
+                star1.classList.add('starColor');
+
+                star2 = document.createElement('i');
+                star2.innerHTML = '<i class="fas fa-star"></i>';
+                star2.classList.add('starColor');
+
+                star3 = document.createElement('i');
+                star3.innerHTML = '<i class="fas fa-star"></i>';
+                star3.classList.add('starColor');
+
+                star4 = document.createElement('i');
+                star4.innerHTML = '<i class="fas fa-star"></i>';
+                star4.classList.add('starColor');
+
+                star5 = document.createElement('i');
+                star5.innerHTML = '<i class="fa fa-star-o"></i>';
+                star5.classList.add('starColor');
+                break;
+
+            case 5:
+                star1 = document.createElement('i');
+                star1.innerHTML = '<i class="fas fa-star"></i>';
+                star1.classList.add('starColor');
+
+                star2 = document.createElement('i');
+                star2.innerHTML = '<i class="fas fa-star"></i>';
+                star2.classList.add('starColor');
+
+                star3 = document.createElement('i');
+                star3.innerHTML = '<i class="fas fa-star"></i>';
+                star3.classList.add('starColor');
+
+                star4 = document.createElement('i');
+                star4.innerHTML = '<i class="fas fa-star"></i>';
+                star4.classList.add('starColor');
+
+                star5 = document.createElement('i');
+                star5.innerHTML = '<i class="fas fa-star"></i>';
+                star5.classList.add('starColor');
+                break;
+
+            default:
+                break;
+        }
 
         let comment = document.createElement('p');
         comment.classList.add('comment');
@@ -55,13 +171,18 @@ let mostrarComentarios = () => {
             botonEliminar.classList.add('btnEliminar');
 
             botonEliminar.addEventListener('click', eliminar => {
-                eliminarComentario(comentarios[i]['_id']);
+                eliminarComentarios(comentarios[i]['_id']);
             });
             comment.appendChild(botonEliminar);
         }
 
         commentInfo.appendChild(userPic);
         commentInfo.appendChild(userName);
+        starsRate.appendChild(star1);
+        starsRate.appendChild(star2);
+        starsRate.appendChild(star3);
+        starsRate.appendChild(star4);
+        starsRate.appendChild(star5);
 
 
         cajaComentarios.appendChild(commentInfo);
@@ -72,17 +193,20 @@ let mostrarComentarios = () => {
 
 mostrarComentarios();
 
-let eliminarComentarios = (p_id) => {
-    Swal.fire({
+
+let eliminarComentarios = (p_id, nombre) => {
+    swal.fire({
         title: '¿Está seguro que desea eliminar el comentario?',
         type: 'warning',
         showCancelButton: true,
+        showConfirmButton: true,
         confirmButtonColor: '#d33',
         cancelButtonColor: '#dddddd',
         confirmButtonText: 'Sí, eliminar'
     }).then((result) => {
         if (result.value) {
-            eliminarComentario(p_id);
+            
+            eliminarComentario(p_id, nombre);
         } else {
         }
 
