@@ -31,7 +31,6 @@
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
                     <a href="" id="logOut">Cerrar sesión</a>
-                    </ul>
                 </div>
             </div>
 
@@ -149,14 +148,31 @@
             </div> -->
 
             <div class="inputStandard">
-                <div>
-                          <label for="txtFiltro">Buscar</label>
-                      </div>
-                      <div>
-                          <input type="text" id="txtFiltro" placeholder="Nombre del centro educativo">
-                      </div>
+            <div>
+                      <label for="txtFiltro">Buscar</label>
+                  </div>
+                  <div>
+                      <input type="text" id="txtFiltro" placeholder="Nombre del centro educativo">
+                  </div>
+            </div>
+
+            <div id="divEtiquetas">
+                <!--<label for="sltEtiquetas" id="lblEtiquetas">Etiquetas</label>-->
+
+                <div id="sltEtiquetasDiv">
+                    <select id="sltEtiquetas">
+                        <!--<optgroup label="Etiquetas"></optgroup>-->
+                        <option value="" hidden>-- Busque por etiquetas --</option>
+                    </select>
                 </div>
-                
+                <table id="tblEtiquetasSeleccionadas">
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+
 
             <table id="tblUsuarios">
                 <thead>
@@ -173,6 +189,8 @@
 
                 </tbody>
             </table>
+
+
         </div>
     </main>
 
@@ -202,6 +220,7 @@
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/criteriosBusqueda.servicio.js"></script>
     <script src="js/servicio.listarUsuarios.js"></script>
     <script src="js/controlador.listarCE.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
