@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="css/preguntasFrecuentes2.0.css">
     <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css">
     <link rel="stylesheet" href="css/citas.css">
+    <link rel="stylesheet" href="css/marcarDesmarcarEtiquetas.css">
 
 </head>
 
@@ -177,6 +178,22 @@
                             <span class="number-rating"></span> -->
                         </div>
                     </div>
+                </div>
+
+                <div id="divEtiquetas">
+                    <!--<label for="sltEtiquetas" id="lblEtiquetas">Etiquetas</label>-->
+
+                    <div id="sltEtiquetasDiv">
+                        <select id="sltEtiquetas">
+                            <!--<optgroup label="Etiquetas"></optgroup>-->
+                            <option value="" hidden>Agregue una etiqueta...</option>
+                        </select>
+                    </div>
+                    <table id="tblEtiquetasSeleccionadas">
+                        <tbody>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -399,7 +416,7 @@
                     <div class="tabPanel">Etiquetas</div>
 
                     <div class="tabPanel">
-                        <h1 class="tituloAgendar">Agendar cita</h1>
+                        <h1 id="tituloAgendar">Agendar cita</h1>
 
                         <form id="frmAgendar">
                             <div id="cajaFechaHora">
@@ -507,6 +524,14 @@
     <script src="js/moment.js"></script>
     <script src="js/citas.controller.registrar.js"></script>
     <!-- AGENDAR CITAS-->
+
+    <!-- Marcar y desmarcar etiquetas-->
+
+    <script src="js/criteriosBusqueda.servicio.js"></script>
+    <script src="js/marcarDesmarcarEtiquetas.js"></script>
+
+    <!-- Marcar y desmarcar etiquetas-->
+
     <!--Isaac-->
 
     <!-- Etiquetas -->

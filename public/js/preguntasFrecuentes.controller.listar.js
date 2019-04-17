@@ -146,6 +146,14 @@ function mostrarPreguntasFrecuentes() {
                         // document.getElementById(`${listaPreguntasFrecuentes[i]['_id']}`).style.backgroundColor = '#EDF0F5';
 
                     });
+                } else {
+                    for(let i of document.querySelectorAll('.respuesta')){
+                        i.style.maxWidth = '600px';
+                        i.style.paddingLeft = '20px';
+                    }
+                    for(let i of document.querySelectorAll('.pregunta')){
+                        i.style.maxWidth = '600px';
+                    }
                 }
 
             } else{

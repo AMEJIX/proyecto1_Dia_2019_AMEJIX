@@ -104,15 +104,15 @@ h1 {
     color: white;
 }
 
-#tblEtiquetasSeleccionadas tbody td {
+#tblEtiquetasSeleccionadas tbody tr td {
     color: #2c3e50;
     text-align: center;
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
-    width: 200px;
+    width: 33%;
 }
 
-#tblEtiquetasSeleccionadas tbody td:hover {
+#tblEtiquetasSeleccionadas tbody tr td:hover {
     color: #f9aa33;
 }
 
@@ -160,12 +160,24 @@ h1 {
 #lblEtiquetas{
     color: #2c3e50;
 }
+
 #tblUsuarios a:hover{
     text-decoration: none;
     color: #f9aa33
 }
 
 .awesome_images i {
-    float: right;
     display: inline-block;
+}
+.awesome_images{
+    float: right;
+
+}
+.awesome_images i:hover {
+    color: white;
+}
+
+#cargando{
+    position: relative;
+    left: 200px;
 }

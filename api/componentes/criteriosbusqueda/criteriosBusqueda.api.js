@@ -1,6 +1,7 @@
 'use strict';
 
 const modeloCriteriosBusqueda = require('./criteriosBusqueda.model');
+const modeloCriteriosBusquedaCE = require('./criteriosBusqueda.ce.model');
 const modeloBitacora = require('../bitacora/bitacora.model');
 
 
@@ -90,6 +91,7 @@ module.exports.registrarCriterioBusqueda = (req, res) =>{
     });
 };
 
+
 module.exports.listarCriteriosBusqueda = (req, res) =>{
     modeloCriteriosBusqueda.find().sort({nombre: 'asc'}).then(
         function (criteriosBusqueda) {
@@ -111,6 +113,7 @@ module.exports.listarCriteriosBusqueda = (req, res) =>{
         }
     );
 };
+
 
 module.exports.getEtiqueta = (req, res) =>{
     // console.log(modeloCriteriosBusqueda.find().then(eti =>{res.json({eti})}));
@@ -199,3 +202,139 @@ module.exports.eliminar = (req, res) =>{
         }
     );
 };
+
+
+// CE ------------------------------------------------------------------------------------------------------------------
+
+module.exports.marcarCriterioBusquedaCE = (req, res) =>{
+    let nuevoCriterioBusquedaCE = new modeloCriteriosBusquedaCE(
+        {
+            nombre: req.body.nombre,
+            idCE: req.body.idCE
+        }
+    );
+
+    nuevoCriterioBusquedaCE.save(function (error) {
+        if (error){
+            res.json(
+                {
+                    success: false,
+                    msg: `Falló el registro. Ocurrió el siguiente error: ${error}`
+                }
+            );
+        } else {
+            /**************************Bitacora*/
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.responsable,
+                tipoDeMovimiento: "Registro de criterio de búsqueda de ce",
+                fecha: diaActual,
+            });
+            nuevaBitacora.save();
+            /**************************/
+
+            res.json(
+                {
+                    success: true,
+                    msg: `El registro del criterio de búsqueda de centro educativo fue exitoso`
+                }
+            );
+        }
+    });
+};
+
+module.exports.eliminarCriterioBusquedaCE = (req, res) =>{
+    modeloCriteriosBusquedaCE.findByIdAndDelete(req.body.id,
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo eliminar la etiqueta'});
+            }else{
+
+                /**************************Bitacora*/
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.responsable,
+                    tipoDeMovimiento: "Eliminación de criterio de búsqueda",
+                    fecha: diaActual,
+                });
+                nuevaBitacora.save();
+                /**************************/
+
+                res.json({success: true , msg : 'La etiqueta se eliminó con éxito'});
+            }
+        }
+    );
+};
+
+module.exports.listarCriteriosBusquedaCE = (req, res) =>{
+    modeloCriteriosBusquedaCE.find().sort({nombre: 'asc'}).then(
+        criteriosBusqueda => {
+
+            // console.log(req.body.idCE);
+            let etiquetasCE = [];
+
+            for (let etiqueta of criteriosBusqueda){
+                if (etiqueta.idCE === req.body.idCE){
+                    etiquetasCE.push(etiqueta);
+                }
+            }
+            if (etiquetasCE.length > 0) console.log(etiquetasCE);
+            if (etiquetasCE.length > 0){
+                res.json(
+                    {
+                        success: true,
+                        etiquetasCE: etiquetasCE
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        etiquetasCE: 'No se encontró ningún criterio de búsqueda de ese centro educativo'
+                    }
+                );
+            }
+        }
+    );
+};
+
+module.exports.getEtiquetaCE = (req, res) =>{
+    // console.log(modeloCriteriosBusqueda.find().then(eti =>{res.json({eti})}));
+
+    modeloCriteriosBusquedaCE.findOne({_id: req.body.id}).then(
+        function (etiqueta) {
+            if (etiqueta){
+                res.json(
+                    {
+                        success: true,
+                        etiqueta: Object.assign({}, etiqueta)
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        etiqueta: 'No se encontró la etiqueta'
+                    }
+                );
+            }
+        }
+    );
+};
+
