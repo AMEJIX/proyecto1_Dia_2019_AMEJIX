@@ -1,6 +1,6 @@
 
 
-h1{
+#tituloUtiles{
     display: block;
     margin-top: 30px;
     text-align: center;
@@ -12,7 +12,6 @@ h1{
     display: block;
     margin-top: 50px;
     margin-left: 5%;
-
     
 }
 
@@ -38,12 +37,12 @@ h1{
 }
 
 
-#txtFiltro{
+#txtFiltroUtiles{
     display: inline-block;
     width: 500px;
     height: 30px;
     outline: none;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 /* 
@@ -57,25 +56,31 @@ form div select{
     display: inline-block;
     width: 220px;
     height: 35px;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
 }
-form div{
-    margin-right: 90px;
 
-    
- }
  form div label{
     display: inline-block;
     width: 153px;
    
-    font-size: 20px;
-    margin-right: 42px;
-    text-align: center;
+    font-size: 16px;
+   
+    text-align: left;
     
     
     
 }
+
+#lblFiltroDerecha{
+    display: inline-block;
+    width: 60px;
+    /* margin-left: 53px; */
+    font-size: 16px;
+    /* margin-right: 42px; */
+    text-align: left;
+}
+
 
 #tablaNombreListaU{
     border-collapse: collapse;
@@ -87,13 +92,15 @@ form div{
 
 
 
-#tblUtiles{    
+#tblUtilesPICE{    
     border-collapse: collapse;
     margin-left: 32px;
-    margin-bottom: 50px;
+    
     width: 90%;
     margin: 0 auto;
     margin-top: 149px;
+    margin-bottom: 150px;
+    
 }
 
 th{
@@ -103,7 +110,7 @@ th{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 20px;
+    font-size: 16px;
     
 }
 
@@ -112,18 +119,18 @@ th{
     border: #2c3e50 solid 1px;
     text-align: center;
     padding: 8px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
-#tblUtiles tbody tr td{
+#tblUtilesPICE tbody tr td{
     color: #344955;
     border: #2c3e50 solid 1px;
     text-align: center;
     padding: 8px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
-.errorSelect{    
+/* .errorSelect{    
     background-color: #ED4C67;
 }
 
@@ -175,12 +182,12 @@ th{
     background: #f9bf33;
     cursor: pointer;
     transition: all 300ms ease;
-}
+} */
 
-a{
+/* a{
     color: #2c3e50;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     
 
 }
@@ -189,4 +196,4 @@ a:hover{
     text-decoration: none;
     color: #f9aa33
     
-}
+} */

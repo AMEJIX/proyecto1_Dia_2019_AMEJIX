@@ -124,6 +124,8 @@ form div select{
 
 .divImagenesTrash{
     display: inline-block;
+    height: 61%;
+    width: 20%;
 }
 
 
@@ -136,7 +138,7 @@ form div select{
     border: none;
     border-radius: 5px;
     outline: none;
-    margin-bottom: 25px;
+    margin-bottom: 150px;
     margin-top: 25px;
 }
 
@@ -152,8 +154,28 @@ form div select{
     margin-bottom: -50px;
 }
 
-.imageActividadAgregada{
-    height: 147px;
-    width: 60%;
+
+
+#btnEliminar{
+    border: none;
+    background-color: transparent;
+    color: #2c3e50;
+    font-size: 15px;
+
 }
 
+#btnEliminar:hover{
+    text-decoration: none;
+    color: #f9aa33
+
+}
+
+
+.imageActividadAgregada{  
+
+    height: 147px;
+    width: 51%;
+    margin-left: 5px;
+    margin-bottom: 5px;
+
+}

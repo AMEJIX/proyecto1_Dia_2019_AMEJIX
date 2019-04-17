@@ -2,14 +2,10 @@
 
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 
-const tabla = document.querySelector("#tblArticulos tbody");
-const inputFiltro = document.querySelector('#txtFiltro');
+const tablaArticulos = document.querySelector("#tblArticulos tbody");
+const inputFiltroArticulos = document.querySelector('#txtFiltroArticulos');
 // const IdGeneralCE = user._id;
 
-
-if(user.userType == 'padreFamilia'){
-    window.location.href = 'loSentimos.html';
-}
 
 let articulos = listarArticulos(); 
 
@@ -17,67 +13,31 @@ let mostrarArticulos = () =>{
        
         let articulos = listarArticulos(IdGeneralCE);
         
-        let filtro = inputFiltro.value;                
-        tabla.innerHTML = '';
+        let filtro = inputFiltroArticulos.value;                
+        tablaArticulos.innerHTML = '';
 
     if (articulos !== "No se encontraron artículos escolares registrados") {
         
         for (let i = 0; i < articulos.length; i++) {
             if(articulos[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())) {
                 
-
-                let fila = tabla.insertRow();
+                let fila = tablaArticulos.insertRow();
                 fila.insertCell().innerHTML = articulos[i]['nombre'];
-                fila.insertCell().innerHTML = articulos[i]['descripcion'];
-                // let celdaConfiguracion = fila.insertCell();
-                // let celdaEliminar = fila.insertCell();
-
-                // let botonEditar = document.createElement('a');
-                // botonEditar.textContent = 'Editar';
-                // botonEditar.href = `actualizarArticulos.html?idArticulo=${articulos[i]['_id']}`
-                // celdaConfiguracion.appendChild(botonEditar);
-
-                // let botonEliminar = document.createElement('button');
-                // // botonEliminar.textContent = 'Eliminar';
-                // botonEliminar.id = 'btnEliminar';   
-                // // botonEliminar.classList('class="fas fa-edit modificar')
-                // botonEliminar.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i>';             
-                // botonEliminar.addEventListener('click', eliminar =>{
-                //     eliminarArticuloControlador(articulos[i]['_id']);
-                // });
-                // celdaEliminar.appendChild(botonEliminar);
+                fila.insertCell().innerHTML = articulos[i]['descripcion'];                
             }
-
         };
 
     }else{
-        tabla.innerHTML = "No se encontraron artículos escolares registrados";
+        tablaArticulos.innerHTML = "No se encontraron artículos escolares registrados";
     }
           
 };
 
-
 mostrarArticulos();
 
-inputFiltro.addEventListener('keyup', mostrarArticulos);
+inputFiltroArticulos.addEventListener('keyup', mostrarArticulos);
 
-let eliminarArticuloControlador=(p_id)=>{
-    Swal.fire({
-        title: '¿Está seguro que desea eliminar el artículo escolar?',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#dddddd',
-        confirmButtonText: 'Sí, eliminar'
-    }).then((result) => {
-        if (result.value) {    
-            eliminarArticulo(p_id);          
-        } else {    
-        }
-      
-    })
-    
-}
+
 
 
 

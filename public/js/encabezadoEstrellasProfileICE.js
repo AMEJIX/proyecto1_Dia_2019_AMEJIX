@@ -1,26 +1,15 @@
 'use strict';
 
+const divEstrellas = document.querySelector('.stars');
 
-const divEstrellas = document.querySelector('#divEstrellas');
-
-const idCentroE = user._id;
-const annoBuscarEstrellas = new Date().getFullYear();
-let estrellas = listarEstrellasPropias(annoBuscarEstrellas, idCentroE); 
-
-
-function ocultar() {   
-    if (userLog.userType == "padreFamilia") {
-        document.querySelector('#divGeneralEstrellas').style.display = 'none';  
-    } else if (userLog.userType == "superAdministrador") {
-        document.querySelector('#divGeneralEstrellas').style.display = 'none';  
-    }
-}
-
-ocultar();
+// const idCentroE = user._id;
+const annoActual = new Date().getFullYear();
+let estrellas = listarEstrellasPropias(annoActual, IdGeneralCE); 
 
 
 
-let mostrarEstrellasEncabezado = () =>{
+
+let mostrarEstrellas = () =>{
                  
         let h2Estrellas = document.createElement('h2');
         h2Estrellas.classList.add('estrellas');
@@ -89,7 +78,7 @@ let mostrarEstrellasEncabezado = () =>{
     }
 
 if(estrellas){
-    mostrarEstrellasEncabezado();
+    mostrarEstrellas();
 }
     
 

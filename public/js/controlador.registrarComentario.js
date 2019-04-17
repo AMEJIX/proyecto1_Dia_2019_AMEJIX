@@ -3,11 +3,27 @@
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 let centroEducativo = listarUsuariosCEencabezado(IdGeneralCE);
 
+const ratings = document.querySelector('.starrr')
 const inputComentario = document.querySelector('#inputComentario');
 const btnEnviarComment = document.querySelector('#send');
+let value = 0;
+
+$('.starrr').starrr({
+    rating:0,
+    change:function(e,valor){
+        value = valor;
+    }
+});
 
 let validarComments = () => {
     let error = false;
+
+    if (value === 0) {
+        error = true;
+        ratings.classList.add('errorInput');
+    } else {
+        ratings.classList.remove('errorInput');
+    }
 
     if (inputComentario.value == '') {
         error = true;
@@ -28,11 +44,14 @@ let obtenerDatos = () => {
         }
         let userName = user.nombre += " " + user.apellido;
         // stars
+
+        let stars = value;
+
         let comment = inputComentario.value;
         let idCentroEducativo = IdGeneralCE;
 
         // registrarComentario(stars, inputComentario, idCentroEducativo);
-        registrarComentario(userPhoto, userName, comment, idCentroEducativo);
+        registrarComentario(userPhoto, userName, stars, comment, idCentroEducativo);
 
     } else {
         swal.fire({

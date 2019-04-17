@@ -18,6 +18,12 @@ router.param('id', (req, res, next, id) =>{
     next();
 });
 
+router.param('idCE', (req, res, next, idCE) =>{
+    req.body.idCE = idCE;
+
+    next();
+});
+
 router.route('/validarEtiqueta/:nombre')
     .get(
         function (req, res) {
@@ -59,4 +65,31 @@ router.route('/administrador/eliminarEtiqueta')
         }
     );
 
+router.route('/centroEducativo/marcarCriterioBusqueda')
+    .post(
+        function (req, res) {
+            apiCriteriosBusqueda.marcarCriterioBusquedaCE(req, res);
+        }
+    );
+
+router.route('/centroEducativo/desmarcarEtiqueta/:id')
+    .post(
+        (req, res) =>{
+            apiCriteriosBusqueda.eliminarCriterioBusquedaCE(req, res);
+        }
+    );
+
+router.route('/centroEducativo/listarCriteriosBusqueda/:idCE')
+    .get(
+        function (req, res) {
+            apiCriteriosBusqueda.listarCriteriosBusquedaCE(req, res);
+        }
+    );
+
+router.route('centroEducativo/obtenerCriterioBusqueda/:idCE&nombre/:nombre')
+    .get(
+        (req, res) =>{
+            apiCriteriosBusqueda.getEtiqueta(req, res);
+        }
+    );
 module.exports = router;

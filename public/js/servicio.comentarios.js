@@ -1,13 +1,15 @@
 'use strict';
 
-let registrarComentario = (puserPhoto, puserName, pcomment, pIdCentro) => {
+let IdCentro = IdGeneralCE;
+
+let registrarComentario = (puserPhoto, puserName, pstars, pcomment, pIdCentro) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarComentario",
         method: "POST",
         data: {
             userPhoto: puserPhoto,
             userName: puserName,
-            // pstars: pstars,
+            stars: pstars,
             comment: pcomment,
             idCE: pIdCentro
         },
@@ -21,7 +23,7 @@ let registrarComentario = (puserPhoto, puserName, pcomment, pIdCentro) => {
             title: 'El comentario se ha registrado correctamente.',
             text: `Se registró correctamente.`,
             onClose: () => {
-                window.location.href = 'profileInfoCE.html?idCE='+pIdCentro ;
+                window.location.reload();
             }
         });
     });
@@ -54,11 +56,12 @@ let listaComentariosUser = (idCE) => {
     return listaComentarios;
 };
 
-let eliminarComentario = (p_id) => {
+let eliminarComentario = (p_id, pnombre) => {
     let request = $.ajax({
         url: 'http://localhost:4000/api/eliminarComentario',
         method: "POST",
         data: {
+            nombre: pnombre,
             id: p_id
         },
         dataType: "json",
@@ -71,7 +74,7 @@ let eliminarComentario = (p_id) => {
             title: 'Comentario eliminado con éxito',
             text: res.msg,
             onClose: () => {
-                window.location.href = 'profileInfoCE.html';
+                window.location.reload();
             }
         });
 

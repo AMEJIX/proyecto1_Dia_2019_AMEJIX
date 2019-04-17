@@ -73,24 +73,111 @@ h1 {
 
 }
 
-th {
+#tblUsuarios thead th {
     background: #f9aa33;
     color: white;
 }
 
-td {
+#tblUsuarios tbody td {
     color: #2c3e50;
 }
 
 
+/*TABLA ETIQUERTAS*/
 
-td, th {
+
+#tblEtiquetasSeleccionadas {
+    border-collapse: collapse;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#tblEtiquetasSeleccionadas a{
+    text-decoration: none;
+    color: #2c3e50;
+
+}
+
+#tblEtiquetasSeleccionadas thead th {
+    background: #f9aa33;
+    color: white;
+}
+
+#tblEtiquetasSeleccionadas tbody tr td {
+    color: #2c3e50;
     text-align: center;
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
+    width: 33%;
+}
+
+#tblEtiquetasSeleccionadas tbody tr td:hover {
+    color: #f9aa33;
+}
+
+#divEtiquetas{
+    width: 90vh;
+    margin: 20px auto;
+}
+
+#sltEtiquetasDiv{
+    /*margin:20px auto 40px auto;*/
+    margin-right: 100px;
+    border:1px solid #d9d9d9;
+    height:40px;
+    overflow: hidden;
+    width: 275px;
+    position:relative;
+}
+
+#sltEtiquetasDiv:after {
+    content:"\025be";
+    display:table-cell;
+    padding-top:7px;
+    text-align:center;
+    width:36px;
+    height:36px;
+    background-color:#d9d9d9;
+    position:absolute;
+    top:0;
+    right:0px;
+    pointer-events: none;
+}
+
+#sltEtiquetas:focus{ outline: none;}
+
+#sltEtiquetas{
+    background: transparent;
+    border: none;
+    padding: 5px;
+    width: 275px;
+    height: 40px;
+    color: #2c3e50;
+    font-size: 20px;
+}
+
+#lblEtiquetas{
+    color: #2c3e50;
 }
 
 #tblUsuarios a:hover{
     text-decoration: none;
     color: #f9aa33
+}
+
+.awesome_images i {
+    display: inline-block;
+}
+.awesome_images{
+    float: right;
+
+}
+.awesome_images i:hover {
+    color: white;
+}
+
+#cargando{
+    position: relative;
+    left: 200px;
 }

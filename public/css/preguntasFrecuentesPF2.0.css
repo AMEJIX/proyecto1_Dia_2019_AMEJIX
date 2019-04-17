@@ -24,6 +24,8 @@ h1 {
     margin: 0 auto;
 }
 
+
+
 #tblPreguntasFrecuentesPF{
     /*background: white;*/
     /*position: relative;*/
@@ -55,7 +57,7 @@ h1 {
     color: #232f34;
 }
 .pregunta, .respuesta{
-    text-align: justify;
+    text-align: left;
 }
 #tblPreguntasFrecuentesPF tr{
     height: 100px;

@@ -92,3 +92,16 @@ fieldset{
     font-size: 15px;
     border-radius: 5px;
 }
+
+.aRegistrar {
+    display: block;
+    margin-left: 5%;
+    margin-top: 45px;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.aRegistrar:hover {
+    color: #f9aa33;
+    transition: all 300ms;
+}

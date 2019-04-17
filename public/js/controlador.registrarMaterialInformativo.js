@@ -34,12 +34,13 @@ let validar = () => {
 
 let obtenerDatos = () => {
     if (validar() == false) {
+        let nombre = user.centroEducativo;
         let tema = inputTema.value;
         let descripcion = text.value;
         let file = documentPreview.src;
         let idCentroEducativo = idCE;
 
-        registrarMaterialInformativo(tema, descripcion, file, idCentroEducativo);
+        registrarMaterialInformativo(nombre, tema, descripcion, file, idCentroEducativo);
 
     } else {
         swal.fire({

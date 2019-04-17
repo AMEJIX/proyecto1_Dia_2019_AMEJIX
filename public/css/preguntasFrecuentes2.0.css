@@ -44,9 +44,9 @@
     display: block;
     margin-top: 40px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     color: #2c3e50;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 #txtPregunta, #txtRespuesta {
     width: 355px;
@@ -60,7 +60,7 @@
 }
 form#frmRegistrarPregunta div label{
     display: block;
-    width: 190px;
+    width: 300px;
     margin-bottom: 10px;
 }
 #cajaRegistrarPregunta  {
@@ -69,8 +69,13 @@ form#frmRegistrarPregunta div label{
 #cajaRegistrarRespuesta  {
     margin: 0 auto;
 }
+
+#cajaRegistrarRespuesta label, #cajaRegistrarPregunta label{
+    width: 300px;
+}
+
 .pregunta{
-    font-size: 24px;
+    font-size: 26px;
     color: #344955;
 }
 #error {
@@ -90,12 +95,13 @@ form#frmRegistrarPregunta div label{
 .respuesta{
     display: inline-block;
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 20px;
 }
 .pregunta, .respuesta{
-    text-align: justify;
+    text-align: left;
 }
 .respuesta{
+    padding-left: 20px;
     float: left;
 }
 .pregunta *, .respuesta *{
@@ -133,16 +139,26 @@ button#btnEnviar{
     margin-top: 70px;
     margin-bottom: 50px;
 }
-.awesome_images{
+#preguntasFrecuentesCE\&Admin .awesome_images{
     display: none;
     margin: 5px;
     height: 100%;
 }
-.awesome_images i{
+#preguntasFrecuentesCE\&Admin .awesome_images i{
     height: 100%;
     margin-bottom: 5px;
     color: #344955;
+    font-size: 20px;
 }
+
+#preguntasFrecuentesCE\&Admin .awesome_images i.fa-edit{
+    margin-right: 5px;
+}
+
+#preguntasFrecuentesCE\&Admin .awesome_images i.fa-trash-alt{
+    margin-right: 5px;
+}
+
 .modoCambio{
     /*border: 2px #F9AA33 solid;*/
     background: #ffffff;
@@ -157,7 +173,7 @@ button#btnEnviar{
     background: #344955;
     color: white;
 }
-.awesome_images i:hover{
+#preguntasFrecuentesCE\&Admin .awesome_images i:hover{
     color: #f9aa33;
 }
 /*#preguntasFrecuentesCE\&Admin{*/
@@ -172,4 +188,12 @@ button#btnEnviar{
 #preguntasFrecuentesCE\&Admin{
     background: white;
 
+}
+
+#preguntasFrecuentesCE\&Admin p{
+    font-size: 24px;
+}
+
+#preguntasFrecuentesCE\&Admin label{
+    font-size: 20px;
 }

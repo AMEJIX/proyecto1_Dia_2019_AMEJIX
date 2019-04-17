@@ -45,8 +45,8 @@ let getCriteriosBusqueda = () =>{
         swal.fire(
             {
                 type: 'warning',
-                title: 'Ya existe',
-                text: `No puede agregar una etiqueta que ya ha sido registrada`,
+                title: 'Error',
+                text: `No se encontraron las etiquetas`,
                 showConfirmButton: true,
                 timer: 1500
             }
@@ -119,6 +119,7 @@ let modificarEtiqueta = (pnombre, pid, presponsable) =>{
 
 };
 
+
 let deleteEtiqueta = (pid, presponsable) =>{
     let request = $.ajax({
         url : 'http://localhost:4000/api/administrador/eliminarEtiqueta',
@@ -185,4 +186,130 @@ let registrarCriterioBusqueda = (pnombre, presponsable) =>{
     request.fail(function (jqXHR, textStatus) {
 
     });
+};
+
+let marcarCriterioBusqueda = (pnombre, pidCE, presponsable) =>{
+    let request = $.ajax(
+        {
+            url: "http://localhost:4000/api/centroEducativo/marcarCriterioBusqueda",
+            method: "POST",
+            data: {
+                nombre : pnombre,
+                idCE: pidCE,
+                responsable: presponsable
+            },
+            contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json"
+        }
+    );
+
+    request.done(function (msg) {
+        swal.fire(
+            {
+                type: 'success',
+                title: 'Se registró correctamente el criterio de búsqueda',
+                text: `El criterio de búsqueda se ha añadido a las opciones de etiquetas de búsqueda.`,
+                showConfirmButton: false,
+                timer: 1500
+            }
+        );
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+};
+
+
+let desmarcarEtiqueta = (id, presponsable) =>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/centroEducativo/desmarcarEtiqueta/'+id,
+        method : "POST",
+        data : {
+            id : id,
+            responsable: presponsable
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+
+    request.done(function(res){
+
+
+        swal.fire({
+            type : 'success',
+            title : 'Etiqueta de búsqueda eliminada',
+            text : res.msg,
+            onClose: () => {
+                location.reload();
+            }
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'No se pudo desmarcar la etiqueta',
+            text : res.msg
+        });
+
+    });
+
+};
+
+let getCriteriosBusquedaMarcados = (idCE) =>{
+    let lista = [];
+    let request = $.ajax(
+        {
+            url: "http://localhost:4000/api/centroEducativo/listarCriteriosBusqueda/" + idCE,
+            method: "GET",
+            data: {},
+            contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            async: false
+        }
+    );
+
+    request.done(function (res) {
+        lista = res.etiquetasCE;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        swal.fire(
+            {
+                type: 'error',
+                title: 'Error',
+                text: `No se pudieron obtener los criterios de búsqueda de este centro educativo`,
+                showConfirmButton: true,
+                timer: 1500
+            }
+        );
+    });
+
+    return lista;
+};
+
+let getCriterioBusquedaCE = (idCE, nombre) =>{
+    let etiqueta = '';
+    let request = $.ajax(
+        {
+            url: "http://localhost:4000/api/obtenerCriterioBusqueda/" + idCE + "&nombre/" +nombre,
+            method: "GET",
+            data: {},
+            contentType:  'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            async: false
+        }
+    );
+
+    request.done(function (res) {
+        etiqueta = Object.assign({}, res.etiquetasCE);
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        console.log('Ocurrió un error');
+    });
+
+    return etiqueta;
 };

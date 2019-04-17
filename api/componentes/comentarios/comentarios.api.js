@@ -1,6 +1,7 @@
 'use strict';
 
 const comentariosModel = require('./comentarios.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 module.exports.registrar = (req, res) => {
     let nuevoComentario = new comentariosModel(
@@ -22,6 +23,23 @@ module.exports.registrar = (req, res) => {
                 }
             );
         } else {
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+
+
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.userName,
+                tipoDeMovimiento: "Registro de comentario",
+                fecha: diaActual,
+            })
+            nuevaBitacora.save();
             res.json(
                 {
                     success: true,
@@ -58,6 +76,23 @@ module.exports.eliminar = function (req, res) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo eliminar el comentario' });
             } else {
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+    
+    
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombre,
+                    tipoDeMovimiento: "Eliminación de comentario",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
                 res.json({ success: true, msg: 'El comentario se eliminó con éxito' });
             }
         })

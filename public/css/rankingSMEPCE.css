@@ -21,7 +21,7 @@ h1{
 a{
     color: #2c3e50;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     
 
 }
@@ -42,7 +42,7 @@ a:hover{
     display: inline-block;
     width: 60px;
     margin-left: 53px;
-    font-size: 25px;
+    font-size: 20px;
     margin-right: 42px;
 }
 
@@ -59,7 +59,7 @@ a:hover{
     width: 500px;
     height: 30px;
     outline: none;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .filtro label{
@@ -120,7 +120,7 @@ th{
    padding: 12px 1px;
    border: #2c3e50 solid 1px;
    vertical-align: middle;  
-   font-size: 25px; 
+   font-size: 20px; 
    
 }
 
@@ -132,7 +132,7 @@ th{
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
     vertical-align: middle;
-    font-size: 25px;
+    font-size: 20px;
 
 }
 #tblRankingCeMEP tbody tr td:hover{

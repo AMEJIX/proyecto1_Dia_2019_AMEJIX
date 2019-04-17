@@ -22,8 +22,10 @@ function ocultar() {
         document.querySelector('#verPadres').style.display = 'none';
         document.querySelector('#aPreguntasCE').style.display = 'none';
         document.querySelector('#reportesSA').style.display = 'none';
-        document.querySelector('#aEliminarCE').style.display = 'none';
-        document.querySelector('#aActivarDesCE').style.display = 'none';
+        // document.querySelector('#aEliminarCE').style.display = 'none';
+        // document.querySelector('#aActivarDesCE').style.display = 'none'; 
+        // document.querySelector('#adminCE').style.display = 'none';
+        // document.querySelector('#adminPF').style.display = 'none';
         document.querySelector('#reportesCE').style.display = 'none';
         document.querySelector('#aEvaluarCE').style.display = 'none';
 
