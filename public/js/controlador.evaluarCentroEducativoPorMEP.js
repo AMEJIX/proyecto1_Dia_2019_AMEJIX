@@ -5,7 +5,7 @@ const conectado = sessionStorage.getItem('conectado');
 const tipo_usuario = user.userType;
 
 const tablaCE = document.querySelector('#tablaListaCE tbody');
-const tablaCriterios = document.querySelector('#tblCriteriosMEP');
+const tablaCriterios = document.querySelector('#tblCriteriosMEP tbody');
 const tablaRangos = document.querySelector('#tblRangoCriteriosMEP');
 const inputTotal = document.querySelector('#inpTotal');
 const inputEstrellas = document.querySelector('#inpEstrellas');
@@ -82,16 +82,20 @@ function mostrarCE() {
             let celdaCheckBox = fila.insertCell();
     
             let checkBox = document.createElement('input');
-            checkBox.type = 'checkbox'; 
+
+            
+            checkBox.type = 'number'; 
+            checkBox.id = 'idCheckBox'+i;
+            checkBox.min = '0';
+            checkBox.max = criterios [i] ['puntaje'];
             checkBox.classList.add('claseCheck'); 
                            
             checkBox.addEventListener('change', actualizarTotal=>{
-                if(checkBox.checked){
-                    mostrarTotal(criterios [i] ['puntaje'], rangos);  
-                }else{
-                    mostrarTotal(criterios [i] ['puntaje']*-1, rangos);
-                }
-                             
+            let puntajeMinimo = 0;
+            let puntajeMaximo = criterios [i] ['puntaje'];
+                    mostrarTotal(checkBox.id, puntajeMinimo, puntajeMaximo, rangos);  
+                    console.log(checkBox.id);
+                  
             });
             celdaCheckBox.appendChild(checkBox);    
         }
@@ -127,19 +131,58 @@ function mostrarCE() {
     }
 
 
+    let numeroPuntaje = 0;
+  
+    let arregloInputPuntaje = [];
+    let arregloSumaPuntaje = [];
 
-    let aux = 0;
-    let mostrarTotal = (ppuntajeCriterio, prangos) =>{
-        aux = aux + ppuntajeCriterio;
-        inputTotal.value = aux;
-      
+    inputTotal.value = 0;
+    let mostrarTotal = (pidCheck, pvalorMinimo, pvalorMaximo, prangos) =>{
+        let aux = 0;
+        let validarPuntajeCheckError = false;
+
+        let indice = pidCheck.replace('idCheckBox', "");
+        console.log("el indice: "+indice);
+       
+            
+        if(Number(document.querySelector('#'+pidCheck).value) >= Number(pvalorMinimo) && Number(document.querySelector('#'+pidCheck).value) <= Number(pvalorMaximo)){           
+
+            if(arregloInputPuntaje.length == 0 ){              
+                arregloInputPuntaje[indice] = pidCheck;
+                arregloSumaPuntaje[indice] = Number(document.querySelector('#'+pidCheck).value);
+            }else if(arregloInputPuntaje[indice] == '' || arregloInputPuntaje[indice] == undefined){
+                arregloInputPuntaje[indice] = pidCheck;
+                arregloSumaPuntaje[indice] = Number(document.querySelector('#'+pidCheck).value);
+            }else{
+                arregloSumaPuntaje[indice] = Number(document.querySelector('#'+pidCheck).value);
+            }
+            
+            for(let e = 0; e<arregloSumaPuntaje.length; e++){
+                if(arregloSumaPuntaje[e] == undefined){
+                    arregloSumaPuntaje[e] = 0;
+                }
+                aux = aux + Number(arregloSumaPuntaje[e]);
+                inputTotal.value = aux; 
+                
+            }       
+
+            document.querySelector('#'+pidCheck).classList.remove('errorInput');
+           
+        }else{
+            
+            document.querySelector('#'+pidCheck).classList.add('errorInput');
+           validarPuntajeCheckError = true;
+           funcionValidarPuntajeCheckError(validarPuntajeCheckError);
+        }
+        
+
         mostrarEstrellas(inputTotal.value, prangos);
     }
 
     let mostrarEstrellas = (pTotal, prangos) =>{        
        
         let totalEvaluacion = pTotal;
-console.log(totalEvaluacion);
+
         for(let i = 0; i<prangos.length; i++){
             
             let valorMinimo = prangos [i] ['valorMinimo'];
@@ -157,7 +200,11 @@ console.log(totalEvaluacion);
    
     let validar = () => {
         let error = false;   
-        
+        for(let r = 0; r< document.getElementsByClassName('claseCheck').length; r++){
+            if( document.getElementsByClassName('claseCheck')[r].classList.contains('errorInput')){
+                error = true;
+            }               
+        }
         if(inputTotal.value == ''){
             error = true;
             inputTotal.classList.add('errorSelect');
@@ -176,6 +223,12 @@ console.log(totalEvaluacion);
         
 
         return error;
+    }
+
+    let funcionValidarPuntajeCheckError = (pvalidarPuntaje) => {
+        let errorValidarPuntaje = false;
+        errorValidarPuntaje = pvalidarPuntaje;
+
     }
 
     let validarAnno = () =>{    

@@ -4,8 +4,8 @@
 const divEstrellas = document.querySelector('#divEstrellas');
 
 const idCentroE = user._id;
-const anno = new Date().getFullYear();
-let estrellas = listarEstrellasPropias(anno, idCentroE); 
+const annoBuscarEstrellas = new Date().getFullYear();
+let estrellas = listarEstrellasPropias(annoBuscarEstrellas, idCentroE); 
 
 
 function ocultar() {   
@@ -20,7 +20,7 @@ ocultar();
 
 
 
-let mostrarEstrellas = () =>{
+let mostrarEstrellasEncabezado = () =>{
                  
         let h2Estrellas = document.createElement('h2');
         h2Estrellas.classList.add('estrellas');
@@ -89,7 +89,7 @@ let mostrarEstrellas = () =>{
     }
 
 if(estrellas){
-    mostrarEstrellas();
+    mostrarEstrellasEncabezado();
 }
     
 

@@ -2,7 +2,7 @@
 
 const sectionCardsTop = document.querySelector('#seccionRankings');
 const selectTipoTop = document.querySelector('#selectTipoTop');
-const anno = new Date().getFullYear();
+const annoTop = new Date().getFullYear();
 
 if(user.userType == 'centroEducativo'){
     window.location.href = 'loSentimos.html';
@@ -10,7 +10,7 @@ if(user.userType == 'centroEducativo'){
 
 let mostrarDatosTop = () =>{
 
-    let centrosETop = listarCETop(anno);    
+    let centrosETop = listarCETop(annoTop);    
     for(let  i=0; i<centrosETop.length; i++){
         centrosETop[i]['posicion'] = i+1;
         if(centrosETop[i]['imagen'] ==  'sinImagen'){

@@ -64,25 +64,33 @@ let mostrarDatoArticulo = () =>{
             nuevoImg.src = arregloImg[v];
 
             stringImgActividades = stringImgActividades == "" ? nuevoImg.src : stringImgActividades + "," + nuevoImg.src;   
+   
+            let arregloImagenes = [];
+            arregloImagenes = stringImgActividades.split(',');
 
-           
             let botonEliminar = document.createElement('button');
             botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
             botonEliminar.id = 'btnEliminar';                       
             botonEliminar.addEventListener('click', eliminar =>{             
                 
                 eliminarFotoActividad(divImagenesTrash.id);
-                
-                if(0 == v && arregloImg.length == 1){
+                    
+                if(arregloImagenes.length == 1 && 0 == v  ){
+                    
                     stringImgActividades = stringImgActividades.replace(arregloImg[v],"");
+                    console.log('entró acá');
+
                 }
                 else if(0 == v){
                     stringImgActividades = stringImgActividades.replace(arregloImg[v]+",","");
                     console.log(stringImgActividades);
+                    arregloImagenes = stringImgActividades.split(',');
                 }else{
                     stringImgActividades = stringImgActividades.replace(","+arregloImg[v],"");      
-                    console.log(stringImgActividades);             
+                    console.log(stringImgActividades); 
+                    arregloImagenes = stringImgActividades.split(',');            
                 }
+
             });
 
             divImagenesTrash.appendChild(nuevoImg);
@@ -110,12 +118,15 @@ let eliminarFotoActividad = (pidElementoImagen) => {
 let j = 0;
 function obtenerImagenVarias(){
     let sectionImgActividades = document.querySelector('.sctImagenes');
-  
+    let divImagenesAgregadas = document.createElement('div');
+    divImagenesAgregadas.classList.add('divImagenesTrash');
     let nuevoImg = document.createElement('img');
     nuevoImg.style.display = 'inline-block';
     nuevoImg.classList.add('imageActividadAgregada');
     nuevoImg.src = imagenActividad.src;
-    sectionImgActividades.appendChild(nuevoImg);
+    divImagenesAgregadas.appendChild(nuevoImg);
+    
+    sectionImgActividades.appendChild(divImagenesAgregadas);
 
     stringImgActividades = stringImgActividades == "" ? nuevoImg.src : stringImgActividades + "," + nuevoImg.src; 
     

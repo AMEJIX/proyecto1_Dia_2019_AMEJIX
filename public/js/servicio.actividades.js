@@ -32,7 +32,7 @@ let listarActividades= (pIdCentro) =>{
 
 
 
-let registrarActividad = (pactividad, pdescripcion, pfecha, parregloImgAct, pidCentroEducativo) =>{
+let registrarActividad = (pactividad, pdescripcion, pfecha, parregloImgAct, pidCentroEducativo, pnombreUsuario) =>{
     
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarActividad",
@@ -42,7 +42,8 @@ let registrarActividad = (pactividad, pdescripcion, pfecha, parregloImgAct, pidC
             descripcion : pdescripcion,
             fecha : pfecha,
             imagen : parregloImgAct,
-            idCE : pidCentroEducativo            
+            idCE : pidCentroEducativo,
+            nombreUsuario : pnombreUsuario           
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType : "json"

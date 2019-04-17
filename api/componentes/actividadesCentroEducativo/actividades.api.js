@@ -1,6 +1,7 @@
 'use strict'
 
 const modeloActividad = require('./actividades.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 module.exports.registrar = (req, res) =>{
     
@@ -22,7 +23,27 @@ module.exports.registrar = (req, res) =>{
                 msg: `No se pudo registrar la actividad, ocurrió el siguiente error ${error}`
             });
         }else{
+
+
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.nombreUsuario,
+                tipoDeMovimiento: "Registro de actividad",
+                fecha: diaActual,
+            })
+            nuevaBitacora.save();
+
+
             res.json({
+
                 success: true,
                 msg: `La actividad se ha registrado correctamente`
             });
@@ -76,6 +97,24 @@ module.exports.actualizar = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo actualizar la actividad'});
             }else{
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Actualización de actividad",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
+
                 res.json({success: true , msg : 'La actividad se actualizó con éxito'});
             }
         }
@@ -89,6 +128,24 @@ module.exports.eliminar = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo eliminar la actividad'});
             }else{
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Eliminación de actividad",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
+
                 res.json({success: true , msg : 'La actividad se eliminó con éxito'});
             }
         })

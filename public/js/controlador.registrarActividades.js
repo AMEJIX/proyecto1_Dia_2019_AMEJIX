@@ -1,7 +1,7 @@
 'use strict';
 
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
-
+let nombreUsuario = user.centroEducativo;
 if(user.userType == 'padreFamilia' || user.userType == 'superAdministrador'){
     window.location.href = 'loSentimos.html';
 };
@@ -105,7 +105,7 @@ function obtenerDatosActividad(){
         inputDescripcion.value = '';
         inputFecha.value = '';
         
-        registrarActividad(actividad, descripcion, fechaCorrecta, stringImgActividades, idCentroEducativo);
+        registrarActividad(actividad, descripcion, fechaCorrecta, stringImgActividades, idCentroEducativo, nombreUsuario);
 
     }else{
         swal.fire({

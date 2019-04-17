@@ -38,7 +38,7 @@ font-size: 25px;
 .lblTextArea{
    color: #2c3e50;
    text-align: left;
-   font-size: 25px;
+   font-size: 20px;
    float: left;
    margin-right: 126px;
    width: 207px;
@@ -51,7 +51,7 @@ form div input{
     width: 500px;
     height: 30px;
     outline-color: #F9AA33;
-    font-size: 25px;
+    font-size: 20px;
 
 /* 
     display: inline-block;
@@ -71,7 +71,7 @@ textarea{
     width: 500px;
     height: 200px;
     outline-color: #F9AA33;
-    font-size: 25px;
+    font-size: 20px;
  
 }
 form div select{
