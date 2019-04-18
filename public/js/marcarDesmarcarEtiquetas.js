@@ -25,7 +25,7 @@ if (user.userType == 'padreFamilia' || user.userType == 'superAdministrador' ){
 let desmarcarEtiquetaCE = (pid, presponsable) =>{
 
     Swal.fire({
-        title: '¿sEstá seguro que desea desmarcar la etiqueta?',
+        title: '¿Está seguro que desea desmarcar la etiqueta?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#d33',
