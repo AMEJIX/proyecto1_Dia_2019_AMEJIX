@@ -34,10 +34,10 @@
     <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css">
     <link rel="stylesheet" href="css/citas.css">
     <link rel="stylesheet" href="css/marcarDesmarcarEtiquetas.css">
-    <link rel="stylesheet" href="css/mostrarIdiomas.css">
-    <link rel="stylesheet" href="css/mostrarNoticias.css">
-    <link rel="stylesheet" href="css/mostrarBecas.css">
     <link rel="stylesheet" href="css/mostrarMatriculaCostos.css">
+    <link rel="stylesheet" href="css/mostrarIdiomas.css">
+    <link rel="stylesheet" href="css/mostrarBecas.css">
+    <link rel="stylesheet" href="css/mostrarNoticias.css">
 
 </head>
 
@@ -206,7 +206,8 @@
                 <div class="tabContainer">
                     <div class="buttonContainer">
                         <button onclick="showPanel(0, '#fff')">Información</button>
-                        <button onclick="showPanel(1, '#fff')">Matrícula</button>
+                        <button onclick="showPanel(1, '#fff')">Matrículas</button>
+                        <button onclick="showPanel(1, '#fff')">Idiomas</button>
                         <button onclick="showPanel(2, '#fff')">Becas</button>
                         <button onclick="showPanel(3, '#fff')">Material Informativo</button>
                         <button onclick="showPanel(4, '#fff')">Noticias</button>
@@ -256,9 +257,9 @@
                             <label for="inputBuscar" id="labelBuscar">Buscar</label>
                             <input type="text" id="inputBuscar">
                         </div>
-            
+
                         <a class="aRegistrar" href="registrarMatriculaCosto.html">Registrar una nueva matrícula</a>
-            
+
                         <table id="tblMatriculas">
                             <thead>
                                 <tr>
@@ -270,12 +271,38 @@
                                 </tr>
                             </thead>
                             <tbody>
-            
+
                             </tbody>
                         </table>
                     </div>
 
-                    <div class="tabPanel">  
+                    <div class="tabPanel">
+
+                        <h1>Idiomas</h1>
+
+                        <div id="divBuscar">
+                            <label for="inputBuscar" id="labelBuscar">Buscar</label>
+                            <input type="text" id="inputBuscar">
+                        </div>
+
+                        <a class="aRegistrar" href="registrarIdioma.html">Registrar un nuevo idioma</a>
+
+                        <table id="tblIdiomas">
+                            <thead>
+                                <tr>
+                                    <th>Idioma</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="tabPanel">
 
                         <h1 id="titulo">Becas</h1>
 
