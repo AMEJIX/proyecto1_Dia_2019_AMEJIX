@@ -22,6 +22,23 @@ module.exports.registrar = (req, res) => {
                 }
             );
         } else {
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+
+
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.userName,
+                tipoDeMovimiento: "Registro de matrícula",
+                fecha: diaActual,
+            })
+            nuevaBitacora.save();
             res.json(
                 {
                     success: true,
@@ -112,7 +129,7 @@ module.exports.listarMatriculasCE = (req, res) => {
                     arregloMatriculas.push(matriculitas);
                 }
             }
-            
+
             console.log(arregloMatriculas);
             console.log(req.body.idCE);
 
@@ -145,6 +162,23 @@ module.exports.editar = function (req, res) {
             if (error) {
                 res.json({ success: false, msg: 'Su matrícula no ha sido eliminada' });
             } else {
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+    
+    
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.userName,
+                    tipoDeMovimiento: "Editación de matrícula",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
                 res.json({ success: true, msg: 'Su matrícula ha sido eliminada' });
             }
         }
@@ -161,6 +195,23 @@ module.exports.eliminar = function (req, res) {
             if (error) {
                 res.json({ success: false, msg: 'Su matrícula no ha sido eliminada' });
             } else {
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+    
+    
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.userName,
+                    tipoDeMovimiento: "Eliminación de matrícula",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
                 res.json({ success: true, msg: 'Su matrícula ha sido eliminada' });
             }
         })

@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="css/preguntasFrecuentesPF2.0.css">
     <link rel="stylesheet" href="css/citas.css">
     <link rel="stylesheet" href="css/marcarDesmarcarEtiquetas.css">
+    <link rel="stylesheet" href="css/mostrarIdiomas.css">
+    <link rel="stylesheet" href="css/mostrarNoticias.css">
+    <link rel="stylesheet" href="css/mostrarBecas.css">
+    <link rel="stylesheet" href="css/mostrarMatriculaCostos.css">
 
 </head>
 
@@ -72,6 +76,7 @@
             </button>
             <div class="dropdownContainer">
                 <a href="mostrarMatriculaCostos.html">Matrícula</a>
+                <a href="mostrarIdiomas.html">Idiomas</a>
                 <a href="mostrarBecas.html">Becas</a>
                 <a href="misCitasCE.html">Citas</a>
                 <a href="mostrarMaterialInformativo.html">Material Informativo</a>
@@ -243,9 +248,58 @@
 
                     </div>
 
-                    <div class="tabPanel">Matrícula</div>
+                    <div class="tabPanel">
 
-                    <div class="tabPanel">Becas</div>
+                        <h1>Matrículas</h1>
+
+                        <div id="divBuscar">
+                            <label for="inputBuscar" id="labelBuscar">Buscar</label>
+                            <input type="text" id="inputBuscar">
+                        </div>
+            
+                        <a class="aRegistrar" href="registrarMatriculaCosto.html">Registrar una nueva matrícula</a>
+            
+                        <table id="tblMatriculas">
+                            <thead>
+                                <tr>
+                                    <th>Matrícula</th>
+                                    <th>Mensualidad</th>
+                                    <th>Moneda</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+            
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tabPanel">  
+
+                        <h1 id="titulo">Becas</h1>
+
+                        <div id="divBuscar">
+                            <label for="inputBuscar" id="labelBuscar">Buscar</label>
+                            <input type="text" id="inputBuscar">
+                        </div>
+
+                        <a class="aRegistrar" href="registrarBeca.html">Registrar una nueva beca</a>
+
+                        <table id="tblBecas">
+                            <thead>
+                                <tr>
+                                    <th>Nombre de la beca</th>
+                                    <th>Descripción de la beca</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="tabPanel">
                         <h1>Material informativo</h1>
@@ -272,7 +326,34 @@
                         </table>
                     </div>
 
-                    <div class="tabPanel">Noticias</div>
+                    <div class="tabPanel">
+
+                        <h1>Noticias</h1>
+
+                        <div id="divBuscar">
+                            <label for="inputBuscar" id="labelBuscar">Buscar</label>
+                            <input type="text" id="inputBuscar">
+                        </div>
+
+                        <a class="aRegistrar" href="registrarNoticia.html">Registrar una nueva noticia</a>
+
+                        <table id="tblNoticias">
+                            <thead>
+                                <tr>
+                                    <th>Título de la noticia</th>
+                                    <th>Fecha de la noticia</th>
+                                    <th>Descripción de la noticia</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
 
                     <div class="tabPanel">
                         <h1 id="tituloActividaes">Actividades del centro educativo</h1>

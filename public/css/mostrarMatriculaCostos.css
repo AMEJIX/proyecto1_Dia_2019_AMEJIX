@@ -1,3 +1,12 @@
+.btnEliminar {
+    width: 32px;
+    border: none;
+    background-color: transparent;
+    color: #2c3e50;
+    outline: none;
+    cursor: pointer;
+}
+
 h1{
     display: inline-block;
     margin-top: 40px;
@@ -20,7 +29,7 @@ h1{
 #inputBuscar{
     width: 225px;
     height: 20px;
-    outline-color: #f9aa33;
+    outline-color: #50422e;
 }
 
 tr{
@@ -65,17 +74,19 @@ th {
 
 td {
     color: #2c3e50;
+    vertical-align: middle;
 }
 
 td:hover {
     color: white;
-    background: #f9aa33;
+    background: #4a6572;
 }
 
 td, th {
     text-align: center;
-    padding: 12px 5px;
+    padding: 12px 1px;
     border: #2c3e50 solid 1px;
+    vertical-align: middle;
 }
 
 tbody{

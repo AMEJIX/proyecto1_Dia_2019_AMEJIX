@@ -41,7 +41,7 @@ function mostrarNoticias() {
             let botonEditar = document.createElement('a');
             botonEditar.innerHTML = '<i class ="fas fa-edit"></i>';
             botonEditar.href = `editarNoticias.html?idNoticia=${noticias[i]['_id']}`;
-
+            botonEditar.style.color = '#2c3e50';
             celdaConfiguracion.appendChild(botonEditar);
             let botonEliminar = document.createElement('button');
             botonEliminar.innerHTML = '<i class ="fas fa-trash-alt"></i>';

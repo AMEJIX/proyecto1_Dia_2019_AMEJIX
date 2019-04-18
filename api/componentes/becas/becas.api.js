@@ -20,6 +20,23 @@ module.exports.registrar = (req, res) => {
                 }
             );
         } else {
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+
+
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.userName,
+                tipoDeMovimiento: "Registro de beca",
+                fecha: diaActual,
+            })
+            nuevaBitacora.save();
             res.json(
                 {
                     success: true,
@@ -118,6 +135,23 @@ module.exports.editar = function (req, res) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo actualizar su beca' });
             } else {
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+
+
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.userName,
+                    tipoDeMovimiento: "Editación de beca",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
                 res.json({ success: true, msg: 'Su beca ha sido actualizada' });
             }
         }
@@ -134,6 +168,23 @@ module.exports.eliminar = function (req, res) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo eliminar su beca' });
             } else {
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+    
+    
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.userName,
+                    tipoDeMovimiento: "Eliminación de beca",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
                 res.json({ success: true, msg: 'Su beca ha sido eliminada' });
             }
         })

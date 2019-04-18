@@ -19,6 +19,24 @@ module.exports.registrar = (req, res) => {
                 }
             );
         } else {
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+
+
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.userName,
+                tipoDeMovimiento: "Registro de idioma",
+                fecha: diaActual,
+            })
+            nuevaBitacora.save();
+
             res.json(
                 {
                     succes: true,
@@ -115,6 +133,23 @@ module.exports.editar = function (req, res) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo actualizar su idioma' });
             } else {
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+    
+    
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.userName,
+                    tipoDeMovimiento: "Editación de idioma",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
                 res.json({ success: true, msg: 'Su idioma ha sido actualizado' });
             }
         }
@@ -131,6 +166,23 @@ module.exports.eliminar = function (req, res) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo eliminar su idioma' });
             } else {
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+    
+    
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.userName,
+                    tipoDeMovimiento: "Eliminación de idioma",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
                 res.json({ success: true, msg: 'Su idioma ha sido eliminado' });
             }
         })
