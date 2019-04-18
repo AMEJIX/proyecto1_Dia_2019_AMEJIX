@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Perfil</title>
+    <title>Reporte visitas</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/profileInfo.css">
+    <link rel="stylesheet" href="css/morris.css">
+    <link rel="stylesheet" href="css/reportesVisitas.css">
 
 </head>
 
@@ -22,13 +25,6 @@
 
     <header>
         <nav>
-            <div id="divGeneralEstrellas">
-                <div id="divEncabezadoH2Estrellas">
-                    <h2 id="encabezadoH2Estrellas">Mi evaluación del MEP</h2>
-                </div>              
-                <div id="divEstrellas">
-                </div>
-            </div>
 
             <div class="userInfo">
                 <div class="userPhoto"></div>
@@ -153,22 +149,27 @@
         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
-            <!-- TODO EL CONTENIDO -->
+            <div class="wrapper">
+                <h1>Reporte de visitas</h1>
+
+                <div id="myfirstchart"></div>
+
+            </div>
         </div>
     </main>
 
     <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
-    <script src="js/servicio.encabezadoEstrellas.js"></script>
-    <script src="js/encabezadoEstrellas.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
-        async defer></script>
     <script src="js/mapUser.js"></script>
+    <script src="js/morris.min.js"></script>
+    <script src="js/reportesVisitas.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
-    
+
 </body>
 
 </html>
