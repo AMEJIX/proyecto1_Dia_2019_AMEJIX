@@ -1,6 +1,7 @@
 #tblEtiquetasSeleccionadas {
-    border-collapse: collapse;
-    width: 300px;
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+    width: 320px;
     margin: 20px auto;
     position: relative;
     bottom: 200px;
@@ -12,27 +13,31 @@
 
 }
 
-#tblEtiquetasSeleccionadas thead th {
+#tblEtiquetasSeleccionadas thead tr th {
     background: #f9aa33;
     color: white;
 }
 
-#tblEtiquetasSeleccionadas tbody td {
+#tblEtiquetasSeleccionadas tbody tr td {
     color: #2c3e50;
     text-align: center;
     padding: 6px 1px;
     border: #2c3e50 solid 1px;
-    width: 100px;
-    max-width: 100px;
+    width: 150px;
+    max-width: 150px;
     min-width: 100px;
+    max-height: 20px;
+    font-size: 15px;
 }
 
-#tblEtiquetasSeleccionadas tbody td:hover {
+#tblEtiquetasSeleccionadas tbody tr td:hover {
     color: #f9aa33;
 }
 
+#tblEtiquetasSeleccionadas tbody, #tblEtiquetasSeleccionadas tbody tr{
+    border: none;
+}
 #divEtiquetas{
-    width: 40vh;
     margin: 20px auto;
     position: relative;
     top: -70px;
@@ -46,11 +51,11 @@
     border:1px solid #d9d9d9;
     height:40px;
     overflow: hidden;
-    width: 260px;
+    width: 240px;
     position:relative;
     margin-bottom: 50px;
     margin-left: 50px;
-    left: 275px;
+    left: 295px;
     bottom: 50px;
 }
 
@@ -74,7 +79,7 @@
     background: transparent;
     border: none;
     padding: 5px;
-    width: 260px;
+    width: 240px;
     height: 40px;
     color: #2c3e50;
     font-size: 20px;
@@ -87,14 +92,14 @@
     text-decoration: none;
     color: #f9aa33
 }
-.awesome_images i {
+#tblEtiquetasSeleccionadas tbody tr td .awesome_images i {
     display: inline-block;
     cursor: pointer;
 }
-.awesome_images{
+#tblEtiquetasSeleccionadas tbody tr td .awesome_images{
     float: right;
 
 }
-.awesome_images i:hover {
+#tblEtiquetasSeleccionadas tbody tr td .awesome_images i:hover {
     color: white;
 }
