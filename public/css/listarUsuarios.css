@@ -87,7 +87,8 @@ h1 {
 
 
 #tblEtiquetasSeleccionadas {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 15px 15px;
     width: 600px;
     margin: 0 auto;
     margin-top: 40px;
