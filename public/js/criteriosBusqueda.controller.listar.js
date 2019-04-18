@@ -126,11 +126,15 @@ function mostrarCriterios() {
                             nuevaEtiqueta1.insertAdjacentHTML('beforeend', `<div class="opciones" id="opciones_${listaEtiquetas[i]['_id']}"><div class="awesome_images"></i><i class="fas fa-edit modificar" id="modificar_${nuevaEtiqueta1.id}"></i><i class="fas fa-trash-alt eliminar" id="eliminar_${nuevaEtiqueta1.id}"></i></div></div>`);
 
                             nuevaEtiqueta1.addEventListener('mouseover', mostrar =>{
+                                if ($(etiquetap1).hasClass('modoCambio')) etiquetap1.classList.add('cambio');
+
                                 document.getElementById(`opciones_${nuevaEtiqueta1.id}`).style.display = 'inline-block';
                                 let botonModificar = document.getElementById(`modificar_${nuevaEtiqueta1.id}`);
                                 let botonEliminar = document.getElementById(`eliminar_${nuevaEtiqueta1.id}`);
                                 let z = 2;
                                 botonModificar.addEventListener('click', activarCampoTexto =>{
+                                    etiquetap1.classList.add('cambio');
+
                                     if (z % 2 === 0) {
                                         etiquetap1.contentEditable = true;
                                         // etiquetap1.style.background = '#f9aa33';
@@ -153,7 +157,10 @@ function mostrarCriterios() {
                                 });
                             });
                             nuevaEtiqueta1.addEventListener('mouseleave', eliminar =>{
+                                if ($(etiquetap1).hasClass('cambio')) etiquetap1.classList.remove('cambio');
+
                                 document.getElementById(`opciones_${nuevaEtiqueta1.id}`).style.display  = 'none';
+
                                 // etiquetap1.style.background = 'inherit';
                             });
                         }
@@ -183,11 +190,15 @@ function mostrarCriterios() {
                             nuevaEtiqueta2.insertAdjacentHTML('beforeend', `<div class="opciones" id="opciones_${listaEtiquetas[i]['_id']}"><div class="awesome_images"></i><i class="fas fa-edit modificar" id="modificar_${nuevaEtiqueta2.id}"></i><i class="fas fa-trash-alt eliminar" id="eliminar_${nuevaEtiqueta2.id}"></i></div></div>`);
 
                             nuevaEtiqueta2.addEventListener('mouseover', mostrar =>{
+                                if ($(etiquetap2).hasClass('modoCambio')) etiquetap2.classList.add('cambio');
+
                                 document.getElementById(`opciones_${nuevaEtiqueta2.id}`).style.display = 'inline-block';
                                 let botonModificar = document.getElementById(`modificar_${nuevaEtiqueta2.id}`);
                                 let botonEliminar = document.getElementById(`eliminar_${nuevaEtiqueta2.id}`);
                                 let z = 2;
                                 botonModificar.addEventListener('click', activarCampoTexto =>{
+                                    etiquetap2.classList.add('cambio');
+
                                     if (z % 2 === 0) {
                                         etiquetap2.contentEditable = true;
                                         // etiquetap2.style.background = '#f9aa33';
@@ -210,6 +221,9 @@ function mostrarCriterios() {
                                 });
                             });
                             nuevaEtiqueta2.addEventListener('mouseleave', eliminar =>{
+
+                                if ($(etiquetap2).hasClass('cambio')) etiquetap2.classList.remove('cambio');
+
                                 document.getElementById(`opciones_${nuevaEtiqueta2.id}`).style.display  = 'none';
                                 // etiquetap2.style.background = 'inherit';
                             });

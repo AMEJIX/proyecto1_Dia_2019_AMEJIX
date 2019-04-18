@@ -17,6 +17,9 @@ if (elUsuario.userType === 'padreFamilia') {
     inputFiltrar = document.querySelector('#txtFiltrarPF');
 }
 
+window.onunload = () =>{
+    inputFiltrar.value = '';
+};
 let idCentroEducativo;
 
 if (location.pathname.split("/").slice(-1) == 'profileInfoCE.html'){
