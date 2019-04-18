@@ -77,7 +77,7 @@ let cargarEtiquetas = () =>{
             if (user.userType != "padreFamilia") {
 
                 document.getElementById(`${nombreEtiqueta.id}`).insertAdjacentHTML('beforeend', `<div class="awesome_images" id="awsm_${nombreEtiqueta.id}"><i class="fas fa-trash-alt" id="eliminar_${nombreEtiqueta.id}"></i></div>`);
-                document.getElementById(`${nombreEtiqueta.id}`).addEventListener('click', ev => {
+                document.getElementById(`awsm_${nombreEtiqueta.id}`).addEventListener('click', ev => {
                     desmarcarEtiquetaCE(nombreEtiqueta.id, responsable);
                 });
             }
@@ -106,7 +106,7 @@ let agregarEtiquetas = () =>{
         if (user.userType != "padreFamilia") {
 
             document.querySelector(`#${etiqueta.id}`).insertAdjacentHTML('beforeend', `<div class="awesome_images" id="awsm_${etiqueta.id}"><i class="fas fa-trash-alt" id="eliminar_${etiqueta.id}"></i></div>`);
-            document.getElementById(`${etiqueta.id}`).addEventListener('click', ev => {
+            document.getElementById(`awsm_${etiqueta.id}`).addEventListener('click', ev => {
                 desmarcarEtiquetaCE(opcionSeleccionada.id, responsable);
             });
         }
