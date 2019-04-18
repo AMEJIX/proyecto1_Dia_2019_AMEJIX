@@ -1,6 +1,7 @@
 'use strict';
 
 const modeloUtil = require('./utiles.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 module.exports.registrar = (req, res) =>{
     let nuevoUtil = new modeloUtil({
@@ -22,6 +23,25 @@ module.exports.registrar = (req, res) =>{
             }
             );
         }else{
+
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.nombreUsuario,
+                tipoDeMovimiento: "Registro de lista de útiles",
+                fecha: diaActual,
+            })
+            nuevaBitacora.save();
+
+
+
             res.json({
                 success : true,
                 msg : `El útil escolar se ha registrado correctamente`
@@ -136,6 +156,27 @@ module.exports.actualizarUtil = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo actualizar el útil escolar'});
             }else{
+
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Actualización de lista de útiles",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+    
+
+
+
                 res.json({success: true , msg : 'El útil escolar se actualizó con éxito'});
             }
         }
@@ -149,6 +190,25 @@ module.exports.eliminarUtil = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo eliminar el útil escolar'});
             }else{
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Eliminación de artículo de la lista de útiles",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+    
+
+
                 res.json({success: true , msg : 'El útil escolar se eliminó con éxito'});
             }
         })
@@ -159,6 +219,25 @@ module.exports.eliminarLista = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo eliminar la lista de útiles'});
             }else{
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Eliminación de lista de útiles",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+    
+
+
                 res.json({success: true , msg : 'La lista de útiles se eliminó con éxito'});
             }
         }

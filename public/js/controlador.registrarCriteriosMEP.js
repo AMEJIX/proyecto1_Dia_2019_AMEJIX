@@ -1,5 +1,6 @@
 'use strict';
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
+let nombreUsuario = user.centroEducativo;
 const selectCriterio = document.querySelector('#selectCriterio');
 const inputDescripcion = document.querySelector('#txtDescripcion');
 const selectPuntaje= document.querySelector('#selectPuntaje');
@@ -66,7 +67,7 @@ let obtenerDatosCriterio = () =>{
             inputDescripcion.value = '';
             selectPuntaje.value = '';
     
-            registrarCriterio(criterio, descripcion, puntaje);
+            registrarCriterio(criterio, descripcion, puntaje, nombreUsuario);
         }else{
             swal.fire({
                 type: 'warning',

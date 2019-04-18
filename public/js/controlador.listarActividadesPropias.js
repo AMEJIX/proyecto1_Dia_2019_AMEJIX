@@ -6,6 +6,8 @@ const inputFiltro = document.querySelector('#txtFiltro');
 const IdGeneralCE = user._id;
 const sectionActividades = document.querySelector('#sectionActividades');
 
+let nombreUsuario = user.centroEducativo;
+
 if (user.userType == 'padreFamilia' || user.userType == 'superAdministrador') {
     window.location.href = 'loSentimos.html';
 }
@@ -166,7 +168,7 @@ let eliminarActividadControlador=(p_id)=>{
         confirmButtonText: 'Sí, eliminar'
     }).then((result) => {
         if (result.value) {    
-            eliminarActividad(p_id);          
+            eliminarActividad(p_id, nombreUsuario);          
         } else {    
         }
       

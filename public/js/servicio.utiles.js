@@ -103,7 +103,7 @@ let listarTodos= () =>{
 
 
 
-let registrarUtil = (pnombre, pdescripcion, pcantidad, pnivel, pidCentroEducativo, pnombreLista) =>{
+let registrarUtil = (pnombre, pdescripcion, pcantidad, pnivel, pidCentroEducativo, pnombreLista, pnombreUsuario) =>{
     
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarUtil",
@@ -114,7 +114,8 @@ let registrarUtil = (pnombre, pdescripcion, pcantidad, pnivel, pidCentroEducativ
             cantidad : pcantidad,
             nivel : pnivel,
             idCE : pidCentroEducativo,
-            nombreLista: pnombreLista
+            nombreLista: pnombreLista,
+            nombreUsuario : pnombreUsuario
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType : "json"
@@ -165,13 +166,14 @@ let buscarUtilIndividual = (_id) => {
 
 
 
-let actualizarUtil = (pcantidad, p_id) =>{
+let actualizarUtil = (pcantidad, p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizarUtil',
       method : "POST",
       data : {       
         cantidad : pcantidad,        
-        id : p_id
+        id : p_id,
+        nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
@@ -200,13 +202,14 @@ let actualizarUtil = (pcantidad, p_id) =>{
 
 };
 
-let actualizarUtilCE = (pcantidad, p_id) =>{
+let actualizarUtilCE = (pcantidad, p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizarUtil',
       method : "POST",
       data : {       
         cantidad : pcantidad,        
-        id : p_id
+        id : p_id,
+        nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
@@ -236,12 +239,13 @@ let actualizarUtilCE = (pcantidad, p_id) =>{
 };
 
 
-let eliminarUtil = (p_id) =>{
+let eliminarUtil = (p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/eliminarUtil',
       method : "POST",
       data : {         
-          id : p_id
+          id : p_id,
+          nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
@@ -271,12 +275,13 @@ let eliminarUtil = (p_id) =>{
 };
 
 
-let eliminarLista = (pnombreLista) =>{
+let eliminarLista = (pnombreLista, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/eliminarLista',
       method : "POST",
       data : {         
-        nombreLista: pnombreLista
+        nombreLista: pnombreLista,
+        nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 

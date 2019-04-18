@@ -1,5 +1,7 @@
 'use strict';
 const modeloRango = require('../rangosMEP/rangos.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
+
 
 module.exports.registrarElRango = (req, res) =>{
     let nuevoRango = new modeloRango({
@@ -19,6 +21,26 @@ module.exports.registrarElRango = (req, res) =>{
             }
             );
         }else{
+
+
+
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.nombreUsuario,
+                tipoDeMovimiento: "Registro de rango",
+                fecha: diaActual,
+            })
+            nuevaBitacora.save();
+
+
             res.json({
                 success : true,
                 msg : `El rango se ha registrado correctamente`
@@ -75,6 +97,25 @@ module.exports.actualizar = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo actualizar el rango'});
             }else{
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Actualización de rango",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
+
+
                 res.json({success: true , msg : 'El rango se actualizó con éxito'});
             }
         }
@@ -88,6 +129,24 @@ module.exports.eliminar = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo eliminar el rango'});
             }else{
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Eliminación de rango",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
+
                 res.json({success: true , msg : 'El rango se eliminó con éxito'});
             }
         })

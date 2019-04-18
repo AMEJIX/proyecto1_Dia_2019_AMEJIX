@@ -65,12 +65,13 @@ let registrarActividad = (pactividad, pdescripcion, pfecha, parregloImgAct, pidC
       });
 };
 
-let eliminarActividad = (p_id) =>{
+let eliminarActividad = (p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/eliminarActividad',
       method : "POST",
       data : {         
-          id : p_id
+          id : p_id,
+          nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
@@ -125,7 +126,7 @@ let buscarActividad = (_id) => {
  
 };
 
-let actualizarActividad = (pactividad, pdescripcion, pfecha, parregloImgAct, pidCentroEducativo, p_id) =>{
+let actualizarActividad = (pactividad, pdescripcion, pfecha, parregloImgAct, pidCentroEducativo, p_id, pnombreUsuario) =>{
 
 
   let request = $.ajax({
@@ -137,7 +138,8 @@ let actualizarActividad = (pactividad, pdescripcion, pfecha, parregloImgAct, pid
         fecha : pfecha,
         imagen : parregloImgAct,
         idCE : pidCentroEducativo,    
-        id : p_id
+        id : p_id,
+        nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 

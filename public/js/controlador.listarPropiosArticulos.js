@@ -5,13 +5,13 @@
 const tabla = document.querySelector("#tblArticulos tbody");
 const inputFiltro = document.querySelector('#txtFiltro');
 const IdGeneralCE = user._id;
-
+let nombreUsuario = user.centroEducativo;
 
 if(user.userType == 'padreFamilia'){
     window.location.href = 'loSentimos.html';
 }
 
-let articulos = listarArticulos(); 
+// let articulos = listarArticulos(); 
 
 let mostrarArticulos = () =>{  
        
@@ -72,7 +72,7 @@ let eliminarArticuloControlador=(p_id)=>{
         confirmButtonText: 'Sí, eliminar'
     }).then((result) => {
         if (result.value) {    
-            eliminarArticulo(p_id);          
+            eliminarArticulo(p_id, nombreUsuario);          
         } else {    
         }
       

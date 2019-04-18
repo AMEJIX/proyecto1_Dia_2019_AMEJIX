@@ -1,7 +1,7 @@
 'use strict';
 
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
-
+let nombreUsuario = user.centroEducativo;
 const tabla = document.querySelector("#tblArticulos tbody");
 const inputFiltro = document.querySelector('#txtFiltro');
 const inputNombre = document.querySelector('#inputNombre');
@@ -154,7 +154,7 @@ let obtenerDatos = (piDinamico) => {
         let idCentroEducativo = IdGeneralCE;
         let nombreLista = inputNombre.value;
         document.querySelector('#inpCant' + piDinamico).value = '';
-        registrarUtil(nombre, descripcion, cantidad, nivel, idCentroEducativo, nombreLista);
+        registrarUtil(nombre, descripcion, cantidad, nivel, idCentroEducativo, nombreLista, nombreUsuario);
 };
 
 botonRegistrar.addEventListener('click', validar);

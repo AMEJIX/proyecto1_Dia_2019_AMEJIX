@@ -16,6 +16,7 @@ const segundoContenido = document.querySelector('#segundoContenido');
 const nombreDelCE = document.querySelector('#nombreCE');
 const divIDInvisible = document.querySelector('#divInputCE');
 
+let nombreUsuario = user.centroEducativo;
 
 
 
@@ -272,7 +273,7 @@ function mostrarCE() {
                 document.getElementsByClassName('claseCheck').checked = false;
                 
     
-                registrarEvaluacionMEP(nombre, total, estrellas, anno, idCE, tipo, imagen, posicion);
+                registrarEvaluacionMEP(nombre, total, estrellas, anno, idCE, tipo, imagen, posicion, nombreUsuario);
             }else{
                 swal.fire({
                     type: 'warning',

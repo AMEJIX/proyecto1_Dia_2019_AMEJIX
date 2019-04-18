@@ -32,7 +32,7 @@ let listarArticulos = (pIdCentro) =>{
 
 
 
-let registrarArticulo = (pnombre, pdescripcion, pidCentroEducativo) =>{
+let registrarArticulo = (pnombre, pdescripcion, pidCentroEducativo, pnombreUsuario) =>{
     
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarArticulo",
@@ -40,7 +40,8 @@ let registrarArticulo = (pnombre, pdescripcion, pidCentroEducativo) =>{
         data: {
             nombre : pnombre,
             descripcion : pdescripcion,            
-            idCE : pidCentroEducativo
+            idCE : pidCentroEducativo,
+            nombreUsuario : pnombreUsuario
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType : "json"
@@ -88,7 +89,7 @@ let buscarArticulo = (_id) => {
  
 };
 
-let actualizarArticulo = (pnombre, pdescripcion, pidCentroEducativo, p_id) =>{
+let actualizarArticulo = (pnombre, pdescripcion, pidCentroEducativo, p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizarArticulo',
       method : "POST",
@@ -96,7 +97,8 @@ let actualizarArticulo = (pnombre, pdescripcion, pidCentroEducativo, p_id) =>{
           nombre : pnombre,
           descripcion : pdescripcion,            
           idCE : pidCentroEducativo,
-          id : p_id
+          id : p_id,
+          nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
@@ -127,12 +129,13 @@ let actualizarArticulo = (pnombre, pdescripcion, pidCentroEducativo, p_id) =>{
 
 
 
-let eliminarArticulo = (p_id) =>{
+let eliminarArticulo = (p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/eliminarArticulo',
       method : "POST",
       data : {         
-          id : p_id
+          id : p_id,
+          nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 

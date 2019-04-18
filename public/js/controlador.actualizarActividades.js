@@ -1,6 +1,6 @@
 'use strict';
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
-
+let nombreUsuario = user.centroEducativo;
 const inputActividad = document.querySelector('#txtActividad');
 const inputDescripcion = document.querySelector('#txtDescripcion');
 const inputFecha = document.querySelector('#inputFecha');
@@ -190,7 +190,7 @@ let obtenerDatosActividad = () =>{
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {               
-                actualizarActividad(actividad, descripcion, fechaCorrecta, stringImgActividades, idCentroEducativo, _id);
+                actualizarActividad(actividad, descripcion, fechaCorrecta, stringImgActividades, idCentroEducativo, _id, nombreUsuario);
             }
         })
     }else{
