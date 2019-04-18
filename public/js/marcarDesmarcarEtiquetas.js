@@ -35,8 +35,8 @@ let desmarcarEtiquetaCE = (pid, presponsable) =>{
         if (result.value) {
 
             desmarcarEtiqueta(pid, presponsable);
-            let elementoEliminado = document.getElementById(pid);
-            elementoEliminado.parentElement.removeChild(elementoEliminado);
+            let elementoEliminado = document.getElementById(`${pid}`);
+            elementoEliminado.parentNode.removeChild(elementoEliminado);
         } else {
             swal.fire({
                 title: 'No se eliminó la etiqueta',

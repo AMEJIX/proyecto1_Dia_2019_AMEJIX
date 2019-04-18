@@ -29,11 +29,11 @@ if (location.pathname.split("/").slice(-1) == 'profileInfoCE.html'){
     // alert('Salió mal');
 
     if (elUsuario.userType == 'padreFamilia' && location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') {//REDIRECCIONAMIENTO
-        location.href='loSentimos.html';
+        if (location.pathname.split("/").slice(-1) != 'loSentimos.html') location.href='loSentimos.html';
 
         if (opcionVerPF)  opcionVerPF.href = 'preguntasFrecuentesPF.html?idCE='+IdGeneralCE;
     } else if (elUsuario.userType == 'centroEducativo') {
-        location.href='preguntasFrecuentesCE&Admin.html';
+        if (location.pathname.split("/").slice(-1) != 'preguntasFrecuentesCE&Admin.html') location.href='preguntasFrecuentesCE&Admin.html';
 
         if (opcionVerCE) opcionVerCE.href = 'preguntasFrecuentesCE&Admin.html?idCE='+IdGeneralCE;
     }
