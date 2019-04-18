@@ -2,6 +2,16 @@
 
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 
+const buttonPrint = document.querySelector('#buttonPrint');
+buttonPrint.addEventListener('click', imprimir)
+
+function imprimir() {
+
+    window.print();
+}
+
+
+
 const tabla = document.querySelector('#tblUsuarios tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 
@@ -54,8 +64,8 @@ function mostrarDatos() {
 
 
                 var newLabel = document.createElement("label");
-                newLabel.innerHTML = "Edad hijo " + Number(i + 1) +":";
-        
+                newLabel.innerHTML = "Edad hijo " + Number(i + 1) + ":";
+
 
 
                 var newSpan = document.createElement("span");
@@ -69,10 +79,10 @@ function mostrarDatos() {
                 hijos.appendChild(newDiv);
             }
 
-     if(hijos.innerHTML == ""){
-                hijos.innerHTML= "No hay hijos registrados"
+            if (hijos.innerHTML == "") {
+                hijos.innerHTML = "No hay hijos registrados"
             }
-                
+
 
 
             celdaHijos.appendChild(hijos);

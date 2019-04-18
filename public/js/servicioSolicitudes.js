@@ -45,7 +45,7 @@ let actualizarEstadoSolicitud = (estado, id, centroEducativo, email, userType, c
     request.done(function (res) {
         swal.fire({
             type: 'success',
-            title: 'exito',
+            title: 'Éxito',
             text: res.msg
 
         });
