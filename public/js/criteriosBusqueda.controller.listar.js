@@ -4,6 +4,10 @@ const inputFiltrar = document.querySelector('#txtFiltrar');
 
 // let user = JSON.parse(sessionStorage.getItem('usuario'));
 
+window.onunload = () =>{
+    inputFiltrar.value = '';
+};
+
 if(user.userType === 'padreFamilia'){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
 }
@@ -24,6 +28,7 @@ mostrarCriterios();
 
 inputFiltrar.addEventListener('keyup', mostrarCriterios);
 
+
 function mostrarCriterios() {
 
     let tabla = document.querySelector('#tblCriteriosBusqueda tbody');
@@ -32,15 +37,16 @@ function mostrarCriterios() {
 
     tabla.innerHTML = '';
 
+
     console.log(listaEtiquetas.length);
     if (listaEtiquetas.length > 0 || !(typeof listaCitas == 'string')){
-
         if (document.getElementById('error')) eliminarMensaje();
 
 
         for (let i = 0; i < listaEtiquetas.length; i++) {
 
             if (listaEtiquetas[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
+
 
                 if (document.getElementById('error')) eliminarMensaje();
 
@@ -59,11 +65,14 @@ function mostrarCriterios() {
                         nuevaEtiqueta.insertAdjacentHTML('beforeend', `<div class="opciones" id="opciones_${listaEtiquetas[i]['_id']}"><div class="awesome_images"></i><i class="fas fa-edit modificar" id="modificar_${nuevaEtiqueta.id}"></i><i class="fas fa-trash-alt eliminar" id="eliminar_${nuevaEtiqueta.id}"></i></div></div>`);
 
                     nuevaEtiqueta.addEventListener('mouseover', mostrar =>{
+                        if ($(etiquetap).hasClass('modoCambio')) etiquetap.classList.add('cambio');
                         document.getElementById(`opciones_${nuevaEtiqueta.id}`).style.display = 'inline-block';
                         let botonModificar = document.getElementById(`modificar_${nuevaEtiqueta.id}`);
                         let botonEliminar = document.getElementById(`eliminar_${nuevaEtiqueta.id}`);
                         let z = 2;
                         botonModificar.addEventListener('click', activarCampoTexto =>{
+                            etiquetap.classList.add('cambio');
+
                             if (z % 2 === 0) {
                                 etiquetap.contentEditable = true;
                                 // etiquetap.style.background = '#f9aa33';
@@ -88,6 +97,8 @@ function mostrarCriterios() {
                         });
                     });
                     nuevaEtiqueta.addEventListener('mouseleave', retornar =>{
+                        if ($(etiquetap).hasClass('cambio')) etiquetap.classList.remove('cambio');
+
                         document.getElementById(`opciones_${nuevaEtiqueta.id}`).style.display  = 'none';
                         // etiquetap.style.background = 'inherit';
                     });
@@ -100,6 +111,8 @@ function mostrarCriterios() {
                     i++;
 
                     if (listaEtiquetas[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
+                        if (document.getElementById('error')) eliminarMensaje();
+
                         let nuevaEtiqueta1 = nuevaFila.insertCell();
                         let etiquetap1 = document.createElement('p');
                         etiquetap1.textContent = listaEtiquetas[i]['nombre'];
@@ -155,6 +168,7 @@ function mostrarCriterios() {
                     i++;
 
                     if (listaEtiquetas[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
+                        if (document.getElementById('error')) eliminarMensaje();
 
                         let nuevaEtiqueta2 = nuevaFila.insertCell();
                         let etiquetap2 = document.createElement('p');
@@ -206,14 +220,13 @@ function mostrarCriterios() {
 
             } else {
                 if (document.getElementById('error')) eliminarMensaje();
-                insertarMensaje(`No se encontró el criterio de búsqueda ${filtro}`);
+                if ($('#tblCriteriosBusqueda tr').length === 0) insertarMensaje(`No se encontró el criterio de búsqueda "${filtro}"`);
             }
         }
     } else {
         if (document.getElementById('error')) eliminarMensaje();
-        insertarMensaje(`No se encontraron criterios de búsqueda`);
+       insertarMensaje(`No se encontraron criterios de búsqueda`);
     }
-
 
 }
 

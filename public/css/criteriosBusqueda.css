@@ -221,7 +221,9 @@ td:hover{
 i{
     font-size: 15px;
     margin-left: 10px;
+    cursor: pointer;
 }
+
 i:hover{
     color: #f9aa33;
 }
@@ -233,6 +235,14 @@ i:hover{
 .modoCambio{
     background: #f9aa33;
     color: white;
+    /*border-radius: 5px;*/
+    outline-offset: 0px;
+    outline: 2px #344955 solid;
+    caret-color: #344955;
+}
+
+.cambio{
+    outline: 2px white solid;
 }
 .modoCambio:hover{
     background: #F9AA33;

@@ -89,6 +89,7 @@
 }
 .awesome_images i {
     display: inline-block;
+    cursor: pointer;
 }
 .awesome_images{
     float: right;

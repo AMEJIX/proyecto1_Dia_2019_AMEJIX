@@ -160,6 +160,7 @@ button#btnEnviar{
     height: 100%;
     margin-bottom: 5px;
     color: #344955;
+    cursor: pointer;
 }
 
 .modoCambio{

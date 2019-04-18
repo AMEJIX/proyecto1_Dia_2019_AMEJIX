@@ -149,6 +149,7 @@ button#btnEnviar{
     margin-bottom: 5px;
     color: #344955;
     font-size: 20px;
+    cursor: pointer;
 }
 
 #preguntasFrecuentesCE\&Admin .awesome_images i.fa-edit{

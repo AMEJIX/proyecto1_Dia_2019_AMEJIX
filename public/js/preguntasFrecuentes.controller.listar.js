@@ -158,7 +158,7 @@ function mostrarPreguntasFrecuentes() {
 
             } else{
                 if (document.getElementById('error')) eliminarMensaje();
-                insertarMensaje(`No se encontró la pregunta ${busqueda}`);
+                if ($('#tblPreguntasFrecuentesPF tr').length === 0) insertarMensaje(`No se encontró la pregunta ${busqueda}`);
             }
         }
     } else {
