@@ -9,11 +9,15 @@ const tablaEtiquetas = document.querySelector('#tblEtiquetasSeleccionadas tbody'
 let contador = 0;
 let etiquetasSeleeccionadas = [];
 let fila = tablaEtiquetas.insertRow();
+let cargas = 0;
+let carga1arr = [];
+let etiquetasCarga1 = [];
+tablaEtiquetas.insertAdjacentHTML('beforebegin', `<p id="cargando">Cargando...</p>`)
+let cargando = document.getElementById('cargando');
 
 if(user.userType == 'centroEducativo'){
     window.location.href = 'loSentimos.html';
 }
-let usuarios = listarUsuariosCE();
 
 function comparar(arr1,arr2){
 
@@ -97,24 +101,37 @@ sltEtiquetas.addEventListener('change', agregarEtiquetas);
 sltEtiquetas.addEventListener('change', mostrarDatos);
 
 
-function mostrarDatos() {
-    tablaEtiquetas.insertAdjacentHTML('beforebegin', `<p id="cargando">Cargando...</p>`)
-    console.log(etiquetasSeleeccionadas);
+function recorrer (usuarios){
+
+    if (cargas == 0) cargando.style.visibility = 'visible';
+
     let filtro = inputFiltro.value;
     tabla.innerHTML = '';
 
     for (let i = 0; i < usuarios.length; i++) {
+        // if (i > usuarios.length) {
+        //     break;
+        // }
+
         let etiquetasUsuarioObj = [];
-        etiquetasUsuarioObj = getCriteriosBusquedaMarcados(usuarios[i]['_id']);
+        if (cargas === 0) {
+            etiquetasUsuarioObj = getCriteriosBusquedaMarcados(usuarios[i]['_id']);
+            etiquetasCarga1.push(etiquetasUsuarioObj);
+        } else{
+            etiquetasUsuarioObj = etiquetasCarga1[i];
+        }
+        usuarios[i] = Object.assign(usuarios[i], {etiquetas: etiquetasCarga1[i]});
 
         let etiquetasUsuario = [];
+
         let mostrar = false;
+
         if (!etiquetasUsuarioObj[0][0]) {
             for (let etiquetaU of Array.from(etiquetasUsuarioObj)) {
                 etiquetasUsuario.push(etiquetaU['nombre']);
             }
 
-            if (comparar(etiquetasUsuario, etiquetasSeleeccionadas).length > 0) {
+            if (comparar(etiquetasUsuario, etiquetasSeleeccionadas).length == etiquetasSeleeccionadas.length) {
                 mostrar = true;
                 console.log(usuarios[i]['centroEducativo'] + " tiene la etiqueta");
             }
@@ -127,9 +144,9 @@ function mostrarDatos() {
         // console.log(etiquetasUsuario.some(r=> etiquetasSeleeccionadas.includes(r)));
         let incluyeFiltro = usuarios[i]['centroEducativo'].toLowerCase().includes(filtro.toLowerCase());
         if (incluyeFiltro
-            // comparar(etiquetasUsuario, etiquetasSeleeccionadas).length > 0
-            // etiquetasUsuario.length > 0
-            ) {
+        // comparar(etiquetasUsuario, etiquetasSeleeccionadas).length > 0
+        // etiquetasUsuario.length > 0
+        ) {
             if (mostrar || etiquetasSeleeccionadas.length == 0){
                 let fila = tabla.insertRow();
 
@@ -150,8 +167,22 @@ function mostrarDatos() {
             }
 
         }
+        carga1arr.push(usuarios[i]);
     }
-    document.getElementById('cargando').parentNode.removeChild(document.getElementById('cargando'));
+    if (cargas == 0) cargando.style.visibility = 'hidden';
+}
+
+function mostrarDatos() {
+    console.log(etiquetasSeleeccionadas);
+
+    if (cargas === 0){
+        let usuarios = listarUsuariosCE();
+        recorrer(usuarios);
+        cargas++;
+    } else {
+        recorrer(carga1arr);
+    }
+
 }
 
 
