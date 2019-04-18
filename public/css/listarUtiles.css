@@ -79,7 +79,7 @@ form div select{
 #tablaNombreListaU{
     border-collapse: collapse;
     margin-left: 32px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     width: 90%;
     margin: 0 auto;
 }
@@ -89,7 +89,7 @@ form div select{
 #tblUtiles{    
     border-collapse: collapse;
     margin-left: 32px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     width: 90%;
     margin: 0 auto;
     margin-top: 149px;

@@ -34,7 +34,7 @@ let listarCriterios= () =>{
 
 
 
-  let registrarCriterio = (pcriterio, pdescripcion, ppuntaje) =>{
+  let registrarCriterio = (pcriterio, pdescripcion, ppuntaje, pnombreUsuario) =>{
     
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarCriterio",
@@ -42,7 +42,8 @@ let listarCriterios= () =>{
         data: {
             criterio : pcriterio,
             descripcion : pdescripcion,
-            puntaje : ppuntaje            
+            puntaje : ppuntaje,
+            nombreUsuario : pnombreUsuario               
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType : "json"
@@ -90,7 +91,7 @@ let buscarCriterio = (_id) => {
  
 };
 
-let actualizarCriterio = (pcriterio, pdescripcion, ppuntaje, p_id) =>{
+let actualizarCriterio = (pcriterio, pdescripcion, ppuntaje, p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizarCriterio',
       method : "POST",
@@ -98,7 +99,8 @@ let actualizarCriterio = (pcriterio, pdescripcion, ppuntaje, p_id) =>{
         criterio : pcriterio,
         descripcion : pdescripcion,
         puntaje : ppuntaje,    
-          id : p_id
+          id : p_id,
+          nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
@@ -129,12 +131,13 @@ let actualizarCriterio = (pcriterio, pdescripcion, ppuntaje, p_id) =>{
 
 
 
-let eliminarCriterio = (p_id) =>{
+let eliminarCriterio = (p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/eliminarCriterio',
       method : "POST",
       data : {         
-          id : p_id
+          id : p_id,
+          nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 

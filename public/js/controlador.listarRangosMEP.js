@@ -3,7 +3,7 @@
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tablaRangos = document.querySelector('#tblRangoCriteriosMEP tbody');
-
+let nombreUsuario = user.centroEducativo;
 if(user.userType == 'padreFamilia' || user.userType == 'centroEducativo'){
     window.location.href = 'loSentimos.html';
 }
@@ -50,7 +50,7 @@ let eliminarRangoControlador=(p_id)=>{
         confirmButtonText: 'Sí, eliminar'
     }).then((result) => {
         if (result.value) {    
-            eliminarRango(p_id);          
+            eliminarRango(p_id, nombreUsuario);          
         } else {    
         }
       

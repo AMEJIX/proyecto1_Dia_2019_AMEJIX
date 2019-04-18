@@ -1,7 +1,7 @@
 'use strict'
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 const tablaCriterios = document.querySelector('#tblCriteriosMEP tbody');
-
+let nombreUsuario = user.centroEducativo;
 if(user.userType == 'centroEducativo' || user.userType == 'padreFamilia'){
     window.location.href = 'loSentimos.html';
 }
@@ -48,7 +48,7 @@ let eliminarCriterioControlador=(p_id)=>{
         confirmButtonText: 'Sí, eliminar'
     }).then((result) => {
         if (result.value) {    
-            eliminarCriterio(p_id);          
+            eliminarCriterio(p_id, nombreUsuario);          
         } else {    
         }
       

@@ -85,7 +85,7 @@ let listarCriterios= () =>{
 };
 
 
-let registrarEvaluacionMEP = (pnombre, ptotal, pestrellas, panno, pidCE, ptipo, pimagen, pposicion) =>{
+let registrarEvaluacionMEP = (pnombre, ptotal, pestrellas, panno, pidCE, ptipo, pimagen, pposicion, pnombreUsuario) =>{
  
   let request = $.ajax({
       url: "http://localhost:4000/api/registrarEvaluacionMEP",
@@ -98,7 +98,8 @@ let registrarEvaluacionMEP = (pnombre, ptotal, pestrellas, panno, pidCE, ptipo, 
           idCE: pidCE,
           tipo: ptipo,
           imagen: pimagen,
-          posicion: pposicion          
+          posicion: pposicion,
+          nombreUsuario : pnombreUsuario          
       },
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType : "json"

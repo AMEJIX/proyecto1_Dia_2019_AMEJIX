@@ -1,7 +1,7 @@
 'use strict';
 
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
-
+let nombreUsuario = user.centroEducativo;
 const inputNombre = document.querySelector('#txtNombre');
 const inputDescripcion = document.querySelector('#txtDescripcion');
 const botonRegistrar = document.querySelector('#btnRegistrar');
@@ -43,7 +43,7 @@ let obtenerDatos = () =>{
         inputNombre.value = '';
         inputDescripcion.value = '';
 
-        registrarArticulo(nombre, descripcion, idCentroEducativo);
+        registrarArticulo(nombre, descripcion, idCentroEducativo, nombreUsuario);
         
     }else{
         swal.fire({

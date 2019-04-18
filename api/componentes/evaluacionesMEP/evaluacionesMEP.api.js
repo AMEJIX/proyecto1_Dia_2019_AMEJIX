@@ -2,6 +2,7 @@
 
 const modeloCE = require('../usuarios/usuarios.model');
 const modeloEvaluacionesCE = require('./evaluacionesMEP.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
  
  module.exports.registrarEvaluacionMEP = (req, res) =>{
@@ -24,6 +25,27 @@ const modeloEvaluacionesCE = require('./evaluacionesMEP.model');
                     msg: `No se pudo registrar la evaluación, ocurrió el siguiente error ${error}`
                 });
             }else{
+
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Registro de evaluación de un centro educativo",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
+
+
+
                 res.json({
                     success: true,
                     msg: `La evaluación se ha registrado correctamente`

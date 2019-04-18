@@ -5,7 +5,7 @@ const selectValorMinimo= document.querySelector('#selectValorMinimo');
 const selectValorMaximo= document.querySelector('#selectValorMaximo');
 const selectEstrellas= document.querySelector('#selectEstrellas');
 const botonRegistrarRango= document.querySelector('#btnRegistrarRango');
-
+let nombreUsuario = user.centroEducativo;
 if(user.userType == 'centroEducativo' || user.userType == 'padreFamilia'){
     window.location.href = 'loSentimos.html';
 }
@@ -100,7 +100,7 @@ let obtenerDatosRango = () =>{
             selectValorMaximo.value = '';
             selectEstrellas.value = '';
     
-            registrarRango(rango, valorMinimo, valorMaximo, estrellas);
+            registrarRango(rango, valorMinimo, valorMaximo, estrellas, nombreUsuario);
         }else{
             swal.fire({
                 type: 'warning',

@@ -10,7 +10,7 @@ const radioButtonTodos = document.querySelector('#tablaNombreListaU tbody tr td'
 const divDelBoton = document.querySelector('#idDivBoton');
 const divDelBotonActualizar = document.querySelector('#idDivBotonActualizar');
 const  IdUs = user._id;
-
+let nombreUsuario = user.centroEducativo;
 if(user.userType == 'padreFamilia'){
     window.location.href = 'loSentimos.html';
 }
@@ -174,7 +174,7 @@ let eliminarListaControlador=(pnombreLista1)=>{
         confirmButtonText: 'Sí, eliminar'
     }).then((result) => {
         if (result.value) {    
-            eliminarLista(pnombreLista1);          
+            eliminarLista(pnombreLista1, nombreUsuario);          
         } else {    
         }      
     }) 
@@ -217,7 +217,7 @@ let obtenerDatosArticulo = (p_id, pidCampoCantidad, pvalorCantidad) =>{
             confirmButtonText: 'Sí, estoy seguro'
           }).then((result) => {
             if (result.value) {
-                actualizarUtilCE(cantidad, p_id);
+                actualizarUtilCE(cantidad, p_id, nombreUsuario);
             }
           })
     }else{
@@ -242,7 +242,7 @@ let eliminarUtilControlador=(p_id)=>{
         confirmButtonText: 'Sí, eliminar'
     }).then((result) => {
         if (result.value) {    
-            eliminarUtil(p_id);          
+            eliminarUtil(p_id, nombreUsuario);          
         } else {    
         }
       

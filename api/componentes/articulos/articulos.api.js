@@ -1,6 +1,7 @@
 'use strict';
 
 const modeloArticulo = require('./articulos.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 module.exports.registrar = (req, res) =>{
     let nuevoArticulo = new modeloArticulo({
@@ -17,6 +18,24 @@ module.exports.registrar = (req, res) =>{
             }
             );
         }else{
+
+            var diaActual = new Date();
+            var dd = diaActual.getDate();
+            var mm = diaActual.getMonth();
+            var yyyy = diaActual.getFullYear();
+            var hora = diaActual.getHours();
+            var minutos = diaActual.getMinutes();
+            var segundos = diaActual.getSeconds();
+            diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+
+            let nuevaBitacora = new modeloBitacora({
+                usuario: req.body.nombreUsuario,
+                tipoDeMovimiento: "Registro de artículo",
+                fecha: diaActual,
+            })
+            nuevaBitacora.save();
+
+
             res.json({
                 success : true,
                 msg : `El artículo escolar se ha registrado correctamente`
@@ -71,6 +90,24 @@ module.exports.actualizar = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo actualizar el artículo'});
             }else{
+
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Actualización de artículo",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
                 res.json({success: true , msg : 'El artículo se actualizó con éxito'});
             }
         }
@@ -84,6 +121,25 @@ module.exports.eliminar = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo eliminar el artículo'});
             }else{
+
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Eliminación de artículo",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
+
                 res.json({success: true , msg : 'El artículo se eliminó con éxito'});
             }
         })

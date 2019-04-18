@@ -28,7 +28,7 @@ let listarRangos= () =>{
   };
 
 
-  let registrarRango = (prango, pvalorMinimo, pvalorMaximo, pestrellas) =>{
+  let registrarRango = (prango, pvalorMinimo, pvalorMaximo, pestrellas, pnombreUsuario) =>{
     
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarRango",
@@ -37,7 +37,8 @@ let listarRangos= () =>{
             rango : prango,
             valorMinimo : pvalorMinimo,
             valorMaximo : pvalorMaximo,
-            estrellas : pestrellas
+            estrellas : pestrellas,
+            nombreUsuario : pnombreUsuario
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType : "json"
@@ -86,7 +87,7 @@ let buscarRango = (_id) => {
  
 };
 
-let actualizarRango = (prango, pvalorMinimo, pvalorMaximo, pestrellas, p_id) =>{
+let actualizarRango = (prango, pvalorMinimo, pvalorMaximo, pestrellas, p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizarRango',
       method : "POST",
@@ -95,7 +96,8 @@ let actualizarRango = (prango, pvalorMinimo, pvalorMaximo, pestrellas, p_id) =>{
         valorMinimo : pvalorMinimo,
         valorMaximo : pvalorMaximo,
         estrellas : pestrellas,   
-        id : p_id
+        id : p_id,
+        nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
@@ -126,12 +128,13 @@ let actualizarRango = (prango, pvalorMinimo, pvalorMaximo, pestrellas, p_id) =>{
 
 
 
-let eliminarRango = (p_id) =>{
+let eliminarRango = (p_id, pnombreUsuario) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/eliminarRango',
       method : "POST",
       data : {         
-          id : p_id
+          id : p_id,
+          nombreUsuario : pnombreUsuario
       },
       dataType : "json",
       contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 

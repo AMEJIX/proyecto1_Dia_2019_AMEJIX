@@ -1,5 +1,7 @@
 'use strict';
  const modeloCriterio = require('./criterios.model');
+ const modeloBitacora = require('../bitacora/bitacora.model');
+
  
  module.exports.registrarElCriterio = (req, res) =>{
     let nuevoCriterio = new modeloCriterio({
@@ -17,6 +19,26 @@
                     msg: `No se pudo registrar el criterio, ocurrió el siguiente error ${error}`
                 });
             }else{
+
+
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Registro de criterio de evaluación",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
+
                 res.json({
                     success: true,
                     msg: `El criterio se ha registrado correctamente`
@@ -74,6 +96,25 @@ module.exports.actualizar = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo actualizar el criterio'});
             }else{
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Actualización de criterio de evaluación",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
+
+
                 res.json({success: true , msg : 'El criterio se actualizó con éxito'});
             }
         }
@@ -87,6 +128,23 @@ module.exports.eliminar = function(req, res){
             if(error){
                 res.json({success : false , msg : 'No se pudo eliminar el criterio'});
             }else{
+
+                var diaActual = new Date();
+                var dd = diaActual.getDate();
+                var mm = diaActual.getMonth();
+                var yyyy = diaActual.getFullYear();
+                var hora = diaActual.getHours();
+                var minutos = diaActual.getMinutes();
+                var segundos = diaActual.getSeconds();
+                diaActual = `${yyyy}/${mm}/${dd} - ${hora}:${minutos}:${segundos}`;
+    
+                let nuevaBitacora = new modeloBitacora({
+                    usuario: req.body.nombreUsuario,
+                    tipoDeMovimiento: "Eliminación de criterio de evaluación",
+                    fecha: diaActual,
+                })
+                nuevaBitacora.save();
+
                 res.json({success: true , msg : 'El criterio se eliminó con éxito'});
             }
         })

@@ -1,6 +1,6 @@
 'use strict';
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
-
+let nombreUsuario = user.centroEducativo;
 const inputNombre = document.querySelector('#txtNombre');
 const inputDescripcion = document.querySelector('#txtDescripcion');
 const botonActualizar = document.querySelector('#btnRegistrar');
@@ -65,7 +65,7 @@ let obtenerDatosArticulo = () =>{
             confirmButtonText: 'Sí, estoy seguro'
           }).then((result) => {
             if (result.value) {
-                actualizarArticulo(nombre, descripcion, idCentroEducativo, _id);
+                actualizarArticulo(nombre, descripcion, idCentroEducativo, _id, nombreUsuario);
             }
           })
     }else{
