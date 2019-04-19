@@ -6,7 +6,7 @@ let registrarVisita = (fechas, idCE) => {
         url: "http://localhost:4000/api/registrarVisita",
         method: "POST",
         data: {
-            fechas: fechas,
+            fechas: `${fechas}`,
             idCE: idCE
         },
         dataType: "json",
@@ -26,15 +26,16 @@ let registrarVisita = (fechas, idCE) => {
 };
 
 
-let modificarFechaVisita = (id, fechas, idCE) => {
-    let listaCE = [];
+let modificarFechaVisita = (pvisita) => {
+    console.log("Fechas recibidas: " + pvisita.fechas);
+
     let request = $.ajax({
         url: "http://localhost:4000/api/modificarFecha",
         method: "POST",
         data: {
-            id: id,
-            fechas: fechas,
-            idCE: idCE
+            id: pvisita._id,
+            fechas: `${pvisita.fechas}`,
+            idCE: pvisita.idCE
         },
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -42,14 +43,12 @@ let modificarFechaVisita = (id, fechas, idCE) => {
     });
 
     request.done(function (res) {
-        listaCE = res.usuario;
+
     });
 
     request.fail(function (jqXHR, textStatus) {
 
     });
-
-    return listaCE;
 };
 
 let obtenerVisita = (idCE) => {

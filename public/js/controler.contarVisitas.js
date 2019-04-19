@@ -10,26 +10,43 @@ if (user.userType === 'centroEducativo') {
 
 let visita = obtenerVisita(idCE);
 
-let meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-let fechaActual = new Date();
+// let meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+let fechaActual  = new Date();
 // fechaActual = new Date(fechaActual.getFullYear() + '-' + fechaActual.getMonth() + '-' + fechaActual.getDate());
 
-fechaActual = fechaActual.getDate() + " de " + meses[fechaActual.getMonth()] + " de " + fechaActual.getFullYear();
+let zeroFill = (numero) =>{
+    if (numero < 10){
+        return "0" + numero;
+    } else {
+        return numero;
+    }
+};
 
+fechaActual =
+    fechaActual.getFullYear() + "-" +
+    zeroFill(fechaActual.getMonth()) + "-" +
+    zeroFill(fechaActual.getDate()) +
+    "T" +  zeroFill(fechaActual.getHours()) + ":" +
+    zeroFill(fechaActual.getMinutes()) + ":" +
+    "00.000Z";
+
+console.log(fechaActual);
 let contadorVisitas = () => {
 
-    
-    // if (obtenerVisita == false) {
-    //     let fechas = [];
-    //     fechas.push(fechaActual);
-    //     registrarVisita(fechaActual, idCE);
-    //     modificarFechaVisita(visita._id, fechas, idCE);
-    // } else {
-    //     let fechas = [];
-    //     fechas.push(fechaActual);
-    //     modificarFechaVisita(visita._id, visita.fechas, idCE);
-    //     console.log(fechaActual);
-    // }
+    let fechas = [];
+    fechas.push(fechaActual);
+
+    if (obtenerVisita === false) {
+
+        registrarVisita(fechas, idCE);
+        // modificarFechaVisita(visita._id, fechas, idCE);
+    } else {
+        // let fechas = [];
+        visita.fechas.push(fechaActual);
+        console.log(visita.fechas);
+        modificarFechaVisita(visita);
+    }
+   console.log(obtenerVisita(idCE).fechas);
 };
 
 window.onload = () => {
