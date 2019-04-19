@@ -14,5 +14,6 @@
     <orderEntry type="library" name="bootstrap-datetimepicker" level="application" />
     <orderEntry type="library" name="jquery-ui-i18n" level="application" />
     <orderEntry type="library" name="materialize" level="application" />
+    <orderEntry type="library" name="raphael" level="application" />
   </component>
 </module>

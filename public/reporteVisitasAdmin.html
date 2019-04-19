@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de centros educativos</title>
+    <title>Reporte de las visitas de todos los centros educativos de SICEN</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
@@ -14,7 +14,7 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/listarUsuarios.css">
+    <link rel="stylesheet" href="css/reporteVisitasAdmin.css">
 </head>
 
 <body>
@@ -50,7 +50,6 @@
             </button>
             <div class="dropdownContainer">
                 <a href="mostrarMatriculaCostos.html">Matrícula</a>
-                <a href="mostrarIdiomas.html">Idiomas</a>
                 <a href="mostrarBecas.html">Becas</a>
                 <a href="misCitasCE.html">Citas</a>
                 <a href="mostrarMaterialInformativo.html">Material Informativo</a>
@@ -149,30 +148,13 @@
             </div> -->
 
             <div class="inputStandard">
-            <div>
+                <div>
                       <label for="txtFiltro">Buscar</label>
-                  </div>
-                  <div>
-                      <input type="text" id="txtFiltro" placeholder="Nombre del centro educativo">
-                  </div>
-            </div>
-
-            <div id="divEtiquetas">
-                <!--<label for="sltEtiquetas" id="lblEtiquetas">Etiquetas</label>-->
-
-                <div id="sltEtiquetasDiv">
-                    <select id="sltEtiquetas">
-                        <!--<optgroup label="Etiquetas"></optgroup>-->
-                        <option value="" hidden>-- Busque por etiquetas --</option>
-                    </select>
+                      </div>
+                      <div>
+                          <input type="text" id="txtFiltro" placeholder="Nombre del centro educativo">
+                      </div>
                 </div>
-                <table id="tblEtiquetasSeleccionadas">
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </div>
-
 
 
             <table id="tblUsuarios">
@@ -180,7 +162,7 @@
                     <tr>
                         <!-- <th>Foto</th> -->
                         <th>Nombre</th>
-                        <th>Teléfono</th>
+                        <th>Telefono</th>
                         <th>Tipo</th>
                         <th>Provincia</th>
                     </tr>
@@ -190,40 +172,19 @@
 
                 </tbody>
             </table>
-
-
         </div>
     </main>
-
-
-
-    <!-- <div class="centroEducativo" id="CE">
-                        <div class="photoCE">
-                            <span id="spanFoto"></span>
-                        </div>
-                        <div class="nombreCE">
-                            <span id="spanNombre"></span>
-                        </div>
-                        <div>
-                            <span id="spanTelefono"></span>
-                        </div>
-                        <div class="tipoCE">
-                            <span id="spanTipoInst"></span>
-                        </div>
-                        <div>
-                            <span id="spanProvincia"></span>
-                        </div>
-                    </div> -->
 
     <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/criteriosBusqueda.servicio.js"></script>
     <script src="js/servicio.listarUsuarios.js"></script>
-    <script src="js/controlador.listarCE.js"></script>
+    <script src="js/reporteVisitas.servicio.js"></script>
+    <script src="js/reporteVisitasAdmin.controller.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
 </body>
 
