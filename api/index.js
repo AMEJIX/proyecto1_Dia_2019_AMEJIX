@@ -126,6 +126,9 @@ app.use('/api', comentarios);
 const evaluacionesMEP = require('./componentes/evaluacionesMEP/evaluacionesMEP.route');
 app.use('/api', evaluacionesMEP);
 
+const visitas = require('./componentes/visitas/visitas.route');
+app.use('/api', visitas);
+
 // Se guarda todo lo que se ha realizado
 module.exports = app;
 

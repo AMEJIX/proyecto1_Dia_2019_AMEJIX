@@ -88,7 +88,6 @@ module.exports.buscarMaterial = function (req, res) {
         }
 
     );
-
 };
 
 module.exports.listarMaterial = (req, res) => {
