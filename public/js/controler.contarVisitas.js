@@ -36,7 +36,7 @@ let contadorVisitas = () => {
     let fechas = [];
     fechas.push(fechaActual);
 
-    if (obtenerVisita === false) {
+    if (visita === false) {
 
         registrarVisita(fechas, idCE);
         // modificarFechaVisita(visita._id, fechas, idCE);

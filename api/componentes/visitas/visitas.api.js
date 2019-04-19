@@ -6,7 +6,7 @@ module.exports.registrarVisita = (req, res) => {
     console.log(req.body.fechas);
     let nuevaVisita = new visitasModel(
         {
-            fechas: Array.from(req.body.fechas),
+            fechas: req.body.fechas.split(","),
             idCE: req.body.idCE
         }
     );
