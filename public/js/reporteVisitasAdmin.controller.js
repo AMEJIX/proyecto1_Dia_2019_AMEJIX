@@ -12,16 +12,24 @@ if(user.userType == 'centroEducativo' || user.userType == 'padreFamilia' ){
 let visitas = [];
 
 let usuarios = listarUsuariosCE();
+
+let esIndefinido = (variable) =>{
+    return  variable === undefined || variable === null;
+};
+
 mostrarDatos();
 
 let agregarVisitas = () =>{
     let visitasUsuario;
 
-    for (let ce of usuarios){
-        visitasUsuario = obtener_datos(ce._id);
-
-        usuarios = Object.assign(ce,  {visitas: visitasUsuario})
+    for (let i = 0; i < usuarios.length; i++){
+        visitasUsuario = obtenerVisita(usuarios[i]._id);
+        if (visitasUsuario === false) visitasUsuario = 0;
+        if (visitasUsuario !== 0) console.log(visitasUsuario);
+        usuarios[i] = Object.assign(usuarios[i],  {visitas: visitasUsuario});
     }
+    console.log(usuarios);
+
 };
 
 agregarVisitas();
@@ -36,40 +44,31 @@ function mostrarDatos() {
 
     for (let i = 0; i < usuarios.length; i++) {
 
-        let fechas = false;
-        if (usuarios[i]['visitas'].fechas) fechas = usuarios[i]['visitas'].fechas;
 
-        if (usuarios[i]['centroEducativo'].toLowerCase().includes(filtro.toLowerCase()) || fechas) {
+        if (usuarios[i]['centroEducativo'].toLowerCase().includes(filtro.toLowerCase())
+        ) {
 
             let fila = tabla.insertRow();
 
-            let cantidadVisitas = fechas.length;
-
-            if (fechas){
-                for (let fecha of fechas){
-
-                }
-            }
 
 
-            // fila.insertCell().innerHTML = usuarios[i]['centroEducativo'];
             let nombre = fila.insertCell();
-            nombre.textContent = usuarios[i]['centroEducativo'];
+            // nombre.textContent = usuarios[i]['centroEducativo'];
             let anio = fila.insertCell();
             anio.textContent = '2019';
             let mes = fila.insertCell();
             mes.textContent = 'abril';
             let visitas = fila.insertCell();
-            visitas.textContent = cantidadVisitas;
+            // visitas.textContent = cantidadVisitas;
 
 
-            // let cEElementa = document.createElement('a');
-            // cEElementa.innerHTML= usuarios[i] ['centroEducativo'];
-            // cEElementa.href =
-            //     'profileInfoCE.html?idCE=' + usuarios [i] ['_id'] + '&centroEducativo=' + usuarios [i] ['centroEducativo'];
-            // cEElementa.value =  usuarios [i] ['_id'];
-            //
-            // nombre.appendChild(cEElementa);
+            let cEElementa = document.createElement('a');
+            cEElementa.innerHTML= usuarios[i] ['centroEducativo'];
+            cEElementa.href =
+                'profileInfoCE.html?idCE=' + usuarios [i] ['_id'] + '&centroEducativo=' + usuarios [i] ['centroEducativo'];
+            cEElementa.value =  usuarios [i] ['_id'];
+
+            nombre.appendChild(cEElementa);
         }
     }
 }
