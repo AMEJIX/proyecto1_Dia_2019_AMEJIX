@@ -1,105 +1,97 @@
-
-
-#padreFamilia, #centroEducativo, #superAdministrador{
-    display: none;
-
-}
-
-
-#vistaCEporSA, #vistaCEporPF{
+#padreFamilia, #centroEducativo, #superAdministrador {
     display: none;
 }
 
-#aVerCita, #menuCitasEnCE{
+#vistaCEporSA, #vistaCEporPF {
     display: none;
 }
 
-img{
+#aVerCita, #menuCitasEnCE {
+    display: none;
+}
+
+img {
     width: 200px;
     height: 200px;
-    
 }
 
-#map 
-{ 
-height: 400px; 
-width: 500px;
+#map {
+    height: 400px;
+    width: 500px;
 }
 
 /****************/
 
-main{
-    color : #344955;
+main {
+    color: #344955;
 }
 
-.errorInput{
+.errorInput {
     border: 2px solid #ED4C67;
 }
 
-h1{
+.welcome {
+    margin-top: 100px;
+    font-size: 30px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+h1 {
     margin-top: 20px;
-
     margin-bottom: 20px;
-
     font-size: 18px;
     text-align: center;
 }
 
-.title{
+.title {
     margin-top: 40px;
-
     margin-bottom: 40px;
-
     font-size: 22px;
     text-align: center;
 }
 
- div{
- 
+div {
     margin-bottom: 20px;
-
-    
 }
 
- div label{
+div label {
     display: inline-block;
     width: 190px;
     margin-left: 10px;
-  
 }
 
-section{
+section {
     margin-top: 75px;
 }
 
-section.userType{
+section.userType {
     display: block;
     margin: 0 auto;
     text-align: center;
     margin-top: 30px;
 }
 
-
-
-input{
+input {
     display: inline-block;
     width: 200px;
     height: 18px;
     outline: none;
 }
 
-textarea{
+textarea {
     height: 150px;
     width: 404px;
     resize: none;
 }
-form select{
+
+form select {
     display: inline-block;
     width: 200px;
     height: 25px;
 }
 
-form button{
+form button {
     display: block;
     margin: 0 auto;
     padding: 14px 50px;
@@ -111,69 +103,59 @@ form button{
     margin-top: 60px;
 }
 
-
-form button:hover{
+form button:hover {
     background-color: #f9bf33;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     width: 25px;
     margin-left: 15px;
     margin-top: 5px;
     margin-bottom: 0px;
-
 }
 
-input[type="radio"]{
+input[type="radio"] {
     width: 25px;
     margin-left: 15px;
     margin-top: 5px;
     margin-bottom: 1px;
-
 }
 
-div ul{
+div ul {
     margin-bottom: 5px;
     font-size: 14px;
-
 }
 
-#map 
-{ 
-height: 400px; 
-width: 1200px;
-display: block;
-margin : 0 auto;
-
-}
-
-
-.column{
+#map {
+    height: 400px;
+    width: 1200px;
     display: block;
     margin: 0 auto;
 }
 
-.columns{
-    display: flow-root;
-    
+.column {
+    display: block;
+    margin: 0 auto;
 }
 
-.leftColumn{
+.columns {
+    display: flow-root;
+}
+
+.leftColumn {
     width: 45%;
     float: left;
     margin-left: 50px;
     display: block;
 }
 
-
-.rightColumn{
+.rightColumn {
     width: 45%;
     float: right;
     display: block;
-    
 }
 
-.estrellas{
+.estrellas {
     display: inline-block;
     text-align: center;
     font-size: 25px;
@@ -182,28 +164,27 @@ margin : 0 auto;
     vertical-align: middle;
 }
 
-#divGeneralEstrellas{
+#divGeneralEstrellas {
     display: inline-block;
-    width: 23%; 
+    width: 23%;
     text-align: left;
     font-size: 20px;
     color: #2c3e50;
     font-style: bold;
     padding-top: 20px;
     margin-left: 1%;
-  
 }
 
-#divEncabezadoH2Estrellas{
+#divEncabezadoH2Estrellas {
     display: inline-block;
     float: left;
 }
-#encabezadoH2Estrellas{
-display: inline-block;
-}
-#divEstrellas{
-    display: inline-block;
 
+#encabezadoH2Estrellas {
+    display: inline-block;
+}
+
+#divEstrellas {
+    display: inline-block;
     float: right;
 }
-
