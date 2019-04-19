@@ -1,5 +1,28 @@
+.centrarInputs {
+    width: 50%;
+    margin: auto;
+}
 
 
+.columnas{
+    display: flow-root;
+    
+}
+
+.columna_izquierda{
+    width: 45%;
+    float: left;
+}
+
+.columna_derecha{
+    width: 45%;
+    float: right;
+    
+    }
+/* #centrarInputs label, input{
+    display: inline;
+    float: none;
+} */
 
 textarea {
     display: block;
@@ -7,10 +30,21 @@ textarea {
     margin-right: auto;
 }
 
+#titulo{
+    font-size: 25px;
+}
+
 .contenido{
     font-family: 'Raleway', sans-serif;
     outline-color: #F9AA33;
+    font-size: 20px;
 
+}
+
+#subContenido{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
 }
 
 
@@ -57,7 +91,7 @@ h1{
 
     margin-bottom: 20px;
 
-    font-size: 18px;
+    /* font-size: 18px; */
     text-align: center;
 }
 
@@ -111,6 +145,7 @@ select{
     width: 200px;
     height: 25px;
     outline-color: #f9bf33;
+    font-size: 20px;
 }
 
 .yellowButton{
@@ -155,13 +190,12 @@ div ul{
 
 #map 
 { 
-height: 400px; 
-width: 900px;
+height: 350px; 
+width: 400px;
 display: block;
 margin : 0 auto;
 
 }
-
 
 .column{
     display: block;
