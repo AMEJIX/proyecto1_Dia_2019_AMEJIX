@@ -129,6 +129,9 @@ app.use('/api', evaluacionesMEP);
 const visitas = require('./componentes/visitas/visitas.route');
 app.use('/api', visitas);
 
+const starsPF = require('./componentes/estrellasPF/starsPF.route');
+app.use('/api', starsPF);
+
 // Se guarda todo lo que se ha realizado
 module.exports = app;
 
