@@ -121,7 +121,7 @@
                                 personal</button>
                             <button class="tablinks" onclick="openCity(event, 'ContactoSA')">Contacto</button>
                             <button class="tablinks" onclick="openCity(event, 'imagenSATab')">Imagen</button>
-                            <button class="tablinks" onclick="openCity(event, 'ubicacionSATAB')">Ubicacion</button>
+                            <button class="tablinks" onclick="openCity(event, 'ubicacionSATAB')">Ubicación</button>
                             <button class="tablinks" onclick="openCity(event, 'registroSATab')">Actualizar</button>
 
                         </div>
@@ -130,89 +130,91 @@
                     <!-- TAB Informacion Personal -->
                     <div id="InformacionPersonalSA" class="tabcontent">
 
+                        <div class="centrarInputs">
+                            <div>
+                                <div>
+                                    <label for="txtNombreSA">Primer nombre:</label>
+                                    <input type="text" maxlength="20" id="txtNombreSA">
+                                </div>
+                                <div>
+                                    <label for="txtSegundoNombreSA">Segundo nombre:</label>
+                                    <input type="text" maxlength="20" id="txtSegundoNombreSA" title="opcional">
+                                </div>
+                                <div>
+                                    <label for="txtApellidoSA">Primer apellido:</label>
+                                    <input type="text" maxlength="20" id="txtApellidoSA">
+                                </div>
+                                <div>
+                                    <label for="txtSegundoApellidoSA">Segundo apellido:</label>
+                                    <input type="text" maxlength="20" id="txtSegundoApellidoSA" title="opcional">
+                                </div>
+                                <div>
+                                    <label for="numIDSA">Identificación:</label>
+                                    <input type="text" id="numIDSA">
 
-                        <div>
-                            <div>
-                                <label for="txtNombreSA">Primer nombre:</label>
-                                <input type="text" maxlength="20" id="txtNombreSA">
-                            </div>
-                            <div>
-                                <label for="txtSegundoNombreSA">Segundo nombre:</label>
-                                <input type="text" maxlength="20" id="txtSegundoNombreSA" title="opcional">
-                            </div>
-                            <div>
-                                <label for="txtApellidoSA">Primer apellido:</label>
-                                <input type="text" maxlength="20" id="txtApellidoSA">
-                            </div>
-                            <div>
-                                <label for="txtSegundoApellidoSA">Segundo apellido:</label>
-                                <input type="text" maxlength="20" id="txtSegundoApellidoSA" title="opcional">
-                            </div>
-                            <div>
-                                <label for="numIDSA">Identificación:</label>
-                                <input type="text" id="numIDSA">
+                                </div>
+                                <div>
+                                    <label for="txtNacionalidadSA">Nacionalidad:</label>
+                                    <input type="text" maxlength="20" id="txtNacionalidadSA">
+                                </div>
+
+                                <div>
+                                    <label for="textPuestoSA">Puesto:</label>
+                                    <input type="text" maxlength="20" id="textPuestoSA">
+                                </div>
 
                             </div>
-                            <div>
-                                <label for="txtNacionalidadSA">Nacionalidad:</label>
-                                <input type="text" maxlength="20" id="txtNacionalidadSA">
-                            </div>
-
-                            <div>
-                                <label for="textPuestoSA">Puesto:</label>
-                                <input type="text" maxlength="20" id="textPuestoSA">
-                            </div>
-
                         </div>
 
                     </div>
                     <!-- TABContacto -->
                     <div id="ContactoSA" class="tabcontent">
 
+                        <div class="centrarInputs">
+                            <div>
+                                <label for="txtEmailSA">Correo electrónico:</label>
+                                <input type="email" id="txtEmailSA" maxlength="60" placeholder="user@example.com">
+                            </div>
+                            <div>
+                                <label for="txtTelefonoSA">Teléfono:</label>
+                                <input type="tel" maxlength="20" id="txtTelefonoSA">
+                            </div>
 
-                        <div>
-                            <label for="txtEmailSA">Correo electrónico:</label>
-                            <input type="email" id="txtEmailSA" maxlength="60" placeholder="user@example.com">
                         </div>
-                        <div>
-                            <label for="txtTelefonoSA">Teléfono:</label>
-                            <input type="tel" maxlength="20" id="txtTelefonoSA">
-                        </div>
-
-
                     </div>
 
                     <div id="ubicacionSATAB" class="tabcontent">
 
 
-
-                        <div>
-                            <div>
-                                <label for="selectProvinciasSA">Provincia:</label>
-                                <select id="selectProvinciasSA" size="" class="selectProvincias">
-
-
-                                </select>
-                            </div>
-
-
+                        <div class="centrarInputs">
 
                             <div>
-                                <label for="selectCantonesSA">Cantón:</label>
-                                <select id="selectCantonesSA" size="" class="selectCantones">
-                                    <option value="" selected disabled>Cantones</option>
-                                </select>
+                                <div>
+                                    <label for="selectProvinciasSA">Provincia:</label>
+                                    <select id="selectProvinciasSA" size="" class="selectProvincias">
+
+
+                                    </select>
+                                </div>
+
+
+
+                                <div>
+                                    <label for="selectCantonesSA">Cantón:</label>
+                                    <select id="selectCantonesSA" size="" class="selectCantones">
+                                        <option value="" selected disabled>Cantones</option>
+                                    </select>
+
+                                </div>
+                                <div>
+                                    <label for="selectDistritosSA">Distrito:</label>
+                                    <select id="selectDistritosSA" size="" class="selectDistritos">
+                                        <option value="" selected disabled>Distritos</option>
+                                    </select>
+                                </div>
+
 
                             </div>
-                            <div>
-                                <label for="selectDistritosSA">Distrito:</label>
-                                <select id="selectDistritosSA" size="" class="selectDistritos">
-                                    <option value="" selected disabled>Distritos</option>
-                                </select>
-                            </div>
-
-
-
 
                         </div>
                     </div>
@@ -281,60 +283,62 @@
                     <!-- TAB Informacion Personal -->
                     <div id="InformacionPersonal" class="tabcontent">
 
+                        <div class="centrarInputs">
+                            <div>
+                                <div>
+                                    <label for="txtNombre">Primer nombre:</label>
+                                    <input type="text" maxlength="20" id="txtNombre">
+                                </div>
+                                <div>
+                                    <label for="txtSegundoNombre">Segundo nombre:</label>
+                                    <input type="text" maxlength="20" id="txtSegundoNombre" title="opcional">
+                                </div>
+                                <div>
+                                    <label for="txtApellido">Primer apellido:</label>
+                                    <input type="text" maxlength="20" id="txtApellido">
+                                </div>
+                                <div>
+                                    <label for="txtSegundoApellido">Segundo apellido:</label>
+                                    <input type="text" maxlength="20" id="txtSegundoApellido" title="opcional">
+                                </div>
+                                <div>
+                                    <label for="numID">Identificación:</label>
+                                    <input type="text" id="numID">
 
-                        <div>
-                            <div>
-                                <label for="txtNombre">Primer nombre:</label>
-                                <input type="text" maxlength="20" id="txtNombre">
-                            </div>
-                            <div>
-                                <label for="txtSegundoNombre">Segundo nombre:</label>
-                                <input type="text" maxlength="20" id="txtSegundoNombre" title="opcional">
-                            </div>
-                            <div>
-                                <label for="txtApellido">Primer apellido:</label>
-                                <input type="text" maxlength="20" id="txtApellido">
-                            </div>
-                            <div>
-                                <label for="txtSegundoApellido">Segundo apellido:</label>
-                                <input type="text" maxlength="20" id="txtSegundoApellido" title="opcional">
-                            </div>
-                            <div>
-                                <label for="numID">Identificación:</label>
-                                <input type="text" id="numID">
-
-                            </div>
-                            <div>
-                                <label for="txtNacionalidad">Nacionalidad:</label>
-                                <input type="text" maxlength="20" id="txtNacionalidad">
+                                </div>
+                                <div>
+                                    <label for="txtNacionalidad">Nacionalidad:</label>
+                                    <input type="text" maxlength="20" id="txtNacionalidad">
+                                </div>
                             </div>
                         </div>
 
                     </div>
                     <!-- TABContacto -->
                     <div id="Contacto" class="tabcontent">
+                        <div class="centrarInputs">
 
-
-                        <div>
-                            <label for="txtEmail">Correo electrónico:</label>
-                            <input type="email" id="txtEmail" maxlength="60" placeholder="user@example.com">
-                        </div>
-                        <div>
-                            <label for="txtTelefono">Teléfono:</label>
-                            <input type="tel" maxlength="20" id="txtTelefono">
+                            <div>
+                                <label for="txtEmail">Correo electrónico:</label>
+                                <input type="email" id="txtEmail" maxlength="60" placeholder="user@example.com">
+                            </div>
+                            <div>
+                                <label for="txtTelefono">Teléfono:</label>
+                                <input type="tel" maxlength="20" id="txtTelefono">
+                            </div>
                         </div>
 
                     </div>
                     <!-- TAB Ubicación -->
                     <div id="Ubicacion" class="tabcontent">
 
+                        <div class="centrarInputs">
+                            <div>
+                                <label for="selectProvincias">Provincia:</label>
+                                <select id="selectProvincias" size="" class="selectProvincias">
 
-                        <div>
-                            <label for="selectProvincias">Provincia:</label>
-                            <select id="selectProvincias" size="" class="selectProvincias">
 
-
-                                <!-- 
+                                    <!-- 
                                             <option value="Alajuela"> Alajuela</option>
                                             <option value="Cartago">Cartago</option>
                                             <option value="Guanacaste">Guanacaste</option>
@@ -342,64 +346,66 @@
                                             <option value="Limon">Limón</option>
                                             <option value="Puntarena">Puntarena</option>
                                             <option value="SanJose">San José</option> -->
-                            </select>
+                                </select>
+                            </div>
+
+
+
+                            <div>
+                                <label for="selectCantones">Cantón:</label>
+                                <select id="selectCantones" size="" class="selectCantones">
+                                    <option value="" selected disabled>Cantones</option>
+                                </select>
+
+                            </div>
+                            <div>
+                                <label for="selectDistritos">Distrito:</label>
+                                <select id="selectDistritos" size="" class="selectDistritos">
+                                    <option value="" selected disabled>Distritos</option>
+                                </select>
+                            </div>
+
                         </div>
-
-
-
-                        <div>
-                            <label for="selectCantones">Cantón:</label>
-                            <select id="selectCantones" size="" class="selectCantones">
-                                <option value="" selected disabled>Cantones</option>
-                            </select>
-
-                        </div>
-                        <div>
-                            <label for="selectDistritos">Distrito:</label>
-                            <select id="selectDistritos" size="" class="selectDistritos">
-                                <option value="" selected disabled>Distritos</option>
-                            </select>
-                        </div>
-
                     </div>
 
 
                     <!-- TAB Hijos -->
                     <div id="Hijos" class="tabcontent">
+                        <div class="centrarInputs">
+                            <div id="divEdades">
+                                <label for="spanServicios">Actividades: </label>
+                                <span id="spanServicios">
+                            </div>
 
-                        <div id="divEdades">
-                            <label for="spanServicios">Actividades: </label>
-                            <span id="spanServicios">
+                            <div id="divCantidadHijos">
+                                <label for="cantHijos">Agregar hijos: </label>
+                                <select id="cantHijos" size="">
+                                    <option value="" selected disabled>Opciones</option>
+
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+
+                                </select>
+                            </div>
+
+
+                            <!-- Edad por hijo-->
+
+
+
+                            <div class="edadHijos">
+
+                            </div>
+
                         </div>
-
-                        <div id="divCantidadHijos">
-                            <label for="cantHijos">Agregar hijos: </label>
-                            <select id="cantHijos" size="">
-                                <option value="" selected disabled>Opciones</option>
-
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-
-                            </select>
-                        </div>
-
-
-                        <!-- Edad por hijo-->
-
-
-
-                        <div class="edadHijos">
-
-                        </div>
-
                     </div>
 
                     <!-- TAB IMAGEN -->
@@ -463,327 +469,367 @@
                     <!-- Tab content -->
                     <!-- TAB Datos Generales  -->
                     <div id="datosGeneralesTab" class="tabcontent">
+                        <div class="columnas">
+                            <div class="columna_izquierda">
+                                <div class="centrarInputsCol">
+                                    <div>
+                                        <label for="txtInstitución">Nombre institución:</label>
+                                        <input type="text" maxlength="200" id="txtInstitución">
+                                    </div>
+                                    <div>
+                                        <label for="txtCedulaJuridica">Cédula jurídica:</label>
+                                        <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
+                                    </div>
 
-                        <div>
-                            <label for="txtInstitución">Nombre institución:</label>
-                            <input type="text" maxlength="200" id="txtInstitución">
-                        </div>
-                        <div>
-                            <label for="txtCedulaJuridica">Cédula jurídica:</label>
-                            <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
-                        </div>
+                                    <div>
+                                        <label for="txtComercial">Nombre comercial:</label>
+                                        <input type="text" maxlength="30" id="txtComercial">
+                                    </div>
+                                    <div>
+                                        <label for="txtAnno">Año fundación:</label>
+                                        <input type="number" maxlength="15" id="txtAnno">
+                                    </div>
+                                </div>
 
-                        <div>
-                            <label for="txtComercial">Nombre comercial:</label>
-                            <input type="text" maxlength="30" id="txtComercial">
-                        </div>
-                        <div>
-                            <label for="txtAnno">Año fundación:</label>
-                            <input type="number" maxlength="15" id="txtAnno">
-                        </div>
-                        <h1>Reseña histórica</h1>
-                        <div>
+                                <h1>Reseña histórica</h1>
+                                <div>
 
-                            <textarea id="txt_historia"></textarea>
-                        </div>
-                        <div class="divImagen">
-                            <figure class='imageHolder'>
-                                <img id="imagePreview">
-                            </figure>
-                        </div>
+                                    <textarea id="txt_historia"></textarea>
+                                </div>
+                            </div>
+                            <div class="divImagen">
+                                <figure class='imageHolder'>
+                                    <img id="imagePreview">
+                                </figure>
+                            </div>
 
-                        <button type="button" id="butonSubirImagen" class="yellowButton">Subir
-                            Imagen</button>
+
+                            <button type="button" id="butonSubirImagen" class="yellowButton">Subir
+                                Imagen</button>
+                        </div>
                     </div>
-
                     <!-- TAB Contacto CE  -->
                     <div id="contactoCETab" class="tabcontent">
-                        <div>
-                            <label for="txtTelefonoCE">Teléfono:</label>
-                            <input type="tel" maxlength="20" id="txtTelefonoCE">
-                        </div>
-                        <div>
-                            <label for="txtEmailCE">Correo electrónico:</label>
-                            <input type="email" id="txtEmailCE" maxlength="50" placeholder="user@example.com">
-                        </div>
-                        <div>
-                            <label for="txtSitioWeb">Sitio web:</label>
-                            <input type="text" id="txtSitioWeb" maxlength="50" placeholder="Sitio web">
-                        </div>
-                        <div>
-                            <label for="textFacebook"> Facebook:</label>
-                            <input type="text" id="textFacebook" maxlength="50" placeholder="Red Social">
-                        </div>
-                        <div>
-                            <label for="textTwitter"> Twitter:</label>
-                            <input type="text" id="textTwitter" maxlength="50" placeholder="Red Social">
-                        </div>
-                        <div>
-                            <label for="textInstagram"> Instagram:</label>
-                            <input type="text" id="textInstagram" maxlength="50" placeholder="Red Social">
-                        </div>
-                        <div>
-                            <label for="txtFAx">Fax:</label>
-                            <input type="tel" maxlength="20" id="txtFAx">
-                        </div>
 
+                        <div class="centrarInputs">
+                            <div>
+                                <label for="txtTelefonoCE">Teléfono:</label>
+                                <input type="tel" maxlength="20" id="txtTelefonoCE">
+                            </div>
+                            <div>
+                                <label for="txtEmailCE">Correo electrónico:</label>
+                                <input type="email" id="txtEmailCE" maxlength="50" placeholder="user@example.com">
+                            </div>
+                            <div>
+                                <label for="txtSitioWeb">Sitio web:</label>
+                                <input type="text" id="txtSitioWeb" maxlength="50" placeholder="Sitio web">
+                            </div>
+                            <div>
+                                <label for="textFacebook"> Facebook:</label>
+                                <input type="text" id="textFacebook" maxlength="50" placeholder="Red Social">
+                            </div>
+                            <div>
+                                <label for="textTwitter"> Twitter:</label>
+                                <input type="text" id="textTwitter" maxlength="50" placeholder="Red Social">
+                            </div>
+                            <div>
+                                <label for="textInstagram"> Instagram:</label>
+                                <input type="text" id="textInstagram" maxlength="50" placeholder="Red Social">
+                            </div>
+                            <div>
+                                <label for="txtFAx">Fax:</label>
+                                <input type="tel" maxlength="20" id="txtFAx">
+                            </div>
+                        </div>
                     </div>
 
                     <!-- TAB Personal CE   -->
                     <div id="PersonalCETab" class="tabcontent">
-                        <div>
-                            <label for="txtnombreCEP">Nombre:</label>
-                            <input type="text" maxlength="20" id="txtnombreCEP" title="opcional">
-                        </div>
-
-                        <div>
-                            <label for="textSegundoNombreCEP">Segundo nombre:</label>
-                            <input type="text" maxlength="20" id="textSegundoNombreCEP" title="opcional">
-                        </div>
-
-                        <div>
-                            <label for="textApellidoCEP">Apellido:</label>
-                            <input type="text" maxlength="20" id="textApellidoCEP" title="opcional">
-                        </div>
-
-                        <div>
-                            <label for="textSegundoApellidoCEP">Segundo apellido:</label>
-                            <input type="text" maxlength="20" id="textSegundoApellidoCEP" title="opcional">
-                        </div>
+                        <div class="columnas">
+                            <div class="centrarInputsCol">
+                                <div class="columna_izquierda">
 
 
-                        <div>
-                            <label for="txtdepartamento">Departamento:</label>
-                            <input type="text" maxlength="20" id="txtdepartamento" title="opcional">
+                                    <div>
+                                        <label for="txtnombreCEP">Nombre:</label>
+                                        <input type="text" maxlength="20" id="txtnombreCEP" title="opcional">
+                                    </div>
+
+                                    <div>
+                                        <label for="textSegundoNombreCEP">Segundo nombre:</label>
+                                        <input type="text" maxlength="20" id="textSegundoNombreCEP" title="opcional">
+                                    </div>
+
+                                    <div>
+                                        <label for="textApellidoCEP">Apellido:</label>
+                                        <input type="text" maxlength="20" id="textApellidoCEP" title="opcional">
+                                    </div>
+
+                                    <div>
+                                        <label for="textSegundoApellidoCEP">Segundo apellido:</label>
+                                        <input type="text" maxlength="20" id="textSegundoApellidoCEP" title="opcional">
+                                    </div>
+
+
+                                    <div>
+                                        <label for="txtdepartamento">Departamento:</label>
+                                        <input type="text" maxlength="20" id="txtdepartamento" title="opcional">
+                                    </div>
+                                    <div>
+                                        <label for="txtTelefonoCEP">Teléfono:</label>
+                                        <input type="tel" maxlength="20" id="txtTelefonoCEP" title="opcional">
+                                    </div>
+                                    <div>
+                                        <label for="txtExtension">Extensión:</label>
+                                        <input type="tel" maxlength="20" id="txtExtension" title="opcional">
+                                    </div>
+                                    <div>
+                                        <label for="txtNumIDCEP">Identificación:</label>
+                                        <input type="text" id="txtNumIDCEP" title="opcional">
+                                    </div>
+                                    <div>
+                                        <label for="txtEmailCEP">Correo electrónico:</label>
+                                        <input type="email" id="txtEmailCEP" maxlength="50"
+                                            placeholder="user@example.com">
+
+                                    </div>
+                                </div>
+                                <div class="divImagen">
+                                    <figure class='imageHolder'>
+                                        <img id="imagePreviewCEP">
+                                    </figure>
+                                </div>
+                                <div>
+                                    <button class="yellowButton" type="button" id="fotoCEP">Subir Foto</button>
+                                </div>
+
+                            </div>
                         </div>
-                        <div>
-                            <label for="txtTelefonoCEP">Teléfono:</label>
-                            <input type="tel" maxlength="20" id="txtTelefonoCEP" title="opcional">
-                        </div>
-                        <div>
-                            <label for="txtExtension">Extensión:</label>
-                            <input type="tel" maxlength="20" id="txtExtension" title="opcional">
-                        </div>
-                        <div>
-                            <label for="txtNumIDCEP">Identificación:</label>
-                            <input type="text" id="txtNumIDCEP" title="opcional">
-                        </div>
-                        <div>
-                            <label for="txtEmailCEP">Correo electrónico:</label>
-                            <input type="email" id="txtEmailCEP" maxlength="50" placeholder="user@example.com">
-                        </div>
-                        <div class="divImagen">
-                            <figure class='imageHolder'>
-                                <img id="imagePreviewCEP">
-                            </figure>
-                        </div>
-                        <div>
-                            <button class="yellowButton" type="button" id="fotoCEP">Subir Foto</button>
-                        </div>
+
                     </div>
 
+                        <!-- TAB Ubicacion CE   -->
+                        <div id="ubicacionCETAB" class="tabcontent">
 
-                    <!-- TAB Ubicacion CE   -->
-                    <div id="ubicacionCETAB" class="tabcontent">
+                            <div class="columnas">
+                                <div class="columna_izquierda">
+                                    <h1>Dirección exacta</h1>
+                                    <div>
+                                        <textarea id="textDireccionExacta"></textarea>
+                                    </div>
 
 
-                        <h1>Dirección exacta</h1>
-                        <div>
-                            <textarea id="textDireccionExacta"></textarea>
+                                    <div>
+                                        <div class="centrarInputs">
+                                            <div>
+                                                <label for="selectProvinciasCE">Provincia:</label>
+                                                <select id="selectProvinciasCE" size="" class="selectProvincias">
+
+
+                                                </select>
+                                            </div>
+
+
+
+                                            <div>
+                                                <label for="selectCantonesCE">Cantón:</label>
+                                                <select id="selectCantonesCE" size="" class="selectCantones">
+                                                    <option value="" selected disabled>Cantones</option>
+                                                </select>
+
+                                            </div>
+                                            <div>
+                                                <label for="selectDistritosCE">Distrito:</label>
+                                                <select id="selectDistritosCE" size="" class="selectDistritos">
+                                                    <option value="" selected disabled>Distritos</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="columna_derecha">
+
+                                    <h1>Ubicación en mapa</h1>
+
+                                    <div id="map"></div>
+                                </div>
+
+                            </div>
                         </div>
-                        <div>
-                            <div>
-                                <label for="selectProvinciasCE">Provincia:</label>
-                                <select id="selectProvinciasCE" size="" class="selectProvincias">
 
 
-                                </select>
+                        <!-- TAB Tipo Institucion CE   -->
+                        <div id="educacionCETab" class="tabcontent">
+                            <div class="centrarInputs">
+
+                                <fieldset id="fieldsetTipo">
+                                    <h1>Tipo de institución - Grados ofrecidos</h1>
+
+                                    <ul> <input type="checkbox" value="Escuela" class="checkboxTipo"
+                                            id="checkBoxEscuela">
+                                        Escuela</ul>
+                                    <ul> <input type="checkbox" value="Colegio" class="checkboxTipo"
+                                            id="checkBoxColegio">
+                                        Colegio</ul>
+
+
+
+                                    <!-- Con el siguiente link se puede crear un codigo que ejecute una funcion en el js -->
+                                    <!-- <a href="#" onClick="cualquierFuncion(); return false;"> Nombre del link</a> -->
+
+                                </fieldset>
+
+                                <div class="divNivelesEscuela">
+
+                                </div>
+
+                                <div class="divNivelesColegio">
+
+                                </div>
+
+                                <div>
+                                    <fieldset id="fieldsetClasificacion">
+                                        <h1>Clasificación</h1>
+
+
+                                        <ul> <input type="radio" id="radioTecnico" name="radioClasificacion"
+                                                value="Tecnico">
+                                            Técnico</ul>
+                                        <ul> <input type="radio" id="radioProfesional" name="radioClasificacion"
+                                                value="Profesional">
+                                            Profesional</ul>
+                                        <ul> <input type="radio" id="radioCientifico" name="radioClasificacion"
+                                                value="Científico">
+                                            Científico</ul>
+                                        <ul> <input type="radio" id="radioPedagogico" name="radioClasificacion"
+                                                value="Pedagógico">
+                                            Pedagógico</ul>
+                                        <ul> <input type="radio" id="radioAcademico" name="radioClasificacion"
+                                                value="Académico">
+                                            Académico</ul>
+
+                                    </fieldset>
+
+
+
+
+                                    <h1>Idiomas ofrecidos</h1>
+                                    <div class="divIdiomasOfrecidos">
+
+                                    </div>
+                                    <button class="yellowButton" id="agregarIdioma" type="button">Agregar
+                                        idioma</button>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                        <!-- Otros Datos   -->
+                        <div id="otrosDatosCETab" class="tabcontent">
+                            <div class="centrarInputs">
+                                <fieldset id="fieldsetPrivacidad">
+                                    <h1>Institución pública/privada</h1>
+
+                                    <ul> <input type="radio" id="radioPrivado" name="rbt_privacidad" value="privado">
+                                        Privado</ul>
+
+
+                                    <ul><input type="radio" id="radioPublico" name="rbt_privacidad" value="publico">
+                                        Público</ul>
+
+                                </fieldset>
+
+
+                                <fieldset id="fieldsetGenero">
+                                    <h1>Género</h1>
+
+                                    <ul><input type="radio" id="radioFemenino" name="rbt_sexo" value="Femenino">Femenino
+                                    </ul>
+
+
+                                    <ul><input type="radio" id="radioMasculino" name="rbt_sexo"
+                                            value="Masculino">Masculino
+                                    </ul>
+
+
+                                    <ul> <input type="radio" id="radioMixto" name="rbt_sexo" value="Mixto">Mixto
+                                    </ul>
+
+
+                                </fieldset>
+
+                                <fieldset id="fieldsetReligion">
+                                    <h1>Religión</h1>
+
+                                    <ul><input type="radio" id="radioSi" name="rbt_religion" value="si">Sí</ul>
+                                    <ul><input type="radio" id="radioNo" name="rbt_religion" value="no">No<ul>
+                                        </ul>
+
+                                </fieldset>
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Servicios Adiconales TAB  -->
+                        <div id="serviciosAdicionalesCETab" class="tabcontent">
+                            <div class="centrarInputs">
+                                <h1>Servicios adicionales</h1>
+                                <div class="serviciosAdicionales">
+
+                                </div>
+
+                                <div id="divServicios">
+                                    <label for="spanServicios">Actividades: </label>
+                                    <span id="spanServicios">
+                                </div>
+
+
+
+
+
+                                <button class="yellowButton" id="agregarServicios" type="button">Agregar
+                                    servicio</button>
+
+                                <h1>Agregar documentos</h1>
+                                <div>
+                                    <figure class='imageHolder'>
+                                        <img id="documentPreview">
+                                    </figure>
+                                    <button class="yellowButton" id="buttonAgregarDocumento" type="button">Agregar
+                                        PDF</button>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <!--  Registro CE TAB  -->
+                        <div id="registroCETab" class="tabcontent">
+
+
+
+                            <div class="boton RegistroCentroEducativo">
+                                <button class="yellowButton" type="button"
+                                    id="btnRegistrarCentroEducativo">Actualizar</button>
                             </div>
 
 
-
-                            <div>
-                                <label for="selectCantonesCE">Cantón:</label>
-                                <select id="selectCantonesCE" size="" class="selectCantones">
-                                    <option value="" selected disabled>Cantones</option>
-                                </select>
-
-                            </div>
-                            <div>
-                                <label for="selectDistritosCE">Distrito:</label>
-                                <select id="selectDistritosCE" size="" class="selectDistritos">
-                                    <option value="" selected disabled>Distritos</option>
-                                </select>
-                            </div>
-
-
-                            <h1>Ubicación en mapa</h1>
-                            <div id="map"></div>
                         </div>
-                    </div>
-
-
-                    <!-- TAB Tipo Institucion CE   -->
-                    <div id="educacionCETab" class="tabcontent">
-
-
-                        <fieldset id="fieldsetTipo">
-                            <h1>Tipo de institución - Grados ofrecidos</h1>
-
-                            <ul> <input type="checkbox" value="Escuela" class="checkboxTipo" id="checkBoxEscuela">
-                                Escuela</ul>
-                            <ul> <input type="checkbox" value="Colegio" class="checkboxTipo" id="checkBoxColegio">
-                                Colegio</ul>
-
-
-
-                            <!-- Con el siguiente link se puede crear un codigo que ejecute una funcion en el js -->
-                            <!-- <a href="#" onClick="cualquierFuncion(); return false;"> Nombre del link</a> -->
-
-                        </fieldset>
-
-                        <div class="divNivelesEscuela">
-
-                        </div>
-
-                        <div class="divNivelesColegio">
-
-                        </div>
-
-                        <div>
-                            <fieldset id="fieldsetClasificacion">
-                                <h1>Clasificación</h1>
-
-
-                                <ul> <input type="radio" id="radioTecnico" name="radioClasificacion" value="Tecnico">
-                                    Técnico</ul>
-                                <ul> <input type="radio" id="radioProfesional" name="radioClasificacion"
-                                        value="Profesional">
-                                    Profesional</ul>
-                                <ul> <input type="radio" id="radioCientifico" name="radioClasificacion"
-                                        value="Científico">
-                                    Científico</ul>
-                                <ul> <input type="radio" id="radioPedagogico" name="radioClasificacion"
-                                        value="Pedagógico">
-                                    Pedagógico</ul>
-                                <ul> <input type="radio" id="radioAcademico" name="radioClasificacion"
-                                        value="Académico">
-                                    Académico</ul>
-
-                            </fieldset>
-
-
-
-
-                            <h1>Idiomas ofrecidos</h1>
-                            <div class="divIdiomasOfrecidos">
-
-                            </div>
-                            <button class="yellowButton" id="agregarIdioma" type="button">Agregar idioma</button>
-
-
-
-
-                        </div>
-
-                    </div>
-
-
-
-
-
-
-
-
-                    <!-- Otros Datos   -->
-                    <div id="otrosDatosCETab" class="tabcontent">
-                        <fieldset id="fieldsetPrivacidad">
-                            <h1>Institución pública/privada</h1>
-
-                            <ul> <input type="radio" id="radioPrivado" name="rbt_privacidad" value="privado">
-                                Privado</ul>
-
-
-                            <ul><input type="radio" id="radioPublico" name="rbt_privacidad" value="publico">
-                                Público</ul>
-
-                        </fieldset>
-
-
-                        <fieldset id="fieldsetGenero">
-                            <h1>Género</h1>
-
-                            <ul><input type="radio" id="radioFemenino" name="rbt_sexo" value="Femenino">Femenino
-                            </ul>
-
-
-                            <ul><input type="radio" id="radioMasculino" name="rbt_sexo" value="Masculino">Masculino
-                            </ul>
-
-
-                            <ul> <input type="radio" id="radioMixto" name="rbt_sexo" value="Mixto">Mixto
-                            </ul>
-
-
-                        </fieldset>
-
-                        <fieldset id="fieldsetReligion">
-                            <h1>Religión</h1>
-
-                            <ul><input type="radio" id="radioSi" name="rbt_religion" value="si">Sí</ul>
-                            <ul><input type="radio" id="radioNo" name="rbt_religion" value="no">No<ul>
-                                </ul>
-
-                        </fieldset>
-
-                    </div>
-
-
-
-                    <!-- Servicios Adiconales TAB  -->
-                    <div id="serviciosAdicionalesCETab" class="tabcontent">
-                        <h1>Servicios adicionales</h1>
-                        <div class="serviciosAdicionales">
-
-                        </div>
-
-                        <div id="divServicios">
-                            <label for="spanServicios">Actividades: </label>
-                            <span id="spanServicios">
-                        </div>
-
-
-
-
-
-                        <button class="yellowButton" id="agregarServicios" type="button">Agregar servicio</button>
-
-                        <h1>Agregar documentos</h1>
-                        <div>
-                            <figure class='imageHolder'>
-                                <img id="documentPreview">
-                            </figure>
-                            <button class="yellowButton" id="buttonAgregarDocumento" type="button">Agregar PDF</button>
-                        </div>
-
-
-
-
-
-                    </div>
-
-                    <!--  Registro CE TAB  -->
-                    <div id="registroCETab" class="tabcontent">
-
-
-
-                        <div class="boton RegistroCentroEducativo">
-                            <button class="yellowButton" type="button"
-                                id="btnRegistrarCentroEducativo">Actualizar</button>
-                        </div>
-
-
-                    </div>
 
 
 
