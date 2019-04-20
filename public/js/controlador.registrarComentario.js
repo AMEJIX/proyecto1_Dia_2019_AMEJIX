@@ -7,10 +7,11 @@ const ratings = document.querySelector('.starrr')
 const inputComentario = document.querySelector('#inputComentario');
 const btnEnviarComment = document.querySelector('#send');
 let value = 0;
+let evaluacion = obtenerEvaluacion(IdGeneralCE);
 
 $('.starrr').starrr({
-    rating:0,
-    change:function(e,valor){
+    rating: 0,
+    change: function (e, valor) {
         value = valor;
     }
 });
@@ -52,6 +53,15 @@ let obtenerDatos = () => {
 
         // registrarComentario(stars, inputComentario, idCentroEducativo);
         registrarComentario(userPhoto, userName, stars, comment, idCentroEducativo);
+
+        console.log('Evaluacion:' + evaluacion);
+        if (evaluacion === false) {
+            registrarEvaluacion(stars, idCE);
+        } else {
+            let id = evaluacion._id;
+            let starsTotal = stars + evaluacion.stars;
+            modificarEvaluacion(id, starsTotal, IdGeneralCE);
+        }
 
     } else {
         swal.fire({

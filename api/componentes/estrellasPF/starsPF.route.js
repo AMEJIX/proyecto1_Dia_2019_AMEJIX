@@ -17,7 +17,7 @@ router.route('/registrarEvaluacion')
         }
     );
 
-router.route('/modificarEvaluacion')
+router.route('/modificarEvaluacionPF')
     .post(
         function (req, res) {
             starsPFApi.modificar(req, res);
