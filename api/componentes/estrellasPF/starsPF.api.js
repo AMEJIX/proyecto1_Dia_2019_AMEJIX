@@ -5,6 +5,9 @@ const starsPFModel = require('./starsPF.model');
 module.exports.registrarEvaluacion = (req, res) => {
     let nuevaEvaluacionPF = new starsPFModel(
         {
+            photoCE: req.body.photoCE,
+            nameCE: req.body.nameCE,
+            provinciaCE: req.body.provinciaCE,
             stars: req.body.stars,
             idCE: req.body.idCE
         }

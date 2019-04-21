@@ -3,11 +3,20 @@
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 let centroEducativo = listarUsuariosCEencabezado(IdGeneralCE);
 
+let photoCE = centroEducativo[0]['imagen'];
+let nameCE = centroEducativo[0]['centroEducativo'];
+let provinciaCE = centroEducativo[0]['provincia'];
+
 const ratings = document.querySelector('.starrr')
 const inputComentario = document.querySelector('#inputComentario');
 const btnEnviarComment = document.querySelector('#send');
 let value = 0;
 let evaluacion = obtenerEvaluacion(IdGeneralCE);
+let listaComentarios = listaComentariosUser(IdGeneralCE);
+
+if (photoCE == '') {
+    photoCE = 'img/icons8-user.png';
+}
 
 $('.starrr').starrr({
     rating: 0,
@@ -51,16 +60,16 @@ let obtenerDatos = () => {
         let comment = inputComentario.value;
         let idCentroEducativo = IdGeneralCE;
 
-        // registrarComentario(stars, inputComentario, idCentroEducativo);
         registrarComentario(userPhoto, userName, stars, comment, idCentroEducativo);
 
         console.log('Evaluacion:' + evaluacion);
         if (evaluacion === false) {
-            registrarEvaluacion(stars, idCE);
+            registrarEvaluacion(photoCE, nameCE, provinciaCE, stars, idCE);
         } else {
             let id = evaluacion._id;
             let starsTotal = stars + evaluacion.stars;
-            modificarEvaluacion(id, starsTotal, IdGeneralCE);
+            // let starsProm = starsTotal / listaComentarios.length;
+            modificarEvaluacion(id, photoCE, nameCE, provinciaCE, starsTotal, IdGeneralCE);
         }
 
     } else {

@@ -1,10 +1,13 @@
 'use strict';
 
-let registrarEvaluacion = (stars, idCE) => {
+let registrarEvaluacion = (photoCE, nameCE, provinciaCE, stars, idCE) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarEvaluacion",
         method: "POST",
         data: {
+            photoCE: photoCE,
+            nameCE: nameCE,
+            provinciaCE: provinciaCE,
             stars: stars,
             idCE: idCE
         },
@@ -22,12 +25,15 @@ let registrarEvaluacion = (stars, idCE) => {
     });
 };
 
-let modificarEvaluacion = (id, stars, idCE) => {
+let modificarEvaluacion = (id, photoCE, nameCE, provinciaCE, stars, idCE) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/modificarEvaluacionPF",
         method: "POST",
         data: {
             id: id,
+            photoCE: photoCE,
+            nameCE: nameCE,
+            provinciaCE: provinciaCE,
             stars: stars,
             idCE: idCE  
         },
