@@ -9,6 +9,8 @@ module.exports.registrarEvaluacion = (req, res) => {
             nameCE: req.body.nameCE,
             provinciaCE: req.body.provinciaCE,
             stars: req.body.stars,
+            starsProm: req.body.starsProm,
+            type: req.body.type,
             idCE: req.body.idCE
         }
     );
@@ -65,6 +67,42 @@ module.exports.obtenerEvaluacion = (req, res) => {
                 })
             }
 
+        }
+    )   
+};
+
+module.exports.listarEvaluacion = (req, res) => {
+    starsPFModel.find().sort({starsProm: 'desc'}).then(
+        function (stars) {
+            if (stars.length > 0) {
+                res.json({
+                    success: true,
+                    stars: stars
+                })
+            } else {
+                res.json({
+                    success: false,
+                    stars: 'No se encontraron evaluaciones registradas'
+                })
+            }
+        }
+    )
+};
+
+module.exports.listarEvaluacionColegios = (req, res) => {
+    starsPFModel.find().sort({starsProm: 'desc'}).then(
+        function (stars) {
+            if (stars.length > 0) {
+                res.json({
+                    success: true,
+                    stars: stars
+                })
+            } else {
+                res.json({
+                    success: false,
+                    stars: 'No se encontraron evaluaciones registradas'
+                })
+            }
         }
     )
 };

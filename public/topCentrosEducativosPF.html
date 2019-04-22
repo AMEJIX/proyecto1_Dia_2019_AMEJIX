@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/reset.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="css/topCEPF.css">
 
@@ -149,19 +149,40 @@
             <div class="wrapper">
                 <h1>Top 10 por padres de familia</h1>
 
-                <div id="boxCE">
-                    <div id="wrapperCE">
-                        <p class="position">1</p>
-                        <div class="photoCE"></div>
-                        <h4 class="nameCE">Instituto de Alajuela</h4>
-                        <h4 class="provinciaCE">Alajuela</h4>
+                <div id="divSelect">
+                    <label for="selectTipoTop">Filtro</label>
+                    <select name="" id="selectTipoTop">
+                        <option value="">Seleccione un TOP</option>
+                        <option value="1">TOP 10 General</option>
+                        <option value="2">TOP 10 Colegios</option>
+                        <option value="3">TOP 10 Escuelas</option>
 
-                        <div class="starsCEPF"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                    </div>
+                    </select>
                 </div>
-                
+
+                <div id="topGeneral">
+                    <!-- <div class="boxCE">
+                        <div class="wrapperCE">
+                            <p class="position">1</p>
+                            <div class="photoCE"></div>
+                            <h4 class="nameCE">Instituto de Alajuela</h4>
+                            <h4 class="provinciaCE">Alajuela</h4>
+
+                            <div class="starsCEPF"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div id="topColegios">
+
+                </div>
+
+                <div id="topEscuelas">
+
+                </div>
+
             </div>
     </main>
 
@@ -172,7 +193,11 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/controllerProfileInfo.js"></script>
     <script src="js/mapUser.js"></script>
+    <script src="js/controlador.general.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
+    <script src="js/servicio.starsPF.js"></script>
+    <script src="js/servicio.comentarios.js"></script>
+    <script src="js/controlador.listarTOPPF.js"></script>
 
 </body>
 

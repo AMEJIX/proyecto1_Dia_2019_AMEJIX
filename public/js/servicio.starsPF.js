@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarEvaluacion = (photoCE, nameCE, provinciaCE, stars, idCE) => {
+let registrarEvaluacion = (photoCE, nameCE, provinciaCE, stars, starsProm, idCE) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarEvaluacion",
         method: "POST",
@@ -9,6 +9,7 @@ let registrarEvaluacion = (photoCE, nameCE, provinciaCE, stars, idCE) => {
             nameCE: nameCE,
             provinciaCE: provinciaCE,
             stars: stars,
+            starsProm: starsProm,
             idCE: idCE
         },
         dataType: "json",
@@ -25,7 +26,7 @@ let registrarEvaluacion = (photoCE, nameCE, provinciaCE, stars, idCE) => {
     });
 };
 
-let modificarEvaluacion = (id, photoCE, nameCE, provinciaCE, stars, idCE) => {
+let modificarEvaluacion = (id, photoCE, nameCE, provinciaCE, stars, starsProm, idCE) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/modificarEvaluacionPF",
         method: "POST",
@@ -35,7 +36,8 @@ let modificarEvaluacion = (id, photoCE, nameCE, provinciaCE, stars, idCE) => {
             nameCE: nameCE,
             provinciaCE: provinciaCE,
             stars: stars,
-            idCE: idCE  
+            starsProm: starsProm,
+            idCE: idCE
         },
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -74,4 +76,70 @@ let obtenerEvaluacion = (idCE) => {
     });
 
     return objetoStars;
+};
+
+let listarEvaluacion = () => {
+    let listaEvaluacion = [];
+    let request = $.ajax({
+        url: "http://localhost:4000/api/listarEvaluaciones",
+        method: "GET",
+        data: {},
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async: false
+    });
+
+    request.done(function (res) {
+        listaEvaluacion = res.stars;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+
+    return listaEvaluacion;
+};
+
+let listarEvaluacionColegios = () => {
+    let listaEvaluacion = [];
+    let request = $.ajax({
+        url: "http://localhost:4000/api/listarEvaluaciones",
+        method: "GET",
+        data: {},
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async: false
+    });
+
+    request.done(function (res) {
+        listaEvaluacion = res.stars;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+
+    return listaEvaluacion;
+};
+
+let listarEvaluacionEscuelas = () => {
+    let listaEvaluacion = [];
+    let request = $.ajax({
+        url: "http://localhost:4000/api/listarEvaluaciones",
+        method: "GET",
+        data: {},
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async: false
+    });
+
+    request.done(function (res) {
+        listaEvaluacion = res.stars;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+
+    return listaEvaluacion;
 };

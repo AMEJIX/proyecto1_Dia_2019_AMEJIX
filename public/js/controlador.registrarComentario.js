@@ -64,12 +64,17 @@ let obtenerDatos = () => {
 
         console.log('Evaluacion:' + evaluacion);
         if (evaluacion === false) {
-            registrarEvaluacion(photoCE, nameCE, provinciaCE, stars, idCE);
+            let starsTotal = stars;
+            let starsProm = 0;
+            registrarEvaluacion(photoCE, nameCE, provinciaCE, starsTotal, starsProm, idCE);
         } else {
             let id = evaluacion._id;
             let starsTotal = stars + evaluacion.stars;
-            // let starsProm = starsTotal / listaComentarios.length;
-            modificarEvaluacion(id, photoCE, nameCE, provinciaCE, starsTotal, IdGeneralCE);
+            let starsProm = starsTotal / listaComentarios.length;
+            if (starsProm < 5) {
+                starsProm = 5
+            }
+            modificarEvaluacion(id, photoCE, nameCE, provinciaCE, starsTotal, starsProm, IdGeneralCE);
         }
 
     } else {

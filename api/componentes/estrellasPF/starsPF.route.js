@@ -31,4 +31,11 @@ router.route('/obtenerEvaluacion/:idCE')
         }
     );
 
+router.route('/listarEvaluaciones')
+    .get(
+        function (req, res) {
+            starsPFApi.listarEvaluacion(req, res);
+        }
+    );
+
 module.exports = router;

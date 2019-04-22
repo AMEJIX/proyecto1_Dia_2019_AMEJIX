@@ -8,6 +8,8 @@ let stars = new mongoose.Schema(
         nameCE: {type: String, required: true},
         provinciaCE: {type: String, required: false},
         stars: {type: Number, required: true, unique: false},
+        starsProm: {type: Number, required: true, unique: false},
+        type: {type: String, required: true},
         idCE: {type: String, required: true, unique: true}
     }
 );
