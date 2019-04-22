@@ -6,6 +6,7 @@ let centroEducativo = listarUsuariosCEencabezado(IdGeneralCE);
 let photoCE = centroEducativo[0]['imagen'];
 let nameCE = centroEducativo[0]['centroEducativo'];
 let provinciaCE = centroEducativo[0]['provincia'];
+let type = centroEducativo[0]['tipo'];
 
 const ratings = document.querySelector('.starrr')
 const inputComentario = document.querySelector('#inputComentario');
@@ -66,7 +67,7 @@ let obtenerDatos = () => {
         if (evaluacion === false) {
             let starsTotal = stars;
             let starsProm = 0;
-            registrarEvaluacion(photoCE, nameCE, provinciaCE, starsTotal, starsProm, idCE);
+            registrarEvaluacion(photoCE, nameCE, provinciaCE, starsTotal, starsProm, type, idCE);
         } else {
             let id = evaluacion._id;
             let starsTotal = stars + evaluacion.stars;
@@ -74,7 +75,7 @@ let obtenerDatos = () => {
             if (starsProm < 5) {
                 starsProm = 5
             }
-            modificarEvaluacion(id, photoCE, nameCE, provinciaCE, starsTotal, starsProm, IdGeneralCE);
+            modificarEvaluacion(id, photoCE, nameCE, provinciaCE, starsTotal, starsProm, type, IdGeneralCE);
         }
 
     } else {

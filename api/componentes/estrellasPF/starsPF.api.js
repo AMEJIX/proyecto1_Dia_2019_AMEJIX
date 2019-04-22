@@ -88,21 +88,3 @@ module.exports.listarEvaluacion = (req, res) => {
         }
     )
 };
-
-module.exports.listarEvaluacionColegios = (req, res) => {
-    starsPFModel.find().sort({starsProm: 'desc'}).then(
-        function (stars) {
-            if (stars.length > 0) {
-                res.json({
-                    success: true,
-                    stars: stars
-                })
-            } else {
-                res.json({
-                    success: false,
-                    stars: 'No se encontraron evaluaciones registradas'
-                })
-            }
-        }
-    )
-};
