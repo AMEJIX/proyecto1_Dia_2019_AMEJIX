@@ -100,5 +100,12 @@ router.route('/listarInfoMEP')
             api_usuarios.listarMEP(req, res);
         }
 );
+
+// router.route('/enviarCorreo')
+// .post(
+//     function (req, res){
+//         api_usuarios.enviarInformacion(req, res);
+//     }
+// );
     
 module.exports = router;

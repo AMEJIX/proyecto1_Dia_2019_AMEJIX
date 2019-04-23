@@ -1,0 +1,18 @@
+#btnInfoP{
+    display: block;
+    padding: 14px 50px;
+    margin: 0 auto;
+    margin-top: 35px;
+    margin-bottom: 65px;
+    background: #f9aa33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+#btnInfoP:hover {
+    background-color: rgb(255, 172, 46);
+    cursor: pointer;
+    transition: all 200ms ease;  
+}

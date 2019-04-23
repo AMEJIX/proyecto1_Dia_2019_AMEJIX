@@ -274,7 +274,7 @@ function correoCEActivacion(pemail, pcentroEducativo, pcontrasena, pestado) {
                 console.log('Email sent: ' + info.response);
             }
         });
-    } else if (estado == "Inactivo"){
+    } else if (estado == "Inactivo") {
         let mailOptions = {
             from: 'sicen.amejix@gmail.com',
             to: email,
@@ -380,18 +380,18 @@ module.exports.actualizar = function (req, res) {
 
                     })
                     nuevaBitacora.save();
-                } 
+                }
 
 
                 /**************************Fin Bitacora**************************/
 
                 /**************************Correo CE**************************/
 
-                if (req.body.userType == 'centroEducativo' && req.body.estado == 'Activo'){
+                if (req.body.userType == 'centroEducativo' && req.body.estado == 'Activo') {
 
                     correoCEActivacion(req.body.email, req.body.centroEducativo, req.body.contrasenna, req.body.estado);
-                    
-                } else if(req.body.userType == 'centroEducativo' && req.body.estado == 'Inactivo'){
+
+                } else if (req.body.userType == 'centroEducativo' && req.body.estado == 'Inactivo') {
 
                     correoCEActivacion(req.body.email, req.body.centroEducativo, req.body.contrasenna, req.body.estado);
 
@@ -480,10 +480,6 @@ module.exports.registrar = (req, res) => {
             documentCE: req.body.documentCE,
             estado: req.body.estado,
             responsable: req.body.responsable
-
-
-
-
 
         }
     );
@@ -614,7 +610,7 @@ module.exports.favoritar = (req, res) => {
         function (usuario) {
             if (usuario) {
                 modelo_usuario.findOne({ email: req.body.emailCE }).then(
-                    function(centro) {
+                    function (centro) {
                         if (centro) {
                             usuario.favoritos.push(centro._id);
                             usuario.save();
@@ -649,7 +645,7 @@ module.exports.desfavoritar = (req, res) => {
         function (usuario) {
             if (usuario) {
                 modelo_usuario.findOne({ email: req.body.centroEducativo }).then(
-                    function(centro) {
+                    function (centro) {
                         if (centro) {
                             usuario.favoritos = usuario.favoritos.filter(fav => fav._id !== centro._id);
                             usuario.save();
@@ -846,22 +842,147 @@ module.exports.listarPFPorSA = (req, res) => {
 
 module.exports.listarMEP = (req, res) => {
     modelo_usuario.find({ userType: 'superAdministrador' }).then(
-        function (infoSA) {
-            if (infoSA.length > 0) {
+        function (usuario) {
+            if (usuario.length > 0) {
                 res.json({
                     success: true,
-                    infoSA: infoSA
+                    usuario: usuario
                 })
             } else {
                 res.json({
                     success: false,
-                    infoSA: 'No se encontraron centros educativos.'
+                    usuario: 'No se encontraron centros educativos.'
                 })
             }
         }
     );
 }
 
+module.exports.enviarCorreo = (req, res) => {
+    modelo_usuario.find({ userType: 'superAdministrador' }).then(
+        function (usuario) {
+            if (usuario.length > 0) {
+                res.json({
+                    success: true,
+                    usuario: usuario
+                })
+            } else {
+                res.json({
+                    success: false,
+                    usuario: 'No se encontraron centros educativos.'
+                })
+            }
+        }
+    );
+}
 
+// module.exports.enviarInformacion = function (req, res) {
 
+//     if (correoUser) {
 
+//         function correoInformacionCE(telCEP, extension, fax, email, web, facebook, twitter, instagram) {
+//             let transporter = nodemailer.createTransport({
+//                 service: 'gmail',
+//                 port: 4000,
+//                 secure: false,
+//                 auth: {
+//                     user: 'sicen.amejix@gmail.com',
+//                     pass: 'amejix12345'
+//                 },
+//                 tls: {
+//                     rejectUnauthorized: false
+//                 }
+//             });
+
+//             let mailOptions = {
+//                 from: 'sicen.amejix@gmail.com',
+//                 to: email,
+//                 subject: 'Informacion adicional',
+//                 html: `<html>
+        
+//             <head>
+//                 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+//             </head>
+            
+//             <body style="background-size: cover; ">
+//                 <main style="width:100%; height: 100%;">
+//                     <div class="container">
+//                     <h1>Información adicional</h1>
+                
+//                     <h2>Contacto<h2>
+//                     <p>Telefono: ${telCEP} ext: ${extension}<p>
+//                     <p>Fax: ${fax}<p>
+//                     <p>Email: ${email}<p>
+                    
+//                     <h2>Sitio web<h2>
+//                     <p>${web}<p>
+                    
+//                     <h2>Redes sociales<h2>
+//                     <p>Faceboook: ${facebook}<p>
+//                     <p>Twitter: ${twitter}<p>
+//                     <p>Instagram: ${instagram}<p>
+//                 </div>
+                
+//                 <style>
+//                     body {
+//                     font-family: 'Raleway', sans-serif;
+//                     }
+                    
+//                     h1 {
+//                     display: block;
+//                     font-weight: normal;
+//                     text-align: center;
+//                     margin: 0 auto;
+//                     margin-top: 30px;
+//                     padding-top: 30px;
+//                     }
+                    
+//                     h2 {
+//                     display: block;
+//                     font-weight: normal;
+//                     text-align: center;
+//                     margin: 0 auto;
+//                     margin-top: 30px;
+//                     padding-top: 0px;
+//                     }
+                    
+//                     p {
+//                     text-align: left;
+//                     margin-left: 7%;
+//                     }
+                    
+//                     .container {
+//                     width: 40%;
+//                     height: 600px;
+//                     background-color: #34495D;
+//                     color : white;
+//                     margin: 0 auto;
+//                     }
+//                 </style>
+//                 </main>
+//             </body>
+            
+//             </html>`
+//             };
+
+//             transporter.sendMail(mailOptions, (error, info) => {
+//                 if (error) {
+//                     console.log(error);
+//                 } else {
+//                     console.log('Email sent: ' + info.response);
+//                 }
+//             });
+//         };
+
+//         res.json({
+//             success: true,
+//             correoUser: correoUser
+//         });
+//     } else {
+//         res.json({
+//             success: false,
+//             correoUser: correoUser
+//         });
+//     }
+
+// };

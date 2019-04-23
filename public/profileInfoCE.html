@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/starrr.css">
     <link rel="stylesheet" href="css/profileCE.css">
 
+    <link rel="stylesheet" href="css/informacion.css">
     <link rel="stylesheet" href="css/comentarios.css">
     <link rel="stylesheet" href="css/mostrarMaterialInformativo.css">
     <!-- <link rel="stylesheet" href="css/listarArticulos.css"> -->
@@ -184,8 +185,8 @@
                         </div>
                     </div>
 
-                    <a id= "favoritar">Favoritar</a>
-                    <a id="desfavoritar"> Desfavoritar</a>
+                    <a id= "favoritar">Marcar como favorito</a>
+                    <a id="desfavoritar">Desmarcar</a>
                 </div>
 
                 <div id="divEtiquetas">
@@ -222,6 +223,30 @@
                     </div>
 
                     <div class="tabPanel">
+
+                        <div id="infoCE">
+                            
+                            <h2>Historia</h2>
+                            <h3></h3>
+
+                            <h2>Año de fundación:</h2>
+
+                            <h2>Servicios:</h2>
+
+                            <!-- <h2>Redes Sociales</h2>
+                            <h3>Facebook:</h3>
+                            <h3>Twitter:</h3>
+                            <h3>Instagram:</h3>
+
+                            <h2>Contacto</h2>
+                            <h3>Correo Electrónico:</h3>
+                            <h3>Web:</h3>
+                            <h3>Teléfono:</h3>
+                            <h3>Fax:</h3> -->
+                        </div>
+
+                        <button type="button" id="btnInfoP">Solicitar más información</button>
+
                         <div class="comentarios">
                             <h1>Comentarios</h1>
 
@@ -562,6 +587,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/starrr.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
+    <script src="js/controlador.mostrarInformacionCE.js"></script>
     <!-- <script src="js/controlador.rating.js"></script> -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
         async defer></script> -->
@@ -575,6 +601,8 @@
     <!-- Información -->
 
     <!-- Aqui se van a insertar los comentarios -->
+    <script src="js/servicio.correo.js"></script>
+    <script src="js/controlador.correo.js"></script>
     <script src="js/servicio.starsPF.js"></script>
     <script src="js/servicio.comentarios.js"></script>
     <script src="js/controlador.registrarComentario.js"></script>
