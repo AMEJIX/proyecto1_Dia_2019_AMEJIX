@@ -1,8 +1,8 @@
 'use strict';
 
-const buscador = document.querySelector('#inputBuscar');
-let user = JSON.parse(sessionStorage.getItem("usuario"));
-let idUsuarioCE = user._id;
+const buscador = document.querySelector('#inputBuscarCinco');
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let idUsuarioCE = user._id;
 
 /**************************************************************************************************************/
 
@@ -31,23 +31,6 @@ function mostrarIdiomas() {
             let fila = tabla.insertRow();
 
             fila.insertCell().innerHTML = idiomas[i]['idiomas'];
-
-
-            let celdaConfiguracion = fila.insertCell();
-            let celdaEliminar = fila.insertCell();
-
-            let botonEditar = document.createElement('a');
-            botonEditar.innerHTML = '<i class ="fas fa-edit"></i>';
-            botonEditar.href = `editarIdiomas.html?idIdioma=${idiomas[i]['_id']}`;
-            botonEditar.style.color = '#2c3e50';
-            celdaConfiguracion.appendChild(botonEditar);
-            let botonEliminar = document.createElement('button');
-            botonEliminar.innerHTML = '<i class ="fas fa-trash-alt"></i>';
-            botonEliminar.id = 'btnEliminar';
-            botonEliminar.addEventListener('click', eliminar => {
-                eliminarIdiomas(idiomas[i]['_id']);
-            });
-            celdaEliminar.appendChild(botonEliminar);
         }
 
     }

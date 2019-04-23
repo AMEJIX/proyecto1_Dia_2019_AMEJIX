@@ -58,8 +58,9 @@ let obtener_datos = () => {
         let stringPrecioMatricula = inputMensualidad.value;
         let fieldsetnumberPrecioMatricula = document.querySelector('#fieldsetPrecio input[type=radio]:checked').value;
         let idCentroEducativo = idCE;
+        let userName = user.nombre += " " + user.apellido;
 
-        registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idCentroEducativo);
+        registrarMatricula(userName, stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idCentroEducativo);
 
     } else {
         swal.fire({
