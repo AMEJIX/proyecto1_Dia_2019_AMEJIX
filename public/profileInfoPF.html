@@ -14,7 +14,7 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/perfil.css">
-   
+    <link rel="stylesheet" href="css/profilePF.css">
     <link rel="stylesheet" href="css/profileInfo.css">
 
 </head>
@@ -71,7 +71,7 @@
                     </button>
                     <div class="dropdownContainer">
                         <a href="bitacora.html">Bitácora</a>
-                        <a href="#">Notificaciones</a>
+                        <a href="solicitudes.html">Notificaciones</a>
                         <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
                         <a href="listarRangosMEP.html">Rangos de evaluación</a>
                         <a href="listarArticulosPropios.html">Artículos escolares</a>
@@ -87,7 +87,7 @@
                         <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                         <a href="listarCentrosEducativos.html">Buscar</a>
                         <a href="#" id="aFavoritos">Favoritos</a>
-                        <a href="#">Top</a>
+                        <a href="listarTopCentrosEducativos.html">Top</a>
                         <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
                         <a href="#" id="aActivarDesCE">Activar o desactivar</a>
                         <a href="#" id="aEliminarCE">Eliminar</a>
@@ -144,29 +144,8 @@
 
         <!-- el menú que estaba antes y que es lo que pude hacer el SA en pefil PF -->
   
-                <div class="opcion" id="menuInfoCE">
-                        <h3>Información del padre de familia</h3>
-                        <div class="subOpcion">
-                            <a href="" id="aVerinfoPadredefamilia">Ver</a>
-                            
-                        </div>
-                </div>
-                
-                <div class="opcion" id="menuInfoCE">
-                    <h3>Centros educativos</h3>
-                    <div class="subOpcion">
-                        <a href="#" id="aFavoritos">Favoritos</a>
-                        <a href="#">Top</a>
-
-                    </div>
-                </div>
-
-                <div class="opcion" id="menuCitas">
-                    <h3>Citas</h3>                
-                    <div class="subOpcion">
-                        <a href="#">Citas agendadas</a>                        
-                    </div>
-                </div>
+           
+           
                 <!----------------------Fin opción---------------------->
 
             </div>
@@ -178,7 +157,43 @@
         
         <div class="contenido" style="overflow-y: scroll;">
             <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+            <div class="infoPF">
+                <div class="photoPF"></div>
+                <div class="infoWrapper">
+                    <div class="infoPFAdentro">
+                        <h2></h2>
+                        <h3></h3>
+                  
+                    </div>
 
+                </div>
+
+            
+            </div>
+
+            <div class="tabs">
+                <div class="tabContainer">
+                    <div class="buttonContainer">
+                        <button onclick="showPanel(0, '#fff')">Información</button>
+                        <button onclick="showPanel(1, '#fff')">Centros educativos favoritos</button>
+    
+              
+              
+                    </div>
+
+                    <div class="tabPanel"> 
+
+                    </div>
+
+                    <div class="tabPanel">
+
+                    </div>
+
+                 
+                </div>
+
+
+            </div>
             <!-- Data PF -->
             
 
@@ -190,12 +205,16 @@
 
     </footer>
     <script src="js/style.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/controllerProfileInfo.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap" async defer></script>
-    <script src="js/mapUser.js"></script>
+    <script src="js/profileCE.js"></script>
+    
     <script src="js/servicioInicio.js"></script>
     <script src="js/controlador.general.js"></script>
-    <script src="js/controlador.profileInfoPF.js"></script>
+    <script src="js/servicio.encabezadoPF.js"></script>
+    <script src="js/controlador.encabezadoPF.js"></script>
+   
    
     <script src="js/mostrarNombre.controller.js"></script>
 

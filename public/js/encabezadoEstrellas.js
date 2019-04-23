@@ -5,6 +5,7 @@ const divEstrellas = document.querySelector('#divEstrellas');
 
 const idCentroE = user._id;
 const annoBuscarEstrellas = new Date().getFullYear();
+
 let estrellas = listarEstrellasPropias(annoBuscarEstrellas, idCentroE); 
 
 
