@@ -5,6 +5,13 @@ const router = express.Router();
 const api_usuarios = require('./usuarios.api');
 
 
+router.param('_id', function(req, res, next, _id){
+    req.body._id = _id;
+    next();
+});
+
+
+
 router.route('/registrar_usuario')
     .post(
         function (req, res) {
@@ -101,5 +108,11 @@ router.route('/listarInfoMEP')
         }
 );
 
+router.route('/listarInfoPF/:_id')
+    .get(
+        function (req, res){
+            api_usuarios.listarPF(req, res);
+        }
+);
 
 module.exports = router;
