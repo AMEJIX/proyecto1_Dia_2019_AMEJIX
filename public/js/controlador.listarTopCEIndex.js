@@ -450,9 +450,9 @@ let mostrarDatosTop = () =>{
                 nameCE.classList.add('nameCE');
                 nameCE.textContent = evaluacion[i]['nameCE'];
 
-                let provinciaCE = document.createElement('h4');
-                provinciaCE.classList.add('provinciaCE');
-                provinciaCE.textContent = evaluacion[i]['provinciaCE'];
+                // let provinciaCE = document.createElement('h4');
+                // provinciaCE.classList.add('provinciaCE');
+                // provinciaCE.textContent = evaluacion[i]['provinciaCE'];
 
                 let starsRate = document.createElement('div');
                 starsRate.classList.add('starsRate');
@@ -611,7 +611,7 @@ let mostrarDatosTop = () =>{
                 wrapperCE.appendChild(position);
                 wrapperCE.appendChild(photoCE);
                 wrapperCE.appendChild(nameCE);
-                wrapperCE.appendChild(provinciaCE);
+                // wrapperCE.appendChild(provinciaCE);
                 wrapperCE.appendChild(starsRate);
 
                 starsRate.appendChild(star1);
@@ -650,9 +650,9 @@ let mostrarDatosTop = () =>{
                     nameCE.classList.add('nameCE');
                     nameCE.textContent = evaluacion[i]['nameCE'];
 
-                    let provinciaCE = document.createElement('h4');
-                    provinciaCE.classList.add('provinciaCE');
-                    provinciaCE.textContent = evaluacion[i]['provinciaCE'];
+                    // let provinciaCE = document.createElement('h4');
+                    // provinciaCE.classList.add('provinciaCE');
+                    // provinciaCE.textContent = evaluacion[i]['provinciaCE'];
 
                     let starsRate = document.createElement('div');
                     starsRate.classList.add('starsRate');
@@ -809,7 +809,7 @@ let mostrarDatosTop = () =>{
                     wrapperCE.appendChild(position);
                     wrapperCE.appendChild(photoCE);
                     wrapperCE.appendChild(nameCE);
-                    wrapperCE.appendChild(provinciaCE);
+                    // wrapperCE.appendChild(provinciaCE);
                     wrapperCE.appendChild(starsRate);
 
                     starsRate.appendChild(star1);
@@ -850,9 +850,9 @@ let mostrarDatosTop = () =>{
                     nameCE.classList.add('nameCE');
                     nameCE.textContent = evaluacion[i]['nameCE'];
 
-                    let provinciaCE = document.createElement('h4');
-                    provinciaCE.classList.add('provinciaCE');
-                    provinciaCE.textContent = evaluacion[i]['provinciaCE'];
+                    // let provinciaCE = document.createElement('h4');
+                    // provinciaCE.classList.add('provinciaCE');
+                    // provinciaCE.textContent = evaluacion[i]['provinciaCE'];
 
                     let starsRate = document.createElement('div');
                     starsRate.classList.add('starsRate');
@@ -1009,7 +1009,7 @@ let mostrarDatosTop = () =>{
                     wrapperCE.appendChild(position);
                     wrapperCE.appendChild(photoCE);
                     wrapperCE.appendChild(nameCE);
-                    wrapperCE.appendChild(provinciaCE);
+                    // wrapperCE.appendChild(provinciaCE);
                     wrapperCE.appendChild(starsRate);
 
                     starsRate.appendChild(star1);
