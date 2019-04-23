@@ -1,6 +1,7 @@
 'use strict';
 
 const modeloRegistrarNoticia = require('./noticias.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 module.exports.registrar = (req, res) => {
 
@@ -10,6 +11,7 @@ module.exports.registrar = (req, res) => {
             fechaNoticia: req.body.fechaNoticia,
             registrarNoticia: req.body.registrarNoticia,
             idCE: req.body.idCE,
+            userName: req.body.userName,
         }
     );
 

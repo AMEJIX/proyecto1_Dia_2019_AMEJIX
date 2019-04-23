@@ -37,8 +37,9 @@ let jalarDatosIdiomas = () => {
 
         let parametrosIdioma = inputIdioma.value;
         let idCentroEducativo = idCE;
+        let userName = user.nombre += " " + user.apellido;
 
-        registrarIdiomas(parametrosIdioma, idCentroEducativo);
+        registrarIdiomas(userName, parametrosIdioma, idCentroEducativo);
     } else {
         swal.fire({
             type: 'warning',

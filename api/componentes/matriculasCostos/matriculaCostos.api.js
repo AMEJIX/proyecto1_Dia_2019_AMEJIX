@@ -1,6 +1,7 @@
 'use strict';
 
 const modeloMatriculas = require('./matriculaCostos.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 module.exports.registrar = (req, res) => {
     let nuevaMatricula = new modeloMatriculas(
@@ -9,6 +10,7 @@ module.exports.registrar = (req, res) => {
             mensualidad: req.body.mensualidad,
             moneda: req.body.moneda,
             idCE: req.body.idCE,
+            userName: req.body.userName,
         }
     );
 

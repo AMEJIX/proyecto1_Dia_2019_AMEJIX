@@ -58,7 +58,7 @@ form div select{
     width: 220px;
     height: 35px;
     font-size: 20px;
-    text-align: center;
+    text-align: left;
 }
 form div{
     margin-right: 90px;
@@ -71,7 +71,7 @@ form div{
    
     font-size: 20px;
     margin-right: 42px;
-    text-align: center;
+    text-align: left;
     
     
     

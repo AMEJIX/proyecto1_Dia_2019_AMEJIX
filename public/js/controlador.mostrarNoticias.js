@@ -1,6 +1,6 @@
 'use strict';
 
-const inputFiltrar = document.querySelector('#inputBuscar');
+const buscadorcito = document.querySelector('#inputBuscar');
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 let idUsuarioCE = user._id;
 
@@ -15,14 +15,14 @@ if (user.userType != "centroEducativo") {
 /**************************************************************************************************************/
 
 let noticias = listarNoticias(idUsuarioCE);
-inputFiltrar.addEventListener('keyup', mostrarNoticias);
+buscadorcito.addEventListener('keyup', mostrarNoticias);
 
 /**************************************************************************************************************/
 
 function mostrarNoticias() {
 
     const tabla = document.querySelector('#tblNoticias tbody');
-    const filtro = inputFiltrar.value;
+    const filtro = buscadorcito.value;
 
     tabla.innerHTML = '';
     for (let i = 0; i < noticias.length; i++) {
@@ -56,7 +56,7 @@ function mostrarNoticias() {
 }
 mostrarNoticias();
 
-inputFiltrar.addEventListener('keyup', mostrarNoticias);
+buscadorcito.addEventListener('keyup', mostrarNoticias);
 
 /**************************************************************************************************************/
 
