@@ -66,3 +66,31 @@ module.exports.obtenerVisita = (req, res) => {
         }
     )
 };
+
+module.exports.listarVisitasUser = (req, res) => {
+    visitasModel.find().then(
+        function (visita) {
+
+            let listaVisitasUser = [];
+
+            for (let visitasUser of visita) {
+                if (visitasUser.idCE == req.body.idCE) {
+                    listaVisitasUser.push(visitasUser);
+                }
+            }
+            console.log(listaVisitasUser);
+            console.log(req.body.idCE);
+            if (listaVisitasUser.length > 0) {
+                res.json({
+                    success: true,
+                    visita: listaVisitasUser
+                });
+            } else {
+                res.json({
+                    success: false,
+                    visita: 'No se encontraron visitas registradas'
+                });
+            }
+        }
+    );
+};

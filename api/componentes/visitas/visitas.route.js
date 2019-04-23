@@ -31,4 +31,11 @@ router.route('/obtenerVisita/:idCE')
         }
     );
 
+router.route('/centroEducativo/listarVisitasUser/:idCE')
+    .get(
+        function (req, res) {
+            visitasApi.listarVisitasUser(req, res);
+        }
+    );
+
 module.exports = router;
