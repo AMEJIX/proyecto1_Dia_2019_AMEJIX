@@ -22,6 +22,7 @@ function ocultar() {
         document.querySelector('#verPadres').style.display = 'none';
         document.querySelector('#aPreguntasCE').style.display = 'none';
         document.querySelector('#reportesSA').style.display = 'none';
+        document.querySelector('#adminCE').style.display = 'none';
         // document.querySelector('#aEliminarCE').style.display = 'none';
         // document.querySelector('#aActivarDesCE').style.display = 'none'; 
         // document.querySelector('#adminCE').style.display = 'none';

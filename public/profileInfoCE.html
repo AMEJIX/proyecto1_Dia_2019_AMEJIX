@@ -47,6 +47,7 @@
     <header>
         <nav>
 
+
             <div class="userInfo">
                 <div class="userPhoto"></div>
                 <div class="nameWrapper">
@@ -96,7 +97,7 @@
             </button>
             <div class="dropdownContainer">
                 <a href="bitacora.html">Bitácora</a>
-                <a href="#">Notificaciones</a>
+                <a href="solicitudes.html">Notificaciones</a>
                 <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
                 <a href="listarRangosMEP.html">Rangos de evaluación</a>
                 <a href="listarArticulosPropios.html">Artículos escolares</a>
@@ -111,11 +112,12 @@
             <div class="dropdownContainer">
                 <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                 <a href="listarCentrosEducativos.html">Buscar</a>
-                <a href="#" id="aFavoritos">Favoritos</a>
-                <a href="rankingStarsMEPSolicitudCE.html">Top</a>
+                <a href="misFavoritos.html" id="aFavoritos">Favoritos</a>
+                <a href="listarTopCentrosEducativos.html">Top 10 MEP</a>
+                <a href="topCentrosEducativosPF.html">Top 10 por padres de familia</a>
                 <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
                 <!-- <a href="#" id="aActivarDesCE">Activar o desactivar</a> -->
-                <a href="administrarCE.html">Administrar cuentas</a>
+                <a href="administrarCE.html" id="adminCE">Administrar cuentas</a>
                 <!-- <a href="#" id="aEliminarCE">Eliminar</a> -->
                 <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
             </div>
@@ -127,7 +129,7 @@
             <div class="dropdownContainer">
                 <a href="listarPadresFamilia.html">Buscar</a>
                 <!-- <a href="#" id="aActivarDesPF">Activar o desactivar</a> -->
-                <a href="administrarPF.html">Administrar cuentas</a>
+                <a href="administrarPF.html" id="adminPF">Administrar cuentas</a>
                 <!-- <a href="#" id="aEliminarPF">Eliminar</a> -->
             </div>
 
@@ -151,10 +153,10 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
-                <a href="#">Visitas</a>
-                <a href="#">Hijos</a>
-                <a href="#">Ranking por padres de familia</a>
+                <a href="reporteRankingMEP.html">Ranking MEP</a>
+                <a href="reporteVisitasAdmin.html">Visitas</a>
+                <a href="reporteDeHijos.html">Hijos</a>
+                <a href="reporteRankingPFCE.html">Ranking por padres de familia</a>
             </div>
 
             <button class="btnDropdown" id="reportesCE">
@@ -162,9 +164,9 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="reporteRankingMEP.html">Ranking MEP</a>
-                <a href="#">Visitas</a>
-                <a href="#">Ranking por padres de familia</a>
+                <a href="rankingStarsMEPSolicitudCE.html">Ranking MEP</a>
+                <a href="reporteVisitas.html">Visitas</a>
+                <a href="reporteRankingPF.html">Ranking por padres de familia</a>
             </div>
 
         </div>
@@ -185,7 +187,7 @@
                         </div>
                     </div>
 
-                    <a id= "favoritar">Marcar como favorito</a>
+                    <a id="favoritar">Marcar como favorito</a>
                     <a id="desfavoritar">Desmarcar</a>
                 </div>
 
@@ -225,7 +227,7 @@
                     <div class="tabPanel">
 
                         <div id="infoCE">
-                            
+
                             <h2>Historia</h2>
                             <h3></h3>
 
@@ -588,6 +590,7 @@
     <script src="js/starrr.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
     <script src="js/controlador.mostrarInformacionCE.js"></script>
+
     <!-- <script src="js/controlador.rating.js"></script> -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
         async defer></script> -->
