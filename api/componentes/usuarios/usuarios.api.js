@@ -607,6 +607,99 @@ module.exports.validar = (req, res) => {
     )
 
 }
+
+module.exports.favoritar = (req, res) => {
+
+    modelo_usuario.findOne({ email: req.body.userEmail }).then(
+        function (usuario) {
+            if (usuario) {
+                modelo_usuario.findOne({ email: req.body.emailCE }).then(
+                    function(centro) {
+                        if (centro) {
+                            usuario.favoritos.push(centro._id);
+                            usuario.save();
+                            res.json({
+                                success: true,
+                                msg: 'Éxito! Se ha favoritado.'
+                            });
+                        } else {
+                            res.json({
+                                success: false,
+                                msg: 'El centro no exitste'
+                            })
+                        }
+                    }
+                );
+            } else {
+                res.json({
+                    success: false,
+                    msg: 'El usuario no exitste'
+                })
+            }
+        }
+
+
+    )
+
+}
+
+module.exports.desfavoritar = (req, res) => {
+
+    modelo_usuario.findOne({ email: req.body.email }).then(
+        function (usuario) {
+            if (usuario) {
+                modelo_usuario.findOne({ email: req.body.centroEducativo }).then(
+                    function(centro) {
+                        if (centro) {
+                            usuario.favoritos = usuario.favoritos.filter(fav => fav._id !== centro._id);
+                            usuario.save();
+                            res.json({
+                                success: true,
+                                msg: 'Éxito! Se ha desfavoritado.'
+                            });
+                        } else {
+                            res.json({
+                                success: false,
+                                msg: 'El centro no exitste'
+                            })
+                        }
+                    }
+                );
+            } else {
+                res.json({
+                    success: false,
+                    msg: 'El usuario no exitste'
+                })
+            }
+        }
+
+
+    )
+
+}
+
+module.exports.favoritos = (req, res) => {
+    console.log(req.query.email);
+    modelo_usuario.findOne({ email: decodeURI(req.query.email) }).populate('favoritos').exec(
+        function (err, usuario) {
+            if (usuario) {
+                res.json({
+                    success: true,
+                    favoritos: usuario.favoritos
+                })
+            } else {
+                res.json({
+                    success: false,
+                    msg: 'El usuario no exitste'
+                })
+            }
+        }
+
+
+    )
+
+}
+
 /************************** Lista CE Pendiente/Notificaciones SA**************************/
 module.exports.solicitudes = (req, res) => {
     modelo_usuario.find({ estado: 'Pendiente' }).then(

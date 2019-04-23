@@ -66,6 +66,27 @@ router.route('/listarCEPorOU')
         }
     );
 
+router.route('/favoritar')
+    .post(
+        function (req, res){
+            api_usuarios.favoritar(req, res);
+        }
+    );
+
+router.route('/desfavoritar')
+    .post(
+        function (req, res){
+            api_usuarios.desfavoritar(req, res);
+        }
+    );
+
+router.route('/favoritos')
+    .get(
+        function (req, res){
+            api_usuarios.favoritos(req, res);
+        }
+    );
+
 router.route('/listarPFPorSA')
     .post(
         function (req, res){
