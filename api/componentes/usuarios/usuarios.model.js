@@ -29,6 +29,7 @@ let usuarioSchema = new mongoose.Schema(
         edades : {type: String, required: false},
         imagenPF: {type: String, required: false},
         estado: {type: String, required: false},
+        favoritos: [{ type:mongoose.Schema.ObjectId, ref:"Usuarios" }],
        
 //CE
 
@@ -78,5 +79,6 @@ let usuarioSchema = new mongoose.Schema(
 
     }
 );
+
 
 module.exports = mongoose.model('Usuarios', usuarioSchema);
