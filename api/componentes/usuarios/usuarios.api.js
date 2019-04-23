@@ -616,7 +616,7 @@ module.exports.favoritar = (req, res) => {
                             usuario.save();
                             res.json({
                                 success: true,
-                                msg: 'Éxito! Se ha favoritado.'
+                                msg: 'Se ha agregado a la lista de favoritos'
                             });
                         } else {
                             res.json({
@@ -641,17 +641,20 @@ module.exports.favoritar = (req, res) => {
 
 module.exports.desfavoritar = (req, res) => {
 
-    modelo_usuario.findOne({ email: req.body.email }).then(
+    modelo_usuario.findOne({ email: req.body.userEmail }).then(
         function (usuario) {
             if (usuario) {
-                modelo_usuario.findOne({ email: req.body.centroEducativo }).then(
+                modelo_usuario.findOne({ email: req.body.emailCE }).then(
                     function (centro) {
                         if (centro) {
-                            usuario.favoritos = usuario.favoritos.filter(fav => fav._id !== centro._id);
+                            // usuario.favoritos = usuario.favoritos.filter(fav => fav._id !== centro._id);
+                          
+                           usuario.favoritos.remove(centro._id);
+                            // usuario.favoritos = usuario.favoritos.filter(favoritos => favoritos._id !== centro._id);
                             usuario.save();
                             res.json({
                                 success: true,
-                                msg: 'Éxito! Se ha desfavoritado.'
+                                msg: 'Éxito! Se ha elminado el favorito'
                             });
                         } else {
                             res.json({
@@ -875,114 +878,3 @@ module.exports.enviarCorreo = (req, res) => {
         }
     );
 }
-
-// module.exports.enviarInformacion = function (req, res) {
-
-//     if (correoUser) {
-
-//         function correoInformacionCE(telCEP, extension, fax, email, web, facebook, twitter, instagram) {
-//             let transporter = nodemailer.createTransport({
-//                 service: 'gmail',
-//                 port: 4000,
-//                 secure: false,
-//                 auth: {
-//                     user: 'sicen.amejix@gmail.com',
-//                     pass: 'amejix12345'
-//                 },
-//                 tls: {
-//                     rejectUnauthorized: false
-//                 }
-//             });
-
-//             let mailOptions = {
-//                 from: 'sicen.amejix@gmail.com',
-//                 to: email,
-//                 subject: 'Informacion adicional',
-//                 html: `<html>
-        
-//             <head>
-//                 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-//             </head>
-            
-//             <body style="background-size: cover; ">
-//                 <main style="width:100%; height: 100%;">
-//                     <div class="container">
-//                     <h1>Información adicional</h1>
-                
-//                     <h2>Contacto<h2>
-//                     <p>Telefono: ${telCEP} ext: ${extension}<p>
-//                     <p>Fax: ${fax}<p>
-//                     <p>Email: ${email}<p>
-                    
-//                     <h2>Sitio web<h2>
-//                     <p>${web}<p>
-                    
-//                     <h2>Redes sociales<h2>
-//                     <p>Faceboook: ${facebook}<p>
-//                     <p>Twitter: ${twitter}<p>
-//                     <p>Instagram: ${instagram}<p>
-//                 </div>
-                
-//                 <style>
-//                     body {
-//                     font-family: 'Raleway', sans-serif;
-//                     }
-                    
-//                     h1 {
-//                     display: block;
-//                     font-weight: normal;
-//                     text-align: center;
-//                     margin: 0 auto;
-//                     margin-top: 30px;
-//                     padding-top: 30px;
-//                     }
-                    
-//                     h2 {
-//                     display: block;
-//                     font-weight: normal;
-//                     text-align: center;
-//                     margin: 0 auto;
-//                     margin-top: 30px;
-//                     padding-top: 0px;
-//                     }
-                    
-//                     p {
-//                     text-align: left;
-//                     margin-left: 7%;
-//                     }
-                    
-//                     .container {
-//                     width: 40%;
-//                     height: 600px;
-//                     background-color: #34495D;
-//                     color : white;
-//                     margin: 0 auto;
-//                     }
-//                 </style>
-//                 </main>
-//             </body>
-            
-//             </html>`
-//             };
-
-//             transporter.sendMail(mailOptions, (error, info) => {
-//                 if (error) {
-//                     console.log(error);
-//                 } else {
-//                     console.log('Email sent: ' + info.response);
-//                 }
-//             });
-//         };
-
-//         res.json({
-//             success: true,
-//             correoUser: correoUser
-//         });
-//     } else {
-//         res.json({
-//             success: false,
-//             correoUser: correoUser
-//         });
-//     }
-
-// };

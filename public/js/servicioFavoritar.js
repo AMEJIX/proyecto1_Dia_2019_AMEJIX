@@ -27,7 +27,8 @@ let agregarFavorito = (userEmail, emailCE) => {
 
         swal.fire({
             type: resType,
-            title: res.msj,
+            title: res.msg,
+       
             showConfirmButton: true,
             onClose: () => {
 
@@ -49,7 +50,7 @@ let agregarFavorito = (userEmail, emailCE) => {
 let desfavoritar = (userEmail, emailCE) => {
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/favoritar",
+        url: "http://localhost:4000/api/desfavoritar",
         method: "POST",
         data: {
 
@@ -66,6 +67,7 @@ let desfavoritar = (userEmail, emailCE) => {
         let resType;
         if (res.success) {
             resType = 'success';
+            location.reload();
         } else {
             resType = 'warning';
         }
