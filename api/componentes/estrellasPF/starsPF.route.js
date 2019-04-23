@@ -38,4 +38,11 @@ router.route('/listarEvaluaciones')
         }
     );
 
+router.route('/centroEducativo/listarEvaluacionesUsuario/:idCE')
+    .get(
+        function (req, res) {
+            starsPFApi.listarEvaluacionUsuario(req, res);
+        }
+    );
+
 module.exports = router;
