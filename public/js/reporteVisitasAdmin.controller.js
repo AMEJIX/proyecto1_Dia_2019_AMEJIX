@@ -52,7 +52,7 @@ function mostrarDatos() {
 
     let filtro = inputFiltro.value;
     tabla.innerHTML = '';
-    console.log(visitasUsuarios.length);
+    // console.log(visitasUsuarios.length);
     for (let i = 0; i < usuarios.length; i++) {
 
         // console.log(usuarios[i].visitas);

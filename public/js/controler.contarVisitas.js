@@ -46,7 +46,7 @@ let contadorVisitas = () => {
         console.log(visita.fechas);
         modificarFechaVisita(visita);
     }
-   console.log(obtenerVisita(idCE).fechas);
+   // console.log(obtenerVisita(idCE).fechas);
 };
 
 window.onload = () => {
