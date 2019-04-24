@@ -789,7 +789,7 @@ module.exports.listarCE = (req, res) => {
     );
 }
 
-module.exports.listarPF = (req, res) => {
+module.exports.listarPFs = (req, res) => {
     modelo_usuario.find({ userType: 'padreFamilia' }).then(
         function (usuario) {
             if (usuario.length > 0) {
@@ -800,7 +800,7 @@ module.exports.listarPF = (req, res) => {
             } else {
                 res.json({
                     success: false,
-                    usuario: 'No se encontraron centros educativos.'
+                    usuario: 'No se encontraron padres de familia.'
                 })
             }
         }
@@ -879,22 +879,22 @@ module.exports.enviarCorreo = (req, res) => {
     );
 }
 
+// COMENTADA PORQUE DABA ERROR A LISTAR PADRES DE FAMILIA
 
-
-module.exports.listarPF = (req, res) => {
-    modelo_usuario.find({ _id: req.body._id}).then(
-        function (infoPF) {
-            if (infoPF.length > 0) {
-                res.json({
-                    success: true,
-                    infoPF: infoPF
-                })
-            } else {
-                res.json({
-                    success: false,
-                    infoPF: 'No se encontró padre de familia.'
-                })
-            }
-        }
-    );
-}
+// module.exports.listarPF = (req, res) => {
+//     modelo_usuario.find({ _id: req.body._id}).then(
+//         function (infoPF) {
+//             if (infoPF.length > 0) {
+//                 res.json({
+//                     success: true,
+//                     infoPF: infoPF
+//                 })
+//             } else {
+//                 res.json({
+//                     success: false,
+//                     infoPF: 'No se encontró padre de familia.'
+//                 })
+//             }
+//         }
+//     );
+// }

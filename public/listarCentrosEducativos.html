@@ -18,8 +18,16 @@
 </head>
 
 <body>
+
     <header>
         <nav>
+            <!-- <div id="divGeneralEstrellas">
+                <div id="divEncabezadoH2Estrellas">
+                    <h2 id="encabezadoH2Estrellas">Mi evaluación del MEP</h2>
+                </div>
+                <div id="divEstrellas">
+                </div>
+            </div> -->
 
             <div class="userInfo">
                 <div class="userPhoto"></div>
@@ -37,6 +45,7 @@
         </nav>
     </header>
     <main>
+
 
         <div class="sideNav">
             <a class="aBack" href="userProfileInfo.html">
@@ -69,11 +78,11 @@
             </button>
             <div class="dropdownContainer">
                 <a href="bitacora.html">Bitácora</a>
-                <a href="#">Notificaciones</a>
+                <a href="solicitudes.html">Notificaciones</a>
                 <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
                 <a href="listarRangosMEP.html">Rangos de evaluación</a>
                 <a href="listarArticulosPropios.html">Artículos escolares</a>
-                <a href="listarUtilesOficiales.html">Lista de útiles</a>
+                <a href="listarUtilesOficialesSA.html">Lista de útiles</a>
                 <a href="criteriosBusqueda.html">Etiquetas</a>
             </div>
 
@@ -84,11 +93,13 @@
             <div class="dropdownContainer">
                 <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                 <a href="listarCentrosEducativos.html">Buscar</a>
-                <a href="#" id="aFavoritos">Favoritos</a>
-                <a href="#">Top</a>
-                <a href="#" id="aEvaluarCE">Evaluar centro educativo</a>
-                <a href="#" id="aActivarDesCE">Activar o desactivar</a>
-                <a href="#" id="aEliminarCE">Eliminar</a>
+                <a href="misFavoritos.html" id="aFavoritos">Favoritos</a>
+                <a href="listarTopCentrosEducativos.html">Top 10 MEP</a>
+                <a href="topCentrosEducativosPF.html">Top 10 por padres de familia</a>
+                <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
+                <!-- <a href="#" id="aActivarDesCE">Activar o desactivar</a> -->
+                <a href="administrarCE.html" id="adminCE">Administrar cuentas</a>
+                <!-- <a href="#" id="aEliminarCE">Eliminar</a> -->
                 <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
             </div>
 
@@ -98,15 +109,16 @@
             </button>
             <div class="dropdownContainer">
                 <a href="listarPadresFamilia.html">Buscar</a>
-                <a href="#" id="aActivarDesPF">Activar o desactivar</a>
-                <a href="#" id="aEliminarPF">Eliminar</a>
+                <!-- <a href="#" id="aActivarDesPF">Activar o desactivar</a> -->
+                <a href="administrarPF.html" id="adminPF">Administrar cuentas</a>
+                <!-- <a href="#" id="aEliminarPF">Eliminar</a> -->
             </div>
 
             <a href="misCitasPF.html" id="menuCitasPF"><span><i class="far fa-calendar-check"></i></span>Citas
                 agendadas</a>
 
             <!-- <a href="listarPadresFamilia.html" id="verPadres"><span><i class="fas fa-search"></i></span>Buscar
-                padres de familia</a> -->
+                        padres de familia</a> -->
 
             <button class="btnDropdown" id="verInfoMep">
                 <span><i class="fas fa-university"></i></span>
@@ -122,10 +134,10 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
-                <a href="#">Visitas</a>
-                <a href="#">Hijos</a>
-                <a href="#">Ranking por padres de familia</a>
+                <a href="reporteRankingMEP.html">Ranking MEP</a>
+                <a href="reporteVisitasAdmin.html">Visitas</a>
+                <a href="reporteDeHijos.html">Hijos</a>
+                <a href="reporteRankingPFCE.html">Ranking por padres de familia</a>
             </div>
 
             <button class="btnDropdown" id="reportesCE">
@@ -133,9 +145,9 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
-                <a href="#">Visitas</a>
-                <a href="#">Ranking por padres de familia</a>
+                <a href="rankingStarsMEPSolicitudCE.html">Ranking MEP</a>
+                <a href="reporteVisitas.html">Visitas</a>
+                <a href="reporteRankingPF.html">Ranking por padres de familia</a>
             </div>
 
         </div>
@@ -149,12 +161,12 @@
             </div> -->
 
             <div class="inputStandard">
-            <div>
-                      <label for="txtFiltro">Buscar</label>
-                  </div>
-                  <div>
-                      <input type="text" id="txtFiltro" placeholder="Nombre del centro educativo">
-                  </div>
+                <div>
+                    <label for="txtFiltro">Buscar</label>
+                </div>
+                <div>
+                    <input type="text" id="txtFiltro" placeholder="Nombre del centro educativo">
+                </div>
             </div>
 
             <div id="divEtiquetas">
@@ -218,6 +230,8 @@
     <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
+    <!-- <script src="js/servicio.encabezadoEstrellas.js"></script>
+    <script src="js/encabezadoEstrellas.js"></script> -->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

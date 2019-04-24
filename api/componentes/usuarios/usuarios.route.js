@@ -49,22 +49,25 @@ router.route('/validarCredenciales')
         }
     );
 
+    router.route('/listaPF')
+    .get(
+        function (req, res) {
+            api_usuarios.listarPFs(req, res);
+        }
+    );
+    // router.route('/listaPF')
+    // .get(
+    //     function (req, res) {
+    //         api_usuarios.listarPF(req, res);
+    //     }
+    // );
+
     router.route('/solicitudes')
     .get(
         function (req, res) {
             api_usuarios.solicitudes(req, res);
         }
     );    
-
-
-    
-
-router.route('/listaPF')
-    .get(
-        function (req, res) {
-            api_usuarios.listarPF(req, res);
-        }
-    );
 
 router.route('/listarCEPorOU')
     .post(
