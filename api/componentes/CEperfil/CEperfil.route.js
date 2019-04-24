@@ -16,4 +16,12 @@ router.route('/listaCEunico/:_id')
         }
     );
 
+
+    router.route('/listaPFunico/:_id')
+    .get(
+        function (req, res) {
+            CEperfil.buscarPF(req, res);
+        }
+    );
+
 module.exports = router;
