@@ -1,6 +1,6 @@
 'use strict';
 
-const buscador = document.querySelector('#inputBuscar');
+const buscador = document.querySelector('#inputBuscarCinco');
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 // let idUsuarioCE = user._id;
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const buscadorazo = document.querySelector('#inputBuscar')
+const buscadora = document.querySelector('#inputBuscarDos')
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 // let idUsuarioCE = user._id;
 
@@ -15,14 +15,14 @@ if (user.userType != "centroEducativo") {
 /**************************************************************************************************************/
 
 let becas = listarBecas(idUsuarioCE);
-buscadorazo.addEventListener('keyup', mostrarBecas);
+buscadora.addEventListener('keyup', mostrarBecas);
 
 /**************************************************************************************************************/
 
 function mostrarBecas() {
 
     const tabla = document.querySelector('#tblBecas tbody');
-    const filtro = buscadorazo.value;
+    const filtro = buscadora.value;
 
     tabla.innerHTML = '';
     for (let i = 0; i < becas.length; i++) {
@@ -38,7 +38,7 @@ function mostrarBecas() {
 
 mostrarBecas();
 
-buscadorazo.addEventListener('keyup', mostrarBecas);
+buscadora.addEventListener('keyup', mostrarBecas);
 
 /**************************************************************************************************************/
 
