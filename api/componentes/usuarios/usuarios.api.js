@@ -854,7 +854,7 @@ module.exports.listarMEP = (req, res) => {
             } else {
                 res.json({
                     success: false,
-                    usuario: 'No se encontraron centros educativos.'
+                    usuario: 'No hay informacion del Ministerio de Educación Pública.'
                 })
             }
         }
@@ -873,6 +873,26 @@ module.exports.enviarCorreo = (req, res) => {
                 res.json({
                     success: false,
                     usuario: 'No se encontraron centros educativos.'
+                })
+            }
+        }
+    );
+}
+
+
+
+module.exports.listarPF = (req, res) => {
+    modelo_usuario.find({ _id: req.body._id}).then(
+        function (infoPF) {
+            if (infoPF.length > 0) {
+                res.json({
+                    success: true,
+                    infoPF: infoPF
+                })
+            } else {
+                res.json({
+                    success: false,
+                    infoPF: 'No se encontró padre de familia.'
                 })
             }
         }
