@@ -1,6 +1,6 @@
 'use strict';
 
-let user = JSON.parse(sessionStorage.getItem("usuario"));
+// let user = JSON.parse(sessionStorage.getItem("usuario"));
 
 const tabla = document.querySelector('#tblUsuarios tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
