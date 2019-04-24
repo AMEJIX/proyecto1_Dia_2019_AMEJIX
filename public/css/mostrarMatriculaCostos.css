@@ -27,9 +27,10 @@
 }
 
 #inputBuscar{
+    font-family: 'Raleway', sans-serif;
     width: 225px;
     height: 20px;
-    outline-color: #50422e;
+    outline-color: #f9aa33;
 }
 
 tr{
@@ -70,6 +71,7 @@ tr{
 .tha {
     background: #f9aa33;
     color: white;
+    width: 80px;
 }
 
 .tda {

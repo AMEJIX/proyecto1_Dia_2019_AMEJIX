@@ -10,7 +10,6 @@ module.exports.registrar = (req, res) => {
             mensualidad: req.body.mensualidad,
             moneda: req.body.moneda,
             idCE: req.body.idCE,
-            userName: req.body.userName,
         }
     );
 

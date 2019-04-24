@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarMatricula = (pstringPrecioMatricula, puserName,pnumberPrecioMensualidad, pfieldsetNumberPrecioMatricula, pidCentroEducativo) => {
+let registrarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfieldsetNumberPrecioMatricula, pidCentroEducativo) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarMatricula",
@@ -11,8 +11,6 @@ let registrarMatricula = (pstringPrecioMatricula, puserName,pnumberPrecioMensual
             mensualidad: pnumberPrecioMensualidad,
             moneda: pfieldsetNumberPrecioMatricula,
             idCE: pidCentroEducativo,
-            userName: puserName,
-
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
@@ -86,7 +84,7 @@ let buscarMatricula = (_id) => {
 
 /**************************************************************************************************************/
 
-let editarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfieldsetNumberPrecioMatricula, pidCentroEducativo, p_id) => {
+let editarMatricula = (pstringPrecioMatricula, puserName, pnumberPrecioMensualidad, pfieldsetNumberPrecioMatricula, pidCentroEducativo, p_id) => {
     let request = $.ajax({
         url: 'http://localhost:4000/api/editarMatricula',
         method: "POST",
@@ -97,6 +95,7 @@ let editarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfields
             moneda: pfieldsetNumberPrecioMatricula,
             idCE: pidCentroEducativo,
             id: p_id,
+            userName: puserName,
 
         },
         dataType: "json",
