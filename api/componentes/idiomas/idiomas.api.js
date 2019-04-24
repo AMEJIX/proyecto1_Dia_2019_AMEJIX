@@ -1,12 +1,14 @@
 'use strict';
 
 const modeloIdiomas = require('./idiomas.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 module.exports.registrar = (req, res) => {
     let nuevoIdioma = new modeloIdiomas(
         {
             idiomas: req.body.idiomas,
             idCE: req.body.idCE,
+            userName: req.body.userName,
         }
     );
 

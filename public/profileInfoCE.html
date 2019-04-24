@@ -36,9 +36,9 @@
     <link rel="stylesheet" href="css/citas.css">
     <link rel="stylesheet" href="css/marcarDesmarcarEtiquetas.css">
     <link rel="stylesheet" href="css/mostrarMatriculaCostos.css">
-    <link rel="stylesheet" href="css/mostrarIdiomas.css">
     <link rel="stylesheet" href="css/mostrarBecas.css">
     <link rel="stylesheet" href="css/mostrarNoticias.css">
+    <link rel="stylesheet" href="css/mostrarIdiomas.css">
 
 </head>
 
@@ -185,7 +185,7 @@
                         </div>
                     </div>
 
-                    <a id= "favoritar">Marcar como favorito</a>
+                    <a id="favoritar">Marcar como favorito</a>
                     <a id="desfavoritar">Desmarcar</a>
                 </div>
 
@@ -225,7 +225,7 @@
                     <div class="tabPanel">
 
                         <div id="infoCE">
-                            
+
                             <h2>Historia</h2>
                             <h3></h3>
 
@@ -292,8 +292,6 @@
                                     <th>Matrícula</th>
                                     <th>Mensualidad</th>
                                     <th>Moneda</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -316,8 +314,6 @@
                                 <tr>
                                     <th>Nombre de la beca</th>
                                     <th>Descripción de la beca</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -367,8 +363,6 @@
                                     <th>Título de la noticia</th>
                                     <th>Fecha de la noticia</th>
                                     <th>Descripción de la noticia</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -536,8 +530,6 @@
                             <thead>
                                 <tr>
                                     <th>Idioma</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -609,17 +601,24 @@
     <script src="js/controlador.mostrarComentarios.js"></script>
 
     <!-- Matricula -->
-
+    <script src="js/servicio.registrarMatriculaCosto.js"></script>
+    <script src="js/controlador.mostrarMatriculasCostosCE.js"></script>
 
     <!-- Becas -->
+    <script src="js/servicio.registrarBeca.js"></script>
+    <script src="js/controlador.mostrarBecasCE.js"></script>
 
+    <!-- Noticias -->
+    <script src="js/servicio.registrarNoticia.js"></script>
+    <script src="js/controlador.mostrarNoticiasCE.js"></script>
+
+    <!-- Idiomas -->
+    <script src="js/servicio.registrarIdioma.js"></script>
+    <script src="js/controlador.mostrarIdiomasCE.js"></script>
 
     <!-- Material Informativo -->
     <script src="js/servicio.materialInformativo.js"></script>
     <script src="js/controlador.mostrarMaterialInformativoPF.js"></script>
-
-    <!-- Noticias -->
-
 
     <!-- Actividades -->
     <script src="js/servicio.actividades.js"></script>

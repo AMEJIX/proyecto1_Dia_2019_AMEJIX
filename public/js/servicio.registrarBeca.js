@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarBeca = (pstringNombreBeca, pstringDescripcionBeca, pidCentroEducativo) => {
+let registrarBeca = (pstringNombreBeca, puserName, pstringDescripcionBeca, pidCentroEducativo) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarBeca",
@@ -10,6 +10,7 @@ let registrarBeca = (pstringNombreBeca, pstringDescripcionBeca, pidCentroEducati
             nombreBeca: pstringNombreBeca,
             descripcionBeca: pstringDescripcionBeca,
             idCE: pidCentroEducativo,
+            userName: puserName,
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',

@@ -1,6 +1,7 @@
 'use strict';
 
 const modeloBeca = require('./becas.model');
+const modeloBitacora = require('../bitacora/bitacora.model');
 
 module.exports.registrar = (req, res) => {
 
@@ -9,6 +10,7 @@ module.exports.registrar = (req, res) => {
             nombreBeca: req.body.nombreBeca,
             descripcionBeca: req.body.descripcionBeca,
             idCE: req.body.idCE,
+            userName: req.body.userName,
         }
     );
     nuevaBeca.save(function (error) {

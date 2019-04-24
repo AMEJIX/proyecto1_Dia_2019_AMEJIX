@@ -56,9 +56,10 @@ let obtener_datos = () => {
         let stringRegistrarNoticia = inputRegistrarNoticia.value;
         let stringFechaNoticia = inputFechaNoticia.value;
         let idCentroEducativo = idCE;
+        let userName = user.nombre += " " + user.apellido;
 
 
-        registrarNoticia(stringTituloNoticia, stringRegistrarNoticia, stringFechaNoticia, idCentroEducativo);
+        registrarNoticia(userName, stringTituloNoticia, stringRegistrarNoticia, stringFechaNoticia, idCentroEducativo);
 
     } else {
         swal.fire({
