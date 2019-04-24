@@ -4,10 +4,10 @@
 const tabla = document.querySelector('#tblMaterialInformativo tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
 
-let idUsuarioCE = user._id;
+let idUsuarioCEmaterial = user._id;
 
 if(user.userType != "centroEducativo") {
-    idUsuarioCE = IdGeneralCE;
+    idUsuarioCEmaterial = IdGeneralCE;
 } else {
     
 }
@@ -19,7 +19,7 @@ if(user.userType != "centroEducativo") {
     
 // }
 
-let temas = listarMaterialUsuario(idUsuarioCE);
+let temas = listarMaterialUsuario(idUsuarioCEmaterial);
 mostrarDatosPF();
 
 
