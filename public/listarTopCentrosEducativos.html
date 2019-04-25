@@ -2,25 +2,33 @@
 <html lang="es">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Top de centros educativos</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/perfil.css">
-        <link rel="stylesheet" href="css/profileInfo.css">
-        <link rel="stylesheet" href="css/topCEMEP.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Top de centros educativos</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/profileInfo.css">
+    <link rel="stylesheet" href="css/topCEMEP.css">
 </head>
 
 <body>
+
     <header>
         <nav>
+            <div id="divGeneralEstrellas">
+                <div id="divEncabezadoH2Estrellas">
+                    <h2 id="encabezadoH2Estrellas">Mi evaluación del MEP</h2>
+                </div>
+                <div id="divEstrellas">
+                </div>
+            </div>
 
             <div class="userInfo">
                 <div class="userPhoto"></div>
@@ -32,14 +40,14 @@
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="actualizarUsuario.html">Información Personal</a>
                     <a href="" id="logOut">Cerrar sesión</a>
-                    </ul>
                 </div>
             </div>
 
         </nav>
     </header>
     <main>
-    
+
+
         <div class="sideNav">
             <a class="aBack" href="userProfileInfo.html">
                 <div class="sicenLogo"></div>
@@ -51,7 +59,7 @@
                 Información
             </button>
             <div class="dropdownContainer">
-                <a href="mostrarMatriculaCostos.html">Matrículas</a>
+                <a href="mostrarMatriculaCostos.html">Matrícula</a>
                 <a href="mostrarIdiomas.html">Idiomas</a>
                 <a href="mostrarBecas.html">Becas</a>
                 <a href="misCitasCE.html">Citas</a>
@@ -62,7 +70,7 @@
                 <a href="listarUtilesPropiosCE.html">Lista de útiles</a>
                 <a href="criteriosBusqueda.html">Etiquetas</a>
                 <a href="preguntasFrecuentesCE&Admin.html" id="aPreguntasCE">Preguntas frecuentes</a>
-                <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>                
+                <a href="preguntasFrecuentesPF.html" id="aPreguntasPF">Preguntas frecuentes</a>
             </div>
 
             <button class="btnDropdown" id="menuAdministrativo">
@@ -102,14 +110,16 @@
             </button>
             <div class="dropdownContainer">
                 <a href="listarPadresFamilia.html">Buscar</a>
+                <!-- <a href="#" id="aActivarDesPF">Activar o desactivar</a> -->
                 <a href="administrarPF.html" id="adminPF">Administrar cuentas</a>
+                <!-- <a href="#" id="aEliminarPF">Eliminar</a> -->
             </div>
 
             <a href="misCitasPF.html" id="menuCitasPF"><span><i class="far fa-calendar-check"></i></span>Citas
                 agendadas</a>
 
             <!-- <a href="listarPadresFamilia.html" id="verPadres"><span><i class="fas fa-search"></i></span>Buscar
-                padres de familia</a> -->
+                        padres de familia</a> -->
 
             <button class="btnDropdown" id="verInfoMep">
                 <span><i class="fas fa-university"></i></span>
@@ -152,15 +162,15 @@
                     <option value="">Seleccione un top 10</option>
                     <option value="1">Top general de evaluaciones por el MEP</option>
                     <option value="2">Top de escuelas evaluadas por el MEP</option>
-                    <option value="3">Top de colegios evaluados por el MEP</option>                  
+                    <option value="3">Top de colegios evaluados por el MEP</option>
 
                 </select>
             </div>
-        
-        <section id="seccionRankings">
-           
 
-        </section>
+            <section id="seccionRankings">
+
+
+            </section>
             <!-- TODO EL CONTENIDO DEL CASO DE USO -->
 
         </div>
@@ -169,12 +179,12 @@
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio.encabezadoEstrellas.js"></script>
     <script src="js/encabezadoEstrellas.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap" async defer></script>
     <script src="js/mapUser.js"></script>
-    
+
     <script src="js/servicio.evaluarCEPorMEP.js"></script>
 
     <script src="js/controlador.listarTopCE.js"></script>

@@ -19,7 +19,10 @@ let registrarMaterialInformativo = (pnombre, ptema, pdescripcion, pfile, pIdCent
         swal.fire({
             type: 'success',
             title: 'El tema se ha registrado correctamente.',
-            text: `Se registró correctamente.`
+            text: `Se registró correctamente.`,
+            onClose: () => {
+                window.location.href = 'mostrarMaterialInformativo.html';
+              }   
         });
     });
 
