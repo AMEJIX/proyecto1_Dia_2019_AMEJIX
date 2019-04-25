@@ -31,7 +31,7 @@ section{
 .colIzq{   
     float: left;
     width: 45%;
-    margin-top: 20px;
+    margin-top: 7%;
 }
 
 .colDer{   
@@ -45,7 +45,7 @@ section{
     display: block;
    margin-top: 30px;
    text-align: center;
-   font-size: 25px;
+   font-size: 20px;
    color: #f9aa33;
    font-style: bold;
    margin-bottom: 50px;
@@ -81,8 +81,7 @@ section{
     border-radius: 16px;
     margin: 0 auto;
     text-align: center;
-    margin-top: 50px;
-    
+    margin-top: 50px;    
 }
 
 

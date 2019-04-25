@@ -267,15 +267,17 @@ select::after {
 }
 .btnRegistrar{
     display: block;
-    padding: 14px 45px;
+    padding: 14px 0px;
     margin: 0 auto;
     background: #f9aa33;
     color: white;
     border: none;
     border-radius: 5px;
     outline: none;
-    margin-bottom: 100px;
-    margin-top: 25px;
+    margin-bottom: 150px;
+    margin-top: 45px;
+    min-width: 155px;
+    font-size: 18px;
 }
 
 .btnRegistrar:hover{

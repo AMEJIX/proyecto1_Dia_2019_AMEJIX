@@ -22,7 +22,7 @@ tbody{
 h1 {
     display: inline-block;
     margin-top: 40px;
-    margin-left: 5%;
+    margin-left: 40%;
     font-size: 25px;
     color: #2c3e50
 }
@@ -42,8 +42,8 @@ h1 {
 #labelPrecioMatricula{
     margin: 0% auto;
     margin-right: 10px;
-    font-size: 25px;
     color: #344955;
+    font-size: 20px;
 }
 
 #inputPrecioMatricula{
@@ -52,23 +52,24 @@ h1 {
     height: 30px;
     margin-left: 80px;
     outline-color: #f9aa33;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #labelPrecioMensualidad{
     margin: 0% auto;
     margin-right: 10px;
-    font-size: 25px;
+    font-size: 20px;
     color: #344955;
+
 }
 
 #inputPrecioMensualidad{
     margin: 0% auto;
     width: 500px;
     height: 30px;
-    margin-left: 38px;
+    margin-left: 48px;
     outline-color: #f9aa33;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .errorInput{
@@ -79,12 +80,12 @@ fieldset{
     width: 290px;
     height: 40px;
     margin-top: 3%;
-    margin-left: 40%;
+    margin-left: 38.5%;
 }
 
 #btnRegistrarMatricula{
     margin: 0% auto;
-    margin-left: 44%;
+    margin-left: 41%;
     background: #f9aa33;
     width: 210px;
     height: 40px;
@@ -101,6 +102,7 @@ fieldset{
     margin-top: 45px;
     color: #2c3e50;
     text-decoration: none;
+    font-size: 20px;
 }
 
 .aRegistrar:hover {

@@ -38,14 +38,16 @@ h1 {
  #btnImprimir {
     display: block;
     margin-top: 45px;
-    padding: 14px 50px;
+    padding: 14px 0px;
     margin-top: 20px;
     margin: 0 auto;
+    min-width: 155px;
     background: #f9aa33;
     color: white;
     border: none;
     border-radius: 5px;
     outline: none;
+    font-size: 18px;
 }
 
 #btnImprimir:hover {

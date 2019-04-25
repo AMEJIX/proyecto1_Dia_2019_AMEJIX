@@ -5,12 +5,13 @@
     color: #2c3e50;
     outline: none;
     cursor: pointer;
+    font-size: 20px;
 }
 
 .h1a {
     display: inline-block;
     margin-top: 40px;
-    margin-left: 5%;
+    margin-left: 46%;
     font-size: 25px;
     color: #2c3e50
 }
@@ -46,6 +47,7 @@
     background: #f9aa33;
     color: white;
     width: 130px;
+    font-size: 20px;
 }
 
 .tda {
@@ -71,6 +73,7 @@
     margin-top: 45px;
     color: #2c3e50;
     text-decoration: none;
+    font-size: 20px;
 }
 
 .aRegistrar:hover {

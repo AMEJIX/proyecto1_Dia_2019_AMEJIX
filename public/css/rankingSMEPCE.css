@@ -76,7 +76,7 @@ a:hover{
 #botonImprimir{
     display: block;
    padding: 14px 45px;
-   margin: 0 auto;
+   margin-left: 5%;
    background: #f9aa33;
    color: white;
    border: none;
@@ -84,6 +84,7 @@ a:hover{
    outline: none;
    margin-bottom: 25px;
    margin-top: 25px;
+   font-size: 18px;
 }
 
 #botonImprimir:hover{
