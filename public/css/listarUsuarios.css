@@ -89,6 +89,7 @@ h1 {
     border-spacing: 15px 15px;
     width: 360px;
     margin: 0 auto;
+    font-size: 20px;
 }
 
 #tblEtiquetasSeleccionadas a {
