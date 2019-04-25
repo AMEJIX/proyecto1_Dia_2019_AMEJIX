@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head id="idHead">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reporte visitas</title>
+    <title>Etiquetas del centro educativo</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/reset.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
     <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/morris.css">
-    <link rel="stylesheet" href="css/reportesVisitas.css">
-
+    <link rel="stylesheet" href="css/criteriosBusqueda.css">
 </head>
 
 <body>
 
-    <header id="printHeader">
+    <header>
         <nav>
             <div id="divGeneralEstrellas">
                 <div id="divEncabezadoH2Estrellas">
@@ -51,7 +47,7 @@
     <main>
 
 
-        <div class="sideNav" id="printDiv">
+        <div class="sideNav">
             <a class="aBack" href="userProfileInfo.html">
                 <div class="sicenLogo"></div>
             </a>
@@ -157,48 +153,75 @@
         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
-            <div class="wrapper">
-                <h1>Reporte de visitas</h1>
+            <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+            <h1>Criterios de búsqueda</h1>
 
-                <table id="tblStandard">
-                    <thead>
-                        <tr>
-                            <th>Mes</th>
-                            <th>Año</th>
-                            <th>Visitas</th>
-                        </tr>
-                    </thead>
+            <div id="divEtiquetas">
+                                <!--<label for="sltEtiquetas" id="lblEtiquetas">Etiquetas</label>-->
 
+                <div id="sltEtiquetasDiv">
+                    <select id="sltEtiquetas">
+                        <!--<optgroup label="Etiquetas"></optgroup>-->
+                        <option value="" hidden>Click para agregar etiqueta</option>
+                    </select>
+                </div>
+                <table id="tblEtiquetasSeleccionadas">
                     <tbody>
 
                     </tbody>
                 </table>
-                <!-- <div id="myfirstchart"></div> -->
-                <div id="divImprimir">
-                    <button type="button" id="btnImprimir">Imprimir</button>
-                </div>
-
             </div>
+
+            <div class="inputStandard" style="display: none">
+                <div>
+                    <label for="txtFiltrar">Buscar</label>
+                </div>
+                <div>
+                    <input type="text" id="txtFiltrar" placeholder="">
+                </div>
+            </div>
+
+            <table id="tblCriteriosBusqueda" align="center" style="display: none">
+                <tbody></tbody>
+            </table>
+
+            <p id="nueva" style="display: none">¿Nuevo criterio de búsqueda?</p>
+            <form style="display: none">
+                <div class="frmBox">
+                    <div id="input2">
+                        <div>
+                            <label for="txtNombreEtiqueta">Escriba el nombre del nuevo criterio</label>
+                        </div>
+                        <div>
+                            <input type="text" id="txtNombreEtiqueta" placeholder="">
+                        </div>
+                    </div>
+
+                    <button type="button" id="btnAgregar">Agregar</button>
+                </div>
+            </form>
+
+
+
         </div>
     </main>
 
     <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
+    <script src="js/controllerProfileInfo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="js/controlador.general.js"></script>
-
-    <script src="js/controllerProfileInfo.js"></script>
-    <script src="js/mapUser.js"></script>
-    <script src="js/morris.min.js"></script>
-    <script src="js/reporteVisitas.servicio.js"></script>
-    <script src="js/reportesVisitas.js"></script>
-    <script src="js/mostrarNombre.controller.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/servicio.encabezadoEstrellas.js"></script>
     <script src="js/encabezadoEstrellas.js"></script>
-
+    <script src="js/criteriosBusqueda.servicio.js"></script>
+    <script src="js/criteriosBusqueda.controller.eliminar.js"></script>
+    <script src="js/criteriosBusqueda.controller.actualizar.js"></script>
+    <script src="js/criteriosBusqueda.controller.listar.js"></script>
+    <script src="js/marcarDesmarcarEtiquetas.js"></script>
+    <script src="js/criteriosBusqueda.controller.registrar.js"></script>
+    <script src="js/mostrarNombre.controller.js"></script>
 </body>
 
 </html>

@@ -47,13 +47,13 @@ function mostrarDatos() {
 
             let actualizar = document.createElement('a');
             actualizar.classList.add('aActualizarEstado');
-            actualizar.textContent = 'Actualizar';
+            actualizar.innerHTML = '<i class="fas fa-edit"></i>';
             actualizar.href = `#`;
             celdaActualizar.appendChild(actualizar);
 
             let eliminar = document.createElement('a');
             eliminar.classList.add('eliminarUsuario');
-            eliminar.textContent = 'Eliminar';
+            eliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
             eliminar.href = `#`;
             celdaEliminar.appendChild(eliminar);
 

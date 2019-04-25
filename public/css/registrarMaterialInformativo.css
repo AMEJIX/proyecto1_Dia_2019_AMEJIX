@@ -18,7 +18,7 @@ h1 {
 }
 
 #frmInformativo {
-    width: 30%;
+    width: 40%;
     height: 400px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -28,13 +28,16 @@ h1 {
 
 #frmInformativo div{
     margin-bottom: 20px;
-    
+    width: 550px;
 }
 
 #frmInformativo label {
     color: #2c3e50;
     display: inline-block;
-    width: 110px;
+    width: 100px;
+    font-size: 20px;
+    padding-right: 15px;
+    float: left;
 }
 
 #frmInformativo input {
@@ -77,17 +80,23 @@ figure {
     margin-bottom: -4px;
 }
 
+#btnExaminar {
+    font-size: 20px;
+}
+
 #btnGuardar {
-    margin-top: 20px;
     display: block;
     margin-top: 45px;
-    padding: 14px 50px;
+    padding: 14px 0px;
+    margin-top: 20px;
     margin: 0 auto;
+    min-width: 155px;
     background: #f9aa33;
     color: white;
     border: none;
     border-radius: 5px;
     outline: none;
+    font-size: 18px;
 }
 
 #btnGuardar:hover {

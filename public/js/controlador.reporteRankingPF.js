@@ -2,7 +2,13 @@
 
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 const tabla = document.querySelector('#tblReportePF tbody');
-const btnImprimir = document.querySelector('#btnImprimir')
+const head = document.querySelector('#idHead');
+const btnImprimir = document.querySelector('#btnImprimir');
+const printHeader = document.querySelector('#printHeader');
+const printDiv = document.querySelector('#printDiv');
+// const printCssHide = document.querySelector('#printCssHide');
+// const filtroPrint = document.querySelector('#filtroPrint');
+const divImprimir = document.querySelector('#divImprimir');
 
 let idUsuarioCE = user._id;
 let date = new Date();
@@ -35,16 +41,34 @@ function mostrarDatos() {
 
 mostrarDatos();
 
-function imprimir() {
-    var mywindow = window.open('', 'PRINT', 'height=900,width=1200');
-    mywindow.document.write('<html><head>');
-    mywindow.document.write('<style>h1{margin-top:40px;margin-bottom: 60px;text-align: center;font-size: 25px;color: #2c3e50}#tblReportePF{border-collapse: collapse;width: 90%;margin: 0 auto;margin-top: 20px;margin-bottom: 40px;}th {background: #f9aa33;color: white;}td {color: #2c3e50;vertical-align: middle;}td:hover {color: white;background: #4a6572;}td, th {text-align: center;padding: 12px 1px;border: #2c3e50 solid 1px;vertical-align: middle;}</style>');
-    mywindow.document.write('</head><body >');
-    mywindow.document.write(document.getElementById('print').innerHTML);
-    mywindow.document.write('</body></html>');
-    mywindow.document.close(); // necesario para IE >= 10
-    mywindow.focus(); // necesario para IE >= 10
-    mywindow.print();
-    mywindow.close();
-    return true;
+let funcionImprimir = () => {
+    let link = document.createElement('link');
+
+    link.rel = 'stylesheet';
+    link.media = 'print';
+    link.type = 'text/css';
+    head.appendChild(link);
+
+    printHeader.style.display = 'none';
+    printDiv.style.display = 'none';
+    // printCssHide.style.display = 'none';
+    // filtroPrint.style.display = 'none';
+    divImprimir.style.display = 'none';
+
+    javascript: window.print();
+
+    printHeader.removeAttribute("style");
+    printDiv.removeAttribute("style");
+    // printCssHide.removeAttribute("style");
+    // filtroPrint.removeAttribute("style");
+    divImprimir.removeAttribute("style");
+
+    onClose: () => {
+        window.location.href = 'reporteRankingPF.html';
+    }
+
+
+
 }
+
+btnImprimir.addEventListener('click', funcionImprimir);

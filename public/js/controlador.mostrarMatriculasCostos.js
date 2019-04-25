@@ -46,6 +46,8 @@ function mostrarMatriculas() {
             let botonEliminar = document.createElement('button');
             botonEliminar.innerHTML = '<i class ="fas fa-trash-alt"></i>';
             botonEliminar.id = 'btnEliminar';
+            botonEliminar.style.background = 'none';
+            botonEliminar.style.border = 'none';
             botonEliminar.addEventListener('click', eliminar => {
                 eliminarMatriculas(matriculas[i]['_id']);
             });

@@ -1,7 +1,7 @@
 h1 {
     display: inline-block;
     margin-top: 40px;
-    margin-left: 5%;
+    margin-left: 45.5%;
     font-size: 25px;
     color: #2c3e50
 }
@@ -15,13 +15,13 @@ h1 {
 #divDescripcionBeca{
     margin: 0% auto;
     margin-left: 15%;
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
 #labelNombreBeca{
     margin: 0% auto;
-    margin-right: 15px;
-    font-size: 25px;
+    margin-right: 5px;
+    font-size: 20px;
     color: #344955;
 }
 
@@ -31,28 +31,30 @@ h1 {
     height: 40px;
     margin-left: 38px;
     outline-color: #f9aa33;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #labelDescripcionBeca{
     margin: 0% auto;
     margin-right: 8px;
-    font-size: 25px;
+    font-size: 20px;
     color: #344955;
+    float: left;
 }
 
 #inputDescripcionBeca{
     margin: 0% auto;
     width: 530px;
-    height: 300px;
+    height: 180px;
     resize: none;
     outline-color: #f9aa33;
-    font-size: 25px;
+    font-size: 20px;
+    margin-left: 5px;
 }
 
 #btnRegistrarBeca{
     margin: 0% auto;
-    margin-left: 55.5%;
+    margin-left: 45.5%;
     background: #f9aa33;
     width: 210px;
     height: 40px;

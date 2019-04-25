@@ -46,9 +46,16 @@ let actualizarEstadoSolicitud = (estado, id, centroEducativo, email, userType, c
         swal.fire({
             type: 'success',
             title: 'Éxito',
-            text: res.msg
+            text: res.msg,
+            showConfirmButton: true,
+            onClose: () => {
+                location.reload();
+
+            }
 
         });
+        
+        
      });
 
 

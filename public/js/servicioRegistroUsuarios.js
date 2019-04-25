@@ -135,7 +135,7 @@ let registrarCentroEducativo = (userType, centroEducativo, cedulaJuridica, nombr
             title: res.msj,
             showConfirmButton: true,
             onClose: () => {
-                window.location.href = 'index.html';
+                window.location.href = 'http://localhost:3000/public/userProfileInfo.html';
             }
             // type: resType,
             // title: res.msj,

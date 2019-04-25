@@ -46,7 +46,7 @@ function mostrarDatos() {
 
             let actualizar = document.createElement('a');
             actualizar.classList.add('aActualizarEstado');
-            actualizar.textContent = 'Actualizar';
+            actualizar.innerHTML = '<i class="fas fa-edit"></i>';
             actualizar.href = `#`;
             celdaActualizar.appendChild(actualizar);
 
@@ -85,7 +85,7 @@ function mostrarDatos() {
                     swal.fire({
                         type: 'warning',
                         title: 'No se pudo actualizar el estado',
-                        text: `El estad debe ser "Activo" - "Pendiente" - "Inactivo"`,
+                        text: `El estado debe ser "Activo" - "Pendiente" - "Inactivo"`,
 
                     });
                 }

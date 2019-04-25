@@ -6,8 +6,12 @@ let userActual = JSON.parse(sessionStorage.getItem('usuario'));
 
 // const opcionMisCitas = document.querySelector('#opcionMisCitas');
 
-if(userActual.userType === 'padreFamilia'){
+if(userActual.userType === 'superAdministrador'){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
+}
+
+if(userActual.userType === 'padreFamilia'){
+    if (location.pathname.split("/").slice(-1) !== 'misCitasPF.html')  setTimeout(location.href='misCitasPF.html', 0);
 }
 
 let nombreDelCentroEducativo = userActual.centroEducativo;
