@@ -2,7 +2,11 @@
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
 let etiquetasCE = getCriteriosBusquedaMarcados(user._id);
+let nombresEtiquetas = [];
 
+for (let etiqueta of etiquetasCE){
+    nombresEtiquetas.push(etiqueta.nombre);
+}
 // let user = JSON.parse(sessionStorage.getItem('usuario'));
 function comparar(arr1,arr2){
 
@@ -35,6 +39,7 @@ mostrarCriterios();
 inputFiltrar.addEventListener('keyup', mostrarCriterios);
 
 
+
 function mostrarCriterios() {
 
     let tabla = document.querySelector('#tblCriteriosBusqueda tbody');
@@ -45,7 +50,7 @@ function mostrarCriterios() {
 
 
     console.log(listaEtiquetas.length);
-    console.log(etiquetasCE);
+    console.log(nombresEtiquetas);
     if (listaEtiquetas.length > 0 || !(typeof listaCitas == 'string')){
         if (document.getElementById('error')) eliminarMensaje();
 
@@ -63,8 +68,9 @@ function mostrarCriterios() {
                 let nuevaEtiqueta = nuevaFila.insertCell();
                 let etiquetap = document.createElement('p');
                 etiquetap.textContent = listaEtiquetas[i]['nombre'];
-                if (etiquetasCE.includes(etiquetap.textContent)){
-                    nuevaEtiqueta.style.backgroundColor = '#F9AA33';
+                if (nombresEtiquetas.includes(etiquetap.textContent)){
+                    // nuevaEtiqueta.style.backgroundColor = '#F9AA33';
+                    nuevaEtiqueta.classList.add('marcada');
                 }
                 etiquetap.id = `etiqueta_${listaEtiquetas[i]['_id']}`;
                 let contenido = etiquetap.textContent;
@@ -127,8 +133,9 @@ function mostrarCriterios() {
                         let nuevaEtiqueta1 = nuevaFila.insertCell();
                         let etiquetap1 = document.createElement('p');
                         etiquetap1.textContent = listaEtiquetas[i]['nombre'];
-                        if (etiquetasCE.includes(etiquetap1.textContent)){
-                            nuevaEtiqueta1.style.backgroundColor = '#F9AA33';
+                        if (nombresEtiquetas.includes(etiquetap1.textContent)){
+                            // nuevaEtiqueta1.style.backgroundColor = '#F9AA33';
+                            nuevaEtiqueta1.classList.add('marcada');
                         }
                         etiquetap1.id = `etiqueta_${listaEtiquetas[i]['_id']}`;
                         let contenido1 = etiquetap1.textContent;
@@ -195,8 +202,9 @@ function mostrarCriterios() {
                         let etiquetap2 = document.createElement('p');
                         etiquetap2.id = `etiqueta_${listaEtiquetas[i]['_id']}`;
                         etiquetap2.textContent = listaEtiquetas[i]['nombre'];
-                        if (etiquetasCE.includes(etiquetap2.textContent)){
-                            nuevaEtiqueta2.style.backgroundColor = '#F9AA33';
+                        if (nombresEtiquetas.includes(etiquetap2.textContent)){
+                            // nuevaEtiqueta2.style.backgroundColor = '#F9AA33';
+                            nuevaEtiqueta2.classList.add('marcada');
                         }
                         let contenido2 = etiquetap2.textContent;
                         nuevaEtiqueta2.appendChild(etiquetap2);

@@ -200,6 +200,29 @@ td:hover{
     transition: all 0.3s ease-in-out;
 }
 
+td.marcada{
+    /*border: 2px #f9aa33 dotted;*/
+    /*border: 1px #f9aa33 solid;*/
+    vertical-align: middle;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    color: #ffffff;
+    background-color: #344955;
+}
+
+td.marcada *{
+    display: inline-block;
+    /*width: 80%;*/
+}
+
+
+td.marcada:hover{
+    background-color: #f9aa33;
+    /*color: #f9aa33;*/
+    /*color: #ffffff;*/
+    transition: all 0.2s ease-in-out;
+}
+
 #error{
     display: inline-block;
     text-align: center;
