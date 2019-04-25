@@ -85,7 +85,7 @@ function mostrarDatos() {
                     swal.fire({
                         type: 'warning',
                         title: 'No se pudo actualizar el estado',
-                        text: `El estad debe ser "Activo" - "Pendiente" - "Inactivo"`,
+                        text: `El estado debe ser "Activo" - "Pendiente" - "Inactivo"`,
 
                     });
                 }
