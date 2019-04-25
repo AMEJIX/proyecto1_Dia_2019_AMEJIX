@@ -1,21 +1,27 @@
 'use strict';
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
+let etiquetasCE = getCriteriosBusquedaMarcados(user._id);
 
 // let user = JSON.parse(sessionStorage.getItem('usuario'));
+function comparar(arr1,arr2){
+
+    return arr1.filter(x => arr2.includes(x));
+}
 
 window.onunload = () =>{
     inputFiltrar.value = '';
 };
 
 if(user.userType === 'padreFamilia'){
-    if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
+    if (location.pathname.split("/").slice(-1) != 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
 }
 
 if (user.userType === 'centroEducativo'){
     document.querySelector('#nueva').style.display = 'none';
     document.querySelector('form').style.display = 'none';
     document.querySelector('#btnAgregar').style.display = 'none';
+    if (location.pathname.split("/").slice(-1) != 'etiquetasCE.html')  setTimeout(location.href='etiquetasCE.html', 0);
 }
 
 let responsable = user.nombre + ' ' + user.segundoNombre + ' ' + user.apellido + ' ' + user.segundoApellido;
@@ -39,6 +45,7 @@ function mostrarCriterios() {
 
 
     console.log(listaEtiquetas.length);
+    console.log(etiquetasCE);
     if (listaEtiquetas.length > 0 || !(typeof listaCitas == 'string')){
         if (document.getElementById('error')) eliminarMensaje();
 
@@ -48,6 +55,7 @@ function mostrarCriterios() {
             if (listaEtiquetas[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
 
 
+
                 if (document.getElementById('error')) eliminarMensaje();
 
                 let nuevaFila = tabla.insertRow();
@@ -55,6 +63,9 @@ function mostrarCriterios() {
                 let nuevaEtiqueta = nuevaFila.insertCell();
                 let etiquetap = document.createElement('p');
                 etiquetap.textContent = listaEtiquetas[i]['nombre'];
+                if (etiquetasCE.includes(etiquetap.textContent)){
+                    nuevaEtiqueta.style.backgroundColor = '#F9AA33';
+                }
                 etiquetap.id = `etiqueta_${listaEtiquetas[i]['_id']}`;
                 let contenido = etiquetap.textContent;
                 nuevaEtiqueta.appendChild(etiquetap);
@@ -116,6 +127,9 @@ function mostrarCriterios() {
                         let nuevaEtiqueta1 = nuevaFila.insertCell();
                         let etiquetap1 = document.createElement('p');
                         etiquetap1.textContent = listaEtiquetas[i]['nombre'];
+                        if (etiquetasCE.includes(etiquetap1.textContent)){
+                            nuevaEtiqueta1.style.backgroundColor = '#F9AA33';
+                        }
                         etiquetap1.id = `etiqueta_${listaEtiquetas[i]['_id']}`;
                         let contenido1 = etiquetap1.textContent;
                         nuevaEtiqueta1.appendChild(etiquetap1);
@@ -181,6 +195,9 @@ function mostrarCriterios() {
                         let etiquetap2 = document.createElement('p');
                         etiquetap2.id = `etiqueta_${listaEtiquetas[i]['_id']}`;
                         etiquetap2.textContent = listaEtiquetas[i]['nombre'];
+                        if (etiquetasCE.includes(etiquetap2.textContent)){
+                            nuevaEtiqueta2.style.backgroundColor = '#F9AA33';
+                        }
                         let contenido2 = etiquetap2.textContent;
                         nuevaEtiqueta2.appendChild(etiquetap2);
                         // nuevaEtiqueta2.innerHTML = listaEtiquetas[i]['nombre'];
