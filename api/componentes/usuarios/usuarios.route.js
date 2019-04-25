@@ -5,6 +5,13 @@ const router = express.Router();
 const api_usuarios = require('./usuarios.api');
 
 
+router.param('_id', function(req, res, next, _id){
+    req.body._id = _id;
+    next();
+});
+
+
+
 router.route('/registrar_usuario')
     .post(
         function (req, res) {
@@ -42,22 +49,25 @@ router.route('/validarCredenciales')
         }
     );
 
+    router.route('/listaPF')
+    .get(
+        function (req, res) {
+            api_usuarios.listarPFs(req, res);
+        }
+    );
+    // router.route('/listaPF')
+    // .get(
+    //     function (req, res) {
+    //         api_usuarios.listarPF(req, res);
+    //     }
+    // );
+
     router.route('/solicitudes')
     .get(
         function (req, res) {
             api_usuarios.solicitudes(req, res);
         }
     );    
-
-
-    
-
-router.route('/listaPF')
-    .get(
-        function (req, res) {
-            api_usuarios.listarPF(req, res);
-        }
-    );
 
 router.route('/listarCEPorOU')
     .post(
@@ -101,11 +111,11 @@ router.route('/listarInfoMEP')
         }
 );
 
-// router.route('/enviarCorreo')
-// .post(
-//     function (req, res){
-//         api_usuarios.enviarInformacion(req, res);
-//     }
-// );
-    
+router.route('/listarInfoPF/:_id')
+    .get(
+        function (req, res){
+            api_usuarios.listarPF(req, res);
+        }
+);
+
 module.exports = router;

@@ -22,6 +22,13 @@
 
     <header>
         <nav>
+            <div id="divGeneralEstrellas">
+                <div id="divEncabezadoH2Estrellas">
+                    <h2 id="encabezadoH2Estrellas">Mi evaluación del MEP</h2>
+                </div>              
+                <div id="divEstrellas">
+                </div>
+            </div>
 
             <div class="userInfo">
                 <div class="userPhoto"></div>
@@ -72,7 +79,7 @@
             </button>
             <div class="dropdownContainer">
                 <a href="bitacora.html">Bitácora</a>
-                <a href="#">Notificaciones</a>
+                <a href="solicitudes.html">Notificaciones</a>
                 <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
                 <a href="listarRangosMEP.html">Rangos de evaluación</a>
                 <a href="listarArticulosPropios.html">Artículos escolares</a>
@@ -87,8 +94,9 @@
             <div class="dropdownContainer">
                 <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                 <a href="listarCentrosEducativos.html">Buscar</a>
-                <a href="#" id="aFavoritos">Favoritos</a>
-                <a href="listarTopCentrosEducativos.html">Top</a>
+                <a href="misFavoritos.html" id="aFavoritos">Favoritos</a>
+                <a href="listarTopCentrosEducativos.html">Top 10 MEP</a>
+                <a href="topCentrosEducativosPF.html">Top 10 por padres de familia</a>
                 <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
                 <!-- <a href="#" id="aActivarDesCE">Activar o desactivar</a> -->
                 <a href="administrarCE.html" id="adminCE">Administrar cuentas</a>
@@ -127,10 +135,10 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
-                <a href="#">Visitas</a>
-                <a href="#">Hijos</a>
-                <a href="topCentrosEducativosPF.html"></a>Ranking por padres de familia</a>
+                <a href="reporteRankingMEP.html">Ranking MEP</a>
+                <a href="reporteVisitasAdmin.html">Visitas</a>
+                <a href="reporteDeHijos.html">Hijos</a>
+                <a href="reporteRankingPFCE.html">Ranking por padres de familia</a>
             </div>
 
             <button class="btnDropdown" id="reportesCE">
@@ -140,7 +148,7 @@
             <div class="dropdownContainer">
                 <a href="rankingStarsMEPSolicitudCE.html">Ranking MEP</a>
                 <a href="reporteVisitas.html">Visitas</a>
-                <a href="topCentrosEducativosPF.html">Ranking por padres de familia</a>
+                <a href="reporteRankingPF.html">Ranking por padres de familia</a>
             </div>
 
         </div>
@@ -192,7 +200,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/controllerProfileInfo.js"></script>
-    <script src="js/mapUser.js"></script>
+    <script src="js/servicio.encabezadoEstrellas.js"></script>
+    <script src="js/encabezadoEstrellas.js"></script>
     <script src="js/controlador.general.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
     <script src="js/servicio.starsPF.js"></script>

@@ -1,7 +1,7 @@
 'use strict';
 
-const inputBuscar = document.querySelector('#inputBuscar');
-// let user = JSON.parse(sessionStorage.getItem("usuario"));
+const buscador = document.querySelector('#inputBuscar');
+//let user = JSON.parse(sessionStorage.getItem("usuario"));
 let idUsuarioCE = user._id;
 
 /**************************************************************************************************************/
@@ -14,15 +14,14 @@ if (user.userType != "centroEducativo") {
 
 /**************************************************************************************************************/
 
-let idiomas = listarIdiomas(idUsuarioCE);
-inputBuscar.addEventListener('keyup', mostrarIdiomas);
+let idiomas = listarIdiomas(idUsuarioCE); buscador.addEventListener('keyup', mostrarIdiomas);
 
 /**************************************************************************************************************/
 
 function mostrarIdiomas() {
 
     const tabla = document.querySelector('#tblIdiomas tbody');
-    const filtro = inputBuscar.value;
+    const filtro = buscador.value;
 
     tabla.innerHTML = '';
     for (let i = 0; i < idiomas.length; i++) {
@@ -55,8 +54,7 @@ function mostrarIdiomas() {
 }
 
 mostrarIdiomas();
-
-inputBuscar.addEventListener('keyup', mostrarIdiomas);
+buscador.addEventListener('keyup', mostrarIdiomas);
 
 /**************************************************************************************************************/
 

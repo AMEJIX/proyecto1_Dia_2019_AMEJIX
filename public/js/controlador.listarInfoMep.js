@@ -1,8 +1,10 @@
 "use strict"
 
     let sectionInfoMep = document.querySelector('#sectionInfo');
+
     function mostrarDatosSA (){
     let infoMEP = listarInfoMEP();
+ 
     sectionInfoMep.innerHTML = '';
 
     let spanNombreSA = document.createElement('h2');

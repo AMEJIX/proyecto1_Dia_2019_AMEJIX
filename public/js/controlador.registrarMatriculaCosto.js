@@ -54,12 +54,13 @@ let obtener_datos = () => {
 
     if (validar() == false) {
 
-        let stringNombreMatricula = inputMatricula.value;
-        let stringPrecioMatricula = inputMensualidad.value;
+        let numberPrecioMatricula = inputMatricula.value;
+        let numberPrecioMensualidad = inputMensualidad.value;
         let fieldsetnumberPrecioMatricula = document.querySelector('#fieldsetPrecio input[type=radio]:checked').value;
         let idCentroEducativo = idCE;
+        let userName = user.nombre += " " + user.apellido;
 
-        registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idCentroEducativo);
+        registrarMatricula(numberPrecioMatricula, numberPrecioMensualidad, fieldsetnumberPrecioMatricula, idCentroEducativo, userName);
 
     } else {
         swal.fire({

@@ -36,9 +36,9 @@
     <link rel="stylesheet" href="css/citas.css">
     <link rel="stylesheet" href="css/marcarDesmarcarEtiquetas.css">
     <link rel="stylesheet" href="css/mostrarMatriculaCostos.css">
-    <link rel="stylesheet" href="css/mostrarIdiomas.css">
     <link rel="stylesheet" href="css/mostrarBecas.css">
     <link rel="stylesheet" href="css/mostrarNoticias.css">
+    <link rel="stylesheet" href="css/mostrarIdiomas.css">
 
 </head>
 
@@ -46,6 +46,7 @@
 
     <header>
         <nav>
+
 
             <div class="userInfo">
                 <div class="userPhoto"></div>
@@ -55,7 +56,7 @@
 
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
-                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="actualizarUsuario.html">Información Personal</a>
                     <a href="" id="logOut">Cerrar sesión</a>
                 </div>
             </div>
@@ -96,7 +97,7 @@
             </button>
             <div class="dropdownContainer">
                 <a href="bitacora.html">Bitácora</a>
-                <a href="#">Notificaciones</a>
+                <a href="solicitudes.html">Notificaciones</a>
                 <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
                 <a href="listarRangosMEP.html">Rangos de evaluación</a>
                 <a href="listarArticulosPropios.html">Artículos escolares</a>
@@ -111,11 +112,12 @@
             <div class="dropdownContainer">
                 <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                 <a href="listarCentrosEducativos.html">Buscar</a>
-                <a href="#" id="aFavoritos">Favoritos</a>
-                <a href="rankingStarsMEPSolicitudCE.html">Top</a>
+                <a href="misFavoritos.html" id="aFavoritos">Favoritos</a>
+                <a href="listarTopCentrosEducativos.html">Top 10 MEP</a>
+                <a href="topCentrosEducativosPF.html">Top 10 por padres de familia</a>
                 <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
                 <!-- <a href="#" id="aActivarDesCE">Activar o desactivar</a> -->
-                <a href="administrarCE.html">Administrar cuentas</a>
+                <a href="administrarCE.html" id="adminCE">Administrar cuentas</a>
                 <!-- <a href="#" id="aEliminarCE">Eliminar</a> -->
                 <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
             </div>
@@ -127,7 +129,7 @@
             <div class="dropdownContainer">
                 <a href="listarPadresFamilia.html">Buscar</a>
                 <!-- <a href="#" id="aActivarDesPF">Activar o desactivar</a> -->
-                <a href="administrarPF.html">Administrar cuentas</a>
+                <a href="administrarPF.html" id="adminPF">Administrar cuentas</a>
                 <!-- <a href="#" id="aEliminarPF">Eliminar</a> -->
             </div>
 
@@ -151,10 +153,10 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
-                <a href="#">Visitas</a>
-                <a href="#">Hijos</a>
-                <a href="#">Ranking por padres de familia</a>
+                <a href="reporteRankingMEP.html">Ranking MEP</a>
+                <a href="reporteVisitasAdmin.html">Visitas</a>
+                <a href="reporteDeHijos.html">Hijos</a>
+                <a href="reporteRankingPFCE.html">Ranking por padres de familia</a>
             </div>
 
             <button class="btnDropdown" id="reportesCE">
@@ -162,9 +164,9 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="reporteRankingMEP.html">Ranking MEP</a>
-                <a href="#">Visitas</a>
-                <a href="#">Ranking por padres de familia</a>
+                <a href="rankingStarsMEPSolicitudCE.html">Ranking MEP</a>
+                <a href="reporteVisitas.html">Visitas</a>
+                <a href="reporteRankingPF.html">Ranking por padres de familia</a>
             </div>
 
         </div>
@@ -185,8 +187,7 @@
                         </div>
                     </div>
 
-                    <a id= "favoritar">Marcar como favorito</a>
-                    <a id="desfavoritar">Desmarcar</a>
+                    <a id="favoritar">Marcar como favorito</a>
                 </div>
 
                 <div id="divEtiquetas">
@@ -225,27 +226,25 @@
                     <div class="tabPanel">
 
                         <div id="infoCE">
-                            
-                            <h2>Historia</h2>
-                            <h3></h3>
 
-                            <h2>Año de fundación:</h2>
+                            <!-- <h2>Historia</h2>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ipsam aut fugit itaque non explicabo suscipit ipsum sapiente rem odit? Ad dolor obcaecati pariatur vitae sint harum ipsam necessitatibus quasi!</h3>
 
-                            <h2>Servicios:</h2>
+                            <h2>Año de fundación: 1990</h2>
+
+                            <h2>Servicios: Transporte, Lorem ipsum</h2>
 
                             <h2>Redes Sociales</h2>
-                            <h3>Facebook:</h3>
-                            <h3>Twitter:</h3>
-                            <h3>Instagram:</h3>
+                            <h3>Facebook: Lorem ipsum</h3>
+                            <h3>Twitter: Lorem ipsum</h3>
+                            <h3>Instagram: Lorem ipsum</h3>
 
                             <h2>Contacto</h2>
-                            <h3>Correo Electrónico:</h3>
-                            <h3>Web:</h3>
-                            <h3>Teléfono:</h3>
-                            <h3>Fax:</h3>
+                            <h3>Correo Electrónico: LoremIpsum@lorem.com</h3>
+                            <h3>Web: Loremipsum.com</h3>
+                            <h3>Teléfono: 1234-5678</h3>
+                            <h3>Fax: 3456-7891</h3> -->
                         </div>
-
-                        <button type="button" id="btnInfoP">Solicitar más información</button>
 
                         <div class="comentarios">
                             <h1>Comentarios</h1>
@@ -282,7 +281,7 @@
 
                         <div id="divBuscar">
                             <label for="inputBuscar" id="labelBuscar">Buscar</label>
-                            <input type="text" id="inputBuscar">
+                            <input type="text" id="inputBuscarTres">
                         </div>
 
 
@@ -292,8 +291,6 @@
                                     <th>Matrícula</th>
                                     <th>Mensualidad</th>
                                     <th>Moneda</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -308,7 +305,7 @@
 
                         <div id="divBuscar">
                             <label for="inputBuscar" id="labelBuscar">Buscar</label>
-                            <input type="text" id="inputBuscar">
+                            <input type="text" id="inputBuscarDos">
                         </div>
 
                         <table id="tblBecas">
@@ -316,8 +313,6 @@
                                 <tr>
                                     <th>Nombre de la beca</th>
                                     <th>Descripción de la beca</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -357,7 +352,7 @@
 
                         <div id="divBuscar">
                             <label for="inputBuscar" id="labelBuscar">Buscar</label>
-                            <input type="text" id="inputBuscar">
+                            <input type="text" id="inputBuscarUno">
                         </div>
 
 
@@ -367,8 +362,6 @@
                                     <th>Título de la noticia</th>
                                     <th>Fecha de la noticia</th>
                                     <th>Descripción de la noticia</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -529,15 +522,13 @@
 
                         <div id="divBuscar">
                             <label for="inputBuscar" id="labelBuscar">Buscar</label>
-                            <input type="text" id="inputBuscar">
+                            <input type="text" id="inputBuscarCinco">
                         </div>
 
                         <table id="tblIdiomas">
                             <thead>
                                 <tr>
                                     <th>Idioma</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -588,6 +579,7 @@
     <script src="js/starrr.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
     <script src="js/controlador.mostrarInformacionCE.js"></script>
+
     <!-- <script src="js/controlador.rating.js"></script> -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
         async defer></script> -->
@@ -601,25 +593,30 @@
     <!-- Información -->
 
     <!-- Aqui se van a insertar los comentarios -->
-    <script src="js/servicio.correo.js"></script>
-    <script src="js/controlador.correo.js"></script>
     <script src="js/servicio.starsPF.js"></script>
     <script src="js/servicio.comentarios.js"></script>
     <script src="js/controlador.registrarComentario.js"></script>
     <script src="js/controlador.mostrarComentarios.js"></script>
 
     <!-- Matricula -->
-
+    <script src="js/servicio.registrarMatriculaCosto.js"></script>
+    <script src="js/controlador.mostrarMatriculasCostosCE.js"></script>
 
     <!-- Becas -->
+    <script src="js/servicio.registrarBeca.js"></script>
+    <script src="js/controlador.mostrarBecasCE.js"></script>
 
+    <!-- Noticias -->
+    <script src="js/servicio.registrarNoticia.js"></script>
+    <script src="js/controlador.mostrarNoticiasCE.js"></script>
+
+    <!-- Idiomas -->
+    <script src="js/servicio.registrarIdioma.js"></script>
+    <script src="js/controlador.mostrarIdiomasCE.js"></script>
 
     <!-- Material Informativo -->
     <script src="js/servicio.materialInformativo.js"></script>
     <script src="js/controlador.mostrarMaterialInformativoPF.js"></script>
-
-    <!-- Noticias -->
-
 
     <!-- Actividades -->
     <script src="js/servicio.actividades.js"></script>

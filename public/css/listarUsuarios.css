@@ -65,7 +65,7 @@ h1 {
     width: 90%;
     margin: 0 auto;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 #tblUsuarios a {
@@ -126,7 +126,7 @@ h1 {
     margin-bottom: 50px;
     /* margin-left: 8%; */
 }
-
+/* 
 #sltEtiquetasDiv:after {
     content: "\025be";
     display: table-cell;
@@ -143,7 +143,7 @@ h1 {
 
 #sltEtiquetas:focus {
     outline: none;
-}
+} */
 
 #sltEtiquetas {
     /* background: transparent;

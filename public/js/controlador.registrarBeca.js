@@ -45,9 +45,9 @@ let obtener_datos = () => {
         let stringNombreBeca = inputNombreBeca.value;
         let stringDescripcionBeca = inputDescripcionBeca.value;
         let idCentroEducativo = idCE;
+        let userName = user.nombre += " " + user.apellido;
 
-
-        registrarBeca(stringNombreBeca, stringDescripcionBeca, idCentroEducativo);
+        registrarBeca(stringNombreBeca, stringDescripcionBeca, idCentroEducativo, userName);
 
     } else {
         swal.fire({

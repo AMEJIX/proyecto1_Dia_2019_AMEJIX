@@ -1,8 +1,8 @@
 'use strict';
 
 const inputFiltrar = document.querySelector('#inputBuscar')
-// let user = JSON.parse(sessionStorage.getItem("usuario"));
-let idUsuarioCE = user._id;
+ //let user = JSON.parse(sessionStorage.getItem("usuario"));
+ let idUsuarioCE = user._id;
 
 /**************************************************************************************************************/
 

@@ -29,7 +29,7 @@ h1 {
     height: 40px;
     outline-color: #f9aa33;
     text-align: center;
-    font-size: 17px;
+    font-size: 25px;
 } 
 #labelFechaNoticia{ 
     margin: 0% auto; 
@@ -49,6 +49,7 @@ h1 {
     height: 40px;
     margin-left: 7px;
     outline-color: #f9aa33;
+    font-size: 25px;
 } 
 #labelRegistrarNoticia{ 
     margin: 0% auto; 
@@ -63,6 +64,7 @@ h1 {
     margin-left: 95px; 
     resize: none;
     outline-color: #f9aa33;
+    font-size: 25px;
 } 
 #btnRegistrarNoticia{ 
     margin: 0% auto; 

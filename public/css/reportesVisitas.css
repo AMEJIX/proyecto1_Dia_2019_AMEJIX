@@ -2,7 +2,7 @@
     width: 98%;
     min-height: 50vh;
     margin: 0 auto;
-    background-color: white;
+    /* background-color: white; */
 }
 
 h1 {
@@ -35,3 +35,19 @@ h1 {
     outline-color: #F9AA33;
  }
  
+ #btnImprimir {
+    display: block;
+    margin-top: 45px;
+    padding: 14px 50px;
+    margin-top: 20px;
+    margin: 0 auto;
+    background: #f9aa33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+#btnImprimir:hover {
+    background: #f9bf33
+}

@@ -16,3 +16,22 @@
     cursor: pointer;
     transition: all 200ms ease;  
 }
+
+.infoCEh2 {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.infoCEh3 {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    font-size: 16px;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}

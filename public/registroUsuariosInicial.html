@@ -274,36 +274,48 @@
                     <!-- Tab content -->
                     <!-- TAB Datos Generales  -->
                     <div id="datosGeneralesTab" class="tabcontent">
-                        <div class="centrarInputs">
-                            <div>
-                                <label for="txtInstitución">Nombre institución:</label>
-                                <input type="text" maxlength="200" id="txtInstitución">
-                            </div>
-                            <div>
-                                <label for="txtCedulaJuridica">Cédula jurídica:</label>
-                                <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
-                            </div>
-
-                            <div>
-                                <label for="txtComercial">Nombre comercial:</label>
-                                <input type="text" maxlength="30" id="txtComercial">
-                            </div>
-                            <div>
-                                <label for="txtAnno">Año fundación:</label>
-                                <input type="number" maxlength="15" id="txtAnno">
-                            </div>
-                            <h1>Reseña histórica</h1>
-                            <div>
-
-                                <textarea id="txt_historia"></textarea>
-                            </div>
-
-                            <figure class='imageHolder'>
-                                <img id="imagePreview">
-                            </figure>
-                            <button type="button" id="butonSubirImagen" class="yellowButton">Subir
-                                Imagen</button>
-                        </div>
+                            <div class="columnas">
+                                    <div class="columna_izquierda">
+        
+                                        <div class="centrarInputs">
+                                            <div>
+                                                <label for="txtInstitución">Nombre institución:</label>
+                                                <input type="text" maxlength="200" id="txtInstitución">
+                                            </div>
+                                            <div>
+                                                <label for="txtCedulaJuridica">Cédula jurídica:</label>
+                                                <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
+                                            </div>
+        
+                                            <div>
+                                                <label for="txtComercial">Nombre comercial:</label>
+                                                <input type="text" maxlength="30" id="txtComercial">
+                                            </div>
+                                            <div>
+                                                <label for="txtAnno">Año fundación:</label>
+                                                <input type="number" maxlength="15" id="txtAnno">
+                                            </div>
+                                            <h1>Reseña histórica</h1>
+                                            <div>
+        
+                                                <textarea id="txt_historia"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="columna_derecha">
+        
+                                        <div class='divImagen'>
+                                        <figure class='imageHolder'>
+                                            <img id="imagePreview">
+                                        </figure>
+                                        </div>
+                                        <div>
+                                        <button type="button" id="butonSubirImagen" class="yellowButton">Subir
+                                            Imagen</button>
+                                        </div>
+                                    </div>
+        
+                                </div>
                     </div>
 
                     <!-- TAB Contacto CE  -->

@@ -26,7 +26,7 @@
             <div id="divGeneralEstrellas">
                 <div id="divEncabezadoH2Estrellas">
                     <h2 id="encabezadoH2Estrellas">Mi evaluación del MEP</h2>
-                </div>              
+                </div>
                 <div id="divEstrellas">
                 </div>
             </div>
@@ -39,7 +39,7 @@
 
                 <div class="subMenu">
                     <a href="userProfileInfo.html">Perfil</a>
-                    <a href="informacionPersonalUsuario.html">Información Personal</a>
+                    <a href="actualizarUsuario.html">Información Personal</a>
                     <a href="" id="logOut">Cerrar sesión</a>
                 </div>
             </div>
@@ -80,7 +80,7 @@
             </button>
             <div class="dropdownContainer">
                 <a href="bitacora.html">Bitácora</a>
-                <a href="#">Notificaciones</a>
+                <a href="solicitudes.html">Notificaciones</a>
                 <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
                 <a href="listarRangosMEP.html">Rangos de evaluación</a>
                 <a href="listarArticulosPropios.html">Artículos escolares</a>
@@ -95,7 +95,7 @@
             <div class="dropdownContainer">
                 <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                 <a href="listarCentrosEducativos.html">Buscar</a>
-                <a href="#" id="aFavoritos">Favoritos</a>
+                <a href="misFavoritos.html" id="aFavoritos">Favoritos</a>
                 <a href="listarTopCentrosEducativos.html">Top 10 MEP</a>
                 <a href="topCentrosEducativosPF.html">Top 10 por padres de familia</a>
                 <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
@@ -136,10 +136,10 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
+                <a href="reporteRankingMEP.html">Ranking MEP</a>
                 <a href="reporteVisitasAdmin.html">Visitas</a>
                 <a href="reporteDeHijos.html">Hijos</a>
-                <a href="#">Ranking por padres de familia</a>
+                <a href="reporteRankingPFCE.html">Ranking por padres de familia</a>
             </div>
 
             <button class="btnDropdown" id="reportesCE">
@@ -154,7 +154,7 @@
 
         </div>
 
-        <div class="contenido" id="print" style="overflow-y: scroll;">
+        <div class="contenido" style="overflow-y: scroll;">
             <h1>Reporte de ranking de mis evaluaciones según padres de familia</h1>
             <table id="tblReportePF">
                 <thead>
@@ -171,24 +171,23 @@
                 </tbody>
             </table>
 
-            <button type="button" id="btnImprimir" onclick="javascript:imprimir();" >Imprimir</button>
+            <button type="button" id="btnImprimir" onclick="javascript:imprimir();">Imprimir</button>
         </div>
     </main>
 
     <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/controllerProfileInfo.js"></script>
     <script src="js/servicio.encabezadoEstrellas.js"></script>
     <script src="js/encabezadoEstrellas.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
-        async defer></script>
     <script src="js/mapUser.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
     <script src="js/servicio.starsPF.js"></script>
     <script src="js/controlador.reporteRankingPFCE.js"></script>
-    
+
 </body>
 
 </html>

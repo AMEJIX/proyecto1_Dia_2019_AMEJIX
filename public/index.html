@@ -15,6 +15,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/topIndex.css">
+    <link rel="stylesheet" href="css/topCEPFindex.css">
 </head>
 
 <body>
@@ -47,14 +48,27 @@
                     <option value="">Seleccione un top 10</option>
                     <option value="1">Top general de evaluaciones por el MEP</option>
                     <option value="2">Top de escuelas evaluadas por el MEP</option>
-                    <option value="3">Top de colegios evaluados por el MEP</option>                  
+                    <option value="3">Top de colegios evaluados por el MEP</option>
+                    <option value="4">Top general de evaluaciones por padres de familia</option>
+                    <option value="5">TOP colegios general de evaluaciones por padres de familia</option>
+                    <option value="6">TOP escuelas general de evaluaciones por padres de familia</option>                  
 
                 </select>
             </div>
             <section id="seccionRankings">
                 
             </section>
+            <div id="topGeneral">
+           
+            </div>
 
+            <div id="topColegios">
+
+            </div>
+
+            <div id="topEscuelas">
+
+            </div>
             <a href="#list" class="listDown"><i class="fas fa-chevron-down"></i></a>
         </div>
 
@@ -121,8 +135,13 @@
     <script src="js/controlador.general.js"></script>
     <script src="js/servicio.listarUtilesIndex.js"></script>
     <script src="js/controlador.listarUtilesIndex.js"></script>
+    <script src="js/servicio.starsPF.js"></script>
+    <script src="js/servicio.comentarios.js"></script>
     <script src="js/servicio.evaluarCEPorMEP.js"></script>
+    
     <script src="js/controlador.listarTopCEIndex.js"></script>
+   
+    
 </body>
 
 </html>

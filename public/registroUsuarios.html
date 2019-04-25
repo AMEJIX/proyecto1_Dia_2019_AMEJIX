@@ -22,8 +22,16 @@
 
 
 <body>
+
     <header>
         <nav>
+            <div id="divGeneralEstrellas">
+                <div id="divEncabezadoH2Estrellas">
+                    <h2 id="encabezadoH2Estrellas"></h2>
+                </div>
+                <div id="divEstrellas">
+                </div>
+            </div>
 
             <div class="userInfo">
                 <div class="userPhoto"></div>
@@ -35,13 +43,13 @@
                     <a href="userProfileInfo.html">Perfil</a>
                     <a href="informacionPersonalUsuario.html">Información Personal</a>
                     <a href="" id="logOut">Cerrar sesión</a>
-                    </ul>
                 </div>
             </div>
 
         </nav>
     </header>
     <main>
+
 
         <div class="sideNav">
             <a class="aBack" href="userProfileInfo.html">
@@ -54,7 +62,7 @@
                 Información
             </button>
             <div class="dropdownContainer">
-                <a href="mostrarMatriculaCostos.html">Matrículas</a>
+                <a href="mostrarMatriculaCostos.html">Matrícula</a>
                 <a href="mostrarIdiomas.html">Idiomas</a>
                 <a href="mostrarBecas.html">Becas</a>
                 <a href="misCitasCE.html">Citas</a>
@@ -74,7 +82,7 @@
             </button>
             <div class="dropdownContainer">
                 <a href="bitacora.html">Bitácora</a>
-                <a href="#">Notificaciones</a>
+                <a href="solicitudes.html">Notificaciones</a>
                 <a href="listarCriteriosMEP.html">Criterios de evaluación</a>
                 <a href="listarRangosMEP.html">Rangos de evaluación</a>
                 <a href="listarArticulosPropios.html">Artículos escolares</a>
@@ -89,11 +97,13 @@
             <div class="dropdownContainer">
                 <a href="registroUsuarios.html" id="aRegistrarCE">Registrar</a>
                 <a href="listarCentrosEducativos.html">Buscar</a>
-                <a href="#" id="aFavoritos">Favoritos</a>
-                <a href="listarTopCentrosEducativos.html">Top</a>
+                <a href="misFavoritos.html" id="aFavoritos">Favoritos</a>
+                <a href="listarTopCentrosEducativos.html">Top 10 MEP</a>
+                <a href="topCentrosEducativosPF.html">Top 10 por padres de familia</a>
                 <a href="evaluarCentroEducativoPorMEP.html" id="aEvaluarCE">Evaluar centro educativo</a>
-                <a href="#" id="aActivarDesCE">Activar o desactivar</a>
-                <a href="#" id="aEliminarCE">Eliminar</a>
+                <!-- <a href="#" id="aActivarDesCE">Activar o desactivar</a> -->
+                <a href="administrarCE.html" id="adminCE">Administrar cuentas</a>
+                <!-- <a href="#" id="aEliminarCE">Eliminar</a> -->
                 <a href="listarCEUbicacion.html" id="aCEcercanos">Centros educativos cercanos</a>
             </div>
 
@@ -103,15 +113,16 @@
             </button>
             <div class="dropdownContainer">
                 <a href="listarPadresFamilia.html">Buscar</a>
-                <a href="#" id="aActivarDesPF">Activar o desactivar</a>
-                <a href="#" id="aEliminarPF">Eliminar</a>
+                <!-- <a href="#" id="aActivarDesPF">Activar o desactivar</a> -->
+                <a href="administrarPF.html" id="adminPF">Administrar cuentas</a>
+                <!-- <a href="#" id="aEliminarPF">Eliminar</a> -->
             </div>
 
             <a href="misCitasPF.html" id="menuCitasPF"><span><i class="far fa-calendar-check"></i></span>Citas
                 agendadas</a>
 
             <!-- <a href="listarPadresFamilia.html" id="verPadres"><span><i class="fas fa-search"></i></span>Buscar
-                padres de familia</a> -->
+                        padres de familia</a> -->
 
             <button class="btnDropdown" id="verInfoMep">
                 <span><i class="fas fa-university"></i></span>
@@ -127,10 +138,10 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
-                <a href="#">Visitas</a>
-                <a href="#">Hijos</a>
-                <a href="#">Ranking por padres de familia</a>
+                <a href="reporteRankingMEP.html">Ranking MEP</a>
+                <a href="reporteVisitasAdmin.html">Visitas</a>
+                <a href="reporteDeHijos.html">Hijos</a>
+                <a href="reporteRankingPFCE.html">Ranking por padres de familia</a>
             </div>
 
             <button class="btnDropdown" id="reportesCE">
@@ -138,14 +149,15 @@
                 Reportes
             </button>
             <div class="dropdownContainer">
-                <a href="#">Ranking MEP</a>
-                <a href="#">Visitas</a>
-                <a href="#">Ranking por padres de familia</a>
+                <a href="rankingStarsMEPSolicitudCE.html">Ranking MEP</a>
+                <a href="reporteVisitas.html">Visitas</a>
+                <a href="reporteRankingPF.html">Ranking por padres de familia</a>
             </div>
 
         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
+
 
             <div id="subContenido">
 
@@ -366,35 +378,47 @@
                     <!-- Tab content -->
                     <!-- TAB Datos Generales  -->
                     <div id="datosGeneralesTab" class="tabcontent">
-                        <div class="centrarInputs">
-                            <div>
-                                <label for="txtInstitución">Nombre institución:</label>
-                                <input type="text" maxlength="200" id="txtInstitución">
+                        <div class="columnas">
+                            <div class="columna_izquierda">
+
+                                <div class="centrarInputs">
+                                    <div>
+                                        <label for="txtInstitución">Nombre institución:</label>
+                                        <input type="text" maxlength="200" id="txtInstitución">
+                                    </div>
+                                    <div>
+                                        <label for="txtCedulaJuridica">Cédula jurídica:</label>
+                                        <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
+                                    </div>
+
+                                    <div>
+                                        <label for="txtComercial">Nombre comercial:</label>
+                                        <input type="text" maxlength="30" id="txtComercial">
+                                    </div>
+                                    <div>
+                                        <label for="txtAnno">Año fundación:</label>
+                                        <input type="number" maxlength="15" id="txtAnno">
+                                    </div>
+                                    <h1>Reseña histórica</h1>
+                                    <div>
+
+                                        <textarea id="txt_historia"></textarea>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <label for="txtCedulaJuridica">Cédula jurídica:</label>
-                                <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
+                            <div class="columna_derecha">
+
+                                <div class='divImagen'>
+                                    <figure class='imageHolder'>
+                                        <img id="imagePreview">
+                                    </figure>
+                                </div>
+                                <div>
+                                    <button type="button" id="butonSubirImagen" class="yellowButton">Subir
+                                        Imagen</button>
+                                </div>
                             </div>
 
-                            <div>
-                                <label for="txtComercial">Nombre comercial:</label>
-                                <input type="text" maxlength="30" id="txtComercial">
-                            </div>
-                            <div>
-                                <label for="txtAnno">Año fundación:</label>
-                                <input type="number" maxlength="15" id="txtAnno">
-                            </div>
-                            <h1>Reseña histórica</h1>
-                            <div>
-
-                                <textarea id="txt_historia"></textarea>
-                            </div>
-
-                            <figure class='imageHolder'>
-                                <img id="imagePreview">
-                            </figure>
-                            <button type="button" id="butonSubirImagen" class="yellowButton">Subir
-                                Imagen</button>
                         </div>
                     </div>
 
@@ -434,108 +458,118 @@
 
                     <!-- TAB Personal CE   -->
                     <div id="PersonalCETab" class="tabcontent">
-                        <div class="centrarInputs">
-                            <div>
-                                <label for="txtnombreCEP">Nombre:</label>
-                                <input type="text" maxlength="20" id="txtnombreCEP" title="opcional">
-                            </div>
+                        <div class="columnas">
+                            <div class="columna_izquierda">
+                                <div class="centrarInputs">
 
-                            <div>
-                                <label for="textSegundoNombreCEP">Segundo nombre:</label>
-                                <input type="text" maxlength="20" id="textSegundoNombreCEP" title="opcional">
-                            </div>
+                                    <div>
+                                        <label for="txtnombreCEP">Nombre:</label>
+                                        <input type="text" maxlength="20" id="txtnombreCEP" title="opcional">
+                                    </div>
 
-                            <div>
-                                <label for="textApellidoCEP">Apellido:</label>
-                                <input type="text" maxlength="20" id="textApellidoCEP" title="opcional">
-                            </div>
+                                    <div>
+                                        <label for="textSegundoNombreCEP">Segundo nombre:</label>
+                                        <input type="text" maxlength="20" id="textSegundoNombreCEP" title="opcional">
+                                    </div>
 
-                            <div>
-                                <label for="textSegundoApellidoCEP">Segundo apellido:</label>
-                                <input type="text" maxlength="20" id="textSegundoApellidoCEP" title="opcional">
-                            </div>
+                                    <div>
+                                        <label for="textApellidoCEP">Apellido:</label>
+                                        <input type="text" maxlength="20" id="textApellidoCEP" title="opcional">
+                                    </div>
+
+                                    <div>
+                                        <label for="textSegundoApellidoCEP">Segundo apellido:</label>
+                                        <input type="text" maxlength="20" id="textSegundoApellidoCEP" title="opcional">
+                                    </div>
 
 
-                            <div>
-                                <label for="txtdepartamento">Departamento:</label>
-                                <input type="text" maxlength="20" id="txtdepartamento" title="opcional">
+                                    <div>
+                                        <label for="txtdepartamento">Departamento:</label>
+                                        <input type="text" maxlength="20" id="txtdepartamento" title="opcional">
+                                    </div>
+                                    <div>
+                                        <label for="txtTelefonoCEP">Teléfono:</label>
+                                        <input type="tel" maxlength="20" id="txtTelefonoCEP" title="opcional">
+                                    </div>
+                                    <div>
+                                        <label for="txtExtension">Extensión:</label>
+                                        <input type="tel" maxlength="20" id="txtExtension" title="opcional">
+                                    </div>
+                                    <div>
+                                        <label for="txtNumIDCEP">Identificación:</label>
+                                        <input type="text" id="txtNumIDCEP" title="opcional">
+                                    </div>
+                                    <div>
+                                        <label for="txtEmailCEP">Correo electrónico:</label>
+                                        <input type="email" id="txtEmailCEP" maxlength="50" placeholder="">
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <label for="txtTelefonoCEP">Teléfono:</label>
-                                <input type="tel" maxlength="20" id="txtTelefonoCEP" title="opcional">
-                            </div>
-                            <div>
-                                <label for="txtExtension">Extensión:</label>
-                                <input type="tel" maxlength="20" id="txtExtension" title="opcional">
-                            </div>
-                            <div>
-                                <label for="txtNumIDCEP">Identificación:</label>
-                                <input type="text" id="txtNumIDCEP" title="opcional">
-                            </div>
-                            <div>
-                                <label for="txtEmailCEP">Correo electrónico:</label>
-                                <input type="email" id="txtEmailCEP" maxlength="50" placeholder="">
-                            </div>
+                            <div class="columna_izquierda">
 
-                            <figure class='imageHolder'>
-                                <img id="imagePreviewCEP">
-                            </figure>
-                            <div>
-                                <button class="yellowButton" type="button" id="fotoCEP">Subir Foto</button>
+                                <div class='divImagen'>
+                                    <figure class='imageHolder'>
+                                        <img id="imagePreviewCEP">
+                                    </figure>
+                                </div>
+                                <div>
+                                    <button class="yellowButton" type="button" id="fotoCEP">Subir Foto</button>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
 
                     <!-- TAB Ubicacion CE   -->
                     <div id="ubicacionCETAB" class="tabcontent">
 
-                            <div class="columnas">
-                                <div class="columna_izquierda">
-                                    <h1>Dirección exacta</h1>
-                                    <div>
-                                        <textarea id="textDireccionExacta"></textarea>
-                                    </div>
-    
-    
-                                    <div>
-                                        <div class="centrarInputs">
-                                            <div>
-                                                <label for="selectProvinciasCE">Provincia:</label>
-                                                <select id="selectProvinciasCE" size="" class="selectProvincias">
-    
-    
-                                                </select>
-                                            </div>
-    
-    
-    
-                                            <div>
-                                                <label for="selectCantonesCE">Cantón:</label>
-                                                <select id="selectCantonesCE" size="" class="selectCantones">
-                                                    <option value="" selected disabled>Cantones</option>
-                                                </select>
-    
-                                            </div>
-                                            <div>
-                                                <label for="selectDistritosCE">Distrito:</label>
-                                                <select id="selectDistritosCE" size="" class="selectDistritos">
-                                                    <option value="" selected disabled>Distritos</option>
-                                                </select>
-                                            </div>
+                        <div class="columnas">
+                            <div class="columna_izquierda">
+                                <h1>Dirección exacta</h1>
+                                <div>
+                                    <textarea id="textDireccionExacta"></textarea>
+                                </div>
+
+
+                                <div>
+                                    <div class="centrarInputs">
+                                        <div>
+                                            <label for="selectProvinciasCE">Provincia:</label>
+                                            <select id="selectProvinciasCE" size="" class="selectProvincias">
+
+
+                                            </select>
                                         </div>
-    
+
+
+
+                                        <div>
+                                            <label for="selectCantonesCE">Cantón:</label>
+                                            <select id="selectCantonesCE" size="" class="selectCantones">
+                                                <option value="" selected disabled>Cantones</option>
+                                            </select>
+
+                                        </div>
+                                        <div>
+                                            <label for="selectDistritosCE">Distrito:</label>
+                                            <select id="selectDistritosCE" size="" class="selectDistritos">
+                                                <option value="" selected disabled>Distritos</option>
+                                            </select>
+                                        </div>
                                     </div>
+
                                 </div>
-                                <div class="columna_derecha">
-    
-                                    <h1>Ubicación en mapa</h1>
-    
-                                    <div id="map"></div>
-                                </div>
-    
                             </div>
+                            <div class="columna_derecha">
+
+                                <h1>Ubicación en mapa</h1>
+
+                                <div id="map"></div>
+                            </div>
+
                         </div>
+                    </div>
 
 
                     <!-- TAB Tipo Institucion CE   -->
@@ -613,46 +647,46 @@
 
                     <!-- Otros Datos   -->
                     <div id="otrosDatosCETab" class="tabcontent">
-                            <div class="centrarInputs">
-                        <fieldset id="fieldsetPrivacidad">
-                            <h1>Institución pública/privada</h1>
+                        <div class="centrarInputs">
+                            <fieldset id="fieldsetPrivacidad">
+                                <h1>Institución pública/privada</h1>
 
-                            <ul> <input type="radio" id="radioPrivado" name="rbt_privacidad" value="privado">
-                                Privado</ul>
-
-
-                            <ul><input type="radio" id="radioPublico" name="rbt_privacidad" value="publico">
-                                Público</ul>
-
-                        </fieldset>
+                                <ul> <input type="radio" id="radioPrivado" name="rbt_privacidad" value="privado">
+                                    Privado</ul>
 
 
-                        <fieldset id="fieldsetGenero">
-                            <h1>Género</h1>
+                                <ul><input type="radio" id="radioPublico" name="rbt_privacidad" value="publico">
+                                    Público</ul>
 
-                            <ul><input type="radio" id="radioFemenino" name="rbt_sexo" value="Femenino">Femenino
-                            </ul>
-
-
-                            <ul><input type="radio" id="radioMasculino" name="rbt_sexo" value="Masculino">Masculino
-                            </ul>
+                            </fieldset>
 
 
-                            <ul> <input type="radio" id="radioMixto" name="rbt_sexo" value="Mixto">Mixto
-                            </ul>
+                            <fieldset id="fieldsetGenero">
+                                <h1>Género</h1>
 
-
-                        </fieldset>
-
-                        <fieldset id="fieldsetReligion">
-                            <h1>Religión</h1>
-
-                            <ul><input type="radio" id="radioSi" name="rbt_religion" value="si">Sí</ul>
-                            <ul><input type="radio" id="radioNo" name="rbt_religion" value="no">No<ul>
+                                <ul><input type="radio" id="radioFemenino" name="rbt_sexo" value="Femenino">Femenino
                                 </ul>
 
-                        </fieldset>
-</div>
+
+                                <ul><input type="radio" id="radioMasculino" name="rbt_sexo" value="Masculino">Masculino
+                                </ul>
+
+
+                                <ul> <input type="radio" id="radioMixto" name="rbt_sexo" value="Mixto">Mixto
+                                </ul>
+
+
+                            </fieldset>
+
+                            <fieldset id="fieldsetReligion">
+                                <h1>Religión</h1>
+
+                                <ul><input type="radio" id="radioSi" name="rbt_religion" value="si">Sí</ul>
+                                <ul><input type="radio" id="radioNo" name="rbt_religion" value="no">No<ul>
+                                    </ul>
+
+                            </fieldset>
+                        </div>
                     </div>
 
 

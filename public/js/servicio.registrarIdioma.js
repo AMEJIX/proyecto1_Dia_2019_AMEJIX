@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarIdiomas = (parametrosIdioma, pidCentroEducativo) => {
+let registrarIdiomas = (parametrosIdioma, pidCentroEducativo, puserName) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrarIdiomas",
         method: "POST",
@@ -8,6 +8,7 @@ let registrarIdiomas = (parametrosIdioma, pidCentroEducativo) => {
 
             idiomas: parametrosIdioma,
             idCE: pidCentroEducativo,
+            userName: puserName,
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
