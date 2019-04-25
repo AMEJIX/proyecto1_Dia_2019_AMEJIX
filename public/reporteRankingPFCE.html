@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head id="idHead">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -21,7 +21,7 @@
 
 <body>
 
-    <header>
+    <header id="printHeader">
         <nav>
             <div id="divGeneralEstrellas">
                 <div id="divEncabezadoH2Estrellas">
@@ -49,7 +49,7 @@
     <main>
 
 
-        <div class="sideNav">
+        <div class="sideNav" id="printDiv">
             <a class="aBack" href="userProfileInfo.html">
                 <div class="sicenLogo"></div>
             </a>
@@ -171,7 +171,9 @@
                 </tbody>
             </table>
 
-            <button type="button" id="btnImprimir" onclick="javascript:imprimir();">Imprimir</button>
+            <div id="divImprimir">
+                <button type="button" id="btnImprimir">Imprimir</button>
+            </div>
         </div>
     </main>
 

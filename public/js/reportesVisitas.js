@@ -48,7 +48,14 @@ if (user.userType === 'padreFamilia') {
 // ********************************* FIN DEL GRAFICO *********************************
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
 const tabla = document.querySelector('#tblStandard tbody');
-const btnImprimir = document.querySelector('#btnImprimir')
+const btnImprimir = document.querySelector('#btnImprimir');
+const head = document.querySelector('#idHead');
+
+const printHeader = document.querySelector('#printHeader');
+const printDiv = document.querySelector('#printDiv');
+// const printCssHide = document.querySelector('#printCssHide');
+// const filtroPrint = document.querySelector('#filtroPrint');
+const divImprimir = document.querySelector('#divImprimir');
 
 if (user.userType == "superAdministrador" || user.userType == "padreFamilia") {
     window.location.href = 'loSentimos.html';
@@ -84,3 +91,31 @@ function mostrarDatos() {
 };
 
 mostrarDatos();
+
+let funcionImprimir = () =>{
+    let link = document.createElement('link');
+    
+    link.rel = 'stylesheet';
+    link.media = 'print';
+    link.type = 'text/css';
+    head.appendChild(link);
+
+printHeader.style.display = 'none'; 
+printDiv.style.display = 'none';
+divImprimir.style.display = 'none';
+
+   javascript:window.print();
+
+printHeader.removeAttribute("style");
+printDiv.removeAttribute("style");
+divImprimir.removeAttribute("style");
+
+   onClose: () => {
+    window.location.href = 'reporteVisitas.html';
+  }   
+  
+
+  
+}
+
+btnImprimir.addEventListener('click', funcionImprimir);
