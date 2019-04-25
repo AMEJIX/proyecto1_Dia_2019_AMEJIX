@@ -267,15 +267,16 @@ span {
 
 .btnStandard {
     display: block;
-    padding: 14px 45px;
+    margin-top: 45px;
+    padding: 14px 0px;
+    margin-top: 20px;
     margin: 0 auto;
+    min-width: 155px;
     background: #f9aa33;
     color: white;
     border: none;
     border-radius: 5px;
     outline: none;
-    margin-bottom: 25px;
-    margin-top: 25px;
 }
 
 .btnStandard:hover {
