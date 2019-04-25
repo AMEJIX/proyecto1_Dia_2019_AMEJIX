@@ -5,30 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reporte de las visitas de todos los centros educativos de SICEN</title>
+    <title>Etiquetas del centro educativo</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/reset.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
     <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/reporteVisitasAdmin.css">
+    <link rel="stylesheet" href="css/criteriosBusqueda.css">
 </head>
-
 
 <body>
 
     <header>
         <nav>
-            <!--<div id="divGeneralEstrellas">
+            <div id="divGeneralEstrellas">
                 <div id="divEncabezadoH2Estrellas">
                     <h2 id="encabezadoH2Estrellas">Mi evaluación del MEP</h2>
                 </div>
                 <div id="divEstrellas">
                 </div>
-            </div>-->
+            </div>
 
             <div class="userInfo">
                 <div class="userPhoto"></div>
@@ -154,51 +153,74 @@
         </div>
 
         <div class="contenido" style="overflow-y: scroll;">
-            <h1>Lista de centros educativos</h1>
+            <!-- TODO EL CONTENIDO DEL CASO DE USO -->
+            <h1>Criterios de búsqueda</h1>
 
-            <!-- <div class="filtrar">
-                <label for="txtFiltro">Buscar</label>
-                <input type="text" id="txtFiltro" placeholder="Nombre del centro educativo">
-            </div> -->
+            <div id="divEtiquetas">
+                                <!--<label for="sltEtiquetas" id="lblEtiquetas">Etiquetas</label>-->
 
-            <div class="inputStandard">
-            <div>
-                  <label for="txtFiltro">Buscar</label>
-                  </div>
-                  <div>
-                      <input type="text" id="txtFiltro" placeholder="Nombre del centro educativo">
-                  </div>
+                <div id="sltEtiquetasDiv">
+                    <select id="sltEtiquetas">
+                        <!--<optgroup label="Etiquetas"></optgroup>-->
+                        <option value="" hidden>Click para agregar etiqueta</option>
+                    </select>
+                </div>
+                <table id="tblEtiquetasSeleccionadas">
+                    <tbody>
+
+                    </tbody>
+                </table>
             </div>
 
+            <div class="inputStandard" style="display: none">
+                <div>
+                    <label for="txtFiltrar">Buscar</label>
+                </div>
+                <div>
+                    <input type="text" id="txtFiltrar" placeholder="">
+                </div>
+            </div>
 
-            <table id="tblUsuarios">
-                <thead>
-                    <tr>
-                        <!-- <th>Foto</th> -->
-                        <th>Nombre</th>
-                        <th>Mes</th>
-                        <th>Año</th>
-                        <th>Visitas</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                </tbody>
+            <table id="tblCriteriosBusqueda" align="center" style="display: none">
+                <tbody></tbody>
             </table>
+
+            <p id="nueva" style="display: none">¿Nuevo criterio de búsqueda?</p>
+            <form style="display: none">
+                <div class="frmBox">
+                    <div id="input2">
+                        <div>
+                            <label for="txtNombreEtiqueta">Escriba el nombre del nuevo criterio</label>
+                        </div>
+                        <div>
+                            <input type="text" id="txtNombreEtiqueta" placeholder="">
+                        </div>
+                    </div>
+
+                    <button type="button" id="btnAgregar">Agregar</button>
+                </div>
+            </form>
+
+
+
         </div>
     </main>
 
     <script src="js/style.js"></script>
     <script src="js/authentication.js"></script>
     <script src="js/controllerProfileInfo.js"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/servicio.listarUsuarios.js"></script>
-    <script src="js/reporteVisitas.servicio.js"></script>
-    <script src="js/reporteVisitasAdmin.controller.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/servicio.encabezadoEstrellas.js"></script>
+    <script src="js/encabezadoEstrellas.js"></script>
+    <script src="js/criteriosBusqueda.servicio.js"></script>
+    <script src="js/criteriosBusqueda.controller.eliminar.js"></script>
+    <script src="js/criteriosBusqueda.controller.actualizar.js"></script>
+    <script src="js/criteriosBusqueda.controller.listar.js"></script>
+    <script src="js/marcarDesmarcarEtiquetas.js"></script>
+    <script src="js/criteriosBusqueda.controller.registrar.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
 </body>
 

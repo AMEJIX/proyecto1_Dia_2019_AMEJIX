@@ -72,7 +72,7 @@ router.route('/centroEducativo/marcarCriterioBusqueda')
         }
     );
 
-router.route('/centroEducativo/desmarcarEtiqueta/:id')
+router.route('/centroEducativo/desmarcarEtiqueta')
     .post(
         (req, res) =>{
             apiCriteriosBusqueda.eliminarCriterioBusquedaCE(req, res);

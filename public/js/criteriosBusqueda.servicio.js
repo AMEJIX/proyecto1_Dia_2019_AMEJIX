@@ -223,7 +223,7 @@ let marcarCriterioBusqueda = (pnombre, pidCE, presponsable) =>{
 
 let desmarcarEtiqueta = (id, presponsable) =>{
     let request = $.ajax({
-        url : 'http://localhost:4000/api/centroEducativo/desmarcarEtiqueta/'+id,
+        url : 'http://localhost:4000/api/centroEducativo/desmarcarEtiqueta',
         method : "POST",
         data : {
             id : id,

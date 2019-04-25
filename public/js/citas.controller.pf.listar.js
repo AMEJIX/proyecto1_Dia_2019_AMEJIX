@@ -6,8 +6,12 @@ let theUser = JSON.parse(sessionStorage.getItem('usuario'));
 
 // const opcionMisCitas = document.querySelector('#opcionMisCitas');
 
-if(theUser.userType !== 'padreFamilia'){
+if(theUser.userType == 'superAdministrador'){
     if (location.pathname.split("/").slice(-1) !== 'loSentimos.html')  setTimeout(location.href='loSentimos.html', 0);
+}
+
+if(theUser.userType == 'centroEducativo'){
+    if (location.pathname.split("/").slice(-1) !== 'misCitasCE.html')  setTimeout(location.href='misCitasCE.html', 0);
 }
 
 let correoDelPadreDeFamilia = theUser.email;
