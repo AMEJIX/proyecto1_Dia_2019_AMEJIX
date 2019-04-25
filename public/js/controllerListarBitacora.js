@@ -2,6 +2,10 @@
 
 const tabla = document.querySelector('#tableBitacora');
 
+if (user.userType == 'centroEducativo' || user.userType == 'padreFamilia') {
+    window.location.href = 'loSentimos.html';
+}
+
 let mostrarDatos = () => {
 
 
