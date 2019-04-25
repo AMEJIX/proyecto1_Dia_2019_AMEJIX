@@ -311,6 +311,9 @@ i:hover{
     background-color: #ffffff;
     border-radius: 4px;
 }
+td *{
+    font-size: 20px;
+}
 
 #tblEtiquetasSeleccionadas tbody tr{
     height: 80px;

@@ -4,6 +4,7 @@
 
 const tabla = document.querySelector('#tblUsuarios tbody');
 const inputFiltro = document.querySelector('#txtFiltro');
+let ya = new Date();
 
 if(user.userType == 'centroEducativo' || user.userType == 'padreFamilia' ){
     window.location.href = 'loSentimos.html';
@@ -19,6 +20,8 @@ let esIndefinido = (variable) =>{
     return  variable === undefined || variable === null;
 };
 
+let visitasEsteMes = [];
+
 let agregarVisitas = () =>{
     let visitasUsuario;
 
@@ -29,6 +32,7 @@ let agregarVisitas = () =>{
                 visitas: {idCE: usuarios[i]['_id'], fechas: []}
             });
             visitasUsuarios.push(visitasUsuario.visitas.fechas);
+
         } else {
             visitasUsuarios.push(visitasUsuario.fechas);
         }
@@ -73,9 +77,9 @@ function mostrarDatos() {
             let nombre = fila.insertCell();
             // nombre.textContent = usuarios[i]['centroEducativo'];
             let anio = fila.insertCell();
-            anio.textContent = '2019';
+            anio.textContent = ya.getUTCMonth();
             let mes = fila.insertCell();
-            mes.textContent = 'abril';
+            mes.textContent = ya.getFullYear();
             let visitas = fila.insertCell();
             visitas.textContent = visitasUsuarios[i].length;
 
