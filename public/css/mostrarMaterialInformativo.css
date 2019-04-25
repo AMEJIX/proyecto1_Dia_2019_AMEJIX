@@ -44,6 +44,7 @@ h1 {
     display: block;
     margin-left: 5%;
     margin-top: 45px;
+    margin-bottom: 1%;
     color: #2c3e50;
     text-decoration: none;
 }
@@ -54,19 +55,38 @@ h1 {
 }
 
 #tblMaterialInformativo {
-    border-collapse: collapse;
+    /* border-collapse: collapse;
     width: 90%;
     margin: 0 auto;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 40px; */
+    
+    border-collapse: collapse;
+    margin-left: 32px;
+    margin-bottom: 100px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 th {
     background: #f9aa33;
     color: white;
+    border: #2c3e50 solid 1px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
 }
 
-td {
+tbody tr td {
+    color: #344955;
+    border: #2c3e50 solid 1px;
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+}
+
+/* td {
     color: #2c3e50;
     vertical-align: middle;
 }
@@ -81,7 +101,7 @@ td, th {
     padding: 12px 1px;
     border: #2c3e50 solid 1px;
     vertical-align: middle;
-}
+} */
 
 #btnInfo {
     display: block;

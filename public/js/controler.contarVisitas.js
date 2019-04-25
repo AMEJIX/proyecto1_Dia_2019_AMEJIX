@@ -43,7 +43,7 @@ let contadorVisitas = () => {
     } else {
         // let fechas = [];
         visita.fechas.push(fechaActual);
-        console.log(visita.fechas);
+        // console.log(visita.fechas);
         modificarFechaVisita(visita);
     }
    // console.log(obtenerVisita(idCE).fechas);

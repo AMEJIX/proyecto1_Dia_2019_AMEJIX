@@ -59,8 +59,23 @@ function mostrarDatos() {
         // let tmpVisitas = visitasUsuarios[i].length;
         // console.log(tmpVisitas);
 
+        console.log(visitasUsuarios[i]);
+        
+        let visitasUsuariosMes = [];
 
-        if (usuarios[i]['centroEducativo'].toLowerCase().includes(filtro.toLowerCase())
+        if (visitasUsuarios[i] > 0){
+            for (let visita of visitasUsuarios[i]){
+                if (visita.length > 0){
+                    visitasUsuariosMes.push(new Date(visita));
+                }
+            }
+        }
+
+        console.log(visitasUsuariosMes);
+
+        if (usuarios[i]['centroEducativo'].toLowerCase().includes(filtro.toLowerCase()
+            || visitasUsuarios[i][0]
+        )
         ) {
 
             let fila = tabla.insertRow();
