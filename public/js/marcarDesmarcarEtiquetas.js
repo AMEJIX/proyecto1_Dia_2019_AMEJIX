@@ -4,6 +4,8 @@ if (user.userType == 'padreFamilia'){
     document.getElementById('sltEtiquetasDiv').style.visibility = 'hidden';
 }
 
+let diUser = JSON.parse(sessionStorage.getItem("usuario"));
+
 const sltEtiquetas = document.querySelector('#sltEtiquetas');
 const tablaEtiquetas = document.querySelector('#tblEtiquetasSeleccionadas tbody');
 let contador = 0;
@@ -18,7 +20,7 @@ if (user.userType == 'padreFamilia' || user.userType == 'superAdministrador' ){
     idCentroEducativo = IdGeneralCE;
 
 }else {
-    idCentroEducativo = elUsuario._id;
+    idCentroEducativo = diUser._id;
 }
 
 

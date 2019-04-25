@@ -1,10 +1,10 @@
 'use strict';
 
 const inputFiltrar = document.querySelector('#txtFiltrar');
-let etiquetasCE = getCriteriosBusquedaMarcados(user._id);
+let etiquetasCEd = getCriteriosBusquedaMarcados(user._id);
 let nombresEtiquetas = [];
-
-for (let etiqueta of etiquetasCE){
+let idCentroEducativo;
+for (let etiqueta of etiquetasCEd){
     nombresEtiquetas.push(etiqueta.nombre);
 }
 // let user = JSON.parse(sessionStorage.getItem('usuario'));
@@ -33,6 +33,7 @@ let responsable = user.nombre + ' ' + user.segundoNombre + ' ' + user.apellido +
 let listaEtiquetas = getCriteriosBusqueda();
 
 insertarMensaje(`No se encontró ningún criterio de búsqueda`);
+
 
 mostrarCriterios();
 

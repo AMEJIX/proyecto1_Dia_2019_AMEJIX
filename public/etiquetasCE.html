@@ -156,7 +156,23 @@
             <!-- TODO EL CONTENIDO DEL CASO DE USO -->
             <h1>Criterios de búsqueda</h1>
 
-            <div class="inputStandard">
+            <div id="divEtiquetas">
+                                <!--<label for="sltEtiquetas" id="lblEtiquetas">Etiquetas</label>-->
+
+                <div id="sltEtiquetasDiv">
+                    <select id="sltEtiquetas">
+                        <!--<optgroup label="Etiquetas"></optgroup>-->
+                        <option value="" hidden>Click para agregar etiqueta</option>
+                    </select>
+                </div>
+                <table id="tblEtiquetasSeleccionadas">
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="inputStandard" style="display: none">
                 <div>
                     <label for="txtFiltrar">Buscar</label>
                 </div>
@@ -165,12 +181,12 @@
                 </div>
             </div>
 
-            <table id="tblCriteriosBusqueda" align="center">
+            <table id="tblCriteriosBusqueda" align="center" style="display: none">
                 <tbody></tbody>
             </table>
 
-            <p id="nueva">¿Nuevo criterio de búsqueda?</p>
-            <form>
+            <p id="nueva" style="display: none">¿Nuevo criterio de búsqueda?</p>
+            <form style="display: none">
                 <div class="frmBox">
                     <div id="input2">
                         <div>
@@ -203,6 +219,7 @@
     <script src="js/criteriosBusqueda.controller.eliminar.js"></script>
     <script src="js/criteriosBusqueda.controller.actualizar.js"></script>
     <script src="js/criteriosBusqueda.controller.listar.js"></script>
+    <script src="js/marcarDesmarcarEtiquetas.js"></script>
     <script src="js/criteriosBusqueda.controller.registrar.js"></script>
     <script src="js/mostrarNombre.controller.js"></script>
 </body>
