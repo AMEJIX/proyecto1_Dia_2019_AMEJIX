@@ -31,6 +31,7 @@ h1 {
     height: 40px;
     margin-left: 38px;
     outline-color: #f9aa33;
+    font-size: 25px;
 }
 
 #labelDescripcionBeca{
@@ -46,6 +47,7 @@ h1 {
     height: 300px;
     resize: none;
     outline-color: #f9aa33;
+    font-size: 25px;
 }
 
 #btnRegistrarBeca{

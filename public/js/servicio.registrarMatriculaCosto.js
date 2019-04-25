@@ -84,7 +84,7 @@ let buscarMatricula = (_id) => {
 
 /**************************************************************************************************************/
 
-let editarMatricula = (pstringPrecioMatricula, puserName, pnumberPrecioMensualidad, pfieldsetNumberPrecioMatricula, pidCentroEducativo, p_id) => {
+let editarMatricula = (pstringPrecioMatricula, pnumberPrecioMensualidad, pfieldsetNumberPrecioMatricula, pidCentroEducativo, p_id, puserName) => {
     let request = $.ajax({
         url: 'http://localhost:4000/api/editarMatricula',
         method: "POST",

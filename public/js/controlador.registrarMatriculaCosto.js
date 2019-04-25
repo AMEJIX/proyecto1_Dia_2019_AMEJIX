@@ -60,7 +60,7 @@ let obtener_datos = () => {
         let idCentroEducativo = idCE;
         let userName = user.nombre += " " + user.apellido;
 
-        registrarMatricula(userName, stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idCentroEducativo);
+        registrarMatricula(stringNombreMatricula, stringPrecioMatricula, fieldsetnumberPrecioMatricula, idCentroEducativo, userName);
 
     } else {
         swal.fire({
