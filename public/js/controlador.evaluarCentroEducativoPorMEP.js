@@ -16,7 +16,7 @@ const segundoContenido = document.querySelector('#segundoContenido');
 const nombreDelCE = document.querySelector('#nombreCE');
 const divIDInvisible = document.querySelector('#divInputCE');
 
-let nombreUsuario = user.centroEducativo;
+let nombreUsuario = user.nombre;
 
 
 
@@ -85,7 +85,7 @@ function mostrarCE() {
             let checkBox = document.createElement('input');
 
             
-            checkBox.type = 'number'; 
+            checkBox.type = 'Number'; 
             checkBox.id = 'idCheckBox'+i;
             checkBox.min = '0';
             checkBox.max = criterios [i] ['puntaje'];

@@ -1,6 +1,6 @@
 'use strict';
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
-let nombreUsuario = user.centroEducativo;
+let nombreUsuario = user.superAdministrador;
 const selectCriterio = document.querySelector('#selectCriterio');
 const inputDescripcion = document.querySelector('#txtDescripcion');
 const selectPuntaje= document.querySelector('#selectPuntaje');

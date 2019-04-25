@@ -1,7 +1,15 @@
 'use strict';
 
 // let user = JSON.parse(sessionStorage.getItem("usuario"));
-let nombreUsuario = user.centroEducativo;
+let nombreUsuario = "";
+
+if(user.userType == "centroEducativo"){
+    nombreUsuario = user.centroEducativo;
+}else if(user.userType == "superAdministrador"){
+    nombreUsuario = user.nombre;
+}
+
+
 const tabla = document.querySelector("#tblArticulos tbody");
 const inputFiltro = document.querySelector('#txtFiltro');
 const inputNombre = document.querySelector('#inputNombre');
