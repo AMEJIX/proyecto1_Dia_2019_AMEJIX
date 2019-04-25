@@ -29,7 +29,7 @@ function mostrarDatos() {
             let celdaDesfavoritar = fila.insertCell();
 
             let remover = document.createElement('a');
-            remover.textContent = 'Remover';
+            remover.innerHTML = '<i class="fas fa-trash-alt"></i>';
             remover.href = `#`;
             celdaDesfavoritar.appendChild(remover);
 
