@@ -15,7 +15,7 @@ let listarInfoMEP = () =>{
   });
   
   request.done(function( res ) {
-    infoGeneralMEP = res.infoSA;
+    infoGeneralMEP = res.usuario;
   });
   request.fail(function( jqXHR, textStatus ) {
   });  

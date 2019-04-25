@@ -31,6 +31,7 @@
     width: 225px;
     height: 20px;
     outline-color: #f9aa33;
+    font-size: 25px;
 }
 
 tr{
@@ -42,6 +43,7 @@ tr{
     margin-left: 15%;
     margin-right: 15%;
     width: 70%;
+    margin-bottom: 125px;
 }
 
 #thTituloNombreMatricula{
