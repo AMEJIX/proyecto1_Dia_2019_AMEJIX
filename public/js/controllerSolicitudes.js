@@ -46,7 +46,7 @@ function mostrarDatos() {
 
             let actualizar = document.createElement('a');
             actualizar.classList.add('aActualizarEstado');
-            actualizar.textContent = 'Actualizar';
+            actualizar.innerHTML = '<i class="fas fa-edit"></i>';
             actualizar.href = `#`;
             celdaActualizar.appendChild(actualizar);
 
