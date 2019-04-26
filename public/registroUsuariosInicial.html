@@ -8,57 +8,36 @@
     <title>Registro</title>
     <link rel="stylesheet" href="css/reset.css">
 
-    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/perfil.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/tabs.css">
-    <link rel="stylesheet" href="css/registroUsuarios.css">
+    <link rel="stylesheet" href="css/registroUser.css">
 
 </head>
 
 
 <body>
-    <header>
+
+    <!-- <header>
         <nav>
-
-            <div class="userInfo">
-                <div class="userPhoto"></div>
-                <div class="nameWrapper">
-                    <h4></h4>
-                </div>
-
-                <div class="subMenu">
-                    <a href="userProfileInfo.html">Perfil</a>
-                    <a href="informacionPersonalUsuario.html">Información Personal</a>
-                    <a href="" id="logOut">Cerrar sesión</a>
-                    </ul>
-                </div>
-            </div>
-
-        </nav>
-    </header>
-    <main>
-
-        <div class="sideNav">
             <a class="aBack" href="userProfileInfo.html">
-                <div class="sicenLogo"></div>
-            </a>
-            <div class="line"></div>
+        </nav>
+    </header> -->
 
-          
-
-        </div>
-
-        <div class="contenido" style="overflow-y: scroll;">
-
+    <main>
+        <div class="boxRegistro">
             <div id="subContenido">
 
                 <!-- Seleccion de tipo de usuario-->
-                <h1 id='titulo'>Registro de usuario</h1>
+                <div class="signUpBox">
+                    <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+                    <h1 id='titulo'>Registro de usuario</h1>
+                </div>
                 <section class="userType">
                     <div id="type">
                         <label for="selectUser" id='labelTipoUsuario'>Tipo de usuario: </label>
@@ -274,48 +253,48 @@
                     <!-- Tab content -->
                     <!-- TAB Datos Generales  -->
                     <div id="datosGeneralesTab" class="tabcontent">
-                            <div class="columnas">
-                                    <div class="columna_izquierda">
-        
-                                        <div class="centrarInputs">
-                                            <div>
-                                                <label for="txtInstitución">Nombre institución:</label>
-                                                <input type="text" maxlength="200" id="txtInstitución">
-                                            </div>
-                                            <div>
-                                                <label for="txtCedulaJuridica">Cédula jurídica:</label>
-                                                <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
-                                            </div>
-        
-                                            <div>
-                                                <label for="txtComercial">Nombre comercial:</label>
-                                                <input type="text" maxlength="30" id="txtComercial">
-                                            </div>
-                                            <div>
-                                                <label for="txtAnno">Año fundación:</label>
-                                                <input type="number" maxlength="15" id="txtAnno">
-                                            </div>
-                                            <h1>Reseña histórica</h1>
-                                            <div>
-        
-                                                <textarea id="txt_historia"></textarea>
-                                            </div>
-                                        </div>
+                        <div class="columnas">
+                            <div class="columna_izquierda">
+
+                                <div class="centrarInputs">
+                                    <div>
+                                        <label for="txtInstitución">Nombre institución:</label>
+                                        <input type="text" maxlength="200" id="txtInstitución">
                                     </div>
-                                    <div class="columna_derecha">
-        
-                                        <div class='divImagen'>
-                                        <figure class='imageHolder'>
-                                            <img id="imagePreview">
-                                        </figure>
-                                        </div>
-                                        <div>
-                                        <button type="button" id="butonSubirImagen" class="yellowButton">Subir
-                                            Imagen</button>
-                                        </div>
+                                    <div>
+                                        <label for="txtCedulaJuridica">Cédula jurídica:</label>
+                                        <input type="text" maxlength="20" id="txtCedulaJuridica" title="opcional">
                                     </div>
-        
+
+                                    <div>
+                                        <label for="txtComercial">Nombre comercial:</label>
+                                        <input type="text" maxlength="30" id="txtComercial">
+                                    </div>
+                                    <div>
+                                        <label for="txtAnno">Año fundación:</label>
+                                        <input type="number" maxlength="15" id="txtAnno">
+                                    </div>
+                                    <h1>Reseña histórica</h1>
+                                    <div>
+
+                                        <textarea id="txt_historia"></textarea>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="columna_derecha">
+
+                                <div class='divImagen'>
+                                    <figure class='imageHolder'>
+                                        <img id="imagePreview">
+                                    </figure>
+                                </div>
+                                <div>
+                                    <button type="button" id="butonSubirImagen" class="yellowButton">Subir
+                                        Imagen</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
                     <!-- TAB Contacto CE  -->
@@ -410,52 +389,52 @@
                     <!-- TAB Ubicacion CE   -->
                     <div id="ubicacionCETAB" class="tabcontent">
 
-                            <div class="columnas">
-                                <div class="columna_izquierda">
-                                    <h1>Dirección exacta</h1>
-                                    <div>
-                                        <textarea id="textDireccionExacta"></textarea>
-                                    </div>
-    
-    
-                                    <div>
-                                        <div class="centrarInputs">
-                                            <div>
-                                                <label for="selectProvinciasCE">Provincia:</label>
-                                                <select id="selectProvinciasCE" size="" class="selectProvincias">
-    
-    
-                                                </select>
-                                            </div>
-    
-    
-    
-                                            <div>
-                                                <label for="selectCantonesCE">Cantón:</label>
-                                                <select id="selectCantonesCE" size="" class="selectCantones">
-                                                    <option value="" selected disabled>Cantones</option>
-                                                </select>
-    
-                                            </div>
-                                            <div>
-                                                <label for="selectDistritosCE">Distrito:</label>
-                                                <select id="selectDistritosCE" size="" class="selectDistritos">
-                                                    <option value="" selected disabled>Distritos</option>
-                                                </select>
-                                            </div>
+                        <div class="columnas">
+                            <div class="columna_izquierda">
+                                <h1>Dirección exacta</h1>
+                                <div>
+                                    <textarea id="textDireccionExacta"></textarea>
+                                </div>
+
+
+                                <div>
+                                    <div class="centrarInputs">
+                                        <div>
+                                            <label for="selectProvinciasCE">Provincia:</label>
+                                            <select id="selectProvinciasCE" size="" class="selectProvincias">
+
+
+                                            </select>
                                         </div>
-    
+
+
+
+                                        <div>
+                                            <label for="selectCantonesCE">Cantón:</label>
+                                            <select id="selectCantonesCE" size="" class="selectCantones">
+                                                <option value="" selected disabled>Cantones</option>
+                                            </select>
+
+                                        </div>
+                                        <div>
+                                            <label for="selectDistritosCE">Distrito:</label>
+                                            <select id="selectDistritosCE" size="" class="selectDistritos">
+                                                <option value="" selected disabled>Distritos</option>
+                                            </select>
+                                        </div>
                                     </div>
+
                                 </div>
-                                <div class="columna_derecha">
-    
-                                    <h1>Ubicación en mapa</h1>
-    
-                                    <div id="map"></div>
-                                </div>
-    
                             </div>
+                            <div class="columna_derecha">
+
+                                <h1>Ubicación en mapa</h1>
+
+                                <div id="map"></div>
+                            </div>
+
                         </div>
+                    </div>
 
 
                     <!-- TAB Tipo Institucion CE   -->
@@ -533,46 +512,46 @@
 
                     <!-- Otros Datos   -->
                     <div id="otrosDatosCETab" class="tabcontent">
-                            <div class="centrarInputs">
-                        <fieldset id="fieldsetPrivacidad">
-                            <h1>Institución pública/privada</h1>
+                        <div class="centrarInputs">
+                            <fieldset id="fieldsetPrivacidad">
+                                <h1>Institución pública/privada</h1>
 
-                            <ul> <input type="radio" id="radioPrivado" name="rbt_privacidad" value="privado">
-                                Privado</ul>
-
-
-                            <ul><input type="radio" id="radioPublico" name="rbt_privacidad" value="publico">
-                                Público</ul>
-
-                        </fieldset>
+                                <ul> <input type="radio" id="radioPrivado" name="rbt_privacidad" value="privado">
+                                    Privado</ul>
 
 
-                        <fieldset id="fieldsetGenero">
-                            <h1>Género</h1>
+                                <ul><input type="radio" id="radioPublico" name="rbt_privacidad" value="publico">
+                                    Público</ul>
 
-                            <ul><input type="radio" id="radioFemenino" name="rbt_sexo" value="Femenino">Femenino
-                            </ul>
-
-
-                            <ul><input type="radio" id="radioMasculino" name="rbt_sexo" value="Masculino">Masculino
-                            </ul>
+                            </fieldset>
 
 
-                            <ul> <input type="radio" id="radioMixto" name="rbt_sexo" value="Mixto">Mixto
-                            </ul>
+                            <fieldset id="fieldsetGenero">
+                                <h1>Género</h1>
 
-
-                        </fieldset>
-
-                        <fieldset id="fieldsetReligion">
-                            <h1>Religión</h1>
-
-                            <ul><input type="radio" id="radioSi" name="rbt_religion" value="si">Sí</ul>
-                            <ul><input type="radio" id="radioNo" name="rbt_religion" value="no">No<ul>
+                                <ul><input type="radio" id="radioFemenino" name="rbt_sexo" value="Femenino">Femenino
                                 </ul>
 
-                        </fieldset>
-</div>
+
+                                <ul><input type="radio" id="radioMasculino" name="rbt_sexo" value="Masculino">Masculino
+                                </ul>
+
+
+                                <ul> <input type="radio" id="radioMixto" name="rbt_sexo" value="Mixto">Mixto
+                                </ul>
+
+
+                            </fieldset>
+
+                            <fieldset id="fieldsetReligion">
+                                <h1>Religión</h1>
+
+                                <ul><input type="radio" id="radioSi" name="rbt_religion" value="si">Sí</ul>
+                                <ul><input type="radio" id="radioNo" name="rbt_religion" value="no">No<ul>
+                                    </ul>
+
+                            </fieldset>
+                        </div>
                     </div>
 
 
@@ -631,24 +610,19 @@
     </main>
 
     <footer>
-
+        <div class="amejix"></div>
     </footer>
 
-    <script src="js/style.js"></script>
+    <!-- <script src="js/style.js"></script>
 
-    <script src="js/controllerProfileInfo.js"></script>
+    <script src="js/controllerProfileInfo.js"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-
-
-
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBOzt7iczOvEDQlyyXWI0rLnfBEaBEbY&callback=initMap"
         async defer></script>
-
-
     <script src="js/map.js"></script>
 
     <!-- Cloudinary Scripts-->
@@ -662,7 +636,6 @@
     <script src="js/servicioRegistroUsuarios.js"></script>
     <script src="js/tabs.js"></script>
     <script src="js/controllerRegistroUsuarios.js"></script>
-    <script src="js/mostrarNombre.controller.js"></script>
 
 
 </body>
