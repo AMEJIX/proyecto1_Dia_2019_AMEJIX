@@ -1,14 +1,14 @@
 h1 {
     display: inline-block;
     margin-top: 40px;
-    margin-left: 5%;
+    margin-left: 40%;
     font-size: 25px;
     color: #2c3e50
 }
 
 #divIdioma{
     margin: 0% auto;
-    margin-left: 15%;    
+    margin-left: 18%;    
     margin-top: 5%;
 }
 
@@ -18,19 +18,19 @@ h1 {
     height: 30px;
     margin-left: 80px;
     outline-color: #f9aa33;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #labelIdioma{
     margin: 0% auto;
-    margin-right: 10px;
-    font-size: 25px;
+    margin-right: 0px;
+    font-size: 20px;
     color: #344955;
 }
 
 #botonRegistrarIdioma{
     margin: 0% auto;
-    margin-left: 44.5%;
+    margin-left: 40.5%;
     background: #f9aa33;
     width: 210px;
     height: 40px;
